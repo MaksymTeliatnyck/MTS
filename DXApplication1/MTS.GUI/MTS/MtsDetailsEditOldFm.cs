@@ -24,7 +24,7 @@ namespace MTS.GUI.MTS
         private BindingSource detailsBS = new BindingSource();
         private BindingSource createDetailsBS = new BindingSource();
         private MTSSpecificationsDTO specificDTO = new MTSSpecificationsDTO();
-        private MTS_DetailsDTO detailDTO = new MTS_DetailsDTO();
+        private MTSDetailsDTO detailDTO = new MTSDetailsDTO();
 
         private ObjectBase Item
         {
@@ -36,7 +36,7 @@ namespace MTS.GUI.MTS
             }
         }
 
-        public MtsDetailsEditOldFm(Utils.Operation operation, MTS_DetailsDTO modelDetail)
+        public MtsDetailsEditOldFm(Utils.Operation operation, MTSDetailsDTO modelDetail)
         {
             InitializeComponent();
             this.operation=operation;
@@ -113,7 +113,7 @@ namespace MTS.GUI.MTS
                     createCreateDetails.HEIGHT = ((MTSDetailsDTO)Item).HEIGHT;
                     ((MTSDetailsDTO)Item).CREATED_DETAILS_ID = mtsSpecificationsService.MTSCreateDetalsCreate(createCreateDetails);
                 }
-                mtsSpecificationsService.MTSDetailCreate((MTS_DetailsDTO)Item);
+                mtsSpecificationsService.MTSDetailCreate((MTSDetailsDTO)Item);
                 return true;
             }
             else
@@ -128,7 +128,7 @@ namespace MTS.GUI.MTS
                 updateCreateDetails.HEIGHT = ((MTSDetailsDTO)Item).HEIGHT;
                 mtsSpecificationsService.MTSCreateDetalsUpdate(updateCreateDetails);
 
-                mtsSpecificationsService.MTSDetailUpdate((MTS_DetailsDTO)Item);
+                mtsSpecificationsService.MTSDetailUpdate((MTSDetailsDTO)Item);
                 return true;
             }
             

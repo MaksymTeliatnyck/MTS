@@ -27,7 +27,7 @@ namespace MTS.BLL.Interfaces
         IEnumerable<MTSSpecificationsDTO> GetAllSpecificationOld();
         IEnumerable<MTSSpecificationsDTO> GetAllSpecificationOldByPeriod(DateTime startDate, DateTime endDate);
         //IEnumerable<MTSCreateDetalsDTO> GetAllDetailsSpecific(int spesificId);
-        IEnumerable<MTS_DetailsDTO> GetAllDetailsSpecific(int spesificId);
+        IEnumerable<MTSDetailsDTO> GetAllDetailsSpecific(int spesificId);
         IEnumerable<MTSPurchasedProductsDTO> GetBuysDetalSpecific(int spesificId);
         IEnumerable<MTSMaterialsDTO> GetMaterialsSpecific(int spesificId);
 
@@ -37,7 +37,7 @@ namespace MTS.BLL.Interfaces
         IEnumerable<MTSCreateDetalsDTO> GetAllCreateDetals();
         MTSCreateDetalsDTO GetCreateDetalsByDrawingNumber(string drawignNumber);
 
-        IEnumerable<MTS_DetailsDTO> GetAllDetailsSpecificShort(int specificId);
+        IEnumerable<MTSDetailsDTO> GetAllDetailsSpecificShort(int specificId);
         IEnumerable<MTSPurchasedProductsDTO> GetBuysDetalSpecificShort(int specificId);
         IEnumerable<MTSMaterialsDTO> GetMaterialsSpecificShort(int specificId);
         
@@ -58,8 +58,8 @@ namespace MTS.BLL.Interfaces
         void MTSCreateDetailsUpdate(MTSCreateDetalsDTO mtsCreateDetalsDTO);
         bool MTSCreateDetailsDelete(int id);
 
-        int MTSDetailCreate(MTS_DetailsDTO mtsDetalsDTO);
-        void MTSDetailUpdate(MTS_DetailsDTO mtsDetalsDTO);
+        int MTSDetailCreate(MTSDetailsDTO mtsDetalsDTO);
+        void MTSDetailUpdate(MTSDetailsDTO mtsDetalsDTO);
         bool MTSDetailDelete(int id);
 
         int MTSPurchasedProductsCreate(MTSPurchasedProductsDTO mtsPurchasedProductsDTO);
