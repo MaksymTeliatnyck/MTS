@@ -47,7 +47,7 @@ namespace MTS.GUI
     public partial class MainTabFm : DevExpress.XtraEditors.XtraForm
     {
         private IUserService userService;
-        private UserDetailsDTO userInfo;
+        private MTS_AUTHORIZATION_USERS_DTO userInfo;
         private IEnumerable<UserTasksDTO> userAccess;
 
         public MainTabFm()
@@ -91,13 +91,13 @@ namespace MTS.GUI
 
             userInfo = UserService.AuthorizatedUser;
 
-            userFotoEdit.EditValue = PhotoSource(userInfo);
-            fioLabel.Text = userInfo.Fio;
-            professionLabel.Text  = userInfo.ProfessionName;
-            departmentLabel.Text = userInfo.DepartmentName;
+            //userFotoEdit.EditValue = PhotoSource(userInfo);
+            fioLabel.Text = userInfo.NAME;
+            //professionLabel.Text  = userInfo.ProfessionName;
+            //departmentLabel.Text = userInfo.DepartmentName;
             
-            UserAccessMenu();
-            UserOnline();
+            //UserAccessMenu();
+            //UserOnline();
 
 
            
@@ -121,12 +121,12 @@ namespace MTS.GUI
 
         private void UserOnline()
         {
-            userService.UserUpdateState(userInfo.UserId, true);
+            //userService.UserUpdateState(userInfo.UserId, true);
         }
 
         private void UserOffline()
         {
-            userService.UserUpdateState(userInfo.UserId, false);
+            //userService.UserUpdateState(userInfo.UserId, false);
         }
 
         private byte[] PhotoSource(UserDetailsDTO source)
@@ -142,7 +142,7 @@ namespace MTS.GUI
 
         private void UserAccessMenu()
         {
-            userAccess = UserService.AuthorizatedUserAccess;
+            //userAccess = UserService.AuthorizatedUserAccess;
             var category = menuNavPane.Buttons.Select(s => s.Element.Name).ToList();
             for (int i = 0; i < category.Count; i++)
             {
@@ -677,10 +677,10 @@ namespace MTS.GUI
                 
 
                 case "mtsSpecificationOldItem":
-                    MtsSpecificationOldFm mtsSpecificationOldFm = new MtsSpecificationOldFm(userTasksDTO);
-                    mtsSpecificationOldFm.Text = "Довідник матеріальних специфікацій";
-                    mtsSpecificationOldFm.MdiParent = this;
-                    mtsSpecificationOldFm.Show();
+                    //MtsSpecificationOldFm mtsSpecificationOldFm = new MtsSpecificationOldFm();
+                    //mtsSpecificationOldFm.Text = "Довідник матеріальних специфікацій";
+                    //mtsSpecificationOldFm.MdiParent = this;
+                    //mtsSpecificationOldFm.Show();
                     break;
 
                 case "paintingWorksItem":
@@ -761,24 +761,25 @@ namespace MTS.GUI
                     SplashScreenManager.Default.SendCommand(StartScreenFm.SplashScreenCommand.SetLabel, "Авторизація користувача...");
                     Thread.Sleep(200);
 
-                    if (userService.TryAuthorize(num))
-                    {
-                        //добавить трай-кач
-                        SplashScreenManager.Default.SendCommand(StartScreenFm.SplashScreenCommand.SetLabel, "Користувач успішно авторизований \n(" + UserService.AuthorizatedUser.Fio + ")");
-                        Thread.Sleep(200);
-                        SplashScreenManager.Default.SendCommand(StartScreenFm.SplashScreenCommand.SetLabel, "Налаштування прав доступу...");
-                        Thread.Sleep(200);
-                        SplashScreenManager.CloseForm();
-                        return true;
-                    }
-                    else
-                    {
-                        SplashScreenManager.CloseForm();
-                        MessageBox.Show("Вам не дозволено працювати в системі. \nЗверніться у відділ АСУВ. \nВаш ідентифікатор "+ num, "Авторизація користувача", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //if (userService.TryAuthorize(num))
+                    //{
+                    //    //добавить трай-кач
+                    //    SplashScreenManager.Default.SendCommand(StartScreenFm.SplashScreenCommand.SetLabel, "Користувач успішно авторизований \n(" + UserService.AuthorizatedUser.Fio + ")");
+                    //    Thread.Sleep(200);
+                    //    SplashScreenManager.Default.SendCommand(StartScreenFm.SplashScreenCommand.SetLabel, "Налаштування прав доступу...");
+                    //    Thread.Sleep(200);
+                    //    SplashScreenManager.CloseForm();
+                    //    return true;
+                    //}
+                    //else
+                    //{
+                    //    SplashScreenManager.CloseForm();
+                    //    MessageBox.Show("Вам не дозволено працювати в системі. \nЗверніться у відділ АСУВ. \nВаш ідентифікатор "+ num, "Авторизація користувача", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        Load += (s, e) => Close();
-                        return false;
-                    }
+                    //    Load += (s, e) => Close();
+                    //    return false;
+                    //}
+                    return false;
             }
         }
    
@@ -874,7 +875,7 @@ namespace MTS.GUI
             
             //refresh menu
             userService = Program.kernel.Get<IUserService>();
-            userService.TryAuthorize(UserService.AuthorizatedUser.AccountNumber);
+            //userService.TryAuthorize(UserService.AuthorizatedUser.AccountNumber);
 
             UserAccessMenu();
         }
@@ -893,7 +894,7 @@ namespace MTS.GUI
 
             //refresh menu
             userService = Program.kernel.Get<IUserService>();
-            userService.TryAuthorize(UserService.AuthorizatedUser.AccountNumber);
+            //userService.TryAuthorize(UserService.AuthorizatedUser.AccountNumber);
 
             UserAccessMenu();
         }   

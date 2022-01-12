@@ -131,7 +131,7 @@ namespace MTS.GUI.MTS
             
             try
             {
-                ((MtsAssembliesDTO)Item).UserId = UserService.AuthorizatedUser.UserId;
+                //((MtsAssembliesDTO)Item).UserId = UserService.AuthorizatedUser.UserId;
 
                 if (this.operation == Utils.Operation.Add)
                 {

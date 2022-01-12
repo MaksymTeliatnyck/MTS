@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainTabFm));
             DevExpress.XtraEditors.TileItemElement tileItemElement15 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
@@ -241,9 +242,8 @@
             this.departmentLabel = new DevExpress.XtraEditors.LabelControl();
             this.professionLabel = new DevExpress.XtraEditors.LabelControl();
             this.fioLabel = new DevExpress.XtraEditors.LabelControl();
-            this.userFotoEdit = new DevExpress.XtraEditors.PictureEdit();
-            this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager();
-            this.tabbedView2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
+            this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.tabbedView2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.tileNavSubItem3 = new DevExpress.XtraBars.Navigation.TileNavSubItem();
             this.tileNavSubItem4 = new DevExpress.XtraBars.Navigation.TileNavSubItem();
             this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
@@ -252,7 +252,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userFotoEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
@@ -2563,7 +2562,6 @@
             this.panelControl1.Controls.Add(this.departmentLabel);
             this.panelControl1.Controls.Add(this.professionLabel);
             this.panelControl1.Controls.Add(this.fioLabel);
-            this.panelControl1.Controls.Add(this.userFotoEdit);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
@@ -2575,7 +2573,7 @@
             // departmentLabel
             // 
             this.departmentLabel.Appearance.ForeColor = System.Drawing.Color.White;
-            this.departmentLabel.Location = new System.Drawing.Point(82, 41);
+            this.departmentLabel.Location = new System.Drawing.Point(6, 43);
             this.departmentLabel.Name = "departmentLabel";
             this.departmentLabel.Size = new System.Drawing.Size(18, 13);
             this.departmentLabel.TabIndex = 3;
@@ -2584,7 +2582,7 @@
             // professionLabel
             // 
             this.professionLabel.Appearance.ForeColor = System.Drawing.Color.White;
-            this.professionLabel.Location = new System.Drawing.Point(82, 20);
+            this.professionLabel.Location = new System.Drawing.Point(6, 24);
             this.professionLabel.Name = "professionLabel";
             this.professionLabel.Size = new System.Drawing.Size(18, 13);
             this.professionLabel.TabIndex = 2;
@@ -2594,21 +2592,11 @@
             // 
             this.fioLabel.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.fioLabel.Appearance.ForeColor = System.Drawing.Color.White;
-            this.fioLabel.Location = new System.Drawing.Point(82, 1);
+            this.fioLabel.Location = new System.Drawing.Point(6, 5);
             this.fioLabel.Name = "fioLabel";
             this.fioLabel.Size = new System.Drawing.Size(21, 13);
             this.fioLabel.TabIndex = 1;
             this.fioLabel.Text = "нет";
-            // 
-            // userFotoEdit
-            // 
-            this.userFotoEdit.Location = new System.Drawing.Point(1, 2);
-            this.userFotoEdit.Name = "userFotoEdit";
-            this.userFotoEdit.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.userFotoEdit.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.userFotoEdit.Properties.ZoomAccelerationFactor = 1D;
-            this.userFotoEdit.Size = new System.Drawing.Size(75, 63);
-            this.userFotoEdit.TabIndex = 0;
             // 
             // documentManager
             // 
@@ -2719,7 +2707,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userFotoEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).EndInit();
@@ -2746,7 +2733,6 @@
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView2;
         private DevExpress.XtraEditors.LabelControl professionLabel;
         private DevExpress.XtraEditors.LabelControl fioLabel;
-        private DevExpress.XtraEditors.PictureEdit userFotoEdit;
         private DevExpress.XtraEditors.LabelControl departmentLabel;
         private DevExpress.XtraBars.Navigation.TileNavCategory classifiersCategory;
         private DevExpress.XtraBars.Navigation.TileNavCategory agreementsCategory;

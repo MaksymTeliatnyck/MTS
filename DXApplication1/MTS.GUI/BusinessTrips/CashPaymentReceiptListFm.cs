@@ -103,7 +103,7 @@ namespace MTS.GUI.BusinessTrips
                                                ReceiptId = r.ReceiptId,
                                                VatAccountId = r.VatAccountId,
                                                VatPrice = r.VatPrice,
-                                               UserId = UserService.AuthorizatedUser.UserId,
+                                               //UserId = UserService.AuthorizatedUser.UserId,
                                                DateAdded = DateTime.Now,
                                                CustomerOrderId = r.CustomerOrderId
                                            }).ToList();

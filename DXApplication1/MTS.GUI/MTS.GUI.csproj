@@ -270,7 +270,7 @@
     </Reference>
     <Reference Include="MTS.BLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\MTS.BLL\bin\Release\MTS.BLL.dll</HintPath>
+      <HintPath>..\..\MTS.BLL\bin\Debug\MTS.BLL.dll</HintPath>
     </Reference>
     <Reference Include="Nager.Date, Version=1.22.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Nager.Date.1.22.3\lib\net45\Nager.Date.dll</HintPath>
@@ -1248,6 +1248,12 @@
     <Compile Include="GodMode\TestFm.Designer.cs">
       <DependentUpon>TestFm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login\AuthFm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\AuthFm.Designer.cs">
+      <DependentUpon>AuthFm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Marketing\CalculationJournalFm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2171,6 +2177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GodMode\TestFm.resx">
       <DependentUpon>TestFm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\AuthFm.resx">
+      <DependentUpon>AuthFm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Marketing\CalculationJournalFm.resx">
       <DependentUpon>CalculationJournalFm.cs</DependentUpon>

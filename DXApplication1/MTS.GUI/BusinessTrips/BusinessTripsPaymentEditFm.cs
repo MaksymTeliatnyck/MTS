@@ -96,7 +96,7 @@ namespace MTS.GUI.BusinessTrips
             if (operation == Utils.Operation.Add)
             {
                 ((BusinessTripsPaymentDTO)Item).EmployeesID = currentModel.EmployeesID;
-                ((BusinessTripsPaymentDTO)Item).UserId = UserService.AuthorizatedUser.UserId;
+                //((BusinessTripsPaymentDTO)Item).UserId = UserService.AuthorizatedUser.UserId;
                 ((BusinessTripsPaymentDTO)Item).BusinessTripsDetailsID = currentModel.BusinessTripsDetailsID;
 
                 ((Currency_RatesDTO)currencyRateBS.Current).Currency_Id = 1;

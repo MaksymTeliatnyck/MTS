@@ -62,10 +62,10 @@ namespace MTS.GUI.Tools
         {
             this.Item.EndEdit();
 
-            if (_operation == Utils.Operation.Add)
-                ((UserRolesDTO)Item).RoleId = userService.UserRoleCreate((UserRolesDTO)Item);
-            else
-                userService.UserRoleUpdate((UserRolesDTO)Item);
+            //if (_operation == Utils.Operation.Add)
+            //    ((UserRolesDTO)Item).RoleId = userService.UserRoleCreate((UserRolesDTO)Item);
+            //else
+            //    userService.UserRoleUpdate((UserRolesDTO)Item);
         }
 
         private bool ControlValidation()
@@ -85,7 +85,10 @@ namespace MTS.GUI.Tools
 
         private bool IsDuplicateRecord(string roleName)
         {
-            return userService.GetUserRoles().Any(s => s.RoleName == roleName);
+            
+        //return userService.GetUserRoles().Any(s => s.RoleName == roleName);
+            return false;
+
         }
 
         public int Return()

@@ -179,75 +179,75 @@ namespace MTS.GUI.Accounting
             bankPaymentsService = Program.kernel.Get<IBankPaymentsService>();
             contractorsService = Program.kernel.Get<IContractorsService>();
 
-            foreach (var item in saveSource)
-            {
-                if (!CheckPeriodAccess(item.Payment_Date ?? DateTime.Now))
-                {
-                    MessageBox.Show("Період " + item.Payment_Date.Value.Month + "." + item.Payment_Date.Value.Year + "закритий або не існує!", "Збереження", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return false;
-                }
+            //foreach (var item in saveSource)
+            //{
+            //    if (!CheckPeriodAccess(item.Payment_Date ?? DateTime.Now))
+            //    {
+            //        MessageBox.Show("Період " + item.Payment_Date.Value.Month + "." + item.Payment_Date.Value.Year + "закритий або не існує!", "Збереження", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        return false;
+            //    }
 
-                if (item.Contractor_Id == null)
-                {
-                    List<ContractorsDTO> contractorsList = contractorsService.GetContractors(1).ToList();
+            //    if (item.Contractor_Id == null)
+            //    {
+            //        List<ContractorsDTO> contractorsList = contractorsService.GetContractors(1).ToList();
 
-                    var tempContractorModel = contractorsList.FirstOrDefault(c => (c.Srn ?? "").Trim() == item.ContractorName.Trim());
-                    if (tempContractorModel != null)
-                        item.Contractor_Id = tempContractorModel.Id;
-                    else
-                        item.Contractor_Id = contractorsService.ContractorCreate(new ContractorsDTO() { Srn = item.PartnerSrn, Name = item.PartnerName });
+            //        var tempContractorModel = contractorsList.FirstOrDefault(c => (c.Srn ?? "").Trim() == item.ContractorName.Trim());
+            //        if (tempContractorModel != null)
+            //            item.Contractor_Id = tempContractorModel.Id;
+            //        else
+            //            item.Contractor_Id = contractorsService.ContractorCreate(new ContractorsDTO() { Srn = item.PartnerSrn, Name = item.PartnerName });
                     
-                }
-                bankPaymentsService.BankPaymentCreate(new Bank_PaymentsDTO()
-                {
-                    Id = item.Id,
-                    AccountingOperationId = item.AccountingOperationId,
-                    Bank_Account_Id = Convert.ToInt32(bankAccountsItem.EditValue),
-                    Contractor_Id = item.Contractor_Id,
-                    CurrencyId = item.CurrencyId,
-                    CurrencyRatesConvertId = item.CurrencyRatesConvertId,
-                    Payment_Document = item.Payment_Document,
-                    Payment_Date = item.Payment_Date,
-                    Direction = item.Direction,
-                    EmployeesId = item.EmployeesId,
-                    Payment_Price = item.Payment_Price,
-                    Payment_PriceCurrency = item.Payment_PriceCurrency,
-                    Payment_Price_Eq = item.Payment_Price,
-                    Purpose = item.Purpose,
-                    Purpose_Account_Id = item.Purpose_Account_Id,
-                    Rate = item.Rate,
-                    VatAccountId = item.VatAccountId,
-                    VatPrice = item.VatPrice,
-                    DateCreate = DateTime.Now,
-                    DateUpdate = DateTime.Now,
-                    UserId = UserService.AuthorizatedUser.UserId
-                });
+            //    }
+            //    bankPaymentsService.BankPaymentCreate(new Bank_PaymentsDTO()
+            //    {
+            //        Id = item.Id,
+            //        AccountingOperationId = item.AccountingOperationId,
+            //        Bank_Account_Id = Convert.ToInt32(bankAccountsItem.EditValue),
+            //        Contractor_Id = item.Contractor_Id,
+            //        CurrencyId = item.CurrencyId,
+            //        CurrencyRatesConvertId = item.CurrencyRatesConvertId,
+            //        Payment_Document = item.Payment_Document,
+            //        Payment_Date = item.Payment_Date,
+            //        Direction = item.Direction,
+            //        EmployeesId = item.EmployeesId,
+            //        Payment_Price = item.Payment_Price,
+            //        Payment_PriceCurrency = item.Payment_PriceCurrency,
+            //        Payment_Price_Eq = item.Payment_Price,
+            //        Purpose = item.Purpose,
+            //        Purpose_Account_Id = item.Purpose_Account_Id,
+            //        Rate = item.Rate,
+            //        VatAccountId = item.VatAccountId,
+            //        VatPrice = item.VatPrice,
+            //        DateCreate = DateTime.Now,
+            //        DateUpdate = DateTime.Now,
+            //        UserId = UserService.AuthorizatedUser.UserId
+            //    });
 
-                //Bank_PaymentsDTO newModel = new Bank_PaymentsDTO();
+            //    //Bank_PaymentsDTO newModel = new Bank_PaymentsDTO();
 
-                //newModel.Id = item.Id;
-                //newModel.AccountingOperationId = item.AccountingOperationId;
-                //newModel.Bank_Account_Id = (int)bankAccountsItem.EditValue;
-                //newModel.Contractor_Id = item.Contractor_Id;
-                //newModel.CurrencyId = item.CurrencyId;
-                //newModel.CurrencyRatesConvertId = item.CurrencyRatesConvertId;
-                //newModel.CustomerOrderId = item.CustomerOrderId;
-                //newModel.Payment_Document = item.Payment_Document;
-                //newModel.Payment_Date = item.Payment_Date;
-                //newModel.Direction = item.Direction;
-                //newModel.EmployeesId = item.EmployeesId;
-                //newModel.Payment_Price = item.Payment_Price;
-                //newModel.Payment_PriceCurrency = item.Payment_PriceCurrency;
-                //newModel.Payment_Price_Eq = item.Payment_Price;
-                //newModel.Purpose = item.Purpose;
-                //newModel.Purpose_Account_Id = item.Purpose_Account_Id;
-                //newModel.Rate = item.Rate;
-                //newModel.VatAccountId = item.VatAccountId;
-                //newModel.VatPrice = item.VatPrice;
-                //newModel.DateCreate = DateTime.Now;
-                //newModel.DateUpdate = DateTime.Now;
-                //newModel.UserId = UserService.AuthorizatedUser.UserId;
-            }
+            //    //newModel.Id = item.Id;
+            //    //newModel.AccountingOperationId = item.AccountingOperationId;
+            //    //newModel.Bank_Account_Id = (int)bankAccountsItem.EditValue;
+            //    //newModel.Contractor_Id = item.Contractor_Id;
+            //    //newModel.CurrencyId = item.CurrencyId;
+            //    //newModel.CurrencyRatesConvertId = item.CurrencyRatesConvertId;
+            //    //newModel.CustomerOrderId = item.CustomerOrderId;
+            //    //newModel.Payment_Document = item.Payment_Document;
+            //    //newModel.Payment_Date = item.Payment_Date;
+            //    //newModel.Direction = item.Direction;
+            //    //newModel.EmployeesId = item.EmployeesId;
+            //    //newModel.Payment_Price = item.Payment_Price;
+            //    //newModel.Payment_PriceCurrency = item.Payment_PriceCurrency;
+            //    //newModel.Payment_Price_Eq = item.Payment_Price;
+            //    //newModel.Purpose = item.Purpose;
+            //    //newModel.Purpose_Account_Id = item.Purpose_Account_Id;
+            //    //newModel.Rate = item.Rate;
+            //    //newModel.VatAccountId = item.VatAccountId;
+            //    //newModel.VatPrice = item.VatPrice;
+            //    //newModel.DateCreate = DateTime.Now;
+            //    //newModel.DateUpdate = DateTime.Now;
+            //    //newModel.UserId = UserService.AuthorizatedUser.UserId;
+            //}
             
             return true;
         }

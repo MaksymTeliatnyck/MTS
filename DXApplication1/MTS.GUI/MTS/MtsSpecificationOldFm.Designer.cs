@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageUser;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MtsSpecificationOldFm));
+            DevExpress.Utils.Animation.PushTransition pushTransition1 = new DevExpress.Utils.Animation.PushTransition();
+            this.userNameBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.endDateItem = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
@@ -56,6 +59,13 @@
             this.addMaterialBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editMaterialBtn = new DevExpress.XtraBars.BarButtonItem();
             this.deleteMaterialBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.barWorkspaceMenuItem1 = new DevExpress.XtraBars.BarWorkspaceMenuItem();
+            this.workspaceManager1 = new DevExpress.Utils.WorkspaceManager();
+            this.basesBtn = new DevExpress.XtraBars.BarSubItem();
+            this.nomenclatureShowBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.detailsShowBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.gostShowBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.unitsShowBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -168,6 +178,7 @@
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
+            ribbonPageUser = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -201,6 +212,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             this.SuspendLayout();
             // 
+            // ribbonPageUser
+            // 
+            ribbonPageUser.AllowMinimize = false;
+            ribbonPageUser.ItemLinks.Add(this.userNameBtn);
+            ribbonPageUser.Name = "ribbonPageUser";
+            ribbonPageUser.Text = "Пользователь";
+            // 
+            // userNameBtn
+            // 
+            this.userNameBtn.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.userNameBtn.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.userNameBtn.Caption = "Имя ";
+            this.userNameBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("userNameBtn.Glyph")));
+            this.userNameBtn.Id = 1;
+            this.userNameBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("userNameBtn.LargeGlyph")));
+            this.userNameBtn.LargeWidth = 100;
+            this.userNameBtn.Name = "userNameBtn";
+            this.userNameBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.userNameBtn.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
+            // 
             // ribbonControl1
             // 
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
@@ -228,10 +259,17 @@
             this.deleteBuyDetailBtn,
             this.addMaterialBtn,
             this.editMaterialBtn,
-            this.deleteMaterialBtn});
+            this.deleteMaterialBtn,
+            this.barWorkspaceMenuItem1,
+            this.basesBtn,
+            this.nomenclatureShowBtn,
+            this.detailsShowBtn,
+            this.gostShowBtn,
+            this.unitsShowBtn,
+            this.userNameBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbonControl1.MaxItemId = 25;
+            this.ribbonControl1.MaxItemId = 2;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -243,12 +281,13 @@
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbonControl1.Size = new System.Drawing.Size(1792, 95);
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
+            this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // endDateItem
             // 
             this.endDateItem.Caption = "по:";
             this.endDateItem.Edit = this.repositoryItemDateEdit1;
-            this.endDateItem.EditWidth = 100;
+            this.endDateItem.EditWidth = 102;
             this.endDateItem.Id = 2;
             this.endDateItem.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.endDateItem.ItemAppearance.Hovered.Options.UseFont = true;
@@ -616,9 +655,60 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.deleteMaterialBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteMaterialBtn_ItemClick);
             // 
+            // barWorkspaceMenuItem1
+            // 
+            this.barWorkspaceMenuItem1.Caption = "barWorkspaceMenuItem1";
+            this.barWorkspaceMenuItem1.Id = 25;
+            this.barWorkspaceMenuItem1.Name = "barWorkspaceMenuItem1";
+            this.barWorkspaceMenuItem1.WorkspaceManager = this.workspaceManager1;
+            // 
+            // workspaceManager1
+            // 
+            this.workspaceManager1.TargetControl = this;
+            this.workspaceManager1.TransitionType = pushTransition1;
+            // 
+            // basesBtn
+            // 
+            this.basesBtn.Caption = "Справочники";
+            this.basesBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("basesBtn.Glyph")));
+            this.basesBtn.Id = 26;
+            this.basesBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("basesBtn.LargeGlyph")));
+            this.basesBtn.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.nomenclatureShowBtn),
+            new DevExpress.XtraBars.LinkPersistInfo(this.detailsShowBtn),
+            new DevExpress.XtraBars.LinkPersistInfo(this.gostShowBtn),
+            new DevExpress.XtraBars.LinkPersistInfo(this.unitsShowBtn)});
+            this.basesBtn.Name = "basesBtn";
+            this.basesBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // nomenclatureShowBtn
+            // 
+            this.nomenclatureShowBtn.Caption = "Справочник номенклатур";
+            this.nomenclatureShowBtn.Id = 27;
+            this.nomenclatureShowBtn.Name = "nomenclatureShowBtn";
+            // 
+            // detailsShowBtn
+            // 
+            this.detailsShowBtn.Caption = "Справочник деталей";
+            this.detailsShowBtn.Id = 28;
+            this.detailsShowBtn.Name = "detailsShowBtn";
+            // 
+            // gostShowBtn
+            // 
+            this.gostShowBtn.Caption = "Справочник гостов";
+            this.gostShowBtn.Id = 29;
+            this.gostShowBtn.Name = "gostShowBtn";
+            // 
+            // unitsShowBtn
+            // 
+            this.unitsShowBtn.Caption = "Справочник единиц измерения";
+            this.unitsShowBtn.Id = 30;
+            this.unitsShowBtn.Name = "unitsShowBtn";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            ribbonPageUser,
             this.ribbonPageGroup1,
             this.ribbonPageGroup2,
             this.ribbonPageGroup3,
@@ -647,6 +737,7 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.mapAllTechProcessBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.mapRouteTechProcessBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.enableColorSpecificBtn);
+            this.ribbonPageGroup2.ItemLinks.Add(this.basesBtn);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Специфікація";
             // 
@@ -1543,7 +1634,7 @@
             // 
             this.specificGrid.ContextMenuStrip = this.mainMenu;
             this.specificGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.specificGrid.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.specificGrid.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.specificGrid.Location = new System.Drawing.Point(0, 95);
             this.specificGrid.MainView = this.specificGridView;
             this.specificGrid.Margin = new System.Windows.Forms.Padding(4);
@@ -1674,7 +1765,7 @@
             this.gridColumn1.OptionsColumn.AllowFocus = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 64;
+            this.gridColumn1.Width = 82;
             // 
             // gridColumn2
             // 
@@ -1682,7 +1773,7 @@
             this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn2.Caption = "Найменування";
+            this.gridColumn2.Caption = "Наименование";
             this.gridColumn2.FieldName = "NAME";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
@@ -1690,7 +1781,7 @@
             this.gridColumn2.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 266;
+            this.gridColumn2.Width = 442;
             // 
             // gridColumn3
             // 
@@ -1698,14 +1789,14 @@
             this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn3.Caption = "Кількість";
+            this.gridColumn3.Caption = "Количество";
             this.gridColumn3.FieldName = "QUANTITY";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.OptionsColumn.AllowFocus = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 208;
+            this.gridColumn3.Width = 141;
             // 
             // gridColumn4
             // 
@@ -1713,7 +1804,7 @@
             this.gridColumn4.AppearanceHeader.Options.UseFont = true;
             this.gridColumn4.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn4.Caption = "Креслення";
+            this.gridColumn4.Caption = "Чертеж";
             this.gridColumn4.FieldName = "DRAWING";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
@@ -1721,7 +1812,7 @@
             this.gridColumn4.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 208;
+            this.gridColumn4.Width = 767;
             // 
             // gridColumn5
             // 
@@ -1729,14 +1820,14 @@
             this.gridColumn5.AppearanceHeader.Options.UseFont = true;
             this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn5.Caption = "Вага";
+            this.gridColumn5.Caption = "Чистый вес";
             this.gridColumn5.FieldName = "WEIGHT";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.OptionsColumn.AllowFocus = false;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 208;
+            this.gridColumn5.Width = 100;
             // 
             // gridColumn6
             // 
@@ -1744,14 +1835,14 @@
             this.gridColumn6.AppearanceHeader.Options.UseFont = true;
             this.gridColumn6.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn6.Caption = "Дата створення";
+            this.gridColumn6.Caption = "Дата создания";
             this.gridColumn6.FieldName = "CREATION_DATE";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.OptionsColumn.AllowFocus = false;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
-            this.gridColumn6.Width = 208;
+            this.gridColumn6.Width = 132;
             // 
             // gridColumn7
             // 
@@ -1759,14 +1850,14 @@
             this.gridColumn7.AppearanceHeader.Options.UseFont = true;
             this.gridColumn7.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn7.Caption = "Укладач";
+            this.gridColumn7.Caption = "Составитель";
             this.gridColumn7.FieldName = "AUTHORIZATION_USERS_NAME";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.OptionsColumn.AllowFocus = false;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 6;
-            this.gridColumn7.Width = 221;
+            this.gridColumn7.Width = 110;
             // 
             // barBuyDetail
             // 
@@ -1953,12 +2044,11 @@
             this.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "MtsSpecificationOldFm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Довідник";
+            this.Text = "Метериальные спецификации";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MtsSpecificationOldFm_FormClosed);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MtsSpecificationOldFm_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
@@ -2137,5 +2227,13 @@
         private System.Windows.Forms.ToolStripMenuItem редагуватиЗаписToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem видалитиЗаписToolStripMenuItem2;
         private DevExpress.Utils.ImageCollection imageCollection;
+        private DevExpress.XtraBars.BarWorkspaceMenuItem barWorkspaceMenuItem1;
+        private DevExpress.Utils.WorkspaceManager workspaceManager1;
+        private DevExpress.XtraBars.BarSubItem basesBtn;
+        private DevExpress.XtraBars.BarButtonItem nomenclatureShowBtn;
+        private DevExpress.XtraBars.BarButtonItem detailsShowBtn;
+        private DevExpress.XtraBars.BarButtonItem gostShowBtn;
+        private DevExpress.XtraBars.BarButtonItem unitsShowBtn;
+        private DevExpress.XtraBars.BarButtonItem userNameBtn;
     }
 }

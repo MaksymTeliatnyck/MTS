@@ -207,6 +207,11 @@ namespace MTS.DAL.EF
         public DbSet<Log> Log { get; set; }
 
         //M
+        //FOR program MTS
+        public DbSet<MTS_AUTHORIZATION_USERS> MTS_AUTHORIZATION_USERS { get; set; }
+
+
+
         //public DbSet<MaterialsForAccountClothes> MaterialsForAccountClothes { get; set; }
 
         public DbSet<MtsAdditCalculations> MtsAdditCalculations { get; set; }
@@ -334,6 +339,7 @@ namespace MTS.DAL.EF
         {
             FbConnectionStringBuilder csb;
 
+
             csb = new FbConnectionStringBuilder()
             {
                 DataSource = "server-asup",
@@ -345,18 +351,20 @@ namespace MTS.DAL.EF
                 ConnectionLifeTime = 900
             };
 
-            #if DEBUG
+            //#if DEBUG
+
             csb = new FbConnectionStringBuilder()
             {
                 DataSource = "server-tfs",
-                Database = "TVM_DB",
+                Database = "MTS_DB_ELECTRO",
                 UserID = "sysdba",
                 Password = "masterkey",
                 Charset = "UTF8",
                 Pooling = true,
                 ConnectionLifeTime = 900
             };
-            #endif
+
+            //#endif
 
             Connection.ConnectionString = csb.ConnectionString;
             Database.SetInitializer<ERP_Context>(null); 

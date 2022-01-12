@@ -94,8 +94,8 @@ namespace MTS.GUI.MTS
                 designerEdit.EditValue = null;
                 assemblieParentEdit.EditValue = null;
                 ((MtsSpecificationsDTO)Item).DateAdded = DateTime.Today;
-                ((MtsSpecificationsDTO)Item).UserId = UserService.AuthorizatedUser.UserId;
-                ((MtsSpecificationsDTO)Item).UserName = UserService.AuthorizatedUser.Fio;
+                //((MtsSpecificationsDTO)Item).UserId = UserService.AuthorizatedUser.UserId;
+                //((MtsSpecificationsDTO)Item).UserName = UserService.AuthorizatedUser.Fio;
 
                 if (((MtsSpecificationsDTO)Item).ParentId == null)
                 {
@@ -154,7 +154,7 @@ namespace MTS.GUI.MTS
             try
             {
                 ((MtsAssembliesDTO)mtsAssembliesBS.Current).DesignerId = ((EmployeesInfoDTO)designerEdit.GetSelectedDataRow()).EmployeeID;
-                ((MtsAssembliesDTO)mtsAssembliesBS.Current).UserId = UserService.AuthorizatedUser.UserId;
+                //((MtsAssembliesDTO)mtsAssembliesBS.Current).UserId = UserService.AuthorizatedUser.UserId;
 
                 if (this.operation == Utils.Operation.Add)
                 {

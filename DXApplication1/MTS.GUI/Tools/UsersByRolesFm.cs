@@ -42,7 +42,7 @@ namespace MTS.GUI.Tools
         private void LoadRoles()
         {
             userService = Program.kernel.Get<IUserService>();
-            userRolesBS.DataSource = userService.GetUserRoles().ToList();
+            //userRolesBS.DataSource = userService.GetUserRoles().ToList();
             userRolesGrid.DataSource = userRolesBS;
 
             userRolesGridView.ExpandAllGroups();
@@ -59,11 +59,11 @@ namespace MTS.GUI.Tools
             {
                 userService = Program.kernel.Get<IUserService>();
 
-                usersList = userService.GetUsers().Where(m => m.UserRoleId == ((UserRolesDTO)userRolesBS.Current).RoleId).ToList();
+                //usersList = userService.GetUsers().Where(m => m.UserRoleId == ((UserRolesDTO)userRolesBS.Current).RoleId).ToList();
                 usersBS.DataSource = usersList;
                 usersGrid.DataSource = usersBS;
 
-                usersTasksList = userService.GetUserTasks(((UserRolesDTO)userRolesBS.Current).RoleId).ToList();
+                //usersTasksList = userService.GetUserTasks(((UserRolesDTO)userRolesBS.Current).RoleId).ToList();
                 userTasksBS.DataSource = usersTasksList;
                 userTasksGrid.DataSource = userTasksBS;
 
@@ -104,16 +104,16 @@ namespace MTS.GUI.Tools
         {
             if (userTasksBS.Count > 0)
             {
-                if (userService.GetUsers().Any(srch => srch.UserRoleId == ((UserTasksDTO)userTasksBS.Current).UserRoleId))
-                {
-                    MessageBox.Show("Перед видаленням пункту меню, необхідно видалити усіх користувачів!", "Підтвердження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+                //if (userService.GetUsers().Any(srch => srch.UserRoleId == ((UserTasksDTO)userTasksBS.Current).UserRoleId))
+                //{
+                //    MessageBox.Show("Перед видаленням пункту меню, необхідно видалити усіх користувачів!", "Підтвердження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    return;
+                //}
 
                 if (MessageBox.Show("Видалити?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (this.userService.UserTaskDeleteById(((UserTasksDTO)userTasksBS.Current).UserTaskId))
-                        this.userTasksBS.RemoveCurrent();
+                    //if (this.userService.UserTaskDeleteById(((UserTasksDTO)userTasksBS.Current).UserTaskId))
+                    //    this.userTasksBS.RemoveCurrent();
 
                     LoadData();
                 }
@@ -140,8 +140,8 @@ namespace MTS.GUI.Tools
             {
                 if (MessageBox.Show("Видалити?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (this.userService.UserDeleteById(((UsersInfoDTO)usersBS.Current).UserId))
-                        this.usersBS.RemoveCurrent();
+                    //if (this.userService.UserDeleteById(((UsersInfoDTO)usersBS.Current).UserId))
+                    //    this.usersBS.RemoveCurrent();
 
                     LoadData();
                 }
@@ -193,8 +193,8 @@ namespace MTS.GUI.Tools
             {
                 if (MessageBox.Show("Видалити?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (this.userService.UserRoleDeleteById(((UserRolesDTO)userRolesBS.Current).RoleId))
-                        this.userRolesBS.RemoveCurrent();
+                    //if (this.userService.UserRoleDeleteById(((UserRolesDTO)userRolesBS.Current).RoleId))
+                    //    this.userRolesBS.RemoveCurrent();
 
                     userService = Program.kernel.Get<IUserService>();
                     LoadRoles();

@@ -80,7 +80,7 @@ namespace MTS.GUI.OTK
                 ((WeldAttestationsDTO)weldAttestationsBS.Current).AttestationDate = DateTime.Now;
                 ((WeldAttestationsDTO)weldAttestationsBS.Current).BeginDate = DateTime.Now;
                 ((WeldAttestationsDTO)weldAttestationsBS.Current).EndDate = DateTime.Now;
-                ((WeldAttestationsDTO)weldAttestationsBS.Current).UserId = UserService.AuthorizatedUser.UserId;
+                //((WeldAttestationsDTO)weldAttestationsBS.Current).UserId = UserService.AuthorizatedUser.UserId;
             }
             
             ((WeldAttestationsDTO)weldAttestationsBS.Current).DateAdded = DateTime.Now;

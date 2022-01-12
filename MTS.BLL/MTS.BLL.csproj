@@ -59,6 +59,10 @@
     <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="MTS.DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MTS.DAL\bin\Debug\MTS.DAL.dll</HintPath>
+    </Reference>
     <Reference Include="Nager.Date, Version=1.22.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Nager.Date.1.22.3\lib\net45\Nager.Date.dll</HintPath>
       <Private>True</Private>
@@ -139,6 +143,7 @@
     <Compile Include="DTO\ModelsDTO\ExpenditureStoreHouseDTO.cs" />
     <Compile Include="DTO\ModelsDTO\GetOSVkvartal_ForChessDTO.cs" />
     <Compile Include="DTO\ModelsDTO\LogDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MTS_AUTHORIZATION_USERS_DTO.cs" />
     <Compile Include="DTO\ModelsDTO\PaintingWorksDTO.cs" />
     <Compile Include="DTO\ReportsDTO\ContractorVatDTO.cs" />
     <Compile Include="DTO\ModelsDTO\AccessRightsDTO.cs" />
@@ -502,12 +507,6 @@
     <Compile Include="Services\UnitsService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\WeldStampsService.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MTS.DAL\MTS.DAL.csproj">
-      <Project>{933b3464-bba3-4fd1-9a94-a0f9936b5786}</Project>
-      <Name>MTS.DAL</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="NLog.config">

@@ -74,7 +74,7 @@ namespace MTS.GUI.BusinessTrips
                 ((BusinessTripsPrepaymentDTO)Item).Prepayment_Date = DateTime.Now;
                 ((BusinessTripsPrepaymentDTO)Item).EmployeesID = currentModel.EmployeesID;
                 ((BusinessTripsPrepaymentDTO)Item).Selected = false;
-                ((BusinessTripsPrepaymentDTO)Item).UserId = UserService.AuthorizatedUser.UserId;
+                //((BusinessTripsPrepaymentDTO)Item).UserId = UserService.AuthorizatedUser.UserId;
                 ((BusinessTripsPrepaymentDTO)Item).BusinessTripsDetailsID = currentModel.BusinessTripsDetailsID;       
             }
 

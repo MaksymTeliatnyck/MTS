@@ -69,6 +69,7 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.ordersGrid = new DevExpress.XtraGrid.GridControl();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.AddColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordersGridView = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
             this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.vendorSrnCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -121,7 +122,6 @@
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::MTS.GUI.WaitForm1), true, true);
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.AddColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -187,7 +187,7 @@
             this.repositoryItemMonth2});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
             this.ribbonControl.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
-            this.ribbonControl.Size = new System.Drawing.Size(1427, 95);
+            this.ribbonControl.Size = new System.Drawing.Size(1427, 93);
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // barStaticItem1
@@ -590,11 +590,11 @@
             // 
             this.splitContainerControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl.Horizontal = false;
-            this.splitContainerControl.Location = new System.Drawing.Point(0, 95);
+            this.splitContainerControl.Location = new System.Drawing.Point(0, 93);
             this.splitContainerControl.Name = "splitContainerControl";
             this.splitContainerControl.Panel1.Controls.Add(this.groupControl1);
             this.splitContainerControl.Panel2.Controls.Add(this.groupControl2);
-            this.splitContainerControl.Size = new System.Drawing.Size(1427, 605);
+            this.splitContainerControl.Size = new System.Drawing.Size(1427, 607);
             this.splitContainerControl.SplitterPosition = 273;
             this.splitContainerControl.TabIndex = 2;
             // 
@@ -616,7 +616,7 @@
             // 
             this.ordersGrid.ContextMenuStrip = this.contextMenuStrip;
             this.ordersGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ordersGrid.Location = new System.Drawing.Point(2, 20);
+            this.ordersGrid.Location = new System.Drawing.Point(2, 21);
             this.ordersGrid.MainView = this.ordersGridView;
             this.ordersGrid.Name = "ordersGrid";
             this.ordersGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -624,7 +624,7 @@
             this.transportInvoiceRepository,
             this.correctionRepository,
             this.checkRepository});
-            this.ordersGrid.Size = new System.Drawing.Size(1423, 251);
+            this.ordersGrid.Size = new System.Drawing.Size(1423, 250);
             this.ordersGrid.TabIndex = 0;
             this.ordersGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.ordersGridView});
@@ -634,9 +634,17 @@
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AddColorToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(200, 48);
+            this.contextMenuStrip.Size = new System.Drawing.Size(200, 26);
             this.contextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip_Opening);
             this.contextMenuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip_ItemClicked);
+            // 
+            // AddColorToolStripMenuItem
+            // 
+            this.AddColorToolStripMenuItem.Image = global::MTS.GUI.Accounting.Resources.paint;
+            this.AddColorToolStripMenuItem.Name = "AddColorToolStripMenuItem";
+            this.AddColorToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.AddColorToolStripMenuItem.Text = "Додати колір в палітру";
+            this.AddColorToolStripMenuItem.Click += new System.EventHandler(this.AddColorToolStripMenuItem_Click);
             // 
             // ordersGridView
             // 
@@ -1140,7 +1148,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1427, 327);
+            this.groupControl2.Size = new System.Drawing.Size(1427, 328);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Матеріали";
             // 
@@ -1148,7 +1156,7 @@
             // 
             this.receiptsGrid.ContextMenuStrip = this.contextMenuStrip;
             this.receiptsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.receiptsGrid.Location = new System.Drawing.Point(2, 20);
+            this.receiptsGrid.Location = new System.Drawing.Point(2, 21);
             this.receiptsGrid.MainView = this.receiptsGridView;
             this.receiptsGrid.MenuManager = this.ribbonControl;
             this.receiptsGrid.Name = "receiptsGrid";
@@ -1376,14 +1384,6 @@
             this.imageCollection.Images.SetKeyName(0, "if_lock.png");
             this.imageCollection.Images.SetKeyName(1, "if_lock_open.png");
             // 
-            // AddColorToolStripMenuItem
-            // 
-            this.AddColorToolStripMenuItem.Image = global::MTS.GUI.Accounting.Resources.paint;
-            this.AddColorToolStripMenuItem.Name = "AddColorToolStripMenuItem";
-            this.AddColorToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.AddColorToolStripMenuItem.Text = "Додати колір в палітру";
-            this.AddColorToolStripMenuItem.Click += new System.EventHandler(this.AddColorToolStripMenuItem_Click);
-            // 
             // AccountingOrdersFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1393,6 +1393,7 @@
             this.Controls.Add(this.ribbonControl);
             this.Name = "AccountingOrdersFm";
             this.Text = "AccountingOrdersFm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AccountingOrdersFm_FormClosed);
             this.Load += new System.EventHandler(this.AccountingOrdersFm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();

@@ -52,7 +52,7 @@ namespace MTS.GUI.Classifiers
          
 
 
-            tasksBS.DataSource = userService.GetTasksAll();
+            //tasksBS.DataSource = userService.GetTasksAll();
             modeGridLookUpEdit.Properties.DataSource = tasksBS;
             modeGridLookUpEdit.Properties.ValueMember = "TaskId";
             modeGridLookUpEdit.Properties.DisplayMember = "TaskCaption";

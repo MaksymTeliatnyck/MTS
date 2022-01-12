@@ -9,6 +9,7 @@ using Ninject;
 using MTS.BLL.Infrastructure;
 using DevExpress.XtraEditors.Controls;
 using System.Globalization;
+using MTS.GUI.Login;
 
 namespace MTS.GUI
 {
@@ -43,7 +44,7 @@ namespace MTS.GUI
             SkinManager.EnableFormSkins();
             try
             {
-                Application.Run(new MainTabFm());
+                Application.Run(new AuthFm());
             }
             catch (Exception ex)
             {

@@ -278,7 +278,7 @@ namespace MTS.BLL.Services
                               COMPILATION_DRAWINGS = mts.COMPILATION_DRAWINGS,
                               COMPILATION_NAMES = mts.COMPILATION_NAMES,
                               COMPILATION_QUANTITIES = mts.COMPILATION_QUANTITIES,
-                               SET_COLOR = mts.SET_COLOR
+                              SET_COLOR = mts.SET_COLOR
                           }).ToList();
                 
             return result;

@@ -712,7 +712,9 @@ namespace MTS.GUI.Accounting
             }
         }
 
-
-   
+        private void AccountingOrdersFm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //DialogResult = DialogResult.Abort;
+        }
     }
 }

@@ -43,15 +43,15 @@ namespace MTS.GUI.MTS
         private BindingSource materialsSpecificBS = new BindingSource();
         private UserTasksDTO userTasksDTO;
 
-        public MtsSpecificationOldFm(UserTasksDTO userTasksDTO)
+        public MtsSpecificationOldFm(MTS_AUTHORIZATION_USERS_DTO mtsAthorizationUsersDTO)
         {
             InitializeComponent();
-            this.userTaskDTO = userTasksDTO;
+            userNameBtn.Caption = mtsAthorizationUsersDTO.NAME;
 
             startDateItem.EditValue = new DateTime(DateTime.Now.Year - 1, 6, 5);
             endDateItem.EditValue = DateTime.Now;
 
-            LoadData();
+            //LoadData();
         }
 
         private void LoadData()
@@ -838,6 +838,16 @@ namespace MTS.GUI.MTS
                     reportService.MapTechProcess(((MTSSpecificationssDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, true, quantitySummaryItems);
                 }
             }
+        }
+
+        private void MtsSpecificationOldFm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            DialogResult = DialogResult.Abort;
+        }
+
+        private void ribbonControl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -3,9 +3,6 @@ using MTS.BLL.DTO.ReportsDTO;
 using MTS.BLL.DTO.SelectedDTO;
 using System;
 using System.Collections.Generic;
-using MTS.DAL.Entities.Models;
-using MTS.DAL.Entities.QueryModels;
-using MTS.DAL.Entities.ReportModel;
 using MTS.BLL.DTO;
 
 namespace MTS.BLL.Interfaces

@@ -30,7 +30,7 @@ namespace MTS.GUI.Tools
 
             userService = Program.kernel.Get<IUserService>();
             _roleId = roleId;
-            source = userService.GetUsers().Where(s => s.UserRoleId != roleId && s.UserId == null).ToList();
+            //source = userService.GetUsers().Where(s => s.UserRoleId != roleId && s.UserId == null).ToList();
             usersByRolesBS.DataSource = source;
             usersByRolesGrid.DataSource = usersByRolesBS;
         }
@@ -50,7 +50,7 @@ namespace MTS.GUI.Tools
                 {
                     if (MessageBox.Show("Додати користувача(ів)?", "Збереження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        userService.UsersUpdateRange(usersList);
+                        //userService.UsersUpdateRange(usersList);
                         DialogResult = DialogResult.OK;
                         this.Close();
                     }

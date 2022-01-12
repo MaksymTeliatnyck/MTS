@@ -39,7 +39,7 @@ namespace MTS.GUI.Tools
             usersService = Program.kernel.Get<IUserService>();
             this.roleId = roleId;
             this.operation = operation;
-            source = (this.operation == Utils.Operation.Update ? listTasks : usersService.GetTasks(roleId).ToList());
+            //source = (this.operation == Utils.Operation.Update ? listTasks : usersService.GetTasks(roleId).ToList());
             tasksBS.DataSource = source;
             tasksTreeList.DataSource = tasksBS;
             tasksTreeList.KeyFieldName = "TaskId";
@@ -57,7 +57,7 @@ namespace MTS.GUI.Tools
                 if (MessageBox.Show("Сохранить?", "Сохранение", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     List<UserTasksDTO> userTasks = source.Select(s => new UserTasksDTO { UserRoleId = roleId, UserTaskId = (int)s.UserTaskId, TaskId = s.TaskId, AccessRightId = (s.AccessRight ? 1 : 2), PriceAttribute = s.PriceAttribute }).ToList();
-                    usersService.UserTasksUpdateRange(userTasks);
+                    //usersService.UserTasksUpdateRange(userTasks);
                     DialogResult = DialogResult.OK;
                     this.Close();
                 }
@@ -70,7 +70,7 @@ namespace MTS.GUI.Tools
                     if (MessageBox.Show("Сохранить?", "Сохранение", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         List<UserTasksDTO> userTasks = tasks.Select(s => new UserTasksDTO { UserRoleId = roleId, TaskId = s.TaskId, AccessRightId = (s.AccessRight ? 1 : 2), PriceAttribute = s.PriceAttribute }).ToList();
-                        usersService.UserTasksCreateRange(userTasks);
+                        //usersService.UserTasksCreateRange(userTasks);
                         DialogResult = DialogResult.OK;
                         this.Close();
                     }
