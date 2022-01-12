@@ -566,6 +566,7 @@ namespace MTS.GUI.Accounting
         private void contextMenuStrip_Opening(object sender, CancelEventArgs e)
         {
             e.Cancel = true;
+         
         }
 
         private void contextMenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
