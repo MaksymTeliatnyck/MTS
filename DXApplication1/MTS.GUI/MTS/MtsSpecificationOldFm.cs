@@ -108,22 +108,22 @@ namespace MTS.GUI.MTS
         {
 
             mtsService = Program.kernel.Get<IMtsSpecificationsService>();
-            MTSSpecificationssDTO update = (MTSSpecificationssDTO)specificBS.Current;
+            MTSSpecificationsDTO update = (MTSSpecificationsDTO)specificBS.Current;
             int rowHandle = specificGridView.FocusedRowHandle - 1;
 
             
 
             specificGridView.BeginDataUpdate();
 
-            if (((MTSSpecificationssDTO)specificBS.Current).SET_COLOR == 0)
+            if (((MTSSpecificationsDTO)specificBS.Current).SET_COLOR == 0)
             {
-                ((MTSSpecificationssDTO)specificBS.Current).SET_COLOR = 1;
-                mtsService.MTSSpecificationUpdate((MTSSpecificationssDTO)specificBS.Current);
+                ((MTSSpecificationsDTO)specificBS.Current).SET_COLOR = 1;
+                mtsService.MTSSpecificationUpdate((MTSSpecificationsDTO)specificBS.Current);
             }
             else
             {
-                ((MTSSpecificationssDTO)specificBS.Current).SET_COLOR = 0;
-                mtsService.MTSSpecificationUpdate((MTSSpecificationssDTO)specificBS.Current);
+                ((MTSSpecificationsDTO)specificBS.Current).SET_COLOR = 0;
+                mtsService.MTSSpecificationUpdate((MTSSpecificationsDTO)specificBS.Current);
             }
 
             specificGridView.FocusedRowHandle = (specificGridView.IsValidRowHandle(rowHandle)) ? rowHandle : -1;
@@ -135,7 +135,7 @@ namespace MTS.GUI.MTS
         {
             // var model = (MTSSpecificationsDTO)specificGridView.GetRow(e.FocusedRowHandle) ?? null;
 
-            if (((MTSSpecificationssDTO)specificBS.Current).SET_COLOR == 1)
+            if (((MTSSpecificationsDTO)specificBS.Current).SET_COLOR == 1)
             {
                 enableColorSpecificBtn.LargeGlyph = imageCollection.Images[0];
                 enableColorSpecificBtn.Caption = "Зняти виділення";
@@ -151,9 +151,9 @@ namespace MTS.GUI.MTS
             }
             if (specificBS.Count > 0)
             {
-                LoadSpecific(((MTSSpecificationssDTO)specificBS.Current).ID);
-                LoadBuysDetalSpecific(((MTSSpecificationssDTO)specificBS.Current).ID);
-                LoadMaterialsSpecific(((MTSSpecificationssDTO)specificBS.Current).ID);
+                LoadSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
+                LoadBuysDetalSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
+                LoadMaterialsSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
 
             }
             else
@@ -182,13 +182,13 @@ namespace MTS.GUI.MTS
 
 
 
-        private void AddSpecification(Utils.Operation operation, MTSSpecificationssDTO model, UserTasksDTO userTaskDTO)
+        private void AddSpecification(Utils.Operation operation, MTSSpecificationsDTO model, UserTasksDTO userTaskDTO)
         {
             using (MtsSpecificationOldEditFm mtsSpecificationOldEditFm = new MtsSpecificationOldEditFm(operation, model, userTaskDTO))
             {
                 if (mtsSpecificationOldEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    MTSSpecificationssDTO return_Id = mtsSpecificationOldEditFm.Return();
+                    MTSSpecificationsDTO return_Id = mtsSpecificationOldEditFm.Return();
                     specificGridView.BeginDataUpdate();
                     LoadData();
                     specificGridView.EndDataUpdate();
@@ -196,13 +196,13 @@ namespace MTS.GUI.MTS
             }
         }
 
-        private void AddSpecificationDetails(MTSSpecificationssDTO model, Utils.Operation operation)
+        private void AddSpecificationDetails(MTSSpecificationsDTO model, Utils.Operation operation)
         {
             using (MtsSpecificationOldDetailsFm mtsSpecificationOldDetailsFm = new MtsSpecificationOldDetailsFm(model, operation))
             {
                 if (mtsSpecificationOldDetailsFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    MTSSpecificationssDTO return_Id = mtsSpecificationOldDetailsFm.Return();
+                    MTSSpecificationsDTO return_Id = mtsSpecificationOldDetailsFm.Return();
                     specificGridView.BeginDataUpdate();
                     LoadData();
                     specificGridView.EndDataUpdate();
@@ -217,7 +217,7 @@ namespace MTS.GUI.MTS
                 if (MessageBox.Show("Видалити запис?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     mtsService = Program.kernel.Get<IMtsSpecificationsService>();
-                    if (mtsService.MTSSpecificationDelete(((MTSSpecificationssDTO)specificBS.Current).ID))
+                    if (mtsService.MTSSpecificationDelete(((MTSSpecificationsDTO)specificBS.Current).ID))
                     {
                         int rowHandle = specificGridView.FocusedRowHandle - 1;
                         specificGridView.BeginDataUpdate();
@@ -250,7 +250,7 @@ namespace MTS.GUI.MTS
                             model.NOMENCLATURES_ID = selectNomenclature.ID;
                             model.GUAEGENAME = selectNomenclature.GUAGE;
                             model.NOMENCLATURESNAME = selectNomenclature.NAME;
-                            model.CHANGES = ((MTSSpecificationssDTO)specificBS.Current).SET_COLOR == 0 ? 0 : 1;
+                            model.CHANGES = ((MTSSpecificationsDTO)specificBS.Current).SET_COLOR == 0 ? 0 : 1;
 
                             using (MtsBuyDetailEditOldFm mtsBuyDetailEditOldFm = new MtsBuyDetailEditOldFm(operation, model))
                             //   DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model);
@@ -308,7 +308,7 @@ namespace MTS.GUI.MTS
                             model.NOMENCLATURES_ID = selectNomenclature.ID;
                             model.GUAGENAME = selectNomenclature.GUAGE;
                             model.NOMENCLATURESNAME = selectNomenclature.NAME;
-                            model.CHANGES = ((MTSSpecificationssDTO)specificBS.Current).SET_COLOR == 0 ? 0 : 1;
+                            model.CHANGES = ((MTSSpecificationsDTO)specificBS.Current).SET_COLOR == 0 ? 0 : 1;
 
                             using (MtsMaterialEditOldFm mtsMaterialEditOldFm = new MtsMaterialEditOldFm(operation, model))
                             //   DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model);
@@ -353,7 +353,7 @@ namespace MTS.GUI.MTS
         private void EditDetailSpecific(Utils.Operation operation, MTSDetailsDTO model)
         {
 
-            model.CHANGES = ((MTSSpecificationssDTO)specificBS.Current).SET_COLOR == 0 ? 0 : 1;
+            model.CHANGES = ((MTSSpecificationsDTO)specificBS.Current).SET_COLOR == 0 ? 0 : 1;
 
             using (MtsDetailsEditOldFm mtsDetailsEditOldFm = new MtsDetailsEditOldFm(operation, model))
             {
@@ -395,26 +395,26 @@ namespace MTS.GUI.MTS
 
         private void addSpecificBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            AddSpecification(Utils.Operation.Add, new MTSSpecificationssDTO(), userTaskDTO);
+            AddSpecification(Utils.Operation.Add, new MTSSpecificationsDTO(), userTaskDTO);
         }
         private void editSpecificBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (specificBS.Count > 0)
             {
-                MTSSpecificationssDTO model = new MTSSpecificationssDTO()
+                MTSSpecificationsDTO model = new MTSSpecificationsDTO()
                 {
-                    ID = ((MTSSpecificationssDTO)ItemSpecification).ID,
-                    AUTHORIZATION_USERS_ID = ((MTSSpecificationssDTO)ItemSpecification).AUTHORIZATION_USERS_ID,
-                    NAME = ((MTSSpecificationssDTO)ItemSpecification).NAME,
-                    QUANTITY = ((MTSSpecificationssDTO)ItemSpecification).QUANTITY,
-                    WEIGHT = ((MTSSpecificationssDTO)ItemSpecification).WEIGHT,
-                    CREATION_DATE = ((MTSSpecificationssDTO)ItemSpecification).CREATION_DATE,
-                    DRAWING = ((MTSSpecificationssDTO)ItemSpecification).DRAWING,
-                    AUTHORIZATION_USERS_NAME = ((MTSSpecificationssDTO)ItemSpecification).AUTHORIZATION_USERS_NAME
+                    ID = ((MTSSpecificationsDTO)ItemSpecification).ID,
+                    AUTHORIZATION_USERS_ID = ((MTSSpecificationsDTO)ItemSpecification).AUTHORIZATION_USERS_ID,
+                    NAME = ((MTSSpecificationsDTO)ItemSpecification).NAME,
+                    QUANTITY = ((MTSSpecificationsDTO)ItemSpecification).QUANTITY,
+                    WEIGHT = ((MTSSpecificationsDTO)ItemSpecification).WEIGHT,
+                    CREATION_DATE = ((MTSSpecificationsDTO)ItemSpecification).CREATION_DATE,
+                    DRAWING = ((MTSSpecificationsDTO)ItemSpecification).DRAWING,
+                    AUTHORIZATION_USERS_NAME = ((MTSSpecificationsDTO)ItemSpecification).AUTHORIZATION_USERS_NAME
                      
                      
                 };
-                AddSpecification(Utils.Operation.Update, (MTSSpecificationssDTO)model,userTaskDTO);
+                AddSpecification(Utils.Operation.Update, (MTSSpecificationsDTO)model,userTaskDTO);
             }
             else MessageBox.Show("Помилка редагування специфікації! Створіть спочатку специфікацію!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
@@ -422,7 +422,7 @@ namespace MTS.GUI.MTS
 
         private void addAllSpeficBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            AddSpecificationDetails(new MTSSpecificationssDTO(), Utils.Operation.Add);
+            AddSpecificationDetails(new MTSSpecificationsDTO(), Utils.Operation.Add);
         }
 
         private void deleteSpecificBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -444,7 +444,7 @@ namespace MTS.GUI.MTS
 
                 detalsSpecificGridView.PostEditor();
                 detalsSpecificGridView.BeginDataUpdate();
-                LoadSpecific(((MTSSpecificationssDTO)specificBS.Current).ID);
+                LoadSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
                 detalsSpecificGridView.EndDataUpdate();
             }
         }
@@ -459,7 +459,7 @@ namespace MTS.GUI.MTS
 
                 buysDetalsSpecificGridView.PostEditor();
                 buysDetalsSpecificGridView.BeginDataUpdate();
-                LoadBuysDetalSpecific(((MTSSpecificationssDTO)specificBS.Current).ID);
+                LoadBuysDetalSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
                 buysDetalsSpecificGridView.EndDataUpdate();
             }
         }
@@ -470,7 +470,7 @@ namespace MTS.GUI.MTS
 
         private void addDetailBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            EditDetailSpecific(Utils.Operation.Add, new MTSDetailsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationssDTO)specificBS.Current).ID, PROCESSING_ID = 1 });
+            EditDetailSpecific(Utils.Operation.Add, new MTSDetailsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationsDTO)specificBS.Current).ID, PROCESSING_ID = 1 });
         }
 
         private void editDetailBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -517,7 +517,7 @@ namespace MTS.GUI.MTS
 
         private void addDetailBarBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            EditDetailSpecific(Utils.Operation.Add, new MTSDetailsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationssDTO)specificBS.Current).ID, PROCESSING_ID = 1 });
+            EditDetailSpecific(Utils.Operation.Add, new MTSDetailsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationsDTO)specificBS.Current).ID, PROCESSING_ID = 1 });
         }
 
         private void editDetailBarBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -535,7 +535,7 @@ namespace MTS.GUI.MTS
 
         private void додатиЗаписToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EditDetailSpecific(Utils.Operation.Add, new MTSDetailsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationssDTO)specificBS.Current).ID, PROCESSING_ID = 1 });
+            EditDetailSpecific(Utils.Operation.Add, new MTSDetailsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationsDTO)specificBS.Current).ID, PROCESSING_ID = 1 });
         }
 
         private void редагуватиЗаписToolStripMenuItem_Click(object sender, EventArgs e)
@@ -557,7 +557,7 @@ namespace MTS.GUI.MTS
 
         private void addBuyDetailBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            EditBuyDetail(Utils.Operation.Add, new MTSPurchasedProductsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationssDTO)specificBS.Current).ID });
+            EditBuyDetail(Utils.Operation.Add, new MTSPurchasedProductsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationsDTO)specificBS.Current).ID });
         }
 
         private void editBuyDetailBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -573,7 +573,7 @@ namespace MTS.GUI.MTS
 
         private void addBuyDetailBarBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            EditBuyDetail(Utils.Operation.Add, new MTSPurchasedProductsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationssDTO)specificBS.Current).ID });
+            EditBuyDetail(Utils.Operation.Add, new MTSPurchasedProductsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationsDTO)specificBS.Current).ID });
         }
 
         private void editBuyDetailBarBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -589,7 +589,7 @@ namespace MTS.GUI.MTS
 
         private void додатиЗаписToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            EditBuyDetail(Utils.Operation.Add, new MTSPurchasedProductsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationssDTO)specificBS.Current).ID });
+            EditBuyDetail(Utils.Operation.Add, new MTSPurchasedProductsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationsDTO)specificBS.Current).ID });
         }
 
         private void редагуватиЗаписToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -609,7 +609,7 @@ namespace MTS.GUI.MTS
 
         private void addMaterialBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            EditMaterial(Utils.Operation.Add, new MTSMaterialsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationssDTO)specificBS.Current).ID });
+            EditMaterial(Utils.Operation.Add, new MTSMaterialsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationsDTO)specificBS.Current).ID });
         }
 
         private void editMaterialBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -625,7 +625,7 @@ namespace MTS.GUI.MTS
 
         private void addMaterialDetailBarBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            EditMaterial(Utils.Operation.Add, new MTSMaterialsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationssDTO)specificBS.Current).ID });
+            EditMaterial(Utils.Operation.Add, new MTSMaterialsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationsDTO)specificBS.Current).ID });
         }
 
         private void editMaterialDetailBarBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -641,7 +641,7 @@ namespace MTS.GUI.MTS
 
         private void додатиЗаписToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            EditMaterial(Utils.Operation.Add, new MTSMaterialsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationssDTO)specificBS.Current).ID });
+            EditMaterial(Utils.Operation.Add, new MTSMaterialsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationsDTO)specificBS.Current).ID });
         }
 
         private void редагуватиЗаписToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -665,7 +665,7 @@ namespace MTS.GUI.MTS
             {
                 reportService = Program.kernel.Get<IReportService>();
 
-                reportService.PrintMapRouteTechProcess(((MTSSpecificationssDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource);
+                reportService.PrintMapRouteTechProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource);
             }
         }
 
@@ -673,7 +673,7 @@ namespace MTS.GUI.MTS
         {
             //SpecificationProcess(MTSSpecificationsDTO mtsSpecification, List<MTSDetailsDTO> mtsDetailsList, List<MTSPurchasedProductsDTO> mtsBuyDetailsList, List<MTSMaterialsDTO> mtsMaterialsList);
             reportService = Program.kernel.Get<IReportService>();
-            reportService.SpecificationProcess(((MTSSpecificationssDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, (List<MTSPurchasedProductsDTO>)byusDetalsSpecificBS.DataSource, (List<MTSMaterialsDTO>)materialsSpecificBS.DataSource);
+            reportService.SpecificationProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, (List<MTSPurchasedProductsDTO>)byusDetalsSpecificBS.DataSource, (List<MTSMaterialsDTO>)materialsSpecificBS.DataSource);
         }
 
 
@@ -694,13 +694,13 @@ namespace MTS.GUI.MTS
                 switch (xtraTabControl1.SelectedTabPageIndex)
                 {
                     case 0:
-                        EditDetailSpecific(Utils.Operation.Add, new MTSDetailsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationssDTO)specificBS.Current).ID, PROCESSING_ID = 1 });
+                        EditDetailSpecific(Utils.Operation.Add, new MTSDetailsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationsDTO)specificBS.Current).ID, PROCESSING_ID = 1 });
                         break;
                     case 1:
-                        EditBuyDetail(Utils.Operation.Add, new MTSPurchasedProductsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationssDTO)specificBS.Current).ID });
+                        EditBuyDetail(Utils.Operation.Add, new MTSPurchasedProductsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationsDTO)specificBS.Current).ID });
                         break;
                     case 2:
-                        EditMaterial(Utils.Operation.Add, new MTSMaterialsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationssDTO)specificBS.Current).ID });
+                        EditMaterial(Utils.Operation.Add, new MTSMaterialsDTO() { SPECIFICATIONS_ID = ((MTSSpecificationsDTO)specificBS.Current).ID });
                         break;
                     default:
                         break;
@@ -710,29 +710,29 @@ namespace MTS.GUI.MTS
 
         private void добавитьСпецификациюToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddSpecification(Utils.Operation.Add, new MTSSpecificationssDTO(),userTaskDTO);
+            AddSpecification(Utils.Operation.Add, new MTSSpecificationsDTO(),userTaskDTO);
         }
 
         private void добавитьСводнуюСпецификациюToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddSpecificationDetails(new MTSSpecificationssDTO(), Utils.Operation.Add);
+            AddSpecificationDetails(new MTSSpecificationsDTO(), Utils.Operation.Add);
         }
 
         private void редагуватиСпецифікаціюToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (specificBS.Count > 0)
             {
-                MTSSpecificationssDTO model = new MTSSpecificationssDTO()
+                MTSSpecificationsDTO model = new MTSSpecificationsDTO()
                 {
-                    ID = ((MTSSpecificationssDTO)ItemSpecification).ID,
-                    AUTHORIZATION_USERS_ID = ((MTSSpecificationssDTO)ItemSpecification).AUTHORIZATION_USERS_ID,
-                    NAME = ((MTSSpecificationssDTO)ItemSpecification).NAME,
-                    QUANTITY = ((MTSSpecificationssDTO)ItemSpecification).QUANTITY,
-                    WEIGHT = ((MTSSpecificationssDTO)ItemSpecification).WEIGHT,
-                    CREATION_DATE = ((MTSSpecificationssDTO)ItemSpecification).CREATION_DATE,
-                    DRAWING = ((MTSSpecificationssDTO)ItemSpecification).DRAWING
+                    ID = ((MTSSpecificationsDTO)ItemSpecification).ID,
+                    AUTHORIZATION_USERS_ID = ((MTSSpecificationsDTO)ItemSpecification).AUTHORIZATION_USERS_ID,
+                    NAME = ((MTSSpecificationsDTO)ItemSpecification).NAME,
+                    QUANTITY = ((MTSSpecificationsDTO)ItemSpecification).QUANTITY,
+                    WEIGHT = ((MTSSpecificationsDTO)ItemSpecification).WEIGHT,
+                    CREATION_DATE = ((MTSSpecificationsDTO)ItemSpecification).CREATION_DATE,
+                    DRAWING = ((MTSSpecificationsDTO)ItemSpecification).DRAWING
                 };
-                AddSpecification(Utils.Operation.Update, (MTSSpecificationssDTO)model,userTaskDTO);
+                AddSpecification(Utils.Operation.Update, (MTSSpecificationsDTO)model,userTaskDTO);
             }
             else MessageBox.Show("Помилка редагування специфікації! Створіть спочатку специфікацію!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
@@ -747,13 +747,13 @@ namespace MTS.GUI.MTS
         private void відобразитиСпецифікаціюToolStripMenuItem_Click(object sender, EventArgs e)
         {
             reportService = Program.kernel.Get<IReportService>();
-            reportService.SpecificationProcess(((MTSSpecificationssDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, (List<MTSPurchasedProductsDTO>)byusDetalsSpecificBS.DataSource, (List<MTSMaterialsDTO>)materialsSpecificBS.DataSource);
+            reportService.SpecificationProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, (List<MTSPurchasedProductsDTO>)byusDetalsSpecificBS.DataSource, (List<MTSMaterialsDTO>)materialsSpecificBS.DataSource);
         }
 
         private void mapTechProcessBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
             reportService = Program.kernel.Get<IReportService>();
-            reportService.MapTechProcess(((MTSSpecificationssDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, false);
+            reportService.MapTechProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, false);
 
         }
 
@@ -768,7 +768,7 @@ namespace MTS.GUI.MTS
         {
             if (e.RowHandle > -1)
             {
-                MTSSpecificationssDTO item = (MTSSpecificationssDTO)specificGridView.GetRow(e.RowHandle);
+                MTSSpecificationsDTO item = (MTSSpecificationsDTO)specificGridView.GetRow(e.RowHandle);
                 if (item.SET_COLOR == 1)
                     e.Appearance.BackColor = Color.PaleTurquoise;
             }
@@ -824,7 +824,7 @@ namespace MTS.GUI.MTS
         private void mapTechProcessByDateBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
             reportService = Program.kernel.Get<IReportService>();
-            reportService.MapTechProcess(((MTSSpecificationssDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, true);
+            reportService.MapTechProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, true);
         }
 
         private void mapAllTechProcessBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -835,7 +835,7 @@ namespace MTS.GUI.MTS
                 {
                     int quantitySummaryItems = mtsSpecificationQuantityOldEditFm.Return();
                     reportService = Program.kernel.Get<IReportService>();
-                    reportService.MapTechProcess(((MTSSpecificationssDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, true, quantitySummaryItems);
+                    reportService.MapTechProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, true, quantitySummaryItems);
                 }
             }
         }

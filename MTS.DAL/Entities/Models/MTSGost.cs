@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MTS.DAL.Entities.Models
 {
-    public class MTSGost
+    public class MTS_Gost
     {
         [Key]
         public int ID { get; set; }

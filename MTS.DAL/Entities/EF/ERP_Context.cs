@@ -235,14 +235,14 @@ namespace MTS.DAL.EF
         public DbSet<MSTrialBalanceByAccounts> MSTrialBalanceByAccounts { get;set; }
         
 
-        public DbSet<MTSSpecificationss> MTSSpecificationsOld { get; set; }
-        public DbSet<MTSAuthorizationUsers> MTSAuthorizationUsers { get; set; }
-        public DbSet<MTSCreateDetals> MTSCreateDetals { get; set; }
-        public DbSet<MTSGost> MTSGost { get; set; }
+        public DbSet<MTSSpecifications> MTSSpecificationsOld { get; set; }
+        public DbSet<MTS_Authorization_Users> MTSAuthorizationUsers { get; set; }
+        public DbSet<MTS_Create_Detals> MTSCreateDetals { get; set; }
+        public DbSet<MTS_Gost> MTSGost { get; set; }
         public DbSet<MTSNomenclaturesOld> MTSNomenclaturesOld { get; set; }
         public DbSet<MTSGuages> MTSGuages { get; set; }
         public DbSet<MTSDetalsProcessing> MTSDetailsProcessing { get; set; }
-        public DbSet<MTSDetails> MTSDetails { get; set; }
+        public DbSet<MTS_Details> MTSDetails { get; set; }
         public DbSet<MTSMeasure> MTSMeasure { get; set; }
         public DbSet<MTSPurchasedProducts> MTSPurchasedProducts { get; set; }
         public DbSet<MTSNomenclatureGroupsOld> MTSNomenclatureGroupsOld { get; set; }
