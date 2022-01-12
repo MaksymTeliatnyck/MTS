@@ -34,7 +34,7 @@ namespace MTS.GUI.MTS
             }
         }
 
-        public DirectoryBuyDetailEditOldFm(MTSNomenclaturesOldDTO model)
+        public DirectoryBuyDetailEditOldFm(MTSNomenclaturesDTO model)
         {
             InitializeComponent();
            // this.operation = operation;
@@ -53,7 +53,7 @@ namespace MTS.GUI.MTS
             else 
             {
                 nomenclatureGrid.DataSource = nomenclatureBS;
-                LoadNomenclature(((MTSNomenclatureGroupsOldDTO)nomenclatureGroupsBS.Current).ID);
+                LoadNomenclature(((MTSNomenclatureGroupsDTO)nomenclatureGroupsBS.Current).ID);
             }
 
         }
@@ -65,16 +65,16 @@ namespace MTS.GUI.MTS
 
 
         }
-        public MTSNomenclaturesOldDTO Returnl()
+        public MTSNomenclaturesDTO Returnl()
         {
-            return ((MTSNomenclaturesOldDTO)Item);
+            return ((MTSNomenclaturesDTO)Item);
         }
 
         
 
-        public MTSNomenclatureGroupsOldDTO Return()
+        public MTSNomenclatureGroupsDTO Return()
         {
-            return ((MTSNomenclatureGroupsOldDTO)Item);
+            return ((MTSNomenclatureGroupsDTO)Item);
         }
 
         //private void AddBuyMaterial(Utils.Operation operation, MTSNomenclaturesOldDTO buyDetails)
@@ -94,14 +94,14 @@ namespace MTS.GUI.MTS
         private void nomenclatureGroupsGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             if (nomenclatureGroupsBS.Count > 0)
-                LoadNomenclature(((MTSNomenclatureGroupsOldDTO)nomenclatureGroupsBS.Current).ID);
+                LoadNomenclature(((MTSNomenclatureGroupsDTO)nomenclatureGroupsBS.Current).ID);
         }
         
         private void nomenclatureGridView_DoubleClick(object sender, EventArgs e)
         {
          //   this.Item.EndEdit();
-            MTSNomenclaturesOldDTO item = (MTSNomenclaturesOldDTO)nomenclatureBS.Current;   
-            MTSNomenclaturesOldDTO model = new MTSNomenclaturesOldDTO()
+            MTSNomenclaturesDTO item = (MTSNomenclaturesDTO)nomenclatureBS.Current;   
+            MTSNomenclaturesDTO model = new MTSNomenclaturesDTO()
             {
                 ID = item.ID,
                 NAME = item.NAME,

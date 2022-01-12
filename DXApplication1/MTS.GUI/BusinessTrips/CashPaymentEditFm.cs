@@ -57,7 +57,7 @@ namespace MTS.GUI.BusinessTrips
             accountEdit.Properties.NullText = "Немає данних";
 
             customerOrdersEdit.DataBindings.Add("EditValue", cashPaymentBS, "CustomerOrderId", true, DataSourceUpdateMode.OnPropertyChanged);
-            customerOrdersEdit.Properties.DataSource = customerOrdersService.GetCustomerOrdersFull();
+            //customerOrdersEdit.Properties.DataSource = customerOrdersService.GetCustomerOrdersFull();
             customerOrdersEdit.Properties.ValueMember = "Id";
             customerOrdersEdit.Properties.DisplayMember = "OrderNumber";
             customerOrdersEdit.Properties.NullText = "Немає данних";

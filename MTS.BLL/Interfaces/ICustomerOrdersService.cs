@@ -7,20 +7,19 @@ namespace MTS.BLL.Interfaces
 {
      public interface ICustomerOrdersService
     {
-         IEnumerable<CustomerOrdersDTO> GetCustomerOrders();
+
          bool CheckCustomerOrderEnable(int? customerOrderId);
-         IEnumerable<CustomerOrdersDTO> GetCustomerOrdersFull();
-         CustomerOrdersDTO GetCustomerOrdersFullById(int customerOrderId);
-         IEnumerable<CustomerOrdersDTO> GetCustomerOrdersByPeriod(DateTime beginDate, DateTime endDate, bool money = true);
-         IEnumerable<CustomerOrdersDTO> GetCustomerOrdersWithoutSign();
+
+
+
          IEnumerable<CustomerOrderSpecificationsDTO> GetCustomerOrderSpecificationsByOrderId(int orderId);
          IEnumerable<CustomerOrderSpecificationsDTO> GetCustomerOrderSpecificationsByOrderList(List<CustomerOrdersForCWBDTO> orderList);
-         IEnumerable<CustomerOrderAssembliesDTO> GetCustomerOrderAssembliesBySpecId(int specId);
+
          IEnumerable<ContractPaymentsDTO> GetContractPaymentsByPeriod(DateTime beginDate, DateTime endDate);
          IEnumerable<CustomerOrderPrepaymentsDTO> GetCustomerOrderPrepaymentsById(int customerOrderId);
          IEnumerable<CustomerOrderPaymentsDTO> GetCustomerOrderPaymentsById(int customerOrderId);
          IEnumerable<CustomerOrderForWeldingDTO> GetCustomerOrderForWelding(DateTime beginDate, DateTime endDate);
-         IEnumerable<CustomerOrdersDTO> GetCustomerOrdersFullWithReceipt();
+
          
 
          int CustomerOrderCreate(CustomerOrdersDTO customerOrder);

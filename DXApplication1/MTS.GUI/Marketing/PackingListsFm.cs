@@ -299,7 +299,7 @@ namespace MTS.BLL.Marketing
         private void LoadCustomerOrderAssembliesData(int specId)
         {
             customerOrdersService = Program.kernel.Get<ICustomerOrdersService>();
-            customerOrdersAssemblyBS.DataSource = customerOrdersService.GetCustomerOrderAssembliesBySpecId(specId);
+            //customerOrdersAssemblyBS.DataSource = customerOrdersService.GetCustomerOrderAssembliesBySpecId(specId);
             assembliesGrid.DataSource = customerOrdersAssemblyBS;
         }
 

@@ -199,14 +199,14 @@ namespace MTS.GUI.MTS
         }
 
 
-        private void AddDirectoryDetail(MTSNomenclaturesOldDTO model)
+        private void AddDirectoryDetail(MTSNomenclaturesDTO model)
         {
             using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model))
             //   DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model);
             {
                 if (directoryBuyDetailEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    MTSNomenclaturesOldDTO r = directoryBuyDetailEditOldFm.Returnl();
+                    MTSNomenclaturesDTO r = directoryBuyDetailEditOldFm.Returnl();
 
                     //MTSNomenclatureGroupsOldDTO return_Id = directoryBuyDetailEditOldFm.Return();
                     nomenclatureNameEdit.EditValue = r.NAME;
@@ -220,7 +220,7 @@ namespace MTS.GUI.MTS
 
         private void directoryBuyDetailBtn_Click(object sender, EventArgs e)
         {
-            AddDirectoryDetail(new MTSNomenclaturesOldDTO());
+            AddDirectoryDetail(new MTSNomenclaturesDTO());
         }
 
         private void numberDrawingEdit_KeyPress(object sender, KeyPressEventArgs e)

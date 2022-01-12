@@ -43,7 +43,7 @@ namespace MTS.GUI.Classifiers
             }
         }
 
-        public MtsNomenclatureEditFm(Utils.Operation operation, MtsNomenclaturesDTO model)
+        public MtsNomenclatureEditFm(Utils.Operation operation, MtsNomenclaturessDTO model)
         {
             InitializeComponent();
             LoadData();
@@ -74,9 +74,9 @@ namespace MTS.GUI.Classifiers
 
             if (this.operation == Utils.Operation.Update)
             {
-                unitsEdit.EditValue = ((MtsNomenclaturesDTO)Item).UnitId;
-                gostsEdit.EditValue = ((MtsNomenclaturesDTO)Item).MtsGostId;
-                nomenclatureGroupsEdit.EditValue = ((MtsNomenclaturesDTO)Item).MtsNomenclatureGroupId;
+                unitsEdit.EditValue = ((MtsNomenclaturessDTO)Item).UnitId;
+                gostsEdit.EditValue = ((MtsNomenclaturessDTO)Item).MtsGostId;
+                nomenclatureGroupsEdit.EditValue = ((MtsNomenclaturessDTO)Item).MtsNomenclatureGroupId;
             }
             else
             {
@@ -100,30 +100,30 @@ namespace MTS.GUI.Classifiers
 
             gostsBS.DataSource = mtsNomenclaturesService.GetGosts();
             nomenclatureGroupsBS.DataSource = mtsNomenclaturesService.GetNomenclatureGroups();
-            unitsBS.DataSource = mtsNomenclaturesService.GetUnits();
+            //unitsBS.DataSource = mtsNomenclaturesService.GetUnits();
         }
 
         public long Return()
         {
-            return ((MtsNomenclaturesDTO)Item).Id;
+            return ((MtsNomenclaturessDTO)Item).Id;
         }
 
         private void SaveNomenclature()
         {
             this.Item.EndEdit();
 
-            ((MtsNomenclaturesDTO)Item).MtsGostId = ((MtsGostsDTO)gostsEdit.GetSelectedDataRow()).Id;
-            ((MtsNomenclaturesDTO)Item).UnitId = ((UnitsDTO)unitsEdit.GetSelectedDataRow()).UnitId;
-            ((MtsNomenclaturesDTO)Item).MtsNomenclatureGroupId = ((MtsNomenclatureGroupsDTO)nomenclatureGroupsEdit.GetSelectedDataRow()).Id;
+            ((MtsNomenclaturessDTO)Item).MtsGostId = ((MtsGostsDTO)gostsEdit.GetSelectedDataRow()).Id;
+            ((MtsNomenclaturessDTO)Item).UnitId = ((UnitsDTO)unitsEdit.GetSelectedDataRow()).UnitId;
+            ((MtsNomenclaturessDTO)Item).MtsNomenclatureGroupId = ((MtsNomenclatureGroupssDTO)nomenclatureGroupsEdit.GetSelectedDataRow()).Id;
 
-            if (this.operation == Utils.Operation.Add)
-            {
-                ((MtsNomenclaturesDTO)Item).Id = mtsNomenclaturesService.NomenclarureCreate((MtsNomenclaturesDTO)mtsNomenclaturesBS.Current);
-            }
-            else
-            {
-                mtsNomenclaturesService.NomenclarureUpdate(((MtsNomenclaturesDTO)mtsNomenclaturesBS.Current));
-            }
+            //if (this.operation == Utils.Operation.Add)
+            //{
+            //    ((MtsNomenclaturessDTO)Item).Id = mtsNomenclaturesService.NomenclarureCreate((MtsNomenclaturessDTO)mtsNomenclaturesBS.Current);
+            //}
+            //else
+            //{
+            //    mtsNomenclaturesService.NomenclarureUpdate(((MtsNomenclaturessDTO)mtsNomenclaturesBS.Current));
+            //}
 
             DialogResult = DialogResult.OK;
             this.Close();
@@ -227,13 +227,13 @@ namespace MTS.GUI.Classifiers
             {
                 case 1: //ДОБАВИТЬ
                     {
-                        new MtsNomenclatureGroupEditFm(Utils.Operation.Add, new MtsNomenclatureGroupsDTO()).ShowDialog();
+                        new MtsNomenclatureGroupEditFm(Utils.Operation.Add, new MtsNomenclatureGroupssDTO()).ShowDialog();
                         LoadData();
                         break;
                     }
                 case 2://РЕДАКТИРОВАТЬ
                     {
-                        new MtsNomenclatureGroupEditFm(Utils.Operation.Update, (MtsNomenclatureGroupsDTO)nomenclatureGroupsEdit.GetSelectedDataRow()).ShowDialog();
+                        new MtsNomenclatureGroupEditFm(Utils.Operation.Update, (MtsNomenclatureGroupssDTO)nomenclatureGroupsEdit.GetSelectedDataRow()).ShowDialog();
                         LoadData();
                         break;
                     }
@@ -243,7 +243,7 @@ namespace MTS.GUI.Classifiers
                         {
                             if (MessageBox.Show("Видалити?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
-                                mtsNomenclaturesService.NomenclarureGroupDelete(((MtsNomenclatureGroupsDTO)nomenclatureGroupsEdit.GetSelectedDataRow()).Id);
+                                mtsNomenclaturesService.NomenclarureGroupDelete(((MtsNomenclatureGroupssDTO)nomenclatureGroupsEdit.GetSelectedDataRow()).Id);
                                 LoadData();
                                 nomenclatureGroupsEdit.EditValue = null;
                                 nomenclatureGroupsEdit.Properties.NullText = "Немає данних";

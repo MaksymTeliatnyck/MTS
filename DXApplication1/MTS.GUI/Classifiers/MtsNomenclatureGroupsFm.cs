@@ -46,7 +46,7 @@ namespace MTS.GUI.Classifiers
 
             splashScreenManager.ShowWaitForm();
             mtsNomenclaturesService = Program.kernel.Get<IMtsNomenclaturesService>();
-            var mtsNomenclatureGroups = new BindingList<MtsNomenclatureGroupsDTO>(mtsNomenclaturesService.GetNomenclatureGroups().ToList());
+            var mtsNomenclatureGroups = new BindingList<MtsNomenclatureGroupssDTO>(mtsNomenclaturesService.GetNomenclatureGroups().ToList());
             mtsNomenclatureGroupsBS.DataSource = mtsNomenclatureGroups;
             mtsNomenclatureGroupsGrid.DataSource = mtsNomenclatureGroupsBS;
 
@@ -62,7 +62,7 @@ namespace MTS.GUI.Classifiers
 
         private void AddGroup()
         {
-            using (MtsNomenclatureGroupEditFm mtsNomenclatureGroupEditFm = new MtsNomenclatureGroupEditFm(Utils.Operation.Add, new MtsNomenclatureGroupsDTO()))
+            using (MtsNomenclatureGroupEditFm mtsNomenclatureGroupEditFm = new MtsNomenclatureGroupEditFm(Utils.Operation.Add, new MtsNomenclatureGroupssDTO()))
             {
                 if (mtsNomenclatureGroupEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -81,7 +81,7 @@ namespace MTS.GUI.Classifiers
         {
             if (mtsNomenclatureGroupsBS.Count != 0)
             {
-                using (MtsNomenclatureGroupEditFm mtsNomenclatureGroupEditFm = new MtsNomenclatureGroupEditFm(Utils.Operation.Update, mtsNomenclatureGroupsBS.Current as MtsNomenclatureGroupsDTO))
+                using (MtsNomenclatureGroupEditFm mtsNomenclatureGroupEditFm = new MtsNomenclatureGroupEditFm(Utils.Operation.Update, mtsNomenclatureGroupsBS.Current as MtsNomenclatureGroupssDTO))
                 {
                     if (mtsNomenclatureGroupEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
@@ -104,7 +104,7 @@ namespace MTS.GUI.Classifiers
                 if (MessageBox.Show("Видалити групу?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
-                    if (mtsNomenclaturesService.NomenclarureGroupDelete(((MtsNomenclatureGroupsDTO)mtsNomenclatureGroupsBS.Current).Id))
+                    if (mtsNomenclaturesService.NomenclarureGroupDelete(((MtsNomenclatureGroupssDTO)mtsNomenclatureGroupsBS.Current).Id))
                     {
                         int rowHandle = mtsNomenclatureGroupsGridView.FocusedRowHandle - 1;
                         mtsNomenclatureGroupsGridView.BeginDataUpdate();

@@ -72,7 +72,7 @@ namespace MTS.GUI.MTS
         private void LoadAssembliesData()
         {
             mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
-            assembliesBS.DataSource = mtsSpecificationsService.GetMtsAssemblies(DateTime.MinValue, DateTime.MaxValue);
+            //assembliesBS.DataSource = mtsSpecificationsService.GetMtsAssemblies(DateTime.MinValue, DateTime.MaxValue);
         }
 
         private void LoadPurchasedProductsDataBySpecId(long specId)
@@ -114,7 +114,7 @@ namespace MTS.GUI.MTS
 
             mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
 
-            specificationTreeList = mtsSpecificationsService.GetMtsSpecificationTreeInfoByRootId(id);
+           // specificationTreeList = mtsSpecificationsService.GetMtsSpecificationTreeInfoByRootId(id);
             specificationTreeBS.DataSource = specificationTreeList;
             specificationTree.DataSource = specificationTreeBS;
             specificationTree.KeyFieldName = "Id";
@@ -130,7 +130,7 @@ namespace MTS.GUI.MTS
             assembliesInfoVGrid.DataSource = assemblyInfoBS;
         }
 
-        private void EditMtsSpecification(Utils.Operation operation, MtsSpecificationsDTO model)
+        private void EditMtsSpecification(Utils.Operation operation, MtsSpecificationnsDTO model)
         {
             using (MtsSpecificationEditFm mtsSpecificationEditFm = new MtsSpecificationEditFm(operation, model))
             {
@@ -177,18 +177,18 @@ namespace MTS.GUI.MTS
             {
                 if (MessageBox.Show("Видалити проект?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (mtsSpecificationsService.DeleteSpecification(((MtsAssembliesInfoDTO)assemblyEdit.GetSelectedDataRow()).SpecificationId))
-                    {
-                        if (mtsSpecificationsService.DeleteAssembly(((MtsAssembliesInfoDTO)assemblyEdit.GetSelectedDataRow()).AssemblyId))
-                        {
-                            LoadAssembliesData();
-                            specificationTree.BeginUpdate();
-                            LoadSpecificationTreeData((long)assemblyEdit.EditValue);
-                            specificationTree.EndUpdate();
+                    //if (mtsSpecificationsService.DeleteSpecification(((MtsAssembliesInfoDTO)assemblyEdit.GetSelectedDataRow()).SpecificationId))
+                    //{
+                    //    if (mtsSpecificationsService.DeleteAssembly(((MtsAssembliesInfoDTO)assemblyEdit.GetSelectedDataRow()).AssemblyId))
+                    //    {
+                    //        LoadAssembliesData();
+                    //        specificationTree.BeginUpdate();
+                    //        LoadSpecificationTreeData((long)assemblyEdit.EditValue);
+                    //        specificationTree.EndUpdate();
 
-                            SetAssemblyVGridSource();
-                        }
-                    }
+                    //        SetAssemblyVGridSource();
+                    //    }
+                    //}
                 }
             }
         }
@@ -203,7 +203,7 @@ namespace MTS.GUI.MTS
         {
             if (specificationTreeBS.Count > 0)
             {
-                EditMtsSpecification(Utils.Operation.Add, new MtsSpecificationsDTO() { RootId = ((MtsSpecificationTreeInfoDTO)specificationTreeBS.Current).RootId });
+                EditMtsSpecification(Utils.Operation.Add, new MtsSpecificationnsDTO() { RootId = ((MtsSpecificationTreeInfoDTO)specificationTreeBS.Current).RootId });
             }
         }
 
@@ -213,7 +213,7 @@ namespace MTS.GUI.MTS
             {
                 MtsSpecificationTreeInfoDTO item = (MtsSpecificationTreeInfoDTO)specificationTreeBS.Current;
 
-                MtsSpecificationsDTO model = new MtsSpecificationsDTO()
+                MtsSpecificationnsDTO model = new MtsSpecificationnsDTO()
                 {
                     Id = item.Id,
                     ParentId = item.ParentId,

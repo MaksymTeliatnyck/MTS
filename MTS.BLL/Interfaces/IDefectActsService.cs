@@ -7,7 +7,6 @@ namespace MTS.BLL.Interfaces
 {
    public interface IDefectActsService
     {
-       IEnumerable<DefectActsDTO> GetDefectActs(DateTime beginDate, DateTime endDate);
        IEnumerable<DefectActRepliesDTO> GetDefectActReplies(int id);
        
        int CreateDefectAct(DefectActsDTO dtomodel);

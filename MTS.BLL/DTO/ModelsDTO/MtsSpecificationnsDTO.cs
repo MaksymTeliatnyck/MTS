@@ -1,11 +1,10 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using MTS.BLL.Infrastructure;
+using System;
 
-namespace MTS.DAL.Entities.Models
+namespace MTS.BLL.DTO.ModelsDTO
 {
-    public class MtsSpecifications
+    public class MtsSpecificationnsDTO : ObjectBase
     {
-        [Key]
         public long Id { get; set; }
         public long? ParentId { get; set; }
         public long RootId { get; set; }
@@ -19,6 +18,11 @@ namespace MTS.DAL.Entities.Models
         public decimal? Quantity { get; set; }
         public decimal? QuantityOfBlanks { get; set; }
         public short? MaterialStatus { get; set; }
-        public string Description { get; set; }
+        public string Description{ get; set; }
+
+        public int? DesignerId { get; set; }
+        public string Drawing { get; set; }
+        public string Name { get; set; }
+        public string UserName { get; set; }
     }
 }

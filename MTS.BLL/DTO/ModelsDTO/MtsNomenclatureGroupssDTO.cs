@@ -1,16 +1,17 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using MTS.BLL.Infrastructure;
+using System;
 
-namespace MTS.DAL.Entities.Models
+namespace MTS.BLL.DTO.ModelsDTO
 {
-    public class MtsNomenclatureGroups
+    public class MtsNomenclatureGroupssDTO : ObjectBase
     {
-        [Key]
         public int Id { get; set; }
         public int? ParentId { get; set; }
         public int? MtsAdditCalculationId { get; set; }
         public string Name { get; set; }
         public decimal? RatioOfWaste { get; set; }
         public short? AdditCalculationActive { get; set; }
+
+        public string AdditUnitLocalName { get; set; }
     }
 }

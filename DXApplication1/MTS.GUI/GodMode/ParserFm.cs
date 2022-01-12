@@ -173,7 +173,7 @@ namespace MTS.GUI.GodMode
             customerOrdersService = Program.kernel.Get<ICustomerOrdersService>();
             storeHouseService = Program.kernel.Get<IStoreHouseService>();
 
-            customerOrdersList = customerOrdersService.GetCustomerOrdersFull().ToList();
+            //customerOrdersList = customerOrdersService.GetCustomerOrdersFull().ToList();
 
             for (int i = 0; i < customerOrdersList.Count(); ++i)
                 customerOrdersList[i].OrderNumberParse = customerOrdersList[i].OrderNumber.Replace(".", "");

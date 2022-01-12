@@ -40,7 +40,7 @@ namespace MTS.GUI.Classifiers
             }
         }
 
-        public MtsNomenclatureGroupEditFm(Utils.Operation operation, MtsNomenclatureGroupsDTO model)
+        public MtsNomenclatureGroupEditFm(Utils.Operation operation, MtsNomenclatureGroupssDTO model)
         {
             InitializeComponent();
             LoadData();
@@ -58,9 +58,9 @@ namespace MTS.GUI.Classifiers
 
             if (this.operation == Utils.Operation.Update)
             {
-                unitsEdit.EditValue = ((MtsNomenclatureGroupsDTO)Item).MtsAdditCalculationId;
+                unitsEdit.EditValue = ((MtsNomenclatureGroupssDTO)Item).MtsAdditCalculationId;
                 
-                if (((MtsNomenclatureGroupsDTO)Item).AdditCalculationActive == 1)
+                if (((MtsNomenclatureGroupssDTO)Item).AdditCalculationActive == 1)
                 {
                     additCalculationActiveCheck.CheckState = CheckState.Checked;
                     unitsEdit.Enabled = true;
@@ -99,12 +99,12 @@ namespace MTS.GUI.Classifiers
             CheckEdit edit = sender as CheckEdit;
             if (edit.CheckState == CheckState.Checked)
             {
-                ((MtsNomenclatureGroupsDTO)Item).AdditCalculationActive = 1;
+                ((MtsNomenclatureGroupssDTO)Item).AdditCalculationActive = 1;
                 unitsEdit.Enabled = true;
             }
             else
             {
-                ((MtsNomenclatureGroupsDTO)Item).AdditCalculationActive = 0;
+                ((MtsNomenclatureGroupssDTO)Item).AdditCalculationActive = 0;
                 unitsEdit.Enabled = false;
                 unitsEdit.EditValue = null;
             }
@@ -118,31 +118,31 @@ namespace MTS.GUI.Classifiers
         {
             mtsNomenclaturesService = Program.kernel.Get<IMtsNomenclaturesService>();
 
-            unitsAdditCalculationBS.DataSource = mtsNomenclaturesService.GetAdditCalculationUnits();
+            //unitsAdditCalculationBS.DataSource = mtsNomenclaturesService.GetAdditCalculationUnits();
         }
 
         public long Return()
         {
-            return ((MtsNomenclatureGroupsDTO)Item).Id;
+            return ((MtsNomenclatureGroupssDTO)Item).Id;
         }
 
         private void SaveNomenclatureGroup()
         {
             this.Item.EndEdit();
 
-            if (((MtsNomenclatureGroupsDTO)Item).AdditCalculationActive == 1)
-                ((MtsNomenclatureGroupsDTO)Item).MtsAdditCalculationId = ((MtsAdditCalculationsDTO)unitsEdit.GetSelectedDataRow()).Id;
-            else
-                ((MtsNomenclatureGroupsDTO)Item).MtsAdditCalculationId = null;
+            //if (((MtsNomenclatureGroupssDTO)Item).AdditCalculationActive == 1)
+            //    ((MtsNomenclatureGroupssDTO)Item).MtsAdditCalculationId = ((MtsAdditCalculationsDTO)unitsEdit.GetSelectedDataRow()).Id;
+            //else
+            //    ((MtsNomenclatureGroupssDTO)Item).MtsAdditCalculationId = null;
 
-            if (this.operation == Utils.Operation.Add)
-            {
-                ((MtsNomenclatureGroupsDTO)Item).Id = mtsNomenclaturesService.NomenclarureGroupCreate((MtsNomenclatureGroupsDTO)mtsNomenclatureGroupsBS.Current);
-            }
-            else
-            {
-                mtsNomenclaturesService.NomenclarureGroupUpdate(((MtsNomenclatureGroupsDTO)mtsNomenclatureGroupsBS.Current));
-            }
+            //if (this.operation == Utils.Operation.Add)
+            //{
+            //    ((MtsNomenclatureGroupssDTO)Item).Id = mtsNomenclaturesService.NomenclarureGroupCreate((MtsNomenclatureGroupssDTO)mtsNomenclatureGroupsBS.Current);
+            //}
+            //else
+            //{
+            //    mtsNomenclaturesService.NomenclarureGroupUpdate(((MtsNomenclatureGroupssDTO)mtsNomenclatureGroupsBS.Current));
+            //}
 
             DialogResult = DialogResult.OK;
             this.Close();

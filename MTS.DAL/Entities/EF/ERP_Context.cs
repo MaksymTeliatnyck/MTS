@@ -214,20 +214,20 @@ namespace MTS.DAL.EF
 
         //public DbSet<MaterialsForAccountClothes> MaterialsForAccountClothes { get; set; }
 
-        public DbSet<MtsAdditCalculations> MtsAdditCalculations { get; set; }
-        public DbSet<MtsAssemblies> MtsAssemblies { get; set; }
-        public DbSet<MtsSpecifications> MtsSpecifications { get; set; }
-        public DbSet<MtsNomenclatures> MtsNomenclatures { get; set; }
-        public DbSet<MtsNomenclatureGroups> MtsNomenclatureGroups { get; set; }
-        public DbSet<MtsGosts> MtsGosts { get; set; }
+       // public DbSet<MtsAdditCalculations> MtsAdditCalculations { get; set; }
+       // public DbSet<MtsAssemblies> MtsAssemblies { get; set; }
+       // public DbSet<MtsSpecifications> MtsSpecifications { get; set; }
+       // public DbSet<MtsNomenclatures> MtsNomenclatures { get; set; }
+        //public DbSet<MtsNomenclatureGroups> MtsNomenclatureGroups { get; set; }
+       // public DbSet<MtsGosts> MtsGosts { get; set; }
        // public DbSet<MTSDetailsProcessing> MtsDetailProcessings { get; set; }
         //public DbSet<MTSDetails> MtsDetails { get; set; }
-        public DbSet<MtsModifications> MtsModifications { get; set; }
-        public DbSet<MtsCreatedDetails> MtsCreatedDetails { get; set; }
-        public DbSet<MtsAssemblyDetails> MtsAssemblyDetails { get; set; }
+       // public DbSet<MtsModifications> MtsModifications { get; set; }
+       // public DbSet<MtsCreatedDetails> MtsCreatedDetails { get; set; }
+       // public DbSet<MtsAssemblyDetails> MtsAssemblyDetails { get; set; }
         public DbSet<MtsAssembliesInfo> MtsAssembliesInfo { get; set; }
         public DbSet<MtsAssembliesCustomerInfo> MtsAssembliesCustomerInfo { get; set; }
-        public DbSet<MtsDocuments> MtsSpeciications { get; set; }
+      //  public DbSet<MtsDocuments> MtsSpeciications { get; set; }
         public DbSet<MtsSpecificationTreeInfo> MtsSpeciicationTreeInfo { get; set; }
         public DbSet<MtsDetailsInfo> MtsDetailsInfo { get; set; }
         public DbSet<MaterialsForAccountClothes> MaterialsForAccountClothes { get; set; }
@@ -235,17 +235,17 @@ namespace MTS.DAL.EF
         public DbSet<MSTrialBalanceByAccounts> MSTrialBalanceByAccounts { get;set; }
         
 
-        public DbSet<MTSSpecifications> MTSSpecificationsOld { get; set; }
-        public DbSet<MTS_Authorization_Users> MTSAuthorizationUsers { get; set; }
-        public DbSet<MTS_Create_Detals> MTSCreateDetals { get; set; }
-        public DbSet<MTS_Gost> MTSGost { get; set; }
-        public DbSet<MTSNomenclaturesOld> MTSNomenclaturesOld { get; set; }
-        public DbSet<MTSGuages> MTSGuages { get; set; }
-        public DbSet<MTSDetalsProcessing> MTSDetailsProcessing { get; set; }
-        public DbSet<MTS_Details> MTSDetails { get; set; }
-        public DbSet<MTSMeasure> MTSMeasure { get; set; }
-        public DbSet<MTSPurchasedProducts> MTSPurchasedProducts { get; set; }
-        public DbSet<MTSNomenclatureGroupsOld> MTSNomenclatureGroupsOld { get; set; }
+        public DbSet<MTS_SPECIFICATIONS> MTSSpecificationsOld { get; set; }
+        public DbSet<MTS_AUTHORIZATION_USERS> MTSAuthorizationUsers { get; set; }
+        public DbSet<MTS_CREATED_DETAILS> MTSCreateDetals { get; set; }
+        public DbSet<MTS_GOST> MTSGost { get; set; }
+        public DbSet<MTS_NOMENCLATURES> MTSNomenclaturesOld { get; set; }
+        public DbSet<MTS_GUAGES> MTSGuages { get; set; }
+        public DbSet<MTS_DEATAILS_PROCESSING> MTSDetailsProcessing { get; set; }
+        public DbSet<MTS_DETAILS> MTSDetails { get; set; }
+        public DbSet<MTS_MEASURE> MTSMeasure { get; set; }
+        public DbSet<MTS_PURCHASED_PRODUCTS> MTSPurchasedProducts { get; set; }
+        public DbSet<MTS_NOMENCLATURE_GROUPS> MTSNomenclatureGroupsOld { get; set; }
         
 
         public DbSet<MsTrialBalanceCurrency> MsTrialBalanceCurrency { get; set; }
@@ -253,7 +253,7 @@ namespace MTS.DAL.EF
         public DbSet<MsTrialBalanceByAccountsCurrency> MsTrialBalanceByAccountsCurrency { get; set; }
         public DbSet<MsReconciliation> MsReconciliation { get; set; }
         public DbSet<MsReconciliation681_36> MsReconciliation681_36 { get; set; }
-        public DbSet<MTSMaterials> MTSMaterials { get; set; }
+        //public DbSet<MTSMaterials> MTSMaterials { get; set; }
 
         //N
         public DbSet<NOMENCLATURES> Nomenclatures { get; set; }

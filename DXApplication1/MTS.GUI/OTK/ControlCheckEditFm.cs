@@ -56,7 +56,7 @@ namespace MTS.GUI.Production
             
 
             orderNumberEdit.DataBindings.Add("EditValue", controlBS, "CustomerOrderId", true, DataSourceUpdateMode.OnPropertyChanged);
-            customerOrdersBS.DataSource = customerOrderService.GetCustomerOrdersByPeriod(DateTime.MinValue, DateTime.MaxValue);
+            //customerOrdersBS.DataSource = customerOrderService.GetCustomerOrdersByPeriod(DateTime.MinValue, DateTime.MaxValue);
             orderNumberEdit.Properties.DataSource = customerOrdersBS;
             orderNumberEdit.Properties.ValueMember = "Id";
             orderNumberEdit.Properties.DisplayMember = "OrderNumber";

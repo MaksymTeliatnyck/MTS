@@ -119,11 +119,11 @@ namespace MTS.GUI.MTS
             return ((MtsAssembliesDTO)Item).Id;
         }
 
-        private bool FindDublicate(MtsAssembliesDTO model)
-        {
-            mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
-            return mtsSpecificationsService.GetMtsAssemblies(DateTime.MinValue, DateTime.MaxValue).Any(a => a.Drawing == model.Drawing && a.AssemblyId != model.Id);
-        }
+        //private bool FindDublicate(MtsAssembliesDTO model)
+        //{
+        //    mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
+        //    return mtsSpecificationsService.GetMtsAssemblies(DateTime.MinValue, DateTime.MaxValue).Any(a => a.Drawing == model.Drawing && a.AssemblyId != model.Id);
+        //}
 
         private bool SaveAssembly()
         {
@@ -136,9 +136,9 @@ namespace MTS.GUI.MTS
                 if (this.operation == Utils.Operation.Add)
                 {
                     ((MtsAssembliesDTO)Item).AssemblyStatus = 1;
-                    ((MtsAssembliesDTO)Item).Id = mtsSpecificationsService.CreateAssembly((MtsAssembliesDTO)mtsAssembliesBS.Current);
+                    //((MtsAssembliesDTO)Item).Id = mtsSpecificationsService.CreateAssembly((MtsAssembliesDTO)mtsAssembliesBS.Current);
 
-                    MtsSpecificationsDTO model = new MtsSpecificationsDTO()
+                    MtsSpecificationnsDTO model = new MtsSpecificationnsDTO()
                     {
                         ParentId = null,
                         AssemblyId = ((MtsAssembliesDTO)Item).Id,
@@ -147,14 +147,14 @@ namespace MTS.GUI.MTS
                         UserId = ((MtsAssembliesDTO)Item).UserId
                     };
 
-                    long idSpec = mtsSpecificationsService.CreateSpecification(model);
-                    model.Id = idSpec;
-                    model.RootId = idSpec;
-                    mtsSpecificationsService.UpdateSpecification(model);
+                    //long idSpec = mtsSpecificationsService.CreateSpecification(model);
+                    //model.Id = idSpec;
+                    //model.RootId = idSpec;
+                    //mtsSpecificationsService.UpdateSpecification(model);
                 }
                 else
                 {
-                    mtsSpecificationsService.UpdateAssembly(((MtsAssembliesDTO)Item));
+                    //mtsSpecificationsService.UpdateAssembly(((MtsAssembliesDTO)Item));
                 }
 
                 return true;
@@ -211,11 +211,11 @@ namespace MTS.GUI.MTS
         {
             this.Item.EndEdit();
 
-            if (FindDublicate((MtsAssembliesDTO)this.Item))
-            {
-                MessageBox.Show("Проект з таким номером вже існує!", "Збереження", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            //if (FindDublicate((MtsAssembliesDTO)this.Item))
+            //{
+            //    MessageBox.Show("Проект з таким номером вже існує!", "Збереження", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    return;
+            //}
             
             if (MessageBox.Show("Зберегти зміни?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {

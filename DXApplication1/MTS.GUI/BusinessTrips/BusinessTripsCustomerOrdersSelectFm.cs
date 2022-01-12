@@ -30,11 +30,11 @@ namespace MTS.GUI.BusinessTrips
 
             List<BusinessTripsOrderCustDTO> tripOrder = new List<BusinessTripsOrderCustDTO>();//1 big form
   
-            List<CustomerOrdersDTO> customOrder = customerOrdersService.GetCustomerOrders().ToList();
+            //List<CustomerOrdersDTO> customOrder = customerOrdersService.GetCustomerOrders().ToList();
 
-            var rez = customerOrdersService.GetCustomerOrdersFull().Where(name => mas.All(search => !name.Id.Equals(search))).OrderByDescending(bdsm => bdsm.OrderDate).ToList();
+            //var rez = customerOrdersService.GetCustomerOrdersFull().Where(name => mas.All(search => !name.Id.Equals(search))).OrderByDescending(bdsm => bdsm.OrderDate).ToList();
 
-            customersOrdersBS.DataSource = rez;
+            //customersOrdersBS.DataSource = rez;
             businessTripsOrdersGrid.DataSource = customersOrdersBS;
 
         }

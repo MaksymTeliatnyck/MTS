@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MTS.DAL.Entities.Models
 {
-    public class MTSNomenclatureGroupsOld
+    public class MTS_NOMENCLATURE_GROUPS
     {
         [Key]
         public int ID { get; set; }

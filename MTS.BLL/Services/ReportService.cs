@@ -99,7 +99,7 @@ namespace MTS.BLL.Services
         private IRepository<OrderForDetalsContractor> orderForDetalsContractor;
         private IRepository<GetBPDetalsReportByCon> bpDetalsReportByCon;
 
-        private IRepository<MtsNomenclatures> mtsNomenclatures;
+        //private IRepository<MtsNomenclatures> mtsNomenclatures;
         private IRepository<MSTrialBalanceByAccounts> msTrialBalanceByAccount;
         private IRepository<GetOSVkvartal_ForChess> getOSVkvartal_ForChess;
         
@@ -159,7 +159,7 @@ namespace MTS.BLL.Services
             orderForDetalsContractor = Database.GetRepository<OrderForDetalsContractor>();
             bpDetalsReportByCon = Database.GetRepository<GetBPDetalsReportByCon>();
 
-            mtsNomenclatures = Database.GetRepository<MtsNomenclatures>();
+            //mtsNomenclatures = Database.GetRepository<MtsNomenclatures>();
             getOSVkvartal_ForChess = Database.GetRepository<GetOSVkvartal_ForChess>();
             
           //  fixedAssetsOrderJournalPrint = Database.GetRepository<FixedAssetsOrderJournalPrint>();
@@ -224,7 +224,7 @@ namespace MTS.BLL.Services
                 cfg.CreateMap<MSTrialBalanceByAccounts, MSTrialBalanceByAccountsDTO>();
                 cfg.CreateMap<MSTrialBalanceByAccountsDTO, MSTrialBalanceByAccounts>();
 
-                cfg.CreateMap<MtsNomenclatures, MtsNomenclaturesDTO>();
+                //cfg.CreateMap<MtsNomenclatures, MtsNomenclaturessDTO>();
 
                 cfg.CreateMap<GetOSVkvartal_ForChess, GetOSVkvartal_ForChessDTO>();
                 cfg.CreateMap<GetOSVkvartal_ForChessDTO, GetOSVkvartal_ForChess>();

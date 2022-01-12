@@ -26,7 +26,7 @@ namespace MTS.BLL.Services
         private IRepository<DefectActReplies> defectActReplies;
         private IRepository<CustomerOrders> customerOrders;
         private IRepository<DocumentTypes> documentTypes;
-        private IRepository<MtsAssemblies> mtsAssemblies;
+
 
         public DefectActsService(IUnitOfWork uow)
         {
@@ -35,7 +35,6 @@ namespace MTS.BLL.Services
             defectActReplies = Database.GetRepository<DefectActReplies>();
             customerOrders = Database.GetRepository<CustomerOrders>();
             documentTypes = Database.GetRepository<DocumentTypes>();
-            mtsAssemblies = Database.GetRepository<MtsAssemblies>();
 
             var config = new MapperConfiguration(cfg =>
             {
@@ -52,32 +51,7 @@ namespace MTS.BLL.Services
 
         #region GET method`s
 
-        public IEnumerable<DefectActsDTO> GetDefectActs(DateTime beginDate, DateTime endDate)
-        {
-            var result = (from d in defectActs.GetAll()
-                          join a in mtsAssemblies.GetAll() on d.MtsAssemblyId equals a.Id into da
-                          from a in da.DefaultIfEmpty()
-                          join c in customerOrders.GetAll() on d.CustomerOrderId equals c.Id into ac
-                          from c in ac.DefaultIfEmpty()
-                          where (d.ActDate >= beginDate && d.ActDate <= endDate)
-                          select new DefectActsDTO
-                          {
-                              Id = d.Id,
-                              MtsAssemblyId = d.MtsAssemblyId,
-                              ActDate = d.ActDate,
-                              ActNumber = d.ActNumber,
-                              Description = d.Description,
-                              Details = d.Details,
-                              FileName = d.FileName,
-                              ActScan = d.ActScan,
-                              AssemblyDrawing = a.Drawing,
-                              AssemblyName = a.Name,
-                              OrderDate = c.OrderDate,
-                              OrderNumber = c.OrderNumber
-                          }).ToList();
-
-            return result.Select(s => { s.ScanPersence = (s.ActScan.Length > 0 ? 1 : 0); return s; }).ToList();
-        }
+        
 
         public IEnumerable<DefectActRepliesDTO> GetDefectActReplies(int id)
         {

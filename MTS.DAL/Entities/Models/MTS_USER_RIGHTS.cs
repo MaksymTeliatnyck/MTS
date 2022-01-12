@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
 
 namespace MTS.DAL.Entities.Models
 {
-    public class MTSGuages
+    public class MTS_USER_RIGHTS
     {
-        [Key]
         public int ID { get; set; }
-        public string NAME { get; set; }
-        public int SORTING { get; set; }
+        public short? CAN_WRITE { get; set; }
+        public short? EDIT_NOMENCLATURES { get; set; }
+        public short? STOREHOUSE_SORTING { get; set; }
     }
 }

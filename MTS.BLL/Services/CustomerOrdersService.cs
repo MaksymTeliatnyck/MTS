@@ -28,7 +28,7 @@ namespace MTS.BLL.Services
         private IRepository<CustomerOrderForWelding> customerOrderForWelding;
         private IRepository<Contractors> contractors;
         private IRepository<Currency> currency;
-        private IRepository<MtsAssemblies> mtsAssemblies;
+        //private IRepository<MtsAssemblies> mtsAssemblies;
         private IRepository<EmployeesDetails> employeesDetails;
         private IRepository<Users> users;
         private IRepository<ContractPayments> contractPayments;
@@ -55,7 +55,7 @@ namespace MTS.BLL.Services
             customerOrderAssemblies = Database.GetRepository<CustomerOrderAssemblies>();
             contractors = Database.GetRepository<Contractors>();
             currency = Database.GetRepository<Currency>();
-            mtsAssemblies = Database.GetRepository<MtsAssemblies>();
+            //mtsAssemblies = Database.GetRepository<MtsAssemblies>();
             employeesDetails = Database.GetRepository<EmployeesDetails>();
             users = Database.GetRepository<Users>();
             contractPayments = Database.GetRepository<ContractPayments>();
@@ -90,7 +90,6 @@ namespace MTS.BLL.Services
                   cfg.CreateMap<ReceiptDetails, ReceiptDetailsDTO>();
                   cfg.CreateMap<RECEIPTS, ReceiptsDTO>();
                   cfg.CreateMap<ORDERS, OrdersDTO>();
-                  cfg.CreateMap<MtsNomenclatures, NomenclaturesDTO>();
                   cfg.CreateMap<Units, UnitsDTO>();
               });
             mapper = config.CreateMapper();
@@ -110,359 +109,17 @@ namespace MTS.BLL.Services
             return (mapper.Map<IEnumerable<CustomerOrders>, IList<CustomerOrdersDTO>>(customerOrders.GetAll()).Any(search => search.Id == customerOrderId && search.Enable == 1));
         }
 
-        public IEnumerable<CustomerOrdersDTO> GetCustomerOrdersByPeriod(DateTime beginDate, DateTime endDate, bool money = true)
-        {
-
-            //Выборка данных из базы
-            var result = (from co in customerOrders.GetAll()
-                          join c in contractors.GetAll() on co.ContractorId equals c.Id into coc
-                          from c in coc.DefaultIfEmpty()
-                          join ag in contractors.GetAll() on co.AgreementId equals ag.Id into coag
-                          from ag in coag.DefaultIfEmpty()
-                          join cu in currency.GetAll() on co.CurrencyId equals cu.Id into cocu
-                          from cu in cocu.DefaultIfEmpty()
-                          join u in users.GetAll() on co.UserId equals u.UserId into cou
-                          from u in cou.DefaultIfEmpty()
-                          join eu in employeesDetails.GetAll() on u.EmployeeId equals eu.EmployeeID into ueu
-                          from eu in ueu.DefaultIfEmpty()
-                          join cos in customerOrderSpecifications.GetAll() on co.Id equals cos.CustomerOrderId into coss
-                          from cos in coss.DefaultIfEmpty()
-                          join cwbs in calcWithBuyersSpec.GetAll() on cos.Id equals cwbs.CustomerOrderSpecId into cwbss
-                          from cwbs in cwbss.DefaultIfEmpty()
-                          join cwb in calcWithBuyers.GetAll() on cwbs.CalcWithBuyerId equals cwb.Id into cwbb
-                          from cwb in cwbb.DefaultIfEmpty()
-                          join coa in customerOrderAssemblies.GetAll() on cos.Id equals coa.CustomerOrderSpecId into coaa
-                          from coa in coaa.DefaultIfEmpty()
-                          join mts in mtsAssemblies.GetAll() on coa.AssemblyId equals mts.Id into mtss
-                          from mts in mtss.DefaultIfEmpty()
-                          join e in employeesDetails.GetAll() on mts.DesignerId equals e.EmployeeID into coe
-                          from e in coe.DefaultIfEmpty()
-                          where (co.OrderDate >= beginDate && co.OrderDate <= endDate)
-
-
-                          select new CustomerOrdersDTO
-                          {
-                              Id = co.Id,
-                              OrderNumber = co.OrderNumber,
-                              OrderDate = co.OrderDate,
-                              OrderPrice = co.OrderPrice,
-                              CurrencyPrice = co.CurrencyPrice,
-                              ContractorId = co.ContractorId,
-                              ContractorName = c.Name,
-                              AgreementId = co.AgreementId,
-                              AgreementName = ag.Name,
-                              Details = co.Details,
-                              Drawing = mts.Drawing,
-                              CurrencyId = co.CurrencyId,
-                              CurrencyName = cu.Code,
-                              AssemblyId = mts.Id,
-                              AssemblyName = mts.Name,
-                              DesignerName = e.LastName + " " + e.FirstName.Substring(1, 1) + "." + e.MiddleName.Substring(1, 1) + ".",
-                              DateCreate = co.DateCreate,
-                              DateUpdate = co.DateUpdate,
-                              UserId = co.UserId,
-                              UserName = eu.LastName,
-                              DateShipping = cwb.DocumentDate,
-                              Enable = co.Enable
-                          });
-
-            // Групировка и конкатенация поля: Чертеж и Разработчик
-            var groupByRezult = result.AsEnumerable()
-                .GroupBy(l => new
-            {
-                l.Id,
-                l.OrderNumber,
-                l.ContractorId,
-                l.OrderDate,
-                l.Details,
-                l.OrderPrice,
-                l.CurrencyPrice,
-                l.AgreementId,
-                l.CurrencyId,
-                l.DateCreate,
-                l.DateUpdate,
-                l.DateShipping,
-                l.UserId,
-                l.CurrencyName,
-                l.ContractorName,
-                l.AgreementName,
-                l.UserName,
-                l.Enable
-            }).Select(g => new CustomerOrdersDTO
-            {
-                Id = g.Key.Id,
-                OrderNumber = g.Key.OrderNumber,
-                ContractorId = g.Key.ContractorId,
-                OrderDate = g.Key.OrderDate,
-                Details = g.Key.Details,
-                OrderPrice = g.Key.OrderPrice,
-                CurrencyPrice = g.Key.CurrencyPrice,
-                AgreementId = g.Key.AgreementId,
-                CurrencyId = g.Key.CurrencyId,
-                DateCreate = g.Key.DateCreate,
-                DateUpdate = g.Key.DateUpdate,
-                DateShipping = g.Key.DateShipping,
-                UserId = g.Key.UserId,
-                CurrencyName = g.Key.CurrencyName,
-                ContractorName = g.Key.ContractorName,
-
-                AgreementName = g.Key.AgreementName,
-                UserName = g.Key.UserName,
-                Enable=g.Key.Enable,
-                DesignerName = string.Join(", ", g.Select(md => md.DesignerName).ToList()) != "" ? string.Join(", ", g.Select(md => md.DesignerName).ToList()) : "До заказу не додано проект",
-                Drawing = string.Join(",", g.Select(md => md.Drawing).ToList()) != "" ? string.Join(",", g.Select(md => md.Drawing).ToList()) : "До заказу не додано проект"
-            });
-
-            List<CustomerOrdersDTO> returnSortList = new List<CustomerOrdersDTO>();
-
-            //Убираем дубликаты
-            foreach (var item in groupByRezult.ToList())
-            {
-                string[] splitDrawingString = item.Drawing.Split(',');
-                string[] splitDesignerNameString = item.DesignerName.Split(',');
-
-                item.Drawing = string.Join(",", (splitDrawingString.Distinct()).ToArray());
-                item.DesignerName = string.Join(",", (splitDesignerNameString.Distinct()).ToArray());
-                returnSortList.Add(item);
-            }
-
-            return returnSortList.OrderByDescending(srt => srt.OrderDate).ToList();
-        }
+        
 
 
 
-        public IEnumerable<CustomerOrdersDTO> GetCustomerOrdersFull()
-        {
-            var result = (from co in customerOrders.GetAll()
-                          join c in contractors.GetAll() on co.ContractorId equals c.Id into coc
-                          from c in coc.DefaultIfEmpty()
-                          join ag in contractors.GetAll() on co.AgreementId equals ag.Id into coag
-                          from ag in coag.DefaultIfEmpty()
-                          join cu in currency.GetAll() on co.CurrencyId equals cu.Id into cocu
-                          from cu in cocu.DefaultIfEmpty()
-                          join a in mtsAssemblies.GetAll() on co.AssemblyId equals a.Id into coa
-                          from a in coa.DefaultIfEmpty()
-                          join e in employeesDetails.GetAll() on a.DesignerId equals e.EmployeeID into coe
-                          from e in coe.DefaultIfEmpty()
-                          join u in users.GetAll() on co.UserId equals u.UserId into cou
-                          from u in cou.DefaultIfEmpty()
-                          join eu in employeesDetails.GetAll() on u.EmployeeId equals eu.EmployeeID into ueu
-                          from eu in ueu.DefaultIfEmpty()
-                          where !(co.OrderNumber.Trim() == null || co.OrderNumber.Trim() == String.Empty)
-                          orderby co.OrderDate, co.OrderNumber
+        
 
-                          select new CustomerOrdersDTO
-                          {
-                              Id = co.Id,
-                              OrderNumber = co.OrderNumber,
-                              OrderDate = co.OrderDate,
-                              OrderPrice = co.OrderPrice,
-                              CurrencyPrice = co.CurrencyPrice,
-                              ContractorId = co.ContractorId,
-                              ContractorName = c.Name,
-                              AgreementId = co.AgreementId,
-                              AgreementName = ag.Name,
-                              Details = co.Details,
-                              Drawing = a.Drawing,
-                              CurrencyId = co.CurrencyId,
-                              CurrencyName = cu.Code,
-                              AssemblyId = co.AssemblyId,
-                              AssemblyName = a.Name,
-                              DesignerName = e.LastName + " " + e.FirstName.Substring(1, 1) + "." + e.MiddleName.Substring(1, 1) + ".",
-                              DateCreate = co.DateCreate,
-                              DateUpdate = co.DateUpdate,
-                              UserId = co.UserId,
-                              UserName = eu.LastName
-                          });
-
-            return result.ToList();
-        }
-
-        public CustomerOrdersDTO GetCustomerOrdersFullById(int customerOrderId)
-        {
-            var result = (from co in customerOrders.GetAll()
-                          join c in contractors.GetAll() on co.ContractorId equals c.Id into coc
-                          from c in coc.DefaultIfEmpty()
-                          join ag in contractors.GetAll() on co.AgreementId equals ag.Id into coag
-                          from ag in coag.DefaultIfEmpty()
-                          join cu in currency.GetAll() on co.CurrencyId equals cu.Id into cocu
-                          from cu in cocu.DefaultIfEmpty()
-                          join a in mtsAssemblies.GetAll() on co.AssemblyId equals a.Id into coa
-                          from a in coa.DefaultIfEmpty()
-                          join e in employeesDetails.GetAll() on a.DesignerId equals e.EmployeeID into coe
-                          from e in coe.DefaultIfEmpty()
-                          join u in users.GetAll() on co.UserId equals u.UserId into cou
-                          from u in cou.DefaultIfEmpty()
-                          join eu in employeesDetails.GetAll() on u.EmployeeId equals eu.EmployeeID into ueu
-                          from eu in ueu.DefaultIfEmpty()
-                          where (!(co.OrderNumber.Trim() == null || co.OrderNumber.Trim() == String.Empty) && (co.Id == customerOrderId))
-                          orderby co.OrderDate, co.OrderNumber
-
-                          select new CustomerOrdersDTO
-                          {
-                              Id = co.Id,
-                              OrderNumber = co.OrderNumber,
-                              OrderDate = co.OrderDate,
-                              OrderPrice = co.OrderPrice,
-                              CurrencyPrice = co.CurrencyPrice,
-                              ContractorId = co.ContractorId,
-                              ContractorName = c.Name,
-                              AgreementId = co.AgreementId,
-                              AgreementName = ag.Name,
-                              Details = co.Details,
-                              Drawing = a.Drawing,
-                              CurrencyId = co.CurrencyId,
-                              CurrencyName = cu.Code,
-                              AssemblyId = co.AssemblyId,
-                              AssemblyName = a.Name,
-                              DesignerName = e.LastName + " " + e.FirstName.Substring(1, 1) + "." + e.MiddleName.Substring(1, 1) + ".",
-                              DateCreate = co.DateCreate,
-                              DateUpdate = co.DateUpdate,
-                              UserId = co.UserId,
-                              UserName = eu.LastName
-                          });
-
-            return result.FirstOrDefault();
-        }
+        
 
 
 
-        public IEnumerable<CustomerOrdersDTO> GetCustomerOrdersFullWithReceipt()
-        {
-            var result = (from co in customerOrders.GetAll()
-                          join c in contractors.GetAll() on co.ContractorId equals c.Id into coc
-                          from c in coc.DefaultIfEmpty()
-                          join ag in contractors.GetAll() on co.AgreementId equals ag.Id into coag
-                          from ag in coag.DefaultIfEmpty()
-                          join cu in currency.GetAll() on co.CurrencyId equals cu.Id into cocu
-                          from cu in cocu.DefaultIfEmpty()
-                          join cos in customerOrderSpecifications.GetAll() on co.Id equals cos.CustomerOrderId into coss
-                          from cos in coss.DefaultIfEmpty()
-                          join coa in customerOrderAssemblies.GetAll() on cos.Id equals coa.CustomerOrderSpecId into coaa
-                          from coa in coaa.DefaultIfEmpty()
-                          join mts in mtsAssemblies.GetAll() on coa.AssemblyId equals mts.Id into mtss
-                          from mts in mtss.DefaultIfEmpty()
-                          //join a in mtsAssemblies.GetAll() on co.AssemblyId equals a.Id into coa
-                          //from a in coa.DefaultIfEmpty()
-                          join e in employeesDetails.GetAll() on mts.DesignerId equals e.EmployeeID into coe
-                          from e in coe.DefaultIfEmpty()
-                          join u in users.GetAll() on co.UserId equals u.UserId into cou
-                          from u in cou.DefaultIfEmpty()
-                          join eu in employeesDetails.GetAll() on u.EmployeeId equals eu.EmployeeID into ueu
-                          from eu in ueu.DefaultIfEmpty()
-                          join recdet in receiptDetails.GetAll() on co.Id equals recdet.CustomerOrderId into recdett
-                          from recdet in recdett.DefaultIfEmpty()
-                          join rec in receipt.GetAll() on recdet.ReceiptId equals rec.ID into recc
-                          from rec in recc.DefaultIfEmpty()
-                          join nom in nomenclatures.GetAll() on rec.NOMENCLATURE_ID equals nom.ID into nomm
-                          from nom in nomm.DefaultIfEmpty()
-                          join unt in units.GetAll() on nom.UnitId equals unt.UnitId into untt
-                          from unt in untt.DefaultIfEmpty()
-                          join ord in orders.GetAll() on rec.ORDER_ID equals ord.ID into ordd
-                          from ord in ordd.DefaultIfEmpty()
-                          where !(co.OrderNumber.Trim() == null || co.OrderNumber.Trim() == String.Empty)
-                          orderby co.OrderDate, co.OrderNumber
-
-                          select new CustomerOrdersDTO
-                          {
-                              Id = co.Id,
-                              OrderNumber = co.OrderNumber,
-                              OrderDate = co.OrderDate,
-                              OrderPrice = co.OrderPrice,
-                              CurrencyPrice = co.CurrencyPrice,
-                              ContractorId = co.ContractorId,
-                              ContractorName = c.Name,
-                              AgreementId = co.AgreementId,
-                              AgreementName = ag.Name,
-                              Details = co.Details,
-                              Drawing = mts.Drawing,
-                              CurrencyId = co.CurrencyId,
-                              CurrencyName = cu.Code,
-                              //AssemblyId = mts.Id,
-                              AssemblyName = mts.Name,
-                              DesignerName = e.LastName + " " + e.FirstName.Substring(1, 1) + "." + e.MiddleName.Substring(1, 1) + ".",
-                              DateCreate = co.DateCreate,
-                              DateUpdate = co.DateUpdate,
-                              UserId = co.UserId,
-                              UserName = eu.LastName,
-                              Nomenclature = nom.NOMENCLATURE,
-                              NomenclatureName = nom.NAME,
-                              ReceiptNum = ord.RECEIPT_NUM,
-                              TotalPrice = rec.TOTAL_PRICE,
-                              UnitLocalName = unt.UnitLocalName,
-                              Quantity = rec.QUANTITY
-                          });
-
-            var groupByRezult = result.AsEnumerable()
-               .GroupBy(l => new
-               {
-                   l.Id,
-                   l.OrderNumber,
-                   l.OrderDate,
-                   l.OrderPrice,
-                   l.CurrencyPrice,
-                   l.ContractorId,
-                   l.ContractorName,
-                   l.AgreementId,
-                   l.AgreementName,
-                   l.Details,
-                   l.CurrencyId,
-                   l.CurrencyName,
-                   l.DateCreate,
-                   l.DateUpdate,
-                   l.DateShipping,
-                   l.UserId,
-                   l.UserName,
-                   l.Nomenclature,
-                   l.NomenclatureName,
-                   l.ReceiptNum,
-                   l.TotalPrice,
-                   l.UnitLocalName,
-                   l.Quantity
-               }).Select(g => new CustomerOrdersDTO
-               {
-                   Id = g.Key.Id,
-                   OrderNumber = g.Key.OrderNumber,
-                   ContractorId = g.Key.ContractorId,
-                   OrderDate = g.Key.OrderDate,
-                   Details = g.Key.Details,
-                   OrderPrice = g.Key.OrderPrice,
-                   CurrencyPrice = g.Key.CurrencyPrice,
-                   AgreementId = g.Key.AgreementId,
-                   CurrencyId = g.Key.CurrencyId,
-                   DateCreate = g.Key.DateCreate,
-                   DateUpdate = g.Key.DateUpdate,
-                   DateShipping = g.Key.DateShipping,
-                   UserId = g.Key.UserId,
-                   CurrencyName = g.Key.CurrencyName,
-                   ContractorName = g.Key.ContractorName,
-                   AgreementName = g.Key.AgreementName,
-                   UserName = g.Key.UserName,
-                   Nomenclature = g.Key.Nomenclature,
-                   NomenclatureName = g.Key.NomenclatureName,
-                   ReceiptNum = g.Key.ReceiptNum,
-                   TotalPrice = g.Key.TotalPrice,
-                   UnitLocalName = g.Key.UnitLocalName,
-                   Quantity = g.Key.Quantity,
-                   DesignerName = string.Join(", ", g.Select(md => md.DesignerName).ToList()) != "" ? string.Join(", ", g.Select(md => md.DesignerName).ToList()) : "До заказу не додано проект",
-                   Drawing = string.Join(",", g.Select(md => md.Drawing).ToList()) != "" ? string.Join(",\n", g.Select(md => md.Drawing).ToList()) : "До заказу не додано проект"
-               });
-
-            List<CustomerOrdersDTO> returnSortList = new List<CustomerOrdersDTO>();
-
-            //Убираем дубликаты
-            foreach (var item in groupByRezult.ToList())
-            {
-                string[] splitDrawingString = item.Drawing.Split(',');
-                string[] splitDesignerNameString = item.DesignerName.Split(',');
-                item.Drawing = string.Join(",", (splitDrawingString.Distinct()).ToArray());
-                item.DesignerName = string.Join(",", (splitDesignerNameString.Distinct()).ToArray());
-                returnSortList.Add(item);
-            }
-
-            return returnSortList.OrderByDescending(srt => srt.OrderDate).ToList();
-        }
-
+        
 
 
 
@@ -502,52 +159,7 @@ namespace MTS.BLL.Services
         //    return result.ToList();
         //}
 
-        public IEnumerable<CustomerOrdersDTO> GetCustomerOrdersWithoutSign()
-        {
-            var result = (from co in customerOrders.GetAll()
-                          join c in contractors.GetAll() on co.ContractorId equals c.Id into coc
-                          from c in coc.DefaultIfEmpty()
-                          join ag in contractors.GetAll() on co.AgreementId equals ag.Id into coag
-                          from ag in coag.DefaultIfEmpty()
-                          join cu in currency.GetAll() on co.CurrencyId equals cu.Id into cocu
-                          from cu in cocu.DefaultIfEmpty()
-                          join a in mtsAssemblies.GetAll() on co.AssemblyId equals a.Id into coa
-                          from a in coa.DefaultIfEmpty()
-                          join e in employeesDetails.GetAll() on a.DesignerId equals e.EmployeeID into coe
-                          from e in coe.DefaultIfEmpty()
-                          join u in users.GetAll() on co.UserId equals u.UserId into cou
-                          from u in cou.DefaultIfEmpty()
-                          join eu in employeesDetails.GetAll() on u.EmployeeId equals eu.EmployeeID into ueu
-                          from eu in ueu.DefaultIfEmpty()
-                          where (co.OrderNumber.Trim() == null || co.OrderNumber.Trim() == String.Empty)
-                          orderby co.ContractorId
-                          select new CustomerOrdersDTO
-                          {
-                              Id = co.Id,
-                              OrderNumber = co.OrderNumber,
-                              OrderDate = co.OrderDate,
-                              OrderPrice = co.OrderPrice,
-                              CurrencyPrice = co.CurrencyPrice,
-                              ContractorId = co.ContractorId,
-                              ContractorName = c.Name,
-                              AgreementId = co.AgreementId,
-                              AgreementName = ag.Name,
-                              Details = co.Details,
-                              Drawing = a.Drawing,
-                              CurrencyId = co.CurrencyId,
-                              CurrencyName = cu.Code,
-                              AssemblyId = co.AssemblyId,
-                              AssemblyName = a.Name,
-                              DesignerName = e.LastName + " " + e.FirstName.Substring(1, 1) + "." + e.MiddleName.Substring(1, 1) + ".",
-                              DateCreate = co.DateCreate,
-                              DateUpdate = co.DateUpdate,
-                              UserId = co.UserId,
-                              UserName = eu.LastName,
-                              Enable = co.Enable
-                          });
-
-            return result.ToList();
-        }
+       
 
         public IEnumerable<CustomerOrderSpecificationsDTO> GetCustomerOrderSpecificationsByOrderId(int orderId)
         {
@@ -591,23 +203,7 @@ namespace MTS.BLL.Services
             return result.ToList();
         }
 
-        public IEnumerable<CustomerOrderAssembliesDTO> GetCustomerOrderAssembliesBySpecId(int specId)
-        {
-            var result = (from ca in customerOrderAssemblies.GetAll()
-                          join a in mtsAssemblies.GetAll() on ca.AssemblyId equals a.Id
-                          where ca.CustomerOrderSpecId == specId
-                          select new CustomerOrderAssembliesDTO()
-                          {
-                              Id = ca.Id,
-                              CustomerOrderSpecId = ca.CustomerOrderSpecId,
-                              AssemblyId = ca.AssemblyId,
-                              Drawing = a.Drawing,
-                              Name = a.Name
-                          }
-                );
-
-            return result.ToList();
-        }
+       
 
         public IEnumerable<ContractPaymentsDTO> GetContractPaymentsByPeriod(DateTime beginDate, DateTime endDate)
         {
