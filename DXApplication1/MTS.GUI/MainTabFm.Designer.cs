@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainTabFm));
             DevExpress.XtraEditors.TileItemElement tileItemElement15 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
@@ -55,11 +56,11 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement23 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement24 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement25 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement30 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement31 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement27 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement28 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement29 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement30 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement36 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement32 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement33 = new DevExpress.XtraEditors.TileItemElement();
@@ -158,10 +159,10 @@
             this.agreementOrderJournalItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.requestLogItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.mtsCategory = new DevExpress.XtraBars.Navigation.TileNavCategory();
+            this.mtsSpecificationOldItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.mtsItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.journalAssembliesItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.journalAssembliesFromCustomerItem = new DevExpress.XtraBars.Navigation.TileNavItem();
-            this.mtsSpecificationOldItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.procuctionCategory = new DevExpress.XtraBars.Navigation.TileNavCategory();
             this.executorsItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.productionInvoicesItem = new DevExpress.XtraBars.Navigation.TileNavItem();
@@ -242,8 +243,8 @@
             this.professionLabel = new DevExpress.XtraEditors.LabelControl();
             this.fioLabel = new DevExpress.XtraEditors.LabelControl();
             this.userFotoEdit = new DevExpress.XtraEditors.PictureEdit();
-            this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager();
-            this.tabbedView2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
+            this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.tabbedView2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.tileNavSubItem3 = new DevExpress.XtraBars.Navigation.TileNavSubItem();
             this.tileNavSubItem4 = new DevExpress.XtraBars.Navigation.TileNavSubItem();
             this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
@@ -881,6 +882,33 @@
             this.mtsCategory.AppearanceSelected.Options.UseBackColor = true;
             this.mtsCategory.Caption = "МТС";
             this.mtsCategory.Glyph = ((System.Drawing.Image)(resources.GetObject("mtsCategory.Glyph")));
+            // 
+            // mtsSpecificationOldItem
+            // 
+            this.mtsSpecificationOldItem.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            this.mtsSpecificationOldItem.Caption = "Довідник матеріальних специфікацій";
+            this.mtsSpecificationOldItem.Glyph = ((System.Drawing.Image)(resources.GetObject("mtsSpecificationOldItem.Glyph")));
+            this.mtsSpecificationOldItem.GlyphAlignment = DevExpress.XtraBars.Navigation.NavButtonAlignment.Left;
+            this.mtsSpecificationOldItem.Name = "mtsSpecificationOldItem";
+            this.mtsSpecificationOldItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
+            this.mtsSpecificationOldItem.OwnerCollection = this.mtsCategory.Items;
+            // 
+            // 
+            // 
+            this.mtsSpecificationOldItem.Tile.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            this.mtsSpecificationOldItem.Tile.AppearanceItem.Normal.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.mtsSpecificationOldItem.Tile.AppearanceItem.Normal.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.mtsSpecificationOldItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.mtsSpecificationOldItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
+            this.mtsSpecificationOldItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement30.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement30.Image")));
+            tileItemElement30.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement30.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement30.Text = "Довідник матеріальних специфікацій";
+            this.mtsSpecificationOldItem.Tile.Elements.Add(tileItemElement30);
+            this.mtsSpecificationOldItem.Tile.Elements.Add(tileItemElement30);
+            this.mtsSpecificationOldItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
+            this.mtsSpecificationOldItem.Tile.Name = "mtsSpecificationOldIte";
             this.mtsCategory.Items.AddRange(new DevExpress.XtraBars.Navigation.TileNavItem[] {
             this.mtsItem,
             this.journalAssembliesItem,
@@ -972,33 +1000,6 @@
             this.journalAssembliesFromCustomerItem.Tile.Elements.Add(tileItemElement29);
             this.journalAssembliesFromCustomerItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.journalAssembliesFromCustomerItem.Tile.Name = "journalAssembliesFromCustomerItem";
-            // 
-            // mtsSpecificationOldItem
-            // 
-            this.mtsSpecificationOldItem.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
-            this.mtsSpecificationOldItem.Caption = "Довідник матеріальних специфікацій";
-            this.mtsSpecificationOldItem.Glyph = ((System.Drawing.Image)(resources.GetObject("mtsSpecificationOldItem.Glyph")));
-            this.mtsSpecificationOldItem.GlyphAlignment = DevExpress.XtraBars.Navigation.NavButtonAlignment.Left;
-            this.mtsSpecificationOldItem.Name = "mtsSpecificationOldItem";
-            this.mtsSpecificationOldItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
-            this.mtsSpecificationOldItem.OwnerCollection = this.mtsCategory.Items;
-            // 
-            // 
-            // 
-            this.mtsSpecificationOldItem.Tile.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
-            this.mtsSpecificationOldItem.Tile.AppearanceItem.Normal.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.mtsSpecificationOldItem.Tile.AppearanceItem.Normal.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.mtsSpecificationOldItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.mtsSpecificationOldItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
-            this.mtsSpecificationOldItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement30.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement30.Image")));
-            tileItemElement30.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement30.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement30.Text = "Довідник матеріальних специфікацій";
-            this.mtsSpecificationOldItem.Tile.Elements.Add(tileItemElement30);
-            this.mtsSpecificationOldItem.Tile.Elements.Add(tileItemElement30);
-            this.mtsSpecificationOldItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
-            this.mtsSpecificationOldItem.Tile.Name = "mtsSpecificationOldIte";
             // 
             // procuctionCategory
             // 
@@ -2837,7 +2838,6 @@
         private DevExpress.XtraBars.Navigation.TileNavItem infrastructureItem;
         private DevExpress.XtraBars.Navigation.TileNavSubItem palitraItem;
         private DevExpress.XtraBars.Navigation.TileNavItem certificatePassItem;
-        private DevExpress.XtraBars.Navigation.TileNavItem mtsSpecificationOldItem;
         private DevExpress.XtraBars.Navigation.TileNavItem mtsClassificationItem;
         private DevExpress.XtraBars.Navigation.TileNavSubItem deliveryNameSubItem;
         private DevExpress.XtraBars.Navigation.TileNavItem weldAttestationItem;
@@ -2846,5 +2846,6 @@
         private DevExpress.XtraBars.Navigation.TileNavSubItem logItem;
         private DevExpress.XtraBars.Navigation.TileNavSubItem converterItem;
         private DevExpress.XtraBars.Navigation.TileNavItem requestLogItem;
+        private DevExpress.XtraBars.Navigation.TileNavItem mtsSpecificationOldItem;
     }
 }

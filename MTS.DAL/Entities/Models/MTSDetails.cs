@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MTS.DAL.Entities.Models
 {
-    public class MTSDetails
+    public class MTS_Details
     {
         [Key]
         public int ID { get; set; }

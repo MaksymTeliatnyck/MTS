@@ -31,7 +31,7 @@ namespace MTS.BLL.Services
         private IRepository<MtsSpecifications> mtsSpecifications;
         private IRepository<MtsDetailsInfo> mtsDetailsInfo;
 
-        private IRepository<MTSSpecificationss> mtsSpecificationsOld;
+        private IRepository<MTSSpecifications> mtsSpecificationsOld;
         private IRepository<MTSAuthorizationUsers> mtsAuthorizationUsers;
         private IRepository<MTSDetails> mtsDetails;
         private IRepository<MTSGost> mtsGost;
@@ -44,8 +44,8 @@ namespace MTS.BLL.Services
         private IRepository<MTSMaterials> mtsMaterials;
         private IRepository<MTSNomenclatureGroupsOld> mtsNomenclatureGroups;
         private IRepository<MTSDetails> mtsDetals;
+       // private IRepository<MTSDetails> mtsDetals;
 
-        
         private IMapper mapper;
 
         public MtsSpecificationsService(IUnitOfWork uow)
@@ -62,7 +62,7 @@ namespace MTS.BLL.Services
             mtsSpecifications = Database.GetRepository<MtsSpecifications>();
             mtsDetailsInfo = Database.GetRepository<MtsDetailsInfo>();
 
-            mtsSpecificationsOld = Database.GetRepository<MTSSpecificationss>();
+            mtsSpecificationsOld = Database.GetRepository<MTSSpecifications>();
             mtsAuthorizationUsers = Database.GetRepository<MTSAuthorizationUsers>();
             mtsDetails = Database.GetRepository<MTSDetails>();
             mtsGost = Database.GetRepository<MTSGost>();
@@ -90,12 +90,12 @@ namespace MTS.BLL.Services
                 cfg.CreateMap<MtsDetailsInfo, MtsDetailsInfoDTO>();
                 cfg.CreateMap<MtsAssembliesCustomerInfo, MtsAssembliesCustomerInfoDTO>();
 
-                cfg.CreateMap<MTSSpecificationss, MTSSpecificationssDTO>();
-                cfg.CreateMap<MTSSpecificationssDTO, MTSSpecificationss>();
+                cfg.CreateMap<MTSSpecifications, MTSSpecificationsDTO>();
+                cfg.CreateMap<MTSSpecificationsDTO, MTSSpecifications>();
                 cfg.CreateMap<MTSAuthorizationUsersDTO, MTSAuthorizationUsers>();
                 cfg.CreateMap<MTSAuthorizationUsers, MTSAuthorizationUsersDTO>();
-                cfg.CreateMap<MTSDetailsDTO, MTSDetails>();
-                cfg.CreateMap<MTSDetails, MTSDetailsDTO>();
+                cfg.CreateMap<MTS_DetailsDTO, MTSDetails>();
+                cfg.CreateMap<MTSDetails, MTS_DetailsDTO>();
 
                 cfg.CreateMap<MTSGostDTO, MTSGost>();
                 cfg.CreateMap<MTSGost, MTSGostDTO>();
@@ -115,8 +115,8 @@ namespace MTS.BLL.Services
                 cfg.CreateMap<MTSMaterials, MTSMaterialsDTO>();
                 cfg.CreateMap<MTSNomenclatureGroupsOldDTO, MTSNomenclatureGroupsOld>();
                 cfg.CreateMap<MTSNomenclatureGroupsOld, MTSNomenclatureGroupsOldDTO>();
-                cfg.CreateMap<MTSDetailsDTO, MTSDetails>();
-                cfg.CreateMap<MTSDetails, MTSDetailsDTO>();
+                cfg.CreateMap<MTS_DetailsDTO, MTSDetails>();
+                cfg.CreateMap<MTSDetails, MTS_DetailsDTO>();
             });
 
             mapper = config.CreateMapper();
@@ -257,7 +257,7 @@ namespace MTS.BLL.Services
         //    return mapper.Map<IEnumerable<MTSSpecifications>, IList<MTSSpecificationsDTO>>(mtsSpecificationsOld.GetAll());
         //}
 
-        public IEnumerable<MTSSpecificationssDTO> GetAllSpecificationOldByPeriod(DateTime startDate, DateTime endDate)
+        public IEnumerable<MTSSpecificationsDTO> GetAllSpecificationOldByPeriod(DateTime startDate, DateTime endDate)
         {
 
             var result = (from mts in mtsSpecificationsOld.GetAll()
@@ -265,7 +265,7 @@ namespace MTS.BLL.Services
                           from autUser in autUs.DefaultIfEmpty()
 
                           where (mts.CREATION_DATE >= startDate && mts.CREATION_DATE <= endDate)
-                          select new MTSSpecificationssDTO()
+                          select new MTSSpecificationsDTO()
                           {
                               ID = mts.ID,
                               NAME = mts.NAME,
@@ -284,14 +284,14 @@ namespace MTS.BLL.Services
             return result;
         }
 
-        public IEnumerable<MTSSpecificationssDTO> GetAllSpecificationOld()
+        public IEnumerable<MTSSpecificationsDTO> GetAllSpecificationOld()
         {
 
             var result = (from mts in mtsSpecificationsOld.GetAll()
                           join autUser in mtsAuthorizationUsers.GetAll() on mts.AUTHORIZATION_USERS_ID equals autUser.ID into autUs
                           from autUser in autUs.DefaultIfEmpty()
 
-                          select new MTSSpecificationssDTO()
+                          select new MTSSpecificationsDTO()
                           {
                               ID = mts.ID,
                               NAME = mts.NAME,
@@ -479,9 +479,9 @@ namespace MTS.BLL.Services
 
 
 
-        public IEnumerable<MTSDetailsDTO> GetAllDetailsSpecificShort(int specificId)
+        public IEnumerable<MTS_DetailsDTO> GetAllDetailsSpecificShort(int specificId)
         {
-            return mapper.Map<IEnumerable<MTSDetails>, List<MTSDetailsDTO>>(mtsDetails.GetAll().Where(srch => srch.SPECIFICATIONS_ID == specificId));
+            return mapper.Map<IEnumerable<MTSDetails>, List<MTS_DetailsDTO>>(mtsDetails.GetAll().Where(srch => srch.SPECIFICATIONS_ID == specificId));
         }
 
         public IEnumerable<MTSPurchasedProductsDTO> GetBuysDetalSpecificShort(int specificId)
@@ -494,7 +494,7 @@ namespace MTS.BLL.Services
             return mapper.Map<IEnumerable<MTSMaterials>, List<MTSMaterialsDTO>>(mtsMaterials.GetAll().Where(srch => srch.SPECIFICATIONS_ID == specificId));
         }
 
-        public IEnumerable<MTSDetailsDTO> GetAllDetailsSpecific(int spesificId)
+        public IEnumerable<MTS_DetailsDTO> GetAllDetailsSpecific(int spesificId)
         {
             var result = (
 
@@ -523,7 +523,7 @@ namespace MTS.BLL.Services
 
                           where (mtsDetal.SPECIFICATIONS_ID == spesificId /*&& mtsSpec.ID != null*/)
 
-                          select new MTSDetailsDTO()
+                          select new MTS_DetailsDTO()
                           {
                               ID = mtsDetal.ID,//mtsDetal.CREATED_DETAILS_ID,//??????????
                               SPECIFICATIONS_ID = mtsDetal.SPECIFICATIONS_ID,
@@ -868,16 +868,16 @@ namespace MTS.BLL.Services
 
         #region MTSSpecification CRUD method's
 
-        public int MTSSpecificationCreate(MTSSpecificationssDTO mtsSpecificationDTO)
+        public int MTSSpecificationCreate(MTSSpecificationsDTO mtsSpecificationDTO)
         {
-            var createSpec = mtsSpecificationsOld.Create(mapper.Map<MTSSpecificationss>(mtsSpecificationDTO));
+            var createSpec = mtsSpecificationsOld.Create(mapper.Map<MTSSpecifications>(mtsSpecificationDTO));
             return (int)createSpec.ID;
         }
 
-        public void MTSSpecificationUpdate(MTSSpecificationssDTO mtsSpecificationDTO)
+        public void MTSSpecificationUpdate(MTSSpecificationsDTO mtsSpecificationDTO)
         {
             var updateSpec = mtsSpecificationsOld.GetAll().SingleOrDefault(c => c.ID == mtsSpecificationDTO.ID);
-            mtsSpecificationsOld.Update((mapper.Map<MTSSpecificationssDTO, MTSSpecificationss>(mtsSpecificationDTO, updateSpec)));
+            mtsSpecificationsOld.Update((mapper.Map<MTSSpecificationsDTO, MTSSpecifications>(mtsSpecificationDTO, updateSpec)));
         }
 
         public bool MTSSpecificationDelete(int id)
@@ -920,16 +920,16 @@ namespace MTS.BLL.Services
         }
         //----
 
-        public int MTSDetailCreate(MTSDetailsDTO mtsDetalsDTO)
+        public int MTSDetailCreate(MTS_DetailsDTO mtsDetalsDTO)
         {
             var createDetail = mtsDetals.Create(mapper.Map<MTSDetails>(mtsDetalsDTO));
             return (int)createDetail.ID;
         }
 
-        public void MTSDetailUpdate(MTSDetailsDTO mtsDetalsDTO)
+        public void MTSDetailUpdate(MTS_DetailsDTO mtsDetalsDTO)
         {
             var updateDetail = mtsDetals.GetAll().SingleOrDefault(c => c.ID == mtsDetalsDTO.ID);
-            mtsDetals.Update((mapper.Map<MTSDetailsDTO, MTSDetails>(mtsDetalsDTO, updateDetail)));
+            mtsDetals.Update((mapper.Map<MTS_DetailsDTO, MTSDetails>(mtsDetalsDTO, updateDetail)));
         }
 
         public bool MTSDetailDelete(int id)

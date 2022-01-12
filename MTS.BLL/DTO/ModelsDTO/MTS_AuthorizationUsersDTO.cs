@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
+using MTS.BLL.Infrastructure;
 
-namespace MTS.DAL.Entities.Models
+namespace MTS.BLL.DTO.ModelsDTO
 {
-    public class MTS_Authorization_Users
+    public class MTS_Authorization_UsersDTO:ObjectBase
     {
-        [Key]
         public int ID { get; set; }
         public string NAME { get; set; }
         public string PWD { get; set; }
