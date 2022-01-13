@@ -50,7 +50,7 @@ namespace MTS.GUI.Delivery
 
                     deliveryService = Program.kernel.Get<IDeliveryService>();
 
-                    receiptDetailsList = deliveryService.GetReceiptDetails(deliveryOrdersList[0].ReceiptID).ToList();
+                    //receiptDetailsList = deliveryService.GetReceiptDetails(deliveryOrdersList[0].ReceiptID).ToList();
                     receiptDetailsBS.DataSource = receiptDetailsList;
                     customerOrdersGrid.DataSource = receiptDetailsBS;
 

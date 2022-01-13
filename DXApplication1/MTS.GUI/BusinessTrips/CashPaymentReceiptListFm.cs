@@ -41,7 +41,7 @@ namespace MTS.GUI.BusinessTrips
             accountsEdit.ValueMember = "Id";
             accountsEdit.DisplayMember = "Num";
 
-            customerOrderEdit.DataSource = customerOrdersService.GetCustomerOrdersFull();
+            //customerOrderEdit.DataSource = customerOrdersService.GetCustomerOrdersFull();
             customerOrderEdit.ValueMember = "Id";
             customerOrderEdit.DisplayMember = "OrderNumber";
 

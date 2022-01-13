@@ -56,8 +56,8 @@ namespace MTS.GUI.OTK
 
             defectActsService = Program.kernel.Get<IDefectActsService>();
 
-            var defectActs = defectActsService.GetDefectActs(beginDate, endDate);
-            defectActsBS.DataSource = defectActs;
+            //var defectActs = defectActsService.GetDefectActs(beginDate, endDate);
+            //defectActsBS.DataSource = defectActs;
             defectActsGrid.DataSource = defectActsBS;
             
             if(defectActsBS.Count > 0)
@@ -273,16 +273,16 @@ namespace MTS.GUI.OTK
                     var relatedModel = view.GetRow(hi.RowHandle);
                     if (relatedModel != null)
                     {
-                        MtsAssembliesInfoDTO infoItem = GetMtsAssemblyInfo(((DefectActsDTO)relatedModel).MtsAssemblyId);
+                        //MtsAssembliesInfoDTO infoItem = GetMtsAssemblyInfo(((DefectActsDTO)relatedModel).MtsAssemblyId);
 
                         StringBuilder makeToolMsg = new StringBuilder();
-                        makeToolMsg.Append("<u>Найменування:</u> " + "<b>" + infoItem.Name + "</b>");
-                        makeToolMsg.AppendLine();
-                        makeToolMsg.Append("<u>Дата реєстрації:</u> " + "<b>" + infoItem.DateCreated.ToShortDateString() + "</b>");
-                        makeToolMsg.AppendLine();
-                        makeToolMsg.Append("<u>Розробник:</u> " + "<b>" + infoItem.DesignerName + "</b>");
-                        makeToolMsg.AppendLine();
-                        makeToolMsg.Append("<u>Замовник:</u> " + "<b>" + infoItem.ContractorName + "</b>");
+                        //makeToolMsg.Append("<u>Найменування:</u> " + "<b>" + infoItem.Name + "</b>");
+                        //makeToolMsg.AppendLine();
+                        //makeToolMsg.Append("<u>Дата реєстрації:</u> " + "<b>" + infoItem.DateCreated.ToShortDateString() + "</b>");
+                        //makeToolMsg.AppendLine();
+                        //makeToolMsg.Append("<u>Розробник:</u> " + "<b>" + infoItem.DesignerName + "</b>");
+                        //makeToolMsg.AppendLine();
+                        //makeToolMsg.Append("<u>Замовник:</u> " + "<b>" + infoItem.ContractorName + "</b>");
 
                         string toolMsg = makeToolMsg.ToString();
 
@@ -295,12 +295,12 @@ namespace MTS.GUI.OTK
             }
         }
 
-        private MtsAssembliesInfoDTO GetMtsAssemblyInfo(int id)
-        {
-            mtsSpecificationService = Program.kernel.Get<IMtsSpecificationsService>();
+        //private MtsAssembliesInfoDTO GetMtsAssemblyInfo(int id)
+        //{
+        //    mtsSpecificationService = Program.kernel.Get<IMtsSpecificationsService>();
 
-            return mtsSpecificationService.GetSingleMtsAssemblyInfo(id);
-        }
+        //    return mtsSpecificationService.GetSingleMtsAssemblyInfo(id);
+        //}
 
         #endregion
     }

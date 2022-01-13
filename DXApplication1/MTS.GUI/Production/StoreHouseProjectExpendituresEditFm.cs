@@ -75,7 +75,7 @@ namespace MTS.GUI.Production
             //sumEdit.DataBindings.Add("EditValue", expendituresStoreHousesBS, "PRICE");
             expenditureDateEdit.DataBindings.Add("EditValue", expendituresStoreHousesBS, "RealExpDate", true, DataSourceUpdateMode.OnPropertyChanged);
            
-            customerOrdersBS.DataSource = customerOrdersService.GetCustomerOrdersFull().OrderByDescending(sort => sort.OrderDate).ToList();
+            //customerOrdersBS.DataSource = customerOrdersService.GetCustomerOrdersFull().OrderByDescending(sort => sort.OrderDate).ToList();
             orderNumberEdit.Properties.DataSource = customerOrdersBS;
             orderNumberEdit.Properties.ValueMember = "Id";
             orderNumberEdit.Properties.DisplayMember = "OrderNumber";

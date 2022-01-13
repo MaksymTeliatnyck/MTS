@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MTS.DAL.Entities.Models
+namespace ERP_NEW.DAL.Entities.Models
 {
     public class MtsAssemblyDetails
     {

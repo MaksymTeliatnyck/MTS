@@ -64,7 +64,7 @@ namespace MTS.GUI.CustomerOrders
         private void LoadData()
         {
             mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
-            assembliesBS.DataSource = mtsSpecificationsService.GetMtsAssemblies(DateTime.MinValue, DateTime.MaxValue);
+            //assembliesBS.DataSource = mtsSpecificationsService.GetMtsAssemblies(DateTime.MinValue, DateTime.MaxValue);
         }
 
         public int Return()

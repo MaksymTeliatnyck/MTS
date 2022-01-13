@@ -54,7 +54,7 @@ namespace MTS.GUI.Marketing
             descriptionMemoEdit.DataBindings.Add("EditValue", shipmentListsBS, "Description", true, DataSourceUpdateMode.OnPropertyChanged);
 
             customerOrdersService = Program.kernel.Get<ICustomerOrdersService>();
-            customerOrdersBS.DataSource = customerOrdersService.GetCustomerOrders();
+            //customerOrdersBS.DataSource = customerOrdersService.GetCustomerOrders();
             orderNumberEdit.Properties.DataSource = customerOrdersBS;
             orderNumberEdit.Properties.ValueMember = "Id";
             orderNumberEdit.Properties.DisplayMember = "OrderNumber";

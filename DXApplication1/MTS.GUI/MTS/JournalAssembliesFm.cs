@@ -55,10 +55,10 @@ namespace MTS.GUI.MTS
           
             mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
 
-            if(ourProjects)
-                journalAssembliesBS.DataSource = mtsSpecificationsService.GetMtsAssembliesAll(beginDate, endDate).Where(bdsm => bdsm.DesignerCompanyId == 1).OrderByDescending(srt => srt.DateCreated).ToList();
-            else
-                journalAssembliesBS.DataSource = mtsSpecificationsService.GetMtsAssembliesAll(beginDate, endDate).Where(bdsm => bdsm.DesignerCompanyId != 1).OrderByDescending(srt => srt.DateCreated).ToList();
+            //if(ourProjects)
+            //    journalAssembliesBS.DataSource = mtsSpecificationsService.GetMtsAssembliesAll(beginDate, endDate).Where(bdsm => bdsm.DesignerCompanyId == 1).OrderByDescending(srt => srt.DateCreated).ToList();
+            //else
+            //    journalAssembliesBS.DataSource = mtsSpecificationsService.GetMtsAssembliesAll(beginDate, endDate).Where(bdsm => bdsm.DesignerCompanyId != 1).OrderByDescending(srt => srt.DateCreated).ToList();
 
             journalAssembliesGrid.DataSource = journalAssembliesBS;
 
@@ -135,17 +135,17 @@ namespace MTS.GUI.MTS
             {
                 if (MessageBox.Show("Видалити виріб?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (mtsSpecificationsService.DeleteSpecification((long)((MtsAssembliesInfoDTO)journalAssembliesBS.Current).SpecificationId))
-                    {
-                        if (mtsSpecificationsService.DeleteAssembly(((MtsAssembliesInfoDTO)journalAssembliesBS.Current).AssemblyId))
-                        {
-                            int rowHandle = journalAssembliesGridView.FocusedRowHandle - 1;
-                            journalAssembliesGridView.BeginDataUpdate();
-                            LoadData((DateTime)beginDateEdit.EditValue, (DateTime)endDateEdit.EditValue);
-                            journalAssembliesGridView.EndDataUpdate();
-                            journalAssembliesGridView.FocusedRowHandle = (journalAssembliesGridView.IsValidRowHandle(rowHandle)) ? rowHandle : -1;
-                        }
-                    }
+                    //if (mtsSpecificationsService.DeleteSpecification((long)((MtsAssembliesInfoDTO)journalAssembliesBS.Current).SpecificationId))
+                    //{
+                    //    if (mtsSpecificationsService.DeleteAssembly(((MtsAssembliesInfoDTO)journalAssembliesBS.Current).AssemblyId))
+                    //    {
+                    //        int rowHandle = journalAssembliesGridView.FocusedRowHandle - 1;
+                    //        journalAssembliesGridView.BeginDataUpdate();
+                    //        LoadData((DateTime)beginDateEdit.EditValue, (DateTime)endDateEdit.EditValue);
+                    //        journalAssembliesGridView.EndDataUpdate();
+                    //        journalAssembliesGridView.FocusedRowHandle = (journalAssembliesGridView.IsValidRowHandle(rowHandle)) ? rowHandle : -1;
+                    //    }
+                    //}
                 }
             }
         }

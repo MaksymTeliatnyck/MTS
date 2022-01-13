@@ -12,8 +12,7 @@ namespace MTS.BLL.Interfaces
         IEnumerable<DeliveryOrdersDTO> GetDeliveryOrders(DateTime beginDate, DateTime endDate);
         IEnumerable<DeliveryStoreRemainsDTO> GetDeliveryStoreRemains(DateTime endDate);
         IEnumerable<DeliveryStoreRemainsReceiptDTO> GetDeliveryStoreRemainsWithReceipt(DateTime endDate);
-        IEnumerable<ReceiptDetailsDTO> GetReceiptDetails(int receiptId);
-        IEnumerable<ReceiptDetailsDTO> GetReceiptDetails();
+
 
         int ReceiptDetailsCreate(ReceiptDetailsDTO receiptDetailsDTO);
         void ReceiptDetailsCreateRange(List<ReceiptDetailsDTO> source);

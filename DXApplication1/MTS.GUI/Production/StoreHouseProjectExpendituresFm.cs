@@ -140,12 +140,12 @@ namespace MTS.GUI.Production
             
             splashScreenManager.ShowWaitForm();
             
-            repositoryCustomerOrderEdit.DataSource = customerOrderService.GetCustomerOrdersFull().OrderByDescending(sort => sort.OrderDate).ToList();
+            //repositoryCustomerOrderEdit.DataSource = customerOrderService.GetCustomerOrdersFull().OrderByDescending(sort => sort.OrderDate).ToList();
             repositoryCustomerOrderEdit.ValueMember = "Id";
             repositoryCustomerOrderEdit.DisplayMember = "OrderNumber";
             repositoryCustomerOrderEdit.Properties.NullText = "Немає данних";
 
-            repositoryItemGridLookUpEdit1.DataSource = customerOrderService.GetCustomerOrdersFull().OrderByDescending(sort => sort.OrderDate).ToList();
+            //repositoryItemGridLookUpEdit1.DataSource = customerOrderService.GetCustomerOrdersFull().OrderByDescending(sort => sort.OrderDate).ToList();
             repositoryItemGridLookUpEdit1.ValueMember = "Id";
             repositoryItemGridLookUpEdit1.DisplayMember = "OrderNumber";
             repositoryItemGridLookUpEdit1.Properties.NullText = "Немає данних";

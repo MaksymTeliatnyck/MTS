@@ -184,7 +184,7 @@ namespace MTS.GUI.StoreHouse
             accountsEdit.Properties.NullText = "Немає данних";
 
             customerOrderEdit.DataBindings.Add("EditValue", ordersBS, "CustomerOrderId", true, DataSourceUpdateMode.OnPropertyChanged);
-            customerOrderEdit.Properties.DataSource = customerOrdersService.GetCustomerOrdersFull();
+            //customerOrderEdit.Properties.DataSource = customerOrdersService.GetCustomerOrdersFull();
             customerOrderEdit.Properties.ValueMember = "Id";
             customerOrderEdit.Properties.DisplayMember = "OrderNumber";
             customerOrderEdit.Properties.NullText = "Немає данних";

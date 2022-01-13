@@ -140,17 +140,17 @@ namespace MTS.GUI.CustomerOrders
             currencyBS.DataSource = currencyService.GetCurrency();
             contractorsBS.DataSource = contractorsService.GetContractors(2); // 1 - все данные, 2 - только контрагенты без договоров, 3 - только договора
             agreementsBS.DataSource = contractorsService.GetContractors(3);
-            assembliesBS.DataSource = mtsSpecificationService.GetMtsAssembliesAll(DateTime.MinValue, DateTime.MaxValue).OrderByDescending(bdsm=>bdsm.DateCreated).ToList();
+            //assembliesBS.DataSource = mtsSpecificationService.GetMtsAssembliesAll(DateTime.MinValue, DateTime.MaxValue).OrderByDescending(bdsm=>bdsm.DateCreated).ToList();
 
             specificationsBS.DataSource = customerOrdersService.GetCustomerOrderSpecificationsByOrderId(((CustomerOrdersDTO)Item).Id).ToList();
             specificationGrid.DataSource = specificationsBS;
         }
         
-        private bool IsDuplicateRecord(string orderNumber)
-        {
-            customerOrdersService = Program.kernel.Get<ICustomerOrdersService>();
-            return customerOrdersService.GetCustomerOrders().Any(s => s.OrderNumber == orderNumber);
-        }
+        //private bool IsDuplicateRecord(string orderNumber)
+        //{
+        //    customerOrdersService = Program.kernel.Get<ICustomerOrdersService>();
+        //    return customerOrdersService.GetCustomerOrders().Any(s => s.OrderNumber == orderNumber);
+        //}
 
         private bool SaveOrder()
         {
@@ -407,12 +407,12 @@ namespace MTS.GUI.CustomerOrders
 
             if (MessageBox.Show("Зберегти зміни?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (_operation == Utils.Operation.Add && IsDuplicateRecord(orderNumberTBox.EditValue.ToString()))
-                {
-                    MessageBox.Show("Введений номер заказу вже існує в базі!", "Збереження", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    orderNumberTBox.Focus();
-                    return;
-                }
+                //if (_operation == Utils.Operation.Add && IsDuplicateRecord(orderNumberTBox.EditValue.ToString()))
+                //{
+                //    MessageBox.Show("Введений номер заказу вже існує в базі!", "Збереження", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //    orderNumberTBox.Focus();
+                //    return;
+                //}
 
                 if (SaveOrder())
                 {

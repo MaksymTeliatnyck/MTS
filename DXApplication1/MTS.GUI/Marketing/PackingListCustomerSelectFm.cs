@@ -35,11 +35,11 @@ namespace MTS.GUI.Marketing
 
             customerOrdersService = Program.kernel.Get<ICustomerOrdersService>();
 
-            List<CustomerOrdersDTO> customOrder = customerOrdersService.GetCustomerOrdersFull().OrderByDescending(ord => ord.OrderDate).ToList();
+            //List<CustomerOrdersDTO> customOrder = customerOrdersService.GetCustomerOrdersFull().OrderByDescending(ord => ord.OrderDate).ToList();
 
             //var rez = mtsSpecificationsService.GetJournalAssemblies().OrderByDescending(bdsm => bdsm.DateCreated).ToList();
 
-            assembliesBS.DataSource = customOrder;
+            //assembliesBS.DataSource = customOrder;
 
             customerOrdersGrid.DataSource = assembliesBS; 
 

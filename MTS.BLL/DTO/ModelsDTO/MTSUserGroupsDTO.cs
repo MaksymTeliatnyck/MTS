@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
 
-namespace MTS.DAL.Entities.Models
+namespace MTS.BLL.DTO.ModelsDTO
 {
-    public class MTS_Gost
+    public class MTSUserGroupsDTO
     {
-        [Key]
         public int ID { get; set; }
         public string NAME { get; set; }
+        public int? USER_RIGHTS_ID { get; set; }
     }
 }

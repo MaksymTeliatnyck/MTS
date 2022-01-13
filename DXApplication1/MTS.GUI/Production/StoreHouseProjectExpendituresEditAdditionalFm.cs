@@ -105,7 +105,7 @@ namespace MTS.GUI.Production
             sumEdit.DataBindings.Add("EditValue", expenditureBS, "PRICE", true, DataSourceUpdateMode.OnPropertyChanged);
             balanceNumEdit.DataBindings.Add("EditValue", expenditureBS, "BalanceAccountNum", true, DataSourceUpdateMode.OnPropertyChanged);
 
-            orderNumberEdit.Properties.DataSource = customerOrdersService.GetCustomerOrdersFull().OrderByDescending(sort => sort.OrderDate).ToList();
+            //orderNumberEdit.Properties.DataSource = customerOrdersService.GetCustomerOrdersFull().OrderByDescending(sort => sort.OrderDate).ToList();
             orderNumberEdit.Properties.ValueMember = "Id";
             orderNumberEdit.Properties.DisplayMember = "OrderNumber";
             orderNumberEdit.Properties.NullText = null;

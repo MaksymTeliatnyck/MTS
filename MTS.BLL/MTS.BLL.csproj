@@ -144,6 +144,9 @@
     <Compile Include="DTO\ModelsDTO\GetOSVkvartal_ForChessDTO.cs" />
     <Compile Include="DTO\ModelsDTO\LogDTO.cs" />
     <Compile Include="DTO\ModelsDTO\MTS_AUTHORIZATION_USERS_DTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MTSUsersDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MTSUserGroupsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MTSUserRightsDTO.cs" />
     <Compile Include="DTO\ModelsDTO\PaintingWorksDTO.cs" />
     <Compile Include="DTO\ReportsDTO\ContractorVatDTO.cs" />
     <Compile Include="DTO\ModelsDTO\AccessRightsDTO.cs" />
@@ -172,10 +175,10 @@
     <Compile Include="DTO\ModelsDTO\MTSGuagesDTO.cs" />
     <Compile Include="DTO\ModelsDTO\MTSMaterialsDTO.cs" />
     <Compile Include="DTO\ModelsDTO\MTSMeasureDTO.cs" />
-    <Compile Include="DTO\ModelsDTO\MTSNomenclatureGroupsOldDTO.cs" />
-    <Compile Include="DTO\ModelsDTO\MTSNomenclaturesOldDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MTSNomenclatureGroupsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MTSNomenclaturesDTO.cs" />
     <Compile Include="DTO\ModelsDTO\MTSPurchasedProductsDTO.cs" />
-    <Compile Include="DTO\ModelsDTO\MTSSpecificationssDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MTSSpecificationsDTO.cs" />
     <Compile Include="DTO\ModelsDTO\ReceiptDetailsDTO.cs" />
     <Compile Include="DTO\ModelsDTO\RegionDTO.cs" />
     <Compile Include="DTO\ModelsDTO\RequestLogContractorsDTO.cs" />
@@ -238,7 +241,7 @@
     <Compile Include="DTO\ModelsDTO\FixedAssetsOrderDTO.cs" />
     <Compile Include="DTO\ModelsDTO\InvoiceRequirementMaterialsDTO.cs" />
     <Compile Include="DTO\ModelsDTO\InvoiceRequirementOrdersDTO.cs" />
-    <Compile Include="DTO\ModelsDTO\MtsAdditCalculationsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MTSAdditCalculationsDTO.cs" />
     <Compile Include="DTO\ModelsDTO\MtsAssembliesDTO.cs" />
     <Compile Include="DTO\ModelsDTO\MtsAssemblyDetailsDTO.cs" />
     <Compile Include="DTO\ModelsDTO\MtsCreatedDetailsDTO.cs" />
@@ -247,9 +250,9 @@
     <Compile Include="DTO\ModelsDTO\MtsDocumentsDTO.cs" />
     <Compile Include="DTO\ModelsDTO\MtsGostsDTO.cs" />
     <Compile Include="DTO\ModelsDTO\MtsModificationsDTO.cs" />
-    <Compile Include="DTO\ModelsDTO\MtsNomenclatureGroupsDTO.cs" />
-    <Compile Include="DTO\ModelsDTO\MtsSpecificationsDTO.cs" />
-    <Compile Include="DTO\ModelsDTO\MtsNomenclaturesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MtsNomenclatureGroupssDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MtsSpecificationnsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MtsNomenclaturessDTO.cs" />
     <Compile Include="DTO\ModelsDTO\NomenclatureGroupsDTO.cs" />
     <Compile Include="DTO\ModelsDTO\NomenclaturesDTO.cs" />
     <Compile Include="DTO\ModelsDTO\OrdersDTO.cs" />

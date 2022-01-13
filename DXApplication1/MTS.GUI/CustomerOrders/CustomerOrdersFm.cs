@@ -69,9 +69,9 @@ namespace MTS.GUI.CustomerOrders
             splashScreenManager.ShowWaitForm();
 
             customerOrdersService = Program.kernel.Get<ICustomerOrdersService>();
-            customerOrdersBS.DataSource = ((int)orderFilterTypeItem.EditValue == 0) ?
-                customerOrdersService.GetCustomerOrdersByPeriod(beginDate, endDate):
-                customerOrdersService.GetCustomerOrdersWithoutSign();
+            //customerOrdersBS.DataSource = ((int)orderFilterTypeItem.EditValue == 0) ?
+            //    customerOrdersService.GetCustomerOrdersByPeriod(beginDate, endDate):
+            //    customerOrdersService.GetCustomerOrdersWithoutSign();
             customerOrdersGrid.DataSource = customerOrdersBS;
 
             if (customerOrdersBS.Count > 0)
@@ -112,7 +112,7 @@ namespace MTS.GUI.CustomerOrders
         private void LoadCustomerOrderAssembliesData(int specId)
         {
             customerOrdersService = Program.kernel.Get<ICustomerOrdersService>();
-            customerOrdersAssemblyBS.DataSource = customerOrdersService.GetCustomerOrderAssembliesBySpecId(specId);
+            //customerOrdersAssemblyBS.DataSource = customerOrdersService.GetCustomerOrderAssembliesBySpecId(specId);
             assembliesGrid.DataSource = customerOrdersAssemblyBS;
         }
 

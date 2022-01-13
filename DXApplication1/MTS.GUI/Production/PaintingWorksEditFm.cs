@@ -62,8 +62,8 @@ namespace MTS.GUI.Production
             dateEdit.DataBindings.Add("EditValue", paintingWorksJournalBS, "Date", true, DataSourceUpdateMode.OnPropertyChanged);
 
            
-            List<MtsAssembliesDTO> mtsAssembliesList = mtsSpecificationsService.GetAllMtsAssemblies().ToList();
-            numberDrawingLookUpEdit.Properties.DataSource = mtsAssembliesList;
+            //List<MtsAssembliesDTO> mtsAssembliesList = mtsSpecificationsService.GetAllMtsAssemblies().ToList();
+            //numberDrawingLookUpEdit.Properties.DataSource = mtsAssembliesList;
             numberDrawingLookUpEdit.Properties.ValueMember = "Id";
             numberDrawingLookUpEdit.Properties.DisplayMember = "Drawing";
             numberDrawingLookUpEdit.Properties.NullText = "Немає даних";

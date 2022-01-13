@@ -2,7 +2,7 @@
 
 namespace MTS.BLL.DTO.ModelsDTO
 {
-    public class MtsAdditCalculationsDTO
+    public class MTSAdditCalculationsDTO
     {
         public int Id { get; set; }
         public int UnitId { get; set; }

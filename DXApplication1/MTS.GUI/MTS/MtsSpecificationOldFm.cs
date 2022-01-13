@@ -239,13 +239,13 @@ namespace MTS.GUI.MTS
             switch (operation)
             {
                 case Utils.Operation.Add:
-                    using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(new MTSNomenclaturesOldDTO()))
+                    using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(new MTSNomenclaturesDTO()))
                     {
                         if (directoryBuyDetailEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                         {
                             //MTSNomenclatureGroupsOldDTO return_Id = directoryBuyDetailEditOldFm.Return();
                             // =new MtsBuyDetailEditOldFm(Utils.Operation.Add,MTSNomenclaturesOldDTO nom);
-                            MTSNomenclaturesOldDTO selectNomenclature = directoryBuyDetailEditOldFm.Returnl();
+                            MTSNomenclaturesDTO selectNomenclature = directoryBuyDetailEditOldFm.Returnl();
 
                             model.NOMENCLATURES_ID = selectNomenclature.ID;
                             model.GUAEGENAME = selectNomenclature.GUAGE;
@@ -297,13 +297,13 @@ namespace MTS.GUI.MTS
             switch (operation)
             {
                 case Utils.Operation.Add:
-                    using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(new MTSNomenclaturesOldDTO()))
+                    using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(new MTSNomenclaturesDTO()))
                     {
                         if (directoryBuyDetailEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                         {
                             //MTSNomenclatureGroupsOldDTO return_Id = directoryBuyDetailEditOldFm.Return();
                             // =new MtsBuyDetailEditOldFm(Utils.Operation.Add,MTSNomenclaturesOldDTO nom);
-                            MTSNomenclaturesOldDTO selectNomenclature = directoryBuyDetailEditOldFm.Returnl();
+                            MTSNomenclaturesDTO selectNomenclature = directoryBuyDetailEditOldFm.Returnl();
 
                             model.NOMENCLATURES_ID = selectNomenclature.ID;
                             model.GUAGENAME = selectNomenclature.GUAGE;

@@ -350,12 +350,12 @@ namespace MTS.GUI.Delivery
 
             var receiptByOrderId = storeHouseService.GetReceiptsByOrderId(((DeliveryOrdersDTO)ordersBS.Current).OrderId).ToList();
 
-            foreach (var item in receiptByOrderId)
-            {
-                var deleteReceiptDetails = deliveryService.GetReceiptDetails().Where(bdsm => bdsm.ReceiptId == item.ID).ToList();
-                if (deleteReceiptDetails.Count() > 0)
-                    receiptDetailsDeleteList.AddRange(deleteReceiptDetails);
-            }
+            //foreach (var item in receiptByOrderId)
+            //{
+            //    var deleteReceiptDetails = deliveryService.GetReceiptDetails().Where(bdsm => bdsm.ReceiptId == item.ID).ToList();
+            //    if (deleteReceiptDetails.Count() > 0)
+            //        receiptDetailsDeleteList.AddRange(deleteReceiptDetails);
+            //}
 
             if (receiptDetailsDeleteList.Count() > 0)
             {

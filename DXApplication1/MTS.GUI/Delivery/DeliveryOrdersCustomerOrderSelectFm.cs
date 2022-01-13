@@ -33,11 +33,11 @@ namespace MTS.GUI.Delivery
 
             customerOrdersService = Program.kernel.Get<ICustomerOrdersService>();
 
-            List<CustomerOrdersDTO> customerOrdersList = customerOrdersService.GetCustomerOrders().ToList();
+            //List<CustomerOrdersDTO> customerOrdersList = customerOrdersService.GetCustomerOrders().ToList();
             //var rez = customerOrdersService.GetCustomerOrdersFull().Where(name => mas.All(search => !name.Id.Equals(search))).OrderByDescending(bdsm => bdsm.OrderDate).ToList();
-            var rez = customerOrdersService.GetCustomerOrdersFullWithReceipt().Where(name => mas.All(search => !name.Id.Equals(search))).OrderByDescending(bdsm => bdsm.OrderDate).ToList();
+            //var rez = customerOrdersService.GetCustomerOrdersFullWithReceipt().Where(name => mas.All(search => !name.Id.Equals(search))).OrderByDescending(bdsm => bdsm.OrderDate).ToList();
 
-            customersOrdersBS.DataSource = rez;// rez;
+            //customersOrdersBS.DataSource = rez;// rez;
             deliveryOrderCustomerGrid.DataSource = customersOrdersBS;
 
             if (isInvoices)

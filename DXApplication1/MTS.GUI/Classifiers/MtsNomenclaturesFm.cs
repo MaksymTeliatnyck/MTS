@@ -46,7 +46,7 @@ namespace MTS.GUI.Classifiers
 
             splashScreenManager.ShowWaitForm();
             mtsNomenclaturesService = Program.kernel.Get<IMtsNomenclaturesService>();
-            var mtsNomenclatures = new BindingList<MtsNomenclaturesDTO>(mtsNomenclaturesService.GetNomenclarures().ToList());
+            var mtsNomenclatures = new BindingList<MtsNomenclaturessDTO>(mtsNomenclaturesService.GetNomenclarures().ToList());
             mtsNomenclaturesBS.DataSource = mtsNomenclatures;
             mtsNomenclaturesGrid.DataSource = mtsNomenclaturesBS;
 
@@ -63,7 +63,7 @@ namespace MTS.GUI.Classifiers
 
         private void AddNomenclature()
         {
-            using (MtsNomenclatureEditFm mtsNomenclatureEditFm = new MtsNomenclatureEditFm(Utils.Operation.Add, new MtsNomenclaturesDTO()))
+            using (MtsNomenclatureEditFm mtsNomenclatureEditFm = new MtsNomenclatureEditFm(Utils.Operation.Add, new MtsNomenclaturessDTO()))
             {
                 if (mtsNomenclatureEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -82,7 +82,7 @@ namespace MTS.GUI.Classifiers
         {
             if (mtsNomenclaturesBS.Count != 0)
             {
-                using (MtsNomenclatureEditFm mtsNomenclatureEditFm = new MtsNomenclatureEditFm(Utils.Operation.Update, mtsNomenclaturesBS.Current as MtsNomenclaturesDTO))
+                using (MtsNomenclatureEditFm mtsNomenclatureEditFm = new MtsNomenclatureEditFm(Utils.Operation.Update, mtsNomenclaturesBS.Current as MtsNomenclaturessDTO))
                 {
                     if (mtsNomenclatureEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
@@ -105,7 +105,7 @@ namespace MTS.GUI.Classifiers
                 if (MessageBox.Show("Видалити номенклатуру?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
-                    if (mtsNomenclaturesService.NomenclarureDelete(((MtsNomenclaturesDTO)mtsNomenclaturesBS.Current).Id))
+                    if (mtsNomenclaturesService.NomenclarureDelete(((MtsNomenclaturessDTO)mtsNomenclaturesBS.Current).Id))
                     {
                         int rowHandle = mtsNomenclaturesGridView.FocusedRowHandle - 1;
                         mtsNomenclaturesGridView.BeginDataUpdate();

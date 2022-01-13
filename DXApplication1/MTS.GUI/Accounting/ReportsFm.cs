@@ -86,7 +86,7 @@ namespace MTS.GUI.Accounting
             supplierLookUp.Properties.NullText = "Немає данних";
 
             customerOrdersService = Program.kernel.Get<ICustomerOrdersService>();
-            orderNumberEdit.Properties.DataSource = customerOrdersService.GetCustomerOrdersFull().OrderByDescending(srt => srt.OrderDate).ToList();
+            //orderNumberEdit.Properties.DataSource = customerOrdersService.GetCustomerOrdersFull().OrderByDescending(srt => srt.OrderDate).ToList();
             orderNumberEdit.Properties.ValueMember = "Id";
             orderNumberEdit.Properties.DisplayMember = "OrderNumber";
             orderNumberEdit.Properties.NullText = "Немає данних";

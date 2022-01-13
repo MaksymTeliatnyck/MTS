@@ -50,7 +50,7 @@ namespace MTS.GUI.Production
 
             customerOrdersService = Program.kernel.Get<ICustomerOrdersService>();
 
-            repositoryItemGridLookUpEdit.DataSource = customerOrdersService.GetCustomerOrdersFull().OrderByDescending(sort => sort.OrderDate).ToList();
+            //repositoryItemGridLookUpEdit.DataSource = customerOrdersService.GetCustomerOrdersFull().OrderByDescending(sort => sort.OrderDate).ToList();
             //repositoryItemSearchLookUpEdit.DataSource = employeesService.GetEmployeesWorkingNonPhoto();
             repositoryItemGridLookUpEdit.ValueMember = "Id";
             repositoryItemGridLookUpEdit.DisplayMember = "OrderNumber";

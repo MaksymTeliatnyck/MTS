@@ -60,7 +60,7 @@ namespace MTS.GUI.OTK
             descriptionMemoEdit.DataBindings.Add("EditValue", defectActBS, "Description", true, DataSourceUpdateMode.OnPropertyChanged);
             detailsMemoEdit.DataBindings.Add("EditValue", defectActBS, "Details", true, DataSourceUpdateMode.OnPropertyChanged);
 
-            customerOrdersBS.DataSource = customerOrdersService.GetCustomerOrdersFull().OrderByDescending(sort => sort.OrderDate).ToList();
+           // customerOrdersBS.DataSource = customerOrdersService.GetCustomerOrdersFull().OrderByDescending(sort => sort.OrderDate).ToList();
             orderNumberEdit.Properties.DataSource = customerOrdersBS;
             orderNumberEdit.Properties.ValueMember = "Id";
             orderNumberEdit.Properties.DisplayMember = "OrderNumber";
@@ -68,7 +68,7 @@ namespace MTS.GUI.OTK
 
             
             assemblyEdit.DataBindings.Add("EditValue", defectActBS, "MtsAssemblyId", true, DataSourceUpdateMode.OnPropertyChanged);
-            assemblyEdit.Properties.DataSource = mtsSpecificationsService.GetJournalAssembliesWithCustomerOrders();
+            //assemblyEdit.Properties.DataSource = mtsSpecificationsService.GetJournalAssembliesWithCustomerOrders();
             assemblyEdit.Properties.ValueMember = "AssemblyId";
             assemblyEdit.Properties.DisplayMember = "Drawing";
             assemblyEdit.Properties.NullText = "Немає данних";

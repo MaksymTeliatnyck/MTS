@@ -28,9 +28,9 @@ namespace MTS.GUI.MTS
 
         private BindingSource materialsBS = new BindingSource();
 
-        private List<MtsNomenclaturesDTO> selectedList = new List<MtsNomenclaturesDTO>();
+        private List<MtsNomenclaturessDTO> selectedList = new List<MtsNomenclaturessDTO>();
 
-        public MtsSelectMaterialsEditFm(List<MtsNomenclaturesDTO> source)
+        public MtsSelectMaterialsEditFm(List<MtsNomenclaturessDTO> source)
         {
             InitializeComponent();
 
@@ -40,18 +40,18 @@ namespace MTS.GUI.MTS
 
         #region Method's
 
-        public List<MtsNomenclaturesDTO> Return()
+        public List<MtsNomenclaturessDTO> Return()
         {
             return selectedList;
         }
 
-        private MtsNomenclaturesDTO GetSingleMtsNomenclature(long id)
+        private MtsNomenclaturessDTO GetSingleMtsNomenclature(long id)
         {
             mtsNomenclatureService = Program.kernel.Get<IMtsNomenclaturesService>();
             return mtsNomenclatureService.GetNomenclarures().SingleOrDefault(n => n.Id == id);
         }
 
-        private void EditMtsNomenclature(Utils.Operation operation, MtsNomenclaturesDTO model)
+        private void EditMtsNomenclature(Utils.Operation operation, MtsNomenclaturessDTO model)
         {
             using (MtsNomenclatureEditFm mtsNomenclatureEditFm = new MtsNomenclatureEditFm(operation, model))
             {
@@ -69,20 +69,20 @@ namespace MTS.GUI.MTS
                     }
                     else
                     {
-                        ((MtsNomenclaturesDTO)materialsBS.Current).Name = currMaterial.Name;
-                        ((MtsNomenclaturesDTO)materialsBS.Current).AdditCalculationActive = currMaterial.AdditCalculationActive;
-                        ((MtsNomenclaturesDTO)materialsBS.Current).AdditUnitLocalName = currMaterial.AdditUnitLocalName;
-                        ((MtsNomenclaturesDTO)materialsBS.Current).Gauge = currMaterial.Gauge;
-                        ((MtsNomenclaturesDTO)materialsBS.Current).GostName = currMaterial.GostName;
-                        ((MtsNomenclaturesDTO)materialsBS.Current).GroupName = currMaterial.GroupName;
-                        ((MtsNomenclaturesDTO)materialsBS.Current).MtsGostId = currMaterial.MtsGostId;
-                        ((MtsNomenclaturesDTO)materialsBS.Current).MtsNomenclatureGroupId = currMaterial.MtsNomenclatureGroupId;
-                        ((MtsNomenclaturesDTO)materialsBS.Current).Note = currMaterial.Note;
-                        ((MtsNomenclaturesDTO)materialsBS.Current).Price = currMaterial.Price;
-                        ((MtsNomenclaturesDTO)materialsBS.Current).RatioOfWaste = currMaterial.RatioOfWaste;
-                        ((MtsNomenclaturesDTO)materialsBS.Current).UnitId = currMaterial.UnitId;
-                        ((MtsNomenclaturesDTO)materialsBS.Current).UnitLocalName = currMaterial.UnitLocalName;
-                        ((MtsNomenclaturesDTO)materialsBS.Current).Weight = currMaterial.Weight;
+                        ((MtsNomenclaturessDTO)materialsBS.Current).Name = currMaterial.Name;
+                        ((MtsNomenclaturessDTO)materialsBS.Current).AdditCalculationActive = currMaterial.AdditCalculationActive;
+                        ((MtsNomenclaturessDTO)materialsBS.Current).AdditUnitLocalName = currMaterial.AdditUnitLocalName;
+                        ((MtsNomenclaturessDTO)materialsBS.Current).Gauge = currMaterial.Gauge;
+                        ((MtsNomenclaturessDTO)materialsBS.Current).GostName = currMaterial.GostName;
+                        ((MtsNomenclaturessDTO)materialsBS.Current).GroupName = currMaterial.GroupName;
+                        ((MtsNomenclaturessDTO)materialsBS.Current).MtsGostId = currMaterial.MtsGostId;
+                        ((MtsNomenclaturessDTO)materialsBS.Current).MtsNomenclatureGroupId = currMaterial.MtsNomenclatureGroupId;
+                        ((MtsNomenclaturessDTO)materialsBS.Current).Note = currMaterial.Note;
+                        ((MtsNomenclaturessDTO)materialsBS.Current).Price = currMaterial.Price;
+                        ((MtsNomenclaturessDTO)materialsBS.Current).RatioOfWaste = currMaterial.RatioOfWaste;
+                        ((MtsNomenclaturessDTO)materialsBS.Current).UnitId = currMaterial.UnitId;
+                        ((MtsNomenclaturessDTO)materialsBS.Current).UnitLocalName = currMaterial.UnitLocalName;
+                        ((MtsNomenclaturessDTO)materialsBS.Current).Weight = currMaterial.Weight;
                     }
 
                     materialsBS.EndEdit();
@@ -100,7 +100,7 @@ namespace MTS.GUI.MTS
             {
                 mtsNomenclatureService = Program.kernel.Get<IMtsNomenclaturesService>();
 
-                if (mtsNomenclatureService.NomenclarureDelete(((MtsNomenclaturesDTO)materialsBS.Current).Id))
+                if (mtsNomenclatureService.NomenclarureDelete(((MtsNomenclaturessDTO)materialsBS.Current).Id))
                 {
                     int rowHandle = materialsGridView.FocusedRowHandle - 1;
                     
@@ -120,7 +120,7 @@ namespace MTS.GUI.MTS
         {
             materialsGridView.CloseEditor();
 
-            selectedList = ((List<MtsNomenclaturesDTO>)materialsBS.DataSource).Where(s => s.CheckForSelected).ToList();
+            selectedList = ((List<MtsNomenclaturessDTO>)materialsBS.DataSource).Where(s => s.CheckForSelected).ToList();
 
             DialogResult = DialogResult.OK;
             this.Close();
@@ -134,13 +134,13 @@ namespace MTS.GUI.MTS
 
         private void addBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            EditMtsNomenclature(Utils.Operation.Add, new MtsNomenclaturesDTO());
+            EditMtsNomenclature(Utils.Operation.Add, new MtsNomenclaturessDTO());
         }
 
         private void editBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (materialsBS.Count > 0)
-                EditMtsNomenclature(Utils.Operation.Update, (MtsNomenclaturesDTO)materialsBS.Current);
+                EditMtsNomenclature(Utils.Operation.Update, (MtsNomenclaturessDTO)materialsBS.Current);
         }
 
         private void deleteBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

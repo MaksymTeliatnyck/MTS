@@ -113,14 +113,14 @@ namespace MTS.GUI.MTS
             this.Close();
         }
 
-        private void ShowDirectoryBuyDetails(MTSNomenclaturesOldDTO model)
+        private void ShowDirectoryBuyDetails(MTSNomenclaturesDTO model)
         {
             using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model))
             //  DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model);
             {
                 if (directoryBuyDetailEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    MTSNomenclaturesOldDTO getBuyDetail = directoryBuyDetailEditOldFm.Returnl();
+                    MTSNomenclaturesDTO getBuyDetail = directoryBuyDetailEditOldFm.Returnl();
 
                     ((MTSPurchasedProductsDTO)Item).NOMENCLATURES_ID = getBuyDetail.ID;
                     guageEdit.Text = getBuyDetail.GUAGE;
@@ -133,7 +133,7 @@ namespace MTS.GUI.MTS
         private void directoryBuyDetailsBtn_Click(object sender, EventArgs e)
         {
            
-            ShowDirectoryBuyDetails(new MTSNomenclaturesOldDTO());
+            ShowDirectoryBuyDetails(new MTSNomenclaturesDTO());
         }
 
         private void quantityEdit_EditValueChanged(object sender, EventArgs e)

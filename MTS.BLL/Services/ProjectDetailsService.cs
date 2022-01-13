@@ -13,6 +13,7 @@ using MTS.DAL.Interfaces;
 using FirebirdSql.Data.FirebirdClient;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using ERP_NEW.DAL.Entities.Models;
 
 namespace MTS.BLL.Services
 {

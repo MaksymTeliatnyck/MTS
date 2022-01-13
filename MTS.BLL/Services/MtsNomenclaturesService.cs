@@ -19,35 +19,35 @@ namespace MTS.BLL.Services
     public class MtsNomenclaturesService : IMtsNomenclaturesService
     {
         private IUnitOfWork Database { get; set; }
-        private IRepository<MtsNomenclatures> mtsNomenclatures;
-        private IRepository<MtsNomenclatureGroups> mtsNomenclatureGroups;
-        private IRepository<MtsGosts> mtsGosts;
-        private IRepository<Units> units;
-        private IRepository<MtsAdditCalculations> mtsAdditCalculations;
-        private IRepository<MtsSpecifications> mtsSpecifications;
+ 
+        private IRepository<MTS_ADDIT_CALCULATION> mtsAdditCalculations;
+        private IRepository<MTS_SPECIFICATIONS> mtsSpecifications;
+        private IRepository<MTS_NOMENCLATURES> mtsNomenclatures;
+        private IRepository<MTS_NOMENCLATURE_GROUPS> mtsNomenclatureGroups;
+        private IRepository<MTS_GOST> mtsGosts;
+        
 
         private IMapper mapper;
 
         public MtsNomenclaturesService(IUnitOfWork uow)
         {
             Database = uow;
-            mtsNomenclatures = Database.GetRepository<MtsNomenclatures>();
-            mtsNomenclatureGroups = Database.GetRepository<MtsNomenclatureGroups>();
-            mtsAdditCalculations = Database.GetRepository<MtsAdditCalculations>();
-            mtsGosts = Database.GetRepository<MtsGosts>();
-            units = Database.GetRepository<Units>();
-            mtsSpecifications = Database.GetRepository<MtsSpecifications>();
+            mtsNomenclatures = Database.GetRepository<MTS_NOMENCLATURES>();
+            mtsNomenclatureGroups = Database.GetRepository<MTS_NOMENCLATURE_GROUPS>();
+            mtsAdditCalculations = Database.GetRepository<MTS_ADDIT_CALCULATION>();
+            mtsGosts = Database.GetRepository<MTS_GOST>();
 
+            mtsSpecifications = Database.GetRepository<MTS_SPECIFICATIONS>();
+         
             var config = new MapperConfiguration(cfg =>
              {
-                 cfg.CreateMap<MtsNomenclatures, MtsNomenclaturesDTO>();
-                 cfg.CreateMap<MtsNomenclaturesDTO, MtsNomenclatures>();
-                 cfg.CreateMap<MtsNomenclatureGroups, MtsNomenclatureGroupsDTO>();
-                 cfg.CreateMap<MtsNomenclatureGroupsDTO, MtsNomenclatureGroups>();
-                 cfg.CreateMap<MtsGosts, MtsGostsDTO>();
-                 cfg.CreateMap<MtsGostsDTO, MtsGosts>();
-                 cfg.CreateMap<Units, UnitsDTO>();
-                 cfg.CreateMap<MtsAdditCalculations, MtsAdditCalculationsDTO>();
+                 cfg.CreateMap<MTS_NOMENCLATURES, MTSNomenclaturesDTO>();
+                 cfg.CreateMap<MTSNomenclaturesDTO, MTS_NOMENCLATURES>();
+                 cfg.CreateMap<MTS_NOMENCLATURE_GROUPS, MTSNomenclatureGroupsDTO>();
+                 cfg.CreateMap<MTSNomenclatureGroupsDTO, MTS_NOMENCLATURE_GROUPS>();
+                 cfg.CreateMap<MTS_GOST, MTSGostDTO>();
+                 cfg.CreateMap<MTSGostDTO, MTS_GOST>();
+                 cfg.CreateMap<MTS_ADDIT_CALCULATION, MTSAdditCalculationsDTO>();
 
              });
 
@@ -56,142 +56,98 @@ namespace MTS.BLL.Services
 
         #region Get method's
 
-        public IEnumerable<MtsNomenclaturesDTO> GetNomenclarures()
+        public IEnumerable<MtsNomenclaturessDTO> GetNomenclarures()
         {
             var result = (from g in mtsNomenclatureGroups.GetAll()
-                          join a in mtsAdditCalculations.GetAll() on g.MtsAdditCalculationId equals a.Id into na
+                          join a in mtsAdditCalculations.GetAll() on g.ADDIT_CALCULATION_ID equals a.ID into na
                           from a in na.DefaultIfEmpty()
-                          join ua in units.GetAll() on a.UnitId equals ua.UnitId into aua
-                          from ua in aua.DefaultIfEmpty()
-                          join n in mtsNomenclatures.GetAll() on g.Id equals n.MtsNomenclatureGroupId
-                          join c in mtsGosts.GetAll() on n.MtsGostId equals c.Id into nc
+                          join n in mtsNomenclatures.GetAll() on g.ID equals n.NOMENCLATUREGROUPS_ID
+                          join c in mtsGosts.GetAll() on n.GOST_ID equals c.ID into nc
                           from c in nc.DefaultIfEmpty()
-                          join u in units.GetAll() on n.UnitId equals u.UnitId into nu
-                          from u in nu.DefaultIfEmpty()
-                          select new MtsNomenclaturesDTO
+
+                          select new MtsNomenclaturessDTO
                           {
-                              Id = n.Id,
-                              MtsNomenclatureGroupId = n.MtsNomenclatureGroupId,
-                              MtsGostId = n.MtsGostId,
-                              UnitId = n.UnitId,
-                              Note = n.Note,
-                              Name = n.Name,
-                              Gauge = n.Gauge,
-                              Weight = n.Weight,
-                              Price = n.Price,
-                              AdditCalculationActive = g.AdditCalculationActive,
-                              GostName = c.Name,
-                              GroupName = g.Name,
-                              RatioOfWaste = g.RatioOfWaste,
-                              UnitLocalName = u.UnitLocalName,
-                              AdditUnitLocalName = ua.UnitLocalName
+                              Id = n.ID,
+                              MtsNomenclatureGroupId = n.NOMENCLATUREGROUPS_ID,
+                              MtsGostId = n.GOST_ID,
+                              Note = n.NOTE,
+                              Name = n.NAME,
+                              Gauge = n.GUAGE,
+                              Weight = n.WEIGHT,
+                              Price = n.PRICE,
+                              AdditCalculationActive = g.ADDIT_CALCULATION_ID,
+                              GostName = c.NAME,
+                              GroupName = g.NAME,
+                              RatioOfWaste = g.RATIO_OF_WASTE,
+                           //   UnitLocalName = u.UnitLocalName,
+                           //   AdditUnitLocalName = ua.UnitLocalName
                           });
 
             return result.ToList();
         }
 
-        public IEnumerable<MtsGostsDTO> GetGosts()
+        public IEnumerable<MTSGostDTO> GetGosts()
         {
-            return mapper.Map<IEnumerable<MtsGosts>, List<MtsGostsDTO>>(mtsGosts.GetAll().OrderBy(s => s.Name));
+            return mapper.Map<IEnumerable<MTS_GOST>, List<MTSGostDTO>>(mtsGosts.GetAll().OrderBy(s => s.NAME));
         }
 
-        public IEnumerable<UnitsDTO> GetUnits()
-        {
-            return mapper.Map<IEnumerable<Units>, List<UnitsDTO>>(units.GetAll().OrderBy(s => s.UnitLocalName));
-        }
+      
+        //public IEnumerable<MTSAdditCalculationsDTO> GetAdditCalculationUnits()
+        //{
+        //    var result = (from g in mtsAdditCalculations.GetAll()
+        //                  join ua in units.GetAll() on g.UnitId equals ua.UnitId into aua
+        //                  from ua in aua.DefaultIfEmpty()
+        //                  select new MTSAdditCalculationsDTO
+        //                  {
+        //                      Id = g.Id,
+        //                      UnitId = ua.UnitId,
+        //                      AdditUnitLocalName = ua.UnitLocalName
+        //                  });
 
-        public IEnumerable<MtsAdditCalculationsDTO> GetAdditCalculationUnits()
-        {
-            var result = (from g in mtsAdditCalculations.GetAll()
-                          join ua in units.GetAll() on g.UnitId equals ua.UnitId into aua
-                          from ua in aua.DefaultIfEmpty()
-                          select new MtsAdditCalculationsDTO
-                          {
-                              Id = g.Id,
-                              UnitId = ua.UnitId,
-                              AdditUnitLocalName = ua.UnitLocalName
-                          });
+        //    return result.ToList();
+        //}
 
-            return result.ToList();
-        }
-
-        public IEnumerable<MtsNomenclatureGroupsDTO> GetNomenclatureGroups()
+        public IEnumerable<MtsNomenclatureGroupssDTO> GetNomenclatureGroups()
         {
             var result = (from g in mtsNomenclatureGroups.GetAll()
-                          join a in mtsAdditCalculations.GetAll() on g.MtsAdditCalculationId equals a.Id into na
+                          join a in mtsAdditCalculations.GetAll() on g.ADDIT_CALCULATION_ID equals a.ID into na
                           from a in na.DefaultIfEmpty()
-                          join ua in units.GetAll() on a.UnitId equals ua.UnitId into aua
-                          from ua in aua.DefaultIfEmpty()
-                          orderby g.Name
-                          select new MtsNomenclatureGroupsDTO
+                          orderby g.NAME
+                          select new MtsNomenclatureGroupssDTO
                           {
-                              Id = g.Id,
-                              Name = g.Name,
-                              AdditCalculationActive = g.AdditCalculationActive,
-                              RatioOfWaste = g.RatioOfWaste,
-                              AdditUnitLocalName = ua.UnitLocalName,
-                              MtsAdditCalculationId = g.MtsAdditCalculationId
+                              Id = g.ID,
+                              Name = g.NAME,
+                              AdditCalculationActive = (short?)g.ADDIT_CALCULATION_ACTIVE,
+                              RatioOfWaste = g.RATIO_OF_WASTE,
+                              MtsAdditCalculationId = g.ADDIT_CALCULATION_ID
                           });
 
             return result.ToList();
         }
 
-        public IEnumerable<MtsNomenclaturesDTO> GetMaterialsBySpecificationId(long specId, short materialStatus) //1 - PurchasedProducts, 2 - Materials
-        {
-            var result = (from n in mtsNomenclatures.GetAll()
-                          join s in mtsSpecifications.GetAll() on n.Id equals s.MtsMaterialId
-                          join ng in mtsNomenclatureGroups.GetAll() on n.MtsNomenclatureGroupId equals ng.Id into nng
-                          from ng in nng.DefaultIfEmpty()
-                          join u in units.GetAll() on n.UnitId equals u.UnitId into nu
-                          from u in nu.DefaultIfEmpty()
-                          join go in mtsGosts.GetAll() on n.MtsGostId equals go.Id into ngo
-                          from go in ngo.DefaultIfEmpty()
-                          where s.ParentId == specId && s.MaterialStatus == materialStatus
-                          select new MtsNomenclaturesDTO()
-                          {
-                              Id = n.Id,
-                              AdditCalculationActive = ng.AdditCalculationActive,
-                              Gauge = n.Gauge,
-                              GostName = go.Name,
-                              GroupName = ng.Name,
-                              MtsGostId = n.MtsGostId,
-                              MtsNomenclatureGroupId = n.MtsNomenclatureGroupId,
-                              Name = n.Name,
-                              Note = n.Note,
-                              Price = n.Price,
-                              RatioOfWaste = ng.RatioOfWaste,
-                              UnitId = n.UnitId,
-                              UnitLocalName = u.UnitLocalName,
-                              Weight = n.Weight,
-                              Quantity = s.Quantity,
-                              CheckForSelected = false
-                          }
-                );
-
-            return result.ToList();
-        }
+       
 
         #endregion
 
         #region Nomenclatures CRUD method's
 
-        public long NomenclarureCreate(MtsNomenclaturesDTO mtsNomenclature)
+        public long NomenclarureCreate(MTSNomenclaturesDTO mtsNomenclature)
         {
-            var createrecord = mtsNomenclatures.Create(mapper.Map<MtsNomenclatures>(mtsNomenclature));
-            return (long)createrecord.Id;
+            var createrecord = mtsNomenclatures.Create(mapper.Map<MTS_NOMENCLATURES>(mtsNomenclature));
+            return (long)createrecord.ID;
         }
 
-        public void NomenclarureUpdate(MtsNomenclaturesDTO mtsNomenclature)
+        public void NomenclarureUpdate(MTSNomenclaturesDTO mtsNomenclature)
         {
-            var eGroup = mtsNomenclatures.GetAll().SingleOrDefault(c => c.Id == mtsNomenclature.Id);
-            mtsNomenclatures.Update((mapper.Map<MtsNomenclaturesDTO, MtsNomenclatures>(mtsNomenclature, eGroup)));
+            var eGroup = mtsNomenclatures.GetAll().SingleOrDefault(c => c.ID == mtsNomenclature.ID);
+            mtsNomenclatures.Update((mapper.Map<MTSNomenclaturesDTO, MTS_NOMENCLATURES>(mtsNomenclature, eGroup)));
         }
 
         public bool NomenclarureDelete(long id)
         {
             try
             {
-                mtsNomenclatures.Delete(mtsNomenclatures.GetAll().FirstOrDefault(c => c.Id == id));
+                mtsNomenclatures.Delete(mtsNomenclatures.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
             catch (Exception ex)
@@ -204,23 +160,23 @@ namespace MTS.BLL.Services
 
         #region MtsNomenclatureGroups CRUD method's
 
-        public int NomenclarureGroupCreate(MtsNomenclatureGroupsDTO mtsNomenclatureGroup)
+        public int NomenclarureGroupCreate(MTSNomenclatureGroupsDTO mtsNomenclatureGroup)
         {
-            var createrecord = mtsNomenclatureGroups.Create(mapper.Map<MtsNomenclatureGroups>(mtsNomenclatureGroup));
-            return (int)createrecord.Id;
+            var createrecord = mtsNomenclatureGroups.Create(mapper.Map<MTS_NOMENCLATURE_GROUPS>(mtsNomenclatureGroup));
+            return (int)createrecord.ID;
         }
 
-        public void NomenclarureGroupUpdate(MtsNomenclatureGroupsDTO mtsNomenclatureGroup)
+        public void NomenclarureGroupUpdate(MTSNomenclatureGroupsDTO mtsNomenclatureGroup)
         {
-            var eGroup = mtsNomenclatureGroups.GetAll().SingleOrDefault(c => c.Id == mtsNomenclatureGroup.Id);
-            mtsNomenclatureGroups.Update((mapper.Map<MtsNomenclatureGroupsDTO, MtsNomenclatureGroups>(mtsNomenclatureGroup, eGroup)));
+            var eGroup = mtsNomenclatureGroups.GetAll().SingleOrDefault(c => c.ID == mtsNomenclatureGroup.ID);
+            mtsNomenclatureGroups.Update((mapper.Map<MTSNomenclatureGroupsDTO, MTS_NOMENCLATURE_GROUPS>(mtsNomenclatureGroup, eGroup)));
         }
 
         public bool NomenclarureGroupDelete(int id)
         {
             try
             {
-                mtsNomenclatureGroups.Delete(mtsNomenclatureGroups.GetAll().FirstOrDefault(c => c.Id == id));
+                mtsNomenclatureGroups.Delete(mtsNomenclatureGroups.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
             catch (Exception ex)
@@ -233,24 +189,24 @@ namespace MTS.BLL.Services
 
         #region MtsGosts CRUD method's
         
-        public long GostCreate(MtsGostsDTO mtsGost)
+        public long GostCreate(MTSGostDTO mtsGost)
         {
-            var createrecord = mtsGosts.Create(mapper.Map<MtsGosts>(mtsGost));
-            return (long)createrecord.Id;
+            var createrecord = mtsGosts.Create(mapper.Map<MTS_GOST>(mtsGost));
+            return (long)createrecord.ID;
         }
 
-        public void GostUpdate(MtsGostsDTO mtsGost)
+        public void GostUpdate(MTSGostDTO mtsGost)
         {
 
-            var eGroup = mtsGosts.GetAll().SingleOrDefault(c => c.Id == mtsGost.Id);
-            mtsGosts.Update((mapper.Map<MtsGostsDTO, MtsGosts>(mtsGost, eGroup)));
+            var eGroup = mtsGosts.GetAll().SingleOrDefault(c => c.ID == mtsGost.ID);
+            mtsGosts.Update((mapper.Map<MTSGostDTO, MTS_GOST>(mtsGost, eGroup)));
         }
 
         public bool GostDelete(long id)
         {
             try
             {
-                mtsGosts.Delete(mtsGosts.GetAll().FirstOrDefault(c => c.Id == id));
+                mtsGosts.Delete(mtsGosts.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
             catch (Exception ex)

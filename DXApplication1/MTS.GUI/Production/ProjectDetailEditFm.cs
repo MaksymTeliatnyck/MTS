@@ -59,7 +59,7 @@ namespace MTS.GUI.Production
             //drawingTBox.ReadOnly = true;
             assemblyGeneralNameTBox.ReadOnly = true;
 
-            assemblyBS.DataSource = mtsSpecificationsService.GetJournalAssemblies().OrderByDescending(bdsm => bdsm.DateCreated).ToList();
+            //assemblyBS.DataSource = mtsSpecificationsService.GetJournalAssemblies().OrderByDescending(bdsm => bdsm.DateCreated).ToList();
 
             assemblyEdit.Properties.DataSource = assemblyBS;
             assemblyEdit.Properties.ValueMember = "AssemblyId";

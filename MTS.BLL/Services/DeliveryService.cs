@@ -27,7 +27,6 @@ namespace MTS.BLL.Services
         private IRepository<DeliveryStoreRemainsReceipt> deliveryStoreRemainsReceipt;
         private IRepository<ReceiptDetails> receiptDetails;
         private IRepository<CustomerOrders> customerOrders;
-        private IRepository<MtsAssemblies> mtsAssemblies;
         private IRepository<Contractors> contractors;
 
         private IMapper mapper;
@@ -42,7 +41,6 @@ namespace MTS.BLL.Services
             deliveryStoreRemainsReceipt = Database.GetRepository<DeliveryStoreRemainsReceipt>();
             receiptDetails = Database.GetRepository<ReceiptDetails>();
             customerOrders = Database.GetRepository<CustomerOrders>();
-            mtsAssemblies = Database.GetRepository<MtsAssemblies>();
             contractors = Database.GetRepository<Contractors>();
 
             var config = new MapperConfiguration(cfg =>
@@ -55,7 +53,6 @@ namespace MTS.BLL.Services
                 cfg.CreateMap<ReceiptDetails, ReceiptDetailsDTO>();
                 cfg.CreateMap<ReceiptDetailsDTO, ReceiptDetails>();
                 cfg.CreateMap<CustomerOrders, CustomerOrdersDTO>();
-                cfg.CreateMap<MtsAssemblies, MtsAssembliesDTO>();
                 cfg.CreateMap<Contractors, ContractorsDTO>();
             });
 
@@ -121,28 +118,7 @@ namespace MTS.BLL.Services
         }
 
 
-        public IEnumerable<ReceiptDetailsDTO> GetReceiptDetails(int receiptId)
-        {
-            var rezult = (from rd in receiptDetails.GetAll()
-                          join c in customerOrders.GetAll() on rd.CustomerOrderId equals c.Id into cus
-                          from c in cus.DefaultIfEmpty()
-                          join mts in mtsAssemblies.GetAll() on c.AssemblyId equals mts.Id into mtss
-                          from mts in mtss.DefaultIfEmpty()
-                          join con in contractors.GetAll() on c.ContractorId equals con.Id into conn
-                          from con in conn.DefaultIfEmpty()
-                          where (rd.ReceiptId == receiptId)
-                          select new ReceiptDetailsDTO()
-                          {
-                              Id = rd.Id,
-                              ReceiptId = rd.ReceiptId,
-                              CustomerOrderId = rd.CustomerOrderId,
-                              ContractorName = con.Name,
-                              CustomerOrderNumber = c.OrderNumber,
-                              Drawing = mts.Drawing
 
-                          });
-            return rezult;
-        }
 
         public IEnumerable<ReceiptDetailsDTO> GetReceiptDetails()
         {

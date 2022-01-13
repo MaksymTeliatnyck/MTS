@@ -46,8 +46,8 @@ namespace MTS.GUI.Classifiers
 
             splashScreenManager.ShowWaitForm();
             mtsNomenclaturesService = Program.kernel.Get<IMtsNomenclaturesService>();
-            var mtsGosts= new BindingList<MtsGostsDTO>(mtsNomenclaturesService.GetGosts().ToList());
-            mtsGostsBS.DataSource = mtsGosts;
+            //var mtsGosts= new BindingList<MtsGostsDTO>(mtsNomenclaturesService.GetGosts().ToList());
+            //mtsGostsBS.DataSource = mtsGosts;
             mtsGostsGrid.DataSource = mtsGostsBS;
 
             splashScreenManager.CloseWaitForm();

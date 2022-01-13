@@ -28,7 +28,7 @@ namespace MTS.BLL.Services
         private IRepository<EmployeesDetails> employeesDetails;
         private IRepository<PackingListDetail> packingListDetail;
         private IRepository<Contractors> contractors;
-        private IRepository<MtsAssemblies> mtsAssemblies;
+        //private IRepository<MtsAssemblies> mtsAssemblies;
 
         private IMapper mapper;
 
@@ -44,7 +44,7 @@ namespace MTS.BLL.Services
             packingListsJournal = Database.GetRepository<PackingListsJournal>();
             packingListDetail = Database.GetRepository<PackingListDetail>();
             contractors = Database.GetRepository<Contractors>();
-            mtsAssemblies = Database.GetRepository<MtsAssemblies>();
+          
 
                         
             var config = new MapperConfiguration(cfg =>
@@ -60,8 +60,7 @@ namespace MTS.BLL.Services
                 cfg.CreateMap<Contractors, ContractorsDTO>();
                 cfg.CreateMap<CustomerOrders, CustomerOrdersDTO>();
                 cfg.CreateMap<CustomerOrdersDTO, CustomerOrders>();
-                cfg.CreateMap<MtsAssemblies, MtsAssembliesDTO>();
-                cfg.CreateMap<MtsAssembliesDTO, MtsAssemblies>();
+
 
             });
 

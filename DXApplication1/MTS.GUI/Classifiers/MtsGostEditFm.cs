@@ -58,24 +58,21 @@ namespace MTS.GUI.Classifiers
 
             mtsNomenclaturesService = Program.kernel.Get<IMtsNomenclaturesService>();
 
-            if (FindDublicate((MtsGostsDTO)this.Item))
-            {
-                MessageBox.Show("ГОСТ, ТУ вже існує!", "Збереження", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return false;
-            }
+            //if (FindDublicate((MtsGostsDTO)this.Item))
+            //{
+            //    MessageBox.Show("ГОСТ, ТУ вже існує!", "Збереження", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    return false;
+            //}
 
-            if (this.operation == Utils.Operation.Add)
-                ((MtsGostsDTO)Item).Id = mtsNomenclaturesService.GostCreate((MtsGostsDTO)Item);
-            else
-                mtsNomenclaturesService.GostUpdate((MtsGostsDTO)Item);
+            
 
             return true;
         }
 
-        private bool FindDublicate(MtsGostsDTO model)
-        {
-            return mtsNomenclaturesService.GetGosts().Any(s => s.Name.Trim() == model.Name.Trim());
-        }
+        //private bool FindDublicate(MtsGostsDTO model)
+        //{
+        //    return mtsNomenclaturesService.GetGosts().Any(s => s.Name.Trim() == model.Name.Trim());
+        //}
 
         public long Return()
         {
