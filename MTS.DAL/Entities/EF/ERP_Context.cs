@@ -236,7 +236,7 @@ namespace MTS.DAL.EF
         
 
         public DbSet<MTS_SPECIFICATIONS> MTSSpecificationsOld { get; set; }
-        public DbSet<MTS_AUTHORIZATION_USERS> MTSAuthorizationUsers { get; set; }
+        
         public DbSet<MTS_CREATED_DETAILS> MTSCreateDetals { get; set; }
         public DbSet<MTS_GOST> MTSGost { get; set; }
         public DbSet<MTS_NOMENCLATURES> MTSNomenclaturesOld { get; set; }
@@ -351,7 +351,7 @@ namespace MTS.DAL.EF
                 ConnectionLifeTime = 900
             };
 
-            //#if DEBUG
+            #if DEBUG
 
             csb = new FbConnectionStringBuilder()
             {
@@ -364,7 +364,7 @@ namespace MTS.DAL.EF
                 ConnectionLifeTime = 900
             };
 
-            //#endif
+            #endif
 
             Connection.ConnectionString = csb.ConnectionString;
             Database.SetInitializer<ERP_Context>(null); 

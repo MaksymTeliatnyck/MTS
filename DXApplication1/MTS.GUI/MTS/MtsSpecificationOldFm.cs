@@ -43,7 +43,7 @@ namespace MTS.GUI.MTS
         private BindingSource materialsSpecificBS = new BindingSource();
         private UserTasksDTO userTasksDTO;
 
-        public MtsSpecificationOldFm(MTS_AUTHORIZATION_USERS_DTO mtsAthorizationUsersDTO)
+        public MtsSpecificationOldFm(MTSAuthorizationUsersDTO mtsAthorizationUsersDTO)
         {
             InitializeComponent();
             userNameBtn.Caption = mtsAthorizationUsersDTO.NAME;
