@@ -2567,7 +2567,7 @@
             this.panelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.panelControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1649, 68);
+            this.panelControl1.Size = new System.Drawing.Size(1642, 68);
             this.panelControl1.TabIndex = 1;
             // 
             // departmentLabel
