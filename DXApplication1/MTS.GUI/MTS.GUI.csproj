@@ -2489,8 +2489,6 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="ERP_NEW.GUI_1_TemporaryKey.pfx" />
-    <None Include="ERP_NEW.GUI_2_TemporaryKey.pfx" />
     <None Include="ERP_NEW.GUI_3_TemporaryKey.pfx" />
     <None Include="ERP_NEW.GUI_TemporaryKey.pfx" />
     <None Include="packages.config" />
