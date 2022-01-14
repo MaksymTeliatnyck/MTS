@@ -143,7 +143,6 @@
     <Compile Include="DTO\ModelsDTO\ExpenditureStoreHouseDTO.cs" />
     <Compile Include="DTO\ModelsDTO\GetOSVkvartal_ForChessDTO.cs" />
     <Compile Include="DTO\ModelsDTO\LogDTO.cs" />
-    <Compile Include="DTO\ModelsDTO\MTS_AUTHORIZATION_USERS_DTO.cs" />
     <Compile Include="DTO\ModelsDTO\MTSUsersDTO.cs" />
     <Compile Include="DTO\ModelsDTO\MTSUserGroupsDTO.cs" />
     <Compile Include="DTO\ModelsDTO\MTSUserRightsDTO.cs" />

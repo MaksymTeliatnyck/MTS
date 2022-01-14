@@ -22,7 +22,7 @@ namespace MTS.GUI.Login
     public partial class AuthFm : DevExpress.XtraEditors.XtraForm
     {
         private IUserService userService;
-        private MTS_AUTHORIZATION_USERS_DTO userInfo;
+        private MTSAuthorizationUsersDTO userInfo;
         private IEnumerable<UserTasksDTO> userAccess;
         public AuthFm()
         {

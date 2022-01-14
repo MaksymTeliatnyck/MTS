@@ -43,7 +43,7 @@ namespace MTS.GUI.MTS
         private BindingSource materialsSpecificBS = new BindingSource();
         private UserTasksDTO userTasksDTO;
 
-        public MtsSpecificationOldFm(MTS_AUTHORIZATION_USERS_DTO mtsAthorizationUsersDTO)
+        public MtsSpecificationOldFm(MTSAuthorizationUsersDTO mtsAthorizationUsersDTO)
         {
             InitializeComponent();
             userNameBtn.Caption = mtsAthorizationUsersDTO.NAME;
@@ -51,7 +51,7 @@ namespace MTS.GUI.MTS
             startDateItem.EditValue = new DateTime(DateTime.Now.Year - 1, 6, 5);
             endDateItem.EditValue = DateTime.Now;
 
-            //LoadData();
+            LoadData();
         }
 
         private void LoadData()
@@ -95,12 +95,21 @@ namespace MTS.GUI.MTS
         }
         private void LoadMaterialsSpecific(int detailId)
         {
-            mtsService = Program.kernel.Get<IMtsSpecificationsService>();
-            materialsSpecificBS.DataSource = mtsService.GetMaterialsSpecific(detailId).OrderBy(ord => ord.ID).ToList();
-            if (materialsSpecificBS.Count != 0)
-                materialsSpecificGrid.DataSource = materialsSpecificBS;
-            else
-                materialsSpecificGrid.DataSource = null;
+            try
+            {
+                mtsService = Program.kernel.Get<IMtsSpecificationsService>();
+                materialsSpecificBS.DataSource = mtsService.GetMaterialsSpecific(detailId).OrderBy(ord => ord.ID).ToList();
+                if (materialsSpecificBS.Count != 0)
+                    materialsSpecificGrid.DataSource = materialsSpecificBS;
+                else
+                    materialsSpecificGrid.DataSource = null;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            
 
         }
 
@@ -154,7 +163,6 @@ namespace MTS.GUI.MTS
                 LoadSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
                 LoadBuysDetalSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
                 LoadMaterialsSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
-
             }
             else
                 materialsSpecificGrid.DataSource = null;

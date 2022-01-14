@@ -236,24 +236,26 @@ namespace MTS.DAL.EF
         
 
         public DbSet<MTS_SPECIFICATIONS> MTSSpecificationsOld { get; set; }
-        public DbSet<MTS_AUTHORIZATION_USERS> MTSAuthorizationUsers { get; set; }
+        
         public DbSet<MTS_CREATED_DETAILS> MTSCreateDetals { get; set; }
         public DbSet<MTS_GOST> MTSGost { get; set; }
         public DbSet<MTS_NOMENCLATURES> MTSNomenclaturesOld { get; set; }
-        public DbSet<MTS_GUAGES> MTSGuages { get; set; }
+        public DbSet<MTS_GUAGES> MTS_GUAGES { get; set; }
         public DbSet<MTS_DEATAILS_PROCESSING> MTSDetailsProcessing { get; set; }
-        public DbSet<MTS_DETAILS> MTSDetails { get; set; }
-        public DbSet<MTS_MEASURE> MTSMeasure { get; set; }
-        public DbSet<MTS_PURCHASED_PRODUCTS> MTSPurchasedProducts { get; set; }
-        public DbSet<MTS_NOMENCLATURE_GROUPS> MTSNomenclatureGroupsOld { get; set; }
-        
+        public DbSet<MTS_DETAILS> MTS_DETAILS { get; set; }
+        public DbSet<MTS_MATERIALS> MTS_MATERIALS { get; set; }
+        public DbSet<MTS_MEASURE> MTS_MEASURE { get; set; }
+        public DbSet<MTS_PURCHASED_PRODUCTS> MTS_PURCHASED_PRODUCTS { get; set; }
+          public DbSet<MTS_NOMENCLATURE_GROUPS> MTS_NOMENCLATURE_GROUPS { get; set; }
+       // public DbSet<MTS_NOMENCLATURE_GROUPS> MTSNomenclatureGroups { get; set; }
+
 
         public DbSet<MsTrialBalanceCurrency> MsTrialBalanceCurrency { get; set; }
         public DbSet<MsTrialBalance> MsTrialBalance { get; set; }
         public DbSet<MsTrialBalanceByAccountsCurrency> MsTrialBalanceByAccountsCurrency { get; set; }
         public DbSet<MsReconciliation> MsReconciliation { get; set; }
         public DbSet<MsReconciliation681_36> MsReconciliation681_36 { get; set; }
-        //public DbSet<MTSMaterials> MTSMaterials { get; set; }
+      
 
         //N
         public DbSet<NOMENCLATURES> Nomenclatures { get; set; }
@@ -351,7 +353,7 @@ namespace MTS.DAL.EF
                 ConnectionLifeTime = 900
             };
 
-            //#if DEBUG
+            #if DEBUG
 
             csb = new FbConnectionStringBuilder()
             {
@@ -364,7 +366,7 @@ namespace MTS.DAL.EF
                 ConnectionLifeTime = 900
             };
 
-            //#endif
+            #endif
 
             Connection.ConnectionString = csb.ConnectionString;
             Database.SetInitializer<ERP_Context>(null); 

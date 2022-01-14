@@ -47,7 +47,7 @@ namespace MTS.GUI
     public partial class MainTabFm : DevExpress.XtraEditors.XtraForm
     {
         private IUserService userService;
-        private MTS_AUTHORIZATION_USERS_DTO userInfo;
+        private MTSAuthorizationUsersDTO userInfo;
         private IEnumerable<UserTasksDTO> userAccess;
 
         public MainTabFm()
