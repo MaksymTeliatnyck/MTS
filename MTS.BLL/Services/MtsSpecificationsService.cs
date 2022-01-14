@@ -547,6 +547,7 @@ namespace MTS.BLL.Services
         public IEnumerable<MTSNomenclatureGroupsDTO> GetAllNomenclatureGroupsOld()
         {
             return mapper.Map<IEnumerable<MTS_NOMENCLATURE_GROUPS>, IList<MTSNomenclatureGroupsDTO>>(mtsNomenclatureGroups.GetAll());
+           
         }
 
         public IEnumerable<MTSNomenclaturesDTO> GetAllNomenclatures(int nomenGroupId)
