@@ -25,6 +25,7 @@ namespace MTS.GUI.Classifiers
     public partial class MtsNomenclatureEditFm : DevExpress.XtraEditors.XtraForm
     {
         private IMtsNomenclaturesService mtsNomenclaturesService;
+        private IMtsSpecificationsService mtsSpecificationsService;
         private IUnitsService unitsService;
         private BindingSource mtsNomenclaturesBS = new BindingSource();
         private BindingSource gostsBS = new BindingSource();
@@ -97,9 +98,10 @@ namespace MTS.GUI.Classifiers
         private void LoadData()
         {
             mtsNomenclaturesService = Program.kernel.Get<IMtsNomenclaturesService>();
+            mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
 
             gostsBS.DataSource = mtsNomenclaturesService.GetGosts();
-            nomenclatureGroupsBS.DataSource = mtsNomenclaturesService.GetNomenclatureGroups();
+            nomenclatureGroupsBS.DataSource = mtsSpecificationsService.GetAllNomenclatureGroupsOld();
             //unitsBS.DataSource = mtsNomenclaturesService.GetUnits();
         }
 

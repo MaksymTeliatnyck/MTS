@@ -24,12 +24,12 @@ namespace MTS.GUI.MTS
         private BindingSource specificationBS = new BindingSource();
         public UserTasksDTO userTaskDTO = new UserTasksDTO();
 
-        public MtsSpecificationOldEditFm(Utils.Operation operation, MTSSpecificationsDTO model, UserTasksDTO userTaskDTO)
+        public MtsSpecificationOldEditFm(Utils.Operation operation, MTSSpecificationsDTO model)
         {
             InitializeComponent();
             this.operation = operation;
             specificationBS.DataSource = Item = model;
-            this.userTaskDTO = userTaskDTO;
+            
 
             nameSpecificationEdit.DataBindings.Add("EditValue", specificationBS, "NAME", true, DataSourceUpdateMode.OnPropertyChanged);
             drawingEdit.DataBindings.Add("EditValue", specificationBS, "DRAWING", true, DataSourceUpdateMode.OnPropertyChanged);
@@ -76,7 +76,7 @@ namespace MTS.GUI.MTS
                          ((MTSSpecificationsDTO)Item).DRAWING = drawingEdit.Text;
                          ((MTSSpecificationsDTO)Item).WEIGHT = (decimal)weightEdit.EditValue;
                          ((MTSSpecificationsDTO)Item).QUANTITY = (int)quantityEdit.EditValue;
-                         ((MTSSpecificationsDTO)Item).ID = mtsService.MTSSpecificationCreate((MTSSpecificationsDTO)Item);
+                         //((MTSSpecificationsDTO)Item).ID = mtsService.MTSSpecificationCreate((MTSSpecificationsDTO)Item);
                          ((MTSSpecificationsDTO)Item).COMPILATION_NAMES = "";
                          ((MTSSpecificationsDTO)Item).COMPILATION_DRAWINGS = "";
                          ((MTSSpecificationsDTO)Item).COMPILATION_QUANTITIES = "";

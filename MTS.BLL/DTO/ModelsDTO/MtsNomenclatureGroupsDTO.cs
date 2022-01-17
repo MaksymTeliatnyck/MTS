@@ -12,7 +12,7 @@ namespace MTS.BLL.DTO.ModelsDTO
         public int ID { get; set; }
         public string NAME { get; set; }
         public int? PARENT_ID { get; set; }
-        public decimal RATIO_OF_WASTE { get; set; }
+        public decimal? RATIO_OF_WASTE { get; set; }
         public int? ADDIT_CALCULATION_ID { get; set; }
         public int ADDIT_CALCULATION_ACTIVE { get; set; }
         public int? CODPROD { get; set; }

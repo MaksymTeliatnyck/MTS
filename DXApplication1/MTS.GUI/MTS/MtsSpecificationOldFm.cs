@@ -60,18 +60,18 @@ namespace MTS.GUI.MTS
             specificBS.DataSource = mtsService.GetAllSpecificationOldByPeriod((DateTime)startDateItem.EditValue, (DateTime)endDateItem.EditValue).OrderByDescending(ord => ord.ID).ToList();
             specificGrid.DataSource = specificBS;
 
-            //if (specificBS.Count > 0)
-            //{
-            //    LoadSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
-            //    LoadBuysDetalSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
-            //    LoadMaterialsSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
-            //}
-            //else
-            //{
-            //    detalsSpecificGrid.DataSource = null;
-            //    buysDetalsSpecificGrid.DataSource = null;
-            //    materialsSpecificGrid.DataSource = null;
-            //}
+            if (specificBS.Count > 0)
+            {
+                LoadSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
+                LoadBuysDetalSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
+                LoadMaterialsSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
+            }
+            else
+            {
+                detalsSpecificGrid.DataSource = null;
+                buysDetalsSpecificGrid.DataSource = null;
+                materialsSpecificGrid.DataSource = null;
+            }
         }
 
         private void LoadSpecific(int detailId)
@@ -190,9 +190,9 @@ namespace MTS.GUI.MTS
 
 
 
-        private void AddSpecification(Utils.Operation operation, MTSSpecificationsDTO model, UserTasksDTO userTaskDTO)
+        private void AddSpecification(Utils.Operation operation, MTSSpecificationsDTO model)
         {
-            using (MtsSpecificationOldEditFm mtsSpecificationOldEditFm = new MtsSpecificationOldEditFm(operation, model, userTaskDTO))
+            using (MtsSpecificationOldEditFm mtsSpecificationOldEditFm = new MtsSpecificationOldEditFm(operation, model))
             {
                 if (mtsSpecificationOldEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -403,7 +403,7 @@ namespace MTS.GUI.MTS
 
         private void addSpecificBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            AddSpecification(Utils.Operation.Add, new MTSSpecificationsDTO(), userTaskDTO);
+            AddSpecification(Utils.Operation.Add, new MTSSpecificationsDTO());
         }
         private void editSpecificBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -422,7 +422,7 @@ namespace MTS.GUI.MTS
                      
                      
                 };
-                AddSpecification(Utils.Operation.Update, (MTSSpecificationsDTO)model,userTaskDTO);
+                AddSpecification(Utils.Operation.Update, (MTSSpecificationsDTO)model);
             }
             else MessageBox.Show("Помилка редагування специфікації! Створіть спочатку специфікацію!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
@@ -718,7 +718,7 @@ namespace MTS.GUI.MTS
 
         private void добавитьСпецификациюToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddSpecification(Utils.Operation.Add, new MTSSpecificationsDTO(),userTaskDTO);
+            AddSpecification(Utils.Operation.Add, new MTSSpecificationsDTO());
         }
 
         private void добавитьСводнуюСпецификациюToolStripMenuItem_Click(object sender, EventArgs e)
@@ -740,7 +740,7 @@ namespace MTS.GUI.MTS
                     CREATION_DATE = ((MTSSpecificationsDTO)ItemSpecification).CREATION_DATE,
                     DRAWING = ((MTSSpecificationsDTO)ItemSpecification).DRAWING
                 };
-                AddSpecification(Utils.Operation.Update, (MTSSpecificationsDTO)model,userTaskDTO);
+                AddSpecification(Utils.Operation.Update, (MTSSpecificationsDTO)model);
             }
             else MessageBox.Show("Помилка редагування специфікації! Створіть спочатку специфікацію!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }

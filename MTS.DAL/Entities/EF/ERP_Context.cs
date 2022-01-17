@@ -246,8 +246,8 @@ namespace MTS.DAL.EF
         public DbSet<MTS_MATERIALS> MTS_MATERIALS { get; set; }
         public DbSet<MTS_MEASURE> MTS_MEASURE { get; set; }
         public DbSet<MTS_PURCHASED_PRODUCTS> MTS_PURCHASED_PRODUCTS { get; set; }
-          public DbSet<MTS_NOMENCLATURE_GROUPS> MTS_NOMENCLATURE_GROUPS { get; set; }
-       // public DbSet<MTS_NOMENCLATURE_GROUPS> MTSNomenclatureGroups { get; set; }
+        public DbSet<MTS_NOMENCLATURE_GROUPS> MTS_NOMENCLATURE_GROUPS { get; set; }
+        //public DbSet<MTS_NOMENCLATURE_GROUPS> MTSNomenclatureGroups { get; set; }
 
 
         public DbSet<MsTrialBalanceCurrency> MsTrialBalanceCurrency { get; set; }
