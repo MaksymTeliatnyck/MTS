@@ -279,7 +279,7 @@
             this.repositoryItemDateEdit2});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
-            this.ribbonControl1.Size = new System.Drawing.Size(1792, 96);
+            this.ribbonControl1.Size = new System.Drawing.Size(1792, 95);
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
@@ -805,7 +805,7 @@
             this.xtraTabPage1.Controls.Add(this.detalsSpecificGrid);
             this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1786, 366);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1782, 363);
             this.xtraTabPage1.Text = "Деталі";
             // 
             // standaloneBarDockControl2
@@ -815,7 +815,7 @@
             this.standaloneBarDockControl2.Location = new System.Drawing.Point(0, 0);
             this.standaloneBarDockControl2.Margin = new System.Windows.Forms.Padding(4);
             this.standaloneBarDockControl2.Name = "standaloneBarDockControl2";
-            this.standaloneBarDockControl2.Size = new System.Drawing.Size(1786, 33);
+            this.standaloneBarDockControl2.Size = new System.Drawing.Size(1782, 33);
             this.standaloneBarDockControl2.Text = "standaloneBarDockControl2";
             // 
             // standaloneBarDockControl1
@@ -827,7 +827,7 @@
             this.standaloneBarDockControl1.Location = new System.Drawing.Point(0, 0);
             this.standaloneBarDockControl1.Margin = new System.Windows.Forms.Padding(4);
             this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
-            this.standaloneBarDockControl1.Size = new System.Drawing.Size(1786, 0);
+            this.standaloneBarDockControl1.Size = new System.Drawing.Size(1782, 0);
             this.standaloneBarDockControl1.Text = "standaloneBarDockControl1";
             // 
             // detalsSpecificGrid
@@ -840,7 +840,7 @@
             this.detalsSpecificGrid.Margin = new System.Windows.Forms.Padding(4);
             this.detalsSpecificGrid.MenuManager = this.barDetail;
             this.detalsSpecificGrid.Name = "detalsSpecificGrid";
-            this.detalsSpecificGrid.Size = new System.Drawing.Size(1786, 366);
+            this.detalsSpecificGrid.Size = new System.Drawing.Size(1782, 363);
             this.detalsSpecificGrid.TabIndex = 0;
             this.detalsSpecificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.detalsSpecificGridView});
@@ -1203,7 +1203,7 @@
             this.standaloneBarDockControl3.Location = new System.Drawing.Point(2, 2);
             this.standaloneBarDockControl3.Margin = new System.Windows.Forms.Padding(4);
             this.standaloneBarDockControl3.Name = "standaloneBarDockControl3";
-            this.standaloneBarDockControl3.Size = new System.Drawing.Size(1782, 33);
+            this.standaloneBarDockControl3.Size = new System.Drawing.Size(1778, 33);
             this.standaloneBarDockControl3.Text = "standaloneBarDockControl3";
             // 
             // standaloneBarDockControl4
@@ -1213,7 +1213,7 @@
             this.standaloneBarDockControl4.Location = new System.Drawing.Point(0, 0);
             this.standaloneBarDockControl4.Margin = new System.Windows.Forms.Padding(4);
             this.standaloneBarDockControl4.Name = "standaloneBarDockControl4";
-            this.standaloneBarDockControl4.Size = new System.Drawing.Size(1786, 33);
+            this.standaloneBarDockControl4.Size = new System.Drawing.Size(1782, 33);
             this.standaloneBarDockControl4.Text = "standaloneBarDockControl4";
             // 
             // addBuyDetailBarBtn
@@ -1251,7 +1251,7 @@
             this.xtraTabPage2.Controls.Add(this.panelControl2);
             this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1786, 366);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1782, 363);
             this.xtraTabPage2.Text = "Покупні";
             // 
             // panelControl2
@@ -1262,7 +1262,7 @@
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1786, 366);
+            this.panelControl2.Size = new System.Drawing.Size(1782, 363);
             this.panelControl2.TabIndex = 1;
             // 
             // buysDetalsSpecificGrid
@@ -1275,7 +1275,7 @@
             this.buysDetalsSpecificGrid.Margin = new System.Windows.Forms.Padding(4);
             this.buysDetalsSpecificGrid.MenuManager = this.ribbonControl1;
             this.buysDetalsSpecificGrid.Name = "buysDetalsSpecificGrid";
-            this.buysDetalsSpecificGrid.Size = new System.Drawing.Size(1782, 362);
+            this.buysDetalsSpecificGrid.Size = new System.Drawing.Size(1778, 359);
             this.buysDetalsSpecificGrid.TabIndex = 0;
             this.buysDetalsSpecificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.buysDetalsSpecificGridView});
@@ -1449,7 +1449,7 @@
             this.xtraTabPage3.Controls.Add(this.materialsSpecificGrid);
             this.xtraTabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1786, 366);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1782, 363);
             this.xtraTabPage3.Text = "Матеріали";
             // 
             // materialsSpecificGrid
@@ -1462,7 +1462,7 @@
             this.materialsSpecificGrid.Margin = new System.Windows.Forms.Padding(4);
             this.materialsSpecificGrid.MenuManager = this.ribbonControl1;
             this.materialsSpecificGrid.Name = "materialsSpecificGrid";
-            this.materialsSpecificGrid.Size = new System.Drawing.Size(1786, 366);
+            this.materialsSpecificGrid.Size = new System.Drawing.Size(1782, 363);
             this.materialsSpecificGrid.TabIndex = 0;
             this.materialsSpecificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.materialsSpecificGridView});
@@ -1475,7 +1475,7 @@
             this.редагуватиЗаписToolStripMenuItem2,
             this.видалитиЗаписToolStripMenuItem2});
             this.materialMenu.Name = "mainMenu";
-            this.materialMenu.Size = new System.Drawing.Size(169, 70);
+            this.materialMenu.Size = new System.Drawing.Size(169, 92);
             // 
             // додатиЗаписToolStripMenuItem2
             // 
@@ -1635,11 +1635,11 @@
             this.specificGrid.ContextMenuStrip = this.mainMenu;
             this.specificGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.specificGrid.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.specificGrid.Location = new System.Drawing.Point(0, 96);
+            this.specificGrid.Location = new System.Drawing.Point(0, 95);
             this.specificGrid.MainView = this.specificGridView;
             this.specificGrid.Margin = new System.Windows.Forms.Padding(4);
             this.specificGrid.Name = "specificGrid";
-            this.specificGrid.Size = new System.Drawing.Size(1792, 443);
+            this.specificGrid.Size = new System.Drawing.Size(1792, 444);
             this.specificGrid.TabIndex = 2;
             this.specificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.specificGridView});
@@ -1659,78 +1659,78 @@
             this.disableLabelMenuBtn,
             this.enableLabelMenuBtn});
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(326, 246);
+            this.mainMenu.Size = new System.Drawing.Size(327, 246);
             // 
             // добавитьСпецификациюToolStripMenuItem
             // 
             this.добавитьСпецификациюToolStripMenuItem.Name = "добавитьСпецификациюToolStripMenuItem";
-            this.добавитьСпецификациюToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
+            this.добавитьСпецификациюToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
             this.добавитьСпецификациюToolStripMenuItem.Text = "Додати специфікацію";
             this.добавитьСпецификациюToolStripMenuItem.Click += new System.EventHandler(this.добавитьСпецификациюToolStripMenuItem_Click);
             // 
             // добавитьСводнуюСпецификациюToolStripMenuItem
             // 
             this.добавитьСводнуюСпецификациюToolStripMenuItem.Name = "добавитьСводнуюСпецификациюToolStripMenuItem";
-            this.добавитьСводнуюСпецификациюToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
+            this.добавитьСводнуюСпецификациюToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
             this.добавитьСводнуюСпецификациюToolStripMenuItem.Text = "Додати зведену специфікацію";
             this.добавитьСводнуюСпецификациюToolStripMenuItem.Click += new System.EventHandler(this.добавитьСводнуюСпецификациюToolStripMenuItem_Click);
             // 
             // редагуватиСпецифікаціюToolStripMenuItem
             // 
             this.редагуватиСпецифікаціюToolStripMenuItem.Name = "редагуватиСпецифікаціюToolStripMenuItem";
-            this.редагуватиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
+            this.редагуватиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
             this.редагуватиСпецифікаціюToolStripMenuItem.Text = "Редагувати специфікацію";
             this.редагуватиСпецифікаціюToolStripMenuItem.Click += new System.EventHandler(this.редагуватиСпецифікаціюToolStripMenuItem_Click);
             // 
             // видалитиСпецифікаціюToolStripMenuItem
             // 
             this.видалитиСпецифікаціюToolStripMenuItem.Name = "видалитиСпецифікаціюToolStripMenuItem";
-            this.видалитиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
+            this.видалитиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
             this.видалитиСпецифікаціюToolStripMenuItem.Text = "Видалити специфікацію";
             this.видалитиСпецифікаціюToolStripMenuItem.Click += new System.EventHandler(this.видалитиСпецифікаціюToolStripMenuItem_Click);
             // 
             // відобразитиСпецифікаціюToolStripMenuItem
             // 
             this.відобразитиСпецифікаціюToolStripMenuItem.Name = "відобразитиСпецифікаціюToolStripMenuItem";
-            this.відобразитиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
+            this.відобразитиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
             this.відобразитиСпецифікаціюToolStripMenuItem.Text = "Відобразити специфікацію";
             this.відобразитиСпецифікаціюToolStripMenuItem.Click += new System.EventHandler(this.відобразитиСпецифікаціюToolStripMenuItem_Click);
             // 
             // відобразитиКартуТехПроцесуToolStripMenuItem
             // 
             this.відобразитиКартуТехПроцесуToolStripMenuItem.Name = "відобразитиКартуТехПроцесуToolStripMenuItem";
-            this.відобразитиКартуТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
+            this.відобразитиКартуТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
             this.відобразитиКартуТехПроцесуToolStripMenuItem.Text = "Відобразити карту тех. процесу";
             // 
             // відобразитиКартуТехПроцесупоДатіToolStripMenuItem
             // 
             this.відобразитиКартуТехПроцесупоДатіToolStripMenuItem.Name = "відобразитиКартуТехПроцесупоДатіToolStripMenuItem";
-            this.відобразитиКартуТехПроцесупоДатіToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
+            this.відобразитиКартуТехПроцесупоДатіToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
             this.відобразитиКартуТехПроцесупоДатіToolStripMenuItem.Text = "Відобразити карту тех. процесу (по даті)";
             // 
             // відобразитиЗведенуКартуТехПроцесуToolStripMenuItem
             // 
             this.відобразитиЗведенуКартуТехПроцесуToolStripMenuItem.Name = "відобразитиЗведенуКартуТехПроцесуToolStripMenuItem";
-            this.відобразитиЗведенуКартуТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
+            this.відобразитиЗведенуКартуТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
             this.відобразитиЗведенуКартуТехПроцесуToolStripMenuItem.Text = "Відобразити зведену карту тех. процесу";
             // 
             // відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem
             // 
             this.відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem.Name = "відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem";
-            this.відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
+            this.відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
             this.відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem.Text = "Відобразити карту маршрутного тех. процесу";
             // 
             // disableLabelMenuBtn
             // 
             this.disableLabelMenuBtn.Name = "disableLabelMenuBtn";
-            this.disableLabelMenuBtn.Size = new System.Drawing.Size(325, 22);
+            this.disableLabelMenuBtn.Size = new System.Drawing.Size(326, 22);
             this.disableLabelMenuBtn.Text = "Прибрати виділення";
             this.disableLabelMenuBtn.Click += new System.EventHandler(this.disableLabelMenuBtn_Click);
             // 
             // enableLabelMenuBtn
             // 
             this.enableLabelMenuBtn.Name = "enableLabelMenuBtn";
-            this.enableLabelMenuBtn.Size = new System.Drawing.Size(325, 22);
+            this.enableLabelMenuBtn.Size = new System.Drawing.Size(326, 22);
             this.enableLabelMenuBtn.Text = "Виділити запис";
             this.enableLabelMenuBtn.Click += new System.EventHandler(this.enableLabelMenuBtn_Click);
             // 

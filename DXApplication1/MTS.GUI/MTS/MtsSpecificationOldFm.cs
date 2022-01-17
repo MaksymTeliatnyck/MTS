@@ -471,6 +471,22 @@ namespace MTS.GUI.MTS
                 buysDetalsSpecificGridView.EndDataUpdate();
             }
         }
+        private void DeleteBuyMaterial(int materialId)
+        {
+            if (MessageBox.Show("Видалити матеріал?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                mtsService = Program.kernel.Get<IMtsSpecificationsService>();
+
+                mtsService.MTSMaterialDelete(materialId);
+                materialsSpecificGridView.PostEditor();
+                materialsSpecificGridView.BeginDataUpdate();
+                //  LoadBuysDetalSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
+                LoadData();
+                materialsSpecificGridView.EndDataUpdate();
+            }
+
+
+        }
 
         #endregion
 
@@ -510,9 +526,10 @@ namespace MTS.GUI.MTS
             //    AddDetailSpecific(Utils.Operation.Update, (MTSCreateDetalsDTO)model, (MTSSpecificationsDTO)specificBS.Current, (MTSDetailsDTO)modelDetail);
             //}
             //else MessageBox.Show("Помилка редагування деталі! Створіть спочатку деталь!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-            EditDetailSpecific(Utils.Operation.Update, ((MTSDetailsDTO)detalsSpecificBS.Current));
-
+            if (detalsSpecificBS.Count > 0)
+                EditDetailSpecific(Utils.Operation.Update, ((MTSDetailsDTO)detalsSpecificBS.Current));
+            else
+             MessageBox.Show("Помилка видалення деталі! Створіть спочатку деталі!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void deleteDetailBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -530,7 +547,11 @@ namespace MTS.GUI.MTS
 
         private void editDetailBarBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            EditDetailSpecific(Utils.Operation.Update, ((MTSDetailsDTO)detalsSpecificBS.Current));
+            if (detalsSpecificBS.Count > 0)
+                EditDetailSpecific(Utils.Operation.Update, ((MTSDetailsDTO)detalsSpecificBS.Current));
+            else
+                MessageBox.Show("Помилка видалення деталі! Створіть спочатку деталі!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
         }
 
         private void deleteDetailBarBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -622,13 +643,17 @@ namespace MTS.GUI.MTS
 
         private void editMaterialBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            EditMaterial(Utils.Operation.Update, ((MTSMaterialsDTO)materialsSpecificBS.Current));
+            if (materialsSpecificBS.Count > 0)
+                EditMaterial(Utils.Operation.Update, ((MTSMaterialsDTO)materialsSpecificBS.Current));
+            else
+                MessageBox.Show("Помилка видалення матеріалу! Створіть спочатку матеріал!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void deleteMaterialBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (materialsSpecificBS.Count > 0)
-                DeleteBuyDetail(((MTSMaterialsDTO)materialsSpecificBS.Current).ID);
+                // DeleteBuyDetail(((MTSMaterialsDTO)materialsSpecificBS.Current).ID); Было раньше
+                DeleteBuyMaterial(((MTSMaterialsDTO)materialsSpecificBS.Current).ID);
         }
 
         private void addMaterialDetailBarBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -638,13 +663,17 @@ namespace MTS.GUI.MTS
 
         private void editMaterialDetailBarBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            EditMaterial(Utils.Operation.Update, ((MTSMaterialsDTO)materialsSpecificBS.Current));
+            if (materialsSpecificBS.Count > 0)
+                EditMaterial(Utils.Operation.Update, ((MTSMaterialsDTO)materialsSpecificBS.Current));
+            else
+                MessageBox.Show("Помилка видалення матеріалу! Створіть спочатку матеріал!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void deleteMaterialDetailBarBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (materialsSpecificBS.Count > 0)
-                DeleteBuyDetail(((MTSMaterialsDTO)materialsSpecificBS.Current).ID);
+            //    DeleteBuyDetail(((MTSMaterialsDTO)materialsSpecificBS.Current).ID); Было раньше
+                 DeleteBuyMaterial(((MTSMaterialsDTO)materialsSpecificBS.Current).ID);
         }
 
         private void додатиЗаписToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -654,13 +683,17 @@ namespace MTS.GUI.MTS
 
         private void редагуватиЗаписToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            EditMaterial(Utils.Operation.Update, ((MTSMaterialsDTO)materialsSpecificBS.Current));
+            if (materialsSpecificBS.Count > 0)
+                EditMaterial(Utils.Operation.Update, ((MTSMaterialsDTO)materialsSpecificBS.Current));
+            else
+                MessageBox.Show("Помилка видалення матеріалу! Створіть спочатку матеріал!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void видалитиЗаписToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             if (materialsSpecificBS.Count > 0)
-                DeleteBuyDetail(((MTSMaterialsDTO)materialsSpecificBS.Current).ID);
+                // DeleteBuyDetail(((MTSMaterialsDTO)materialsSpecificBS.Current).ID);
+                DeleteBuyMaterial(((MTSMaterialsDTO)materialsSpecificBS.Current).ID);
         }
 
         #endregion
