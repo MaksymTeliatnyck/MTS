@@ -220,6 +220,9 @@ namespace MTS.BLL.Interfaces
 
 
         IEnumerable<MTSNomenclatureGroupsDTO> GetAllNomenclatureGroupsOld();
+        IEnumerable<MTSGostDTO> GetAllGostOld();
+
+        IEnumerable<MTSMeasureDTO> GetAllMeasureOld();
 
 
         IEnumerable<MTSNomenclaturesDTO> GetAllNomenclatures(int nomenGroupId);
@@ -314,7 +317,20 @@ namespace MTS.BLL.Interfaces
 
 
         bool MTSCreateDetalDelete(int id);
+
+        int MTSCreateGost(MTSGostDTO mtsGostDTO);
+
+        void MTSUpdateGost(MTSGostDTO mtsGostDTO);
+
+        bool MTSDeleteGost(int id);
+
        
+        int MTSCreateMeasure(MTSMeasureDTO mtsMeasureDTO);
+
+        void MTSUpdateMeasure(MTSMeasureDTO mtsMeasureDTO);
+
+        bool MTSDeleteMeasure(int id);
+
 
         void Dispose();
     }

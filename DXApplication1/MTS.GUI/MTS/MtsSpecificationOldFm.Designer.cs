@@ -686,24 +686,28 @@
             this.nomenclatureShowBtn.Caption = "Справочник номенклатур";
             this.nomenclatureShowBtn.Id = 27;
             this.nomenclatureShowBtn.Name = "nomenclatureShowBtn";
+            this.nomenclatureShowBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.nomenclatureShowBtn_ItemClick);
             // 
             // detailsShowBtn
             // 
             this.detailsShowBtn.Caption = "Справочник деталей";
             this.detailsShowBtn.Id = 28;
             this.detailsShowBtn.Name = "detailsShowBtn";
+            this.detailsShowBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.detailsShowBtn_ItemClick);
             // 
             // gostShowBtn
             // 
             this.gostShowBtn.Caption = "Справочник гостов";
             this.gostShowBtn.Id = 29;
             this.gostShowBtn.Name = "gostShowBtn";
+            this.gostShowBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.gostShowBtn_ItemClick);
             // 
             // unitsShowBtn
             // 
             this.unitsShowBtn.Caption = "Справочник единиц измерения";
             this.unitsShowBtn.Id = 30;
             this.unitsShowBtn.Name = "unitsShowBtn";
+            this.unitsShowBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.unitsShowBtn_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -1475,7 +1479,7 @@
             this.редагуватиЗаписToolStripMenuItem2,
             this.видалитиЗаписToolStripMenuItem2});
             this.materialMenu.Name = "mainMenu";
-            this.materialMenu.Size = new System.Drawing.Size(169, 92);
+            this.materialMenu.Size = new System.Drawing.Size(169, 70);
             // 
             // додатиЗаписToolStripMenuItem2
             // 

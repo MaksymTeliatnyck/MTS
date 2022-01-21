@@ -890,5 +890,56 @@ namespace MTS.GUI.MTS
         {
 
         }
+
+        private void nomenclatureShowBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(new MTSNomenclaturesDTO())) 
+            //   DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model);
+            {
+                if (directoryBuyDetailEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    MTSNomenclaturesDTO r = directoryBuyDetailEditOldFm.Returnl();
+
+                   
+                   
+
+
+                }
+
+            }
+        }
+
+        private void detailsShowBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            using (DirectoryDetailOldFm directoryDetailOldFm = new DirectoryDetailOldFm())
+            {
+                if (directoryDetailOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+
+                }
+            }
+        }
+
+        private void gostShowBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            using (MtsDirectoryGostOldFm mtsDirectoryGostOldFm = new MtsDirectoryGostOldFm())
+            {
+                if (mtsDirectoryGostOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+
+                }
+            }
+        }
+
+        private void unitsShowBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            using (MTSDirectoryMeasureOldFm mtsDirectoryMeasureOldFm = new MTSDirectoryMeasureOldFm())
+            {
+                if (mtsDirectoryMeasureOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+
+                }
+            }
+        }
     }
 }

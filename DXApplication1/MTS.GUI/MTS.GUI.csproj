@@ -173,6 +173,7 @@
     <Reference Include="DevExpress.DataAccess.v16.1.UI, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.Diagram.v16.1.Core, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Images.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
@@ -218,6 +219,7 @@
     <Reference Include="DevExpress.XtraCharts.v16.1.Wizard, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraDiagram.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v16.1">
       <Private>True</Private>
     </Reference>
@@ -1350,6 +1352,12 @@
     <Compile Include="MTS\DirectoryBuyDetailEditOldFm.Designer.cs">
       <DependentUpon>DirectoryBuyDetailEditOldFm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MTS\DirectoryDetailOldFm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MTS\DirectoryDetailOldFm.Designer.cs">
+      <DependentUpon>DirectoryDetailOldFm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MTS\JournalAssembliesFm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1373,6 +1381,30 @@
     </Compile>
     <Compile Include="MTS\MtsDetailsEditOldFm.Designer.cs">
       <DependentUpon>MtsDetailsEditOldFm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MTS\MtsDirectoryGostEditOldFm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MTS\MtsDirectoryGostEditOldFm.Designer.cs">
+      <DependentUpon>MtsDirectoryGostEditOldFm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MTS\MtsDirectoryGostOldFm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MTS\MtsDirectoryGostOldFm.Designer.cs">
+      <DependentUpon>MtsDirectoryGostOldFm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MTS\MTSDirectoryMeasureEditOldFm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MTS\MTSDirectoryMeasureEditOldFm.Designer.cs">
+      <DependentUpon>MTSDirectoryMeasureEditOldFm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MTS\MTSDirectoryMeasureOldFm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MTS\MTSDirectoryMeasureOldFm.Designer.cs">
+      <DependentUpon>MTSDirectoryMeasureOldFm.cs</DependentUpon>
     </Compile>
     <Compile Include="MTS\MtsMaterialEditOldFm.cs">
       <SubType>Form</SubType>
@@ -2253,6 +2285,9 @@
     <EmbeddedResource Include="MTS\DirectoryBuyDetailEditOldFm.resx">
       <DependentUpon>DirectoryBuyDetailEditOldFm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MTS\DirectoryDetailOldFm.resx">
+      <DependentUpon>DirectoryDetailOldFm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MTS\JournalAssembliesFm.resx">
       <DependentUpon>JournalAssembliesFm.cs</DependentUpon>
     </EmbeddedResource>
@@ -2264,6 +2299,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MTS\MtsDetailsEditOldFm.resx">
       <DependentUpon>MtsDetailsEditOldFm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MTS\MtsDirectoryGostEditOldFm.resx">
+      <DependentUpon>MtsDirectoryGostEditOldFm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MTS\MtsDirectoryGostOldFm.resx">
+      <DependentUpon>MtsDirectoryGostOldFm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MTS\MTSDirectoryMeasureEditOldFm.resx">
+      <DependentUpon>MTSDirectoryMeasureEditOldFm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MTS\MTSDirectoryMeasureOldFm.resx">
+      <DependentUpon>MTSDirectoryMeasureOldFm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MTS\MtsMaterialEditOldFm.resx">
       <DependentUpon>MtsMaterialEditOldFm.cs</DependentUpon>
