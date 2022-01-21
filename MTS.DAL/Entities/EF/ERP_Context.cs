@@ -4,6 +4,9 @@ using FirebirdSql.Data.FirebirdClient;
 using MTS.DAL.Entities.QueryModels;
 using MTS.DAL.Entities.Models;
 using MTS.DAL.Entities.ReportModel;
+using System.IO;
+using System.Collections.Generic;
+using System;
 
 namespace MTS.DAL.EF
 {
@@ -14,6 +17,8 @@ namespace MTS.DAL.EF
     
     public class ERP_Context : DbContext
     {
+        
+
         #region DBSet`s
         //A
         public DbSet<AccessScheduleEntity> AccessScheduleEntity { get; set; }
@@ -341,11 +346,16 @@ namespace MTS.DAL.EF
         {
             FbConnectionStringBuilder csb;
 
+            string[] ipDB = File.ReadAllLines("ipDB.txt");
+            string[] portDB = File.ReadAllLines("portDB.txt");
+            string[] aliasDB = File.ReadAllLines("aliasDB.txt");
 
             csb = new FbConnectionStringBuilder()
             {
-                DataSource = "server-asup",
-                Database = "TVM_DB",
+                //DataSource = "server-tfs",
+                DataSource = ipDB[0],
+                 Port = Convert.ToInt32(portDB[0]),
+                Database = aliasDB[0],
                 UserID = "sysdba",
                 Password = "masterkey",
                 Charset = "UTF8",
@@ -353,20 +363,6 @@ namespace MTS.DAL.EF
                 ConnectionLifeTime = 900
             };
 
-            #if DEBUG
-
-            csb = new FbConnectionStringBuilder()
-            {
-                DataSource = "server-tfs",
-                Database = "MTS_DB_ELECTRO",
-                UserID = "sysdba",
-                Password = "masterkey",
-                Charset = "UTF8",
-                Pooling = true,
-                ConnectionLifeTime = 900
-            };
-
-            #endif
 
             Connection.ConnectionString = csb.ConnectionString;
             Database.SetInitializer<ERP_Context>(null); 

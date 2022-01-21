@@ -23,6 +23,7 @@ namespace MTS.GUI.MTS
         private IMtsSpecificationsService mtsService;
         private BindingSource nomenclatureGroupsBS = new BindingSource();
         private BindingSource nomenclatureBS = new BindingSource();
+        private List<MTSNomenclatureGroupsDTO> nomenclatureGroupsList = new List<MTSNomenclatureGroupsDTO>();
 
         private ObjectBase Item
         {
@@ -46,13 +47,29 @@ namespace MTS.GUI.MTS
         private void LoadNomenclatureGroups()
         {
             mtsService = Program.kernel.Get<IMtsSpecificationsService>();
-            nomenclatureGroupsBS.DataSource = mtsService.GetAllNomenclatureGroupsOld();
+            nomenclatureGroupsList = mtsService.GetAllNomenclatureGroupsOld().ToList();
+            nomenclatureGroupsList.Add(new MTSNomenclatureGroupsDTO()
+            {
+                ID = 0,
+                ADDIT_CALCULATION_ACTIVE = 0,
+                ADDIT_CALCULATION_ID = null,
+                PARENT_ID = null,
+                NAME = "Общая",
+                CODPROD = 0,
+                RATIO_OF_WASTE = 0,
+                SORTPOSITION = 0
+            });
+            nomenclatureGroupsBS.DataSource = nomenclatureGroupsList;
+
+
+
             nomenclatureGroupsGrid.DataSource = nomenclatureGroupsBS;
             if (nomenclatureGroupsBS.Count == 0)
                 nomenclatureGrid.DataSource = null;
             else 
             {
                 nomenclatureGrid.DataSource = nomenclatureBS;
+
                 LoadNomenclature(((MTSNomenclatureGroupsDTO)nomenclatureGroupsBS.Current).ID);
             }
 
@@ -60,7 +77,11 @@ namespace MTS.GUI.MTS
         private void LoadNomenclature(int nomenGroupId)
         {
             mtsService = Program.kernel.Get<IMtsSpecificationsService>();
-            nomenclatureBS.DataSource = mtsService.GetAllNomenclatures(nomenGroupId);
+            if (nomenGroupId > 0)
+                nomenclatureBS.DataSource = mtsService.GetAllNomenclatures(nomenGroupId);
+            else
+                nomenclatureBS.DataSource = mtsService.GetAllNomenclaturesAll();
+
             nomenclatureGrid.DataSource = nomenclatureBS;
 
 

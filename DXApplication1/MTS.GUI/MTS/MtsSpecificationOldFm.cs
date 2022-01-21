@@ -42,10 +42,12 @@ namespace MTS.GUI.MTS
         private BindingSource byusDetalsSpecificBS = new BindingSource();
         private BindingSource materialsSpecificBS = new BindingSource();
         private UserTasksDTO userTasksDTO;
+        private MTSAuthorizationUsersDTO mtsAthorizationUsersDTO;
 
         public MtsSpecificationOldFm(MTSAuthorizationUsersDTO mtsAthorizationUsersDTO)
         {
             InitializeComponent();
+            this.mtsAthorizationUsersDTO = mtsAthorizationUsersDTO;
             userNameBtn.Caption = mtsAthorizationUsersDTO.NAME;
 
             startDateItem.EditValue = new DateTime(DateTime.Now.Year - 1, 6, 5);
@@ -190,9 +192,9 @@ namespace MTS.GUI.MTS
 
 
 
-        private void AddSpecification(Utils.Operation operation, MTSSpecificationsDTO model)
+        private void AddSpecification(Utils.Operation operation, MTSSpecificationsDTO model, MTSAuthorizationUsersDTO mtsAthorizationUsersDTO)
         {
-            using (MtsSpecificationOldEditFm mtsSpecificationOldEditFm = new MtsSpecificationOldEditFm(operation, model))
+            using (MtsSpecificationOldEditFm mtsSpecificationOldEditFm = new MtsSpecificationOldEditFm(operation, model, mtsAthorizationUsersDTO))
             {
                 if (mtsSpecificationOldEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -204,9 +206,9 @@ namespace MTS.GUI.MTS
             }
         }
 
-        private void AddSpecificationDetails(MTSSpecificationsDTO model, Utils.Operation operation)
+        private void AddSpecificationDetails(MTSSpecificationsDTO model, Utils.Operation operation, MTSAuthorizationUsersDTO mtsAuthorizationUsersDTO)
         {
-            using (MtsSpecificationOldDetailsFm mtsSpecificationOldDetailsFm = new MtsSpecificationOldDetailsFm(model, operation))
+            using (MtsSpecificationOldDetailsFm mtsSpecificationOldDetailsFm = new MtsSpecificationOldDetailsFm(model, operation, mtsAuthorizationUsersDTO))
             {
                 if (mtsSpecificationOldDetailsFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -403,7 +405,7 @@ namespace MTS.GUI.MTS
 
         private void addSpecificBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            AddSpecification(Utils.Operation.Add, new MTSSpecificationsDTO());
+            AddSpecification(Utils.Operation.Add, new MTSSpecificationsDTO(), mtsAthorizationUsersDTO);
         }
         private void editSpecificBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -422,7 +424,7 @@ namespace MTS.GUI.MTS
                      
                      
                 };
-                AddSpecification(Utils.Operation.Update, (MTSSpecificationsDTO)model);
+                AddSpecification(Utils.Operation.Update, (MTSSpecificationsDTO)model, mtsAthorizationUsersDTO);
             }
             else MessageBox.Show("Помилка редагування специфікації! Створіть спочатку специфікацію!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
@@ -430,7 +432,7 @@ namespace MTS.GUI.MTS
 
         private void addAllSpeficBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            AddSpecificationDetails(new MTSSpecificationsDTO(), Utils.Operation.Add);
+            AddSpecificationDetails(new MTSSpecificationsDTO(), Utils.Operation.Add, mtsAthorizationUsersDTO);
         }
 
         private void deleteSpecificBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -517,10 +519,7 @@ namespace MTS.GUI.MTS
 
         private void deleteDetailBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (detalsSpecificBS.Count > 0)
-                DeleteDetail(((MTSCreateDetalsDTO)detalsSpecificBS.Current).ID);
-            else
-                MessageBox.Show("Помилка видалення деталі! Створіть спочатку деталі!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
         }
 
         private void addDetailBarBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -575,8 +574,7 @@ namespace MTS.GUI.MTS
 
         private void deleteBuyDetailBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (byusDetalsSpecificBS.Count > 0)
-                DeleteBuyDetail(((MTSPurchasedProductsDTO)byusDetalsSpecificBS.Current).ID);
+
         }
 
         private void addBuyDetailBarBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -627,8 +625,7 @@ namespace MTS.GUI.MTS
 
         private void deleteMaterialBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (materialsSpecificBS.Count > 0)
-                DeleteBuyDetail(((MTSMaterialsDTO)materialsSpecificBS.Current).ID);
+
         }
 
         private void addMaterialDetailBarBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -718,12 +715,12 @@ namespace MTS.GUI.MTS
 
         private void добавитьСпецификациюToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddSpecification(Utils.Operation.Add, new MTSSpecificationsDTO());
+            AddSpecification(Utils.Operation.Add, new MTSSpecificationsDTO(), mtsAthorizationUsersDTO);
         }
 
         private void добавитьСводнуюСпецификациюToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddSpecificationDetails(new MTSSpecificationsDTO(), Utils.Operation.Add);
+            AddSpecificationDetails(new MTSSpecificationsDTO(), Utils.Operation.Add, mtsAthorizationUsersDTO);
         }
 
         private void редагуватиСпецифікаціюToolStripMenuItem_Click(object sender, EventArgs e)
@@ -740,7 +737,7 @@ namespace MTS.GUI.MTS
                     CREATION_DATE = ((MTSSpecificationsDTO)ItemSpecification).CREATION_DATE,
                     DRAWING = ((MTSSpecificationsDTO)ItemSpecification).DRAWING
                 };
-                AddSpecification(Utils.Operation.Update, (MTSSpecificationsDTO)model);
+                AddSpecification(Utils.Operation.Update, (MTSSpecificationsDTO)model, mtsAthorizationUsersDTO);
             }
             else MessageBox.Show("Помилка редагування специфікації! Створіть спочатку специфікацію!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
@@ -749,7 +746,7 @@ namespace MTS.GUI.MTS
         {
             if (specificBS.Count > 0)
                 DeleteSpecification();
-            else MessageBox.Show("Помилка видалення специфікації! Створіть спочатку специфікацію!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else MessageBox.Show("Ошибка удаления! Создайте спецификацию, прежде чем удалить!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void відобразитиСпецифікаціюToolStripMenuItem_Click(object sender, EventArgs e)
@@ -856,6 +853,50 @@ namespace MTS.GUI.MTS
         private void ribbonControl1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void specificGrid_DoubleClick(object sender, EventArgs e)
+        {
+            if (specificBS.Count > 0)
+            {
+                MTSSpecificationsDTO model = new MTSSpecificationsDTO()
+                {
+                    ID = ((MTSSpecificationsDTO)ItemSpecification).ID,
+                    AUTHORIZATION_USERS_ID = ((MTSSpecificationsDTO)ItemSpecification).AUTHORIZATION_USERS_ID,
+                    NAME = ((MTSSpecificationsDTO)ItemSpecification).NAME,
+                    QUANTITY = ((MTSSpecificationsDTO)ItemSpecification).QUANTITY,
+                    WEIGHT = ((MTSSpecificationsDTO)ItemSpecification).WEIGHT,
+                    CREATION_DATE = ((MTSSpecificationsDTO)ItemSpecification).CREATION_DATE,
+                    DRAWING = ((MTSSpecificationsDTO)ItemSpecification).DRAWING,
+                    AUTHORIZATION_USERS_NAME = ((MTSSpecificationsDTO)ItemSpecification).AUTHORIZATION_USERS_NAME
+
+
+                };
+                AddSpecification(Utils.Operation.Update, (MTSSpecificationsDTO)model, mtsAthorizationUsersDTO);
+            }
+            else MessageBox.Show("Ошибка редактирования! Создайте спецификацию!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void copySpecBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (specificBS.Count > 0)
+            {
+                MTSSpecificationsDTO model = new MTSSpecificationsDTO()
+                {
+                    ID = ((MTSSpecificationsDTO)ItemSpecification).ID,
+                    AUTHORIZATION_USERS_ID = ((MTSSpecificationsDTO)ItemSpecification).AUTHORIZATION_USERS_ID,
+                    NAME = ((MTSSpecificationsDTO)ItemSpecification).NAME,
+                    QUANTITY = ((MTSSpecificationsDTO)ItemSpecification).QUANTITY,
+                    WEIGHT = ((MTSSpecificationsDTO)ItemSpecification).WEIGHT,
+                    CREATION_DATE = ((MTSSpecificationsDTO)ItemSpecification).CREATION_DATE,
+                    DRAWING = ((MTSSpecificationsDTO)ItemSpecification).DRAWING,
+                    AUTHORIZATION_USERS_NAME = ((MTSSpecificationsDTO)ItemSpecification).AUTHORIZATION_USERS_NAME
+
+
+                };
+                AddSpecification(Utils.Operation.Custom, (MTSSpecificationsDTO)model, mtsAthorizationUsersDTO);
+            }
+            else MessageBox.Show("Ошибка создания копии спецификации!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

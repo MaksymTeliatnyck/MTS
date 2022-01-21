@@ -31,7 +31,7 @@ namespace MTS.GUI.MTS
         private void LoadData()
         {
             mtsService = Program.kernel.Get<IMtsSpecificationsService>();
-            specificBS.DataSource = mtsService.GetAllSpecificationOld();
+            specificBS.DataSource = mtsService.GetAllSpecificationOld().OrderByDescending(ord => ord.ID).ToList();
             specificGrid.DataSource = specificBS;
         }
 
@@ -44,7 +44,6 @@ namespace MTS.GUI.MTS
         {
             specificGridView.PostEditor();
 
-
             mtsSpecificationsList = ((List<MTSSpecificationsDTO>)specificBS.DataSource).Where(s => s.Selected).ToList();
             if (mtsSpecificationsList.Count > 0)
             {
@@ -52,7 +51,7 @@ namespace MTS.GUI.MTS
                 this.Close();
             }
 
-            else { MessageBox.Show("Оберіть будь ласка заказ!"); }
+            else { MessageBox.Show("Выберите спецификацию!"); }
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)

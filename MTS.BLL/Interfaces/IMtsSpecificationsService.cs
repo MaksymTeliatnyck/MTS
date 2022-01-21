@@ -223,7 +223,7 @@ namespace MTS.BLL.Interfaces
 
 
         IEnumerable<MTSNomenclaturesDTO> GetAllNomenclatures(int nomenGroupId);
-
+        IEnumerable<MTSNomenclaturesDTO> GetAllNomenclaturesAll();
 
 
         IEnumerable<MTSDetalsProcessingDTO> GetDetailsProccesing();

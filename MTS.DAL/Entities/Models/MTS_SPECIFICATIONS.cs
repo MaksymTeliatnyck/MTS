@@ -14,7 +14,7 @@ namespace MTS.DAL.Entities.Models
         public string NAME { get; set; }
         public int? DEVICE_ID { get; set; }
         public decimal WEIGHT { get; set; }
-        public DateTime CREATION_DATE { get; set; }
+        public DateTime? CREATION_DATE { get; set; }
         public int? USERS_ID { get; set; }
         public int AUTHORIZATION_USERS_ID { get; set; }
         public string DRAWING { get; set; }

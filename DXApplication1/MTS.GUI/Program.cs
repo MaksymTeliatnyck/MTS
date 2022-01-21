@@ -48,8 +48,7 @@ namespace MTS.GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Виникла помилка. " + ex.Message, "Інфо", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //throw;
+                MessageBox.Show("Возникла ошибка. " + ex.Message, "Інфо", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
             

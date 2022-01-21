@@ -13,7 +13,7 @@ namespace MTS.BLL.DTO.ModelsDTO
         public string NAME { get; set; }
         public int? DEVICE_ID { get; set; }
         public decimal WEIGHT { get; set; }
-        public DateTime CREATION_DATE { get; set; }
+        public DateTime? CREATION_DATE { get; set; }
         public int? USERS_ID { get; set; }
         public int AUTHORIZATION_USERS_ID { get; set; }
         public string DRAWING { get; set; }
@@ -25,7 +25,7 @@ namespace MTS.BLL.DTO.ModelsDTO
         public int QUANTITY { get; set; }
         public int? SET_COLOR { get; set; }
         public string AUTHORIZATION_USERS_NAME { get; set; }
-        public int test { get; set; }
+        //public int test { get; set; }
         public bool Selected { get; set; }
 
 

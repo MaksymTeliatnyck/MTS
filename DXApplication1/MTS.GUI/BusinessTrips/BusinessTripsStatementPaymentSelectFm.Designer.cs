@@ -290,7 +290,6 @@
             // 
             this.ribbonPageGroup1.AllowTextClipping = false;
             this.ribbonPageGroup1.ItemLinks.Add(this.addBtn);
-            this.ribbonPageGroup1.ItemLinks.Add(this.deleteBtn);
             this.ribbonPageGroup1.ItemLinks.Add(this.employeesEdit);
             this.ribbonPageGroup1.ItemLinks.Add(this.moneyEdit);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";

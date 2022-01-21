@@ -63,8 +63,8 @@ namespace MTS.BLL.Services
             var config = new MapperConfiguration(cfg =>
             {
 
-                cfg.CreateMap<MTS_SPECIFICATIONS, MtsSpecificationnsDTO>();
-                cfg.CreateMap<MtsSpecificationnsDTO, MTS_SPECIFICATIONS>();
+                //cfg.CreateMap<MTS_SPECIFICATIONS, MtsSpecificationnsDTO>();
+                //cfg.CreateMap<MtsSpecificationnsDTO, MTS_SPECIFICATIONS>();
                 cfg.CreateMap<MtsDetailsInfo, MtsDetailsInfoDTO>();
                 cfg.CreateMap<MtsAssembliesCustomerInfo, MtsAssembliesCustomerInfoDTO>();
 
@@ -168,7 +168,7 @@ namespace MTS.BLL.Services
                           from autUser in autUs.DefaultIfEmpty()
 
                           select new MTSSpecificationsDTO()
-                          {
+                          { 
                               ID = mts.ID,
                               NAME = mts.NAME,
                               AUTHORIZATION_USERS_ID = mts.AUTHORIZATION_USERS_ID,
@@ -176,7 +176,8 @@ namespace MTS.BLL.Services
                               CREATION_DATE = mts.CREATION_DATE,
                               DRAWING = mts.DRAWING,
                               AUTHORIZATION_USERS_NAME = autUser.NAME,
-                              QUANTITY = mts.QUANTITY
+                              QUANTITY = mts.QUANTITY,
+                              
                           }).ToList();
 
             return result;
@@ -576,6 +577,34 @@ namespace MTS.BLL.Services
                            GUAGE = mtsNomen.GUAGE
 
 
+                       }
+                     ).ToList();
+            return rez;
+        }
+
+        public IEnumerable<MTSNomenclaturesDTO> GetAllNomenclaturesAll()
+        {
+            var rez = (from mtsNomen in mtsNomenclatures.GetAll()
+
+                       join mtsNomenGr in mtsNomenclatureGroups.GetAll() on mtsNomen.NOMENCLATUREGROUPS_ID equals mtsNomenGr.ID into mtsNomenGroup
+                       from mtsNomenGr in mtsNomenGroup.DefaultIfEmpty()
+
+                       join gost in mtsGost.GetAll() on mtsNomen.GOST_ID equals gost.ID into gosts
+                       from gost in gosts.DefaultIfEmpty()
+
+                       join mtsMeas in mtsMeasure.GetAll() on mtsNomen.MEASURE_ID equals mtsMeas.ID into mtsMeasur
+                       from mtsMeas in mtsMeasur.DefaultIfEmpty()
+
+                       select new MTSNomenclaturesDTO()
+                       {
+                           ID = mtsNomen.ID,
+                           NAME = mtsNomen.NAME,
+                           GOST = gost.NAME,
+                           MEASURE = mtsMeas.NAME,
+                           PRICE = mtsNomen.PRICE,
+                           WEIGHT = mtsNomen.WEIGHT,
+                           NOTE = mtsNomen.NOTE,
+                           GUAGE = mtsNomen.GUAGE
                        }
                      ).ToList();
             return rez;

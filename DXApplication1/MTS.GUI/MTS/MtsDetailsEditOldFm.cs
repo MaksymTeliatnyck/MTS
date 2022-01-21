@@ -25,6 +25,7 @@ namespace MTS.GUI.MTS
         private BindingSource createDetailsBS = new BindingSource();
         private MTSSpecificationsDTO specificDTO = new MTSSpecificationsDTO();
         private MTSDetailsDTO detailDTO = new MTSDetailsDTO();
+        private MTSNomenclaturesDTO nomenclaturesDTO = new MTSNomenclaturesDTO();
 
         private ObjectBase Item
         {
@@ -104,8 +105,8 @@ namespace MTS.GUI.MTS
                 else
                 {
                     MTSCreateDetalsDTO createCreateDetails = new MTSCreateDetalsDTO();
-                    createCreateDetails.NOMENCLATURE_ID = (int)((MTSDetailsDTO)Item).NOMENCLATURE_ID;
-                    createCreateDetails.PROCESSING_ID = (int)((MTSDetailsDTO)Item).PROCESSING_ID;
+                    createCreateDetails.NOMENCLATURE_ID = this.nomenclaturesDTO.ID;
+                    createCreateDetails.PROCESSING_ID = ((MTSDetailsDTO)Item).PROCESSING_ID;
                     createCreateDetails.NAME = ((MTSDetailsDTO)Item).NAME;
 
                     createCreateDetails.DRAWING = ((MTSDetailsDTO)Item).DRAWING;
@@ -180,7 +181,7 @@ namespace MTS.GUI.MTS
                     }
                     else
                     {
-                        // MessageBox.Show("Не вірний номер.Такий номер вже існує.", "Підтвердження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Не вірний номер.Такий номер вже існує.", "Підтвердження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         //numberAccountingEdit.Focus();
                     }
                 }
@@ -206,11 +207,11 @@ namespace MTS.GUI.MTS
             {
                 if (directoryBuyDetailEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    MTSNomenclaturesDTO r = directoryBuyDetailEditOldFm.Returnl();
+                    this.nomenclaturesDTO = directoryBuyDetailEditOldFm.Returnl();
 
                     //MTSNomenclatureGroupsOldDTO return_Id = directoryBuyDetailEditOldFm.Return();
-                    nomenclatureNameEdit.EditValue = r.NAME;
-                    guageEdit.EditValue = r.GUAGE;
+                    nomenclatureNameEdit.EditValue = this.nomenclaturesDTO.NAME;
+                    guageEdit.EditValue = this.nomenclaturesDTO.GUAGE;
                       
 
                 }

@@ -12,6 +12,7 @@ using MTS.BLL.Interfaces;
 using MTS.BLL.DTO.ModelsDTO;
 using Ninject;
 using MTS.BLL.Infrastructure;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace MTS.GUI.MTS
 {
@@ -24,6 +25,8 @@ namespace MTS.GUI.MTS
 
         private List<MTSSpecificationsDTO> specificationList = new List<MTSSpecificationsDTO>();
         private List<MTSSpecificationsDTO> deleteSpecificationList = new List<MTSSpecificationsDTO>();
+
+        private MTSAuthorizationUsersDTO mtsAuthorizationUsersDTO;
 
         private Utils.Operation operation;
 
@@ -38,7 +41,7 @@ namespace MTS.GUI.MTS
         }
 
 
-        public MtsSpecificationOldDetailsFm(MTSSpecificationsDTO model, Utils.Operation operation)
+        public MtsSpecificationOldDetailsFm(MTSSpecificationsDTO model, Utils.Operation operation, MTSAuthorizationUsersDTO mtsAuthorizationUsersDTO)
         {
             InitializeComponent();
 
@@ -46,6 +49,7 @@ namespace MTS.GUI.MTS
 
             //this.model = model;
             this.operation = operation;
+            this.mtsAuthorizationUsersDTO = mtsAuthorizationUsersDTO;
 
             specificationBS.DataSource = Item = model;
 
@@ -61,7 +65,7 @@ namespace MTS.GUI.MTS
 
             ((MTSSpecificationsDTO)Item).QUANTITY = 1;
             ((MTSSpecificationsDTO)Item).CREATION_DATE = DateTime.Now;
-            ((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_ID = 1;
+            ((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_ID = mtsAuthorizationUsersDTO.ID;
 
         }
 
@@ -112,10 +116,13 @@ namespace MTS.GUI.MTS
 
         private void deleteSpecDetailBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            
+
             specificationGridView.PostEditor();
             specificationGridView.BeginDataUpdate();
 
             specificationList.RemoveAll(s => s.Selected);
+            specificationBS.DataSource = specificationList;
             specificationGrid.DataSource = specificationBS;
 
             specificationGridView.EndDataUpdate();
@@ -341,6 +348,26 @@ namespace MTS.GUI.MTS
                 }
                 catch (Exception ex)
                 { MessageBox.Show("" + ex.Message, "Збереження заявки", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
+        }
+
+        private void specificationGridView_CustomRowCellEdit(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
+        {
+            string unit_displ = "D";
+
+            //if(e.Column.FieldName == "QUANTITY")
+            //    e. 
+
+        }
+
+        private void specificationGridView_ShownEditor(object sender, EventArgs e)
+        {
+            GridView view = sender as GridView;
+            if (view.FocusedColumn.FieldName == "QUANTITY")
+            {
+                DevExpress.XtraEditors.TextEdit edit = (view.ActiveEditor as DevExpress.XtraEditors.TextEdit);
+                edit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+                edit.Properties.Mask.EditMask = "D";
             }
         }
     }

@@ -22,14 +22,18 @@ namespace MTS.GUI.MTS
         private Utils.Operation operation;
         private IMtsSpecificationsService mtsService;
         private BindingSource specificationBS = new BindingSource();
-        public UserTasksDTO userTaskDTO = new UserTasksDTO();
+        private MTSAuthorizationUsersDTO mtsAthorizationUsersDTO;
 
-        public MtsSpecificationOldEditFm(Utils.Operation operation, MTSSpecificationsDTO model)
+        public MtsSpecificationOldEditFm(Utils.Operation operation, MTSSpecificationsDTO model, MTSAuthorizationUsersDTO mtsAthorizationUsersDTO)
         {
             InitializeComponent();
             this.operation = operation;
+            this.mtsAthorizationUsersDTO = mtsAthorizationUsersDTO;
             specificationBS.DataSource = Item = model;
-            
+
+            ((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_ID = mtsAthorizationUsersDTO.ID;
+
+
 
             nameSpecificationEdit.DataBindings.Add("EditValue", specificationBS, "NAME", true, DataSourceUpdateMode.OnPropertyChanged);
             drawingEdit.DataBindings.Add("EditValue", specificationBS, "DRAWING", true, DataSourceUpdateMode.OnPropertyChanged);
@@ -53,38 +57,103 @@ namespace MTS.GUI.MTS
          {
              this.Item.EndEdit();
              mtsService = Program.kernel.Get<IMtsSpecificationsService>();
-             switch (this.userTaskDTO.UserId)
-             {
-                 case 1: ((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_NAME = "Калайда Н.Б.";
-                     ((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_ID = 1;
-                     break;
-                 case 4: ((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_NAME = "Петрова Л.Г.";
-                     ((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_ID = 4;
-                     break;
-                 case 52: ((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_NAME = "Литвиненко Є.С.";
-                     ((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_ID = 105;
-                     break;
-             }
+
              if (quantityEdit.Text.Length <= 5)
              {
                  if (weightEdit.Text.Length <= 7)
                  {
-                     if (operation == Utils.Operation.Add)
-                     {
-                         ((MTSSpecificationsDTO)Item).CREATION_DATE = (DateTime)dateEdit.EditValue;
-                         ((MTSSpecificationsDTO)Item).NAME = nameSpecificationEdit.Text;
-                         ((MTSSpecificationsDTO)Item).DRAWING = drawingEdit.Text;
-                         ((MTSSpecificationsDTO)Item).WEIGHT = (decimal)weightEdit.EditValue;
-                         ((MTSSpecificationsDTO)Item).QUANTITY = (int)quantityEdit.EditValue;
-                         //((MTSSpecificationsDTO)Item).ID = mtsService.MTSSpecificationCreate((MTSSpecificationsDTO)Item);
-                         ((MTSSpecificationsDTO)Item).COMPILATION_NAMES = "";
-                         ((MTSSpecificationsDTO)Item).COMPILATION_DRAWINGS = "";
-                         ((MTSSpecificationsDTO)Item).COMPILATION_QUANTITIES = "";
-                         ((MTSSpecificationsDTO)Item).SET_COLOR = 0;
-                         
-                     }
-                     else
-                         mtsService.MTSSpecificationUpdate((MTSSpecificationsDTO)Item);
+                    if (operation == Utils.Operation.Add)
+                    {
+                        ((MTSSpecificationsDTO)Item).ID = 0;
+                        ((MTSSpecificationsDTO)Item).NAME = nameSpecificationEdit.Text;
+                        ((MTSSpecificationsDTO)Item).DEVICE_ID = null;
+                        ((MTSSpecificationsDTO)Item).WEIGHT = (decimal)weightEdit.EditValue;
+                        ((MTSSpecificationsDTO)Item).USERS_ID = null;
+                        ((MTSSpecificationsDTO)Item).CREATION_DATE = (DateTime?)dateEdit.EditValue;
+                        ((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_ID = mtsAthorizationUsersDTO.ID;
+                        ((MTSSpecificationsDTO)Item).DRAWING = drawingEdit.Text;
+                        ((MTSSpecificationsDTO)Item).QUANTITY = (int)quantityEdit.EditValue;
+                        ((MTSSpecificationsDTO)Item).COMPILATION_NAMES = "";
+                        ((MTSSpecificationsDTO)Item).COMPILATION_DRAWINGS = "";
+                        ((MTSSpecificationsDTO)Item).COMPILATION_QUANTITIES = "";
+                        ((MTSSpecificationsDTO)Item).SET_COLOR = 0;
+
+                        ((MTSSpecificationsDTO)Item).ID = mtsService.MTSSpecificationCreate((MTSSpecificationsDTO)Item);
+
+                    }
+                    else if (operation == Utils.Operation.Update)
+                    {
+                        mtsService.MTSSpecificationUpdate((MTSSpecificationsDTO)Item);
+                    }
+                    else if(operation == Utils.Operation.Custom)
+                    {
+                        int mtsSpecificztionId = ((MTSSpecificationsDTO)Item).ID;
+
+                        ((MTSSpecificationsDTO)Item).ID = 0;
+                        ((MTSSpecificationsDTO)Item).NAME = nameSpecificationEdit.Text;
+                        ((MTSSpecificationsDTO)Item).DEVICE_ID = null;
+                        ((MTSSpecificationsDTO)Item).WEIGHT = (decimal)weightEdit.EditValue;
+                        ((MTSSpecificationsDTO)Item).USERS_ID = null;
+                        ((MTSSpecificationsDTO)Item).CREATION_DATE = DateTime.Now;
+                        //((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_ID = mtsAthorizationUsersDTO.ID;
+                        ((MTSSpecificationsDTO)Item).DRAWING = drawingEdit.Text;
+                        ((MTSSpecificationsDTO)Item).QUANTITY = (int)quantityEdit.EditValue;
+                        ((MTSSpecificationsDTO)Item).COMPILATION_NAMES = "";
+                        ((MTSSpecificationsDTO)Item).COMPILATION_DRAWINGS = "";
+                        ((MTSSpecificationsDTO)Item).COMPILATION_QUANTITIES = "";
+                        ((MTSSpecificationsDTO)Item).SET_COLOR = 0;
+
+                        ((MTSSpecificationsDTO)Item).ID = mtsService.MTSSpecificationCreate((MTSSpecificationsDTO)Item);
+
+                        var detailsSpecific = mtsService.GetAllDetailsSpecificShort(mtsSpecificztionId);
+
+                        if (detailsSpecific != null)
+                        {
+                            List<MTSDetailsDTO> mtsDetailsList = new List<MTSDetailsDTO>();
+
+                            foreach (var itemDetailSpecific in detailsSpecific)
+                            {
+                                mtsDetailsList.Add(itemDetailSpecific);
+                                mtsDetailsList.Last().SPECIFICATIONS_ID = ((MTSSpecificationsDTO)Item).ID;
+                                mtsDetailsList.Last().QUANTITY = mtsDetailsList.Last().QUANTITY;
+                                mtsDetailsList.Last().TIME_OF_ADD = DateTime.Now;
+                            }
+                            mtsService.MTSDetailsCreateRange(mtsDetailsList);
+                        }
+
+                        var detailsSpecificBuy = mtsService.GetBuysDetalSpecificShort(mtsSpecificztionId);
+
+                        if (detailsSpecificBuy != null)
+                        {
+                            List<MTSPurchasedProductsDTO> mtsPurchasedList = new List<MTSPurchasedProductsDTO>();
+
+                            foreach (var itemDetailSpecificBuy in detailsSpecificBuy)
+                            {
+                                mtsPurchasedList.Add(itemDetailSpecificBuy);
+                                mtsPurchasedList.Last().SPECIFICATIONS_ID = ((MTSSpecificationsDTO)Item).ID;
+                                mtsPurchasedList.Last().QUANTITY = mtsPurchasedList.Last().QUANTITY;
+                                mtsPurchasedList.Last().TIME_OF_ADD = DateTime.Now;
+                            }
+                            mtsService.MTSPurchasedProductsCreateRange(mtsPurchasedList);
+                        }
+
+                        var detailsSpecificMaterials = mtsService.GetMaterialsSpecificShort(mtsSpecificztionId);
+
+                        if (detailsSpecificMaterials != null)
+                        {
+                            List<MTSMaterialsDTO> mtsMaterialsList = new List<MTSMaterialsDTO>();
+
+                            foreach (var itemDetailsSpecificMaterials in detailsSpecificMaterials)
+                            {
+                                mtsMaterialsList.Add(itemDetailsSpecificMaterials);
+                                mtsMaterialsList.Last().SPECIFICATIONS_ID = ((MTSSpecificationsDTO)Item).ID;
+                                mtsMaterialsList.Last().QUANTITY = mtsMaterialsList.Last().QUANTITY;
+                                mtsMaterialsList.Last().TIME_OF_ADD = DateTime.Now;
+                            }
+                            mtsService.MTSMaterialCreateRange(mtsMaterialsList);
+                        }
+                    }
+
              return true;           
              }
             else

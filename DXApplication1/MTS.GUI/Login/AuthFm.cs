@@ -16,6 +16,10 @@ using DevExpress.XtraSplashScreen;
 using System.Threading;
 using MTS.GUI.MTS;
 using DevExpress.XtraBars;
+using DevExpress.XtraBars.Helpers;
+using DevExpress.LookAndFeel;
+using DevExpress.Skins;
+using MTS.GUI.Properties;
 
 namespace MTS.GUI.Login
 {
@@ -32,6 +36,9 @@ namespace MTS.GUI.Login
             loginEdit.Text = Properties.Settings.Default.MtsLoginUser;
             if(setUserCheck.Checked)
                 pwdEdit.Text = Properties.Settings.Default.MtsPassUser;
+
+            //SkinHelper.InitSkinGallery(galleryControl1);
+            UserLookAndFeel.Default.SkinName = Settings.Default["ApplicationSkinName"].ToString();
 
             userService = Program.kernel.Get<IUserService>();
         }
@@ -52,7 +59,10 @@ namespace MTS.GUI.Login
                 return;
             }
 
-            userInfo = UserService.AuthorizatedUser;
+                userInfo = UserService.AuthorizatedUser;
+
+
+            
 
             using (MtsSpecificationOldFm mtsSpecificationOldFm = new MtsSpecificationOldFm(userInfo))
             {
@@ -64,7 +74,16 @@ namespace MTS.GUI.Login
 
         private bool CheckAccess()
         {
-            userService = Program.kernel.Get<IUserService>();
+            try
+            {
+                userService = Program.kernel.Get<IUserService>();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Возникла проблема при подключении к БД \n" + ex.Message, "Подключение к БД", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            
 
             SplashScreenManager.ShowForm(typeof(StartScreenFm));
             SplashScreenManager.Default.SendCommand(StartScreenFm.SplashScreenCommand.SetLabel, "Авторизация пользователя...");
@@ -72,9 +91,7 @@ namespace MTS.GUI.Login
 
             if (userService.TryAuthorize(loginEdit.Text, pwdEdit.Text))
             {
-                //добавить трай-кач
-                //SplashScreenManager.Default.SendCommand(StartScreenFm.SplashScreenCommand.SetLabel, "Користувач успішно авторизований \n(" + UserService.AuthorizatedUser.Fio + ")");
-                //Thread.Sleep(200);
+                
                 SplashScreenManager.Default.SendCommand(StartScreenFm.SplashScreenCommand.SetLabel, "Настройки прав доступа...");
                 Thread.Sleep(200);
                 SplashScreenManager.CloseForm();
@@ -97,6 +114,32 @@ namespace MTS.GUI.Login
         {
             Properties.Settings.Default.MtsCheckUser = setUserCheck.Checked;
             Properties.Settings.Default.Save();
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void AuthFm_Load(object sender, EventArgs e)
+        {
+            SkinHelper.InitSkinPopupMenu(SkinsLink);
+        }
+
+        private void SkinsLink_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            string data = e.Item.Caption;
+        }
+
+        private void barSubItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            string data = e.Item.Caption;
+        }
+
+        private void AuthFm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Settings.Default["ApplicationSkinName"] = UserLookAndFeel.Default.SkinName;
+            Settings.Default.Save();
         }
     }
 }

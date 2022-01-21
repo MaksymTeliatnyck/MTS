@@ -176,6 +176,7 @@
             // 
             this.nomenclatureNameEdit.Location = new System.Drawing.Point(139, 123);
             this.nomenclatureNameEdit.Name = "nomenclatureNameEdit";
+            this.nomenclatureNameEdit.Properties.ReadOnly = true;
             this.nomenclatureNameEdit.Size = new System.Drawing.Size(266, 20);
             this.nomenclatureNameEdit.TabIndex = 11;
             // 
