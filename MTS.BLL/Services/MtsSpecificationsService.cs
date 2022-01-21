@@ -101,28 +101,6 @@ namespace MTS.BLL.Services
         }
 
         #region Get method's
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         
         //public IEnumerable<MTSSpecificationsDTO> GetAllSpecificationOld()
         //{
@@ -550,6 +528,15 @@ namespace MTS.BLL.Services
             return mapper.Map<IEnumerable<MTS_NOMENCLATURE_GROUPS>, IList<MTSNomenclatureGroupsDTO>>(mtsNomenclatureGroups.GetAll());
            
         }
+        public IEnumerable<MTSGostDTO>GetAllGostOld()
+        {
+            return mapper.Map<IEnumerable<MTS_GOST>, IList<MTSGostDTO>>(mtsGost.GetAll());
+        }
+        public IEnumerable<MTSMeasureDTO> GetAllMeasureOld()
+        {
+            return mapper.Map<IEnumerable<MTS_MEASURE>, IList<MTSMeasureDTO>>(mtsMeasure.GetAll());
+        }
+
 
         public IEnumerable<MTSNomenclaturesDTO> GetAllNomenclatures(int nomenGroupId)
         {
@@ -917,6 +904,59 @@ namespace MTS.BLL.Services
             try
             {
                 mtsCreateDetals.Delete(mtsCreateDetals.GetAll().FirstOrDefault(c => c.ID == id));
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region MTSGost CRUD method's
+        public int MTSCreateGost(MTSGostDTO mtsGostDTO)
+        {
+            var createGost = mtsGost.Create(mapper.Map<MTS_GOST>(mtsGostDTO));
+            return (int)createGost.ID;
+        }
+
+        public void MTSUpdateGost(MTSGostDTO mtsGostDTO)
+        {
+            var updateGost = mtsGost.GetAll().SingleOrDefault(c => c.ID == mtsGostDTO.ID);
+            mtsGost.Update((mapper.Map<MTSGostDTO, MTS_GOST>(mtsGostDTO, updateGost)));
+        }
+        public bool MTSDeleteGost(int id)
+        {
+            try
+            {
+                mtsGost.Delete(mtsGost.GetAll().FirstOrDefault(c => c.ID == id));
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        #endregion
+
+        #region MTSMEASURE CRUD method's
+
+        public int MTSCreateMeasure(MTSMeasureDTO mtsMeasureDTO)
+        {
+            var createMeasure = mtsMeasure.Create(mapper.Map<MTS_MEASURE>(mtsMeasureDTO));
+            return (int)createMeasure.ID;
+        }
+        public void MTSUpdateMeasure(MTSMeasureDTO mtsMeasureDTO)
+        {
+            var updateMeasure = mtsMeasure.GetAll().SingleOrDefault(c => c.ID == mtsMeasureDTO.ID);
+            mtsMeasure.Update((mapper.Map<MTSMeasureDTO, MTS_MEASURE>(mtsMeasureDTO, updateMeasure)));
+        }
+        public bool MTSDeleteMeasure(int id)
+        {
+            try
+            {
+                mtsMeasure.Delete(mtsMeasure.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
             catch (Exception ex)

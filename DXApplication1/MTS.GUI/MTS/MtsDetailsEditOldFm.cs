@@ -306,5 +306,15 @@ namespace MTS.GUI.MTS
                     break;
             }
         }
+
+        private void panelControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void nameEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

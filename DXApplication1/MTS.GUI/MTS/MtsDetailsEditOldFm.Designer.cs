@@ -93,6 +93,7 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(456, 308);
             this.panelControl1.TabIndex = 0;
+            this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
             // detalsProccesingLookUpEdit
             // 
@@ -195,6 +196,7 @@
             this.nameEdit.Name = "nameEdit";
             this.nameEdit.Size = new System.Drawing.Size(298, 20);
             this.nameEdit.TabIndex = 9;
+            this.nameEdit.EditValueChanged += new System.EventHandler(this.nameEdit_EditValueChanged);
             // 
             // numberDrawingEdit
             // 
