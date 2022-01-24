@@ -939,5 +939,10 @@ namespace MTS.GUI.MTS
                 }
             }
         }
+
+        private void copySpecBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }
