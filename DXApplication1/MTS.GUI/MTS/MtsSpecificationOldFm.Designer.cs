@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageUser;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MtsSpecificationOldFm));
             DevExpress.Utils.Animation.PushTransition pushTransition1 = new DevExpress.Utils.Animation.PushTransition();
@@ -79,7 +78,7 @@
             this.standaloneBarDockControl2 = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.detalsSpecificGrid = new DevExpress.XtraGrid.GridControl();
-            this.detailMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.detailMenu = new System.Windows.Forms.ContextMenuStrip();
             this.додатиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редагуватиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.видалитиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -98,7 +97,7 @@
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn35 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barDetail = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDetail = new DevExpress.XtraBars.BarManager();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.addDetailBarBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editDetailBarBtn = new DevExpress.XtraBars.BarButtonItem();
@@ -114,7 +113,7 @@
             this.deleteBuyDetailBarBtn = new DevExpress.XtraBars.BarButtonItem();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.buysDetalsSpecificGrid = new DevExpress.XtraGrid.GridControl();
-            this.buyDetailMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.buyDetailMenu = new System.Windows.Forms.ContextMenuStrip();
             this.додатиЗаписToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.редагуватиЗаписToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.видалитиЗаписToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -129,7 +128,7 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.materialsSpecificGrid = new DevExpress.XtraGrid.GridControl();
-            this.materialMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.materialMenu = new System.Windows.Forms.ContextMenuStrip();
             this.додатиЗаписToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.редагуватиЗаписToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.видалитиЗаписToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -142,7 +141,7 @@
             this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.specificGrid = new DevExpress.XtraGrid.GridControl();
-            this.mainMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mainMenu = new System.Windows.Forms.ContextMenuStrip();
             this.добавитьСпецификациюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьСводнуюСпецификациюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редагуватиСпецифікаціюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -163,13 +162,13 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barBuyDetail = new DevExpress.XtraBars.BarManager(this.components);
+            this.barBuyDetail = new DevExpress.XtraBars.BarManager();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
-            this.barMaterialDetail = new DevExpress.XtraBars.BarManager(this.components);
+            this.barMaterialDetail = new DevExpress.XtraBars.BarManager();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.addMaterialDetailBarBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editMaterialDetailBarBtn = new DevExpress.XtraBars.BarButtonItem();
@@ -178,8 +177,11 @@
             this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
-            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
-            this.styleController1 = new DevExpress.XtraEditors.StyleController(this.components);
+            this.imageCollection = new DevExpress.Utils.ImageCollection();
+            this.styleController1 = new DevExpress.XtraEditors.StyleController();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.specificificationNameMemoRepo = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.buyDetailNameMemoRepo = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             ribbonPageUser = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
@@ -201,6 +203,7 @@
             this.buyDetailMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buysDetalsSpecificGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
             this.xtraTabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.materialsSpecificGrid)).BeginInit();
             this.materialMenu.SuspendLayout();
@@ -213,6 +216,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.barMaterialDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.styleController1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.specificificationNameMemoRepo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buyDetailNameMemoRepo)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonPageUser
@@ -289,7 +296,7 @@
             this.repositoryItemDateEdit2});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
-            this.ribbonControl1.Size = new System.Drawing.Size(1792, 95);
+            this.ribbonControl1.Size = new System.Drawing.Size(1792, 93);
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
@@ -687,14 +694,12 @@
             this.nomenclatureShowBtn.Caption = "Справочник номенклатур";
             this.nomenclatureShowBtn.Id = 27;
             this.nomenclatureShowBtn.Name = "nomenclatureShowBtn";
-            this.nomenclatureShowBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.nomenclatureShowBtn_ItemClick);
             // 
             // detailsShowBtn
             // 
             this.detailsShowBtn.Caption = "Справочник деталей";
             this.detailsShowBtn.Id = 28;
             this.detailsShowBtn.Name = "detailsShowBtn";
-            this.detailsShowBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.detailsShowBtn_ItemClick);
             // 
             // gostShowBtn
             // 
@@ -802,8 +807,8 @@
             this.xtraTabPage1.Controls.Add(this.detalsSpecificGrid);
             this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1782, 363);
-            this.xtraTabPage1.Text = "Деталі";
+            this.xtraTabPage1.Size = new System.Drawing.Size(1782, 362);
+            this.xtraTabPage1.Text = "Детали";
             // 
             // standaloneBarDockControl2
             // 
@@ -837,7 +842,7 @@
             this.detalsSpecificGrid.Margin = new System.Windows.Forms.Padding(4);
             this.detalsSpecificGrid.MenuManager = this.barDetail;
             this.detalsSpecificGrid.Name = "detalsSpecificGrid";
-            this.detalsSpecificGrid.Size = new System.Drawing.Size(1782, 363);
+            this.detalsSpecificGrid.Size = new System.Drawing.Size(1782, 362);
             this.detalsSpecificGrid.TabIndex = 0;
             this.detalsSpecificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.detalsSpecificGridView});
@@ -1249,10 +1254,10 @@
             // 
             this.standaloneBarDockControl3.CausesValidation = false;
             this.standaloneBarDockControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.standaloneBarDockControl3.Location = new System.Drawing.Point(0, 0);
+            this.standaloneBarDockControl3.Location = new System.Drawing.Point(2, 2);
             this.standaloneBarDockControl3.Margin = new System.Windows.Forms.Padding(4);
             this.standaloneBarDockControl3.Name = "standaloneBarDockControl3";
-            this.standaloneBarDockControl3.Size = new System.Drawing.Size(1778, 33);
+            this.standaloneBarDockControl3.Size = new System.Drawing.Size(1778, 27);
             this.standaloneBarDockControl3.Text = "standaloneBarDockControl3";
             // 
             // standaloneBarDockControl4
@@ -1323,36 +1328,25 @@
             // 
             this.xtraTabPage2.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.xtraTabPage2.Appearance.Header.Options.UseFont = true;
-            this.xtraTabPage2.Controls.Add(this.buysDetalsSpecificGrid);
-            this.xtraTabPage2.Controls.Add(this.standaloneBarDockControl3);
             this.xtraTabPage2.Controls.Add(this.panelControl2);
             this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1782, 363);
-            this.xtraTabPage2.Text = "Покупні";
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.standaloneBarDockControl3);
-            this.panelControl2.Controls.Add(this.buysDetalsSpecificGrid);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 0);
-            this.panelControl2.Margin = new System.Windows.Forms.Padding(4);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1782, 363);
-            this.panelControl2.TabIndex = 1;
+            this.xtraTabPage2.Size = new System.Drawing.Size(1782, 362);
+            this.xtraTabPage2.Text = "Покупные";
             // 
             // buysDetalsSpecificGrid
             // 
             this.buysDetalsSpecificGrid.ContextMenuStrip = this.buyDetailMenu;
             this.buysDetalsSpecificGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buysDetalsSpecificGrid.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.buysDetalsSpecificGrid.Location = new System.Drawing.Point(0, 28);
+            this.buysDetalsSpecificGrid.Location = new System.Drawing.Point(0, 0);
             this.buysDetalsSpecificGrid.MainView = this.buysDetalsSpecificGridView;
             this.buysDetalsSpecificGrid.Margin = new System.Windows.Forms.Padding(4);
             this.buysDetalsSpecificGrid.MenuManager = this.ribbonControl1;
             this.buysDetalsSpecificGrid.Name = "buysDetalsSpecificGrid";
-            this.buysDetalsSpecificGrid.Size = new System.Drawing.Size(1778, 359);
+            this.buysDetalsSpecificGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.buyDetailNameMemoRepo});
+            this.buysDetalsSpecificGrid.Size = new System.Drawing.Size(1778, 331);
             this.buysDetalsSpecificGrid.TabIndex = 0;
             this.buysDetalsSpecificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.buysDetalsSpecificGridView});
@@ -1400,6 +1394,7 @@
             this.buysDetalsSpecificGridView.GridControl = this.buysDetalsSpecificGrid;
             this.buysDetalsSpecificGridView.Name = "buysDetalsSpecificGridView";
             this.buysDetalsSpecificGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.buysDetalsSpecificGridView.OptionsView.RowAutoHeight = true;
             this.buysDetalsSpecificGridView.OptionsView.ShowAutoFilterRow = true;
             this.buysDetalsSpecificGridView.OptionsView.ShowGroupPanel = false;
             this.buysDetalsSpecificGridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.buysDetalsSpecificGridView_RowStyle);
@@ -1415,6 +1410,7 @@
             this.gridColumn20.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn20.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn20.Caption = "Найменування";
+            this.gridColumn20.ColumnEdit = this.buyDetailNameMemoRepo;
             this.gridColumn20.FieldName = "NOMENCLATURESNAME";
             this.gridColumn20.Name = "gridColumn20";
             this.gridColumn20.OptionsColumn.AllowEdit = false;
@@ -1440,8 +1436,6 @@
             this.gridColumn21.OptionsColumn.AllowEdit = false;
             this.gridColumn21.OptionsColumn.AllowFocus = false;
             this.gridColumn21.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.gridColumn21.Visible = true;
-            this.gridColumn21.VisibleIndex = 1;
             this.gridColumn21.Width = 410;
             // 
             // gridColumn22
@@ -1461,7 +1455,7 @@
             this.gridColumn22.OptionsColumn.AllowFocus = false;
             this.gridColumn22.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.gridColumn22.Visible = true;
-            this.gridColumn22.VisibleIndex = 2;
+            this.gridColumn22.VisibleIndex = 1;
             this.gridColumn22.Width = 326;
             // 
             // gridColumn23
@@ -1481,7 +1475,7 @@
             this.gridColumn23.OptionsColumn.AllowFocus = false;
             this.gridColumn23.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.gridColumn23.Visible = true;
-            this.gridColumn23.VisibleIndex = 3;
+            this.gridColumn23.VisibleIndex = 2;
             this.gridColumn23.Width = 322;
             // 
             // gridColumn24
@@ -1501,7 +1495,7 @@
             this.gridColumn24.OptionsColumn.AllowFocus = false;
             this.gridColumn24.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.gridColumn24.Visible = true;
-            this.gridColumn24.VisibleIndex = 4;
+            this.gridColumn24.VisibleIndex = 3;
             this.gridColumn24.Width = 215;
             // 
             // gridColumn25
@@ -1520,7 +1514,7 @@
             this.gridColumn25.OptionsColumn.AllowEdit = false;
             this.gridColumn25.OptionsColumn.AllowFocus = false;
             this.gridColumn25.Visible = true;
-            this.gridColumn25.VisibleIndex = 5;
+            this.gridColumn25.VisibleIndex = 4;
             this.gridColumn25.Width = 70;
             // 
             // gridColumn26
@@ -1539,15 +1533,18 @@
             this.gridColumn26.OptionsColumn.AllowEdit = false;
             this.gridColumn26.OptionsColumn.AllowFocus = false;
             this.gridColumn26.Visible = true;
-            this.gridColumn26.VisibleIndex = 6;
+            this.gridColumn26.VisibleIndex = 5;
             this.gridColumn26.Width = 58;
             // 
             // panelControl2
             // 
-            this.panelControl2.Location = new System.Drawing.Point(585, 201);
+            this.panelControl2.Controls.Add(this.panelControl3);
+            this.panelControl2.Controls.Add(this.standaloneBarDockControl3);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1782, 342);
+            this.panelControl2.Size = new System.Drawing.Size(1782, 362);
             this.panelControl2.TabIndex = 1;
             // 
             // xtraTabPage3
@@ -1558,8 +1555,8 @@
             this.xtraTabPage3.Controls.Add(this.materialsSpecificGrid);
             this.xtraTabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1782, 363);
-            this.xtraTabPage3.Text = "Матеріали";
+            this.xtraTabPage3.Size = new System.Drawing.Size(1782, 362);
+            this.xtraTabPage3.Text = "Материалы";
             // 
             // materialsSpecificGrid
             // 
@@ -1571,7 +1568,9 @@
             this.materialsSpecificGrid.Margin = new System.Windows.Forms.Padding(4);
             this.materialsSpecificGrid.MenuManager = this.ribbonControl1;
             this.materialsSpecificGrid.Name = "materialsSpecificGrid";
-            this.materialsSpecificGrid.Size = new System.Drawing.Size(1782, 363);
+            this.materialsSpecificGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.specificificationNameMemoRepo});
+            this.materialsSpecificGrid.Size = new System.Drawing.Size(1782, 362);
             this.materialsSpecificGrid.TabIndex = 0;
             this.materialsSpecificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.materialsSpecificGridView});
@@ -1790,78 +1789,78 @@
             this.disableLabelMenuBtn,
             this.enableLabelMenuBtn});
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(327, 246);
+            this.mainMenu.Size = new System.Drawing.Size(326, 246);
             // 
             // добавитьСпецификациюToolStripMenuItem
             // 
             this.добавитьСпецификациюToolStripMenuItem.Name = "добавитьСпецификациюToolStripMenuItem";
-            this.добавитьСпецификациюToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
+            this.добавитьСпецификациюToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
             this.добавитьСпецификациюToolStripMenuItem.Text = "Додати специфікацію";
             this.добавитьСпецификациюToolStripMenuItem.Click += new System.EventHandler(this.добавитьСпецификациюToolStripMenuItem_Click);
             // 
             // добавитьСводнуюСпецификациюToolStripMenuItem
             // 
             this.добавитьСводнуюСпецификациюToolStripMenuItem.Name = "добавитьСводнуюСпецификациюToolStripMenuItem";
-            this.добавитьСводнуюСпецификациюToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
+            this.добавитьСводнуюСпецификациюToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
             this.добавитьСводнуюСпецификациюToolStripMenuItem.Text = "Додати зведену специфікацію";
             this.добавитьСводнуюСпецификациюToolStripMenuItem.Click += new System.EventHandler(this.добавитьСводнуюСпецификациюToolStripMenuItem_Click);
             // 
             // редагуватиСпецифікаціюToolStripMenuItem
             // 
             this.редагуватиСпецифікаціюToolStripMenuItem.Name = "редагуватиСпецифікаціюToolStripMenuItem";
-            this.редагуватиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
+            this.редагуватиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
             this.редагуватиСпецифікаціюToolStripMenuItem.Text = "Редагувати специфікацію";
             this.редагуватиСпецифікаціюToolStripMenuItem.Click += new System.EventHandler(this.редагуватиСпецифікаціюToolStripMenuItem_Click);
             // 
             // видалитиСпецифікаціюToolStripMenuItem
             // 
             this.видалитиСпецифікаціюToolStripMenuItem.Name = "видалитиСпецифікаціюToolStripMenuItem";
-            this.видалитиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
+            this.видалитиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
             this.видалитиСпецифікаціюToolStripMenuItem.Text = "Видалити специфікацію";
             this.видалитиСпецифікаціюToolStripMenuItem.Click += new System.EventHandler(this.видалитиСпецифікаціюToolStripMenuItem_Click);
             // 
             // відобразитиСпецифікаціюToolStripMenuItem
             // 
             this.відобразитиСпецифікаціюToolStripMenuItem.Name = "відобразитиСпецифікаціюToolStripMenuItem";
-            this.відобразитиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
+            this.відобразитиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
             this.відобразитиСпецифікаціюToolStripMenuItem.Text = "Відобразити специфікацію";
             this.відобразитиСпецифікаціюToolStripMenuItem.Click += new System.EventHandler(this.відобразитиСпецифікаціюToolStripMenuItem_Click);
             // 
             // відобразитиКартуТехПроцесуToolStripMenuItem
             // 
             this.відобразитиКартуТехПроцесуToolStripMenuItem.Name = "відобразитиКартуТехПроцесуToolStripMenuItem";
-            this.відобразитиКартуТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
+            this.відобразитиКартуТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
             this.відобразитиКартуТехПроцесуToolStripMenuItem.Text = "Відобразити карту тех. процесу";
             // 
             // відобразитиКартуТехПроцесупоДатіToolStripMenuItem
             // 
             this.відобразитиКартуТехПроцесупоДатіToolStripMenuItem.Name = "відобразитиКартуТехПроцесупоДатіToolStripMenuItem";
-            this.відобразитиКартуТехПроцесупоДатіToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
+            this.відобразитиКартуТехПроцесупоДатіToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
             this.відобразитиКартуТехПроцесупоДатіToolStripMenuItem.Text = "Відобразити карту тех. процесу (по даті)";
             // 
             // відобразитиЗведенуКартуТехПроцесуToolStripMenuItem
             // 
             this.відобразитиЗведенуКартуТехПроцесуToolStripMenuItem.Name = "відобразитиЗведенуКартуТехПроцесуToolStripMenuItem";
-            this.відобразитиЗведенуКартуТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
+            this.відобразитиЗведенуКартуТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
             this.відобразитиЗведенуКартуТехПроцесуToolStripMenuItem.Text = "Відобразити зведену карту тех. процесу";
             // 
             // відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem
             // 
             this.відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem.Name = "відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem";
-            this.відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(326, 22);
+            this.відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
             this.відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem.Text = "Відобразити карту маршрутного тех. процесу";
             // 
             // disableLabelMenuBtn
             // 
             this.disableLabelMenuBtn.Name = "disableLabelMenuBtn";
-            this.disableLabelMenuBtn.Size = new System.Drawing.Size(326, 22);
+            this.disableLabelMenuBtn.Size = new System.Drawing.Size(325, 22);
             this.disableLabelMenuBtn.Text = "Прибрати виділення";
             this.disableLabelMenuBtn.Click += new System.EventHandler(this.disableLabelMenuBtn_Click);
             // 
             // enableLabelMenuBtn
             // 
             this.enableLabelMenuBtn.Name = "enableLabelMenuBtn";
-            this.enableLabelMenuBtn.Size = new System.Drawing.Size(326, 22);
+            this.enableLabelMenuBtn.Size = new System.Drawing.Size(325, 22);
             this.enableLabelMenuBtn.Text = "Виділити запис";
             this.enableLabelMenuBtn.Click += new System.EventHandler(this.enableLabelMenuBtn_Click);
             // 
@@ -2202,6 +2201,28 @@
             this.styleController1.LookAndFeel.SkinName = "Seven Classic";
             this.styleController1.LookAndFeel.UseDefaultLookAndFeel = false;
             // 
+            // panelControl3
+            // 
+            this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl3.Controls.Add(this.buysDetalsSpecificGrid);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl3.Location = new System.Drawing.Point(2, 29);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(1778, 331);
+            this.panelControl3.TabIndex = 2;
+            // 
+            // specificificationNameMemoRepo
+            // 
+            this.specificificationNameMemoRepo.Appearance.Options.UseTextOptions = true;
+            this.specificificationNameMemoRepo.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.specificificationNameMemoRepo.Name = "specificificationNameMemoRepo";
+            // 
+            // buyDetailNameMemoRepo
+            // 
+            this.buyDetailNameMemoRepo.Appearance.Options.UseTextOptions = true;
+            this.buyDetailNameMemoRepo.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.buyDetailNameMemoRepo.Name = "buyDetailNameMemoRepo";
+            // 
             // MtsSpecificationOldFm
             // 
             this.Appearance.Options.UseFont = true;
@@ -2255,6 +2276,7 @@
             this.buyDetailMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.buysDetalsSpecificGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
             this.xtraTabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.materialsSpecificGrid)).EndInit();
             this.materialMenu.ResumeLayout(false);
@@ -2267,6 +2289,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.barMaterialDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.styleController1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.specificificationNameMemoRepo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buyDetailNameMemoRepo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2420,5 +2446,8 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit specNameRepository;
         private DevExpress.XtraBars.BarButtonItem copySpecBtn;
         private DevExpress.XtraEditors.StyleController styleController1;
+        private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit buyDetailNameMemoRepo;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit specificificationNameMemoRepo;
     }
 }

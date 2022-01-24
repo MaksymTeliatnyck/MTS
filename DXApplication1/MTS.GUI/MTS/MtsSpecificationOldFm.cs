@@ -473,22 +473,6 @@ namespace MTS.GUI.MTS
                 buysDetalsSpecificGridView.EndDataUpdate();
             }
         }
-        private void DeleteBuyMaterial(int materialId)
-        {
-            if (MessageBox.Show("Видалити матеріал?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                mtsService = Program.kernel.Get<IMtsSpecificationsService>();
-
-                mtsService.MTSMaterialDelete(materialId);
-                materialsSpecificGridView.PostEditor();
-                materialsSpecificGridView.BeginDataUpdate();
-                //  LoadBuysDetalSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
-                LoadData();
-                materialsSpecificGridView.EndDataUpdate();
-            }
-
-
-        }
 
         #endregion
 
@@ -528,10 +512,9 @@ namespace MTS.GUI.MTS
             //    AddDetailSpecific(Utils.Operation.Update, (MTSCreateDetalsDTO)model, (MTSSpecificationsDTO)specificBS.Current, (MTSDetailsDTO)modelDetail);
             //}
             //else MessageBox.Show("Помилка редагування деталі! Створіть спочатку деталь!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            if (detalsSpecificBS.Count > 0)
-                EditDetailSpecific(Utils.Operation.Update, ((MTSDetailsDTO)detalsSpecificBS.Current));
-            else
-             MessageBox.Show("Помилка видалення деталі! Створіть спочатку деталі!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            EditDetailSpecific(Utils.Operation.Update, ((MTSDetailsDTO)detalsSpecificBS.Current));
+
         }
 
         private void deleteDetailBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -546,11 +529,7 @@ namespace MTS.GUI.MTS
 
         private void editDetailBarBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (detalsSpecificBS.Count > 0)
-                EditDetailSpecific(Utils.Operation.Update, ((MTSDetailsDTO)detalsSpecificBS.Current));
-            else
-                MessageBox.Show("Помилка видалення деталі! Створіть спочатку деталі!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+            EditDetailSpecific(Utils.Operation.Update, ((MTSDetailsDTO)detalsSpecificBS.Current));
         }
 
         private void deleteDetailBarBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -641,17 +620,12 @@ namespace MTS.GUI.MTS
 
         private void editMaterialBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (materialsSpecificBS.Count > 0)
-                EditMaterial(Utils.Operation.Update, ((MTSMaterialsDTO)materialsSpecificBS.Current));
-            else
-                MessageBox.Show("Помилка видалення матеріалу! Створіть спочатку матеріал!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            EditMaterial(Utils.Operation.Update, ((MTSMaterialsDTO)materialsSpecificBS.Current));
         }
 
         private void deleteMaterialBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (materialsSpecificBS.Count > 0)
-                // DeleteBuyDetail(((MTSMaterialsDTO)materialsSpecificBS.Current).ID); Было раньше
-                DeleteBuyMaterial(((MTSMaterialsDTO)materialsSpecificBS.Current).ID);
+
         }
 
         private void addMaterialDetailBarBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -661,17 +635,13 @@ namespace MTS.GUI.MTS
 
         private void editMaterialDetailBarBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (materialsSpecificBS.Count > 0)
-                EditMaterial(Utils.Operation.Update, ((MTSMaterialsDTO)materialsSpecificBS.Current));
-            else
-                MessageBox.Show("Помилка видалення матеріалу! Створіть спочатку матеріал!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            EditMaterial(Utils.Operation.Update, ((MTSMaterialsDTO)materialsSpecificBS.Current));
         }
 
         private void deleteMaterialDetailBarBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (materialsSpecificBS.Count > 0)
-            //    DeleteBuyDetail(((MTSMaterialsDTO)materialsSpecificBS.Current).ID); Было раньше
-                 DeleteBuyMaterial(((MTSMaterialsDTO)materialsSpecificBS.Current).ID);
+                DeleteBuyDetail(((MTSMaterialsDTO)materialsSpecificBS.Current).ID);
         }
 
         private void додатиЗаписToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -681,17 +651,13 @@ namespace MTS.GUI.MTS
 
         private void редагуватиЗаписToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            if (materialsSpecificBS.Count > 0)
-                EditMaterial(Utils.Operation.Update, ((MTSMaterialsDTO)materialsSpecificBS.Current));
-            else
-                MessageBox.Show("Помилка видалення матеріалу! Створіть спочатку матеріал!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            EditMaterial(Utils.Operation.Update, ((MTSMaterialsDTO)materialsSpecificBS.Current));
         }
 
         private void видалитиЗаписToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             if (materialsSpecificBS.Count > 0)
-                // DeleteBuyDetail(((MTSMaterialsDTO)materialsSpecificBS.Current).ID);
-                DeleteBuyMaterial(((MTSMaterialsDTO)materialsSpecificBS.Current).ID);
+                DeleteBuyDetail(((MTSMaterialsDTO)materialsSpecificBS.Current).ID);
         }
 
         #endregion
@@ -889,33 +855,53 @@ namespace MTS.GUI.MTS
 
         }
 
-        private void nomenclatureShowBtn_ItemClick(object sender, ItemClickEventArgs e)
+        private void specificGrid_DoubleClick(object sender, EventArgs e)
         {
-            using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(new MTSNomenclaturesDTO())) 
-            //   DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model);
+            if (specificBS.Count > 0)
             {
-                if (directoryBuyDetailEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                MTSSpecificationsDTO model = new MTSSpecificationsDTO()
                 {
-                    MTSNomenclaturesDTO r = directoryBuyDetailEditOldFm.Returnl();
+                    ID = ((MTSSpecificationsDTO)ItemSpecification).ID,
+                    AUTHORIZATION_USERS_ID = ((MTSSpecificationsDTO)ItemSpecification).AUTHORIZATION_USERS_ID,
+                    NAME = ((MTSSpecificationsDTO)ItemSpecification).NAME,
+                    QUANTITY = ((MTSSpecificationsDTO)ItemSpecification).QUANTITY,
+                    WEIGHT = ((MTSSpecificationsDTO)ItemSpecification).WEIGHT,
+                    CREATION_DATE = ((MTSSpecificationsDTO)ItemSpecification).CREATION_DATE,
+                    DRAWING = ((MTSSpecificationsDTO)ItemSpecification).DRAWING,
+                    AUTHORIZATION_USERS_NAME = ((MTSSpecificationsDTO)ItemSpecification).AUTHORIZATION_USERS_NAME
 
-                   
-                   
 
-
-                }
-
+                };
+                AddSpecification(Utils.Operation.Update, (MTSSpecificationsDTO)model, mtsAthorizationUsersDTO);
             }
+            else MessageBox.Show("Ошибка редактирования! Создайте спецификацию!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private void detailsShowBtn_ItemClick(object sender, ItemClickEventArgs e)
+        private void copySpecBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            using (DirectoryDetailOldFm directoryDetailOldFm = new DirectoryDetailOldFm())
+            if (specificBS.Count > 0)
             {
-                if (directoryDetailOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                MTSSpecificationsDTO model = new MTSSpecificationsDTO()
                 {
+                    ID = ((MTSSpecificationsDTO)ItemSpecification).ID,
+                    AUTHORIZATION_USERS_ID = ((MTSSpecificationsDTO)ItemSpecification).AUTHORIZATION_USERS_ID,
+                    NAME = ((MTSSpecificationsDTO)ItemSpecification).NAME,
+                    QUANTITY = ((MTSSpecificationsDTO)ItemSpecification).QUANTITY,
+                    WEIGHT = ((MTSSpecificationsDTO)ItemSpecification).WEIGHT,
+                    CREATION_DATE = ((MTSSpecificationsDTO)ItemSpecification).CREATION_DATE,
+                    DRAWING = ((MTSSpecificationsDTO)ItemSpecification).DRAWING,
+                    AUTHORIZATION_USERS_NAME = ((MTSSpecificationsDTO)ItemSpecification).AUTHORIZATION_USERS_NAME
 
-                }
+
+                };
+                AddSpecification(Utils.Operation.Custom, (MTSSpecificationsDTO)model, mtsAthorizationUsersDTO);
             }
+            else MessageBox.Show("Ошибка создания копии спецификации!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void unitsShowBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
 
         private void gostShowBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -924,18 +910,9 @@ namespace MTS.GUI.MTS
             {
                 if (mtsDirectoryGostOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-
-                }
-            }
-        }
-
-        private void unitsShowBtn_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            using (MTSDirectoryMeasureOldFm mtsDirectoryMeasureOldFm = new MTSDirectoryMeasureOldFm())
-            {
-                if (mtsDirectoryMeasureOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-
+                    detalsSpecificGridView.BeginDataUpdate();
+                    LoadData();//LoadSpecific(modelSpecific.ID);
+                    detalsSpecificGridView.EndDataUpdate();
                 }
             }
         }
