@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.measureEdit = new DevExpress.XtraEditors.TextEdit();
-            this.measureBtn = new System.Windows.Forms.Button();
+            this.okBtn1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.measureEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,29 +40,30 @@
             this.measureEdit.Size = new System.Drawing.Size(140, 20);
             this.measureEdit.TabIndex = 0;
             // 
-            // measureBtn
+            // okBtn1
             // 
-            this.measureBtn.Location = new System.Drawing.Point(241, 38);
-            this.measureBtn.Name = "measureBtn";
-            this.measureBtn.Size = new System.Drawing.Size(75, 23);
-            this.measureBtn.TabIndex = 1;
-            this.measureBtn.Text = "OK";
-            this.measureBtn.UseVisualStyleBackColor = true;
-            this.measureBtn.Click += new System.EventHandler(this.measureBtn_Click);
+            this.okBtn1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.okBtn1.Appearance.Options.UseFont = true;
+            this.okBtn1.Location = new System.Drawing.Point(241, 38);
+            this.okBtn1.Name = "okBtn1";
+            this.okBtn1.Size = new System.Drawing.Size(75, 23);
+            this.okBtn1.TabIndex = 2;
+            this.okBtn1.Text = "Ок";
+            this.okBtn1.Click += new System.EventHandler(this.okBtn1_Click);
             // 
             // MTSDirectoryMeasureEditOldFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(359, 101);
-            this.Controls.Add(this.measureBtn);
+            this.Controls.Add(this.okBtn1);
             this.Controls.Add(this.measureEdit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MTSDirectoryMeasureEditOldFm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Единицы измерения";
+            this.Text = "Одиниці вимірювання";
             ((System.ComponentModel.ISupportInitialize)(this.measureEdit.Properties)).EndInit();
             this.ResumeLayout(false);
 
@@ -71,6 +72,6 @@
         #endregion
 
         private DevExpress.XtraEditors.TextEdit measureEdit;
-        private System.Windows.Forms.Button measureBtn;
+        private DevExpress.XtraEditors.SimpleButton okBtn1;
     }
 }

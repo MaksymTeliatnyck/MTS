@@ -108,9 +108,9 @@ namespace MTS.GUI.MTS
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-            this.Item.EndEdit();
-            DialogResult = DialogResult.Cancel;
-            this.Close();
+            //this.Item.EndEdit();
+            //DialogResult = DialogResult.Cancel;
+            //this.Close();
         }
 
         private void ShowDirectoryBuyDetails(MTSNomenclaturesDTO model)
@@ -152,6 +152,23 @@ namespace MTS.GUI.MTS
             bool isValidate = (mtsBuyDetailValidationProvider.GetInvalidControls().Count == 0);
             this.saveBtn.Enabled = isValidate;
             this.validateLbl.Visible = !isValidate;
+        }
+
+        private void saveBtn_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancelBtn_Click_1(object sender, EventArgs e)
+        {
+            this.Item.EndEdit();
+            DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void directoryBuyDetailsBtn1_Click(object sender, EventArgs e)
+        {
+            ShowDirectoryBuyDetails(new MTSNomenclaturesDTO());
         }
     }
 }

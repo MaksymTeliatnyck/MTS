@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MtsSpecificationOldDetailsFm));
             this.cancelBtn = new System.Windows.Forms.Button();
-            this.saveBtn = new System.Windows.Forms.Button();
             this.nameSpecificationEdit = new DevExpress.XtraEditors.TextEdit();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -57,6 +56,8 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.editSpecDetailBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.saveBtnn = new DevExpress.XtraEditors.SimpleButton();
+            this.cancelBtnn = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.nameSpecificationEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drawingEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.weightEdit.Properties)).BeginInit();
@@ -75,19 +76,9 @@
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(84, 23);
             this.cancelBtn.TabIndex = 23;
-            this.cancelBtn.Text = "Отмена";
+            this.cancelBtn.Text = "Відміна";
             this.cancelBtn.UseVisualStyleBackColor = true;
-            // 
-            // saveBtn
-            // 
-            this.saveBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.saveBtn.Location = new System.Drawing.Point(724, 401);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(84, 23);
-            this.saveBtn.TabIndex = 22;
-            this.saveBtn.Text = "Сохранить";
-            this.saveBtn.UseVisualStyleBackColor = true;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // nameSpecificationEdit
             // 
@@ -112,9 +103,9 @@
             this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(12, 379);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 16);
+            this.label4.Size = new System.Drawing.Size(34, 16);
             this.label4.TabIndex = 20;
-            this.label4.Text = "Вес";
+            this.label4.Text = "Вага";
             // 
             // drawingEdit
             // 
@@ -129,9 +120,9 @@
             this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(434, 340);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 16);
+            this.label2.Size = new System.Drawing.Size(70, 16);
             this.label2.TabIndex = 18;
-            this.label2.Text = "Чертёж";
+            this.label2.Text = "Креслення";
             // 
             // weightEdit
             // 
@@ -146,9 +137,9 @@
             this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(12, 340);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 16);
+            this.label1.Size = new System.Drawing.Size(39, 16);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Изделие";
+            this.label1.Text = "Виріб";
             // 
             // dateEdit
             // 
@@ -192,7 +183,7 @@
             // 
             this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn1.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn1.Caption = "Количество";
+            this.gridColumn1.Caption = "Кількість";
             this.gridColumn1.FieldName = "QUANTITY";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
@@ -204,7 +195,7 @@
             // 
             this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn2.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn2.Caption = "Изделие";
+            this.gridColumn2.Caption = "Виріб";
             this.gridColumn2.FieldName = "NAME";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
@@ -217,7 +208,7 @@
             // 
             this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn3.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn3.Caption = "Чертёж";
+            this.gridColumn3.Caption = "Креслення";
             this.gridColumn3.FieldName = "DRAWING";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
@@ -285,7 +276,7 @@
             // 
             // addSpecDetailBtn
             // 
-            this.addSpecDetailBtn.Caption = "Добавить";
+            this.addSpecDetailBtn.Caption = "Додати";
             this.addSpecDetailBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addSpecDetailBtn.Glyph")));
             this.addSpecDetailBtn.Id = 0;
             this.addSpecDetailBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -299,7 +290,7 @@
             // 
             // deleteSpecDetailBtn
             // 
-            this.deleteSpecDetailBtn.Caption = "Удалить";
+            this.deleteSpecDetailBtn.Caption = "Видалити";
             this.deleteSpecDetailBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("deleteSpecDetailBtn.Glyph")));
             this.deleteSpecDetailBtn.Id = 2;
             this.deleteSpecDetailBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -347,15 +338,38 @@
             this.editSpecDetailBtn.Id = 1;
             this.editSpecDetailBtn.Name = "editSpecDetailBtn";
             // 
+            // saveBtnn
+            // 
+            this.saveBtnn.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.saveBtnn.Appearance.Options.UseFont = true;
+            this.saveBtnn.Location = new System.Drawing.Point(716, 401);
+            this.saveBtnn.Name = "saveBtnn";
+            this.saveBtnn.Size = new System.Drawing.Size(75, 23);
+            this.saveBtnn.TabIndex = 29;
+            this.saveBtnn.Text = "Зберегти";
+            this.saveBtnn.Click += new System.EventHandler(this.saveBtnn_Click);
+            // 
+            // cancelBtnn
+            // 
+            this.cancelBtnn.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cancelBtnn.Appearance.Options.UseFont = true;
+            this.cancelBtnn.Location = new System.Drawing.Point(814, 401);
+            this.cancelBtnn.Name = "cancelBtnn";
+            this.cancelBtnn.Size = new System.Drawing.Size(84, 23);
+            this.cancelBtnn.TabIndex = 30;
+            this.cancelBtnn.Text = "Відміна";
+            this.cancelBtnn.Click += new System.EventHandler(this.cancelBtnn_Click);
+            // 
             // MtsSpecificationOldDetailsFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 434);
+            this.Controls.Add(this.cancelBtnn);
+            this.Controls.Add(this.saveBtnn);
             this.Controls.Add(this.standaloneBarDockControl1);
             this.Controls.Add(this.specificationGrid);
             this.Controls.Add(this.cancelBtn);
-            this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.nameSpecificationEdit);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -374,7 +388,7 @@
             this.Name = "MtsSpecificationOldDetailsFm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Добавить сводную спецификацию";
+            this.Text = "Додати зведену специфікацію";
             ((System.ComponentModel.ISupportInitialize)(this.nameSpecificationEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drawingEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.weightEdit.Properties)).EndInit();
@@ -392,7 +406,6 @@
         #endregion
 
         private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.Button saveBtn;
         private DevExpress.XtraEditors.TextEdit nameSpecificationEdit;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -418,5 +431,7 @@
         private DevExpress.XtraBars.BarButtonItem editSpecDetailBtn;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private DevExpress.XtraEditors.SimpleButton saveBtnn;
+        private DevExpress.XtraEditors.SimpleButton cancelBtnn;
     }
 }

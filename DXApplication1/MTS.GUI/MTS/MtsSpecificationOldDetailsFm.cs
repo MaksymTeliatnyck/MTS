@@ -370,5 +370,32 @@ namespace MTS.GUI.MTS
                 edit.Properties.Mask.EditMask = "D";
             }
         }
+
+        private void saveBtnn_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Створити зведену специфікацію?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {
+                    if (SaveSpecificationsDetails())
+                    {
+                        DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                }
+                catch (Exception ex)
+                { MessageBox.Show("" + ex.Message, "Збереження заявки", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancelBtnn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

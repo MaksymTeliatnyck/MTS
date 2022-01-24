@@ -30,6 +30,8 @@
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.cancelDBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.saveDBtn = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.drawingEdit = new DevExpress.XtraEditors.TextEdit();
@@ -40,8 +42,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateEdit = new DevExpress.XtraEditors.DateEdit();
             this.nameSpecificationEdit = new DevExpress.XtraEditors.MemoEdit();
-            this.saveDBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.cancelDBtn = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -83,7 +83,29 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(516, 209);
             this.groupControl1.TabIndex = 10;
-            this.groupControl1.Text = "Спецификация";
+            this.groupControl1.Text = "Специфікація";
+            // 
+            // cancelDBtn
+            // 
+            this.cancelDBtn.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cancelDBtn.Appearance.Options.UseFont = true;
+            this.cancelDBtn.Location = new System.Drawing.Point(415, 179);
+            this.cancelDBtn.Name = "cancelDBtn";
+            this.cancelDBtn.Size = new System.Drawing.Size(93, 23);
+            this.cancelDBtn.TabIndex = 13;
+            this.cancelDBtn.Text = "Відмінити";
+            this.cancelDBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
+            // saveDBtn
+            // 
+            this.saveDBtn.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.saveDBtn.Appearance.Options.UseFont = true;
+            this.saveDBtn.Location = new System.Drawing.Point(314, 179);
+            this.saveDBtn.Name = "saveDBtn";
+            this.saveDBtn.Size = new System.Drawing.Size(87, 23);
+            this.saveDBtn.TabIndex = 12;
+            this.saveDBtn.Text = "Зберегти";
+            this.saveDBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // label5
             // 
@@ -101,9 +123,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(134, 136);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 16);
+            this.label4.Size = new System.Drawing.Size(39, 16);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Вес";
+            this.label4.Text = "Вага";
             // 
             // drawingEdit
             // 
@@ -120,9 +142,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(12, 136);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 16);
+            this.label3.Size = new System.Drawing.Size(65, 16);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Количество";
+            this.label3.Text = "Кількість";
             // 
             // quantityEdit
             // 
@@ -139,9 +161,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(12, 92);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 16);
+            this.label2.Size = new System.Drawing.Size(78, 16);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Чертёж";
+            this.label2.Text = "Креслення";
             // 
             // weightEdit
             // 
@@ -158,9 +180,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(12, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 16);
+            this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Изделие";
+            this.label1.Text = "Виріб";
             // 
             // dateEdit
             // 
@@ -186,28 +208,6 @@
             this.nameSpecificationEdit.Size = new System.Drawing.Size(494, 40);
             this.nameSpecificationEdit.TabIndex = 0;
             // 
-            // saveDBtn
-            // 
-            this.saveDBtn.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.saveDBtn.Appearance.Options.UseFont = true;
-            this.saveDBtn.Location = new System.Drawing.Point(314, 179);
-            this.saveDBtn.Name = "saveDBtn";
-            this.saveDBtn.Size = new System.Drawing.Size(87, 23);
-            this.saveDBtn.TabIndex = 12;
-            this.saveDBtn.Text = "Сохранить";
-            this.saveDBtn.Click += new System.EventHandler(this.saveBtn_Click);
-            // 
-            // cancelDBtn
-            // 
-            this.cancelDBtn.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cancelDBtn.Appearance.Options.UseFont = true;
-            this.cancelDBtn.Location = new System.Drawing.Point(415, 179);
-            this.cancelDBtn.Name = "cancelDBtn";
-            this.cancelDBtn.Size = new System.Drawing.Size(93, 23);
-            this.cancelDBtn.TabIndex = 13;
-            this.cancelDBtn.Text = "Отмена";
-            this.cancelDBtn.Click += new System.EventHandler(this.cancelBtn_Click);
-            // 
             // MtsSpecificationOldEditFm
             // 
             this.Appearance.Options.UseFont = true;
@@ -223,7 +223,7 @@
             this.Name = "MtsSpecificationOldEditFm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Редактирование спецификации";
+            this.Text = "Редагування специфікації";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
