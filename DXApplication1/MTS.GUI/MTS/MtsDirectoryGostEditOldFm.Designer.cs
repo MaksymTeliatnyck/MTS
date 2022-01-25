@@ -71,7 +71,7 @@
             this.cencelButton.Name = "cencelButton";
             this.cencelButton.Size = new System.Drawing.Size(75, 23);
             this.cencelButton.TabIndex = 3;
-            this.cencelButton.Text = "Отмена";
+            this.cencelButton.Text = "Відміна";
             this.cencelButton.Click += new System.EventHandler(this.cencelButton_Click);
             // 
             // gostControl
@@ -94,9 +94,9 @@
             this.gostLabel.Appearance.ForeColor = System.Drawing.Color.Maroon;
             this.gostLabel.Location = new System.Drawing.Point(12, 58);
             this.gostLabel.Name = "gostLabel";
-            this.gostLabel.Size = new System.Drawing.Size(96, 13);
+            this.gostLabel.Size = new System.Drawing.Size(77, 13);
             this.gostLabel.TabIndex = 5;
-            this.gostLabel.Text = "Не заполнено поле";
+            this.gostLabel.Text = "Не внесені дані";
             this.gostLabel.Visible = false;
             // 
             // MtsDirectoryGostEditOldFm
@@ -114,7 +114,7 @@
             this.Name = "MtsDirectoryGostEditOldFm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Редактирование ГОСТов";
+            this.Text = "Редагування ГОСТів";
             this.Load += new System.EventHandler(this.MtsDirectoryGostEditOldFm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gostEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gostValidationProvider)).EndInit();

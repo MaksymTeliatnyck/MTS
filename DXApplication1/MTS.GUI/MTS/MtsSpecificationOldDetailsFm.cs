@@ -390,12 +390,14 @@ namespace MTS.GUI.MTS
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-
+            //DialogResult = DialogResult.Cancel;
+            //this.Close();
         }
 
         private void cancelBtnn_Click(object sender, EventArgs e)
         {
-
+            DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

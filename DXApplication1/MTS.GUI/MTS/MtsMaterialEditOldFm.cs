@@ -173,5 +173,10 @@ namespace MTS.GUI.MTS
             DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void directoryBuyDetailsBtn_Click_1(object sender, EventArgs e)
+        {
+            ShowDirectoryBuyDetails(new MTSNomenclaturesDTO());
+        }
     }
 }

@@ -24,11 +24,11 @@ namespace MTS.GUI.MTS
             this.Close();
         }
 
-        private void saveBtn_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.OK;
-            this.Close();
-        }
+        //private void saveBtn_Click(object sender, EventArgs e)
+        //{
+        //    DialogResult = DialogResult.OK;
+        //    this.Close();
+        //}
 
         public int Return()
         {
@@ -47,5 +47,17 @@ namespace MTS.GUI.MTS
             this.saveBtn.Enabled = isValidate;
             this.validateLbl.Visible = !isValidate;
         }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        //private void cancelBtn3_Click(object sender, EventArgs e)
+        //{
+        //    DialogResult = DialogResult.Cancel;
+        //    this.Close();
+        //}
     }
 }

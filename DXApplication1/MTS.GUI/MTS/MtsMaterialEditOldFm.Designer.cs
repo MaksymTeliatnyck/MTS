@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            this.directoryBuyDetailsBtn = new System.Windows.Forms.Button();
             this.quantityEdit = new DevExpress.XtraEditors.TextEdit();
             this.guageEdit = new DevExpress.XtraEditors.TextEdit();
             this.nameBuyDetailEdit = new DevExpress.XtraEditors.TextEdit();
@@ -41,21 +40,12 @@
             this.mtsMaterialValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.saveBtn1 = new DevExpress.XtraEditors.SimpleButton();
             this.cancelBtn2 = new DevExpress.XtraEditors.SimpleButton();
+            this.directoryBuyDetailsBtn = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.quantityEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guageEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameBuyDetailEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mtsMaterialValidationProvider)).BeginInit();
             this.SuspendLayout();
-            // 
-            // directoryBuyDetailsBtn
-            // 
-            this.directoryBuyDetailsBtn.Location = new System.Drawing.Point(428, 21);
-            this.directoryBuyDetailsBtn.Name = "directoryBuyDetailsBtn";
-            this.directoryBuyDetailsBtn.Size = new System.Drawing.Size(31, 27);
-            this.directoryBuyDetailsBtn.TabIndex = 17;
-            this.directoryBuyDetailsBtn.Text = "...";
-            this.directoryBuyDetailsBtn.UseVisualStyleBackColor = true;
-            this.directoryBuyDetailsBtn.Click += new System.EventHandler(this.directoryBuyDetailsBtn_Click);
             // 
             // quantityEdit
             // 
@@ -151,15 +141,24 @@
             this.cancelBtn2.Text = "Відмінити";
             this.cancelBtn2.Click += new System.EventHandler(this.cancelBtn2_Click);
             // 
+            // directoryBuyDetailsBtn
+            // 
+            this.directoryBuyDetailsBtn.Location = new System.Drawing.Point(429, 21);
+            this.directoryBuyDetailsBtn.Name = "directoryBuyDetailsBtn";
+            this.directoryBuyDetailsBtn.Size = new System.Drawing.Size(30, 27);
+            this.directoryBuyDetailsBtn.TabIndex = 52;
+            this.directoryBuyDetailsBtn.Text = "...";
+            this.directoryBuyDetailsBtn.Click += new System.EventHandler(this.directoryBuyDetailsBtn_Click_1);
+            // 
             // MtsMaterialEditOldFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(474, 159);
+            this.Controls.Add(this.directoryBuyDetailsBtn);
             this.Controls.Add(this.cancelBtn2);
             this.Controls.Add(this.saveBtn1);
             this.Controls.Add(this.validateLbl);
-            this.Controls.Add(this.directoryBuyDetailsBtn);
             this.Controls.Add(this.quantityEdit);
             this.Controls.Add(this.guageEdit);
             this.Controls.Add(this.nameBuyDetailEdit);
@@ -171,6 +170,7 @@
             this.MinimizeBox = false;
             this.Name = "MtsMaterialEditOldFm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Редагування матеріалів";
             ((System.ComponentModel.ISupportInitialize)(this.quantityEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guageEdit.Properties)).EndInit();
@@ -182,8 +182,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button directoryBuyDetailsBtn;
         private DevExpress.XtraEditors.TextEdit quantityEdit;
         private DevExpress.XtraEditors.TextEdit guageEdit;
         private DevExpress.XtraEditors.TextEdit nameBuyDetailEdit;
@@ -194,5 +192,6 @@
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider mtsMaterialValidationProvider;
         private DevExpress.XtraEditors.SimpleButton saveBtn1;
         private DevExpress.XtraEditors.SimpleButton cancelBtn2;
+        private DevExpress.XtraEditors.SimpleButton directoryBuyDetailsBtn;
     }
 }

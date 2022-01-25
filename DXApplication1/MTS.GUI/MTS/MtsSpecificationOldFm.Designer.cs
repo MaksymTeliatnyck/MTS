@@ -1268,7 +1268,7 @@
             // 
             // addBuyDetailBarBtn
             // 
-            this.addBuyDetailBarBtn.Caption = "Добавить";
+            this.addBuyDetailBarBtn.Caption = "Додати";
             this.addBuyDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addBuyDetailBarBtn.Glyph")));
             this.addBuyDetailBarBtn.Id = 3;
             this.addBuyDetailBarBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -1286,7 +1286,7 @@
             // 
             // editBuyDetailBarBtn
             // 
-            this.editBuyDetailBarBtn.Caption = "Редактировать";
+            this.editBuyDetailBarBtn.Caption = "Редагувати";
             this.editBuyDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("editBuyDetailBarBtn.Glyph")));
             this.editBuyDetailBarBtn.Id = 4;
             this.editBuyDetailBarBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -1304,7 +1304,7 @@
             // 
             // deleteBuyDetailBarBtn
             // 
-            this.deleteBuyDetailBarBtn.Caption = "Удалить";
+            this.deleteBuyDetailBarBtn.Caption = "Видалити";
             this.deleteBuyDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("deleteBuyDetailBarBtn.Glyph")));
             this.deleteBuyDetailBarBtn.Id = 5;
             this.deleteBuyDetailBarBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -2094,7 +2094,7 @@
             // 
             // addMaterialDetailBarBtn
             // 
-            this.addMaterialDetailBarBtn.Caption = "Добавить";
+            this.addMaterialDetailBarBtn.Caption = "Додати";
             this.addMaterialDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addMaterialDetailBarBtn.Glyph")));
             this.addMaterialDetailBarBtn.Id = 0;
             this.addMaterialDetailBarBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -2112,7 +2112,7 @@
             // 
             // editMaterialDetailBarBtn
             // 
-            this.editMaterialDetailBarBtn.Caption = "Редактировать";
+            this.editMaterialDetailBarBtn.Caption = "Редагувати";
             this.editMaterialDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("editMaterialDetailBarBtn.Glyph")));
             this.editMaterialDetailBarBtn.Id = 1;
             this.editMaterialDetailBarBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -2130,7 +2130,7 @@
             // 
             // deleteMaterialDetailBarBtn
             // 
-            this.deleteMaterialDetailBarBtn.Caption = "Удалить";
+            this.deleteMaterialDetailBarBtn.Caption = "Видалити";
             this.deleteMaterialDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("deleteMaterialDetailBarBtn.Glyph")));
             this.deleteMaterialDetailBarBtn.Id = 2;
             this.deleteMaterialDetailBarBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
