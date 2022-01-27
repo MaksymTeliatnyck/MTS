@@ -79,7 +79,7 @@
             // 
             // nameEdit
             // 
-            this.nameEdit.Caption = "Наименование";
+            this.nameEdit.Caption = "Найменування";
             this.nameEdit.Edit = this.repositoryItemTextEdit1;
             this.nameEdit.EditWidth = 120;
             this.nameEdit.Id = 3;
@@ -92,7 +92,7 @@
             // 
             // drawingEdit
             // 
-            this.drawingEdit.Caption = "Чертеж           ";
+            this.drawingEdit.Caption = "Кресленна      ";
             this.drawingEdit.Edit = this.repositoryItemTextEdit2;
             this.drawingEdit.EditWidth = 120;
             this.drawingEdit.Id = 4;
@@ -105,7 +105,7 @@
             // 
             // okBtn
             // 
-            this.okBtn.Caption = "Поиск";
+            this.okBtn.Caption = "Пошук";
             this.okBtn.Glyph = global::MTS.GUI.PrintRibbonControllerResources.RibbonPrintPreview_ZoomLarge;
             this.okBtn.Id = 5;
             this.okBtn.Name = "okBtn";
@@ -172,7 +172,7 @@
             this.NAME.AppearanceHeader.Options.UseFont = true;
             this.NAME.AppearanceHeader.Options.UseTextOptions = true;
             this.NAME.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.NAME.Caption = "Найменование";
+            this.NAME.Caption = "Найменування";
             this.NAME.FieldName = "NAME";
             this.NAME.Name = "NAME";
             this.NAME.OptionsColumn.AllowEdit = false;
@@ -190,7 +190,7 @@
             this.DRAWING.AppearanceHeader.Options.UseFont = true;
             this.DRAWING.AppearanceHeader.Options.UseTextOptions = true;
             this.DRAWING.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.DRAWING.Caption = "Чертеж";
+            this.DRAWING.Caption = "Креслення";
             this.DRAWING.FieldName = "DRAWING";
             this.DRAWING.Name = "DRAWING";
             this.DRAWING.OptionsColumn.AllowEdit = false;
@@ -204,12 +204,12 @@
             this.detalContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.delToolStripMenuItem});
             this.detalContextMenuStrip.Name = "detalContextMenuStrip";
-            this.detalContextMenuStrip.Size = new System.Drawing.Size(153, 48);
+            this.detalContextMenuStrip.Size = new System.Drawing.Size(119, 26);
             // 
             // delToolStripMenuItem
             // 
             this.delToolStripMenuItem.Name = "delToolStripMenuItem";
-            this.delToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.delToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.delToolStripMenuItem.Text = "Удалить";
             this.delToolStripMenuItem.Click += new System.EventHandler(this.delToolStripMenuItem_Click);
             // 
@@ -223,7 +223,7 @@
             this.Controls.Add(this.ribbonControl1);
             this.Name = "DirectoryDetailOldFm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Справочник деталей";
+            this.Text = "Довідник деталів";
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();

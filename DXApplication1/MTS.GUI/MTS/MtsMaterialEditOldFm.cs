@@ -128,18 +128,53 @@ namespace MTS.GUI.MTS
 
         private void mtsMaterialValidationProvider_ValidationFailed(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventArgs e)
         {
-            this.saveBtn.Enabled = false;
+            this.saveBtn1.Enabled = false;
             this.validateLbl.Visible = true;
         }
 
         private void mtsMaterialValidationProvider_ValidationSucceeded(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationSucceededEventArgs e)
         {
             bool isValidate = (mtsMaterialValidationProvider.GetInvalidControls().Count == 0);
-            this.saveBtn.Enabled = isValidate;
+            this.saveBtn1.Enabled = isValidate;
             this.validateLbl.Visible = !isValidate;
         }
 
         private void directoryBuyDetailsBtn_Click(object sender, EventArgs e)
+        {
+            ShowDirectoryBuyDetails(new MTSNomenclaturesDTO());
+        }
+
+        private void saveBtn1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Зберегти зміни?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {
+                    if (Save())
+                    {
+                        DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Не можливо зберегти, помилка при збереженні", "Підтвердження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Помилка: " + ex.Message, "Збереження матеріалу", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void cancelBtn2_Click(object sender, EventArgs e)
+        {
+            this.Item.EndEdit();
+            DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void directoryBuyDetailsBtn_Click_1(object sender, EventArgs e)
         {
             ShowDirectoryBuyDetails(new MTSNomenclaturesDTO());
         }

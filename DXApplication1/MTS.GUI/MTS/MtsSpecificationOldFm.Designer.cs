@@ -221,13 +221,13 @@
             ribbonPageUser.AllowMinimize = false;
             ribbonPageUser.ItemLinks.Add(this.userNameBtn);
             ribbonPageUser.Name = "ribbonPageUser";
-            ribbonPageUser.Text = "Пользователь";
+            ribbonPageUser.Text = "Користувач";
             // 
             // userNameBtn
             // 
             this.userNameBtn.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
             this.userNameBtn.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.userNameBtn.Caption = "Имя ";
+            this.userNameBtn.Caption = "Ім\'я ";
             this.userNameBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("userNameBtn.Glyph")));
             this.userNameBtn.Id = 1;
             this.userNameBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -342,7 +342,7 @@
             // 
             // showBtn
             // 
-            this.showBtn.Caption = "Отобразить";
+            this.showBtn.Caption = "Оновити";
             this.showBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("showBtn.Glyph")));
             this.showBtn.Id = 4;
             this.showBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -358,7 +358,7 @@
             // 
             // addSpecificBtn
             // 
-            this.addSpecificBtn.Caption = "Создать";
+            this.addSpecificBtn.Caption = "Створити";
             this.addSpecificBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addSpecificBtn.Glyph")));
             this.addSpecificBtn.Id = 5;
             this.addSpecificBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -374,7 +374,7 @@
             // 
             // addAllSpeficBtn
             // 
-            this.addAllSpeficBtn.Caption = "Создать сводную";
+            this.addAllSpeficBtn.Caption = "Створити зведену";
             this.addAllSpeficBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addAllSpeficBtn.Glyph")));
             this.addAllSpeficBtn.Id = 6;
             this.addAllSpeficBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -390,7 +390,7 @@
             // 
             // editSpecificBtn
             // 
-            this.editSpecificBtn.Caption = "Изменить";
+            this.editSpecificBtn.Caption = "Редагувати";
             this.editSpecificBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("editSpecificBtn.Glyph")));
             this.editSpecificBtn.Id = 7;
             this.editSpecificBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -406,7 +406,7 @@
             // 
             // deleteSpecificBtn
             // 
-            this.deleteSpecificBtn.Caption = "Удалить";
+            this.deleteSpecificBtn.Caption = "Видалити";
             this.deleteSpecificBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("deleteSpecificBtn.Glyph")));
             this.deleteSpecificBtn.Id = 8;
             this.deleteSpecificBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -422,7 +422,7 @@
             // 
             // showSpecificInFileBtb
             // 
-            this.showSpecificInFileBtb.Caption = "Отобразить в файле";
+            this.showSpecificInFileBtb.Caption = "Відтворити в файлі";
             this.showSpecificInFileBtb.Glyph = ((System.Drawing.Image)(resources.GetObject("showSpecificInFileBtb.Glyph")));
             this.showSpecificInFileBtb.Id = 9;
             this.showSpecificInFileBtb.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -438,7 +438,7 @@
             // 
             // mapTechProcessBtn
             // 
-            this.mapTechProcessBtn.Caption = "Карта тех. процеса";
+            this.mapTechProcessBtn.Caption = "Карта тех. процесу";
             this.mapTechProcessBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("mapTechProcessBtn.Glyph")));
             this.mapTechProcessBtn.Id = 10;
             this.mapTechProcessBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -454,7 +454,7 @@
             // 
             // mapTechProcessByDateBtn
             // 
-            this.mapTechProcessByDateBtn.Caption = "Карта тех. процеса по дате";
+            this.mapTechProcessByDateBtn.Caption = "Карта тех. процесу по даті";
             this.mapTechProcessByDateBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("mapTechProcessByDateBtn.Glyph")));
             this.mapTechProcessByDateBtn.Id = 11;
             this.mapTechProcessByDateBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -470,7 +470,7 @@
             // 
             // mapAllTechProcessBtn
             // 
-            this.mapAllTechProcessBtn.Caption = "Сводная карта тех. процеса";
+            this.mapAllTechProcessBtn.Caption = "Зведена карта тех. процесу";
             this.mapAllTechProcessBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("mapAllTechProcessBtn.Glyph")));
             this.mapAllTechProcessBtn.Id = 12;
             this.mapAllTechProcessBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -486,7 +486,7 @@
             // 
             // mapRouteTechProcessBtn
             // 
-            this.mapRouteTechProcessBtn.Caption = "Карта маршрута тех. процеса";
+            this.mapRouteTechProcessBtn.Caption = "Карта маршруту тех. процесу";
             this.mapRouteTechProcessBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("mapRouteTechProcessBtn.Glyph")));
             this.mapRouteTechProcessBtn.Id = 13;
             this.mapRouteTechProcessBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -515,7 +515,7 @@
             // 
             // enableColorSpecificBtn
             // 
-            this.enableColorSpecificBtn.Caption = "Виделить спецификацию";
+            this.enableColorSpecificBtn.Caption = "Виділити специфікацію";
             this.enableColorSpecificBtn.Id = 15;
             this.enableColorSpecificBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.enableColorSpecificBtn.ItemAppearance.Hovered.Options.UseFont = true;
@@ -671,7 +671,7 @@
             // 
             // basesBtn
             // 
-            this.basesBtn.Caption = "Справочники";
+            this.basesBtn.Caption = "Довідники";
             this.basesBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("basesBtn.Glyph")));
             this.basesBtn.Id = 26;
             this.basesBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("basesBtn.LargeGlyph")));
@@ -685,35 +685,35 @@
             // 
             // nomenclatureShowBtn
             // 
-            this.nomenclatureShowBtn.Caption = "Справочник номенклатур";
+            this.nomenclatureShowBtn.Caption = "Довідник номенклатур";
             this.nomenclatureShowBtn.Id = 27;
             this.nomenclatureShowBtn.Name = "nomenclatureShowBtn";
             this.nomenclatureShowBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.nomenclatureShowBtn_ItemClick);
             // 
             // detailsShowBtn
             // 
-            this.detailsShowBtn.Caption = "Справочник деталей";
+            this.detailsShowBtn.Caption = "Довідник деталей";
             this.detailsShowBtn.Id = 28;
             this.detailsShowBtn.Name = "detailsShowBtn";
             this.detailsShowBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.detailsShowBtn_ItemClick);
             // 
             // gostShowBtn
             // 
-            this.gostShowBtn.Caption = "Справочник гостов";
+            this.gostShowBtn.Caption = "Довідник гостів";
             this.gostShowBtn.Id = 29;
             this.gostShowBtn.Name = "gostShowBtn";
             this.gostShowBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.gostShowBtn_ItemClick);
             // 
             // unitsShowBtn
             // 
-            this.unitsShowBtn.Caption = "Справочник единиц измерения";
+            this.unitsShowBtn.Caption = "Довідник одиниць вимірювання";
             this.unitsShowBtn.Id = 30;
             this.unitsShowBtn.Name = "unitsShowBtn";
             this.unitsShowBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.unitsShowBtn_ItemClick);
             // 
             // copySpecBtn
             // 
-            this.copySpecBtn.Caption = "Создать копию";
+            this.copySpecBtn.Caption = "Створити копію";
             this.copySpecBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("copySpecBtn.Glyph")));
             this.copySpecBtn.Id = 2;
             this.copySpecBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -742,7 +742,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.endDateItem);
             this.ribbonPageGroup1.ItemLinks.Add(this.showBtn);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "Период";
+            this.ribbonPageGroup1.Text = "Період";
             // 
             // ribbonPageGroup2
             // 
@@ -759,7 +759,7 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.mapRouteTechProcessBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.enableColorSpecificBtn);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Спецификация";
+            this.ribbonPageGroup2.Text = "Специфікація";
             // 
             // repositoryItemTimeEdit1
             // 
@@ -904,7 +904,7 @@
             this.gridColumn8.AppearanceHeader.Options.UseFont = true;
             this.gridColumn8.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn8.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn8.Caption = "Наименование";
+            this.gridColumn8.Caption = "Найменування";
             this.gridColumn8.FieldName = "NAME";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.AllowEdit = false;
@@ -940,7 +940,7 @@
             this.gridColumn10.AppearanceHeader.Options.UseFont = true;
             this.gridColumn10.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn10.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn10.Caption = "Заметка";
+            this.gridColumn10.Caption = "Замітка";
             this.gridColumn10.FieldName = "NOMENCLATURESNOTE";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.OptionsColumn.AllowEdit = false;
@@ -958,7 +958,7 @@
             this.gridColumn11.AppearanceHeader.Options.UseFont = true;
             this.gridColumn11.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn11.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn11.Caption = "Чертёж";
+            this.gridColumn11.Caption = "Креслення";
             this.gridColumn11.FieldName = "DRAWING";
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.OptionsColumn.AllowEdit = false;
@@ -976,7 +976,7 @@
             this.gridColumn12.AppearanceHeader.Options.UseFont = true;
             this.gridColumn12.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn12.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn12.Caption = "Кол-ство";
+            this.gridColumn12.Caption = "Кіль-сть";
             this.gridColumn12.FieldName = "QUANTITY";
             this.gridColumn12.ImageAlignment = System.Drawing.StringAlignment.Far;
             this.gridColumn12.Name = "gridColumn12";
@@ -1012,7 +1012,7 @@
             this.gridColumn14.AppearanceHeader.Options.UseFont = true;
             this.gridColumn14.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn14.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn14.Caption = "Составляющая детали";
+            this.gridColumn14.Caption = "Складова деталі";
             this.gridColumn14.FieldName = "NOMENCLATURESNAME";
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.OptionsColumn.AllowEdit = false;
@@ -1082,7 +1082,7 @@
             this.gridColumn18.AppearanceHeader.Options.UseFont = true;
             this.gridColumn18.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn18.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn18.Caption = "Вес";
+            this.gridColumn18.Caption = "Вага";
             this.gridColumn18.FieldName = "NOMENCLATURESWEIGHT";
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.OptionsColumn.AllowEdit = false;
@@ -1099,7 +1099,7 @@
             this.gridColumn19.AppearanceHeader.Options.UseFont = true;
             this.gridColumn19.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn19.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn19.Caption = "Кол. из загот.";
+            this.gridColumn19.Caption = "Кіл. із загот.";
             this.gridColumn19.FieldName = "QUANTITY_OF_BLANKS";
             this.gridColumn19.Name = "gridColumn19";
             this.gridColumn19.OptionsColumn.AllowEdit = false;
@@ -1168,7 +1168,7 @@
             // 
             // addDetailBarBtn
             // 
-            this.addDetailBarBtn.Caption = "Добавить";
+            this.addDetailBarBtn.Caption = "Додати";
             this.addDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addDetailBarBtn.Glyph")));
             this.addDetailBarBtn.Id = 0;
             this.addDetailBarBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -1184,7 +1184,7 @@
             // 
             // editDetailBarBtn
             // 
-            this.editDetailBarBtn.Caption = "Редактировать";
+            this.editDetailBarBtn.Caption = "Редагувати";
             this.editDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("editDetailBarBtn.Glyph")));
             this.editDetailBarBtn.Id = 1;
             this.editDetailBarBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -1200,7 +1200,7 @@
             // 
             // deleteDetailBarBtn
             // 
-            this.deleteDetailBarBtn.Caption = "Удалить";
+            this.deleteDetailBarBtn.Caption = "Видалити";
             this.deleteDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("deleteDetailBarBtn.Glyph")));
             this.deleteDetailBarBtn.Id = 2;
             this.deleteDetailBarBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -1268,7 +1268,7 @@
             // 
             // addBuyDetailBarBtn
             // 
-            this.addBuyDetailBarBtn.Caption = "Добавить";
+            this.addBuyDetailBarBtn.Caption = "Додати";
             this.addBuyDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addBuyDetailBarBtn.Glyph")));
             this.addBuyDetailBarBtn.Id = 3;
             this.addBuyDetailBarBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -1286,7 +1286,7 @@
             // 
             // editBuyDetailBarBtn
             // 
-            this.editBuyDetailBarBtn.Caption = "Редактировать";
+            this.editBuyDetailBarBtn.Caption = "Редагувати";
             this.editBuyDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("editBuyDetailBarBtn.Glyph")));
             this.editBuyDetailBarBtn.Id = 4;
             this.editBuyDetailBarBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -1304,7 +1304,7 @@
             // 
             // deleteBuyDetailBarBtn
             // 
-            this.deleteBuyDetailBarBtn.Caption = "Удалить";
+            this.deleteBuyDetailBarBtn.Caption = "Видалити";
             this.deleteBuyDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("deleteBuyDetailBarBtn.Glyph")));
             this.deleteBuyDetailBarBtn.Id = 5;
             this.deleteBuyDetailBarBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -1779,78 +1779,78 @@
             this.disableLabelMenuBtn,
             this.enableLabelMenuBtn});
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(326, 246);
+            this.mainMenu.Size = new System.Drawing.Size(288, 246);
             // 
             // добавитьСпецификациюToolStripMenuItem
             // 
             this.добавитьСпецификациюToolStripMenuItem.Name = "добавитьСпецификациюToolStripMenuItem";
-            this.добавитьСпецификациюToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
+            this.добавитьСпецификациюToolStripMenuItem.Size = new System.Drawing.Size(287, 22);
             this.добавитьСпецификациюToolStripMenuItem.Text = "Додати специфікацію";
             this.добавитьСпецификациюToolStripMenuItem.Click += new System.EventHandler(this.добавитьСпецификациюToolStripMenuItem_Click);
             // 
             // добавитьСводнуюСпецификациюToolStripMenuItem
             // 
             this.добавитьСводнуюСпецификациюToolStripMenuItem.Name = "добавитьСводнуюСпецификациюToolStripMenuItem";
-            this.добавитьСводнуюСпецификациюToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
+            this.добавитьСводнуюСпецификациюToolStripMenuItem.Size = new System.Drawing.Size(287, 22);
             this.добавитьСводнуюСпецификациюToolStripMenuItem.Text = "Додати зведену специфікацію";
             this.добавитьСводнуюСпецификациюToolStripMenuItem.Click += new System.EventHandler(this.добавитьСводнуюСпецификациюToolStripMenuItem_Click);
             // 
             // редагуватиСпецифікаціюToolStripMenuItem
             // 
             this.редагуватиСпецифікаціюToolStripMenuItem.Name = "редагуватиСпецифікаціюToolStripMenuItem";
-            this.редагуватиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
+            this.редагуватиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(287, 22);
             this.редагуватиСпецифікаціюToolStripMenuItem.Text = "Редагувати специфікацію";
             this.редагуватиСпецифікаціюToolStripMenuItem.Click += new System.EventHandler(this.редагуватиСпецифікаціюToolStripMenuItem_Click);
             // 
             // видалитиСпецифікаціюToolStripMenuItem
             // 
             this.видалитиСпецифікаціюToolStripMenuItem.Name = "видалитиСпецифікаціюToolStripMenuItem";
-            this.видалитиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
+            this.видалитиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(287, 22);
             this.видалитиСпецифікаціюToolStripMenuItem.Text = "Видалити специфікацію";
             this.видалитиСпецифікаціюToolStripMenuItem.Click += new System.EventHandler(this.видалитиСпецифікаціюToolStripMenuItem_Click);
             // 
             // відобразитиСпецифікаціюToolStripMenuItem
             // 
             this.відобразитиСпецифікаціюToolStripMenuItem.Name = "відобразитиСпецифікаціюToolStripMenuItem";
-            this.відобразитиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
-            this.відобразитиСпецифікаціюToolStripMenuItem.Text = "Відобразити специфікацію";
+            this.відобразитиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(287, 22);
+            this.відобразитиСпецифікаціюToolStripMenuItem.Text = "Оновити специфікацію";
             this.відобразитиСпецифікаціюToolStripMenuItem.Click += new System.EventHandler(this.відобразитиСпецифікаціюToolStripMenuItem_Click);
             // 
             // відобразитиКартуТехПроцесуToolStripMenuItem
             // 
             this.відобразитиКартуТехПроцесуToolStripMenuItem.Name = "відобразитиКартуТехПроцесуToolStripMenuItem";
-            this.відобразитиКартуТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
-            this.відобразитиКартуТехПроцесуToolStripMenuItem.Text = "Відобразити карту тех. процесу";
+            this.відобразитиКартуТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(287, 22);
+            this.відобразитиКартуТехПроцесуToolStripMenuItem.Text = "Оновити карту тех. процесу";
             // 
             // відобразитиКартуТехПроцесупоДатіToolStripMenuItem
             // 
             this.відобразитиКартуТехПроцесупоДатіToolStripMenuItem.Name = "відобразитиКартуТехПроцесупоДатіToolStripMenuItem";
-            this.відобразитиКартуТехПроцесупоДатіToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
-            this.відобразитиКартуТехПроцесупоДатіToolStripMenuItem.Text = "Відобразити карту тех. процесу (по даті)";
+            this.відобразитиКартуТехПроцесупоДатіToolStripMenuItem.Size = new System.Drawing.Size(287, 22);
+            this.відобразитиКартуТехПроцесупоДатіToolStripMenuItem.Text = "Оновити карту тех. процесу (по даті)";
             // 
             // відобразитиЗведенуКартуТехПроцесуToolStripMenuItem
             // 
             this.відобразитиЗведенуКартуТехПроцесуToolStripMenuItem.Name = "відобразитиЗведенуКартуТехПроцесуToolStripMenuItem";
-            this.відобразитиЗведенуКартуТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
-            this.відобразитиЗведенуКартуТехПроцесуToolStripMenuItem.Text = "Відобразити зведену карту тех. процесу";
+            this.відобразитиЗведенуКартуТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(287, 22);
+            this.відобразитиЗведенуКартуТехПроцесуToolStripMenuItem.Text = "Оновити зведену катру тех. процесу";
             // 
             // відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem
             // 
             this.відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem.Name = "відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem";
-            this.відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
-            this.відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem.Text = "Відобразити карту маршрутного тех. процесу";
+            this.відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(287, 22);
+            this.відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem.Text = "Оновити катру маршрута тех. процесу";
             // 
             // disableLabelMenuBtn
             // 
             this.disableLabelMenuBtn.Name = "disableLabelMenuBtn";
-            this.disableLabelMenuBtn.Size = new System.Drawing.Size(325, 22);
+            this.disableLabelMenuBtn.Size = new System.Drawing.Size(287, 22);
             this.disableLabelMenuBtn.Text = "Прибрати виділення";
             this.disableLabelMenuBtn.Click += new System.EventHandler(this.disableLabelMenuBtn_Click);
             // 
             // enableLabelMenuBtn
             // 
             this.enableLabelMenuBtn.Name = "enableLabelMenuBtn";
-            this.enableLabelMenuBtn.Size = new System.Drawing.Size(325, 22);
+            this.enableLabelMenuBtn.Size = new System.Drawing.Size(287, 22);
             this.enableLabelMenuBtn.Text = "Виділити запис";
             this.enableLabelMenuBtn.Click += new System.EventHandler(this.enableLabelMenuBtn_Click);
             // 
@@ -1898,7 +1898,7 @@
             this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn2.Caption = "Наименование";
+            this.gridColumn2.Caption = "Найменування";
             this.gridColumn2.ColumnEdit = this.specNameRepository;
             this.gridColumn2.FieldName = "NAME";
             this.gridColumn2.Name = "gridColumn2";
@@ -1923,7 +1923,7 @@
             this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn3.Caption = "Количество";
+            this.gridColumn3.Caption = "Кількість";
             this.gridColumn3.FieldName = "QUANTITY";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
@@ -1940,7 +1940,7 @@
             this.gridColumn4.AppearanceHeader.Options.UseFont = true;
             this.gridColumn4.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn4.Caption = "Чертеж";
+            this.gridColumn4.Caption = "Креслення";
             this.gridColumn4.FieldName = "DRAWING";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
@@ -1958,7 +1958,7 @@
             this.gridColumn5.AppearanceHeader.Options.UseFont = true;
             this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn5.Caption = "Чистый вес";
+            this.gridColumn5.Caption = "Чиста вага";
             this.gridColumn5.FieldName = "WEIGHT";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
@@ -1975,7 +1975,7 @@
             this.gridColumn6.AppearanceHeader.Options.UseFont = true;
             this.gridColumn6.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn6.Caption = "Дата создания";
+            this.gridColumn6.Caption = "Дата створення";
             this.gridColumn6.FieldName = "CREATION_DATE";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
@@ -1992,7 +1992,7 @@
             this.gridColumn7.AppearanceHeader.Options.UseFont = true;
             this.gridColumn7.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn7.Caption = "Составитель";
+            this.gridColumn7.Caption = "Виконавиць";
             this.gridColumn7.FieldName = "AUTHORIZATION_USERS_NAME";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
@@ -2093,7 +2093,7 @@
             // 
             // addMaterialDetailBarBtn
             // 
-            this.addMaterialDetailBarBtn.Caption = "Добавить";
+            this.addMaterialDetailBarBtn.Caption = "Додати";
             this.addMaterialDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addMaterialDetailBarBtn.Glyph")));
             this.addMaterialDetailBarBtn.Id = 0;
             this.addMaterialDetailBarBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -2111,7 +2111,7 @@
             // 
             // editMaterialDetailBarBtn
             // 
-            this.editMaterialDetailBarBtn.Caption = "Редактировать";
+            this.editMaterialDetailBarBtn.Caption = "Редагувати";
             this.editMaterialDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("editMaterialDetailBarBtn.Glyph")));
             this.editMaterialDetailBarBtn.Id = 1;
             this.editMaterialDetailBarBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -2129,7 +2129,7 @@
             // 
             // deleteMaterialDetailBarBtn
             // 
-            this.deleteMaterialDetailBarBtn.Caption = "Удалить";
+            this.deleteMaterialDetailBarBtn.Caption = "Видалити";
             this.deleteMaterialDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("deleteMaterialDetailBarBtn.Glyph")));
             this.deleteMaterialDetailBarBtn.Id = 2;
             this.deleteMaterialDetailBarBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));

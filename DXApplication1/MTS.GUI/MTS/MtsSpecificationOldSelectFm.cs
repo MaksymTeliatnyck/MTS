@@ -59,5 +59,25 @@ namespace MTS.GUI.MTS
             DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void cancelBtn2_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void saveBtn2_Click(object sender, EventArgs e)
+        {
+            specificGridView.PostEditor();
+
+            mtsSpecificationsList = ((List<MTSSpecificationsDTO>)specificBS.DataSource).Where(s => s.Selected).ToList();
+            if (mtsSpecificationsList.Count > 0)
+            {
+                DialogResult = DialogResult.OK;
+                this.Close();
+            }
+
+            else { MessageBox.Show("Выберите спецификацию!"); }
+        }
     }
 }

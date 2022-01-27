@@ -32,10 +32,10 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.label3 = new System.Windows.Forms.Label();
             this.quantityEdit = new DevExpress.XtraEditors.TextEdit();
-            this.cancelBtn = new System.Windows.Forms.Button();
-            this.saveBtn = new System.Windows.Forms.Button();
             this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.validateLbl = new DevExpress.XtraEditors.LabelControl();
+            this.saveBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.cancelBtn = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.quantityEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
             this.SuspendLayout();
@@ -72,30 +72,6 @@
             0});
             this.dxValidationProvider.SetValidationRule(this.quantityEdit, conditionValidationRule1);
             // 
-            // cancelBtn
-            // 
-            this.cancelBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelBtn.Location = new System.Drawing.Point(345, 75);
-            this.cancelBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(117, 33);
-            this.cancelBtn.TabIndex = 13;
-            this.cancelBtn.Text = "Відмінити";
-            this.cancelBtn.UseVisualStyleBackColor = true;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
-            // 
-            // saveBtn
-            // 
-            this.saveBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveBtn.Location = new System.Drawing.Point(235, 75);
-            this.saveBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(107, 33);
-            this.saveBtn.TabIndex = 12;
-            this.saveBtn.Text = "Зберегти";
-            this.saveBtn.UseVisualStyleBackColor = true;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
-            // 
             // dxValidationProvider
             // 
             this.dxValidationProvider.ValidationFailed += new DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventHandler(this.dxValidationProvider_ValidationFailed);
@@ -113,15 +89,37 @@
             this.validateLbl.TabIndex = 48;
             this.validateLbl.Text = "*Присутнє незоповнене поле";
             // 
+            // saveBtn
+            // 
+            this.saveBtn.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.saveBtn.Appearance.Options.UseFont = true;
+            this.saveBtn.Location = new System.Drawing.Point(235, 74);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(103, 31);
+            this.saveBtn.TabIndex = 49;
+            this.saveBtn.Text = "Зберегти";
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // cancelBtn
+            // 
+            this.cancelBtn.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cancelBtn.Appearance.Options.UseFont = true;
+            this.cancelBtn.Location = new System.Drawing.Point(347, 74);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(112, 31);
+            this.cancelBtn.TabIndex = 51;
+            this.cancelBtn.Text = "Відмінити";
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
             // MtsSpecificationQuantityOldEditFm
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(475, 118);
-            this.Controls.Add(this.validateLbl);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.saveBtn);
+            this.Controls.Add(this.validateLbl);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.quantityEdit);
             this.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -143,9 +141,9 @@
 
         private System.Windows.Forms.Label label3;
         private DevExpress.XtraEditors.TextEdit quantityEdit;
-        private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.Button saveBtn;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider;
         private DevExpress.XtraEditors.LabelControl validateLbl;
+        private DevExpress.XtraEditors.SimpleButton saveBtn;
+        private DevExpress.XtraEditors.SimpleButton cancelBtn;
     }
 }

@@ -33,8 +33,6 @@
             this.directoryBuyDetailBtn = new DevExpress.XtraEditors.SimpleButton();
             this.xlabel = new System.Windows.Forms.Label();
             this.widthEdit = new DevExpress.XtraEditors.TextEdit();
-            this.cancelBtn = new System.Windows.Forms.Button();
-            this.saveBtn = new System.Windows.Forms.Button();
             this.quantityOfBlankEdit = new DevExpress.XtraEditors.TextEdit();
             this.heightEdit = new DevExpress.XtraEditors.TextEdit();
             this.guageEdit = new DevExpress.XtraEditors.TextEdit();
@@ -50,6 +48,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.saveBtn1 = new DevExpress.XtraEditors.SimpleButton();
+            this.cancelBtn1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.detalsProccesingLookUpEdit.Properties)).BeginInit();
@@ -67,12 +67,12 @@
             // 
             this.panelControl1.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.panelControl1.Appearance.Options.UseBackColor = true;
+            this.panelControl1.Controls.Add(this.cancelBtn1);
+            this.panelControl1.Controls.Add(this.saveBtn1);
             this.panelControl1.Controls.Add(this.detalsProccesingLookUpEdit);
             this.panelControl1.Controls.Add(this.directoryBuyDetailBtn);
             this.panelControl1.Controls.Add(this.xlabel);
             this.panelControl1.Controls.Add(this.widthEdit);
-            this.panelControl1.Controls.Add(this.cancelBtn);
-            this.panelControl1.Controls.Add(this.saveBtn);
             this.panelControl1.Controls.Add(this.quantityOfBlankEdit);
             this.panelControl1.Controls.Add(this.heightEdit);
             this.panelControl1.Controls.Add(this.guageEdit);
@@ -131,26 +131,6 @@
             this.widthEdit.Name = "widthEdit";
             this.widthEdit.Size = new System.Drawing.Size(131, 20);
             this.widthEdit.TabIndex = 18;
-            // 
-            // cancelBtn
-            // 
-            this.cancelBtn.Location = new System.Drawing.Point(362, 269);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
-            this.cancelBtn.TabIndex = 17;
-            this.cancelBtn.Text = "Відмінити";
-            this.cancelBtn.UseVisualStyleBackColor = true;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
-            // 
-            // saveBtn
-            // 
-            this.saveBtn.Location = new System.Drawing.Point(281, 269);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 23);
-            this.saveBtn.TabIndex = 16;
-            this.saveBtn.Text = "Зберегти";
-            this.saveBtn.UseVisualStyleBackColor = true;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // quantityOfBlankEdit
             // 
@@ -286,6 +266,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Номер креслення";
             // 
+            // saveBtn1
+            // 
+            this.saveBtn1.Location = new System.Drawing.Point(268, 269);
+            this.saveBtn1.Name = "saveBtn1";
+            this.saveBtn1.Size = new System.Drawing.Size(75, 27);
+            this.saveBtn1.TabIndex = 22;
+            this.saveBtn1.Text = "Зберегти";
+            this.saveBtn1.Click += new System.EventHandler(this.saveBtn1_Click);
+            // 
+            // cancelBtn1
+            // 
+            this.cancelBtn1.Location = new System.Drawing.Point(362, 269);
+            this.cancelBtn1.Name = "cancelBtn1";
+            this.cancelBtn1.Size = new System.Drawing.Size(75, 27);
+            this.cancelBtn1.TabIndex = 23;
+            this.cancelBtn1.Text = "Відмінити";
+            this.cancelBtn1.Click += new System.EventHandler(this.cancelBtn1_Click);
+            // 
             // MtsDetailsEditOldFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,8 +316,6 @@
         #endregion
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.Button saveBtn;
         private DevExpress.XtraEditors.TextEdit quantityOfBlankEdit;
         private DevExpress.XtraEditors.TextEdit heightEdit;
         private DevExpress.XtraEditors.TextEdit guageEdit;
@@ -339,5 +335,7 @@
         private System.Windows.Forms.Label xlabel;
         private DevExpress.XtraEditors.TextEdit widthEdit;
         private DevExpress.XtraEditors.LookUpEdit detalsProccesingLookUpEdit;
+        private DevExpress.XtraEditors.SimpleButton saveBtn1;
+        private DevExpress.XtraEditors.SimpleButton cancelBtn1;
     }
 }

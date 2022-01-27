@@ -114,27 +114,27 @@
             this.editToolStripMenuItem,
             this.delToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(155, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 92);
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.addToolStripMenuItem.Text = "Добавить";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addToolStripMenuItem.Text = "Додати";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.editToolStripMenuItem.Text = "Редактировать";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editToolStripMenuItem.Text = "Редагувати";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.EditToolStripMenuItem_Click);
             // 
             // delToolStripMenuItem
             // 
             this.delToolStripMenuItem.Name = "delToolStripMenuItem";
-            this.delToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.delToolStripMenuItem.Text = "Удалить";
+            this.delToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.delToolStripMenuItem.Text = "Видалити";
             this.delToolStripMenuItem.Click += new System.EventHandler(this.delToolStripMenuItem_Click);
             // 
             // MtsDirectoryGostOldFm
@@ -150,7 +150,7 @@
             this.Name = "MtsDirectoryGostOldFm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Справочник гостов";
+            this.Text = "Довідник гостів";
             ((System.ComponentModel.ISupportInitialize)(this.gostGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gostGridView)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);

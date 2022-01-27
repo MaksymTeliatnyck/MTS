@@ -48,5 +48,20 @@ namespace MTS.GUI.MTS
         {
             return ((MTSMeasureDTO)measureBS.Current);
         }
+
+        private void okBtn1_Click(object sender, EventArgs e)
+        {
+
+
+            if (operation == Utils.Operation.Add)
+            {
+                mtsSpecificationsService.MTSCreateMeasure((MTSMeasureDTO)measureBS.Current);
+
+            }
+            if (operation == Utils.Operation.Update)
+                mtsSpecificationsService.MTSUpdateMeasure((MTSMeasureDTO)measureBS.Current);
+            DialogResult = DialogResult.OK;
+            this.Close();
+        }
     }
 }
