@@ -36,6 +36,7 @@ namespace MTS.BLL.Services
         private IRepository<MTS_MATERIALS> mtsMaterials;
         private IRepository<MTS_NOMENCLATURE_GROUPS> mtsNomenclatureGroups;
         private IRepository<MTS_DETAILS> mtsDetals;
+        private IRepository<MTS_ADDIT_CALCULATION> mtsAdditCalculation;
        // private IRepository<MTSDetails> mtsDetals;
 
         private IMapper mapper;
@@ -59,6 +60,7 @@ namespace MTS.BLL.Services
             mtsMaterials = Database.GetRepository<MTS_MATERIALS>();
             mtsNomenclatureGroups = Database.GetRepository<MTS_NOMENCLATURE_GROUPS>();
             mtsDetals = Database.GetRepository<MTS_DETAILS>();
+            mtsAdditCalculation = Database.GetRepository<MTS_ADDIT_CALCULATION>();
 
             var config = new MapperConfiguration(cfg =>
             {
@@ -95,6 +97,8 @@ namespace MTS.BLL.Services
                 cfg.CreateMap<MTS_NOMENCLATURE_GROUPS, MTSNomenclatureGroupsDTO>();
                 cfg.CreateMap<MTSDetailsDTO, MTS_DETAILS>();
                 cfg.CreateMap<MTS_DETAILS, MTSDetailsDTO>();
+                cfg.CreateMap<MTSAdditCalculationsDTO, MTS_ADDIT_CALCULATION>();
+                cfg.CreateMap<MTS_ADDIT_CALCULATION, MTSAdditCalculationsDTO>();
             });
 
             mapper = config.CreateMapper();
@@ -695,7 +699,20 @@ namespace MTS.BLL.Services
         }
 
 
+        public IEnumerable<MTSAdditCalculationsDTO> GetAdditCalculationUnits()
+        {
+            var result = (from g in mtsAdditCalculation.GetAll()
+                          join ua in mtsMeasure.GetAll() on g.MEASUDE_ID equals ua.ID into aua
+                          from ua in aua.DefaultIfEmpty()
+                          select new MTSAdditCalculationsDTO
+                          {
+                              Id = g.ID,
+                              UnitId = ua.ID,
+                              AdditUnitLocalName = ua.NAME
+                          });
 
+            return result.ToList();
+        }
 
 
         #endregion

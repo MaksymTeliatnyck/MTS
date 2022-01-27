@@ -28,16 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.nomenclatureGroupsGrid = new DevExpress.XtraGrid.GridControl();
+            this.groupContextMenu = new System.Windows.Forms.ContextMenuStrip();
+            this.addGroupItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editGroupItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteGroupItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nomenclatureGroupsGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoForGroupNameEdit = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.nomenclatureGrid = new DevExpress.XtraGrid.GridControl();
+            this.nomenclatureMenuStrip = new System.Windows.Forms.ContextMenuStrip();
+            this.addNomenclatureItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editNomenclatureItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteNomenclatureItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nomenclatureGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoNameEdit = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,9 +62,13 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nomenclatureGroupsGrid)).BeginInit();
+            this.groupContextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nomenclatureGroupsGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoForGroupNameEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nomenclatureGrid)).BeginInit();
+            this.nomenclatureMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nomenclatureGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoNameEdit)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -62,7 +77,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1338, 648);
+            this.panelControl1.Size = new System.Drawing.Size(1778, 648);
             this.panelControl1.TabIndex = 0;
             // 
             // splitContainer1
@@ -78,20 +93,54 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.nomenclatureGrid);
-            this.splitContainer1.Size = new System.Drawing.Size(1334, 644);
-            this.splitContainer1.SplitterDistance = 495;
+            this.splitContainer1.Size = new System.Drawing.Size(1774, 644);
+            this.splitContainer1.SplitterDistance = 658;
             this.splitContainer1.TabIndex = 0;
             // 
             // nomenclatureGroupsGrid
             // 
+            this.nomenclatureGroupsGrid.ContextMenuStrip = this.groupContextMenu;
             this.nomenclatureGroupsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode1.RelationName = "Level1";
+            this.nomenclatureGroupsGrid.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
             this.nomenclatureGroupsGrid.Location = new System.Drawing.Point(0, 0);
             this.nomenclatureGroupsGrid.MainView = this.nomenclatureGroupsGridView;
             this.nomenclatureGroupsGrid.Name = "nomenclatureGroupsGrid";
-            this.nomenclatureGroupsGrid.Size = new System.Drawing.Size(495, 644);
+            this.nomenclatureGroupsGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemMemoForGroupNameEdit});
+            this.nomenclatureGroupsGrid.Size = new System.Drawing.Size(658, 644);
             this.nomenclatureGroupsGrid.TabIndex = 0;
             this.nomenclatureGroupsGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.nomenclatureGroupsGridView});
+            // 
+            // groupContextMenu
+            // 
+            this.groupContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addGroupItem,
+            this.editGroupItem,
+            this.deleteGroupItem});
+            this.groupContextMenu.Name = "groupContextMenu";
+            this.groupContextMenu.Size = new System.Drawing.Size(169, 92);
+            // 
+            // addGroupItem
+            // 
+            this.addGroupItem.Name = "addGroupItem";
+            this.addGroupItem.Size = new System.Drawing.Size(168, 22);
+            this.addGroupItem.Text = "Додати групу";
+            this.addGroupItem.Click += new System.EventHandler(this.addGroupItem_Click);
+            // 
+            // editGroupItem
+            // 
+            this.editGroupItem.Name = "editGroupItem";
+            this.editGroupItem.Size = new System.Drawing.Size(168, 22);
+            this.editGroupItem.Text = "Редагувати групу";
+            // 
+            // deleteGroupItem
+            // 
+            this.deleteGroupItem.Name = "deleteGroupItem";
+            this.deleteGroupItem.Size = new System.Drawing.Size(168, 22);
+            this.deleteGroupItem.Text = "Видалити групу";
             // 
             // nomenclatureGroupsGridView
             // 
@@ -102,13 +151,16 @@
             this.nomenclatureGroupsGridView.GridControl = this.nomenclatureGroupsGrid;
             this.nomenclatureGroupsGridView.Name = "nomenclatureGroupsGridView";
             this.nomenclatureGroupsGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.nomenclatureGroupsGridView.OptionsView.RowAutoHeight = true;
             this.nomenclatureGroupsGridView.OptionsView.ShowAutoFilterRow = true;
             this.nomenclatureGroupsGridView.OptionsView.ShowGroupPanel = false;
             this.nomenclatureGroupsGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.nomenclatureGroupsGridView_FocusedRowChanged);
             // 
             // gridColumn1
             // 
-            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn1.AppearanceCell.Options.UseFont = true;
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -116,29 +168,46 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.OptionsColumn.AllowFocus = false;
+            this.gridColumn1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn1.OptionsColumn.AllowMove = false;
+            this.gridColumn1.OptionsColumn.AllowSize = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             this.gridColumn1.Width = 38;
             // 
             // gridColumn2
             // 
-            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn2.AppearanceCell.Options.UseFont = true;
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn2.Caption = "Найменування";
+            this.gridColumn2.ColumnEdit = this.repositoryItemMemoForGroupNameEdit;
             this.gridColumn2.FieldName = "NAME";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.OptionsColumn.AllowFocus = false;
+            this.gridColumn2.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn2.OptionsColumn.AllowMove = false;
+            this.gridColumn2.OptionsColumn.AllowSize = false;
             this.gridColumn2.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
             this.gridColumn2.Width = 336;
             // 
+            // repositoryItemMemoForGroupNameEdit
+            // 
+            this.repositoryItemMemoForGroupNameEdit.Appearance.Options.UseTextOptions = true;
+            this.repositoryItemMemoForGroupNameEdit.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.repositoryItemMemoForGroupNameEdit.Name = "repositoryItemMemoForGroupNameEdit";
+            // 
             // gridColumn3
             // 
-            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn3.AppearanceCell.Options.UseFont = true;
+            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -147,20 +216,53 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.OptionsColumn.AllowFocus = false;
+            this.gridColumn3.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn3.OptionsColumn.AllowMove = false;
+            this.gridColumn3.OptionsColumn.AllowSize = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
             this.gridColumn3.Width = 103;
             // 
             // nomenclatureGrid
             // 
+            this.nomenclatureGrid.ContextMenuStrip = this.nomenclatureMenuStrip;
             this.nomenclatureGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nomenclatureGrid.Location = new System.Drawing.Point(0, 0);
             this.nomenclatureGrid.MainView = this.nomenclatureGridView;
             this.nomenclatureGrid.Name = "nomenclatureGrid";
-            this.nomenclatureGrid.Size = new System.Drawing.Size(835, 644);
+            this.nomenclatureGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemMemoNameEdit});
+            this.nomenclatureGrid.Size = new System.Drawing.Size(1112, 644);
             this.nomenclatureGrid.TabIndex = 0;
             this.nomenclatureGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.nomenclatureGridView});
+            // 
+            // nomenclatureMenuStrip
+            // 
+            this.nomenclatureMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNomenclatureItem,
+            this.editNomenclatureItem,
+            this.deleteNomenclatureItem});
+            this.nomenclatureMenuStrip.Name = "nomenclatureMenuStrip";
+            this.nomenclatureMenuStrip.Size = new System.Drawing.Size(217, 70);
+            // 
+            // addNomenclatureItem
+            // 
+            this.addNomenclatureItem.Name = "addNomenclatureItem";
+            this.addNomenclatureItem.Size = new System.Drawing.Size(216, 22);
+            this.addNomenclatureItem.Text = "Додати номенклатуру";
+            // 
+            // editNomenclatureItem
+            // 
+            this.editNomenclatureItem.Name = "editNomenclatureItem";
+            this.editNomenclatureItem.Size = new System.Drawing.Size(216, 22);
+            this.editNomenclatureItem.Text = "Редагувати номенклатуру";
+            // 
+            // deleteNomenclatureItem
+            // 
+            this.deleteNomenclatureItem.Name = "deleteNomenclatureItem";
+            this.deleteNomenclatureItem.Size = new System.Drawing.Size(216, 22);
+            this.deleteNomenclatureItem.Text = "Видалити номенклатуру";
             // 
             // nomenclatureGridView
             // 
@@ -175,28 +277,44 @@
             this.nomenclatureGridView.GridControl = this.nomenclatureGrid;
             this.nomenclatureGridView.Name = "nomenclatureGridView";
             this.nomenclatureGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.nomenclatureGridView.OptionsView.RowAutoHeight = true;
             this.nomenclatureGridView.OptionsView.ShowAutoFilterRow = true;
             this.nomenclatureGridView.OptionsView.ShowGroupPanel = false;
             this.nomenclatureGridView.DoubleClick += new System.EventHandler(this.nomenclatureGridView_DoubleClick);
             // 
             // gridColumn4
             // 
-            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn4.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn4.AppearanceCell.Options.UseFont = true;
+            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn4.AppearanceHeader.Options.UseFont = true;
             this.gridColumn4.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn4.Caption = "Найменування";
+            this.gridColumn4.ColumnEdit = this.repositoryItemMemoNameEdit;
             this.gridColumn4.FieldName = "NAME";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.OptionsColumn.AllowFocus = false;
+            this.gridColumn4.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn4.OptionsColumn.AllowMove = false;
+            this.gridColumn4.OptionsColumn.AllowSize = false;
             this.gridColumn4.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 0;
+            this.gridColumn4.Width = 315;
+            // 
+            // repositoryItemMemoNameEdit
+            // 
+            this.repositoryItemMemoNameEdit.Appearance.Options.UseTextOptions = true;
+            this.repositoryItemMemoNameEdit.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.repositoryItemMemoNameEdit.Name = "repositoryItemMemoNameEdit";
             // 
             // gridColumn5
             // 
-            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn5.AppearanceCell.Options.UseFont = true;
+            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn5.AppearanceHeader.Options.UseFont = true;
             this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -205,13 +323,19 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.OptionsColumn.AllowFocus = false;
+            this.gridColumn5.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn5.OptionsColumn.AllowMove = false;
+            this.gridColumn5.OptionsColumn.AllowSize = false;
             this.gridColumn5.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 1;
+            this.gridColumn5.Width = 153;
             // 
             // gridColumn6
             // 
-            this.gridColumn6.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn6.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn6.AppearanceCell.Options.UseFont = true;
+            this.gridColumn6.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn6.AppearanceHeader.Options.UseFont = true;
             this.gridColumn6.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -220,13 +344,19 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.OptionsColumn.AllowFocus = false;
+            this.gridColumn6.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn6.OptionsColumn.AllowMove = false;
+            this.gridColumn6.OptionsColumn.AllowSize = false;
             this.gridColumn6.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 2;
+            this.gridColumn6.Width = 119;
             // 
             // gridColumn7
             // 
-            this.gridColumn7.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn7.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn7.AppearanceCell.Options.UseFont = true;
+            this.gridColumn7.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn7.AppearanceHeader.Options.UseFont = true;
             this.gridColumn7.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -235,12 +365,18 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.OptionsColumn.AllowFocus = false;
+            this.gridColumn7.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn7.OptionsColumn.AllowMove = false;
+            this.gridColumn7.OptionsColumn.AllowSize = false;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 3;
+            this.gridColumn7.Width = 119;
             // 
             // gridColumn8
             // 
-            this.gridColumn8.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn8.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn8.AppearanceCell.Options.UseFont = true;
+            this.gridColumn8.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn8.AppearanceHeader.Options.UseFont = true;
             this.gridColumn8.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn8.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -249,12 +385,18 @@
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.AllowEdit = false;
             this.gridColumn8.OptionsColumn.AllowFocus = false;
+            this.gridColumn8.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn8.OptionsColumn.AllowMove = false;
+            this.gridColumn8.OptionsColumn.AllowSize = false;
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 4;
+            this.gridColumn8.Width = 119;
             // 
             // gridColumn9
             // 
-            this.gridColumn9.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn9.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn9.AppearanceCell.Options.UseFont = true;
+            this.gridColumn9.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn9.AppearanceHeader.Options.UseFont = true;
             this.gridColumn9.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn9.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -263,12 +405,18 @@
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.OptionsColumn.AllowEdit = false;
             this.gridColumn9.OptionsColumn.AllowFocus = false;
+            this.gridColumn9.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn9.OptionsColumn.AllowMove = false;
+            this.gridColumn9.OptionsColumn.AllowSize = false;
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 5;
+            this.gridColumn9.Width = 119;
             // 
             // gridColumn10
             // 
-            this.gridColumn10.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn10.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn10.AppearanceCell.Options.UseFont = true;
+            this.gridColumn10.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn10.AppearanceHeader.Options.UseFont = true;
             this.gridColumn10.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn10.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -277,14 +425,18 @@
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.OptionsColumn.AllowEdit = false;
             this.gridColumn10.OptionsColumn.AllowFocus = false;
+            this.gridColumn10.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn10.OptionsColumn.AllowMove = false;
+            this.gridColumn10.OptionsColumn.AllowSize = false;
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 6;
+            this.gridColumn10.Width = 150;
             // 
             // DirectoryBuyDetailEditOldFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1338, 648);
+            this.ClientSize = new System.Drawing.Size(1778, 648);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -301,9 +453,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nomenclatureGroupsGrid)).EndInit();
+            this.groupContextMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nomenclatureGroupsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoForGroupNameEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nomenclatureGrid)).EndInit();
+            this.nomenclatureMenuStrip.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nomenclatureGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoNameEdit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -326,5 +482,15 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoForGroupNameEdit;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoNameEdit;
+        private System.Windows.Forms.ContextMenuStrip groupContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem addGroupItem;
+        private System.Windows.Forms.ToolStripMenuItem editGroupItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteGroupItem;
+        private System.Windows.Forms.ContextMenuStrip nomenclatureMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem addNomenclatureItem;
+        private System.Windows.Forms.ToolStripMenuItem editNomenclatureItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteNomenclatureItem;
     }
 }

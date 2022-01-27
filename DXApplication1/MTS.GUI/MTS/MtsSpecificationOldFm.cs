@@ -897,11 +897,6 @@ namespace MTS.GUI.MTS
                 if (directoryBuyDetailEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     MTSNomenclaturesDTO r = directoryBuyDetailEditOldFm.Returnl();
-
-                   
-                   
-
-
                 }
 
             }

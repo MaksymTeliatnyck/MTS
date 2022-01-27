@@ -187,7 +187,7 @@ namespace MTS.BLL.Interfaces
         //    return result;
         //}
 
-
+        IEnumerable<MTSAdditCalculationsDTO> GetAdditCalculationUnits();
 
         IEnumerable<MTSDetailsDTO> GetAllDetailsSpecificShort(int specificId);
 

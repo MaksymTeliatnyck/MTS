@@ -25,7 +25,8 @@ namespace MTS.BLL.Services
         private IRepository<MTS_NOMENCLATURES> mtsNomenclatures;
         private IRepository<MTS_NOMENCLATURE_GROUPS> mtsNomenclatureGroups;
         private IRepository<MTS_GOST> mtsGosts;
-        
+        private IRepository<MTS_MEASURE> mtsMeasure;
+
 
         private IMapper mapper;
 
@@ -36,7 +37,6 @@ namespace MTS.BLL.Services
             mtsNomenclatureGroups = Database.GetRepository<MTS_NOMENCLATURE_GROUPS>();
             mtsAdditCalculations = Database.GetRepository<MTS_ADDIT_CALCULATION>();
             mtsGosts = Database.GetRepository<MTS_GOST>();
-
             mtsSpecifications = Database.GetRepository<MTS_SPECIFICATIONS>();
          
             var config = new MapperConfiguration(cfg =>
@@ -48,6 +48,7 @@ namespace MTS.BLL.Services
                  cfg.CreateMap<MTS_GOST, MTSGostDTO>();
                  cfg.CreateMap<MTSGostDTO, MTS_GOST>();
                  cfg.CreateMap<MTS_ADDIT_CALCULATION, MTSAdditCalculationsDTO>();
+                 cfg.CreateMap<MTS_NOMENCLATURE_GROUPS, MTSNomenclatureGroupsDTO>();
 
              });
 
@@ -91,21 +92,8 @@ namespace MTS.BLL.Services
             return mapper.Map<IEnumerable<MTS_GOST>, List<MTSGostDTO>>(mtsGosts.GetAll().OrderBy(s => s.NAME));
         }
 
-      
-        //public IEnumerable<MTSAdditCalculationsDTO> GetAdditCalculationUnits()
-        //{
-        //    var result = (from g in mtsAdditCalculations.GetAll()
-        //                  join ua in units.GetAll() on g.UnitId equals ua.UnitId into aua
-        //                  from ua in aua.DefaultIfEmpty()
-        //                  select new MTSAdditCalculationsDTO
-        //                  {
-        //                      Id = g.Id,
-        //                      UnitId = ua.UnitId,
-        //                      AdditUnitLocalName = ua.UnitLocalName
-        //                  });
 
-        //    return result.ToList();
-        //}
+        
 
         public IEnumerable<MtsNomenclatureGroupssDTO> GetNomenclatureGroups()
         {

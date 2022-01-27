@@ -139,5 +139,30 @@ namespace MTS.GUI.MTS
         {
           
         }
+
+        private void addGroupItem_Click(object sender, EventArgs e)
+        {
+            EditNomenclatureGroup(Utils.Operation.Add, new MTSNomenclatureGroupsDTO());
+        }
+
+        private void EditNomenclatureGroup(Utils.Operation operation, MTSNomenclatureGroupsDTO model)
+        {
+            using (MTSNomenclatureGroupEditFm mtsNomenclatureGroupEditFm = new MTSNomenclatureGroupEditFm(operation, model))
+            {
+                if (mtsNomenclatureGroupEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    NomenclatureGroupsDTO returnItem = mtsNomenclatureGroupEditFm.Return();
+                    nomenclatureGroupsGridView.BeginDataUpdate();
+
+                    LoadNomenclatureGroups();
+
+                    nomenclatureGroupsGridView.EndDataUpdate();
+
+                    int rowHandle = nomenclatureGroupsGridView.LocateByValue("Id", returnItem.Id);
+
+                    nomenclatureGroupsGridView.FocusedRowHandle = rowHandle;
+                }
+            }
+        }
     }
 }
