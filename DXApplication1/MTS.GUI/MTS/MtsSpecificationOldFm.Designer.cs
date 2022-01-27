@@ -113,6 +113,7 @@
             this.editBuyDetailBarBtn = new DevExpress.XtraBars.BarButtonItem();
             this.deleteBuyDetailBarBtn = new DevExpress.XtraBars.BarButtonItem();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.buysDetalsSpecificGrid = new DevExpress.XtraGrid.GridControl();
             this.buyDetailMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.додатиЗаписToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -126,7 +127,6 @@
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.materialsSpecificGrid = new DevExpress.XtraGrid.GridControl();
             this.materialMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -197,11 +197,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.detalsSpecificGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barDetail)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buysDetalsSpecificGrid)).BeginInit();
             this.buyDetailMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buysDetalsSpecificGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
             this.xtraTabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.materialsSpecificGrid)).BeginInit();
             this.materialMenu.SuspendLayout();
@@ -290,7 +290,7 @@
             this.repositoryItemDateEdit2});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
-            this.ribbonControl1.Size = new System.Drawing.Size(1792, 93);
+            this.ribbonControl1.Size = new System.Drawing.Size(1792, 95);
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
@@ -1330,17 +1330,27 @@
             this.xtraTabPage2.Size = new System.Drawing.Size(1782, 362);
             this.xtraTabPage2.Text = "Покупні";
             // 
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(this.standaloneBarDockControl3);
+            this.panelControl2.Controls.Add(this.buysDetalsSpecificGrid);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl2.Location = new System.Drawing.Point(0, 0);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(4);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(1782, 362);
+            this.panelControl2.TabIndex = 1;
+            // 
             // buysDetalsSpecificGrid
             // 
             this.buysDetalsSpecificGrid.ContextMenuStrip = this.buyDetailMenu;
-            this.buysDetalsSpecificGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buysDetalsSpecificGrid.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.buysDetalsSpecificGrid.Location = new System.Drawing.Point(2, 2);
+            this.buysDetalsSpecificGrid.Location = new System.Drawing.Point(2, 43);
             this.buysDetalsSpecificGrid.MainView = this.buysDetalsSpecificGridView;
             this.buysDetalsSpecificGrid.Margin = new System.Windows.Forms.Padding(4);
             this.buysDetalsSpecificGrid.MenuManager = this.ribbonControl1;
             this.buysDetalsSpecificGrid.Name = "buysDetalsSpecificGrid";
-            this.buysDetalsSpecificGrid.Size = new System.Drawing.Size(1778, 358);
+            this.buysDetalsSpecificGrid.Size = new System.Drawing.Size(1778, 317);
             this.buysDetalsSpecificGrid.TabIndex = 0;
             this.buysDetalsSpecificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.buysDetalsSpecificGridView});
@@ -1529,17 +1539,6 @@
             this.gridColumn26.Visible = true;
             this.gridColumn26.VisibleIndex = 6;
             this.gridColumn26.Width = 58;
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.standaloneBarDockControl3);
-            this.panelControl2.Controls.Add(this.buysDetalsSpecificGrid);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 0);
-            this.panelControl2.Margin = new System.Windows.Forms.Padding(4);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1782, 362);
-            this.panelControl2.TabIndex = 1;
             // 
             // xtraTabPage3
             // 
@@ -1754,13 +1753,13 @@
             this.specificGrid.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1,
             gridLevelNode2});
-            this.specificGrid.Location = new System.Drawing.Point(0, 93);
+            this.specificGrid.Location = new System.Drawing.Point(0, 95);
             this.specificGrid.MainView = this.specificGridView;
             this.specificGrid.Margin = new System.Windows.Forms.Padding(4);
             this.specificGrid.Name = "specificGrid";
             this.specificGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.specNameRepository});
-            this.specificGrid.Size = new System.Drawing.Size(1792, 446);
+            this.specificGrid.Size = new System.Drawing.Size(1792, 444);
             this.specificGrid.TabIndex = 2;
             this.specificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.specificGridView});
@@ -2241,11 +2240,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.detalsSpecificGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barDetail)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.buysDetalsSpecificGrid)).EndInit();
             this.buyDetailMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.buysDetalsSpecificGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
             this.xtraTabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.materialsSpecificGrid)).EndInit();
             this.materialMenu.ResumeLayout(false);

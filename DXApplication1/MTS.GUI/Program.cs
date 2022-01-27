@@ -31,7 +31,7 @@ namespace MTS.GUI
             Localizer.Active = Localizer.CreateDefaultLocalizer();
 
             bool flag = true;//false;
-            Mutex mutex = new Mutex(false, "ERP", out flag);
+            Mutex mutex = new Mutex(false, "MTS", out flag);
             
             if (!flag)
             {
