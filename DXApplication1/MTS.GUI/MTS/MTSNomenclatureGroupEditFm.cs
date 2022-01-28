@@ -12,177 +12,79 @@ using MTS.BLL.Infrastructure;
 using MTS.BLL.DTO.ModelsDTO;
 using MTS.BLL.Interfaces;
 using Ninject;
-using MTS.BLL.Services;
 
 namespace MTS.GUI.MTS
 {
     public partial class MTSNomenclatureGroupEditFm : DevExpress.XtraEditors.XtraForm
     {
+        private IMtsSpecificationsService mtsSpecificationsService;
         private IMtsNomenclaturesService mtsNomenclaturesService;
-        private IMtsSpecificationsService mtsSpecificationService;
 
-        private BindingSource mtsNomenclatureGroupsBS = new BindingSource();
-        private BindingSource additCalcBS = new BindingSource();
-
+        private BindingSource mtsNomenclatureGroupBS = new BindingSource();
+        private BindingSource additCalcWasteBS = new BindingSource();
 
         private Utils.Operation operation;
 
         private ObjectBase Item
         {
-            get { return mtsNomenclatureGroupsBS.Current as ObjectBase; }
+            get { return mtsNomenclatureGroupBS.Current as ObjectBase; }
             set
             {
-                mtsNomenclatureGroupsBS.DataSource = value;
+                mtsNomenclatureGroupBS.DataSource = value;
+                //set in edit mode
                 value.BeginEdit();
             }
         }
-        public MTSNomenclatureGroupEditFm(Utils.Operation operation, MTSNomenclatureGroupsDTO model)
+        public MTSNomenclatureGroupEditFm(Utils.Operation oparation, MTSNomenclatureGroupsDTO model)
         {
             InitializeComponent();
 
-            splashScreenManager.ShowWaitForm();
-
             this.operation = operation;
 
-            mtsNomenclatureGroupsBS.DataSource = Item = model;
+            mtsNomenclatureGroupBS.DataSource = Item = model;
 
+            mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
             mtsNomenclaturesService = Program.kernel.Get<IMtsNomenclaturesService>();
-            mtsSpecificationService = Program.kernel.Get<IMtsSpecificationsService>();
 
-            //currencyRatesBS.DataSource = ((Bank_PaymentsDTO)Item).CurrencyRatesConvertId == null ?
-            //    new Currency_RatesDTO() { Currency_Id = 1, Multiplicity = 1, CurrencyPayment = 0.00m, Rate = 0.000000m } :
-            //    currencyService.GetCurrencyRates().Where(s => s.Id == ((Bank_PaymentsDTO)Item).CurrencyRatesConvertId).SingleOrDefault();
+            nomenclatureGroupNameEdit.DataBindings.Add("EditValue", mtsNomenclatureGroupBS, "NAME", true, DataSourceUpdateMode.OnPropertyChanged);
+            ratOfWasteEdit.DataBindings.Add("EditValue", mtsNomenclatureGroupBS, "RATIO_OF_WASTE", true, DataSourceUpdateMode.OnPropertyChanged);
+            activeCheck.DataBindings.Add("Checked", mtsNomenclatureGroupBS, "ADDIT_CALCULATION_ACTIVE", true, DataSourceUpdateMode.OnPropertyChanged);
 
-            if (operation == Utils.Operation.Add)
-            {
-                //((Bank_PaymentsDTO)Item).Payment_Date = DateTime.Now;
-                //((Bank_PaymentsDTO)Item).Payment_Price = 0.00m;
-                //((Bank_PaymentsDTO)Item).Payment_PriceCurrency = 0.00m;
-                //((Bank_PaymentsDTO)Item).VatPrice = 0.00m;
-                //((Bank_PaymentsDTO)Item).Rate = 0.000000m;
-                //((Bank_PaymentsDTO)Item).CurrencyId = 1;
-                //((Bank_PaymentsDTO)Item).AccountingOperationId = 1;
-
-                //contractorsEdit.Enabled = false;
-                //employeesEdit.Enabled = false;
-
-                //currencyConvertEdit.Enabled = false;
-                //currencyPriceConvertTBox.Enabled = false;
-                //rateConvertTBox.Enabled = false;
-            }
-            else
-            {
-                //contractorCheckEdit.Checked = (((Bank_PaymentsDTO)Item).Contractor_Id > 0) ? true : false;
-                //employeeCheckEdit.Checked = (((Bank_PaymentsDTO)Item).EmployeesId > 0) ? true : false;
-
-                //if (((Bank_PaymentsDTO)Item).CurrencyRatesConvertId != null)
-                //{
-                //    convertCheckEdit.CheckState = CheckState.Checked;
-
-                //    currencyConvertEdit.Enabled = true;
-                //    currencyPriceConvertTBox.Enabled = true;
-                //    rateConvertTBox.Enabled = true;
-                //}
-                //else
-                //{
-                //    currencyConvertEdit.Enabled = false;
-                //    currencyPriceConvertTBox.Enabled = false;
-                //    rateConvertTBox.Enabled = false;
-                //}
-            }
-
-            //if (_operation == Utils.Operation.Custom)
-            //{
-            //    employeesEdit.Enabled = false;
-            //    currencyConvertEdit.Enabled = false;
-            //    currencyPriceConvertTBox.Enabled = false;
-            //    rateConvertTBox.Enabled = false;
-
-            //    contractorCheckEdit.Checked = true;
-            //}
-            //if (_operation == Utils.Operation.Template)
-            //{
-            //    paymentDateEdit.Enabled = false;
-            //    paymentDocumentTBox.Enabled = false;
-            //    paymentPriceTBox.Enabled = false;
-            //    paymentPriceCurrencyTBox.Enabled = false;
-            //    currencyEdit.Enabled = false;
-            //    groupControl3.Enabled = false;
-            //    purposeEdit.Enabled = false;
-            //    rateTBox.Enabled = false;
-            //    vatPriceTBox.Enabled = false;
-
-            //    vatAccountEdit.Enabled = false;
-            //    convertCheckEdit.Enabled = false;
-            //    groupControl4.Enabled = false;
-
-
-
-
-
-            //    employeesEdit.Enabled = false;
-            //    currencyConvertEdit.Enabled = false;
-            //    currencyPriceConvertTBox.Enabled = false;
-            //    rateConvertTBox.Enabled = false;
-
-            //    contractorCheckEdit.Checked = true;
-            //}
-
-
-
-            //accountsBS.DataSource = accountsService.GetAccounts();
-
-            #region DataBinding's
-
-            nomeclatureNameEdit.DataBindings.Add("EditValue", mtsNomenclatureGroupsBS, "NAME", true, DataSourceUpdateMode.OnPropertyChanged);
-            ratioOfWasteEdit.DataBindings.Add("EditValue", mtsNomenclatureGroupsBS, "RATIO_OF_WASTE", true, DataSourceUpdateMode.OnPropertyChanged);
-            additCalcEdit.DataBindings.Add("EditValue", mtsNomenclatureGroupsBS, "ADDIT_CALCULATION_ID", true, DataSourceUpdateMode.OnPropertyChanged);
-
-
-            additCalcEdit.DataBindings.Add("EditValue", additCalcBS, "CurrencyId", true, DataSourceUpdateMode.OnPropertyChanged);
-            additCalcEdit.Properties.DataSource = mtsSpecificationService.GetAdditCalculationUnits();
-            additCalcEdit.Properties.ValueMember = "Id";
+            additCalcEdit.DataBindings.Add("EditValue", mtsNomenclatureGroupBS, "ADDIT_CALCULATION_ID", true, DataSourceUpdateMode.OnPropertyChanged);
+            additCalcEdit.Properties.DataSource = mtsSpecificationsService.GetAdditCalculationUnits();
+            additCalcEdit.Properties.ValueMember = "ID";
             additCalcEdit.Properties.DisplayMember = "Name";
             additCalcEdit.Properties.NullText = "Немає данних";
 
-            
-
-            #endregion
-
-            //ControlValidation();
-
-            splashScreenManager.CloseWaitForm();
         }
 
-        //private void EditBankPayment(Utils.Operation operation, MTSNomenclatureGroupsDTO model)
-        //{
-        //    using (BankPaymentEditFm bankPaymentEditFm = new BankPaymentEditFm(operation, model))
-        //    {
-        //        if (bankPaymentEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-        //        {
-        //            Bank_PaymentsDTO returnItem = bankPaymentEditFm.Return();
-        //            bankPaymentsGridView.BeginDataUpdate();
-
-        //            LoadDataByPeriod(_beginDate, _endDate);
-
-        //            bankPaymentsGridView.EndDataUpdate();
-
-        //            int rowHandle = bankPaymentsGridView.LocateByValue("Id", returnItem.Id);
-
-        //            bankPaymentsGridView.FocusedRowHandle = rowHandle;
-        //        }
-        //    }
-        //}
-        public NomenclatureGroupsDTO Return()
+        public MTSNomenclatureGroupsDTO Return()
         {
-            return (NomenclatureGroupsDTO)Item;
+            return (MTSNomenclatureGroupsDTO)Item;
         }
-   
-        private void cancelBtn_Click(object sender, EventArgs e)
+
+        private void activeCheck_CheckedChanged(object sender, EventArgs e)
         {
-            this.Item.EndEdit();
-            DialogResult = DialogResult.Cancel;
-            this.Close();
+            if (activeCheck.Checked)
+                additCalcEdit.Enabled = true;
+            else
+                additCalcEdit.Enabled = false;
+        }
+
+        private void activeCheck_PropertiesChanged(object sender, EventArgs e)
+        {
+            if (activeCheck.Checked)
+                additCalcEdit.Enabled = true;
+            else
+                additCalcEdit.Enabled = false;
+        }
+
+        private void activeCheck_EditValueChanged(object sender, EventArgs e)
+        {
+            if (activeCheck.Checked)
+                additCalcEdit.Enabled = true;
+            else
+                additCalcEdit.Enabled = false;
         }
     }
 }

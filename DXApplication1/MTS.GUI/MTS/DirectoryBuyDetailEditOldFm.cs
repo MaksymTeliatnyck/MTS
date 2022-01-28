@@ -51,7 +51,7 @@ namespace MTS.GUI.MTS
             nomenclatureGroupsList.Add(new MTSNomenclatureGroupsDTO()
             {
                 ID = 0,
-                ADDIT_CALCULATION_ACTIVE = 0,
+                ADDIT_CALCULATION_ACTIVE = false,
                 ADDIT_CALCULATION_ID = null,
                 PARENT_ID = null,
                 NAME = "Общая",
@@ -151,14 +151,14 @@ namespace MTS.GUI.MTS
             {
                 if (mtsNomenclatureGroupEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    NomenclatureGroupsDTO returnItem = mtsNomenclatureGroupEditFm.Return();
+                    MTSNomenclatureGroupsDTO returnItem = mtsNomenclatureGroupEditFm.Return();
                     nomenclatureGroupsGridView.BeginDataUpdate();
 
                     LoadNomenclatureGroups();
 
                     nomenclatureGroupsGridView.EndDataUpdate();
 
-                    int rowHandle = nomenclatureGroupsGridView.LocateByValue("Id", returnItem.Id);
+                    int rowHandle = nomenclatureGroupsGridView.LocateByValue("ID", returnItem.ID);
 
                     nomenclatureGroupsGridView.FocusedRowHandle = rowHandle;
                 }

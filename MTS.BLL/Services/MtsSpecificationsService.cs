@@ -44,9 +44,6 @@ namespace MTS.BLL.Services
         public MtsSpecificationsService(IUnitOfWork uow)
         {
             Database = uow;
-
-
-
             mtsSpecificationsOld = Database.GetRepository<MTS_SPECIFICATIONS>();
             mtsAuthorizationUsers = Database.GetRepository<MTS_AUTHORIZATION_USERS>();
             mtsDetails = Database.GetRepository<MTS_DETAILS>();
@@ -702,13 +699,13 @@ namespace MTS.BLL.Services
         public IEnumerable<MTSAdditCalculationsDTO> GetAdditCalculationUnits()
         {
             var result = (from g in mtsAdditCalculation.GetAll()
-                          join ua in mtsMeasure.GetAll() on g.MEASUDE_ID equals ua.ID into aua
+                          join ua in mtsMeasure.GetAll() on g.MEASURE_ID equals ua.ID into aua
                           from ua in aua.DefaultIfEmpty()
                           select new MTSAdditCalculationsDTO
                           {
-                              Id = g.ID,
-                              UnitId = ua.ID,
-                              AdditUnitLocalName = ua.NAME
+                              ID = g.ID,
+                               MEASURE_ID = ua.ID,
+                                Name = ua.NAME
                           });
 
             return result.ToList();

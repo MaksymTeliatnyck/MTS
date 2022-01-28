@@ -12,6 +12,6 @@ namespace MTS.DAL.Entities.Models
         [Key]
         public int ID { get; set; }
       //  public int UnitId { get; set; }
-        public int MEASUDE_ID { get; set; }
+        public int MEASURE_ID { get; set; }
     }
 }

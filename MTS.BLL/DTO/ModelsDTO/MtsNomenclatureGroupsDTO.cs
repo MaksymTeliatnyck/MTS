@@ -14,7 +14,7 @@ namespace MTS.BLL.DTO.ModelsDTO
         public int? PARENT_ID { get; set; }
         public decimal? RATIO_OF_WASTE { get; set; }
         public int? ADDIT_CALCULATION_ID { get; set; }
-        public int ADDIT_CALCULATION_ACTIVE { get; set; }
+        public bool? ADDIT_CALCULATION_ACTIVE { get; set; } = false;
         public int? CODPROD { get; set; }
         public int SORTPOSITION { get; set; }
     }
