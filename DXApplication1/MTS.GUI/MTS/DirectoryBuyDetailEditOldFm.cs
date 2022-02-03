@@ -19,7 +19,7 @@ namespace MTS.GUI.MTS
 {
     public partial class DirectoryBuyDetailEditOldFm : DevExpress.XtraEditors.XtraForm
     {
-       // private Utils.Operation operation;
+        private IMtsNomenclaturesService mtsNomenclaturesService;
         private IMtsSpecificationsService mtsService;
         private BindingSource nomenclatureGroupsBS = new BindingSource();
         private BindingSource nomenclatureBS = new BindingSource();
@@ -27,10 +27,10 @@ namespace MTS.GUI.MTS
 
         private ObjectBase Item
         {
-            get { return nomenclatureBS.Current as ObjectBase; }
+            get { return nomenclatureGroupsBS.Current as ObjectBase; }
             set
             {
-                nomenclatureBS.DataSource = value;
+                nomenclatureGroupsBS.DataSource = value;
                 value.BeginEdit();
             }
         }
@@ -161,6 +161,47 @@ namespace MTS.GUI.MTS
                     int rowHandle = nomenclatureGroupsGridView.LocateByValue("ID", returnItem.ID);
 
                     nomenclatureGroupsGridView.FocusedRowHandle = rowHandle;
+                }
+            }
+        }
+
+        private void editGroupItem_Click(object sender, EventArgs e)
+        {
+            EditNomenclatureGroup(Utils.Operation.Update, (MTSNomenclatureGroupsDTO)Item);
+        }
+
+        private void deleteGroupItem_Click(object sender, EventArgs e)
+        {
+            mtsNomenclaturesService = Program.kernel.Get<IMtsNomenclaturesService>();
+            if(mtsNomenclaturesService.CheckNomenclaturesGroup(((MTSNomenclatureGroupsDTO)nomenclatureGroupsBS.Current).ID))
+            {
+                MessageBox.Show("Група містить номенклатури. Перемістіть номенклатури до іншої групи.", "Видалення", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            try
+            {
+                DeleteGroup();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("При видаленні виникла помилка. " + ex.Message, "Видалення", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DeleteGroup()
+        {
+            if (nomenclatureGroupsBS.Count != 0)
+            {
+                if (MessageBox.Show("Видалити групу?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    mtsNomenclaturesService = Program.kernel.Get<IMtsNomenclaturesService>();
+                    nomenclatureGroupsGridView.BeginDataUpdate();
+                    mtsNomenclaturesService.NomenclarureGroupDelete(((MTSNomenclatureGroupsDTO)nomenclatureGroupsBS.Current).ID);
+                    LoadNomenclatureGroups();
+                    nomenclatureGroupsGridView.EndDataUpdate();
+                    int rowHandle = nomenclatureGroupsGridView.FocusedRowHandle - 1;
+                    nomenclatureGroupsGridView.FocusedRowHandle = (nomenclatureGroupsGridView.IsValidRowHandle(rowHandle)) ? rowHandle : -1; ;
                 }
             }
         }

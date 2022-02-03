@@ -1017,6 +1017,11 @@ namespace MTS.GUI.BusinessTrips
             }
         }
 
+        private void customerOrderAtachEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
 
 
 

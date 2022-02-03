@@ -46,7 +46,7 @@ namespace MTS.GUI.Classifiers
 
             splashScreenManager.ShowWaitForm();
             mtsNomenclaturesService = Program.kernel.Get<IMtsNomenclaturesService>();
-            var mtsNomenclatureGroups = new BindingList<MtsNomenclatureGroupssDTO>(mtsNomenclaturesService.GetNomenclatureGroups().ToList());
+            var mtsNomenclatureGroups = new BindingList<MTSNomenclatureGroupsDTO>(mtsNomenclaturesService.GetNomenclatureGroups().ToList());
             mtsNomenclatureGroupsBS.DataSource = mtsNomenclatureGroups;
             mtsNomenclatureGroupsGrid.DataSource = mtsNomenclatureGroupsBS;
 

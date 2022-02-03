@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.nomenclatureGroupsGrid = new DevExpress.XtraGrid.GridControl();
-            this.groupContextMenu = new System.Windows.Forms.ContextMenuStrip();
+            this.groupContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addGroupItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editGroupItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteGroupItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +43,7 @@
             this.repositoryItemMemoForGroupNameEdit = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.nomenclatureGrid = new DevExpress.XtraGrid.GridControl();
-            this.nomenclatureMenuStrip = new System.Windows.Forms.ContextMenuStrip();
+            this.nomenclatureMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addNomenclatureItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editNomenclatureItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteNomenclatureItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -135,12 +136,14 @@
             this.editGroupItem.Name = "editGroupItem";
             this.editGroupItem.Size = new System.Drawing.Size(168, 22);
             this.editGroupItem.Text = "Редагувати групу";
+            this.editGroupItem.Click += new System.EventHandler(this.editGroupItem_Click);
             // 
             // deleteGroupItem
             // 
             this.deleteGroupItem.Name = "deleteGroupItem";
             this.deleteGroupItem.Size = new System.Drawing.Size(168, 22);
             this.deleteGroupItem.Text = "Видалити групу";
+            this.deleteGroupItem.Click += new System.EventHandler(this.deleteGroupItem_Click);
             // 
             // nomenclatureGroupsGridView
             // 

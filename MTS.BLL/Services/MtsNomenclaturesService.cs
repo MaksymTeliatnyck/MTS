@@ -92,28 +92,38 @@ namespace MTS.BLL.Services
             return mapper.Map<IEnumerable<MTS_GOST>, List<MTSGostDTO>>(mtsGosts.GetAll().OrderBy(s => s.NAME));
         }
 
+        public int GetLastSortPositionNomenclatureGroup()
+        {
+            int? rezult = mapper.Map<IEnumerable<MTS_NOMENCLATURE_GROUPS>, List<MTSNomenclatureGroupsDTO>>(mtsNomenclatureGroups.GetAll().OrderByDescending(ord => ord.SORTPOSITION)).FirstOrDefault().SORTPOSITION;
 
-        
+            return rezult != null ? (int)rezult : 0; 
+        }
 
-        public IEnumerable<MtsNomenclatureGroupssDTO> GetNomenclatureGroups()
+
+        public IEnumerable<MTSNomenclatureGroupsDTO> GetNomenclatureGroups()
         {
             var result = (from g in mtsNomenclatureGroups.GetAll()
                           join a in mtsAdditCalculations.GetAll() on g.ADDIT_CALCULATION_ID equals a.ID into na
                           from a in na.DefaultIfEmpty()
                           orderby g.NAME
-                          select new MtsNomenclatureGroupssDTO
+                          select new MTSNomenclatureGroupsDTO
                           {
-                              Id = g.ID,
-                              Name = g.NAME,
-                              AdditCalculationActive = (short?)g.ADDIT_CALCULATION_ACTIVE,
-                              RatioOfWaste = g.RATIO_OF_WASTE,
-                              MtsAdditCalculationId = g.ADDIT_CALCULATION_ID
+                               ID = g.ID,
+                                NAME = g.NAME,
+                               ADDIT_CALCULATION_ACTIVE = g.ADDIT_CALCULATION_ACTIVE,
+                               RATIO_OF_WASTE = g.RATIO_OF_WASTE,
+                               ADDIT_CALCULATION_ID = g.ADDIT_CALCULATION_ID
                           });
 
             return result.ToList();
         }
 
-       
+        public bool CheckNomenclaturesGroup(int nomenclaturesGroupId)
+        {
+            return mapper.Map<IEnumerable<MTS_NOMENCLATURES>, List<MTSNomenclaturesDTO>>(mtsNomenclatures.GetAll()).Any(srt => srt.NOMENCLATUREGROUPS_ID == nomenclaturesGroupId);
+        }
+
+
 
         #endregion
 
@@ -195,6 +205,66 @@ namespace MTS.BLL.Services
             try
             {
                 mtsGosts.Delete(mtsGosts.GetAll().FirstOrDefault(c => c.ID == id));
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region MtsNomenclatureGroup CRUD method's
+
+        public int NomenclatureGroupCreate(MTSNomenclatureGroupsDTO mtsNomGroup)
+        {
+            var createrecord = mtsNomenclatureGroups.Create(mapper.Map<MTS_NOMENCLATURE_GROUPS>(mtsNomGroup));
+            return (int)createrecord.ID;
+        }
+
+        public void NomenclatureGroupUpdate(MTSNomenclatureGroupsDTO mtsNomGroup)
+        {
+
+            var eGroup = mtsNomenclatureGroups.GetAll().SingleOrDefault(c => c.ID == mtsNomGroup.ID);
+            mtsNomenclatureGroups.Update((mapper.Map<MTSNomenclatureGroupsDTO, MTS_NOMENCLATURE_GROUPS>(mtsNomGroup, eGroup)));
+        }
+
+        public bool NomenclatureGroupDelete(long id)
+        {
+            try
+            {
+                mtsNomenclatureGroups.Delete(mtsNomenclatureGroups.GetAll().FirstOrDefault(c => c.ID == id));
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region MtsNomenclature CRUD method's
+
+        public int NomenclatureCreate(MTSNomenclaturesDTO mtsNom)
+        {
+            var createrecord = mtsNomenclatures.Create(mapper.Map<MTS_NOMENCLATURES>(mtsNom));
+            return (int)createrecord.ID;
+        }
+
+        public void NomenclatureUpdate(MTSNomenclaturesDTO mtsNom)
+        {
+
+            var eGroup = mtsNomenclatures.GetAll().SingleOrDefault(c => c.ID == mtsNom.ID);
+            mtsNomenclatures.Update((mapper.Map<MTSNomenclaturesDTO, MTS_NOMENCLATURES>(mtsNom, eGroup)));
+        }
+
+        public bool NomenclaturesDelete(long id)
+        {
+            try
+            {
+                mtsNomenclatures.Delete(mtsNomenclatures.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
             catch (Exception ex)

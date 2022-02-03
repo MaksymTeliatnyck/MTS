@@ -12,10 +12,13 @@ namespace MTS.BLL.Interfaces
 
         IEnumerable<MTSGostDTO> GetGosts();
 
+        int GetLastSortPositionNomenclatureGroup();
 
 
 
-        IEnumerable<MtsNomenclatureGroupssDTO> GetNomenclatureGroups();
+
+        IEnumerable<MTSNomenclatureGroupsDTO> GetNomenclatureGroups();
+        bool CheckNomenclaturesGroup(int nomenclaturesGroupId);
 
 
 
@@ -58,6 +61,19 @@ namespace MTS.BLL.Interfaces
         bool GostDelete(long id);
         #endregion
 
+        #region MtsNomenclatureGroup CRUD method's
+        int NomenclatureGroupCreate(MTSNomenclatureGroupsDTO mtsNomGroup);
+        void NomenclatureGroupUpdate(MTSNomenclatureGroupsDTO mtsNomGroup);
+        bool NomenclatureGroupDelete(long id);
+        #endregion
+
+        #region MtsNomenclature CRUD method's
+        int NomenclatureCreate(MTSNomenclaturesDTO mtsNom);
+
+        void NomenclatureUpdate(MTSNomenclaturesDTO mtsNom);
+
+        bool NomenclaturesDelete(long id);
+        #endregion  
 
         void Dispose();
     }

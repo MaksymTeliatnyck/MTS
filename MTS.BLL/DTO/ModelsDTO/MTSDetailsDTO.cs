@@ -29,7 +29,7 @@ namespace MTS.BLL.DTO.ModelsDTO
         public int? NOM_GROUP_PARENT_ID { get; set; }
         public decimal? NOM_GROUP_RATIO_OF_WASTE { get; set; }
         public int? NOM_GROUP_ADDIT_CALCULATION_ID { get; set; }
-        public int NOM_GROUP_ADDIT_CALCULATION_ACTIVE { get; set; }
+        public bool? NOM_GROUP_ADDIT_CALCULATION_ACTIVE { get; set; }
         public int? NOM_GROUP_CODPROD { get; set; }
         public int NOM_GROUP_SORTPOSITION { get; set; }
 
