@@ -347,7 +347,7 @@
             this.saveBtnn.Size = new System.Drawing.Size(75, 23);
             this.saveBtnn.TabIndex = 29;
             this.saveBtnn.Text = "Зберегти";
-            this.saveBtnn.Click += new System.EventHandler(this.saveBtnn_Click);
+            this.saveBtnn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // cancelBtnn
             // 

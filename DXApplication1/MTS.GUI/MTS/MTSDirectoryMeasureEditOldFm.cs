@@ -63,5 +63,29 @@ namespace MTS.GUI.MTS
             DialogResult = DialogResult.OK;
             this.Close();
         }
+
+        private void measureValidationProvider_ValidationFailed(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventArgs e)
+        {
+            this.okBtn1.Enabled = false;
+            this.validateLbl.Visible = true;
+        }
+
+        private void measureValidationProvider_ValidationSucceeded(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationSucceededEventArgs e)
+        {
+            bool isValidate = (measureValidationProvider.GetInvalidControls().Count == 0);
+            this.okBtn1.Enabled = isValidate;
+            this.validateLbl.Visible = !isValidate;
+        }
+
+        private void measureEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            
+            measureValidationProvider.Validate((Control)sender);
+        }
+
+        private void measureEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+         //   measureEdit.Properties.m
+        }
     }
 }

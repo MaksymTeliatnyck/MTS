@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.directoryBuyDetailsBtn1 = new DevExpress.XtraEditors.SimpleButton();
+            this.cancelBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.saveBtn = new DevExpress.XtraEditors.SimpleButton();
             this.validateLbl = new DevExpress.XtraEditors.LabelControl();
             this.quantityEdit = new DevExpress.XtraEditors.TextEdit();
             this.guageEdit = new DevExpress.XtraEditors.TextEdit();
@@ -39,9 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.mtsBuyDetailValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.saveBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.cancelBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.directoryBuyDetailsBtn1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.quantityEdit.Properties)).BeginInit();
@@ -68,6 +68,33 @@
             this.panelControl1.Size = new System.Drawing.Size(476, 161);
             this.panelControl1.TabIndex = 0;
             // 
+            // directoryBuyDetailsBtn1
+            // 
+            this.directoryBuyDetailsBtn1.Location = new System.Drawing.Point(431, 22);
+            this.directoryBuyDetailsBtn1.Name = "directoryBuyDetailsBtn1";
+            this.directoryBuyDetailsBtn1.Size = new System.Drawing.Size(33, 23);
+            this.directoryBuyDetailsBtn1.TabIndex = 51;
+            this.directoryBuyDetailsBtn1.Text = "...";
+            this.directoryBuyDetailsBtn1.Click += new System.EventHandler(this.directoryBuyDetailsBtn1_Click);
+            // 
+            // cancelBtn
+            // 
+            this.cancelBtn.Location = new System.Drawing.Point(389, 122);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
+            this.cancelBtn.TabIndex = 50;
+            this.cancelBtn.Text = "Відмінити";
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click_1);
+            // 
+            // saveBtn
+            // 
+            this.saveBtn.Location = new System.Drawing.Point(288, 122);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveBtn.TabIndex = 49;
+            this.saveBtn.Text = "Зберегти";
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
             // validateLbl
             // 
             this.validateLbl.Appearance.BackColor = System.Drawing.SystemColors.Info;
@@ -86,11 +113,11 @@
             this.quantityEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.quantityEdit.Size = new System.Drawing.Size(352, 20);
             this.quantityEdit.TabIndex = 7;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule2.ErrorText = "Не задано кількість";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            conditionValidationRule2.Value1 = 0;
-            this.mtsBuyDetailValidationProvider.SetValidationRule(this.quantityEdit, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule1.ErrorText = "Не задано кількість";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            conditionValidationRule1.Value1 = 0;
+            this.mtsBuyDetailValidationProvider.SetValidationRule(this.quantityEdit, conditionValidationRule1);
             this.quantityEdit.EditValueChanged += new System.EventHandler(this.quantityEdit_EditValueChanged);
             // 
             // guageEdit
@@ -143,33 +170,6 @@
             // 
             this.mtsBuyDetailValidationProvider.ValidationFailed += new DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventHandler(this.mtsBuyDetailValidationProvider_ValidationFailed);
             this.mtsBuyDetailValidationProvider.ValidationSucceeded += new DevExpress.XtraEditors.DXErrorProvider.ValidationSucceededEventHandler(this.mtsBuyDetailValidationProvider_ValidationSucceeded);
-            // 
-            // saveBtn
-            // 
-            this.saveBtn.Location = new System.Drawing.Point(288, 122);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 23);
-            this.saveBtn.TabIndex = 49;
-            this.saveBtn.Text = "Зберегти";
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
-            // 
-            // cancelBtn
-            // 
-            this.cancelBtn.Location = new System.Drawing.Point(389, 122);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
-            this.cancelBtn.TabIndex = 50;
-            this.cancelBtn.Text = "Відмінити";
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click_1);
-            // 
-            // directoryBuyDetailsBtn1
-            // 
-            this.directoryBuyDetailsBtn1.Location = new System.Drawing.Point(431, 22);
-            this.directoryBuyDetailsBtn1.Name = "directoryBuyDetailsBtn1";
-            this.directoryBuyDetailsBtn1.Size = new System.Drawing.Size(33, 23);
-            this.directoryBuyDetailsBtn1.TabIndex = 51;
-            this.directoryBuyDetailsBtn1.Text = "...";
-            this.directoryBuyDetailsBtn1.Click += new System.EventHandler(this.directoryBuyDetailsBtn1_Click);
             // 
             // MtsBuyDetailEditOldFm
             // 

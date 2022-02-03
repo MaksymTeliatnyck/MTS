@@ -46,9 +46,7 @@
             this.gostEdit.Name = "gostEdit";
             this.gostEdit.Size = new System.Drawing.Size(274, 20);
             this.gostEdit.TabIndex = 0;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Не заполнено поле";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            conditionValidationRule1.ErrorText = "This value is not valid";
             this.gostValidationProvider.SetValidationRule(this.gostEdit, conditionValidationRule1);
             this.gostEdit.EditValueChanged += new System.EventHandler(this.gostEdit_EditValueChanged);
             // 
@@ -60,7 +58,7 @@
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 2;
-            this.okButton.Text = "Ok";
+            this.okButton.Text = "Додати";
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // cencelButton

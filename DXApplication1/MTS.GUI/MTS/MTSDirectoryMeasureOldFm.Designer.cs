@@ -60,26 +60,26 @@
             this.EditToolStripMenu,
             this.delToolStripMenu});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(153, 92);
+            this.contextMenuStrip.Size = new System.Drawing.Size(135, 70);
             // 
             // AddToolStripMenu
             // 
             this.AddToolStripMenu.Name = "AddToolStripMenu";
-            this.AddToolStripMenu.Size = new System.Drawing.Size(152, 22);
+            this.AddToolStripMenu.Size = new System.Drawing.Size(134, 22);
             this.AddToolStripMenu.Text = "Додати";
             this.AddToolStripMenu.Click += new System.EventHandler(this.AddToolStripMenu_Click);
             // 
             // EditToolStripMenu
             // 
             this.EditToolStripMenu.Name = "EditToolStripMenu";
-            this.EditToolStripMenu.Size = new System.Drawing.Size(152, 22);
+            this.EditToolStripMenu.Size = new System.Drawing.Size(134, 22);
             this.EditToolStripMenu.Text = "Редагувати";
             this.EditToolStripMenu.Click += new System.EventHandler(this.EditToolStripMenu_Click);
             // 
             // delToolStripMenu
             // 
             this.delToolStripMenu.Name = "delToolStripMenu";
-            this.delToolStripMenu.Size = new System.Drawing.Size(152, 22);
+            this.delToolStripMenu.Size = new System.Drawing.Size(134, 22);
             this.delToolStripMenu.Text = "Видалити";
             this.delToolStripMenu.Click += new System.EventHandler(this.delToolStripMenu_Click);
             // 
@@ -92,6 +92,7 @@
             this.measureGridView.Name = "measureGridView";
             this.measureGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.measureGridView.OptionsView.ShowAutoFilterRow = true;
+            this.measureGridView.OptionsView.ShowGroupPanel = false;
             // 
             // ID
             // 
@@ -124,6 +125,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MTSDirectoryMeasureOldFm";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Довідник одиниці вимірювання";
             ((System.ComponentModel.ISupportInitialize)(this.measureGrid)).EndInit();

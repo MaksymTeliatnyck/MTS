@@ -334,7 +334,7 @@ namespace MTS.GUI.MTS
         }
 
 
-        private void saveBtn_Click(object sender, EventArgs e)
+        private void saveBtnn_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Створити зведену специфікацію?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -371,7 +371,7 @@ namespace MTS.GUI.MTS
             }
         }
 
-        private void saveBtnn_Click(object sender, EventArgs e)
+        private void saveBtn_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Створити зведену специфікацію?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {

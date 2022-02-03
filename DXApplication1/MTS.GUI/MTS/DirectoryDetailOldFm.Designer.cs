@@ -161,6 +161,7 @@
             this.detailGridView.Name = "detailGridView";
             this.detailGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.detailGridView.OptionsView.ShowAutoFilterRow = true;
+            this.detailGridView.OptionsView.ShowGroupPanel = false;
             // 
             // NAME
             // 
