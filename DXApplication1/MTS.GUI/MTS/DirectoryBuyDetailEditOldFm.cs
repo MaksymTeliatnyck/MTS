@@ -205,5 +205,55 @@ namespace MTS.GUI.MTS
                 }
             }
         }
+
+        private void addNomenclatureItem_Click(object sender, EventArgs e)
+        {
+            editNomenclature(Utils.Operation.Add, new MTSNomenclaturesDTO());
+
+        }
+
+        private void editNomenclatureItem_Click(object sender, EventArgs e)
+        {
+            editNomenclature(Utils.Operation.Update, (MTSNomenclaturesDTO)nomenclatureBS.Current);
+        }
+
+
+        private void editNomenclature(Utils.Operation operation, MTSNomenclaturesDTO model)
+        {
+            using (MtsNomenclatureEditOldFm mtsNomenclatureEditOldFm = new MtsNomenclatureEditOldFm(operation, model))
+            {
+                if (mtsNomenclatureEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    MTSNomenclaturesDTO return_Id = mtsNomenclatureEditOldFm.Return();
+                    nomenclatureGridView.BeginDataUpdate();
+                    LoadNomenclatureGroups();
+                    nomenclatureGridView.EndDataUpdate();
+
+                    int rowHandle = nomenclatureGridView.LocateByValue("ID", return_Id.ID);
+                    nomenclatureGridView.FocusedRowHandle = rowHandle;
+                }
+            }
+
+        }
+
+     
+        private void deleteNomenclatureItem_Click(object sender, EventArgs e)
+        {
+            if (nomenclatureBS.Count != 0)
+            {
+                if (MessageBox.Show("Видалити номенклатуру?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    mtsNomenclaturesService = Program.kernel.Get<IMtsNomenclaturesService>();
+                    nomenclatureGridView.BeginDataUpdate();
+                    mtsNomenclaturesService.NomenclarureDelete(((MTSNomenclaturesDTO)nomenclatureBS.Current).ID);
+
+                    LoadNomenclature(((MTSNomenclatureGroupsDTO)nomenclatureGroupsBS.Current).ID);
+                    nomenclatureGridView.EndDataUpdate();
+                    int rowHandle = nomenclatureGridView.FocusedRowHandle - 1;
+                    nomenclatureGridView.FocusedRowHandle = (nomenclatureGridView.IsValidRowHandle(rowHandle)) ? rowHandle : -1; ;
+
+                }
+            }
+        }
     }
 }

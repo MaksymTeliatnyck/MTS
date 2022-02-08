@@ -22,6 +22,7 @@ namespace MTS.GUI.MTS
 
         private BindingSource mtsNomenclatureGroupBS = new BindingSource();
         private BindingSource additCalcWasteBS = new BindingSource();
+        MTSNomenclaturesDTO model = new MTSNomenclaturesDTO();
 
         private Utils.Operation operation;
 

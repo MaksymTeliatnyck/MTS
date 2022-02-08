@@ -1408,6 +1408,12 @@
     <Compile Include="MTS\MtsMaterialEditOldFm.Designer.cs">
       <DependentUpon>MtsMaterialEditOldFm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MTS\MtsNomenclatureEditOldFm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MTS\MtsNomenclatureEditOldFm.Designer.cs">
+      <DependentUpon>MtsNomenclatureEditOldFm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MTS\MTSNomenclatureGroupEditFm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2317,6 +2323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MTS\MtsMaterialEditOldFm.resx">
       <DependentUpon>MtsMaterialEditOldFm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MTS\MtsNomenclatureEditOldFm.resx">
+      <DependentUpon>MtsNomenclatureEditOldFm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MTS\MTSNomenclatureGroupEditFm.resx">
       <DependentUpon>MTSNomenclatureGroupEditFm.cs</DependentUpon>

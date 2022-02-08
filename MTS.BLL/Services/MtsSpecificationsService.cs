@@ -533,6 +533,11 @@ namespace MTS.BLL.Services
         {
             return mapper.Map<IEnumerable<MTS_GOST>, IList<MTSGostDTO>>(mtsGost.GetAll());
         }
+        public IEnumerable<MTSGuagesDTO> GetAllGuagesOld()
+        {
+            return mapper.Map<IEnumerable<MTS_GUAGES>, IList<MTSGuagesDTO>>(mtsGuages.GetAll());
+        }
+
         public IEnumerable<MTSMeasureDTO> GetAllMeasureOld()
         {
             return mapper.Map<IEnumerable<MTS_MEASURE>, IList<MTSMeasureDTO>>(mtsMeasure.GetAll());
@@ -552,12 +557,20 @@ namespace MTS.BLL.Services
                        join mtsMeas in mtsMeasure.GetAll() on mtsNomen.MEASURE_ID equals mtsMeas.ID into mtsMeasur
                        from mtsMeas in mtsMeasur.DefaultIfEmpty()
 
+                       //join mtsGuage in mtsGuages.GetAll() on mtsNomen.GUAGE equals mtsGuage.NAME into mtsGuag
+                       //from mtsGuage in mtsGuag.DefaultIfEmpty()
+
                        where mtsNomen.NOMENCLATUREGROUPS_ID == nomenGroupId
                        select new MTSNomenclaturesDTO()
                        {
                            ID = mtsNomen.ID,
+                            COD_PROD_ID = mtsNomen.COD_PROD_ID,
                            NAME = mtsNomen.NAME,
+                          //  GUAGE_ID= mtsNomen.ID,
+                            MEASURE_ID=mtsNomen.MEASURE_ID,
+                            NOMENCLATUREGROUPS_ID=mtsNomen.NOMENCLATUREGROUPS_ID, 
                            GOST = gost.NAME,
+                            GOST_ID = gost.ID,
                            MEASURE = mtsMeas.NAME,
                            PRICE = mtsNomen.PRICE,
                            WEIGHT = mtsNomen.WEIGHT,

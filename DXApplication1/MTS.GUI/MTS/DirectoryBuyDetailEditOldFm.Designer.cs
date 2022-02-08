@@ -122,7 +122,7 @@
             this.editGroupItem,
             this.deleteGroupItem});
             this.groupContextMenu.Name = "groupContextMenu";
-            this.groupContextMenu.Size = new System.Drawing.Size(169, 92);
+            this.groupContextMenu.Size = new System.Drawing.Size(169, 70);
             // 
             // addGroupItem
             // 
@@ -247,25 +247,28 @@
             this.editNomenclatureItem,
             this.deleteNomenclatureItem});
             this.nomenclatureMenuStrip.Name = "nomenclatureMenuStrip";
-            this.nomenclatureMenuStrip.Size = new System.Drawing.Size(217, 70);
+            this.nomenclatureMenuStrip.Size = new System.Drawing.Size(217, 92);
             // 
             // addNomenclatureItem
             // 
             this.addNomenclatureItem.Name = "addNomenclatureItem";
             this.addNomenclatureItem.Size = new System.Drawing.Size(216, 22);
             this.addNomenclatureItem.Text = "Додати номенклатуру";
+            this.addNomenclatureItem.Click += new System.EventHandler(this.addNomenclatureItem_Click);
             // 
             // editNomenclatureItem
             // 
             this.editNomenclatureItem.Name = "editNomenclatureItem";
             this.editNomenclatureItem.Size = new System.Drawing.Size(216, 22);
             this.editNomenclatureItem.Text = "Редагувати номенклатуру";
+            this.editNomenclatureItem.Click += new System.EventHandler(this.editNomenclatureItem_Click);
             // 
             // deleteNomenclatureItem
             // 
             this.deleteNomenclatureItem.Name = "deleteNomenclatureItem";
             this.deleteNomenclatureItem.Size = new System.Drawing.Size(216, 22);
             this.deleteNomenclatureItem.Text = "Видалити номенклатуру";
+            this.deleteNomenclatureItem.Click += new System.EventHandler(this.deleteNomenclatureItem_Click);
             // 
             // nomenclatureGridView
             // 

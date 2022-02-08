@@ -221,6 +221,7 @@ namespace MTS.BLL.Interfaces
 
         IEnumerable<MTSNomenclatureGroupsDTO> GetAllNomenclatureGroupsOld();
         IEnumerable<MTSGostDTO> GetAllGostOld();
+        IEnumerable<MTSGuagesDTO> GetAllGuagesOld();
 
         IEnumerable<MTSMeasureDTO> GetAllMeasureOld();
 

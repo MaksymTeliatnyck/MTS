@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MtsSpecificationEditFm));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.designerEdit = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -190,10 +190,10 @@
             this.designerEdit.Properties.View = this.gridView1;
             this.designerEdit.Size = new System.Drawing.Size(472, 20);
             this.designerEdit.TabIndex = 40;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Необхідно заповнити відповідальну особу";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.assemblyValidationProvider.SetValidationRule(this.designerEdit, conditionValidationRule4);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Необхідно заповнити відповідальну особу";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.assemblyValidationProvider.SetValidationRule(this.designerEdit, conditionValidationRule1);
             this.designerEdit.EditValueChanged += new System.EventHandler(this.designerEdit_EditValueChanged);
             // 
             // gridView1
@@ -324,10 +324,10 @@
             this.quantityTBox.Properties.Appearance.Options.UseFont = true;
             this.quantityTBox.Size = new System.Drawing.Size(308, 20);
             this.quantityTBox.TabIndex = 4;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "Необхідно заповнити номер кількість";
-            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.assemblyValidationProvider.SetValidationRule(this.quantityTBox, conditionValidationRule5);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Необхідно заповнити номер кількість";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.assemblyValidationProvider.SetValidationRule(this.quantityTBox, conditionValidationRule2);
             this.quantityTBox.TextChanged += new System.EventHandler(this.quantityTBox_TextChanged);
             // 
             // labelControl4
@@ -354,10 +354,10 @@
             this.nameTBox.Properties.Appearance.Options.UseFont = true;
             this.nameTBox.Size = new System.Drawing.Size(472, 20);
             this.nameTBox.TabIndex = 2;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Необхідно заповнити найменування";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.assemblyValidationProvider.SetValidationRule(this.nameTBox, conditionValidationRule1);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Необхідно заповнити найменування";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.assemblyValidationProvider.SetValidationRule(this.nameTBox, conditionValidationRule3);
             this.nameTBox.TextChanged += new System.EventHandler(this.nameTBox_TextChanged);
             // 
             // drawingTBox
@@ -368,10 +368,10 @@
             this.drawingTBox.Properties.Appearance.Options.UseFont = true;
             this.drawingTBox.Size = new System.Drawing.Size(308, 20);
             this.drawingTBox.TabIndex = 1;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Необхідно заповнити номер креслення";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.assemblyValidationProvider.SetValidationRule(this.drawingTBox, conditionValidationRule2);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "Необхідно заповнити номер креслення";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.assemblyValidationProvider.SetValidationRule(this.drawingTBox, conditionValidationRule4);
             this.drawingTBox.TextChanged += new System.EventHandler(this.drawingTBox_TextChanged);
             // 
             // assemblieParentEdit
