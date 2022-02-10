@@ -36,18 +36,18 @@ namespace MTS.GUI.MTS
 
         private void okBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (nameEdit.EditValue != null)
-            {
-                detailGridView.BeginDataUpdate();
-                detailBS.DataSource = mtsService.GetAllCreateDetals().Where(nam => nam.NAME == (string)(nameEdit.EditValue));
-                detailGridView.EndDataUpdate();
-            }
-            if (drawingEdit.EditValue != null)
-            {
-                detailGridView.BeginDataUpdate();
-                detailBS.DataSource = mtsService.GetAllCreateDetals().Where(nam => nam.DRAWING == (string)(drawingEdit.EditValue));
-                detailGridView.EndDataUpdate();
-            }
+            //if (nameEdit.EditValue != null)
+            //{
+            //    detailGridView.BeginDataUpdate();
+            //    detailBS.DataSource = mtsService.GetAllCreateDetals().Where(nam => nam.NAME == (string)(nameEdit.EditValue));
+            //    detailGridView.EndDataUpdate();
+            //}
+            //if (drawingEdit.EditValue != null)
+            //{
+            //    detailGridView.BeginDataUpdate();
+            //    detailBS.DataSource = mtsService.GetAllCreateDetals().Where(nam => nam.DRAWING == (string)(drawingEdit.EditValue));
+            //    detailGridView.EndDataUpdate();
+            //}
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)

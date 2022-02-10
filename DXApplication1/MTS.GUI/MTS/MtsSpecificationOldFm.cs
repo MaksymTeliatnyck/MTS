@@ -249,7 +249,7 @@ namespace MTS.GUI.MTS
             switch (operation)
             {
                 case Utils.Operation.Add:
-                    using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(new MTSNomenclaturesDTO()))
+                    using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(new MTSNomenclaturesDTO(),false))
                     {
                         if (directoryBuyDetailEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                         {
@@ -307,7 +307,7 @@ namespace MTS.GUI.MTS
             switch (operation)
             {
                 case Utils.Operation.Add:
-                    using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(new MTSNomenclaturesDTO()))
+                    using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(new MTSNomenclaturesDTO(),false))
                     {
                         if (directoryBuyDetailEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                         {
@@ -891,7 +891,7 @@ namespace MTS.GUI.MTS
 
         private void nomenclatureShowBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(new MTSNomenclaturesDTO())) 
+            using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(new MTSNomenclaturesDTO() , true)) 
             //   DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model);
             {
                 if (directoryBuyDetailEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)

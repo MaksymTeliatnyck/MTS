@@ -64,6 +64,15 @@ namespace MTS.GUI.MTS
             this.Close();
         }
 
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+
+            DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        #region Validation
+
         private void measureValidationProvider_ValidationFailed(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventArgs e)
         {
             this.okBtn1.Enabled = false;
@@ -87,5 +96,9 @@ namespace MTS.GUI.MTS
         {
          //   measureEdit.Properties.m
         }
+
+        #endregion
+
+       
     }
 }

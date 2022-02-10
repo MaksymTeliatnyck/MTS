@@ -48,13 +48,15 @@
             this.gostGrid.Location = new System.Drawing.Point(0, 0);
             this.gostGrid.MainView = this.gostGridView;
             this.gostGrid.Name = "gostGrid";
-            this.gostGrid.Size = new System.Drawing.Size(546, 376);
+            this.gostGrid.Size = new System.Drawing.Size(716, 447);
             this.gostGrid.TabIndex = 0;
             this.gostGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gostGridView});
             // 
             // gostGridView
             // 
+            this.gostGridView.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gostGridView.Appearance.HeaderPanel.Options.UseFont = true;
             this.gostGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ID,
             this.NAME});
@@ -68,8 +70,10 @@
             // 
             this.ID.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ID.AppearanceCell.Options.UseFont = true;
-            this.ID.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ID.AppearanceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ID.AppearanceHeader.Options.UseFont = true;
+            this.ID.AppearanceHeader.Options.UseTextOptions = true;
+            this.ID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.ID.Caption = "№";
             this.ID.FieldName = "ID";
             this.ID.Name = "ID";
@@ -90,7 +94,7 @@
             this.NAME.AppearanceCell.Options.UseFont = true;
             this.NAME.AppearanceCell.Options.UseTextOptions = true;
             this.NAME.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.NAME.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.NAME.AppearanceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NAME.AppearanceHeader.Options.UseFont = true;
             this.NAME.AppearanceHeader.Options.UseTextOptions = true;
             this.NAME.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -114,26 +118,26 @@
             this.editToolStripMenuItem,
             this.delToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(135, 70);
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.addToolStripMenuItem.Text = "Додати";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.editToolStripMenuItem.Text = "Редагувати";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.EditToolStripMenuItem_Click);
             // 
             // delToolStripMenuItem
             // 
             this.delToolStripMenuItem.Name = "delToolStripMenuItem";
-            this.delToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.delToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.delToolStripMenuItem.Text = "Видалити";
             this.delToolStripMenuItem.Click += new System.EventHandler(this.delToolStripMenuItem_Click);
             // 
@@ -141,7 +145,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 376);
+            this.ClientSize = new System.Drawing.Size(716, 447);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.gostGrid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

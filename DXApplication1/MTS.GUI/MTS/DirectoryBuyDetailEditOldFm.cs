@@ -24,7 +24,7 @@ namespace MTS.GUI.MTS
         private BindingSource nomenclatureGroupsBS = new BindingSource();
         private BindingSource nomenclatureBS = new BindingSource();
         private List<MTSNomenclatureGroupsDTO> nomenclatureGroupsList = new List<MTSNomenclatureGroupsDTO>();
-
+        private Boolean directoryParam;
         private ObjectBase Item
         {
             get { return nomenclatureGroupsBS.Current as ObjectBase; }
@@ -45,11 +45,11 @@ namespace MTS.GUI.MTS
             }
         }
 
-        public DirectoryBuyDetailEditOldFm(MTSNomenclaturesDTO model)
+        public DirectoryBuyDetailEditOldFm(MTSNomenclaturesDTO model, bool directory )
         {
             InitializeComponent();
-           // this.operation = operation;
-
+            // this.operation = operation;
+              directoryParam = directory;
             nomenclatureBS.DataSource = ItemNomenclature = model;
 
             LoadNomenclatureGroups();
@@ -141,15 +141,18 @@ namespace MTS.GUI.MTS
             //this.Close();
 
             //this.Item.EndEdit();
-            MTSNomenclaturesDTO item = (MTSNomenclaturesDTO)nomenclatureBS.Current;   
-            MTSNomenclaturesDTO model = new MTSNomenclaturesDTO()
+            if (directoryParam == false)
             {
-                ID = item.ID,
-                NAME = item.NAME,
-                GUAGE = item.GUAGE
-            };
-            DialogResult = DialogResult.OK;
-            this.Close();
+                MTSNomenclaturesDTO item = (MTSNomenclaturesDTO)nomenclatureBS.Current;
+                MTSNomenclaturesDTO model = new MTSNomenclaturesDTO()
+                {
+                    ID = item.ID,
+                    NAME = item.NAME,
+                    GUAGE = item.GUAGE
+                };
+                DialogResult = DialogResult.OK;
+                this.Close();
+            }
             
          //   AddBuyMaterial(Utils.Operation.Update, model);//(MTSNomenclaturesOldDTO)nomenclatureBS.Current);
 

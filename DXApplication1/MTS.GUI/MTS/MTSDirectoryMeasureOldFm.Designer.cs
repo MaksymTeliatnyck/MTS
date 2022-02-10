@@ -45,10 +45,11 @@
             // measureGrid
             // 
             this.measureGrid.ContextMenuStrip = this.contextMenuStrip;
-            this.measureGrid.Location = new System.Drawing.Point(0, -2);
+            this.measureGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.measureGrid.Location = new System.Drawing.Point(0, 0);
             this.measureGrid.MainView = this.measureGridView;
             this.measureGrid.Name = "measureGrid";
-            this.measureGrid.Size = new System.Drawing.Size(507, 466);
+            this.measureGrid.Size = new System.Drawing.Size(716, 447);
             this.measureGrid.TabIndex = 0;
             this.measureGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.measureGridView});
@@ -85,6 +86,8 @@
             // 
             // measureGridView
             // 
+            this.measureGridView.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.measureGridView.Appearance.HeaderPanel.Options.UseFont = true;
             this.measureGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ID,
             this.NAME});
@@ -96,15 +99,27 @@
             // 
             // ID
             // 
+            this.ID.AppearanceCell.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ID.AppearanceCell.Options.UseFont = true;
+            this.ID.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ID.AppearanceHeader.Options.UseFont = true;
+            this.ID.AppearanceHeader.Options.UseTextOptions = true;
+            this.ID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.ID.Caption = "№";
             this.ID.FieldName = "ID";
             this.ID.Name = "ID";
             this.ID.Visible = true;
             this.ID.VisibleIndex = 0;
-            this.ID.Width = 30;
+            this.ID.Width = 47;
             // 
             // NAME
             // 
+            this.NAME.AppearanceCell.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NAME.AppearanceCell.Options.UseFont = true;
+            this.NAME.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NAME.AppearanceHeader.Options.UseFont = true;
+            this.NAME.AppearanceHeader.Options.UseTextOptions = true;
+            this.NAME.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NAME.Caption = "Найменування";
             this.NAME.FieldName = "NAME";
             this.NAME.Name = "NAME";
@@ -113,13 +128,13 @@
             this.NAME.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.NAME.Visible = true;
             this.NAME.VisibleIndex = 1;
-            this.NAME.Width = 459;
+            this.NAME.Width = 442;
             // 
             // MTSDirectoryMeasureOldFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 468);
+            this.ClientSize = new System.Drawing.Size(716, 447);
             this.Controls.Add(this.measureGrid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
