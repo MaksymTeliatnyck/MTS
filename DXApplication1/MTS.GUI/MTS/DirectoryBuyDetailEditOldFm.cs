@@ -226,7 +226,8 @@ namespace MTS.GUI.MTS
                 {
                     MTSNomenclaturesDTO return_Id = mtsNomenclatureEditOldFm.Return();
                     nomenclatureGridView.BeginDataUpdate();
-                    LoadNomenclatureGroups();
+                    //    LoadNomenclatureGroups();
+                    LoadNomenclature(((MTSNomenclatureGroupsDTO)nomenclatureGroupsBS.Current).ID);
                     nomenclatureGridView.EndDataUpdate();
 
                     int rowHandle = nomenclatureGridView.LocateByValue("ID", return_Id.ID);
