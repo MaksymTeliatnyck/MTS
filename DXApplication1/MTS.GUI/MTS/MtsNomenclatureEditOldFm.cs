@@ -136,12 +136,15 @@ namespace MTS.GUI.MTS
 
         }
 
+        #region validation
+
         private void mtsNomenclatureValidationProvider_ValidationFailed(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventArgs e)
         {
             this.saveBtn.Enabled = false;
             this.validateLbl.Visible = true;
         }
-
+      
+        
         private void mtsNomenclatureValidationProvider_ValidationSucceeded(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationSucceededEventArgs e)
         {
             bool isValidate = (mtsNomenclatureValidationProvider.GetInvalidControls().Count == 0);
@@ -193,5 +196,8 @@ namespace MTS.GUI.MTS
         {
             mtsNomenclatureValidationProvider.Validate((Control)sender);
         }
+
+
+        #endregion
     }
 }
