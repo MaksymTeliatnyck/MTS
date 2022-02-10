@@ -35,12 +35,22 @@ namespace MTS.GUI.MTS
             }
         }
 
+        private ObjectBase ItemNomenclature
+        {
+            get { return nomenclatureBS.Current as ObjectBase; }
+            set
+            {
+                nomenclatureBS.DataSource = value;
+                value.BeginEdit();
+            }
+        }
+
         public DirectoryBuyDetailEditOldFm(MTSNomenclaturesDTO model)
         {
             InitializeComponent();
            // this.operation = operation;
 
-            nomenclatureBS.DataSource = Item = model;
+            nomenclatureBS.DataSource = ItemNomenclature = model;
 
             LoadNomenclatureGroups();
         }
@@ -88,7 +98,7 @@ namespace MTS.GUI.MTS
         }
         public MTSNomenclaturesDTO Returnl()
         {
-            return ((MTSNomenclaturesDTO)Item);
+            return ((MTSNomenclaturesDTO)ItemNomenclature);
         }
 
         
@@ -120,7 +130,17 @@ namespace MTS.GUI.MTS
         
         private void nomenclatureGridView_DoubleClick(object sender, EventArgs e)
         {
-         //   this.Item.EndEdit();
+            //MTSNomenclaturesOldDTO item = (MTSNomenclaturesOldDTO)nomenclatureBS.Current;
+            //MTSNomenclaturesOldDTO model = new MTSNomenclaturesOldDTO()
+            //{
+            //    ID = item.ID,
+            //    NAME = item.NAME,
+            //    GUAGE = item.GUAGE
+            //};
+            //DialogResult = DialogResult.OK;
+            //this.Close();
+
+            //this.Item.EndEdit();
             MTSNomenclaturesDTO item = (MTSNomenclaturesDTO)nomenclatureBS.Current;   
             MTSNomenclaturesDTO model = new MTSNomenclaturesDTO()
             {

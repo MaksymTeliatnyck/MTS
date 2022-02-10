@@ -51,18 +51,18 @@
             this.cancelBtn = new DevExpress.XtraEditors.SimpleButton();
             this.nomenGroupLookUpEdit = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.NameGroup = new DevExpress.XtraGrid.Columns.GridColumn();
             this.measureLookUpEdit = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.NameColmn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gostLookUpEdit = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.NAME1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.nameNomenEdit = new DevExpress.XtraEditors.MemoEdit();
             this.mtsNomenclatureValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.noteEdit = new DevExpress.XtraEditors.MemoEdit();
-            this.validateLbl = new DevExpress.XtraEditors.LabelControl();
             this.guagesEdit = new DevExpress.XtraEditors.TextEdit();
-            this.NameGroup = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NameColmn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NAME1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.validateLbl = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.weightEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nomenGroupLookUpEdit.Properties)).BeginInit();
@@ -226,6 +226,14 @@
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // NameGroup
+            // 
+            this.NameGroup.Caption = "Группа";
+            this.NameGroup.FieldName = "NAME";
+            this.NameGroup.Name = "NameGroup";
+            this.NameGroup.Visible = true;
+            this.NameGroup.VisibleIndex = 0;
+            // 
             // measureLookUpEdit
             // 
             this.measureLookUpEdit.Location = new System.Drawing.Point(268, 193);
@@ -253,6 +261,14 @@
             this.gridView2.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // NameColmn
+            // 
+            this.NameColmn.Caption = "Одиниці вимірювання";
+            this.NameColmn.FieldName = "NAME";
+            this.NameColmn.Name = "NameColmn";
+            this.NameColmn.Visible = true;
+            this.NameColmn.VisibleIndex = 0;
             // 
             // gostLookUpEdit
             // 
@@ -282,6 +298,14 @@
             this.gridView3.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // NAME1
+            // 
+            this.NAME1.Caption = "Гост";
+            this.NAME1.FieldName = "NAME";
+            this.NAME1.Name = "NAME1";
+            this.NAME1.Visible = true;
+            this.NAME1.VisibleIndex = 0;
             // 
             // nameNomenEdit
             // 
@@ -317,16 +341,6 @@
             this.mtsNomenclatureValidationProvider.SetValidationRule(this.noteEdit, conditionValidationRule7);
             this.noteEdit.EditValueChanged += new System.EventHandler(this.noteEdit_EditValueChanged);
             // 
-            // validateLbl
-            // 
-            this.validateLbl.Appearance.BackColor = System.Drawing.SystemColors.Info;
-            this.validateLbl.Appearance.ForeColor = System.Drawing.Color.OrangeRed;
-            this.validateLbl.Location = new System.Drawing.Point(23, 470);
-            this.validateLbl.Name = "validateLbl";
-            this.validateLbl.Size = new System.Drawing.Size(249, 13);
-            this.validateLbl.TabIndex = 50;
-            this.validateLbl.Text = "*Для збереження, заповніть всі обов\'язкові поля";
-            // 
             // guagesEdit
             // 
             this.guagesEdit.Location = new System.Drawing.Point(268, 135);
@@ -338,29 +352,15 @@
             this.mtsNomenclatureValidationProvider.SetValidationRule(this.guagesEdit, conditionValidationRule8);
             this.guagesEdit.EditValueChanged += new System.EventHandler(this.guagesEdit_EditValueChanged);
             // 
-            // NameGroup
+            // validateLbl
             // 
-            this.NameGroup.Caption = "Группа";
-            this.NameGroup.FieldName = "NAME";
-            this.NameGroup.Name = "NameGroup";
-            this.NameGroup.Visible = true;
-            this.NameGroup.VisibleIndex = 0;
-            // 
-            // NameColmn
-            // 
-            this.NameColmn.Caption = "Одиниці вимірювання";
-            this.NameColmn.FieldName = "NAME";
-            this.NameColmn.Name = "NameColmn";
-            this.NameColmn.Visible = true;
-            this.NameColmn.VisibleIndex = 0;
-            // 
-            // NAME1
-            // 
-            this.NAME1.Caption = "Гост";
-            this.NAME1.FieldName = "NAME";
-            this.NAME1.Name = "NAME1";
-            this.NAME1.Visible = true;
-            this.NAME1.VisibleIndex = 0;
+            this.validateLbl.Appearance.BackColor = System.Drawing.SystemColors.Info;
+            this.validateLbl.Appearance.ForeColor = System.Drawing.Color.OrangeRed;
+            this.validateLbl.Location = new System.Drawing.Point(23, 470);
+            this.validateLbl.Name = "validateLbl";
+            this.validateLbl.Size = new System.Drawing.Size(249, 13);
+            this.validateLbl.TabIndex = 50;
+            this.validateLbl.Text = "*Для збереження, заповніть всі обов\'язкові поля";
             // 
             // MtsNomenclatureEditOldFm
             // 
@@ -388,6 +388,8 @@
             this.Controls.Add(this.noteEdit);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MtsNomenclatureEditOldFm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
