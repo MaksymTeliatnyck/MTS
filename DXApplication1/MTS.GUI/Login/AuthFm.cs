@@ -80,19 +80,19 @@ namespace MTS.GUI.Login
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Возникла проблема при подключении к БД \n" + ex.Message, "Подключение к БД", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Виникла проблема при підключенні до БД \n" + ex.Message, "Підключення до БД", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
             
 
             SplashScreenManager.ShowForm(typeof(StartScreenFm));
-            SplashScreenManager.Default.SendCommand(StartScreenFm.SplashScreenCommand.SetLabel, "Авторизация пользователя...");
+            SplashScreenManager.Default.SendCommand(StartScreenFm.SplashScreenCommand.SetLabel, "Авторизація користувача...");
             Thread.Sleep(200);
 
             if (userService.TryAuthorize(loginEdit.Text, pwdEdit.Text))
             {
                 
-                SplashScreenManager.Default.SendCommand(StartScreenFm.SplashScreenCommand.SetLabel, "Настройки прав доступа...");
+                SplashScreenManager.Default.SendCommand(StartScreenFm.SplashScreenCommand.SetLabel, "Налаштування прав доступу...");
                 Thread.Sleep(200);
                 SplashScreenManager.CloseForm();
                 return true;
@@ -100,7 +100,7 @@ namespace MTS.GUI.Login
             else
             {
                 SplashScreenManager.CloseForm();
-                MessageBox.Show("Вам не разрешено работать в системе \nОбратитесь в отдел АСУП. \n", "Авторизация пользователя", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Вам не дозволено працювати в системі \nЗверніться до відділу АСУП. \n", "Авторизація користувача", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 Load += (s, e) => Close();
                 return false;

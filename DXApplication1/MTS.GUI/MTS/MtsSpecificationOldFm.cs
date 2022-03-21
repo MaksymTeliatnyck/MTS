@@ -703,7 +703,7 @@ namespace MTS.GUI.MTS
             if (detalsSpecificBS.Count > 0)
             {
                 reportService = Program.kernel.Get<IReportService>();
-
+                LoadData();
                 reportService.PrintMapRouteTechProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource);
             }
         }
@@ -712,6 +712,8 @@ namespace MTS.GUI.MTS
         {
             //SpecificationProcess(MTSSpecificationsDTO mtsSpecification, List<MTSDetailsDTO> mtsDetailsList, List<MTSPurchasedProductsDTO> mtsBuyDetailsList, List<MTSMaterialsDTO> mtsMaterialsList);
             reportService = Program.kernel.Get<IReportService>();
+            LoadData();
+
             reportService.SpecificationProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, (List<MTSPurchasedProductsDTO>)byusDetalsSpecificBS.DataSource, (List<MTSMaterialsDTO>)materialsSpecificBS.DataSource);
         }
 
@@ -792,6 +794,8 @@ namespace MTS.GUI.MTS
         private void mapTechProcessBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
             reportService = Program.kernel.Get<IReportService>();
+            LoadData();
+
             reportService.MapTechProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, false);
 
         }
@@ -863,6 +867,7 @@ namespace MTS.GUI.MTS
         private void mapTechProcessByDateBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
             reportService = Program.kernel.Get<IReportService>();
+            LoadData();
             reportService.MapTechProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, true);
         }
 
@@ -874,6 +879,7 @@ namespace MTS.GUI.MTS
                 {
                     int quantitySummaryItems = mtsSpecificationQuantityOldEditFm.Return();
                     reportService = Program.kernel.Get<IReportService>();
+                    LoadData();
                     reportService.MapTechProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, true, quantitySummaryItems);
                 }
             }

@@ -230,6 +230,7 @@ namespace MTS.GUI.MTS
             if (e.KeyChar == (char)Keys.Enter)
             {
                 CheckDetail(numberDrawingEdit.Text);
+                quantityEdit.Focus();
             }
         }
 

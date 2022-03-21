@@ -76,8 +76,8 @@
             this.setUserCheck.Name = "setUserCheck";
             this.setUserCheck.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.setUserCheck.Properties.Appearance.Options.UseFont = true;
-            this.setUserCheck.Properties.Caption = "Запомнить пароль";
-            this.setUserCheck.Size = new System.Drawing.Size(86, 20);
+            this.setUserCheck.Properties.Caption = "Запам\'ятати пароль";
+            this.setUserCheck.Size = new System.Drawing.Size(147, 20);
             this.setUserCheck.TabIndex = 2;
             this.setUserCheck.CheckedChanged += new System.EventHandler(this.setUserCheck_CheckedChanged);
             // 
@@ -86,9 +86,9 @@
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelControl1.Location = new System.Drawing.Point(12, 36);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(39, 16);
+            this.labelControl1.Size = new System.Drawing.Size(31, 16);
             this.labelControl1.TabIndex = 3;
-            this.labelControl1.Text = "Логин ";
+            this.labelControl1.Text = "Логін";
             // 
             // labelControl2
             // 
@@ -107,7 +107,7 @@
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(94, 23);
             this.saveBtn.TabIndex = 5;
-            this.saveBtn.Text = "Вход";
+            this.saveBtn.Text = "Вхід";
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // cancelBtn
@@ -153,7 +153,7 @@
             // 
             // barSubItem1
             // 
-            this.barSubItem1.Caption = "Цветовая тема";
+            this.barSubItem1.Caption = "Кольорова схема";
             this.barSubItem1.Id = 1;
             this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.SkinsLink)});
@@ -223,7 +223,7 @@
             this.Name = "AuthFm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Авторизация";
+            this.Text = "Авторизація";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AuthFm_FormClosing);
             this.Load += new System.EventHandler(this.AuthFm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.loginEdit.Properties)).EndInit();

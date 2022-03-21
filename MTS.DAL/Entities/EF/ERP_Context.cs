@@ -348,16 +348,16 @@ namespace MTS.DAL.EF
         {
             FbConnectionStringBuilder csb;
 
-            string[] ipDB = File.ReadAllLines("ipDB.txt");
-            string[] portDB = File.ReadAllLines("portDB.txt");
-            string[] aliasDB = File.ReadAllLines("aliasDB.txt");
+            //string[] ipDB = File.ReadAllLines("ipDB.txt");
+            //string[] portDB = File.ReadAllLines("portDB.txt");
+            //string[] aliasDB = File.ReadAllLines("aliasDB.txt");
 
             csb = new FbConnectionStringBuilder()
             {
                 //DataSource = "server-tfs",
-                DataSource = ipDB[0],
-                 Port = Convert.ToInt32(portDB[0]),
-                Database = aliasDB[0],
+                DataSource = "localhost",
+               //  Port = Convert.ToInt32(portDB[0]),
+                Database = "MTS_DB",
                 UserID = "sysdba",
                 Password = "masterkey",
                 Charset = "UTF8",
