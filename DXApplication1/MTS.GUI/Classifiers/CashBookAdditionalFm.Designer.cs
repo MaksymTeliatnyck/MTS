@@ -66,7 +66,7 @@
             this.ribbonControl1.ShowPageHeadersInFormCaption = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbonControl1.ShowToolbarCustomizeItem = false;
-            this.ribbonControl1.Size = new System.Drawing.Size(726, 95);
+            this.ribbonControl1.Size = new System.Drawing.Size(726, 96);
             this.ribbonControl1.Toolbar.ShowCustomizeItem = false;
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -115,10 +115,10 @@
             // cashBookAdditionalGrid
             // 
             this.cashBookAdditionalGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cashBookAdditionalGrid.Location = new System.Drawing.Point(0, 95);
+            this.cashBookAdditionalGrid.Location = new System.Drawing.Point(0, 96);
             this.cashBookAdditionalGrid.MainView = this.cashBookAdditionalGridView;
             this.cashBookAdditionalGrid.Name = "cashBookAdditionalGrid";
-            this.cashBookAdditionalGrid.Size = new System.Drawing.Size(726, 233);
+            this.cashBookAdditionalGrid.Size = new System.Drawing.Size(726, 232);
             this.cashBookAdditionalGrid.TabIndex = 1;
             this.cashBookAdditionalGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.cashBookAdditionalGridView});
@@ -178,7 +178,7 @@
             this.Name = "CashBookAdditionalFm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Журнал касових додатків";
+            this.Text = "Журнал касових додаткі";
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cashBookAdditionalGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cashBookAdditionalGridView)).EndInit();
