@@ -136,7 +136,7 @@
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.bankAccountsEdit});
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
-            this.ribbonControl1.Size = new System.Drawing.Size(1351, 95);
+            this.ribbonControl1.Size = new System.Drawing.Size(1351, 96);
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // bankAccountsItem
@@ -180,7 +180,7 @@
             // 
             // privatBankCardItem
             // 
-            this.privatBankCardItem.Caption = "ПриватБанк(Картки)";
+            this.privatBankCardItem.Caption = "ПриватБанк(Картки))";
             this.privatBankCardItem.Glyph = ((System.Drawing.Image)(resources.GetObject("privatBankCardItem.Glyph")));
             this.privatBankCardItem.Id = 5;
             this.privatBankCardItem.Name = "privatBankCardItem";
@@ -366,7 +366,7 @@
             // 
             this.importPaymentsGrid.ContextMenuStrip = this.contextMenuStrip;
             this.importPaymentsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.importPaymentsGrid.Location = new System.Drawing.Point(0, 95);
+            this.importPaymentsGrid.Location = new System.Drawing.Point(0, 96);
             this.importPaymentsGrid.MainView = this.importPaymentsGridView;
             this.importPaymentsGrid.MenuManager = this.ribbonControl1;
             this.importPaymentsGrid.Name = "importPaymentsGrid";
@@ -376,7 +376,7 @@
             this.accountsRepository,
             this.saveStatusRepository,
             this.replaceContractorCheckRepository});
-            this.importPaymentsGrid.Size = new System.Drawing.Size(1351, 536);
+            this.importPaymentsGrid.Size = new System.Drawing.Size(1351, 535);
             this.importPaymentsGrid.TabIndex = 2;
             this.importPaymentsGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.importPaymentsGridView});
