@@ -68,7 +68,7 @@ namespace MTS.GUI.MTS
 
 
 
-            if(operation==Utils.Operation.Update)
+            if(operation==Utils.Operation.Add)
             {
                 //numberDrawingEdit.EditValue = model.DRAWING;
                 //nameEdit.EditValue = model.NAME;
@@ -79,6 +79,7 @@ namespace MTS.GUI.MTS
                 //widthEdit.EditValue = model.WIDTH;
                 //quantityOfBlankEdit.EditValue = model.QUANTITY_OF_BLANKS;
                 //detalsProccesingLookUpEdit.EditValue = model.DETALSPROCESSING;
+                ((MTSDetailsDTO)detailsBS.Current).QUANTITY_OF_BLANKS = 1;
             }
         }
         public MTSDetailsDTO Return()
@@ -229,12 +230,14 @@ namespace MTS.GUI.MTS
            // Utils.OnlyNumbers(e);
             if (e.KeyChar == (char)Keys.Enter)
             {
-                CheckDetail(numberDrawingEdit.Text);
-                quantityEdit.Focus();
+                if (CheckDetail(numberDrawingEdit.Text))
+                    quantityEdit.Focus();
+                else
+                    nameEdit.Focus();
             }
         }
 
-        private void CheckDetail(string drawingNumber)
+        private bool CheckDetail(string drawingNumber)
         {
             mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
 
@@ -253,35 +256,23 @@ namespace MTS.GUI.MTS
 
                     ((MTSDetailsDTO)Item).CREATED_DETAILS_ID = detailByDrawingName.ID;
                     ((MTSDetailsDTO)Item).NOMENCLATURE_ID = detailByDrawingName.NOMENCLATURE_ID;
+                    DialogResult = DialogResult.None;
+                    return true;
 
                 }
                 else
                 {
                     ((MTSDetailsDTO)Item).CREATED_DETAILS_ID = null;
+
+                    DialogResult = DialogResult.None;
+                    return false;
                 }
 
             }
             else
             {
-
-
-            }
-            //loger.Info("Номенклатура: " + Nomenclature);
-
-            
-
-            //if (nomenclatureSearch.Count != 0)
-            //{
-            //    LoadReceipts(((ExpedinturesAccountantDTO)Item).EXP_DATE, nomenclatureSearch[0]);
-            //}
-            //else
-            //{
-            //    ClearNomenclature();
-            //    nomenclatureEdit.Focus();
-            //    MessageBox.Show("Номенклатура відсутня в базі даних!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
-
-            DialogResult = DialogResult.None;
+                return false;
+            }  
         }
 
         private void detalsProccesingLookUpEdit_EditValueChanged(object sender, EventArgs e)
@@ -315,7 +306,7 @@ namespace MTS.GUI.MTS
 
         private void nameEdit_EditValueChanged(object sender, EventArgs e)
         {
-
+            dxValidationProvider.Validate((Control)sender);
         }
 
         private void saveBtn1_Click(object sender, EventArgs e)
@@ -374,8 +365,31 @@ namespace MTS.GUI.MTS
 
         private void MtsDetailsEditOldFm_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && !numberDrawingEdit.Focus())
-                saveBtn1.PerformClick();
+            //if (e.KeyCode == Keys.Enter && !numberDrawingEdit.Focus())
+            //    saveBtn1.PerformClick();
+        }
+
+        private void dxValidationProvider_ValidationFailed(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventArgs e)
+        {
+            this.saveBtn1.Enabled = false;
+            this.validateLbl.Visible = true;
+        }
+
+        private void dxValidationProvider_ValidationSucceeded(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationSucceededEventArgs e)
+        {
+            bool isValidate = (dxValidationProvider.GetInvalidControls().Count == 0);
+            this.saveBtn1.Enabled = isValidate;
+            this.validateLbl.Visible = !isValidate;
+        }
+
+        private void numberDrawingEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            dxValidationProvider.Validate((Control)sender);
+        }
+
+        private void quantityEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            dxValidationProvider.Validate((Control)sender);
         }
     }
 }

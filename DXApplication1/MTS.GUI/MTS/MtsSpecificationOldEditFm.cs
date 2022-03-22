@@ -32,6 +32,8 @@ namespace MTS.GUI.MTS
             specificationBS.DataSource = Item = model;
 
             ((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_ID = mtsAthorizationUsersDTO.ID;
+            if (operation == Utils.Operation.Add)
+                model.CREATION_DATE = DateTime.Now;
 
 
 
