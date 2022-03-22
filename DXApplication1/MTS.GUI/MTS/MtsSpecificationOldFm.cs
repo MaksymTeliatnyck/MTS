@@ -59,7 +59,8 @@ namespace MTS.GUI.MTS
         private void LoadData()
         {
             mtsService = Program.kernel.Get<IMtsSpecificationsService>();
-            specificBS.DataSource = mtsService.GetAllSpecificationOldByPeriod((DateTime)startDateItem.EditValue, (DateTime)endDateItem.EditValue).OrderByDescending(ord => ord.ID).ToList();
+            //specificBS.DataSource = mtsService.GetAllSpecificationOldByPeriod((DateTime)startDateItem.EditValue, (DateTime)endDateItem.EditValue).OrderByDescending(ord => ord.ID).ToList();
+            specificBS.DataSource = mtsService.GetAllSpecificationOldByPeriod((DateTime)startDateItem.EditValue, (DateTime)endDateItem.EditValue).ToList();
             specificGrid.DataSource = specificBS;
 
             if (specificBS.Count > 0)
@@ -787,8 +788,13 @@ namespace MTS.GUI.MTS
 
         private void відобразитиСпецифікаціюToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //reportService = Program.kernel.Get<IReportService>();
+            //reportService.SpecificationProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, (List<MTSPurchasedProductsDTO>)byusDetalsSpecificBS.DataSource, (List<MTSMaterialsDTO>)materialsSpecificBS.DataSource);
             reportService = Program.kernel.Get<IReportService>();
+            LoadData();
+
             reportService.SpecificationProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, (List<MTSPurchasedProductsDTO>)byusDetalsSpecificBS.DataSource, (List<MTSMaterialsDTO>)materialsSpecificBS.DataSource);
+
         }
 
         private void mapTechProcessBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -961,6 +967,50 @@ namespace MTS.GUI.MTS
                 AddSpecification(Utils.Operation.Custom, (MTSSpecificationsDTO)model, mtsAthorizationUsersDTO);
             }
             else MessageBox.Show("Помилка редагування специфікації! Створіть спочатку специфікацію!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void відобразитиКартуТехПроцесуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            reportService = Program.kernel.Get<IReportService>();
+            LoadData();
+
+            reportService.MapTechProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, false);
+        }
+
+        private void відобразитиКартуТехПроцесупоДатіToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            reportService = Program.kernel.Get<IReportService>();
+            LoadData();
+            reportService.MapTechProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, true);
+        }
+
+        private void відобразитиЗведенуКартуТехПроцесуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (MtsSpecificationQuantityOldEditFm mtsSpecificationQuantityOldEditFm = new MtsSpecificationQuantityOldEditFm())
+            {
+                if (mtsSpecificationQuantityOldEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    int quantitySummaryItems = mtsSpecificationQuantityOldEditFm.Return();
+                    reportService = Program.kernel.Get<IReportService>();
+                    LoadData();
+                    reportService.MapTechProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, true, quantitySummaryItems);
+                }
+            }
+        }
+
+        private void відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (detalsSpecificBS.Count > 0)
+            {
+                reportService = Program.kernel.Get<IReportService>();
+                LoadData();
+                reportService.PrintMapRouteTechProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource);
+            }
+        }
+
+        private void xtraTabControl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

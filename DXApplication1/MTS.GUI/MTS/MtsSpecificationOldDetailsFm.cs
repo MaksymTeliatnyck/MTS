@@ -373,18 +373,33 @@ namespace MTS.GUI.MTS
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Створити зведену специфікацію?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (operation == Utils.Operation.Update)
             {
-                try
+                if (MessageBox.Show("Створити зведену специфікацію?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (SaveSpecificationsDetails())
+                    try
                     {
-                        DialogResult = DialogResult.OK;
-                        this.Close();
+                        if (SaveSpecificationsDetails())
+                        {
+                            DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
                     }
+                    catch (Exception ex)
+                    { MessageBox.Show("" + ex.Message, "Збереження заявки", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 }
-                catch (Exception ex)
-                { MessageBox.Show("" + ex.Message, "Збереження заявки", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
+            else{
+                    try
+                    {
+                        if (SaveSpecificationsDetails())
+                        {
+                            DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                    }
+                    catch (Exception ex)
+                    { MessageBox.Show("" + ex.Message, "Збереження заявки", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             }
         }
 

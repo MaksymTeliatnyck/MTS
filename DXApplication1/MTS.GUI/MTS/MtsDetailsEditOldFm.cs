@@ -320,7 +320,30 @@ namespace MTS.GUI.MTS
 
         private void saveBtn1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Зберегти зміни?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (operation == Utils.Operation.Update)
+            {
+                if (MessageBox.Show("Зберегти зміни?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        if (Save())
+                        {
+                            DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Не вірний номер.Такий номер вже існує.", "Підтвердження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            //numberAccountingEdit.Focus();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Помилка при збереженні " + ex.Message, "Збереження матеріалу", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
             {
                 try
                 {
@@ -347,6 +370,12 @@ namespace MTS.GUI.MTS
             this.Item.EndEdit();
             DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void MtsDetailsEditOldFm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && !numberDrawingEdit.Focus())
+                saveBtn1.PerformClick();
         }
     }
 }

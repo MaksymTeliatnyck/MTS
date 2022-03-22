@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.cancelBtn1 = new DevExpress.XtraEditors.SimpleButton();
+            this.saveBtn1 = new DevExpress.XtraEditors.SimpleButton();
             this.detalsProccesingLookUpEdit = new DevExpress.XtraEditors.LookUpEdit();
             this.directoryBuyDetailBtn = new DevExpress.XtraEditors.SimpleButton();
             this.xlabel = new System.Windows.Forms.Label();
@@ -48,8 +50,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.saveBtn1 = new DevExpress.XtraEditors.SimpleButton();
-            this.cancelBtn1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.detalsProccesingLookUpEdit.Properties)).BeginInit();
@@ -94,6 +94,24 @@
             this.panelControl1.Size = new System.Drawing.Size(456, 308);
             this.panelControl1.TabIndex = 0;
             this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
+            // 
+            // cancelBtn1
+            // 
+            this.cancelBtn1.Location = new System.Drawing.Point(362, 269);
+            this.cancelBtn1.Name = "cancelBtn1";
+            this.cancelBtn1.Size = new System.Drawing.Size(75, 27);
+            this.cancelBtn1.TabIndex = 23;
+            this.cancelBtn1.Text = "Відмінити";
+            this.cancelBtn1.Click += new System.EventHandler(this.cancelBtn1_Click);
+            // 
+            // saveBtn1
+            // 
+            this.saveBtn1.Location = new System.Drawing.Point(268, 269);
+            this.saveBtn1.Name = "saveBtn1";
+            this.saveBtn1.Size = new System.Drawing.Size(75, 27);
+            this.saveBtn1.TabIndex = 22;
+            this.saveBtn1.Text = "Зберегти";
+            this.saveBtn1.Click += new System.EventHandler(this.saveBtn1_Click);
             // 
             // detalsProccesingLookUpEdit
             // 
@@ -266,24 +284,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Номер креслення";
             // 
-            // saveBtn1
-            // 
-            this.saveBtn1.Location = new System.Drawing.Point(268, 269);
-            this.saveBtn1.Name = "saveBtn1";
-            this.saveBtn1.Size = new System.Drawing.Size(75, 27);
-            this.saveBtn1.TabIndex = 22;
-            this.saveBtn1.Text = "Зберегти";
-            this.saveBtn1.Click += new System.EventHandler(this.saveBtn1_Click);
-            // 
-            // cancelBtn1
-            // 
-            this.cancelBtn1.Location = new System.Drawing.Point(362, 269);
-            this.cancelBtn1.Name = "cancelBtn1";
-            this.cancelBtn1.Size = new System.Drawing.Size(75, 27);
-            this.cancelBtn1.TabIndex = 23;
-            this.cancelBtn1.Text = "Відмінити";
-            this.cancelBtn1.Click += new System.EventHandler(this.cancelBtn1_Click);
-            // 
             // MtsDetailsEditOldFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,12 +291,14 @@
             this.ClientSize = new System.Drawing.Size(456, 308);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MtsDetailsEditOldFm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Редагування деталей";
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MtsDetailsEditOldFm_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

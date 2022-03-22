@@ -178,8 +178,23 @@ namespace MTS.GUI.MTS
         
         
         private void saveBtn_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Зберегти зміни?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+        {if (operation == Utils.Operation.Update)
+            {
+                if (MessageBox.Show("Зберегти зміни?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        if (SaveItem())
+                        {
+                            DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                    }
+                    catch (Exception ex)
+                    { MessageBox.Show("" + ex.Message, "Збереження заявки", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                }
+            }
+            else
             {
                 try
                 {

@@ -178,8 +178,6 @@ namespace MTS.GUI.MTS
         {
             this.Item.EndEdit();
 
-          
-
 
             if (MessageBox.Show("Зберегти зміни?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {

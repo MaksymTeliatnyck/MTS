@@ -146,7 +146,29 @@ namespace MTS.GUI.MTS
 
         private void saveBtn1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Зберегти зміни?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (operation == Utils.Operation.Update)
+            {
+                if (MessageBox.Show("Зберегти зміни?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        if (Save())
+                        {
+                            DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Не можливо зберегти, помилка при збереженні", "Підтвердження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Помилка: " + ex.Message, "Збереження матеріалу", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
             {
                 try
                 {
@@ -177,6 +199,12 @@ namespace MTS.GUI.MTS
         private void directoryBuyDetailsBtn_Click_1(object sender, EventArgs e)
         {
             ShowDirectoryBuyDetails(new MTSNomenclaturesDTO());
+        }
+
+        private void MtsMaterialEditOldFm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                saveBtn1.PerformClick();
         }
     }
 }

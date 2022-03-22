@@ -141,5 +141,11 @@ namespace MTS.GUI.Login
             Settings.Default["ApplicationSkinName"] = UserLookAndFeel.Default.SkinName;
             Settings.Default.Save();
         }
+
+        private void AuthFm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                saveBtn.PerformClick();
+        }
     }
 }

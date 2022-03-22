@@ -218,6 +218,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AuthFm";
@@ -226,6 +227,7 @@
             this.Text = "Авторизація";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AuthFm_FormClosing);
             this.Load += new System.EventHandler(this.AuthFm_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.AuthFm_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.loginEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pwdEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.setUserCheck.Properties)).EndInit();
