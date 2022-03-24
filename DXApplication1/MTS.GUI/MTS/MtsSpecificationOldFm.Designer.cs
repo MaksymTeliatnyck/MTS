@@ -894,6 +894,7 @@
             this.detalsSpecificGridView.OptionsView.ShowAutoFilterRow = true;
             this.detalsSpecificGridView.OptionsView.ShowGroupPanel = false;
             this.detalsSpecificGridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.detalsSpecificGridView_RowStyle);
+            this.detalsSpecificGridView.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.detalsSpecificGridView_ColumnWidthChanged);
             // 
             // gridColumn8
             // 
@@ -1433,6 +1434,7 @@
             this.buysDetalsSpecificGridView.OptionsView.ShowAutoFilterRow = true;
             this.buysDetalsSpecificGridView.OptionsView.ShowGroupPanel = false;
             this.buysDetalsSpecificGridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.buysDetalsSpecificGridView_RowStyle);
+            this.buysDetalsSpecificGridView.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.buysDetalsSpecificGridView_ColumnWidthChanged);
             // 
             // gridColumn20
             // 
@@ -1655,6 +1657,7 @@
             this.materialsSpecificGridView.OptionsView.ShowAutoFilterRow = true;
             this.materialsSpecificGridView.OptionsView.ShowGroupPanel = false;
             this.materialsSpecificGridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.materialsSpecificGridView_RowStyle);
+            this.materialsSpecificGridView.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.materialsSpecificGridView_ColumnWidthChanged);
             // 
             // gridColumn27
             // 
@@ -1920,10 +1923,12 @@
             this.gridColumn7});
             this.specificGridView.GridControl = this.specificGrid;
             this.specificGridView.Name = "specificGridView";
+            this.specificGridView.OptionsBehavior.AllowPixelScrolling = DevExpress.Utils.DefaultBoolean.False;
             this.specificGridView.OptionsView.RowAutoHeight = true;
             this.specificGridView.OptionsView.ShowAutoFilterRow = true;
             this.specificGridView.OptionsView.ShowGroupPanel = false;
             this.specificGridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.specificGridView_RowStyle);
+            this.specificGridView.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.specificGridView_ColumnWidthChanged);
             this.specificGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.specificGridView_FocusedRowChanged);
             // 
             // gridColumn1

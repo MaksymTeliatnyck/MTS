@@ -43,6 +43,7 @@ namespace MTS.GUI.MTS
         private BindingSource materialsSpecificBS = new BindingSource();
         private UserTasksDTO userTasksDTO;
         private MTSAuthorizationUsersDTO mtsAthorizationUsersDTO;
+        private int focusedRow;
 
         public MtsSpecificationOldFm(MTSAuthorizationUsersDTO mtsAthorizationUsersDTO)
         {
@@ -52,16 +53,61 @@ namespace MTS.GUI.MTS
 
             startDateItem.EditValue = new DateTime(DateTime.Now.Year - 1, 6, 5);
             endDateItem.EditValue = DateTime.Now;
+            SetGridSetting();
+            //specificGridView.BeginUpdate();
+            focusedRow = LoadData();
 
-            LoadData();
+
+
+
+
+
+
+            //specificGridView.EndUpdate();
+            //specificGridView.SelectRow(100);
+            //specificGridView.MoveBy(100);
+
+            //int topIndex = specificGridView.TopRowIndex;
+
+            
+            int rowHandle = specificGridView.LocateByValue("ID", focusedRow);
+            specificGridView.FocusedRowHandle = rowHandle;
+            
+            //specificGridView.TopRowIndex = topIndex;
+            //specificGridView.TopRowIndex = (rowHandle - 10);
+            //specificGridView.LoadRow(rowHandle);
+            //specificGridView.
+            //specificGridView.MoveBy(100);
+            //specificGridView.SelectRow(100);
+            //specificGridView.MakeRowVisible(100);
+
+
+            //specificGridView.Row
+
+            //specificGridView.FocusedRowHandle = rowHandle;
+
+            //specificGridView.SelectRow(rowHandle);
+            //specificGridView.MakeRowVisible(rowHandle);
+            //specificGridView.MoveBy(rowHandle);
+
+            //gvListEmployees.FocusedRowHandle = rowHandle;  
+            //gvListEmployees.SelectRow(rowHandle);
+
+
+            //specificGridView.TopRowIndex = (rowHandle-17);
+            //specificGridView.MakeRowVisible(rowHandle);
+            //specificGridView.FocusedRowHandle = rowHandle;
+            //specificGridView.SelectRow(100);
+            //specificGridView.EndUpdate();
         }
 
-        private void LoadData()
+        private int LoadData()
         {
             mtsService = Program.kernel.Get<IMtsSpecificationsService>();
-            //specificBS.DataSource = mtsService.GetAllSpecificationOldByPeriod((DateTime)startDateItem.EditValue, (DateTime)endDateItem.EditValue).OrderByDescending(ord => ord.ID).ToList();
-            specificBS.DataSource = mtsService.GetAllSpecificationOldByPeriod((DateTime)startDateItem.EditValue, (DateTime)endDateItem.EditValue).ToList();
+            specificBS.DataSource = mtsService.GetAllSpecificationOldByPeriod((DateTime)startDateItem.EditValue, (DateTime)endDateItem.EditValue).OrderByDescending(ord => ord.ID).ToList();
+            //specificBS.DataSource = mtsService.GetAllSpecificationOldByPeriod((DateTime)startDateItem.EditValue, (DateTime)endDateItem.EditValue).ToList();
             specificGrid.DataSource = specificBS;
+
 
             if (specificBS.Count > 0)
             {
@@ -75,6 +121,8 @@ namespace MTS.GUI.MTS
                 buysDetalsSpecificGrid.DataSource = null;
                 materialsSpecificGrid.DataSource = null;
             }
+
+            return ((List<MTSSpecificationsDTO>)specificBS.List).Last().ID;
         }
 
         private void LoadSpecific(int detailId)
@@ -85,6 +133,8 @@ namespace MTS.GUI.MTS
                 detalsSpecificGrid.DataSource = detalsSpecificBS;
             else
                 detalsSpecificGrid.DataSource = null;
+
+            
         }
 
         private void LoadBuysDetalSpecific(int detailId)
@@ -203,6 +253,8 @@ namespace MTS.GUI.MTS
                     specificGridView.BeginDataUpdate();
                     LoadData();
                     specificGridView.EndDataUpdate();
+                    int rowHandle = detalsSpecificGridView.LocateByValue("ID", return_Id.ID);
+                    specificGridView.FocusedRowHandle = rowHandle;
                 }
             }
         }
@@ -217,6 +269,8 @@ namespace MTS.GUI.MTS
                     specificGridView.BeginDataUpdate();
                     LoadData();
                     specificGridView.EndDataUpdate();
+                    int rowHandle = detalsSpecificGridView.LocateByValue("ID", return_Id.ID);
+                    detalsSpecificGridView.FocusedRowHandle = rowHandle;
                 }
             }
         }
@@ -1011,6 +1065,87 @@ namespace MTS.GUI.MTS
         private void xtraTabControl1_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void SetGridSetting()
+        {
+            gridColumn1.Width = Properties.Settings.Default.GridCol1;
+            gridColumn2.Width = Properties.Settings.Default.GridCol2;
+            gridColumn3.Width = Properties.Settings.Default.GridCol3;
+            gridColumn4.Width = Properties.Settings.Default.GridCol4;
+            gridColumn5.Width = Properties.Settings.Default.GridCol5;
+            gridColumn6.Width = Properties.Settings.Default.GridCol6;
+            gridColumn7.Width = Properties.Settings.Default.GridCol7;
+            gridColumn8.Width = Properties.Settings.Default.GridCol8;
+            gridColumn9.Width = Properties.Settings.Default.GridCol9;
+            gridColumn10.Width = Properties.Settings.Default.GridCol10;
+            gridColumn11.Width = Properties.Settings.Default.GridCol11;
+            gridColumn12.Width = Properties.Settings.Default.GridCol12;
+            gridColumn13.Width = Properties.Settings.Default.GridCol13;
+            gridColumn14.Width = Properties.Settings.Default.GridCol14;
+            gridColumn15.Width = Properties.Settings.Default.GridCol15;
+            gridColumn16.Width = Properties.Settings.Default.GridCol16;
+            gridColumn17.Width = Properties.Settings.Default.GridCol17;
+            gridColumn18.Width = Properties.Settings.Default.GridCol18;
+            gridColumn19.Width = Properties.Settings.Default.GridCol19;
+        }
+
+        private void specificGridView_ColumnWidthChanged(object sender, DevExpress.XtraGrid.Views.Base.ColumnEventArgs e)
+        {
+            Properties.Settings.Default.GridCol1 = gridColumn1.Width;
+            Properties.Settings.Default.GridCol2 = gridColumn2.Width;
+            Properties.Settings.Default.GridCol3 = gridColumn3.Width;
+            Properties.Settings.Default.GridCol4 = gridColumn4.Width;
+            Properties.Settings.Default.GridCol5 = gridColumn5.Width;
+            Properties.Settings.Default.GridCol6 = gridColumn6.Width;
+            Properties.Settings.Default.GridCol7 = gridColumn7.Width;
+
+            Properties.Settings.Default.Save();
+        }
+
+        private void detalsSpecificGridView_ColumnWidthChanged(object sender, DevExpress.XtraGrid.Views.Base.ColumnEventArgs e)
+        {
+            Properties.Settings.Default.GridCol8 = gridColumn8.Width;
+            Properties.Settings.Default.GridCol9 = gridColumn9.Width;
+            Properties.Settings.Default.GridCol10 = gridColumn10.Width;
+            Properties.Settings.Default.GridCol11 = gridColumn11.Width;
+            Properties.Settings.Default.GridCol12 = gridColumn12.Width;
+            Properties.Settings.Default.GridCol13 = gridColumn13.Width;
+            Properties.Settings.Default.GridCol14 = gridColumn14.Width;
+            Properties.Settings.Default.GridCol15 = gridColumn15.Width;
+            Properties.Settings.Default.GridCol16 = gridColumn16.Width;
+            Properties.Settings.Default.GridCol17 = gridColumn17.Width;
+            Properties.Settings.Default.GridCol18 = gridColumn18.Width;
+            Properties.Settings.Default.GridCol19 = gridColumn19.Width;
+
+            Properties.Settings.Default.Save();
+        }
+
+        private void buysDetalsSpecificGridView_ColumnWidthChanged(object sender, DevExpress.XtraGrid.Views.Base.ColumnEventArgs e)
+        {
+            Properties.Settings.Default.GridCol20 = gridColumn20.Width;
+            Properties.Settings.Default.GridCol21 = gridColumn21.Width;
+            Properties.Settings.Default.GridCol22 = gridColumn22.Width;
+            Properties.Settings.Default.GridCol23 = gridColumn23.Width;
+            Properties.Settings.Default.GridCol24 = gridColumn24.Width;
+            Properties.Settings.Default.GridCol25 = gridColumn25.Width;
+            Properties.Settings.Default.GridCol26 = gridColumn26.Width;
+
+            Properties.Settings.Default.Save();
+        }
+
+        private void materialsSpecificGridView_ColumnWidthChanged(object sender, DevExpress.XtraGrid.Views.Base.ColumnEventArgs e)
+        {
+            Properties.Settings.Default.GridCol27 = gridColumn27.Width;
+            Properties.Settings.Default.GridCol28 = gridColumn28.Width;
+            Properties.Settings.Default.GridCol29 = gridColumn29.Width;
+            Properties.Settings.Default.GridCol30 = gridColumn30.Width;
+            Properties.Settings.Default.GridCol31 = gridColumn31.Width;
+            Properties.Settings.Default.GridCol32 = gridColumn32.Width;
+            Properties.Settings.Default.GridCol33 = gridColumn33.Width;
+
+            Properties.Settings.Default.Save();
         }
     }
 }

@@ -29,9 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.validateLbl = new DevExpress.XtraEditors.LabelControl();
             this.cancelBtn1 = new DevExpress.XtraEditors.SimpleButton();
             this.saveBtn1 = new DevExpress.XtraEditors.SimpleButton();
             this.detalsProccesingLookUpEdit = new DevExpress.XtraEditors.LookUpEdit();
@@ -54,7 +59,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.validateLbl = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.detalsProccesingLookUpEdit.Properties)).BeginInit();
@@ -101,6 +105,16 @@
             this.panelControl1.Size = new System.Drawing.Size(456, 308);
             this.panelControl1.TabIndex = 0;
             this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
+            // 
+            // validateLbl
+            // 
+            this.validateLbl.Appearance.BackColor = System.Drawing.SystemColors.Info;
+            this.validateLbl.Appearance.ForeColor = System.Drawing.Color.OrangeRed;
+            this.validateLbl.Location = new System.Drawing.Point(15, 276);
+            this.validateLbl.Name = "validateLbl";
+            this.validateLbl.Size = new System.Drawing.Size(249, 13);
+            this.validateLbl.TabIndex = 49;
+            this.validateLbl.Text = "*Для збереження, заповніть всі обов\'язкові поля";
             // 
             // cancelBtn1
             // 
@@ -158,6 +172,7 @@
             this.widthEdit.Name = "widthEdit";
             this.widthEdit.Size = new System.Drawing.Size(131, 20);
             this.widthEdit.TabIndex = 15;
+            this.widthEdit.EditValueChanged += new System.EventHandler(this.widthEdit_EditValueChanged);
             // 
             // quantityOfBlankEdit
             // 
@@ -165,6 +180,16 @@
             this.quantityOfBlankEdit.Name = "quantityOfBlankEdit";
             this.quantityOfBlankEdit.Size = new System.Drawing.Size(131, 20);
             this.quantityOfBlankEdit.TabIndex = 17;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule1.ErrorText = "Не вказано кількість деталей із заготовки";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            conditionValidationRule1.Value1 = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.dxValidationProvider.SetValidationRule(this.quantityOfBlankEdit, conditionValidationRule1);
+            this.quantityOfBlankEdit.EditValueChanged += new System.EventHandler(this.quantityOfBlankEdit_EditValueChanged);
             // 
             // heightEdit
             // 
@@ -173,6 +198,16 @@
             this.heightEdit.Name = "heightEdit";
             this.heightEdit.Size = new System.Drawing.Size(142, 20);
             this.heightEdit.TabIndex = 14;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.GreaterOrEqual;
+            conditionValidationRule2.ErrorText = "Не вказано розмір";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            conditionValidationRule2.Value1 = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.dxValidationProvider.SetValidationRule(this.heightEdit, conditionValidationRule2);
+            this.heightEdit.EditValueChanged += new System.EventHandler(this.heightEdit_EditValueChanged);
             // 
             // guageEdit
             // 
@@ -193,6 +228,7 @@
             conditionValidationRule3.ErrorText = "Не вказано найменування деталі";
             conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
             this.dxValidationProvider.SetValidationRule(this.nomenclatureNameEdit, conditionValidationRule3);
+            this.nomenclatureNameEdit.EditValueChanged += new System.EventHandler(this.nomenclatureNameEdit_EditValueChanged);
             // 
             // quantityEdit
             // 
@@ -203,6 +239,15 @@
             this.quantityEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.quantityEdit.Size = new System.Drawing.Size(298, 20);
             this.quantityEdit.TabIndex = 10;
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule4.ErrorText = "Не вказано кількість";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            conditionValidationRule4.Value1 = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.dxValidationProvider.SetValidationRule(this.quantityEdit, conditionValidationRule4);
             this.quantityEdit.EditValueChanged += new System.EventHandler(this.quantityEdit_EditValueChanged);
             // 
             // nameEdit
@@ -212,6 +257,10 @@
             this.nameEdit.Name = "nameEdit";
             this.nameEdit.Size = new System.Drawing.Size(298, 20);
             this.nameEdit.TabIndex = 9;
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "Не вказано найменування";
+            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.nameEdit, conditionValidationRule5);
             this.nameEdit.EditValueChanged += new System.EventHandler(this.nameEdit_EditValueChanged);
             // 
             // numberDrawingEdit
@@ -221,10 +270,10 @@
             this.numberDrawingEdit.Name = "numberDrawingEdit";
             this.numberDrawingEdit.Size = new System.Drawing.Size(298, 20);
             this.numberDrawingEdit.TabIndex = 8;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Не вказано номер креслення";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider.SetValidationRule(this.numberDrawingEdit, conditionValidationRule1);
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule6.ErrorText = "Не вказано номер креслення";
+            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.numberDrawingEdit, conditionValidationRule6);
             this.numberDrawingEdit.EditValueChanged += new System.EventHandler(this.numberDrawingEdit_EditValueChanged);
             this.numberDrawingEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberDrawingEdit_KeyPress);
             // 
@@ -312,16 +361,6 @@
             // 
             this.dxValidationProvider.ValidationFailed += new DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventHandler(this.dxValidationProvider_ValidationFailed);
             this.dxValidationProvider.ValidationSucceeded += new DevExpress.XtraEditors.DXErrorProvider.ValidationSucceededEventHandler(this.dxValidationProvider_ValidationSucceeded);
-            // 
-            // validateLbl
-            // 
-            this.validateLbl.Appearance.BackColor = System.Drawing.SystemColors.Info;
-            this.validateLbl.Appearance.ForeColor = System.Drawing.Color.OrangeRed;
-            this.validateLbl.Location = new System.Drawing.Point(15, 276);
-            this.validateLbl.Name = "validateLbl";
-            this.validateLbl.Size = new System.Drawing.Size(249, 13);
-            this.validateLbl.TabIndex = 49;
-            this.validateLbl.Text = "*Для збереження, заповніть всі обов\'язкові поля";
             // 
             // MtsDetailsEditOldFm
             // 

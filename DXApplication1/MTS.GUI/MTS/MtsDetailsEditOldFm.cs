@@ -80,8 +80,18 @@ namespace MTS.GUI.MTS
                 //quantityOfBlankEdit.EditValue = model.QUANTITY_OF_BLANKS;
                 //detalsProccesingLookUpEdit.EditValue = model.DETALSPROCESSING;
                 ((MTSDetailsDTO)detailsBS.Current).QUANTITY_OF_BLANKS = 1;
+                ((MTSDetailsDTO)detailsBS.Current).WIDTH = 0;
+                ((MTSDetailsDTO)detailsBS.Current).HEIGHT = 0;
+                //detalsProccesingLookUpEdit.EditValue = 2;
+                //((MTSDetailsDTO)detailsBS.Current).PROCESSING_ID = 2;
+                ((MTSDetailsDTO)Item).PROCESSING_ID = 2;
+                //(int)detalsProccesingLookUpEdit.EditValue
             }
+
+            ControlValidation();
         }
+
+
         public MTSDetailsDTO Return()
         {
             return ((MTSDetailsDTO)Item);
@@ -284,16 +294,19 @@ namespace MTS.GUI.MTS
                     xlabel.Visible = false;
                     widthEdit.Visible = false;
                     break;
+
                 case 2:
                     processLabel.Text = "Розмір";
                     xlabel.Visible = true;
                     widthEdit.Visible = true;
                     break;
+
                 case 3:
                     processLabel.Text = "Діаметр";
                     xlabel.Visible = false;
                     widthEdit.Visible = false;
                     break;
+
                 default:
                     break;
             }
@@ -309,8 +322,49 @@ namespace MTS.GUI.MTS
             dxValidationProvider.Validate((Control)sender);
         }
 
+        private bool CheckProcessDetails()
+        {
+            switch ((int)detalsProccesingLookUpEdit.EditValue)
+            {
+                case 1:
+                    
+                    if ((decimal)heightEdit.EditValue > 0)
+                        return true;
+                    else
+                        return false;
+                    break;
+
+                case 2:
+                    
+                    if ((decimal)widthEdit.EditValue > 0 && (decimal)heightEdit.EditValue > 0)
+                        return true;
+                    else
+                        return false;
+
+                    break;
+
+                case 3:
+                    if ((decimal)heightEdit.EditValue > 0)
+                        return true;
+                    else
+                        return false;
+                    break;
+
+                default:
+                    break;
+            }
+            return false;
+        }
+
         private void saveBtn1_Click(object sender, EventArgs e)
         {
+            if (!CheckProcessDetails())
+            {
+                MessageBox.Show("Не вказано розмір деталі", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
             if (operation == Utils.Operation.Update)
             {
                 if (MessageBox.Show("Зберегти зміни?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -365,8 +419,8 @@ namespace MTS.GUI.MTS
 
         private void MtsDetailsEditOldFm_KeyUp(object sender, KeyEventArgs e)
         {
-            //if (e.KeyCode == Keys.Enter && !numberDrawingEdit.Focus())
-            //    saveBtn1.PerformClick();
+            if (e.KeyCode == Keys.Enter && CheckProcessDetails() && ControlValidation())
+                saveBtn1.PerformClick();
         }
 
         private void dxValidationProvider_ValidationFailed(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventArgs e)
@@ -390,6 +444,30 @@ namespace MTS.GUI.MTS
         private void quantityEdit_EditValueChanged(object sender, EventArgs e)
         {
             dxValidationProvider.Validate((Control)sender);
+        }
+
+        private void nomenclatureNameEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            dxValidationProvider.Validate((Control)sender);
+        }
+
+        private void quantityOfBlankEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            dxValidationProvider.Validate((Control)sender);
+        }
+
+        private void heightEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            dxValidationProvider.Validate((Control)sender);
+        }
+
+        private void widthEdit_EditValueChanged(object sender, EventArgs e)
+        {
+        }
+
+        private bool ControlValidation()
+        {
+            return dxValidationProvider.Validate();
         }
     }
 }
