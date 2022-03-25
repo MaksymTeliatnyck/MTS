@@ -897,18 +897,18 @@ namespace MTS.BLL.Services
             mtsDetails.Update((mapper.Map<MTSDetailsDTO, MTS_DETAILS>(mtsDetailsDTO, updateDetail)));
         }
 
-        //public bool MTSDetailDelete(int id)
-        //{
-        //    try
-        //    {
-        //        mtsDetails.Delete(mtsDetails.GetAll().FirstOrDefault(c => c.ID == id));
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return false;
-        //    }
-        //}
+        public bool MTSDetailsDelete(int id)
+        {
+            try
+            {
+                mtsDetails.Delete(mtsDetails.GetAll().FirstOrDefault(c => c.ID == id));
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
 
         #endregion
 

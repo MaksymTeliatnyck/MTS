@@ -308,7 +308,7 @@ namespace MTS.BLL.Interfaces
 
         void MTSDetailsUpdate(MTSDetailsDTO mtsDetailsDTO);
 
-
+        bool MTSDetailsDelete(int id);
 
 
         int MTSCreateDetalsCreate(MTSCreateDetalsDTO mtsCreateDetalsDTO);
