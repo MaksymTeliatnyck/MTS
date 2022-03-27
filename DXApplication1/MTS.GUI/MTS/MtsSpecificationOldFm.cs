@@ -128,7 +128,7 @@ namespace MTS.GUI.MTS
         private void LoadSpecific(int detailId)
         {
             mtsService = Program.kernel.Get<IMtsSpecificationsService>();
-            detalsSpecificBS.DataSource = mtsService.GetAllDetailsSpecific(detailId).OrderBy(ord => ord.ID).ToList();
+            detalsSpecificBS.DataSource = mtsService.GetAllDetailsSpecific(detailId).OrderByDescending(ord => ord.ID).ToList();
             if (detalsSpecificBS.Count != 0)
                 detalsSpecificGrid.DataSource = detalsSpecificBS;
             else
@@ -140,7 +140,7 @@ namespace MTS.GUI.MTS
         private void LoadBuysDetalSpecific(int detailId)
         {
             mtsService = Program.kernel.Get<IMtsSpecificationsService>();
-            byusDetalsSpecificBS.DataSource = mtsService.GetBuysDetalSpecific(detailId).OrderBy(ord => ord.ID).ToList();
+            byusDetalsSpecificBS.DataSource = mtsService.GetBuysDetalSpecific(detailId).OrderByDescending(ord => ord.ID).ToList();
             if (byusDetalsSpecificBS.Count != 0)
                 buysDetalsSpecificGrid.DataSource = byusDetalsSpecificBS;
             else
@@ -151,7 +151,7 @@ namespace MTS.GUI.MTS
             try
             {
                 mtsService = Program.kernel.Get<IMtsSpecificationsService>();
-                materialsSpecificBS.DataSource = mtsService.GetMaterialsSpecific(detailId).OrderBy(ord => ord.ID).ToList();
+                materialsSpecificBS.DataSource = mtsService.GetMaterialsSpecific(detailId).OrderByDescending(ord => ord.ID).ToList();
                 if (materialsSpecificBS.Count != 0)
                     materialsSpecificGrid.DataSource = materialsSpecificBS;
                 else
