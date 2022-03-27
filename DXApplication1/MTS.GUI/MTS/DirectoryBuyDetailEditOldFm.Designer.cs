@@ -78,7 +78,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1778, 648);
+            this.panelControl1.Size = new System.Drawing.Size(1318, 648);
             this.panelControl1.TabIndex = 0;
             // 
             // splitContainer1
@@ -94,8 +94,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.nomenclatureGrid);
-            this.splitContainer1.Size = new System.Drawing.Size(1774, 644);
-            this.splitContainer1.SplitterDistance = 658;
+            this.splitContainer1.Size = new System.Drawing.Size(1314, 644);
+            this.splitContainer1.SplitterDistance = 487;
             this.splitContainer1.TabIndex = 0;
             // 
             // nomenclatureGroupsGrid
@@ -110,7 +110,7 @@
             this.nomenclatureGroupsGrid.Name = "nomenclatureGroupsGrid";
             this.nomenclatureGroupsGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoForGroupNameEdit});
-            this.nomenclatureGroupsGrid.Size = new System.Drawing.Size(658, 644);
+            this.nomenclatureGroupsGrid.Size = new System.Drawing.Size(487, 644);
             this.nomenclatureGroupsGrid.TabIndex = 0;
             this.nomenclatureGroupsGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.nomenclatureGroupsGridView});
@@ -153,7 +153,6 @@
             this.gridColumn3});
             this.nomenclatureGroupsGridView.GridControl = this.nomenclatureGroupsGrid;
             this.nomenclatureGroupsGridView.Name = "nomenclatureGroupsGridView";
-            this.nomenclatureGroupsGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.nomenclatureGroupsGridView.OptionsView.RowAutoHeight = true;
             this.nomenclatureGroupsGridView.OptionsView.ShowAutoFilterRow = true;
             this.nomenclatureGroupsGridView.OptionsView.ShowGroupPanel = false;
@@ -168,6 +167,7 @@
             this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn1.Caption = "№";
+            this.gridColumn1.FieldName = "ID";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.OptionsColumn.AllowFocus = false;
@@ -235,7 +235,7 @@
             this.nomenclatureGrid.Name = "nomenclatureGrid";
             this.nomenclatureGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoNameEdit});
-            this.nomenclatureGrid.Size = new System.Drawing.Size(1112, 644);
+            this.nomenclatureGrid.Size = new System.Drawing.Size(823, 644);
             this.nomenclatureGrid.TabIndex = 0;
             this.nomenclatureGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.nomenclatureGridView});
@@ -247,7 +247,7 @@
             this.editNomenclatureItem,
             this.deleteNomenclatureItem});
             this.nomenclatureMenuStrip.Name = "nomenclatureMenuStrip";
-            this.nomenclatureMenuStrip.Size = new System.Drawing.Size(217, 92);
+            this.nomenclatureMenuStrip.Size = new System.Drawing.Size(217, 70);
             // 
             // addNomenclatureItem
             // 
@@ -282,7 +282,6 @@
             this.gridColumn10});
             this.nomenclatureGridView.GridControl = this.nomenclatureGrid;
             this.nomenclatureGridView.Name = "nomenclatureGridView";
-            this.nomenclatureGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.nomenclatureGridView.OptionsView.RowAutoHeight = true;
             this.nomenclatureGridView.OptionsView.ShowAutoFilterRow = true;
             this.nomenclatureGridView.OptionsView.ShowGroupPanel = false;
@@ -442,7 +441,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1778, 648);
+            this.ClientSize = new System.Drawing.Size(1318, 648);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

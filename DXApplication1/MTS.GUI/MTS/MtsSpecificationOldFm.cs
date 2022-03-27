@@ -505,7 +505,7 @@ namespace MTS.GUI.MTS
             {
                 mtsService = Program.kernel.Get<IMtsSpecificationsService>();
 
-                mtsService.MTSCreateDetailsDelete(detailId);
+                mtsService.MTSDetailsDelete(detailId);
 
                 detalsSpecificGridView.PostEditor();
                 detalsSpecificGridView.BeginDataUpdate();
@@ -611,7 +611,7 @@ namespace MTS.GUI.MTS
         private void deleteDetailBarBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (detalsSpecificBS.Count > 0)
-                DeleteDetail(((MTSCreateDetalsDTO)detalsSpecificBS.Current).ID);
+                DeleteDetail(((MTSDetailsDTO)detalsSpecificBS.Current).ID);
             else
                 MessageBox.Show("Помилка видалення деталі! Створіть спочатку деталі!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
