@@ -28,8 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.validateLbl = new DevExpress.XtraEditors.LabelControl();
             this.cancelDBtn = new DevExpress.XtraEditors.SimpleButton();
             this.saveDBtn = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,6 +49,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateEdit = new DevExpress.XtraEditors.DateEdit();
             this.nameSpecificationEdit = new DevExpress.XtraEditors.MemoEdit();
+            this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -52,6 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameSpecificationEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -67,6 +76,7 @@
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
+            this.groupControl1.Controls.Add(this.validateLbl);
             this.groupControl1.Controls.Add(this.cancelDBtn);
             this.groupControl1.Controls.Add(this.saveDBtn);
             this.groupControl1.Controls.Add(this.label5);
@@ -84,6 +94,16 @@
             this.groupControl1.Size = new System.Drawing.Size(516, 209);
             this.groupControl1.TabIndex = 10;
             this.groupControl1.Text = "Специфікація";
+            // 
+            // validateLbl
+            // 
+            this.validateLbl.Appearance.BackColor = System.Drawing.SystemColors.Info;
+            this.validateLbl.Appearance.ForeColor = System.Drawing.Color.OrangeRed;
+            this.validateLbl.Location = new System.Drawing.Point(15, 185);
+            this.validateLbl.Name = "validateLbl";
+            this.validateLbl.Size = new System.Drawing.Size(249, 13);
+            this.validateLbl.TabIndex = 50;
+            this.validateLbl.Text = "*Для збереження, заповніть всі обов\'язкові поля";
             // 
             // cancelDBtn
             // 
@@ -129,12 +149,18 @@
             // 
             // drawingEdit
             // 
+            this.drawingEdit.EnterMoveNextControl = true;
             this.drawingEdit.Location = new System.Drawing.Point(12, 108);
             this.drawingEdit.Name = "drawingEdit";
             this.drawingEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawingEdit.Properties.Appearance.Options.UseFont = true;
             this.drawingEdit.Size = new System.Drawing.Size(496, 22);
             this.drawingEdit.TabIndex = 1;
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "Не вказано креслення";
+            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.drawingEdit, conditionValidationRule5);
+            this.drawingEdit.EditValueChanged += new System.EventHandler(this.drawingEdit_EditValueChanged);
             // 
             // label3
             // 
@@ -148,12 +174,18 @@
             // 
             // quantityEdit
             // 
+            this.quantityEdit.EnterMoveNextControl = true;
             this.quantityEdit.Location = new System.Drawing.Point(12, 152);
             this.quantityEdit.Name = "quantityEdit";
             this.quantityEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.quantityEdit.Properties.Appearance.Options.UseFont = true;
             this.quantityEdit.Size = new System.Drawing.Size(117, 22);
             this.quantityEdit.TabIndex = 2;
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule6.ErrorText = "Не вказано кількість";
+            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.quantityEdit, conditionValidationRule6);
+            this.quantityEdit.EditValueChanged += new System.EventHandler(this.quantityEdit_EditValueChanged);
             // 
             // label2
             // 
@@ -167,12 +199,18 @@
             // 
             // weightEdit
             // 
+            this.weightEdit.EnterMoveNextControl = true;
             this.weightEdit.Location = new System.Drawing.Point(134, 152);
             this.weightEdit.Name = "weightEdit";
             this.weightEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.weightEdit.Properties.Appearance.Options.UseFont = true;
             this.weightEdit.Size = new System.Drawing.Size(173, 22);
             this.weightEdit.TabIndex = 3;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Не вказано вагу";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.weightEdit, conditionValidationRule1);
+            this.weightEdit.EditValueChanged += new System.EventHandler(this.weightEdit_EditValueChanged);
             // 
             // label1
             // 
@@ -187,6 +225,7 @@
             // dateEdit
             // 
             this.dateEdit.EditValue = null;
+            this.dateEdit.EnterMoveNextControl = true;
             this.dateEdit.Location = new System.Drawing.Point(314, 152);
             this.dateEdit.Name = "dateEdit";
             this.dateEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -197,9 +236,15 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit.Size = new System.Drawing.Size(194, 22);
             this.dateEdit.TabIndex = 4;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Дату не вказано";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.dateEdit, conditionValidationRule2);
+            this.dateEdit.EditValueChanged += new System.EventHandler(this.dateEdit_EditValueChanged);
             // 
             // nameSpecificationEdit
             // 
+            this.nameSpecificationEdit.EnterMoveNextControl = true;
             this.nameSpecificationEdit.Location = new System.Drawing.Point(14, 46);
             this.nameSpecificationEdit.Name = "nameSpecificationEdit";
             this.nameSpecificationEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -207,6 +252,16 @@
             this.nameSpecificationEdit.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.nameSpecificationEdit.Size = new System.Drawing.Size(494, 40);
             this.nameSpecificationEdit.TabIndex = 0;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Не вказано найменування виробу";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.nameSpecificationEdit, conditionValidationRule3);
+            this.nameSpecificationEdit.EditValueChanged += new System.EventHandler(this.nameSpecificationEdit_EditValueChanged);
+            // 
+            // dxValidationProvider
+            // 
+            this.dxValidationProvider.ValidationFailed += new DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventHandler(this.dxValidationProvider_ValidationFailed);
+            this.dxValidationProvider.ValidationSucceeded += new DevExpress.XtraEditors.DXErrorProvider.ValidationSucceededEventHandler(this.dxValidationProvider_ValidationSucceeded);
             // 
             // MtsSpecificationOldEditFm
             // 
@@ -218,12 +273,14 @@
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MtsSpecificationOldEditFm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Редагування специфікації";
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MtsSpecificationOldEditFm_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -235,6 +292,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameSpecificationEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -255,5 +313,7 @@
         private DevExpress.XtraEditors.MemoEdit nameSpecificationEdit;
         private DevExpress.XtraEditors.SimpleButton cancelDBtn;
         private DevExpress.XtraEditors.SimpleButton saveDBtn;
+        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider;
+        private DevExpress.XtraEditors.LabelControl validateLbl;
     }
 }

@@ -84,6 +84,7 @@
             this.видалитиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detalsSpecificGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoForDetailsEdit = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -123,6 +124,7 @@
             this.видалитиЗаписToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.buysDetalsSpecificGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -138,6 +140,7 @@
             this.видалитиЗаписToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.materialsSpecificGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -200,6 +203,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.detalsSpecificGrid)).BeginInit();
             this.detailMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.detalsSpecificGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoForDetailsEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barDetail)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -209,12 +213,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.buysDetalsSpecificGrid)).BeginInit();
             this.buyDetailMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buysDetalsSpecificGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             this.xtraTabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.materialsSpecificGrid)).BeginInit();
             this.materialMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.materialsSpecificGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.specificGrid)).BeginInit();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.specificGridView)).BeginInit();
@@ -358,7 +364,7 @@
             this.showBtn.ItemAppearance.Hovered.Options.UseFont = true;
             this.showBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.showBtn.ItemAppearance.Normal.Options.UseFont = true;
-            this.showBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.showBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.showBtn.ItemAppearance.Pressed.Options.UseFont = true;
             this.showBtn.Name = "showBtn";
             this.showBtn.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
@@ -683,6 +689,12 @@
             this.basesBtn.Caption = "Довідники";
             this.basesBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("basesBtn.Glyph")));
             this.basesBtn.Id = 26;
+            this.basesBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.basesBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.basesBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.basesBtn.ItemAppearance.Normal.Options.UseFont = true;
+            this.basesBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.basesBtn.ItemAppearance.Pressed.Options.UseFont = true;
             this.basesBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("basesBtn.LargeGlyph")));
             this.basesBtn.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.nomenclatureShowBtn),
@@ -837,6 +849,8 @@
             this.detalsSpecificGrid.Margin = new System.Windows.Forms.Padding(4);
             this.detalsSpecificGrid.MenuManager = this.barDetail;
             this.detalsSpecificGrid.Name = "detalsSpecificGrid";
+            this.detalsSpecificGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemMemoForDetailsEdit});
             this.detalsSpecificGrid.Size = new System.Drawing.Size(1782, 333);
             this.detalsSpecificGrid.TabIndex = 0;
             this.detalsSpecificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -891,6 +905,7 @@
             this.gridColumn35});
             this.detalsSpecificGridView.GridControl = this.detalsSpecificGrid;
             this.detalsSpecificGridView.Name = "detalsSpecificGridView";
+            this.detalsSpecificGridView.OptionsView.RowAutoHeight = true;
             this.detalsSpecificGridView.OptionsView.ShowAutoFilterRow = true;
             this.detalsSpecificGridView.OptionsView.ShowGroupPanel = false;
             this.detalsSpecificGridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.detalsSpecificGridView_RowStyle);
@@ -900,11 +915,14 @@
             // 
             this.gridColumn8.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn8.AppearanceCell.Options.UseFont = true;
+            this.gridColumn8.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn8.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridColumn8.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn8.AppearanceHeader.Options.UseFont = true;
             this.gridColumn8.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn8.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn8.Caption = "Найменування";
+            this.gridColumn8.ColumnEdit = this.repositoryItemMemoForDetailsEdit;
             this.gridColumn8.FieldName = "NAME";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.AllowEdit = false;
@@ -913,6 +931,12 @@
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 0;
             this.gridColumn8.Width = 336;
+            // 
+            // repositoryItemMemoForDetailsEdit
+            // 
+            this.repositoryItemMemoForDetailsEdit.Appearance.Options.UseTextOptions = true;
+            this.repositoryItemMemoForDetailsEdit.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.repositoryItemMemoForDetailsEdit.Name = "repositoryItemMemoForDetailsEdit";
             // 
             // gridColumn9
             // 
@@ -1384,6 +1408,8 @@
             this.buysDetalsSpecificGrid.Margin = new System.Windows.Forms.Padding(0);
             this.buysDetalsSpecificGrid.MenuManager = this.ribbonControl1;
             this.buysDetalsSpecificGrid.Name = "buysDetalsSpecificGrid";
+            this.buysDetalsSpecificGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemMemoEdit1});
             this.buysDetalsSpecificGrid.Size = new System.Drawing.Size(1778, 325);
             this.buysDetalsSpecificGrid.TabIndex = 0;
             this.buysDetalsSpecificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1431,6 +1457,7 @@
             this.gridColumn26});
             this.buysDetalsSpecificGridView.GridControl = this.buysDetalsSpecificGrid;
             this.buysDetalsSpecificGridView.Name = "buysDetalsSpecificGridView";
+            this.buysDetalsSpecificGridView.OptionsView.RowAutoHeight = true;
             this.buysDetalsSpecificGridView.OptionsView.ShowAutoFilterRow = true;
             this.buysDetalsSpecificGridView.OptionsView.ShowGroupPanel = false;
             this.buysDetalsSpecificGridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.buysDetalsSpecificGridView_RowStyle);
@@ -1447,6 +1474,7 @@
             this.gridColumn20.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn20.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn20.Caption = "Найменування";
+            this.gridColumn20.ColumnEdit = this.repositoryItemMemoEdit1;
             this.gridColumn20.FieldName = "NOMENCLATURESNAME";
             this.gridColumn20.Name = "gridColumn20";
             this.gridColumn20.OptionsColumn.AllowEdit = false;
@@ -1455,6 +1483,12 @@
             this.gridColumn20.Visible = true;
             this.gridColumn20.VisibleIndex = 0;
             this.gridColumn20.Width = 606;
+            // 
+            // repositoryItemMemoEdit1
+            // 
+            this.repositoryItemMemoEdit1.Appearance.Options.UseTextOptions = true;
+            this.repositoryItemMemoEdit1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
             // 
             // gridColumn21
             // 
@@ -1606,6 +1640,8 @@
             this.materialsSpecificGrid.Margin = new System.Windows.Forms.Padding(4);
             this.materialsSpecificGrid.MenuManager = this.ribbonControl1;
             this.materialsSpecificGrid.Name = "materialsSpecificGrid";
+            this.materialsSpecificGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemMemoEdit2});
             this.materialsSpecificGrid.Size = new System.Drawing.Size(1782, 329);
             this.materialsSpecificGrid.TabIndex = 0;
             this.materialsSpecificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1654,6 +1690,7 @@
             this.gridColumn33});
             this.materialsSpecificGridView.GridControl = this.materialsSpecificGrid;
             this.materialsSpecificGridView.Name = "materialsSpecificGridView";
+            this.materialsSpecificGridView.OptionsView.RowAutoHeight = true;
             this.materialsSpecificGridView.OptionsView.ShowAutoFilterRow = true;
             this.materialsSpecificGridView.OptionsView.ShowGroupPanel = false;
             this.materialsSpecificGridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.materialsSpecificGridView_RowStyle);
@@ -1661,7 +1698,7 @@
             // 
             // gridColumn27
             // 
-            this.gridColumn27.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn27.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn27.AppearanceCell.Options.UseFont = true;
             this.gridColumn27.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn27.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
@@ -1670,6 +1707,7 @@
             this.gridColumn27.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn27.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn27.Caption = "Найменування";
+            this.gridColumn27.ColumnEdit = this.repositoryItemMemoEdit2;
             this.gridColumn27.FieldName = "NOMENCLATURESNAME";
             this.gridColumn27.Name = "gridColumn27";
             this.gridColumn27.OptionsColumn.AllowEdit = false;
@@ -1679,9 +1717,15 @@
             this.gridColumn27.VisibleIndex = 0;
             this.gridColumn27.Width = 477;
             // 
+            // repositoryItemMemoEdit2
+            // 
+            this.repositoryItemMemoEdit2.Appearance.Options.UseTextOptions = true;
+            this.repositoryItemMemoEdit2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.repositoryItemMemoEdit2.Name = "repositoryItemMemoEdit2";
+            // 
             // gridColumn28
             // 
-            this.gridColumn28.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn28.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn28.AppearanceCell.Options.UseFont = true;
             this.gridColumn28.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn28.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
@@ -1701,7 +1745,7 @@
             // 
             // gridColumn29
             // 
-            this.gridColumn29.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn29.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn29.AppearanceCell.Options.UseFont = true;
             this.gridColumn29.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn29.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
@@ -1721,7 +1765,7 @@
             // 
             // gridColumn30
             // 
-            this.gridColumn30.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn30.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn30.AppearanceCell.Options.UseFont = true;
             this.gridColumn30.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn30.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
@@ -1741,7 +1785,7 @@
             // 
             // gridColumn31
             // 
-            this.gridColumn31.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn31.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn31.AppearanceCell.Options.UseFont = true;
             this.gridColumn31.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn31.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
@@ -1760,7 +1804,7 @@
             // 
             // gridColumn32
             // 
-            this.gridColumn32.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn32.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn32.AppearanceCell.Options.UseFont = true;
             this.gridColumn32.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn32.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
@@ -1779,7 +1823,7 @@
             // 
             // gridColumn33
             // 
-            this.gridColumn33.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn33.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn33.AppearanceCell.Options.UseFont = true;
             this.gridColumn33.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn33.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
@@ -2050,7 +2094,7 @@
             this.gridColumn7.AppearanceHeader.Options.UseFont = true;
             this.gridColumn7.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn7.Caption = "Виконавиць";
+            this.gridColumn7.Caption = "Виконавець";
             this.gridColumn7.FieldName = "AUTHORIZATION_USERS_NAME";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
@@ -2298,6 +2342,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.detalsSpecificGrid)).EndInit();
             this.detailMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.detalsSpecificGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoForDetailsEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barDetail)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -2307,12 +2352,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.buysDetalsSpecificGrid)).EndInit();
             this.buyDetailMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.buysDetalsSpecificGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             this.xtraTabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.materialsSpecificGrid)).EndInit();
             this.materialMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.materialsSpecificGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.specificGrid)).EndInit();
             this.mainMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.specificGridView)).EndInit();
@@ -2477,5 +2524,8 @@
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.PanelControl panelControl5;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoForDetailsEdit;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit2;
     }
 }

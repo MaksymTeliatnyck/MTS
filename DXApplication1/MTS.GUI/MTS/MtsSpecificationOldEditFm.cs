@@ -33,7 +33,10 @@ namespace MTS.GUI.MTS
 
             ((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_ID = mtsAthorizationUsersDTO.ID;
             if (operation == Utils.Operation.Add)
+            {
                 model.CREATION_DATE = DateTime.Now;
+                model.QUANTITY = 1;
+            }
 
 
 
@@ -218,5 +221,54 @@ namespace MTS.GUI.MTS
             this.Close();
         }
         #endregion
+
+        private void dxValidationProvider_ValidationFailed(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventArgs e)
+        {
+            this.saveDBtn.Enabled = false;
+            this.validateLbl.Visible = true;
+        }
+
+        private void dxValidationProvider_ValidationSucceeded(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationSucceededEventArgs e)
+        {
+            bool isValidate = (dxValidationProvider.GetInvalidControls().Count == 0);
+            this.saveDBtn.Enabled = isValidate;
+            this.validateLbl.Visible = !isValidate;
+        }
+
+        private void nameSpecificationEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            dxValidationProvider.Validate((Control)sender);
+        }
+
+        private void drawingEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            dxValidationProvider.Validate((Control)sender);
+        }
+
+        private void quantityEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            dxValidationProvider.Validate((Control)sender);
+        }
+
+        private void weightEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            dxValidationProvider.Validate((Control)sender);
+        }
+
+        private void dateEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            dxValidationProvider.Validate((Control)sender);
+        }
+
+        private bool ControlValidation()
+        {
+            return dxValidationProvider.Validate();
+        }
+
+        private void MtsSpecificationOldEditFm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && ControlValidation())
+                saveDBtn.PerformClick();
+        }
     }
 }

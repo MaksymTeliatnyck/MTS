@@ -32,6 +32,7 @@ namespace MTS.BLL.Services
         private IRepository<MTS_GUAGES> mtsGuages;
         private IRepository<MTS_NOMENCLATURES> mtsNomenclatures;
         private IRepository<MTS_MEASURE> mtsMeasure;
+        private IRepository<MTS_MEASURE> mtsMeasureAdc;
         private IRepository<MTS_PURCHASED_PRODUCTS> mtsPurchasedProducts;
         private IRepository<MTS_MATERIALS> mtsMaterials;
         private IRepository<MTS_NOMENCLATURE_GROUPS> mtsNomenclatureGroups;
@@ -53,6 +54,7 @@ namespace MTS.BLL.Services
             mtsGuages = Database.GetRepository<MTS_GUAGES>();
             mtsNomenclatures = Database.GetRepository<MTS_NOMENCLATURES>();
             mtsMeasure = Database.GetRepository<MTS_MEASURE>();
+            mtsMeasureAdc = Database.GetRepository<MTS_MEASURE>();
             mtsPurchasedProducts = Database.GetRepository<MTS_PURCHASED_PRODUCTS>();
             mtsMaterials = Database.GetRepository<MTS_MATERIALS>();
             mtsNomenclatureGroups = Database.GetRepository<MTS_NOMENCLATURE_GROUPS>();
@@ -350,7 +352,7 @@ namespace MTS.BLL.Services
             return mapper.Map<IEnumerable<MTS_MATERIALS>, List<MTSMaterialsDTO>>(mtsMaterials.GetAll().Where(srch => srch.SPECIFICATIONS_ID == specificId));
         }
 
-        public IEnumerable<MTSDetailsDTO> GetAllDetailsSpecific(int spesificId)
+        public IEnumerable<MTSDetailsDTO>  GetAllDetailsSpecific(int spesificId)
         {
             var result = (
 
@@ -377,6 +379,12 @@ namespace MTS.BLL.Services
                           join mtsMeas in mtsMeasure.GetAll() on mtsNom.MEASURE_ID equals mtsMeas.ID into mtsMeases
                           from mtsMeas in mtsMeases.DefaultIfEmpty()
 
+                          join mtsAdditCalc in mtsAdditCalculation.GetAll() on mtsNomGroup.ADDIT_CALCULATION_ID equals mtsAdditCalc.ID into mtsAdditCalcen
+                          from mtsAdditCalc in mtsAdditCalcen.DefaultIfEmpty()
+
+                          join mtsMeasAdc in mtsMeasureAdc.GetAll() on mtsAdditCalc.MEASURE_ID equals mtsMeasAdc.ID into mtsMeasAdcen
+                          from mtsMeasAdc in mtsMeasAdcen.DefaultIfEmpty()
+
                           where (mtsDetal.SPECIFICATIONS_ID == spesificId /*&& mtsSpec.ID != null*/)
 
                           select new MTSDetailsDTO()
@@ -398,6 +406,7 @@ namespace MTS.BLL.Services
                               NOM_GROUP_ID = mtsNomGroup.ID,
                               NOM_GROUP_ADDIT_CALCULATION_ACTIVE = mtsNomGroup.ADDIT_CALCULATION_ACTIVE,
                               NOM_GROUP_ADDIT_CALCULATION_ID = mtsNomGroup.ADDIT_CALCULATION_ID,
+                               NOM_GROUP_ADDIT_CALCULATION_MEASURE = mtsMeasAdc.NAME,
                               NOM_GROUP_CODPROD = mtsNomGroup.CODPROD,
                               NOM_GROUP_NAME = mtsNomGroup.NAME,
                               NOM_GROUP_PARENT_ID = mtsNomGroup.PARENT_ID,

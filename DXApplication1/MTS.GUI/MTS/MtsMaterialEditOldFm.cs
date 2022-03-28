@@ -203,8 +203,13 @@ namespace MTS.GUI.MTS
 
         private void MtsMaterialEditOldFm_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter && ControlValidation())
                 saveBtn1.PerformClick();
+        }
+
+        private bool ControlValidation()
+        {
+            return mtsMaterialValidationProvider.Validate();
         }
     }
 }

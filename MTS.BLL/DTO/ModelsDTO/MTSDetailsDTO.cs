@@ -30,6 +30,8 @@ namespace MTS.BLL.DTO.ModelsDTO
         public decimal? NOM_GROUP_RATIO_OF_WASTE { get; set; }
         public int? NOM_GROUP_ADDIT_CALCULATION_ID { get; set; }
         public bool? NOM_GROUP_ADDIT_CALCULATION_ACTIVE { get; set; }
+        public string NOM_GROUP_ADDIT_CALCULATION_MEASURE { get; set; }
+
         public int? NOM_GROUP_CODPROD { get; set; }
         public int NOM_GROUP_SORTPOSITION { get; set; }
 

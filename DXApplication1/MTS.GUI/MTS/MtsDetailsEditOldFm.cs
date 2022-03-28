@@ -293,6 +293,7 @@ namespace MTS.GUI.MTS
                     processLabel.Text = "Розмір";
                     xlabel.Visible = false;
                     widthEdit.Visible = false;
+                    ((MTSDetailsDTO)detailsBS.Current).WIDTH = 0;
                     break;
 
                 case 2:
@@ -305,6 +306,7 @@ namespace MTS.GUI.MTS
                     processLabel.Text = "Діаметр";
                     xlabel.Visible = false;
                     widthEdit.Visible = false;
+                    ((MTSDetailsDTO)detailsBS.Current).WIDTH = 0;
                     break;
 
                 default:

@@ -45,11 +45,8 @@ namespace MTS.GUI.MTS
             guageEdit.DataBindings.Add("EditValue", mtsPurchasedProductsBS, "GUAEGENAME", true, DataSourceUpdateMode.OnPropertyChanged);
             quantityEdit.DataBindings.Add("EditValue", mtsPurchasedProductsBS, "QUANTITY", true, DataSourceUpdateMode.OnPropertyChanged);
 
-            //if (operation == Utils.Operation.Update)
-            //{
-            //    nameBuyDetailEdit.EditValue = nomen.NAME;
-            //    guageEdit.EditValue = nomen.GUAGE;
-            //}
+            //if (operation == Utils.Operation.Add)
+            //    quantityEdit.Focus();
         }
 
         private bool Save()
@@ -194,9 +191,14 @@ namespace MTS.GUI.MTS
             ShowDirectoryBuyDetails(new MTSNomenclaturesDTO());
         }
 
+        private bool ControlValidation()
+        {
+            return mtsBuyDetailValidationProvider.Validate();
+        }
+
         private void MtsBuyDetailEditOldFm_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter && ControlValidation())
                 saveBtn.PerformClick();
         }
     }

@@ -18904,7 +18904,7 @@ namespace MTS.BLL.Services
                    Price = (decimal)t2.y.NOMENCLATURESPRICE,
                    AdditCalculationQuantity = (decimal)(t2.y.NOM_GROUP_ADDIT_CALCULATION_ID == 1 ? t2.i.summQuantity * t2.y.NOM_GROUP_RATIO_OF_WASTE / t2.y.NOMENCLATURESWEIGHT
                                                        : (t2.y.NOM_GROUP_ADDIT_CALCULATION_ID == 2 ? t2.i.summQ2 : 0)),
-                   AdditCalculationMeasure = t2.y.NOM_GROUP_ADDIT_CALCULATION_ID == null ? string.Empty : t2.y.MEASURE_NAME,
+                   AdditCalculationMeasure = t2.y.NOM_GROUP_ADDIT_CALCULATION_ID == null ? string.Empty : t2.y.NOM_GROUP_ADDIT_CALCULATION_MEASURE,
                    Quantity = (decimal)(t2.i.summQuantity * (t2.y.NOM_GROUP_RATIO_OF_WASTE == 0 ? 1 : t2.y.NOM_GROUP_RATIO_OF_WASTE)),
                    NomenclatureGroupId = (int)t2.y.NOM_GROUP_ID,
                    Weight = (decimal)t2.y.NOMENCLATURESWEIGHT,
