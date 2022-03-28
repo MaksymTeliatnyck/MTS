@@ -53,52 +53,65 @@ namespace MTS.GUI.MTS
 
             startDateItem.EditValue = new DateTime(DateTime.Now.Year - 1, 6, 5);
             endDateItem.EditValue = DateTime.Now;
+
+            UserAccess((int)mtsAthorizationUsersDTO.USER_GROUPS_ID);
             SetGridSetting();
             //specificGridView.BeginUpdate();
             focusedRow = LoadData();
-
-
-
-
-
-
-
-            //specificGridView.EndUpdate();
-            //specificGridView.SelectRow(100);
-            //specificGridView.MoveBy(100);
-
-            //int topIndex = specificGridView.TopRowIndex;
-
             
             int rowHandle = specificGridView.LocateByValue("ID", focusedRow);
             specificGridView.FocusedRowHandle = rowHandle;
             
-            //specificGridView.TopRowIndex = topIndex;
-            //specificGridView.TopRowIndex = (rowHandle - 10);
-            //specificGridView.LoadRow(rowHandle);
-            //specificGridView.
-            //specificGridView.MoveBy(100);
-            //specificGridView.SelectRow(100);
-            //specificGridView.MakeRowVisible(100);
 
+        }
 
-            //specificGridView.Row
+        private void UserAccess(int userGroupId)
+        {
+            switch (userGroupId)
+            {
+                case 1://technologs, CRUD operation, full access
+                    break;
+                case 2:
+                case 3:
+                case 5://other, only view
+                    addAllSpeficBtn.Enabled = false;
+                    addSpecificBtn.Enabled = false;
+                    copySpecBtn.Enabled = false;
+                    editSpecificBtn.Enabled = false;
+                    deleteSpecificBtn.Enabled = false;
+                    enableColorSpecificBtn.Enabled = false;
+                    mainMenu.Items[0].Enabled = false;
+                    mainMenu.Items[1].Enabled = false;
+                    mainMenu.Items[2].Enabled = false;
+                    mainMenu.Items[9].Enabled = false;
+                    mainMenu.Items[10].Enabled = false;
+                    addBuyDetailBarBtn.Enabled = false;
+                    editBuyDetailBarBtn.Enabled = false;
+                    deleteBuyDetailBarBtn.Enabled = false;
+                    addDetailBarBtn.Enabled = false;
+                    editDetailBarBtn.Enabled = false;
+                    deleteDetailBarBtn.Enabled = false;
+                    addMaterialDetailBarBtn.Enabled = false;
+                    editMaterialDetailBarBtn.Enabled = false;
+                    deleteMaterialDetailBarBtn.Enabled = false;
+                    break;
+                //other
+                    break;
+                case 4: //admin, full access
+                    break;
+                
 
-            //specificGridView.FocusedRowHandle = rowHandle;
+                default:
+                    break;
+            }
+        }
 
-            //specificGridView.SelectRow(rowHandle);
-            //specificGridView.MakeRowVisible(rowHandle);
-            //specificGridView.MoveBy(rowHandle);
-
-            //gvListEmployees.FocusedRowHandle = rowHandle;  
-            //gvListEmployees.SelectRow(rowHandle);
-
-
-            //specificGridView.TopRowIndex = (rowHandle-17);
-            //specificGridView.MakeRowVisible(rowHandle);
-            //specificGridView.FocusedRowHandle = rowHandle;
-            //specificGridView.SelectRow(100);
-            //specificGridView.EndUpdate();
+        private bool CheckEditAcces()
+        {
+            if (mtsAthorizationUsersDTO.USER_GROUPS_ID == 1 || mtsAthorizationUsersDTO.USER_GROUPS_ID == 4)
+                return true;
+            else
+                return false;
         }
 
         private int LoadData()
@@ -196,6 +209,17 @@ namespace MTS.GUI.MTS
         private void specificGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             // var model = (MTSSpecificationsDTO)specificGridView.GetRow(e.FocusedRowHandle) ?? null;
+            if (specificBS.Count > 0)
+            {
+                LoadSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
+                LoadBuysDetalSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
+                LoadMaterialsSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
+            }
+            else
+                materialsSpecificGrid.DataSource = null;
+
+            if (!CheckEditAcces())
+                return;
 
             if (((MTSSpecificationsDTO)specificBS.Current).SET_COLOR == 1)
             {
@@ -211,15 +235,8 @@ namespace MTS.GUI.MTS
                 disableLabelMenuBtn.Enabled = false;
                 enableLabelMenuBtn.Enabled = true;
             }
-            if (specificBS.Count > 0)
-            {
-                LoadSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
-                LoadBuysDetalSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
-                LoadMaterialsSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
-            }
-            else
-                materialsSpecificGrid.DataSource = null;
         }
+            
 
         private ObjectBase ItemSpecification
         {
@@ -785,6 +802,9 @@ namespace MTS.GUI.MTS
 
         private void MtsSpecificationOldFm_KeyUp(object sender, KeyEventArgs e)
         {
+            if (!CheckEditAcces())
+                return;
+
             if (e.KeyCode == Keys.F3)
             {
                 switch (xtraTabControl1.SelectedTabPageIndex)

@@ -2321,7 +2321,7 @@
             this.Name = "MtsSpecificationOldFm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Метериальные спецификации";
+            this.Text = "Матеріальні специфікації";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MtsSpecificationOldFm_FormClosed);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MtsSpecificationOldFm_KeyUp);
