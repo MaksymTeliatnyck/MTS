@@ -46,7 +46,9 @@
             this.gostEdit.Name = "gostEdit";
             this.gostEdit.Size = new System.Drawing.Size(274, 20);
             this.gostEdit.TabIndex = 0;
-            conditionValidationRule1.ErrorText = "This value is not valid";
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Не вказано гост";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
             this.gostValidationProvider.SetValidationRule(this.gostEdit, conditionValidationRule1);
             this.gostEdit.EditValueChanged += new System.EventHandler(this.gostEdit_EditValueChanged);
             // 

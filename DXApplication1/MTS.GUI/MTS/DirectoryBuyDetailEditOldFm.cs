@@ -231,7 +231,12 @@ namespace MTS.GUI.MTS
 
         private void addNomenclatureItem_Click(object sender, EventArgs e)
         {
-            editNomenclature(Utils.Operation.Add, new MTSNomenclaturesDTO());
+            MTSNomenclaturesDTO newNomenclature = new MTSNomenclaturesDTO()
+            {
+                NOMENCLATUREGROUPS_ID = ((MTSNomenclatureGroupsDTO)nomenclatureGroupsBS.Current).ID
+            };
+
+            editNomenclature(Utils.Operation.Add, newNomenclature);
 
         }
 

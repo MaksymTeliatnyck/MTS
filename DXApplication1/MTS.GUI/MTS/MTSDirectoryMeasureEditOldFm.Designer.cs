@@ -43,7 +43,6 @@
             // 
             this.measureEdit.Location = new System.Drawing.Point(42, 12);
             this.measureEdit.Name = "measureEdit";
-            this.measureEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
             this.measureEdit.Properties.Mask.SaveLiteral = false;
             this.measureEdit.Properties.Mask.ShowPlaceHolders = false;
             this.measureEdit.Size = new System.Drawing.Size(214, 20);

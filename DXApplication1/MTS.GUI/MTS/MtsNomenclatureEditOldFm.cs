@@ -49,19 +49,11 @@ namespace MTS.GUI.MTS
             noteEdit.DataBindings.Add("EditValue", mtsNomenclaturesBS, "NOTE", true, DataSourceUpdateMode.OnPropertyChanged);
             guagesEdit.DataBindings.Add("EditValue", mtsNomenclaturesBS, "GUAGE", true, DataSourceUpdateMode.OnPropertyChanged);
 
-
-
             nomenGroupLookUpEdit.DataBindings.Add("EditValue", mtsNomenclaturesBS, "NOMENCLATUREGROUPS_ID", true, DataSourceUpdateMode.OnPropertyChanged);
             nomenGroupLookUpEdit.Properties.DataSource = mtsNomenclaturesService.GetNomenclatureGroups();
             nomenGroupLookUpEdit.Properties.ValueMember = "ID";
             nomenGroupLookUpEdit.Properties.DisplayMember = "NAME";
             nomenGroupLookUpEdit.Properties.NullText = "Немає данних";
-
-            //guagesLookUpEdit.DataBindings.Add("EditValue", mtsNomenclaturesBS, "GUAGE_ID", true, DataSourceUpdateMode.OnPropertyChanged);
-            //guagesLookUpEdit.Properties.DataSource = mtsSpecificationsService.GetAllGuagesOld();
-            //guagesLookUpEdit.Properties.ValueMember = "ID";
-            //guagesLookUpEdit.Properties.DisplayMember = "NAME";
-            //guagesLookUpEdit.Properties.NullText = "Немає данних";
 
             measureLookUpEdit.DataBindings.Add("EditValue", mtsNomenclaturesBS, "MEASURE_ID", true, DataSourceUpdateMode.OnPropertyChanged);
             measureLookUpEdit.Properties.DataSource = mtsSpecificationsService.GetAllMeasureOld();
@@ -199,5 +191,139 @@ namespace MTS.GUI.MTS
 
 
         #endregion
+
+        private void measureLookUpEdit_Properties_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            
+        }
+
+        private void measureLookUpEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
+            //businessTripsService = Program.kernel.Get<IBusinessTripsService>();
+            switch (e.Button.Index)
+            {
+                case 1: //Додати
+                    {
+                        using (MTSDirectoryMeasureEditOldFm measureEditFm = new MTSDirectoryMeasureEditOldFm(Utils.Operation.Add, new MTSMeasureDTO()))
+                        {
+                            if (measureEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                            {
+                                long return_Id = measureEditFm.Return1().ID;
+                                mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
+                                measureLookUpEdit.Properties.DataSource = mtsSpecificationsService.GetAllMeasureOld();
+                                measureLookUpEdit.EditValue = return_Id;
+                            }
+                        }
+                        break;
+                    }
+                case 2://Редагувати
+                    {
+                        if (measureLookUpEdit.EditValue == DBNull.Value)
+                            return;
+
+                        using (MTSDirectoryMeasureEditOldFm measureEditFm = new MTSDirectoryMeasureEditOldFm(Utils.Operation.Update, (MTSMeasureDTO)measureLookUpEdit.GetSelectedDataRow()))
+                        {
+                            if (measureEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                            {
+                                long return_Id = measureEditFm.Return1().ID;
+                                mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
+                                measureLookUpEdit.Properties.DataSource = mtsSpecificationsService.GetAllMeasureOld();
+                                measureLookUpEdit.EditValue = return_Id;
+
+
+                            }
+                        }
+                        break;
+                    }
+                case 3://Видалити
+                    {
+                        if (measureLookUpEdit.EditValue == DBNull.Value)
+                            return;
+
+                        if (MessageBox.Show("Видалити?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            mtsSpecificationsService.MTSDeleteMeasure(((MTSMeasureDTO)measureLookUpEdit.GetSelectedDataRow()).ID);
+                            mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
+                            measureLookUpEdit.Properties.DataSource = mtsSpecificationsService.GetAllMeasureOld();
+                            measureLookUpEdit.EditValue = null;
+                            measureLookUpEdit.Properties.NullText = "Немає данних";
+                        }
+
+                        break;
+                    }
+                //case 4://Очистити
+                //    {
+                //        purposeEdit.EditValue = null;
+                //        purposeEdit.Properties.NullText = "Немає данних";
+                //        break;
+                //    }
+            }
+        }
+
+        private void gostLookUpEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            
+                mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
+            //businessTripsService = Program.kernel.Get<IBusinessTripsService>();
+            switch (e.Button.Index)
+            {
+                case 1: //Додати
+                    {
+                        using (MtsDirectoryGostEditOldFm gostEditFm = new MtsDirectoryGostEditOldFm(Utils.Operation.Add, new MTSGostDTO()))
+                        {
+                            if (gostEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                            {
+                                long return_Id = gostEditFm.Return().ID;
+                                mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
+                                gostLookUpEdit.Properties.DataSource = mtsSpecificationsService.GetAllGostOld();
+                                gostLookUpEdit.EditValue = return_Id;
+                            }
+                        }
+                        break;
+                    }
+                case 2://Редагувати
+                    {
+                        if (gostLookUpEdit.EditValue == DBNull.Value)
+                            return;
+
+                        using (MtsDirectoryGostEditOldFm gostEditFm = new MtsDirectoryGostEditOldFm(Utils.Operation.Update, (MTSGostDTO)gostLookUpEdit.GetSelectedDataRow()))
+                        {
+                            if (gostEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                            {
+                                long return_Id = gostEditFm.Return().ID;
+                                mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
+                                gostLookUpEdit.Properties.DataSource = mtsSpecificationsService.GetAllGostOld();
+                                gostLookUpEdit.EditValue = return_Id;
+
+
+                            }
+                        }
+                        break;
+                    }
+                case 3://Видалити
+                    {
+                        if (measureLookUpEdit.EditValue == DBNull.Value)
+                            return;
+
+                        if (MessageBox.Show("Видалити?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            mtsSpecificationsService.MTSDeleteMeasure(((MTSMeasureDTO)measureLookUpEdit.GetSelectedDataRow()).ID);
+                            mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
+                            measureLookUpEdit.Properties.DataSource = mtsSpecificationsService.GetAllMeasureOld();
+                            measureLookUpEdit.EditValue = null;
+                            measureLookUpEdit.Properties.NullText = "Немає данних";
+                        }
+
+                        break;
+                    }
+                    //case 4://Очистити
+                    //    {
+                    //        purposeEdit.EditValue = null;
+                    //        purposeEdit.Properties.NullText = "Немає данних";
+                    //        break;
+                    //    }
+            }
+        }
     }
 }

@@ -221,6 +221,8 @@ namespace MTS.GUI.MTS
                     this.nomenclaturesDTO = directoryBuyDetailEditOldFm.Returnl();
 
                     //MTSNomenclatureGroupsOldDTO return_Id = directoryBuyDetailEditOldFm.Return();
+                    ((MTSDetailsDTO)Item).NOMENCLATURE_ID = this.nomenclaturesDTO.ID;
+
                     nomenclatureNameEdit.EditValue = this.nomenclaturesDTO.NAME;
                     guageEdit.EditValue = this.nomenclaturesDTO.GUAGE;
                       

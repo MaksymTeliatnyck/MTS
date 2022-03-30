@@ -32,7 +32,14 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MtsNomenclatureEditOldFm));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
@@ -51,18 +58,18 @@
             this.cancelBtn = new DevExpress.XtraEditors.SimpleButton();
             this.nomenGroupLookUpEdit = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.NameGroup = new DevExpress.XtraGrid.Columns.GridColumn();
             this.measureLookUpEdit = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.NameColmn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gostLookUpEdit = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.NAME1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.nameNomenEdit = new DevExpress.XtraEditors.MemoEdit();
             this.mtsNomenclatureValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.noteEdit = new DevExpress.XtraEditors.MemoEdit();
             this.guagesEdit = new DevExpress.XtraEditors.TextEdit();
             this.validateLbl = new DevExpress.XtraEditors.LabelControl();
+            this.NameGroup = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NameColmn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NAME1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.weightEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nomenGroupLookUpEdit.Properties)).BeginInit();
@@ -79,11 +86,11 @@
             // 
             // weightEdit
             // 
-            this.weightEdit.Location = new System.Drawing.Point(268, 301);
+            this.weightEdit.Location = new System.Drawing.Point(228, 226);
             this.weightEdit.Name = "weightEdit";
             this.weightEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.weightEdit.Properties.Appearance.Options.UseFont = true;
-            this.weightEdit.Size = new System.Drawing.Size(210, 22);
+            this.weightEdit.Size = new System.Drawing.Size(251, 22);
             this.weightEdit.TabIndex = 1;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.GreaterOrEqual;
             conditionValidationRule1.ErrorText = "Не внесено дані";
@@ -94,11 +101,11 @@
             // 
             // priceEdit
             // 
-            this.priceEdit.Location = new System.Drawing.Point(268, 350);
+            this.priceEdit.Location = new System.Drawing.Point(228, 263);
             this.priceEdit.Name = "priceEdit";
             this.priceEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.priceEdit.Properties.Appearance.Options.UseFont = true;
-            this.priceEdit.Size = new System.Drawing.Size(210, 22);
+            this.priceEdit.Size = new System.Drawing.Size(251, 22);
             this.priceEdit.TabIndex = 2;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.GreaterOrEqual;
             conditionValidationRule2.ErrorText = "This value is not valid";
@@ -119,7 +126,7 @@
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelControl2.Location = new System.Drawing.Point(23, 84);
+            this.labelControl2.Location = new System.Drawing.Point(23, 74);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(40, 18);
             this.labelControl2.TabIndex = 9;
@@ -128,7 +135,7 @@
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelControl3.Location = new System.Drawing.Point(23, 137);
+            this.labelControl3.Location = new System.Drawing.Point(23, 109);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(75, 18);
             this.labelControl3.TabIndex = 10;
@@ -137,7 +144,7 @@
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelControl4.Location = new System.Drawing.Point(23, 197);
+            this.labelControl4.Location = new System.Drawing.Point(23, 147);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(146, 18);
             this.labelControl4.TabIndex = 11;
@@ -146,7 +153,7 @@
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelControl5.Location = new System.Drawing.Point(23, 252);
+            this.labelControl5.Location = new System.Drawing.Point(23, 187);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(31, 18);
             this.labelControl5.TabIndex = 12;
@@ -155,7 +162,7 @@
             // labelControl6
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelControl6.Location = new System.Drawing.Point(25, 305);
+            this.labelControl6.Location = new System.Drawing.Point(23, 227);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(59, 18);
             this.labelControl6.TabIndex = 13;
@@ -164,7 +171,7 @@
             // priceLb
             // 
             this.priceLb.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.priceLb.Location = new System.Drawing.Point(26, 354);
+            this.priceLb.Location = new System.Drawing.Point(23, 264);
             this.priceLb.Name = "priceLb";
             this.priceLb.Size = new System.Drawing.Size(28, 18);
             this.priceLb.TabIndex = 14;
@@ -173,7 +180,7 @@
             // noteLabel
             // 
             this.noteLabel.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.noteLabel.Location = new System.Drawing.Point(23, 434);
+            this.noteLabel.Location = new System.Drawing.Point(23, 332);
             this.noteLabel.Name = "noteLabel";
             this.noteLabel.Size = new System.Drawing.Size(61, 18);
             this.noteLabel.TabIndex = 15;
@@ -181,7 +188,7 @@
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(300, 498);
+            this.saveBtn.Location = new System.Drawing.Point(301, 404);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(97, 23);
             this.saveBtn.TabIndex = 16;
@@ -190,7 +197,7 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(403, 498);
+            this.cancelBtn.Location = new System.Drawing.Point(404, 404);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 17;
@@ -200,14 +207,14 @@
             // nomenGroupLookUpEdit
             // 
             this.nomenGroupLookUpEdit.EditValue = "";
-            this.nomenGroupLookUpEdit.Location = new System.Drawing.Point(268, 80);
+            this.nomenGroupLookUpEdit.Location = new System.Drawing.Point(227, 70);
             this.nomenGroupLookUpEdit.Name = "nomenGroupLookUpEdit";
             this.nomenGroupLookUpEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenGroupLookUpEdit.Properties.Appearance.Options.UseFont = true;
             this.nomenGroupLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.nomenGroupLookUpEdit.Properties.View = this.gridLookUpEdit1View;
-            this.nomenGroupLookUpEdit.Size = new System.Drawing.Size(210, 22);
+            this.nomenGroupLookUpEdit.Size = new System.Drawing.Size(251, 22);
             this.nomenGroupLookUpEdit.TabIndex = 6;
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
             conditionValidationRule3.ErrorText = "This value is not valid";
@@ -222,34 +229,30 @@
             this.NameGroup});
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
-            this.gridLookUpEdit1View.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // NameGroup
-            // 
-            this.NameGroup.Caption = "Группа";
-            this.NameGroup.FieldName = "NAME";
-            this.NameGroup.Name = "NameGroup";
-            this.NameGroup.Visible = true;
-            this.NameGroup.VisibleIndex = 0;
-            // 
             // measureLookUpEdit
             // 
-            this.measureLookUpEdit.Location = new System.Drawing.Point(268, 193);
+            this.measureLookUpEdit.Location = new System.Drawing.Point(228, 146);
             this.measureLookUpEdit.Name = "measureLookUpEdit";
             this.measureLookUpEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.measureLookUpEdit.Properties.Appearance.Options.UseFont = true;
             this.measureLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("measureLookUpEdit.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("measureLookUpEdit.Properties.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("measureLookUpEdit.Properties.Buttons2"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
             this.measureLookUpEdit.Properties.View = this.gridView2;
-            this.measureLookUpEdit.Size = new System.Drawing.Size(210, 22);
+            this.measureLookUpEdit.Properties.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.measureLookUpEdit_Properties_ButtonClick);
+            this.measureLookUpEdit.Size = new System.Drawing.Size(251, 22);
             this.measureLookUpEdit.TabIndex = 5;
             conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
             conditionValidationRule4.ErrorText = "This value is not valid";
             conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
             conditionValidationRule4.Value1 = "0";
             this.mtsNomenclatureValidationProvider.SetValidationRule(this.measureLookUpEdit, conditionValidationRule4);
+            this.measureLookUpEdit.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.measureLookUpEdit_ButtonClick);
             this.measureLookUpEdit.EditValueChanged += new System.EventHandler(this.measureLookUpEdit_EditValueChanged);
             // 
             // gridView2
@@ -258,35 +261,31 @@
             this.NameColmn});
             this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowAutoFilterRow = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
-            // NameColmn
-            // 
-            this.NameColmn.Caption = "Одиниці вимірювання";
-            this.NameColmn.FieldName = "NAME";
-            this.NameColmn.Name = "NameColmn";
-            this.NameColmn.Visible = true;
-            this.NameColmn.VisibleIndex = 0;
             // 
             // gostLookUpEdit
             // 
             this.gostLookUpEdit.EditValue = "";
-            this.gostLookUpEdit.Location = new System.Drawing.Point(268, 248);
+            this.gostLookUpEdit.Location = new System.Drawing.Point(228, 186);
             this.gostLookUpEdit.Name = "gostLookUpEdit";
             this.gostLookUpEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gostLookUpEdit.Properties.Appearance.Options.UseFont = true;
             this.gostLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("gostLookUpEdit.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("gostLookUpEdit.Properties.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, "", null, null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("gostLookUpEdit.Properties.Buttons2"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject6, "", null, null, true)});
             this.gostLookUpEdit.Properties.View = this.gridView3;
-            this.gostLookUpEdit.Size = new System.Drawing.Size(210, 22);
+            this.gostLookUpEdit.Size = new System.Drawing.Size(251, 22);
             this.gostLookUpEdit.TabIndex = 7;
             conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
             conditionValidationRule5.ErrorText = "Не заповнене поле";
             conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
             conditionValidationRule5.Value1 = "";
             this.mtsNomenclatureValidationProvider.SetValidationRule(this.gostLookUpEdit, conditionValidationRule5);
+            this.gostLookUpEdit.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.gostLookUpEdit_ButtonClick);
             this.gostLookUpEdit.EditValueChanged += new System.EventHandler(this.gostLookUpEdit_EditValueChanged);
             // 
             // gridView3
@@ -295,17 +294,9 @@
             this.NAME1});
             this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView3.OptionsView.ShowAutoFilterRow = true;
             this.gridView3.OptionsView.ShowGroupPanel = false;
-            // 
-            // NAME1
-            // 
-            this.NAME1.Caption = "Гост";
-            this.NAME1.FieldName = "NAME";
-            this.NAME1.Name = "NAME1";
-            this.NAME1.Visible = true;
-            this.NAME1.VisibleIndex = 0;
             // 
             // nameNomenEdit
             // 
@@ -330,7 +321,7 @@
             // 
             // noteEdit
             // 
-            this.noteEdit.Location = new System.Drawing.Point(180, 408);
+            this.noteEdit.Location = new System.Drawing.Point(180, 301);
             this.noteEdit.Name = "noteEdit";
             this.noteEdit.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.noteEdit.Size = new System.Drawing.Size(298, 49);
@@ -343,9 +334,9 @@
             // 
             // guagesEdit
             // 
-            this.guagesEdit.Location = new System.Drawing.Point(268, 135);
+            this.guagesEdit.Location = new System.Drawing.Point(227, 110);
             this.guagesEdit.Name = "guagesEdit";
-            this.guagesEdit.Size = new System.Drawing.Size(211, 20);
+            this.guagesEdit.Size = new System.Drawing.Size(252, 20);
             this.guagesEdit.TabIndex = 51;
             conditionValidationRule8.ErrorText = "This value is not valid";
             conditionValidationRule8.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.None;
@@ -356,17 +347,41 @@
             // 
             this.validateLbl.Appearance.BackColor = System.Drawing.SystemColors.Info;
             this.validateLbl.Appearance.ForeColor = System.Drawing.Color.OrangeRed;
-            this.validateLbl.Location = new System.Drawing.Point(23, 470);
+            this.validateLbl.Location = new System.Drawing.Point(23, 372);
             this.validateLbl.Name = "validateLbl";
             this.validateLbl.Size = new System.Drawing.Size(249, 13);
             this.validateLbl.TabIndex = 50;
             this.validateLbl.Text = "*Для збереження, заповніть всі обов\'язкові поля";
             // 
+            // NameGroup
+            // 
+            this.NameGroup.Caption = "Группа";
+            this.NameGroup.FieldName = "NAME";
+            this.NameGroup.Name = "NameGroup";
+            this.NameGroup.Visible = true;
+            this.NameGroup.VisibleIndex = 0;
+            // 
+            // NameColmn
+            // 
+            this.NameColmn.Caption = "Одиниці вимірювання";
+            this.NameColmn.FieldName = "NAME";
+            this.NameColmn.Name = "NameColmn";
+            this.NameColmn.Visible = true;
+            this.NameColmn.VisibleIndex = 0;
+            // 
+            // NAME1
+            // 
+            this.NAME1.Caption = "Гост";
+            this.NAME1.FieldName = "NAME";
+            this.NAME1.Name = "NAME1";
+            this.NAME1.Visible = true;
+            this.NAME1.VisibleIndex = 0;
+            // 
             // MtsNomenclatureEditOldFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(501, 533);
+            this.ClientSize = new System.Drawing.Size(501, 447);
             this.Controls.Add(this.guagesEdit);
             this.Controls.Add(this.validateLbl);
             this.Controls.Add(this.cancelBtn);
