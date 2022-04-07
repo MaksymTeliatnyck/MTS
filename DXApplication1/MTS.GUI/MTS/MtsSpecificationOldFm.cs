@@ -184,9 +184,9 @@ namespace MTS.GUI.MTS
 
             mtsService = Program.kernel.Get<IMtsSpecificationsService>();
             MTSSpecificationsDTO update = (MTSSpecificationsDTO)specificBS.Current;
-            int rowHandle = specificGridView.FocusedRowHandle - 1;
+            //int rowHandle = specificGridView.FocusedRowHandle - 1;
+            int rowHandle = specificGridView.LocateByValue("ID", update.ID);
 
-            
 
             specificGridView.BeginDataUpdate();
 
@@ -194,21 +194,65 @@ namespace MTS.GUI.MTS
             {
                 ((MTSSpecificationsDTO)specificBS.Current).SET_COLOR = 1;
                 mtsService.MTSSpecificationUpdate((MTSSpecificationsDTO)specificBS.Current);
+                FocusedRowChanged();
             }
             else
             {
+                splashScreenManager.ShowWaitForm();
+                List<MTSDetailsDTO> mtsDetailsList = new List<MTSDetailsDTO>();
+                List<MTSPurchasedProductsDTO> mtsPurchasedProductsList = new List<MTSPurchasedProductsDTO>();
+                List<MTSMaterialsDTO> mtsMaterialsList = new List<MTSMaterialsDTO>();
+
                 ((MTSSpecificationsDTO)specificBS.Current).SET_COLOR = 0;
                 mtsService.MTSSpecificationUpdate((MTSSpecificationsDTO)specificBS.Current);
+
+                mtsDetailsList = mtsService.GetAllDetailsSpecific(((MTSSpecificationsDTO)specificBS.Current).ID).OrderByDescending(ord => ord.ID).ToList();
+                if (mtsDetailsList.Count != 0)
+                {
+                    foreach (var item in mtsDetailsList)
+                    {
+                        item.CHANGES = 0;
+                        mtsService.MTSDetailsUpdate(item);
+                    }
+                }
+
+                mtsPurchasedProductsList = mtsService.GetBuysDetalSpecific(((MTSSpecificationsDTO)specificBS.Current).ID).OrderByDescending(ord => ord.ID).ToList();
+                if (mtsPurchasedProductsList.Count != 0)
+                {
+                    foreach (var item in mtsPurchasedProductsList)
+                    {
+                        item.CHANGES = 0;
+                        mtsService.MTSPurchasedProductsUpdate(item);
+                    }
+                }
+
+                mtsMaterialsList = mtsService.GetMaterialsSpecific(((MTSSpecificationsDTO)specificBS.Current).ID).OrderByDescending(ord => ord.ID).ToList();
+                if (mtsMaterialsList.Count != 0)
+                {
+                    foreach (var item in mtsMaterialsList)
+                    {
+                        item.CHANGES = 0;
+                        mtsService.MTSMaterialUpdate(item);
+                    }
+                }    
+
+                splashScreenManager.CloseWaitForm();
+                FocusedRowChanged();
             }
 
             specificGridView.FocusedRowHandle = (specificGridView.IsValidRowHandle(rowHandle)) ? rowHandle : -1;
-
             specificGridView.EndDataUpdate();
         }
 
         private void specificGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             // var model = (MTSSpecificationsDTO)specificGridView.GetRow(e.FocusedRowHandle) ?? null;
+
+            FocusedRowChanged();
+        }
+
+        public void FocusedRowChanged()
+        {
             if (specificBS.Count > 0)
             {
                 LoadSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);

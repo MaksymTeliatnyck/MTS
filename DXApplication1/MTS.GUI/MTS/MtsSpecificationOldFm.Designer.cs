@@ -186,6 +186,7 @@
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.styleController1 = new DevExpress.XtraEditors.StyleController(this.components);
+            this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::MTS.GUI.WaitForm1), true, true);
             ribbonPageUser = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
@@ -2293,6 +2294,10 @@
             this.styleController1.LookAndFeel.SkinName = "Seven Classic";
             this.styleController1.LookAndFeel.UseDefaultLookAndFeel = false;
             // 
+            // splashScreenManager
+            // 
+            this.splashScreenManager.ClosingDelay = 500;
+            // 
             // MtsSpecificationOldFm
             // 
             this.Appearance.Options.UseFont = true;
@@ -2527,5 +2532,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoForDetailsEdit;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit2;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
     }
 }

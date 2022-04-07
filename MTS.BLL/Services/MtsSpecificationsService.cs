@@ -906,6 +906,8 @@ namespace MTS.BLL.Services
             mtsDetails.Update((mapper.Map<MTSDetailsDTO, MTS_DETAILS>(mtsDetailsDTO, updateDetail)));
         }
 
+
+
         public bool MTSDetailsDelete(int id)
         {
             try
