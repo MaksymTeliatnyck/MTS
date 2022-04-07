@@ -19481,7 +19481,7 @@ namespace MTS.BLL.Services
             try
             {
                 string fileName = String.Format("Спецификация на изделие  " + mtsSpecification.NAME);
-                Workbook.SaveAs(GeneratedReportsDir + fileName + ".xls", FileFormat.Excel8);
+                Workbook.SaveAs(GeneratedReportsDir + fileName + ".xls", FileFormat.XLS97);
                 Process process = new Process();
                 process.StartInfo.Arguments = "\"" + GeneratedReportsDir + fileName + ".xls" + "\"";
                 process.StartInfo.FileName = "Excel.exe";

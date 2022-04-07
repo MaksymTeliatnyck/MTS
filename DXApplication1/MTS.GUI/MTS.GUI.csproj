@@ -35,8 +35,8 @@
     <ProductName>MTS</ProductName>
     <PublisherName>IT</PublisherName>
     <SuiteName>Матеріальні специфікації</SuiteName>
-    <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
-    <ApplicationRevision>6</ApplicationRevision>
+    <MinimumRequiredVersion>1.0.0.7</MinimumRequiredVersion>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -75,10 +75,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>455DFCB40CC79A27AC110ADF3746055A4797DF6C</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>C2DFD161B859A0D5A4009C68711ABC350BE1D1A2</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>MTS.GUI_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>MTS.GUI_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
