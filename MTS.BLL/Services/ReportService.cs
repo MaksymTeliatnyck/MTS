@@ -36,6 +36,8 @@ namespace MTS.BLL.Services
     {
         private string GeneratedReportsDir = Utils.HomePath + @"\Temp\";
 
+        private string GeneratedReportsDirTest = Utils.HomePathTemp + @"\Temp\";
+
         private Words._Application word;
         private Words._Document document;
 
@@ -102,6 +104,8 @@ namespace MTS.BLL.Services
         //private IRepository<MtsNomenclatures> mtsNomenclatures;
         private IRepository<MSTrialBalanceByAccounts> msTrialBalanceByAccount;
         private IRepository<GetOSVkvartal_ForChess> getOSVkvartal_ForChess;
+
+
         
 
         private IMapper mapper;
@@ -19175,6 +19179,13 @@ namespace MTS.BLL.Services
         //печать спецификации
         public bool PrintTechProcessSpecification(MTSSpecificationsDTO mtsSpecification, List<SpecificationPrintModelDTO> dataSource, decimal scrap, decimal shawing, decimal weightOfWorkpiece)
         {
+            
+
+            if (!Directory.Exists(Utils.printFolderUri))
+            {
+                Directory.CreateDirectory(Utils.printFolderUri);
+            }
+
             try
             {
                 Factory.GetWorkbook(GeneratedReportsDir + @"\Templates\MtsStartedSpecificationReport.xls");
@@ -19481,9 +19492,9 @@ namespace MTS.BLL.Services
             try
             {
                 string fileName = String.Format("Спецификация на изделие  " + mtsSpecification.NAME);
-                Workbook.SaveAs(GeneratedReportsDir + fileName + ".xls", FileFormat.XLS97);
+                Workbook.SaveAs(Utils.printFolderUri + fileName + ".xls", FileFormat.XLS97);
                 Process process = new Process();
-                process.StartInfo.Arguments = "\"" + GeneratedReportsDir + fileName + ".xls" + "\"";
+                process.StartInfo.Arguments = "\"" + Utils.printFolderUri + fileName + ".xls" + "\"";
                 process.StartInfo.FileName = "Excel.exe";
                 process.Start();
 
@@ -19501,6 +19512,11 @@ namespace MTS.BLL.Services
         //печать карты техпроцесса
         public bool PrintMapTechProcess(MTSSpecificationsDTO mtsSpecification, List<MTSDetailsDTO> dataSource)
         {
+            if (!Directory.Exists(Utils.printFolderUri))
+            {
+                Directory.CreateDirectory(Utils.printFolderUri);
+            }
+
             try
             {
                 Factory.GetWorkbook(GeneratedReportsDir + @"\Templates\MtsStartedProcessMapReport.xls");
@@ -19669,9 +19685,9 @@ namespace MTS.BLL.Services
             try
             {
                 string fileName = String.Format("Карта технологического процесса проекта " + mtsSpecification.NAME);
-                Workbook.SaveAs(GeneratedReportsDir + fileName + ".xls", FileFormat.Excel8);
+                Workbook.SaveAs(Utils.printFolderUri + fileName + ".xls", FileFormat.Excel8);
                 Process process = new Process();
-                process.StartInfo.Arguments = "\"" + GeneratedReportsDir + fileName + ".xls" + "\"";
+                process.StartInfo.Arguments = "\"" + Utils.printFolderUri + fileName + ".xls" + "\"";
                 process.StartInfo.FileName = "Excel.exe";
                 process.Start();
 
@@ -19689,6 +19705,11 @@ namespace MTS.BLL.Services
         //печать карты маршрутного техпроцесса
         public bool PrintMapRouteTechProcess(MTSSpecificationsDTO mtsSpecification, List<MTSDetailsDTO> dataSource)
         {
+            if (!Directory.Exists(Utils.printFolderUri))
+            {
+                Directory.CreateDirectory(Utils.printFolderUri);
+            }
+
             try
             {
                 Factory.GetWorkbook(GeneratedReportsDir + @"\Templates\MtsStartedProcessMapLongReport.xls");
@@ -19758,9 +19779,9 @@ namespace MTS.BLL.Services
             try
             {
                 string fileName = String.Format("Карта Маршрутного технолгического процесса проекта " + mtsSpecification.NAME);
-                Workbook.SaveAs(GeneratedReportsDir + fileName + ".xls", FileFormat.Excel8);
+                Workbook.SaveAs(Utils.printFolderUri + fileName + ".xls", FileFormat.Excel8);
                 Process process = new Process();
-                process.StartInfo.Arguments = "\"" + GeneratedReportsDir + fileName + ".xls" + "\"";
+                process.StartInfo.Arguments = "\"" + Utils.printFolderUri + fileName + ".xls" + "\"";
                 process.StartInfo.FileName = "Excel.exe";
                 process.Start();
 

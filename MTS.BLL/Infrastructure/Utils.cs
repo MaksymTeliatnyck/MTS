@@ -10,8 +10,10 @@ namespace MTS.BLL.Infrastructure
 {
     public class Utils
     {
-        public static string HomePath = Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]); 
-   
+        public static string HomePath = Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]);
+        public static string HomePathTemp = @"c:\";
+        public static string printFolderUri = @"D:\Печать\";
+
         public enum Operation
         {
             Add,
