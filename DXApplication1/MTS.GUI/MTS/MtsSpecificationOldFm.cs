@@ -51,7 +51,7 @@ namespace MTS.GUI.MTS
             this.mtsAthorizationUsersDTO = mtsAthorizationUsersDTO;
             userNameBtn.Caption = mtsAthorizationUsersDTO.NAME;
 
-            startDateItem.EditValue = new DateTime(DateTime.Now.Year - 1, 6, 5);
+            startDateItem.EditValue = new DateTime(DateTime.Now.Year - 3, 6, 5);
             endDateItem.EditValue = DateTime.Now;
 
             UserAccess((int)mtsAthorizationUsersDTO.USER_GROUPS_ID);
@@ -376,7 +376,7 @@ namespace MTS.GUI.MTS
                             model.NOMENCLATURES_ID = selectNomenclature.ID;
                             model.GUAEGENAME = selectNomenclature.GUAGE;
                             model.NOMENCLATURESNAME = selectNomenclature.NAME;
-                            model.CHANGES = ((MTSSpecificationsDTO)specificBS.Current).SET_COLOR == 0 ? 0 : 1;
+                            model.CHANGES = ((MTSSpecificationsDTO)specificBS.Current).SET_COLOR == 1 ? 1 : 0;
 
                             using (MtsBuyDetailEditOldFm mtsBuyDetailEditOldFm = new MtsBuyDetailEditOldFm(operation, model))
                             //   DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model);
@@ -434,7 +434,7 @@ namespace MTS.GUI.MTS
                             model.NOMENCLATURES_ID = selectNomenclature.ID;
                             model.GUAGENAME = selectNomenclature.GUAGE;
                             model.NOMENCLATURESNAME = selectNomenclature.NAME;
-                            model.CHANGES = ((MTSSpecificationsDTO)specificBS.Current).SET_COLOR == 0 ? 0 : 1;
+                            model.CHANGES = ((MTSSpecificationsDTO)specificBS.Current).SET_COLOR == 1 ? 1 : 0;
 
                             using (MtsMaterialEditOldFm mtsMaterialEditOldFm = new MtsMaterialEditOldFm(operation, model))
                             //   DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model);
@@ -479,7 +479,7 @@ namespace MTS.GUI.MTS
         private void EditDetailSpecific(Utils.Operation operation, MTSDetailsDTO model)
         {
 
-            model.CHANGES = ((MTSSpecificationsDTO)specificBS.Current).SET_COLOR == 0 ? 0 : 1;
+            model.CHANGES = ((MTSSpecificationsDTO)specificBS.Current).SET_COLOR == 1 ? 1 : 0;
 
             using (MtsDetailsEditOldFm mtsDetailsEditOldFm = new MtsDetailsEditOldFm(operation, model))
             {

@@ -19726,8 +19726,29 @@ namespace MTS.BLL.Services
             int startWith = 4;
 
             IRange cells = Worksheet.Cells;
-            mtsSpecification.COMPILATION_NAMES = mtsSpecification.COMPILATION_NAMES.Replace(";", ";\n");
-            cells["B" + 2].Value = "Изделие: "+ mtsSpecification.NAME + "\n" + mtsSpecification.COMPILATION_NAMES;
+
+            if (mtsSpecification.COMPILATION_NAMES == null)
+                cells["B2"].Value = "Изделие:" + mtsSpecification.NAME;
+            else
+            {
+                int namesLength = 0;
+                string compilationName = "";
+                var arr = mtsSpecification.COMPILATION_NAMES.ToCharArray();
+                foreach (var a in arr)
+                {
+                    if (a != ';')
+                    {
+                        compilationName += a;
+                    }
+                    else
+                    {
+                        if (namesLength != arr.Count() - 1)
+                            compilationName += " \n";
+                    }
+                    namesLength++;
+                }
+                cells["B2"].Value = compilationName;
+            }
 
             for (int i = 0; i < dataSource.Count(); i++)
             {

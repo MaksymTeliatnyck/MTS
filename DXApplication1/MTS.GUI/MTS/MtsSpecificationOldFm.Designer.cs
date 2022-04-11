@@ -906,6 +906,9 @@
             this.gridColumn35});
             this.detalsSpecificGridView.GridControl = this.detalsSpecificGrid;
             this.detalsSpecificGridView.Name = "detalsSpecificGridView";
+            this.detalsSpecificGridView.OptionsPrint.PrintDetails = true;
+            this.detalsSpecificGridView.OptionsPrint.PrintSelectedRowsOnly = true;
+            this.detalsSpecificGridView.OptionsView.AnimationType = DevExpress.XtraGrid.Views.Base.GridAnimationType.AnimateAllContent;
             this.detalsSpecificGridView.OptionsView.RowAutoHeight = true;
             this.detalsSpecificGridView.OptionsView.ShowAutoFilterRow = true;
             this.detalsSpecificGridView.OptionsView.ShowGroupPanel = false;
