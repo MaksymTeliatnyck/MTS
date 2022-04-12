@@ -914,6 +914,7 @@
             this.detalsSpecificGridView.OptionsView.ShowGroupPanel = false;
             this.detalsSpecificGridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.detalsSpecificGridView_RowStyle);
             this.detalsSpecificGridView.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.detalsSpecificGridView_ColumnWidthChanged);
+            this.detalsSpecificGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.detalsSpecificGridView_FocusedRowChanged);
             // 
             // gridColumn8
             // 

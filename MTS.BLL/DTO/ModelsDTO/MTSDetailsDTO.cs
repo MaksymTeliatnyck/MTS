@@ -52,9 +52,12 @@ namespace MTS.BLL.DTO.ModelsDTO
         public decimal? HEIGHT { get; set; }
         public string CREATEDETALSNAME { get; set; }     
         public string DETALSPROCESSING { get; set; }
-        
-        
-        
+
+
+        public bool lastFocusedRov { get; set; }
+
+
+
 
 
 
