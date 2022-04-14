@@ -28,6 +28,7 @@ using System.Reflection;
 using System.Collections;
 using MTS.BLL.DTO.ReportsDTO;
 using System.Globalization;
+using System.Threading;
 
 namespace MTS.GUI.MTS
 {
@@ -956,7 +957,7 @@ namespace MTS.GUI.MTS
                 if (item.CHANGES == 1)
                     e.Appearance.BackColor = Color.PaleTurquoise;
                 if (item.lastFocusedRov)
-                    e.Appearance.BackColor = Color.Red;
+                    e.Appearance.BackColor = Color.FromArgb(226,234,253);
 
                 //else
                 //e.Appearance.BackColor = Color.OrangeRed;
@@ -974,26 +975,43 @@ namespace MTS.GUI.MTS
 
         private void detalsSpecificGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if (detalsSpecificGridView.FocusedRowHandle >= -1)
-            {
-                if (previousFocusedRow == -1 && currentFocusedRow == -1)
+            //if (detalsSpecificGridView.FocusedRowHandle >= -1)
+            //{
+                if (previousFocusedRow == -1)
                 {
-                    currentFocusedRow = detalsSpecificGridView.FocusedRowHandle;
                     ((MTSDetailsDTO)detalsSpecificBS.Current).lastFocusedRov = true;
+                    previousFocusedRow = detalsSpecificGridView.FocusedRowHandle;
                 }
-                else
+                else if(detalsSpecificGridView.FocusedRowHandle >= -1 && previousFocusedRow > -1)
                 {
-                    previousFocusedRow = currentFocusedRow;
-                    currentFocusedRow = detalsSpecificGridView.FocusedRowHandle;
-                    ((MTSDetailsDTO)detalsSpecificBS.Current).lastFocusedRov = true;
+                detalsSpecificGridView.BeginUpdate();
                     MTSDetailsDTO item = (MTSDetailsDTO)detalsSpecificGridView.GetRow(previousFocusedRow);
                     item.lastFocusedRov = false;
-                }
+                    previousFocusedRow = detalsSpecificGridView.FocusedRowHandle;
+                    ((MTSDetailsDTO)detalsSpecificBS.Current).lastFocusedRov = true;
+                detalsSpecificGridView.EndUpdate();
             }
+                else if(detalsSpecificGridView.FocusedRowHandle < -1)
+                {
+                    //previousFocusedRow = detalsSpecificGridView.FocusedRowHandle;
+                    //currentFocusedRow = detalsSpecificGridView.FocusedRowHandle;
+                //currentFocusedRow = detalsSpecificGridView.FocusedRowHandle;
+                }
+            //else if (previousFocusedRow >-1 && currentFocusedRow < -1)
+            //{
+            //    MTSDetailsDTO item1 = (MTSDetailsDTO)detalsSpecificGridView.GetRow(previousFocusedRow);
+            //    item1.lastFocusedRov = false;
+
+            //    currentFocusedRow = detalsSpecificGridView.FocusedRowHandle;
+            //    //((MTSDetailsDTO)detalsSpecificBS.Current).lastFocusedRov = true;
+            //    previousFocusedRow = -1;
+            //}
+
+          //  }
 
 
-            
-            //ClearAllFocused();
+
+                //ClearAllFocused();
         }
 
         private void ClearAllFocused()
