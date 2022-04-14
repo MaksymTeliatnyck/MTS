@@ -44,8 +44,9 @@ namespace MTS.GUI.MTS
         private BindingSource materialsSpecificBS = new BindingSource();
         private UserTasksDTO userTasksDTO;
         private MTSAuthorizationUsersDTO mtsAthorizationUsersDTO;
-        private int previousFocusedRow = -1;
-        private int currentFocusedRow = -1;
+        private int previousFocusedRowDetails = -1;
+        private int previousFocusedRowBuyDetails = -1;
+        private int previousFocusedRowMaterials = -1;
 
         public MtsSpecificationOldFm(MTSAuthorizationUsersDTO mtsAthorizationUsersDTO)
         {
@@ -55,12 +56,16 @@ namespace MTS.GUI.MTS
 
             startDateItem.EditValue = new DateTime(DateTime.Now.Year - 3, 6, 5);
             endDateItem.EditValue = DateTime.Now;
+            
 
+            
+            //CultureInfo ciUSA = new CultureInfo("ru-RU");
             UserAccess((int)mtsAthorizationUsersDTO.USER_GROUPS_ID);
             SetGridSetting();
             //specificGridView.BeginUpdate();
             //focusedRow = LoadData();
             LoadData();
+            
             //settings.Styles.FocusedRow.BackColor = System.Drawing.Color.Red;
 
             //int rowHandle = specificGridView.LocateByValue("ID", focusedRow);
@@ -259,6 +264,10 @@ namespace MTS.GUI.MTS
 
         public void FocusedRowChanged()
         {
+            previousFocusedRowDetails = -1;
+            previousFocusedRowBuyDetails = -1;
+            previousFocusedRowMaterials = -1;
+
             if (specificBS.Count > 0)
             {
                 LoadSpecific(((MTSSpecificationsDTO)specificBS.Current).ID);
@@ -312,6 +321,7 @@ namespace MTS.GUI.MTS
 
         private void AddSpecification(Utils.Operation operation, MTSSpecificationsDTO model, MTSAuthorizationUsersDTO mtsAthorizationUsersDTO)
         {
+            model.SET_COLOR = 0;
             using (MtsSpecificationOldEditFm mtsSpecificationOldEditFm = new MtsSpecificationOldEditFm(operation, model, mtsAthorizationUsersDTO))
             {
                 if (mtsSpecificationOldEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -328,6 +338,7 @@ namespace MTS.GUI.MTS
 
         private void AddSpecificationDetails(MTSSpecificationsDTO model, Utils.Operation operation, MTSAuthorizationUsersDTO mtsAuthorizationUsersDTO)
         {
+            model.SET_COLOR = 0;
             using (MtsSpecificationOldDetailsFm mtsSpecificationOldDetailsFm = new MtsSpecificationOldDetailsFm(model, operation, mtsAuthorizationUsersDTO))
             {
                 if (mtsSpecificationOldDetailsFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -939,16 +950,20 @@ namespace MTS.GUI.MTS
 
         private void specificGridView_RowStyle(object sender, RowStyleEventArgs e)
         {
+            specificGridView.BeginUpdate();
             if (e.RowHandle > -1)
             {
                 MTSSpecificationsDTO item = (MTSSpecificationsDTO)specificGridView.GetRow(e.RowHandle);
                 if (item.SET_COLOR == 1)
                     e.Appearance.BackColor = Color.PaleTurquoise;
             }
+            specificGridView.EndUpdate();
         }
 
         private void detalsSpecificGridView_RowStyle(object sender, RowStyleEventArgs e)
         {
+
+            detalsSpecificGridView.BeginUpdate();
             bool isRowSelected = detalsSpecificGridView.IsRowSelected(e.RowHandle);
 
             if (e.RowHandle > -1)
@@ -958,96 +973,93 @@ namespace MTS.GUI.MTS
                     e.Appearance.BackColor = Color.PaleTurquoise;
                 if (item.lastFocusedRov)
                     e.Appearance.BackColor = Color.FromArgb(226,234,253);
-
-                //else
-                //e.Appearance.BackColor = Color.OrangeRed;
             }
 
-
-
-            //GridView View = sender as GridView;
-            //if (View.IsFilterRow(e.RowHandle))
-            //{
-            //    e.Appearance.BackColor = detalsSpecificGridView.PaintAppearance.Row.BackColor;
-            //    e.HighPriority = true;
-            //}
+            detalsSpecificGridView.EndUpdate();
         }
-
-        private void detalsSpecificGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            //if (detalsSpecificGridView.FocusedRowHandle >= -1)
-            //{
-                if (previousFocusedRow == -1)
-                {
-                    ((MTSDetailsDTO)detalsSpecificBS.Current).lastFocusedRov = true;
-                    previousFocusedRow = detalsSpecificGridView.FocusedRowHandle;
-                }
-                else if(detalsSpecificGridView.FocusedRowHandle >= -1 && previousFocusedRow > -1)
-                {
-                detalsSpecificGridView.BeginUpdate();
-                    MTSDetailsDTO item = (MTSDetailsDTO)detalsSpecificGridView.GetRow(previousFocusedRow);
-                    item.lastFocusedRov = false;
-                    previousFocusedRow = detalsSpecificGridView.FocusedRowHandle;
-                    ((MTSDetailsDTO)detalsSpecificBS.Current).lastFocusedRov = true;
-                detalsSpecificGridView.EndUpdate();
-            }
-                else if(detalsSpecificGridView.FocusedRowHandle < -1)
-                {
-                    //previousFocusedRow = detalsSpecificGridView.FocusedRowHandle;
-                    //currentFocusedRow = detalsSpecificGridView.FocusedRowHandle;
-                //currentFocusedRow = detalsSpecificGridView.FocusedRowHandle;
-                }
-            //else if (previousFocusedRow >-1 && currentFocusedRow < -1)
-            //{
-            //    MTSDetailsDTO item1 = (MTSDetailsDTO)detalsSpecificGridView.GetRow(previousFocusedRow);
-            //    item1.lastFocusedRov = false;
-
-            //    currentFocusedRow = detalsSpecificGridView.FocusedRowHandle;
-            //    //((MTSDetailsDTO)detalsSpecificBS.Current).lastFocusedRov = true;
-            //    previousFocusedRow = -1;
-            //}
-
-          //  }
-
-
-
-                //ClearAllFocused();
-        }
-
-        private void ClearAllFocused()
-        {
-            MTSDetailsDTO item = (MTSDetailsDTO)detalsSpecificGridView.GetRow(previousFocusedRow);
-            item.lastFocusedRov = false;
-            //((List<MTSDetailsDTO>)detalsSpecificBS.DataSource).All(cg => cg.lastFocusedRov = false);
-
-            
-
-        }
-        //protected override void OnShown(EventArgs e)
-        //{
-        //    base.OnShown(e);
-        //    detalsSpecificGridView.Appearance.HideSelectionRow.Assign(detalsSpecificGridView.PaintAppearance.Row);
-        //}
 
         private void buysDetalsSpecificGridView_RowStyle(object sender, RowStyleEventArgs e)
         {
+            buysDetalsSpecificGridView.BeginUpdate();
             if (e.RowHandle > -1)
             {
                 MTSPurchasedProductsDTO item = (MTSPurchasedProductsDTO)buysDetalsSpecificGridView.GetRow(e.RowHandle);
                 if (item.CHANGES == 1)
                     e.Appearance.BackColor = Color.PaleTurquoise;
+                if (item.lastFocusedRov)
+                    e.Appearance.BackColor = Color.FromArgb(226, 234, 253);
             }
+            buysDetalsSpecificGridView.EndUpdate();
         }
 
         private void materialsSpecificGridView_RowStyle(object sender, RowStyleEventArgs e)
         {
+            materialsSpecificGridView.BeginUpdate();
             if (e.RowHandle > -1)
             {
                 MTSMaterialsDTO item = (MTSMaterialsDTO)materialsSpecificGridView.GetRow(e.RowHandle);
                 if (item.CHANGES == 1)
                     e.Appearance.BackColor = Color.PaleTurquoise;
+                if (item.lastFocusedRov)
+                    e.Appearance.BackColor = Color.FromArgb(226, 234, 253);
+            }
+            materialsSpecificGridView.EndUpdate();
+        }
+
+        private void detalsSpecificGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (previousFocusedRowDetails == -1)
+            {
+                ((MTSDetailsDTO)detalsSpecificBS.Current).lastFocusedRov = true;
+                previousFocusedRowDetails = detalsSpecificGridView.FocusedRowHandle;
+            }
+            else if (detalsSpecificGridView.FocusedRowHandle >= -1 && previousFocusedRowDetails > -1)
+            {
+                MTSDetailsDTO item = (MTSDetailsDTO)detalsSpecificGridView.GetRow(previousFocusedRowDetails);
+                item.lastFocusedRov = false;
+                previousFocusedRowDetails = detalsSpecificGridView.FocusedRowHandle;
+                ((MTSDetailsDTO)detalsSpecificBS.Current).lastFocusedRov = true;
+
             }
         }
+
+        private void buysDetalsSpecificGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (previousFocusedRowBuyDetails == -1)
+            {
+                ((MTSPurchasedProductsDTO)byusDetalsSpecificBS.Current).lastFocusedRov = true;
+                previousFocusedRowBuyDetails = buysDetalsSpecificGridView.FocusedRowHandle;
+            }
+            else if (buysDetalsSpecificGridView.FocusedRowHandle >= -1 && previousFocusedRowBuyDetails > -1)
+            {
+                MTSPurchasedProductsDTO item = (MTSPurchasedProductsDTO)buysDetalsSpecificGridView.GetRow(previousFocusedRowDetails);
+                item.lastFocusedRov = false;
+                previousFocusedRowDetails = buysDetalsSpecificGridView.FocusedRowHandle;
+                ((MTSPurchasedProductsDTO)byusDetalsSpecificBS.Current).lastFocusedRov = true;
+
+            }
+        }
+
+        private void materialsSpecificGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (previousFocusedRowMaterials == -1)
+            {
+                ((MTSMaterialsDTO)materialsSpecificBS.Current).lastFocusedRov = true;
+                previousFocusedRowMaterials = materialsSpecificGridView.FocusedRowHandle;
+            }
+            else if (materialsSpecificGridView.FocusedRowHandle >= -1 && previousFocusedRowMaterials > -1)
+            {
+                MTSMaterialsDTO item = (MTSMaterialsDTO)materialsSpecificGridView.GetRow(previousFocusedRowMaterials);
+                item.lastFocusedRov = false;
+                previousFocusedRowMaterials = materialsSpecificGridView.FocusedRowHandle;
+                ((MTSMaterialsDTO)materialsSpecificBS.Current).lastFocusedRov = true;
+
+            }
+        }
+
+
+
+        
 
         #endregion
 
@@ -1059,11 +1071,6 @@ namespace MTS.GUI.MTS
         private void enableLabelMenuBtn_Click(object sender, EventArgs e)
         {
             SpecificationCheckMark();
-        }
-
-        private void materialsSpecificGrid_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void mapTechProcessByDateBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -1288,6 +1295,24 @@ namespace MTS.GUI.MTS
             Properties.Settings.Default.GridCol33 = gridColumn33.Width;
 
             Properties.Settings.Default.Save();
+        }
+
+        private void detalsSpecificGrid_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+                detailMenu.Show(this, new System.Drawing.Point(Cursor.Position.X-170, Cursor.Position.Y-25));
+        }
+
+        private void buysDetalsSpecificGrid_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+                buyDetailMenu.Show(this, new System.Drawing.Point(Cursor.Position.X - 170, Cursor.Position.Y - 25));
+        }
+
+        private void materialsSpecificGrid_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+                materialMenu.Show(this, new System.Drawing.Point(Cursor.Position.X - 170, Cursor.Position.Y - 25));
         }
 
         

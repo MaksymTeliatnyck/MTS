@@ -78,10 +78,6 @@
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.detalsSpecificGrid = new DevExpress.XtraGrid.GridControl();
-            this.detailMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.додатиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.редагуватиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.видалитиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detalsSpecificGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoForDetailsEdit = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
@@ -118,10 +114,6 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.buysDetalsSpecificGrid = new DevExpress.XtraGrid.GridControl();
-            this.buyDetailMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.додатиЗаписToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.редагуватиЗаписToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.видалитиЗаписToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.buysDetalsSpecificGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
@@ -134,10 +126,6 @@
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.materialsSpecificGrid = new DevExpress.XtraGrid.GridControl();
-            this.materialMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.додатиЗаписToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.редагуватиЗаписToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.видалитиЗаписToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.materialsSpecificGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
@@ -147,6 +135,18 @@
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.buyDetailMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.додатиЗаписToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.редагуватиЗаписToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.видалитиЗаписToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.materialMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.додатиЗаписToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.редагуватиЗаписToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.видалитиЗаписToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.detailMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.додатиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.редагуватиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.видалитиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.specificGrid = new DevExpress.XtraGrid.GridControl();
             this.mainMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.добавитьСпецификациюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -202,7 +202,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.detalsSpecificGrid)).BeginInit();
-            this.detailMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.detalsSpecificGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoForDetailsEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barDetail)).BeginInit();
@@ -212,16 +211,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buysDetalsSpecificGrid)).BeginInit();
-            this.buyDetailMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buysDetalsSpecificGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             this.xtraTabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.materialsSpecificGrid)).BeginInit();
-            this.materialMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.materialsSpecificGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
+            this.buyDetailMenu.SuspendLayout();
+            this.materialMenu.SuspendLayout();
+            this.detailMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.specificGrid)).BeginInit();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.specificGridView)).BeginInit();
@@ -842,7 +842,6 @@
             // 
             // detalsSpecificGrid
             // 
-            this.detalsSpecificGrid.ContextMenuStrip = this.detailMenu;
             this.detalsSpecificGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.detalsSpecificGrid.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.detalsSpecificGrid.Location = new System.Drawing.Point(0, 0);
@@ -856,36 +855,7 @@
             this.detalsSpecificGrid.TabIndex = 0;
             this.detalsSpecificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.detalsSpecificGridView});
-            // 
-            // detailMenu
-            // 
-            this.detailMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.додатиЗаписToolStripMenuItem,
-            this.редагуватиЗаписToolStripMenuItem,
-            this.видалитиЗаписToolStripMenuItem});
-            this.detailMenu.Name = "mainMenu";
-            this.detailMenu.Size = new System.Drawing.Size(169, 70);
-            // 
-            // додатиЗаписToolStripMenuItem
-            // 
-            this.додатиЗаписToolStripMenuItem.Name = "додатиЗаписToolStripMenuItem";
-            this.додатиЗаписToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.додатиЗаписToolStripMenuItem.Text = "Додати запис";
-            this.додатиЗаписToolStripMenuItem.Click += new System.EventHandler(this.додатиЗаписToolStripMenuItem_Click);
-            // 
-            // редагуватиЗаписToolStripMenuItem
-            // 
-            this.редагуватиЗаписToolStripMenuItem.Name = "редагуватиЗаписToolStripMenuItem";
-            this.редагуватиЗаписToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.редагуватиЗаписToolStripMenuItem.Text = "Редагувати запис";
-            this.редагуватиЗаписToolStripMenuItem.Click += new System.EventHandler(this.редагуватиЗаписToolStripMenuItem_Click);
-            // 
-            // видалитиЗаписToolStripMenuItem
-            // 
-            this.видалитиЗаписToolStripMenuItem.Name = "видалитиЗаписToolStripMenuItem";
-            this.видалитиЗаписToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.видалитиЗаписToolStripMenuItem.Text = "Видалити запис";
-            this.видалитиЗаписToolStripMenuItem.Click += new System.EventHandler(this.видалитиЗаписToolStripMenuItem_Click);
+            this.detalsSpecificGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.detalsSpecificGrid_MouseClick);
             // 
             // detalsSpecificGridView
             // 
@@ -1405,7 +1375,6 @@
             // 
             // buysDetalsSpecificGrid
             // 
-            this.buysDetalsSpecificGrid.ContextMenuStrip = this.buyDetailMenu;
             this.buysDetalsSpecificGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buysDetalsSpecificGrid.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.buysDetalsSpecificGrid.Location = new System.Drawing.Point(0, 0);
@@ -1419,36 +1388,7 @@
             this.buysDetalsSpecificGrid.TabIndex = 0;
             this.buysDetalsSpecificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.buysDetalsSpecificGridView});
-            // 
-            // buyDetailMenu
-            // 
-            this.buyDetailMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.додатиЗаписToolStripMenuItem1,
-            this.редагуватиЗаписToolStripMenuItem1,
-            this.видалитиЗаписToolStripMenuItem1});
-            this.buyDetailMenu.Name = "mainMenu";
-            this.buyDetailMenu.Size = new System.Drawing.Size(169, 70);
-            // 
-            // додатиЗаписToolStripMenuItem1
-            // 
-            this.додатиЗаписToolStripMenuItem1.Name = "додатиЗаписToolStripMenuItem1";
-            this.додатиЗаписToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
-            this.додатиЗаписToolStripMenuItem1.Text = "Додати запис";
-            this.додатиЗаписToolStripMenuItem1.Click += new System.EventHandler(this.додатиЗаписToolStripMenuItem1_Click);
-            // 
-            // редагуватиЗаписToolStripMenuItem1
-            // 
-            this.редагуватиЗаписToolStripMenuItem1.Name = "редагуватиЗаписToolStripMenuItem1";
-            this.редагуватиЗаписToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
-            this.редагуватиЗаписToolStripMenuItem1.Text = "Редагувати запис";
-            this.редагуватиЗаписToolStripMenuItem1.Click += new System.EventHandler(this.редагуватиЗаписToolStripMenuItem1_Click);
-            // 
-            // видалитиЗаписToolStripMenuItem1
-            // 
-            this.видалитиЗаписToolStripMenuItem1.Name = "видалитиЗаписToolStripMenuItem1";
-            this.видалитиЗаписToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
-            this.видалитиЗаписToolStripMenuItem1.Text = "Видалити запис";
-            this.видалитиЗаписToolStripMenuItem1.Click += new System.EventHandler(this.видалитиЗаписToolStripMenuItem1_Click);
+            this.buysDetalsSpecificGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buysDetalsSpecificGrid_MouseClick);
             // 
             // buysDetalsSpecificGridView
             // 
@@ -1467,6 +1407,7 @@
             this.buysDetalsSpecificGridView.OptionsView.ShowGroupPanel = false;
             this.buysDetalsSpecificGridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.buysDetalsSpecificGridView_RowStyle);
             this.buysDetalsSpecificGridView.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.buysDetalsSpecificGridView_ColumnWidthChanged);
+            this.buysDetalsSpecificGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.buysDetalsSpecificGridView_FocusedRowChanged);
             // 
             // gridColumn20
             // 
@@ -1637,7 +1578,6 @@
             // 
             // materialsSpecificGrid
             // 
-            this.materialsSpecificGrid.ContextMenuStrip = this.materialMenu;
             this.materialsSpecificGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialsSpecificGrid.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.materialsSpecificGrid.Location = new System.Drawing.Point(0, 0);
@@ -1651,37 +1591,7 @@
             this.materialsSpecificGrid.TabIndex = 0;
             this.materialsSpecificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.materialsSpecificGridView});
-            this.materialsSpecificGrid.Click += new System.EventHandler(this.materialsSpecificGrid_Click);
-            // 
-            // materialMenu
-            // 
-            this.materialMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.додатиЗаписToolStripMenuItem2,
-            this.редагуватиЗаписToolStripMenuItem2,
-            this.видалитиЗаписToolStripMenuItem2});
-            this.materialMenu.Name = "mainMenu";
-            this.materialMenu.Size = new System.Drawing.Size(169, 70);
-            // 
-            // додатиЗаписToolStripMenuItem2
-            // 
-            this.додатиЗаписToolStripMenuItem2.Name = "додатиЗаписToolStripMenuItem2";
-            this.додатиЗаписToolStripMenuItem2.Size = new System.Drawing.Size(168, 22);
-            this.додатиЗаписToolStripMenuItem2.Text = "Додати запис";
-            this.додатиЗаписToolStripMenuItem2.Click += new System.EventHandler(this.додатиЗаписToolStripMenuItem2_Click);
-            // 
-            // редагуватиЗаписToolStripMenuItem2
-            // 
-            this.редагуватиЗаписToolStripMenuItem2.Name = "редагуватиЗаписToolStripMenuItem2";
-            this.редагуватиЗаписToolStripMenuItem2.Size = new System.Drawing.Size(168, 22);
-            this.редагуватиЗаписToolStripMenuItem2.Text = "Редагувати запис";
-            this.редагуватиЗаписToolStripMenuItem2.Click += new System.EventHandler(this.редагуватиЗаписToolStripMenuItem2_Click);
-            // 
-            // видалитиЗаписToolStripMenuItem2
-            // 
-            this.видалитиЗаписToolStripMenuItem2.Name = "видалитиЗаписToolStripMenuItem2";
-            this.видалитиЗаписToolStripMenuItem2.Size = new System.Drawing.Size(168, 22);
-            this.видалитиЗаписToolStripMenuItem2.Text = "Видалити запис";
-            this.видалитиЗаписToolStripMenuItem2.Click += new System.EventHandler(this.видалитиЗаписToolStripMenuItem2_Click);
+            this.materialsSpecificGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialsSpecificGrid_MouseClick);
             // 
             // materialsSpecificGridView
             // 
@@ -1700,6 +1610,7 @@
             this.materialsSpecificGridView.OptionsView.ShowGroupPanel = false;
             this.materialsSpecificGridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.materialsSpecificGridView_RowStyle);
             this.materialsSpecificGridView.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.materialsSpecificGridView_ColumnWidthChanged);
+            this.materialsSpecificGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.materialsSpecificGridView_FocusedRowChanged);
             // 
             // gridColumn27
             // 
@@ -1844,6 +1755,97 @@
             this.gridColumn33.Visible = true;
             this.gridColumn33.VisibleIndex = 6;
             this.gridColumn33.Width = 96;
+            // 
+            // buyDetailMenu
+            // 
+            this.buyDetailMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.додатиЗаписToolStripMenuItem1,
+            this.редагуватиЗаписToolStripMenuItem1,
+            this.видалитиЗаписToolStripMenuItem1});
+            this.buyDetailMenu.Name = "mainMenu";
+            this.buyDetailMenu.Size = new System.Drawing.Size(169, 70);
+            // 
+            // додатиЗаписToolStripMenuItem1
+            // 
+            this.додатиЗаписToolStripMenuItem1.Name = "додатиЗаписToolStripMenuItem1";
+            this.додатиЗаписToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
+            this.додатиЗаписToolStripMenuItem1.Text = "Додати запис";
+            this.додатиЗаписToolStripMenuItem1.Click += new System.EventHandler(this.додатиЗаписToolStripMenuItem1_Click);
+            // 
+            // редагуватиЗаписToolStripMenuItem1
+            // 
+            this.редагуватиЗаписToolStripMenuItem1.Name = "редагуватиЗаписToolStripMenuItem1";
+            this.редагуватиЗаписToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
+            this.редагуватиЗаписToolStripMenuItem1.Text = "Редагувати запис";
+            this.редагуватиЗаписToolStripMenuItem1.Click += new System.EventHandler(this.редагуватиЗаписToolStripMenuItem1_Click);
+            // 
+            // видалитиЗаписToolStripMenuItem1
+            // 
+            this.видалитиЗаписToolStripMenuItem1.Name = "видалитиЗаписToolStripMenuItem1";
+            this.видалитиЗаписToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
+            this.видалитиЗаписToolStripMenuItem1.Text = "Видалити запис";
+            this.видалитиЗаписToolStripMenuItem1.Click += new System.EventHandler(this.видалитиЗаписToolStripMenuItem1_Click);
+            // 
+            // materialMenu
+            // 
+            this.materialMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.додатиЗаписToolStripMenuItem2,
+            this.редагуватиЗаписToolStripMenuItem2,
+            this.видалитиЗаписToolStripMenuItem2});
+            this.materialMenu.Name = "mainMenu";
+            this.materialMenu.Size = new System.Drawing.Size(169, 70);
+            // 
+            // додатиЗаписToolStripMenuItem2
+            // 
+            this.додатиЗаписToolStripMenuItem2.Name = "додатиЗаписToolStripMenuItem2";
+            this.додатиЗаписToolStripMenuItem2.Size = new System.Drawing.Size(168, 22);
+            this.додатиЗаписToolStripMenuItem2.Text = "Додати запис";
+            this.додатиЗаписToolStripMenuItem2.Click += new System.EventHandler(this.додатиЗаписToolStripMenuItem2_Click);
+            // 
+            // редагуватиЗаписToolStripMenuItem2
+            // 
+            this.редагуватиЗаписToolStripMenuItem2.Name = "редагуватиЗаписToolStripMenuItem2";
+            this.редагуватиЗаписToolStripMenuItem2.Size = new System.Drawing.Size(168, 22);
+            this.редагуватиЗаписToolStripMenuItem2.Text = "Редагувати запис";
+            this.редагуватиЗаписToolStripMenuItem2.Click += new System.EventHandler(this.редагуватиЗаписToolStripMenuItem2_Click);
+            // 
+            // видалитиЗаписToolStripMenuItem2
+            // 
+            this.видалитиЗаписToolStripMenuItem2.Name = "видалитиЗаписToolStripMenuItem2";
+            this.видалитиЗаписToolStripMenuItem2.Size = new System.Drawing.Size(168, 22);
+            this.видалитиЗаписToolStripMenuItem2.Text = "Видалити запис";
+            this.видалитиЗаписToolStripMenuItem2.Click += new System.EventHandler(this.видалитиЗаписToolStripMenuItem2_Click);
+            // 
+            // detailMenu
+            // 
+            this.detailMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.додатиЗаписToolStripMenuItem,
+            this.редагуватиЗаписToolStripMenuItem,
+            this.видалитиЗаписToolStripMenuItem});
+            this.detailMenu.Margin = new System.Windows.Forms.Padding(200, 0, 0, 0);
+            this.detailMenu.Name = "mainMenu";
+            this.detailMenu.Size = new System.Drawing.Size(169, 70);
+            // 
+            // додатиЗаписToolStripMenuItem
+            // 
+            this.додатиЗаписToolStripMenuItem.Name = "додатиЗаписToolStripMenuItem";
+            this.додатиЗаписToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.додатиЗаписToolStripMenuItem.Text = "Додати запис";
+            this.додатиЗаписToolStripMenuItem.Click += new System.EventHandler(this.додатиЗаписToolStripMenuItem_Click);
+            // 
+            // редагуватиЗаписToolStripMenuItem
+            // 
+            this.редагуватиЗаписToolStripMenuItem.Name = "редагуватиЗаписToolStripMenuItem";
+            this.редагуватиЗаписToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.редагуватиЗаписToolStripMenuItem.Text = "Редагувати запис";
+            this.редагуватиЗаписToolStripMenuItem.Click += new System.EventHandler(this.редагуватиЗаписToolStripMenuItem_Click);
+            // 
+            // видалитиЗаписToolStripMenuItem
+            // 
+            this.видалитиЗаписToolStripMenuItem.Name = "видалитиЗаписToolStripMenuItem";
+            this.видалитиЗаписToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.видалитиЗаписToolStripMenuItem.Text = "Видалити запис";
+            this.видалитиЗаписToolStripMenuItem.Click += new System.EventHandler(this.видалитиЗаписToolStripMenuItem_Click);
             // 
             // specificGrid
             // 
@@ -2349,7 +2351,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.detalsSpecificGrid)).EndInit();
-            this.detailMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.detalsSpecificGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoForDetailsEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barDetail)).EndInit();
@@ -2359,16 +2360,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.buysDetalsSpecificGrid)).EndInit();
-            this.buyDetailMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.buysDetalsSpecificGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             this.xtraTabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.materialsSpecificGrid)).EndInit();
-            this.materialMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.materialsSpecificGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).EndInit();
+            this.buyDetailMenu.ResumeLayout(false);
+            this.materialMenu.ResumeLayout(false);
+            this.detailMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.specificGrid)).EndInit();
             this.mainMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.specificGridView)).EndInit();
