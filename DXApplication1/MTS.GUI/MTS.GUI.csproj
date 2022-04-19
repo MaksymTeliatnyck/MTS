@@ -35,8 +35,8 @@
     <ProductName>MTS</ProductName>
     <PublisherName>IT</PublisherName>
     <SuiteName>Матеріальні специфікації</SuiteName>
-    <MinimumRequiredVersion>1.0.0.10</MinimumRequiredVersion>
-    <ApplicationRevision>11</ApplicationRevision>
+    <MinimumRequiredVersion>1.0.0.12</MinimumRequiredVersion>
+    <ApplicationRevision>13</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -75,10 +75,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>455DFCB40CC79A27AC110ADF3746055A4797DF6C</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>C2DFD161B859A0D5A4009C68711ABC350BE1D1A2</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>MTS.GUI_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>MTS.GUI_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -321,13 +321,13 @@
       <HintPath>..\..\packages\WindowsAPICodePack.1.1.0\lib\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MTS.BLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="MTS.BLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\MTS.BLL\bin\Debug\MTS.BLL.dll</HintPath>
+      <HintPath>..\..\MTS.BLL\bin\Release\MTS.BLL.dll</HintPath>
     </Reference>
     <Reference Include="MTS.DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\MTS.DAL\bin\Release\MTS.DAL.dll</HintPath>
+      <HintPath>..\..\MTS.BLL\bin\Release\MTS.DAL.dll</HintPath>
     </Reference>
     <Reference Include="Nager.Date, Version=1.22.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Nager.Date.1.22.3\lib\net45\Nager.Date.dll</HintPath>
