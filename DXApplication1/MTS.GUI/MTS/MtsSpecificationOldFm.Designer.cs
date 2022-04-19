@@ -45,7 +45,6 @@
             this.addAllSpeficBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editSpecificBtn = new DevExpress.XtraBars.BarButtonItem();
             this.deleteSpecificBtn = new DevExpress.XtraBars.BarButtonItem();
-            this.showSpecificInFileBtb = new DevExpress.XtraBars.BarButtonItem();
             this.mapTechProcessBtn = new DevExpress.XtraBars.BarButtonItem();
             this.mapTechProcessByDateBtn = new DevExpress.XtraBars.BarButtonItem();
             this.mapAllTechProcessBtn = new DevExpress.XtraBars.BarButtonItem();
@@ -69,6 +68,9 @@
             this.gostShowBtn = new DevExpress.XtraBars.BarButtonItem();
             this.unitsShowBtn = new DevExpress.XtraBars.BarButtonItem();
             this.copySpecBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.showSpecificMenuBtb = new DevExpress.XtraBars.BarSubItem();
+            this.sortByMaterialBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.sortBySortamnetBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -270,7 +272,6 @@
             this.addAllSpeficBtn,
             this.editSpecificBtn,
             this.deleteSpecificBtn,
-            this.showSpecificInFileBtb,
             this.mapTechProcessBtn,
             this.mapTechProcessByDateBtn,
             this.mapAllTechProcessBtn,
@@ -293,10 +294,13 @@
             this.gostShowBtn,
             this.unitsShowBtn,
             this.userNameBtn,
-            this.copySpecBtn});
+            this.copySpecBtn,
+            this.showSpecificMenuBtb,
+            this.sortByMaterialBtn,
+            this.sortBySortamnetBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbonControl1.MaxItemId = 1;
+            this.ribbonControl1.MaxItemId = 4;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -435,22 +439,6 @@
             this.deleteSpecificBtn.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.deleteSpecificBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteSpecificBtn_ItemClick);
-            // 
-            // showSpecificInFileBtb
-            // 
-            this.showSpecificInFileBtb.Caption = "Відобразити матеріальну специфікацію";
-            this.showSpecificInFileBtb.Glyph = ((System.Drawing.Image)(resources.GetObject("showSpecificInFileBtb.Glyph")));
-            this.showSpecificInFileBtb.Id = 9;
-            this.showSpecificInFileBtb.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.showSpecificInFileBtb.ItemAppearance.Hovered.Options.UseFont = true;
-            this.showSpecificInFileBtb.ItemAppearance.Normal.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.showSpecificInFileBtb.ItemAppearance.Normal.Options.UseFont = true;
-            this.showSpecificInFileBtb.ItemAppearance.Pressed.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.showSpecificInFileBtb.ItemAppearance.Pressed.Options.UseFont = true;
-            this.showSpecificInFileBtb.Name = "showSpecificInFileBtb";
-            this.showSpecificInFileBtb.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.showSpecificInFileBtb.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.showSpecificInFileBtb_ItemClick);
             // 
             // mapTechProcessBtn
             // 
@@ -749,6 +737,38 @@
             this.copySpecBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.copySpecBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.copySpecBtn_ItemClick);
             // 
+            // showSpecificMenuBtb
+            // 
+            this.showSpecificMenuBtb.Caption = "Відобразити матеріальну специфікацію";
+            this.showSpecificMenuBtb.Glyph = ((System.Drawing.Image)(resources.GetObject("showSpecificMenuBtb.Glyph")));
+            this.showSpecificMenuBtb.Id = 1;
+            this.showSpecificMenuBtb.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.showSpecificMenuBtb.ItemAppearance.Hovered.Options.UseFont = true;
+            this.showSpecificMenuBtb.ItemAppearance.Normal.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.showSpecificMenuBtb.ItemAppearance.Normal.Options.UseFont = true;
+            this.showSpecificMenuBtb.ItemAppearance.Pressed.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.showSpecificMenuBtb.ItemAppearance.Pressed.Options.UseFont = true;
+            this.showSpecificMenuBtb.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("showSpecificMenuBtb.LargeGlyph")));
+            this.showSpecificMenuBtb.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.sortByMaterialBtn),
+            new DevExpress.XtraBars.LinkPersistInfo(this.sortBySortamnetBtn)});
+            this.showSpecificMenuBtb.Name = "showSpecificMenuBtb";
+            this.showSpecificMenuBtb.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // sortByMaterialBtn
+            // 
+            this.sortByMaterialBtn.Caption = "Сортувати за матеріалом";
+            this.sortByMaterialBtn.Id = 2;
+            this.sortByMaterialBtn.Name = "sortByMaterialBtn";
+            this.sortByMaterialBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.sortByMaterialBtn_ItemClick);
+            // 
+            // sortBySortamnetBtn
+            // 
+            this.sortBySortamnetBtn.Caption = "Сортувати за сортаментом";
+            this.sortBySortamnetBtn.Id = 3;
+            this.sortBySortamnetBtn.Name = "sortBySortamnetBtn";
+            this.sortBySortamnetBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.sortBySortamnetBtn_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -774,7 +794,7 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.editSpecificBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.deleteSpecificBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.basesBtn);
-            this.ribbonPageGroup2.ItemLinks.Add(this.showSpecificInFileBtb);
+            this.ribbonPageGroup2.ItemLinks.Add(this.showSpecificMenuBtb);
             this.ribbonPageGroup2.ItemLinks.Add(this.mapTechProcessBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.mapTechProcessByDateBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.mapAllTechProcessBtn);
@@ -1866,7 +1886,6 @@
             this.specificGrid.TabIndex = 2;
             this.specificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.specificGridView});
-            this.specificGrid.Click += new System.EventHandler(this.specificGrid_Click);
             // 
             // mainMenu
             // 
@@ -2401,7 +2420,6 @@
         private DevExpress.XtraBars.BarButtonItem addAllSpeficBtn;
         private DevExpress.XtraBars.BarButtonItem editSpecificBtn;
         private DevExpress.XtraBars.BarButtonItem deleteSpecificBtn;
-        private DevExpress.XtraBars.BarButtonItem showSpecificInFileBtb;
         private DevExpress.XtraBars.BarButtonItem mapTechProcessBtn;
         private DevExpress.XtraBars.BarButtonItem mapTechProcessByDateBtn;
         private DevExpress.XtraBars.BarButtonItem mapAllTechProcessBtn;
@@ -2539,5 +2557,8 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit2;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
+        private DevExpress.XtraBars.BarSubItem showSpecificMenuBtb;
+        private DevExpress.XtraBars.BarButtonItem sortByMaterialBtn;
+        private DevExpress.XtraBars.BarButtonItem sortBySortamnetBtn;
     }
 }
