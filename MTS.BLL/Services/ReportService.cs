@@ -18883,7 +18883,7 @@ namespace MTS.BLL.Services
             #region Detail's
 
             var summDetailsQuantity = mtsDetailsList.GroupBy(c => c.NOMENCLATURE_ID).Select(g => new
-            {as
+            {
                 id = g.Key,
                 summQuantity = g.Sum(c =>
                   c.PROCESSING_ID == 2 ? (c.QUANTITY * c.HEIGHT * c.WIDTH * c.NOMENCLATURESWEIGHT * 0.000001m) / c.QUANTITY_OF_BLANKS :
