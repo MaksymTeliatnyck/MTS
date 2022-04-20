@@ -983,7 +983,7 @@ namespace MTS.GUI.MTS
 
         private void buysDetalsSpecificGridView_RowStyle(object sender, RowStyleEventArgs e)
         {
-            buysDetalsSpecificGridView.BeginUpdate();
+            //buysDetalsSpecificGridView.BeginUpdate();
             if (e.RowHandle > -1)
             {
                 MTSPurchasedProductsDTO item = (MTSPurchasedProductsDTO)buysDetalsSpecificGridView.GetRow(e.RowHandle);
@@ -992,12 +992,12 @@ namespace MTS.GUI.MTS
                 if (item.lastFocusedRov)
                     e.Appearance.BackColor = Color.FromArgb(226, 234, 253);
             }
-            buysDetalsSpecificGridView.EndUpdate();
+            //buysDetalsSpecificGridView.EndUpdate();
         }
 
         private void materialsSpecificGridView_RowStyle(object sender, RowStyleEventArgs e)
         {
-            materialsSpecificGridView.BeginUpdate();
+            //materialsSpecificGridView.BeginUpdate();
             if (e.RowHandle > -1)
             {
                 MTSMaterialsDTO item = (MTSMaterialsDTO)materialsSpecificGridView.GetRow(e.RowHandle);
@@ -1006,7 +1006,7 @@ namespace MTS.GUI.MTS
                 if (item.lastFocusedRov)
                     e.Appearance.BackColor = Color.FromArgb(226, 234, 253);
             }
-            materialsSpecificGridView.EndUpdate();
+            //materialsSpecificGridView.EndUpdate();
         }
 
         private void detalsSpecificGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
