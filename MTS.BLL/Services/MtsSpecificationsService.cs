@@ -406,7 +406,7 @@ namespace MTS.BLL.Services
                               NOM_GROUP_ID = mtsNomGroup.ID,
                               NOM_GROUP_ADDIT_CALCULATION_ACTIVE = mtsNomGroup.ADDIT_CALCULATION_ACTIVE,
                               NOM_GROUP_ADDIT_CALCULATION_ID = mtsNomGroup.ADDIT_CALCULATION_ID,
-                               NOM_GROUP_ADDIT_CALCULATION_MEASURE = mtsMeasAdc.NAME,
+                              NOM_GROUP_ADDIT_CALCULATION_MEASURE = mtsMeasAdc.NAME,
                               NOM_GROUP_CODPROD = mtsNomGroup.CODPROD,
                               NOM_GROUP_NAME = mtsNomGroup.NAME,
                               NOM_GROUP_PARENT_ID = mtsNomGroup.PARENT_ID,
@@ -417,9 +417,9 @@ namespace MTS.BLL.Services
                               DETALSPROCESSING = mtsDetalsProc.NAME,
 
                               GUAEGENAME = mtsNom.GUAGE,
-                               GUAEGESORT = mtsGua.SORTING,
+                              GUAEGESORT = mtsGua.SORTING,
 
-                               MEASURE_NAME = mtsMeas.NAME,
+                              MEASURE_NAME = mtsMeas.NAME,
 
                               GOSTID = mtsNom.GOST_ID,
                               GOSTNAME = mtsG.NAME,
@@ -427,7 +427,8 @@ namespace MTS.BLL.Services
                               NAME = mtsCreateDet.NAME,
                               DRAWING = mtsCreateDet.DRAWING,
                               WIDTH = mtsCreateDet.WIDTH,//9++
-                              HEIGHT = mtsCreateDet.HEIGHT
+                              HEIGHT = mtsCreateDet.HEIGHT,
+                              lastFocusedRov = false
                           }).ToList();
             return result;
         }

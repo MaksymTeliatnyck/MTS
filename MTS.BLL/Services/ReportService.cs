@@ -18870,7 +18870,7 @@ namespace MTS.BLL.Services
 
         #region Mts specification
 
-        public bool SpecificationProcess(MTSSpecificationsDTO mtsSpecification, List<MTSDetailsDTO> mtsDetailsList, List<MTSPurchasedProductsDTO> mtsBuyDetailsList, List<MTSMaterialsDTO> mtsMaterialsList)
+        public bool SpecificationProcess(MTSSpecificationsDTO mtsSpecification, List<MTSDetailsDTO> mtsDetailsList, List<MTSPurchasedProductsDTO> mtsBuyDetailsList, List<MTSMaterialsDTO> mtsMaterialsList, bool sortament = false)
         {
             #region summaryValues
 
@@ -19083,7 +19083,7 @@ namespace MTS.BLL.Services
             //shawing = weightOfWorkpiece - ((decimal)(mtsSpecification.WEIGHT == null ? 0 : mtsSpecification.WEIGHT - scrap));
 
             shawing = (decimal)weightOfWorkpiece - (decimal)mtsSpecification.WEIGHT - scrap;
-            PrintTechProcessSpecification(mtsSpecification, allResults, scrap, shawing, weightOfWorkpiece);
+            PrintTechProcessSpecification(mtsSpecification, allResults, scrap, shawing, weightOfWorkpiece, sortament);
 
             return true;
         }
@@ -19177,7 +19177,7 @@ namespace MTS.BLL.Services
         }
 
         //печать спецификации
-        public bool PrintTechProcessSpecification(MTSSpecificationsDTO mtsSpecification, List<SpecificationPrintModelDTO> dataSource, decimal scrap, decimal shawing, decimal weightOfWorkpiece)
+        public bool PrintTechProcessSpecification(MTSSpecificationsDTO mtsSpecification, List<SpecificationPrintModelDTO> dataSource, decimal scrap, decimal shawing, decimal weightOfWorkpiece, bool sortament = false)
         {
             
 
@@ -19195,6 +19195,8 @@ namespace MTS.BLL.Services
                 MessageBox.Show("Не знайдено шаблон документа!\n" + ex.Message, "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+
+            
 
             var Workbook = Factory.GetWorkbook(GeneratedReportsDir + @"\Templates\MtsStartedSpecificationReport.xls");
             var Worksheet = Workbook.Worksheets[0];
@@ -19310,7 +19312,14 @@ namespace MTS.BLL.Services
 
             string firstName = dataSource.First().Name;
 
-            foreach (var dat in dataSource)
+            List<SpecificationPrintModelDTO> dataSourceOrderList = new List<SpecificationPrintModelDTO>();
+
+            if (sortament)
+                dataSourceOrderList = dataSource.OrderBy(srt => srt.Guage).ToList();
+            else
+                dataSourceOrderList = dataSource.ToList();
+
+            foreach (var dat in dataSourceOrderList)
             {
 
                 if (dat.Color >= 1)
@@ -19421,7 +19430,7 @@ namespace MTS.BLL.Services
             cells["D" + startWith].Value = "Итого материалов";
             cells["D" + (startWith) + ":I" + startWith].Borders[BordersIndex.EdgeBottom].LineStyle = LineStyle.Dash;
 
-            for (int i = 0; i < dataSource.Count; i++)
+            for (int i = 0; i < dataSourceOrderList.Count; i++)
             {
                 cells["H" + startWith].Formula = "=SUM(H" + 5 + ":H" + (startWith - 2) + ")";
             }
