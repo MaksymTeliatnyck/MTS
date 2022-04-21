@@ -354,8 +354,8 @@ namespace MTS.DAL.EF
 
             csb = new FbConnectionStringBuilder()
             {
-                DataSource = "server-tfs",
-                //DataSource = "localhost",
+                //DataSource = "server-tfs",
+                DataSource = "localhost",
                //  Port = Convert.ToInt32(portDB[0]),
                 Database = "MTS_DB",
                 UserID = "sysdba",

@@ -540,9 +540,16 @@ namespace MTS.GUI.MTS
                     WEIGHT = ((MTSSpecificationsDTO)ItemSpecification).WEIGHT,
                     CREATION_DATE = ((MTSSpecificationsDTO)ItemSpecification).CREATION_DATE,
                     DRAWING = ((MTSSpecificationsDTO)ItemSpecification).DRAWING,
-                    AUTHORIZATION_USERS_NAME = ((MTSSpecificationsDTO)ItemSpecification).AUTHORIZATION_USERS_NAME
-                     
-                     
+                    AUTHORIZATION_USERS_NAME = ((MTSSpecificationsDTO)ItemSpecification).AUTHORIZATION_USERS_NAME,
+                    COMPILATION_DRAWINGS = ((MTSSpecificationsDTO)ItemSpecification).COMPILATION_DRAWINGS,
+                    CODIZD = ((MTSSpecificationsDTO)ItemSpecification).CODIZD,
+                    COMPILATION_NAMES = ((MTSSpecificationsDTO)ItemSpecification).COMPILATION_NAMES,
+                    COMPILATION_QUANTITIES = ((MTSSpecificationsDTO)ItemSpecification).COMPILATION_QUANTITIES,
+                    LAST_MODIFICATION_DATE = ((MTSSpecificationsDTO)ItemSpecification).LAST_MODIFICATION_DATE,
+                    DEVICE_ID = ((MTSSpecificationsDTO)ItemSpecification).DEVICE_ID,
+                    Selected = ((MTSSpecificationsDTO)ItemSpecification).Selected,
+                    SET_COLOR = ((MTSSpecificationsDTO)ItemSpecification).SET_COLOR,
+                    USERS_ID = ((MTSSpecificationsDTO)ItemSpecification).USERS_ID
                 };
                 AddSpecification(Utils.Operation.Update, (MTSSpecificationsDTO)model, mtsAthorizationUsersDTO);
             }
@@ -1355,6 +1362,15 @@ namespace MTS.GUI.MTS
             LoadData();
 
             reportService.SpecificationProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, (List<MTSPurchasedProductsDTO>)byusDetalsSpecificBS.DataSource, (List<MTSMaterialsDTO>)materialsSpecificBS.DataSource, true);
+        }
+
+        private void detalsSpecificGrid_EditorKeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ',')
+            {
+                e.KeyChar = '.';
+                e.Handled = false;
+            }
         }
     }
 }

@@ -189,6 +189,7 @@
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.styleController1 = new DevExpress.XtraEditors.StyleController(this.components);
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::MTS.GUI.WaitForm1), true, true);
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             ribbonPageUser = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
@@ -232,6 +233,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.barMaterialDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.styleController1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonPageUser
@@ -458,7 +460,7 @@
             // 
             // mapTechProcessByDateBtn
             // 
-            this.mapTechProcessByDateBtn.Caption = "Карта тех. процесу по даті";
+            this.mapTechProcessByDateBtn.Caption = "Карта тех. процесу по кресленню";
             this.mapTechProcessByDateBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("mapTechProcessByDateBtn.Glyph")));
             this.mapTechProcessByDateBtn.Id = 11;
             this.mapTechProcessByDateBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -870,11 +872,13 @@
             this.detalsSpecificGrid.MenuManager = this.barDetail;
             this.detalsSpecificGrid.Name = "detalsSpecificGrid";
             this.detalsSpecificGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemMemoForDetailsEdit});
+            this.repositoryItemMemoForDetailsEdit,
+            this.repositoryItemTextEdit1});
             this.detalsSpecificGrid.Size = new System.Drawing.Size(1782, 333);
             this.detalsSpecificGrid.TabIndex = 0;
             this.detalsSpecificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.detalsSpecificGridView});
+            this.detalsSpecificGrid.EditorKeyPress += new System.Windows.Forms.KeyPressEventHandler(this.detalsSpecificGrid_EditorKeyPress);
             this.detalsSpecificGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.detalsSpecificGrid_MouseClick);
             // 
             // detalsSpecificGridView
@@ -2323,6 +2327,11 @@
             // 
             this.splashScreenManager.ClosingDelay = 500;
             // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            // 
             // MtsSpecificationOldFm
             // 
             this.Appearance.Options.UseFont = true;
@@ -2398,6 +2407,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.barMaterialDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.styleController1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2560,5 +2570,6 @@
         private DevExpress.XtraBars.BarSubItem showSpecificMenuBtb;
         private DevExpress.XtraBars.BarButtonItem sortByMaterialBtn;
         private DevExpress.XtraBars.BarButtonItem sortBySortamnetBtn;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
     }
 }
