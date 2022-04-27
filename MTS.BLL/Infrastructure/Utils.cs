@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Globalization;
 using System.IO;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace MTS.BLL.Infrastructure
 {
@@ -190,6 +191,11 @@ namespace MTS.BLL.Infrastructure
             Sold,
             Expenditure
         };
+
+        public static string SortStringNumbers(string input)
+        {
+            return Regex.Replace(input, "[0-9]+", match => match.Value.PadLeft(10, '0'));
+        }
 
 
 

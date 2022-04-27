@@ -66,6 +66,12 @@ namespace MTS.GUI.MTS
             gostLookUpEdit.Properties.ValueMember = "ID";
             gostLookUpEdit.Properties.DisplayMember = "NAME";
             gostLookUpEdit.Properties.NullText = "Немає данних";
+
+            if (operation == Utils.Operation.Add)
+            {
+                ((MTSNomenclaturesDTO)Item).PRICE = 0;
+            }
+
         }
         public MTSNomenclaturesDTO Return()
         {
@@ -303,16 +309,17 @@ namespace MTS.GUI.MTS
                     }
                 case 3://Видалити
                     {
-                        if (measureLookUpEdit.EditValue == DBNull.Value)
+                        if (gostLookUpEdit.EditValue == DBNull.Value)
                             return;
 
                         if (MessageBox.Show("Видалити?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            mtsSpecificationsService.MTSDeleteMeasure(((MTSMeasureDTO)measureLookUpEdit.GetSelectedDataRow()).ID);
                             mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
-                            measureLookUpEdit.Properties.DataSource = mtsSpecificationsService.GetAllMeasureOld();
-                            measureLookUpEdit.EditValue = null;
-                            measureLookUpEdit.Properties.NullText = "Немає данних";
+                            mtsSpecificationsService.MTSDeleteGost(((MTSGostDTO)gostLookUpEdit.GetSelectedDataRow()).ID);
+
+                            gostLookUpEdit.Properties.DataSource = mtsSpecificationsService.GetAllGostOld();
+                            gostLookUpEdit.EditValue = null;
+                            gostLookUpEdit.Properties.NullText = "Немає данних";
                         }
 
                         break;
