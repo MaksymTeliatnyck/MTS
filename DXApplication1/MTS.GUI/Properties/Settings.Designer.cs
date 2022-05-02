@@ -581,5 +581,125 @@ namespace MTS.GUI.Properties {
                 this["GridCol33"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int nomenNameCol {
+            get {
+                return ((int)(this["nomenNameCol"]));
+            }
+            set {
+                this["nomenNameCol"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int nomenGuageCol {
+            get {
+                return ((int)(this["nomenGuageCol"]));
+            }
+            set {
+                this["nomenGuageCol"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int nomenGostCol {
+            get {
+                return ((int)(this["nomenGostCol"]));
+            }
+            set {
+                this["nomenGostCol"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int nomenNoteCol {
+            get {
+                return ((int)(this["nomenNoteCol"]));
+            }
+            set {
+                this["nomenNoteCol"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int nomenWeightCol {
+            get {
+                return ((int)(this["nomenWeightCol"]));
+            }
+            set {
+                this["nomenWeightCol"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int nomenPriceCol {
+            get {
+                return ((int)(this["nomenPriceCol"]));
+            }
+            set {
+                this["nomenPriceCol"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int nomenMeasureCol {
+            get {
+                return ((int)(this["nomenMeasureCol"]));
+            }
+            set {
+                this["nomenMeasureCol"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int nomenGroupNumberCol {
+            get {
+                return ((int)(this["nomenGroupNumberCol"]));
+            }
+            set {
+                this["nomenGroupNumberCol"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int nomenGroupNameCol {
+            get {
+                return ((int)(this["nomenGroupNameCol"]));
+            }
+            set {
+                this["nomenGroupNameCol"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int nomenGroupRatOfWasteCol {
+            get {
+                return ((int)(this["nomenGroupRatOfWasteCol"]));
+            }
+            set {
+                this["nomenGroupRatOfWasteCol"] = value;
+            }
+        }
     }
 }
