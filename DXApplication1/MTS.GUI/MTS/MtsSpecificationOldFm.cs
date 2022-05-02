@@ -163,8 +163,9 @@ namespace MTS.GUI.MTS
         private void LoadBuysDetalSpecific(int detailId)
         {
             mtsService = Program.kernel.Get<IMtsSpecificationsService>();
-            byusDetalsSpecificBS.DataSource = mtsService.GetBuysDetalSpecific(detailId).OrderByDescending(ord => ord.ID).ToList();
             byusDetalsSpecificBS.Clear();
+            byusDetalsSpecificBS.DataSource = mtsService.GetBuysDetalSpecific(detailId).OrderByDescending(ord => ord.ID).ToList();
+            
             if (byusDetalsSpecificBS.Count != 0)
                 buysDetalsSpecificGrid.DataSource = byusDetalsSpecificBS;
             else
@@ -896,7 +897,17 @@ namespace MTS.GUI.MTS
                     QUANTITY = ((MTSSpecificationsDTO)ItemSpecification).QUANTITY,
                     WEIGHT = ((MTSSpecificationsDTO)ItemSpecification).WEIGHT,
                     CREATION_DATE = ((MTSSpecificationsDTO)ItemSpecification).CREATION_DATE,
-                    DRAWING = ((MTSSpecificationsDTO)ItemSpecification).DRAWING
+                    DRAWING = ((MTSSpecificationsDTO)ItemSpecification).DRAWING,
+                    AUTHORIZATION_USERS_NAME = ((MTSSpecificationsDTO)ItemSpecification).AUTHORIZATION_USERS_NAME,
+                    COMPILATION_DRAWINGS = ((MTSSpecificationsDTO)ItemSpecification).COMPILATION_DRAWINGS,
+                    CODIZD = ((MTSSpecificationsDTO)ItemSpecification).CODIZD,
+                    COMPILATION_NAMES = ((MTSSpecificationsDTO)ItemSpecification).COMPILATION_NAMES,
+                    COMPILATION_QUANTITIES = ((MTSSpecificationsDTO)ItemSpecification).COMPILATION_QUANTITIES,
+                    LAST_MODIFICATION_DATE = ((MTSSpecificationsDTO)ItemSpecification).LAST_MODIFICATION_DATE,
+                    DEVICE_ID = ((MTSSpecificationsDTO)ItemSpecification).DEVICE_ID,
+                    Selected = ((MTSSpecificationsDTO)ItemSpecification).Selected,
+                    SET_COLOR = ((MTSSpecificationsDTO)ItemSpecification).SET_COLOR,
+                    USERS_ID = ((MTSSpecificationsDTO)ItemSpecification).USERS_ID
                 };
                 AddSpecification(Utils.Operation.Update, (MTSSpecificationsDTO)model, mtsAthorizationUsersDTO);
             }

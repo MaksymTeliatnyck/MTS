@@ -19076,6 +19076,9 @@ namespace MTS.BLL.Services
 
             #endregion materials
 
+            if (sortament)
+                sp = sp.OrderBy(srt => srt.SortPosition).ThenBy(tsrt => Utils.SortStringNumbers(tsrt.Guage)).ToList();
+            //sp = sp.OrderBy(srt => srt.SortPosition).ThenBy(tsrt => Utils.SortStringNumbers(tsrt.Guage)).ToList();
             var allResults = sp.Concat(pProductsSum).Concat(materialsSum).ToList();
 
             scrap *= 0.07m;
@@ -19314,10 +19317,12 @@ namespace MTS.BLL.Services
 
             List<SpecificationPrintModelDTO> dataSourceOrderList = new List<SpecificationPrintModelDTO>();
 
-            if (sortament)
-                dataSourceOrderList = dataSource.OrderBy(srt => srt.Guage).ToList();
-            else
-                dataSourceOrderList = dataSource.ToList();
+            //if (sortament)
+            //    dataSourceOrderList = dataSource.OrderBy(srt => srt.Guage).ToList();
+            //else
+            //    dataSourceOrderList = dataSource.ToList();
+
+            dataSourceOrderList = dataSource.ToList();
 
             foreach (var dat in dataSourceOrderList)
             {
