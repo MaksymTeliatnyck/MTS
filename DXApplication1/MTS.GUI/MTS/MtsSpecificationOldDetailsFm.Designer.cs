@@ -71,7 +71,7 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cancelBtn.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cancelBtn.Location = new System.Drawing.Point(814, 401);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(84, 23);
@@ -84,26 +84,28 @@
             // 
             this.nameSpecificationEdit.Location = new System.Drawing.Point(12, 359);
             this.nameSpecificationEdit.Name = "nameSpecificationEdit";
-            this.nameSpecificationEdit.Size = new System.Drawing.Size(419, 20);
+            this.nameSpecificationEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameSpecificationEdit.Properties.Appearance.Options.UseFont = true;
+            this.nameSpecificationEdit.Size = new System.Drawing.Size(419, 24);
             this.nameSpecificationEdit.TabIndex = 12;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(269, 379);
+            this.label5.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(269, 382);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 16);
+            this.label5.Size = new System.Drawing.Size(42, 18);
             this.label5.TabIndex = 21;
             this.label5.Text = "Дата";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(12, 379);
+            this.label4.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(12, 382);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 16);
+            this.label4.Size = new System.Drawing.Size(39, 18);
             this.label4.TabIndex = 20;
             this.label4.Text = "Вага";
             // 
@@ -111,56 +113,63 @@
             // 
             this.drawingEdit.Location = new System.Drawing.Point(437, 359);
             this.drawingEdit.Name = "drawingEdit";
-            this.drawingEdit.Size = new System.Drawing.Size(461, 20);
+            this.drawingEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawingEdit.Properties.Appearance.Options.UseFont = true;
+            this.drawingEdit.Size = new System.Drawing.Size(461, 24);
             this.drawingEdit.TabIndex = 13;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(434, 340);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 16);
+            this.label2.Size = new System.Drawing.Size(80, 18);
             this.label2.TabIndex = 18;
             this.label2.Text = "Креслення";
             // 
             // weightEdit
             // 
-            this.weightEdit.Location = new System.Drawing.Point(15, 398);
+            this.weightEdit.Location = new System.Drawing.Point(15, 401);
             this.weightEdit.Name = "weightEdit";
-            this.weightEdit.Size = new System.Drawing.Size(251, 20);
+            this.weightEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.weightEdit.Properties.Appearance.Options.UseFont = true;
+            this.weightEdit.Size = new System.Drawing.Size(251, 24);
             this.weightEdit.TabIndex = 15;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 340);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(12, 336);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 16);
+            this.label1.Size = new System.Drawing.Size(43, 18);
             this.label1.TabIndex = 17;
             this.label1.Text = "Виріб";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dateEdit
             // 
             this.dateEdit.EditValue = null;
-            this.dateEdit.Location = new System.Drawing.Point(272, 398);
+            this.dateEdit.Location = new System.Drawing.Point(272, 401);
             this.dateEdit.Name = "dateEdit";
+            this.dateEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateEdit.Properties.Appearance.Options.UseFont = true;
             this.dateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit.Size = new System.Drawing.Size(159, 20);
+            this.dateEdit.Size = new System.Drawing.Size(159, 24);
             this.dateEdit.TabIndex = 16;
             // 
             // specificationGrid
             // 
-            this.specificationGrid.Location = new System.Drawing.Point(15, 45);
+            this.specificationGrid.Location = new System.Drawing.Point(15, 52);
             this.specificationGrid.MainView = this.specificationGridView;
             this.specificationGrid.Name = "specificationGrid";
             this.specificationGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.specificationGrid.Size = new System.Drawing.Size(886, 288);
+            this.specificationGrid.Size = new System.Drawing.Size(886, 281);
             this.specificationGrid.TabIndex = 24;
             this.specificationGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.specificationGridView});
@@ -174,14 +183,15 @@
             this.gridColumn4});
             this.specificationGridView.GridControl = this.specificationGrid;
             this.specificationGridView.Name = "specificationGridView";
-            this.specificationGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.specificationGridView.OptionsView.ShowGroupPanel = false;
             this.specificationGridView.CustomRowCellEdit += new DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventHandler(this.specificationGridView_CustomRowCellEdit);
             this.specificationGridView.ShownEditor += new System.EventHandler(this.specificationGridView_ShownEditor);
             // 
             // gridColumn1
             // 
-            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn1.AppearanceCell.Options.UseFont = true;
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.Caption = "Кількість";
             this.gridColumn1.FieldName = "QUANTITY";
@@ -193,7 +203,9 @@
             // 
             // gridColumn2
             // 
-            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn2.AppearanceCell.Options.UseFont = true;
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.Caption = "Виріб";
             this.gridColumn2.FieldName = "NAME";
@@ -206,7 +218,9 @@
             // 
             // gridColumn3
             // 
-            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn3.AppearanceCell.Options.UseFont = true;
+            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.Caption = "Креслення";
             this.gridColumn3.FieldName = "DRAWING";
@@ -219,7 +233,9 @@
             // 
             // gridColumn4
             // 
-            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn4.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn4.AppearanceCell.Options.UseFont = true;
+            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn4.AppearanceHeader.Options.UseFont = true;
             this.gridColumn4.ColumnEdit = this.repositoryItemCheckEdit1;
             this.gridColumn4.FieldName = "Selected";
@@ -279,10 +295,12 @@
             this.addSpecDetailBtn.Caption = "Додати";
             this.addSpecDetailBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addSpecDetailBtn.Glyph")));
             this.addSpecDetailBtn.Id = 0;
-            this.addSpecDetailBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addSpecDetailBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.addSpecDetailBtn.ItemAppearance.Hovered.Options.UseFont = true;
-            this.addSpecDetailBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addSpecDetailBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.addSpecDetailBtn.ItemAppearance.Normal.Options.UseFont = true;
+            this.addSpecDetailBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addSpecDetailBtn.ItemAppearance.Pressed.Options.UseFont = true;
             this.addSpecDetailBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("addSpecDetailBtn.LargeGlyph")));
             this.addSpecDetailBtn.Name = "addSpecDetailBtn";
             this.addSpecDetailBtn.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
@@ -293,11 +311,11 @@
             this.deleteSpecDetailBtn.Caption = "Видалити";
             this.deleteSpecDetailBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("deleteSpecDetailBtn.Glyph")));
             this.deleteSpecDetailBtn.Id = 2;
-            this.deleteSpecDetailBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteSpecDetailBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.deleteSpecDetailBtn.ItemAppearance.Hovered.Options.UseFont = true;
-            this.deleteSpecDetailBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteSpecDetailBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.deleteSpecDetailBtn.ItemAppearance.Normal.Options.UseFont = true;
-            this.deleteSpecDetailBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteSpecDetailBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.deleteSpecDetailBtn.ItemAppearance.Pressed.Options.UseFont = true;
             this.deleteSpecDetailBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("deleteSpecDetailBtn.LargeGlyph")));
             this.deleteSpecDetailBtn.Name = "deleteSpecDetailBtn";
@@ -315,7 +333,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 434);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 436);
             this.barDockControlBottom.Size = new System.Drawing.Size(910, 0);
             // 
             // barDockControlLeft
@@ -323,14 +341,14 @@
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 434);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 436);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(910, 0);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 434);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 436);
             // 
             // editSpecDetailBtn
             // 
@@ -340,22 +358,22 @@
             // 
             // saveBtnn
             // 
-            this.saveBtnn.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.saveBtnn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.saveBtnn.Appearance.Options.UseFont = true;
-            this.saveBtnn.Location = new System.Drawing.Point(716, 401);
+            this.saveBtnn.Location = new System.Drawing.Point(694, 401);
             this.saveBtnn.Name = "saveBtnn";
-            this.saveBtnn.Size = new System.Drawing.Size(75, 23);
+            this.saveBtnn.Size = new System.Drawing.Size(97, 23);
             this.saveBtnn.TabIndex = 29;
             this.saveBtnn.Text = "Зберегти";
             this.saveBtnn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // cancelBtnn
             // 
-            this.cancelBtnn.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cancelBtnn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cancelBtnn.Appearance.Options.UseFont = true;
-            this.cancelBtnn.Location = new System.Drawing.Point(814, 401);
+            this.cancelBtnn.Location = new System.Drawing.Point(797, 401);
             this.cancelBtnn.Name = "cancelBtnn";
-            this.cancelBtnn.Size = new System.Drawing.Size(84, 23);
+            this.cancelBtnn.Size = new System.Drawing.Size(101, 23);
             this.cancelBtnn.TabIndex = 30;
             this.cancelBtnn.Text = "Відміна";
             this.cancelBtnn.Click += new System.EventHandler(this.cancelBtnn_Click);
@@ -364,7 +382,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(910, 434);
+            this.ClientSize = new System.Drawing.Size(910, 436);
             this.Controls.Add(this.cancelBtnn);
             this.Controls.Add(this.saveBtnn);
             this.Controls.Add(this.standaloneBarDockControl1);

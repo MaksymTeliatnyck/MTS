@@ -48,8 +48,9 @@ namespace MTS.GUI.MTS
         public DirectoryBuyDetailEditOldFm(MTSNomenclaturesDTO model, bool directory )
         {
             InitializeComponent();
+            SetGridSetting();
             // this.operation = operation;
-              directoryParam = directory;
+            directoryParam = directory;
             nomenclatureBS.DataSource = ItemNomenclature = model;
 
             LoadNomenclatureGroups();
@@ -104,27 +105,18 @@ namespace MTS.GUI.MTS
         private void SetGridSetting()
         {
             nomenGostCol.Width = Properties.Settings.Default.nomenGostCol;
-            nomenGuageCol.Width = Properties.Settings.Default.nomenGostCol;
-            nomenMeasureCol.Width = Properties.Settings.Default.nomenGostCol;
-            gridColumn1.Width = Properties.Settings.Default.GridCol1;
-            gridColumn2.Width = Properties.Settings.Default.GridCol2;
-            gridColumn3.Width = Properties.Settings.Default.GridCol3;
-            gridColumn4.Width = Properties.Settings.Default.GridCol4;
-            gridColumn5.Width = Properties.Settings.Default.GridCol5;
-            gridColumn6.Width = Properties.Settings.Default.GridCol6;
-            gridColumn7.Width = Properties.Settings.Default.GridCol7;
-            gridColumn8.Width = Properties.Settings.Default.GridCol8;
-            gridColumn9.Width = Properties.Settings.Default.GridCol9;
-            gridColumn10.Width = Properties.Settings.Default.GridCol10;
-            gridColumn11.Width = Properties.Settings.Default.GridCol11;
-            gridColumn12.Width = Properties.Settings.Default.GridCol12;
-            gridColumn13.Width = Properties.Settings.Default.GridCol13;
-            gridColumn14.Width = Properties.Settings.Default.GridCol14;
-            gridColumn15.Width = Properties.Settings.Default.GridCol15;
-            gridColumn16.Width = Properties.Settings.Default.GridCol16;
-            gridColumn17.Width = Properties.Settings.Default.GridCol17;
-            gridColumn18.Width = Properties.Settings.Default.GridCol18;
-            gridColumn19.Width = Properties.Settings.Default.GridCol19;
+            nomenGuageCol.Width = Properties.Settings.Default.nomenGuageCol;
+            nomenMeasureCol.Width = Properties.Settings.Default.nomenMeasureCol;
+            nomenNameCol.Width = Properties.Settings.Default.nomenNameCol;
+            nomenWeightCol.Width = Properties.Settings.Default.nomenWeightCol;
+            nomenPriceCol.Width = Properties.Settings.Default.nomenPriceCol;
+            nomenNoteCol.Width = Properties.Settings.Default.nomenNoteCol;
+            
+
+            nomenGroupNameCol.Width = Properties.Settings.Default.nomenGroupNameCol;
+            nomenGroupNumberCol.Width = Properties.Settings.Default.nomenGroupNumberCol;
+            nomenGroupRatOfWasteCol.Width = Properties.Settings.Default.nomenGroupRatOfWasteCol;
+            
         }
 
 
@@ -309,6 +301,28 @@ namespace MTS.GUI.MTS
 
                 }
             }
+        }
+
+        private void nomenclatureGroupsGridView_ColumnWidthChanged(object sender, DevExpress.XtraGrid.Views.Base.ColumnEventArgs e)
+        {
+            Properties.Settings.Default.nomenGroupNameCol = nomenGroupNameCol.Width;
+            Properties.Settings.Default.nomenGroupNumberCol = nomenGroupNumberCol.Width;
+            Properties.Settings.Default.nomenGroupRatOfWasteCol = nomenGroupRatOfWasteCol.Width;
+
+            Properties.Settings.Default.Save();
+        }
+
+        private void nomenclatureGridView_ColumnWidthChanged(object sender, DevExpress.XtraGrid.Views.Base.ColumnEventArgs e)
+        {
+            Properties.Settings.Default.nomenGuageCol = nomenGuageCol.Width;
+            Properties.Settings.Default.nomenMeasureCol = nomenMeasureCol.Width;
+            Properties.Settings.Default.nomenNameCol = nomenNameCol.Width;
+            Properties.Settings.Default.nomenNoteCol = nomenNoteCol.Width;
+            Properties.Settings.Default.nomenPriceCol = nomenPriceCol.Width;
+            Properties.Settings.Default.nomenWeightCol = nomenWeightCol.Width;
+            Properties.Settings.Default.nomenGostCol = nomenGostCol.Width;
+
+            Properties.Settings.Default.Save();
         }
     }
 }

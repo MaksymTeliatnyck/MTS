@@ -70,7 +70,7 @@
             // 
             // directoryBuyDetailsBtn1
             // 
-            this.directoryBuyDetailsBtn1.Location = new System.Drawing.Point(431, 22);
+            this.directoryBuyDetailsBtn1.Location = new System.Drawing.Point(431, 25);
             this.directoryBuyDetailsBtn1.Name = "directoryBuyDetailsBtn1";
             this.directoryBuyDetailsBtn1.Size = new System.Drawing.Size(33, 23);
             this.directoryBuyDetailsBtn1.TabIndex = 51;
@@ -79,18 +79,22 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(389, 122);
+            this.cancelBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cancelBtn.Appearance.Options.UseFont = true;
+            this.cancelBtn.Location = new System.Drawing.Point(378, 127);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
+            this.cancelBtn.Size = new System.Drawing.Size(86, 23);
             this.cancelBtn.TabIndex = 50;
             this.cancelBtn.Text = "Відмінити";
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click_1);
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(288, 122);
+            this.saveBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.saveBtn.Appearance.Options.UseFont = true;
+            this.saveBtn.Location = new System.Drawing.Point(280, 127);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveBtn.Size = new System.Drawing.Size(92, 23);
             this.saveBtn.TabIndex = 49;
             this.saveBtn.Text = "Зберегти";
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
@@ -107,11 +111,13 @@
             // 
             // quantityEdit
             // 
-            this.quantityEdit.Location = new System.Drawing.Point(107, 96);
+            this.quantityEdit.Location = new System.Drawing.Point(119, 96);
             this.quantityEdit.Name = "quantityEdit";
+            this.quantityEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.quantityEdit.Properties.Appearance.Options.UseFont = true;
             this.quantityEdit.Properties.Mask.EditMask = "f";
             this.quantityEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.quantityEdit.Size = new System.Drawing.Size(352, 20);
+            this.quantityEdit.Size = new System.Drawing.Size(345, 24);
             this.quantityEdit.TabIndex = 5;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
             conditionValidationRule1.ErrorText = "Не задано кількість";
@@ -122,47 +128,52 @@
             // 
             // guageEdit
             // 
-            this.guageEdit.Location = new System.Drawing.Point(107, 61);
+            this.guageEdit.Location = new System.Drawing.Point(119, 61);
             this.guageEdit.Name = "guageEdit";
+            this.guageEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.guageEdit.Properties.Appearance.Options.UseFont = true;
             this.guageEdit.Properties.ReadOnly = true;
-            this.guageEdit.Size = new System.Drawing.Size(352, 20);
+            this.guageEdit.Size = new System.Drawing.Size(345, 24);
             this.guageEdit.TabIndex = 8;
+            this.guageEdit.EditValueChanged += new System.EventHandler(this.guageEdit_EditValueChanged);
             // 
             // nameBuyDetailEdit
             // 
-            this.nameBuyDetailEdit.Location = new System.Drawing.Point(107, 25);
+            this.nameBuyDetailEdit.Location = new System.Drawing.Point(119, 25);
             this.nameBuyDetailEdit.Name = "nameBuyDetailEdit";
+            this.nameBuyDetailEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameBuyDetailEdit.Properties.Appearance.Options.UseFont = true;
             this.nameBuyDetailEdit.Properties.ReadOnly = true;
-            this.nameBuyDetailEdit.Size = new System.Drawing.Size(315, 20);
+            this.nameBuyDetailEdit.Size = new System.Drawing.Size(303, 24);
             this.nameBuyDetailEdit.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.label3.Location = new System.Drawing.Point(12, 98);
+            this.label3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(5, 95);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 14);
+            this.label3.Size = new System.Drawing.Size(67, 18);
             this.label3.TabIndex = 4;
             this.label3.Text = "Кількість";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.label2.Location = new System.Drawing.Point(12, 63);
+            this.label2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(5, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 14);
+            this.label2.Size = new System.Drawing.Size(83, 18);
             this.label2.TabIndex = 3;
             this.label2.Text = "Сортамент";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.label1.Location = new System.Drawing.Point(12, 31);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(5, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 14);
+            this.label1.Size = new System.Drawing.Size(108, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Найменування";
             // 

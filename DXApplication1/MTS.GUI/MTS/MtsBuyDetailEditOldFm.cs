@@ -201,5 +201,10 @@ namespace MTS.GUI.MTS
             if (e.KeyCode == Keys.Enter && ControlValidation())
                 saveBtn.PerformClick();
         }
+
+        private void guageEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

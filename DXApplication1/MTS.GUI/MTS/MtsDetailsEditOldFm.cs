@@ -473,5 +473,10 @@ namespace MTS.GUI.MTS
         {
             return dxValidationProvider.Validate();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

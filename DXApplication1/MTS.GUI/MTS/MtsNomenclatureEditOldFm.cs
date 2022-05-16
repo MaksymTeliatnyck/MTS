@@ -332,5 +332,10 @@ namespace MTS.GUI.MTS
                     //    }
             }
         }
+
+        private void MtsNomenclatureEditOldFm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -19182,8 +19182,6 @@ namespace MTS.BLL.Services
         //печать спецификации
         public bool PrintTechProcessSpecification(MTSSpecificationsDTO mtsSpecification, List<SpecificationPrintModelDTO> dataSource, decimal scrap, decimal shawing, decimal weightOfWorkpiece, bool sortament = false)
         {
-            
-
             if (!Directory.Exists(Utils.printFolderUri))
             {
                 Directory.CreateDirectory(Utils.printFolderUri);
@@ -19199,7 +19197,6 @@ namespace MTS.BLL.Services
                 return false;
             }
 
-            
 
             var Workbook = Factory.GetWorkbook(GeneratedReportsDir + @"\Templates\MtsStartedSpecificationReport.xls");
             var Worksheet = Workbook.Worksheets[0];

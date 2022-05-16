@@ -93,13 +93,12 @@
             this.NAME});
             this.measureGridView.GridControl = this.measureGrid;
             this.measureGridView.Name = "measureGridView";
-            this.measureGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.measureGridView.OptionsView.ShowAutoFilterRow = true;
             this.measureGridView.OptionsView.ShowGroupPanel = false;
             // 
             // ID
             // 
-            this.ID.AppearanceCell.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ID.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ID.AppearanceCell.Options.UseFont = true;
             this.ID.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ID.AppearanceHeader.Options.UseFont = true;
@@ -114,7 +113,7 @@
             // 
             // NAME
             // 
-            this.NAME.AppearanceCell.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NAME.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NAME.AppearanceCell.Options.UseFont = true;
             this.NAME.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NAME.AppearanceHeader.Options.UseFont = true;

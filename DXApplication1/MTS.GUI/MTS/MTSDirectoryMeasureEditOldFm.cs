@@ -97,8 +97,12 @@ namespace MTS.GUI.MTS
          //   measureEdit.Properties.m
         }
 
+
         #endregion
 
-       
+        private void validateLbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

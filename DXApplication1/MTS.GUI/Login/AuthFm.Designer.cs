@@ -55,68 +55,68 @@
             // 
             this.loginEdit.Location = new System.Drawing.Point(12, 67);
             this.loginEdit.Name = "loginEdit";
-            this.loginEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.loginEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.loginEdit.Properties.Appearance.Options.UseFont = true;
-            this.loginEdit.Size = new System.Drawing.Size(249, 22);
+            this.loginEdit.Size = new System.Drawing.Size(249, 26);
             this.loginEdit.TabIndex = 0;
             // 
             // pwdEdit
             // 
             this.pwdEdit.Location = new System.Drawing.Point(12, 125);
             this.pwdEdit.Name = "pwdEdit";
-            this.pwdEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.pwdEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.pwdEdit.Properties.Appearance.Options.UseFont = true;
             this.pwdEdit.Properties.PasswordChar = '*';
-            this.pwdEdit.Size = new System.Drawing.Size(249, 22);
+            this.pwdEdit.Size = new System.Drawing.Size(249, 26);
             this.pwdEdit.TabIndex = 1;
             // 
             // setUserCheck
             // 
             this.setUserCheck.Location = new System.Drawing.Point(12, 154);
             this.setUserCheck.Name = "setUserCheck";
-            this.setUserCheck.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.setUserCheck.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.setUserCheck.Properties.Appearance.Options.UseFont = true;
             this.setUserCheck.Properties.Caption = "Запам\'ятати пароль";
-            this.setUserCheck.Size = new System.Drawing.Size(147, 20);
+            this.setUserCheck.Size = new System.Drawing.Size(171, 22);
             this.setUserCheck.TabIndex = 2;
             this.setUserCheck.CheckedChanged += new System.EventHandler(this.setUserCheck_CheckedChanged);
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelControl1.Location = new System.Drawing.Point(12, 36);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(31, 16);
+            this.labelControl1.Size = new System.Drawing.Size(40, 19);
             this.labelControl1.TabIndex = 3;
             this.labelControl1.Text = "Логін";
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelControl2.Location = new System.Drawing.Point(12, 96);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(43, 16);
+            this.labelControl2.Size = new System.Drawing.Size(54, 19);
             this.labelControl2.TabIndex = 4;
             this.labelControl2.Text = "Пароль";
             // 
             // saveBtn
             // 
-            this.saveBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.saveBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.saveBtn.Appearance.Options.UseFont = true;
             this.saveBtn.Location = new System.Drawing.Point(12, 180);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(94, 23);
+            this.saveBtn.Size = new System.Drawing.Size(110, 23);
             this.saveBtn.TabIndex = 5;
             this.saveBtn.Text = "Вхід";
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cancelBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cancelBtn.Appearance.Options.UseFont = true;
-            this.cancelBtn.Location = new System.Drawing.Point(170, 180);
+            this.cancelBtn.Location = new System.Drawing.Point(150, 180);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(91, 23);
+            this.cancelBtn.Size = new System.Drawing.Size(111, 23);
             this.cancelBtn.TabIndex = 6;
             this.cancelBtn.Text = "Отмена";
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
@@ -155,6 +155,12 @@
             // 
             this.barSubItem1.Caption = "Кольорова схема";
             this.barSubItem1.Id = 1;
+            this.barSubItem1.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.barSubItem1.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barSubItem1.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.barSubItem1.ItemAppearance.Normal.Options.UseFont = true;
+            this.barSubItem1.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.barSubItem1.ItemAppearance.Pressed.Options.UseFont = true;
             this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.SkinsLink)});
             this.barSubItem1.Name = "barSubItem1";
@@ -172,7 +178,7 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(276, 22);
+            this.barDockControlTop.Size = new System.Drawing.Size(276, 23);
             // 
             // barDockControlBottom
             // 
@@ -185,15 +191,15 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 22);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 193);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 23);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 192);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(276, 22);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 193);
+            this.barDockControlRight.Location = new System.Drawing.Point(276, 23);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 192);
             // 
             // s
             // 
