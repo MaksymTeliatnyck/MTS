@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule8 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule9 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MtsNomenclatureEditOldFm));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.weightEdit = new DevExpress.XtraEditors.TextEdit();
             this.priceEdit = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -86,41 +86,41 @@
             // 
             // weightEdit
             // 
-            this.weightEdit.Location = new System.Drawing.Point(168, 201);
-            this.weightEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.weightEdit.Location = new System.Drawing.Point(207, 198);
+            this.weightEdit.Margin = new System.Windows.Forms.Padding(4);
             this.weightEdit.Name = "weightEdit";
             this.weightEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.weightEdit.Properties.Appearance.Options.UseFont = true;
             this.weightEdit.Size = new System.Drawing.Size(397, 24);
             this.weightEdit.TabIndex = 1;
-            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.GreaterOrEqual;
-            conditionValidationRule7.ErrorText = "Не внесено дані";
-            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            conditionValidationRule7.Value1 = ((short)(0));
-            this.mtsNomenclatureValidationProvider.SetValidationRule(this.weightEdit, conditionValidationRule7);
+            conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.GreaterOrEqual;
+            conditionValidationRule9.ErrorText = "Не внесено дані";
+            conditionValidationRule9.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            conditionValidationRule9.Value1 = ((short)(0));
+            this.mtsNomenclatureValidationProvider.SetValidationRule(this.weightEdit, conditionValidationRule9);
             this.weightEdit.EditValueChanged += new System.EventHandler(this.weightEdit_EditValueChanged);
             // 
             // priceEdit
             // 
-            this.priceEdit.Location = new System.Drawing.Point(168, 233);
-            this.priceEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.priceEdit.Location = new System.Drawing.Point(207, 230);
+            this.priceEdit.Margin = new System.Windows.Forms.Padding(4);
             this.priceEdit.Name = "priceEdit";
             this.priceEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.priceEdit.Properties.Appearance.Options.UseFont = true;
             this.priceEdit.Size = new System.Drawing.Size(397, 24);
             this.priceEdit.TabIndex = 2;
-            conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.GreaterOrEqual;
-            conditionValidationRule8.ErrorText = "This value is not valid";
-            conditionValidationRule8.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            conditionValidationRule8.Value1 = ((short)(0));
-            this.mtsNomenclatureValidationProvider.SetValidationRule(this.priceEdit, conditionValidationRule8);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.GreaterOrEqual;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            conditionValidationRule1.Value1 = ((short)(0));
+            this.mtsNomenclatureValidationProvider.SetValidationRule(this.priceEdit, conditionValidationRule1);
             this.priceEdit.EditValueChanged += new System.EventHandler(this.priceEdit_EditValueChanged);
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelControl1.Location = new System.Drawing.Point(13, 13);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(101, 18);
             this.labelControl1.TabIndex = 8;
@@ -130,7 +130,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelControl2.Location = new System.Drawing.Point(13, 73);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(40, 18);
             this.labelControl2.TabIndex = 9;
@@ -140,7 +140,7 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelControl3.Location = new System.Drawing.Point(13, 105);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(77, 18);
             this.labelControl3.TabIndex = 10;
@@ -150,7 +150,7 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelControl4.Location = new System.Drawing.Point(11, 137);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(149, 18);
             this.labelControl4.TabIndex = 11;
@@ -160,7 +160,7 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelControl5.Location = new System.Drawing.Point(13, 169);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(33, 18);
             this.labelControl5.TabIndex = 12;
@@ -170,7 +170,7 @@
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelControl6.Location = new System.Drawing.Point(13, 204);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(32, 18);
             this.labelControl6.TabIndex = 13;
@@ -180,7 +180,7 @@
             // 
             this.priceLb.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.priceLb.Location = new System.Drawing.Point(11, 236);
-            this.priceLb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.priceLb.Margin = new System.Windows.Forms.Padding(4);
             this.priceLb.Name = "priceLb";
             this.priceLb.Size = new System.Drawing.Size(30, 18);
             this.priceLb.TabIndex = 14;
@@ -190,7 +190,7 @@
             // 
             this.noteLabel.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.noteLabel.Location = new System.Drawing.Point(13, 267);
-            this.noteLabel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.noteLabel.Margin = new System.Windows.Forms.Padding(4);
             this.noteLabel.Name = "noteLabel";
             this.noteLabel.Size = new System.Drawing.Size(64, 18);
             this.noteLabel.TabIndex = 15;
@@ -200,8 +200,8 @@
             // 
             this.saveBtn.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.saveBtn.Appearance.Options.UseFont = true;
-            this.saveBtn.Location = new System.Drawing.Point(344, 361);
-            this.saveBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveBtn.Location = new System.Drawing.Point(380, 338);
+            this.saveBtn.Margin = new System.Windows.Forms.Padding(4);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(113, 32);
             this.saveBtn.TabIndex = 16;
@@ -212,8 +212,8 @@
             // 
             this.cancelBtn.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cancelBtn.Appearance.Options.UseFont = true;
-            this.cancelBtn.Location = new System.Drawing.Point(465, 361);
-            this.cancelBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cancelBtn.Location = new System.Drawing.Point(501, 338);
+            this.cancelBtn.Margin = new System.Windows.Forms.Padding(4);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(100, 32);
             this.cancelBtn.TabIndex = 17;
@@ -223,8 +223,8 @@
             // nomenGroupLookUpEdit
             // 
             this.nomenGroupLookUpEdit.EditValue = "";
-            this.nomenGroupLookUpEdit.Location = new System.Drawing.Point(168, 70);
-            this.nomenGroupLookUpEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nomenGroupLookUpEdit.Location = new System.Drawing.Point(207, 70);
+            this.nomenGroupLookUpEdit.Margin = new System.Windows.Forms.Padding(4);
             this.nomenGroupLookUpEdit.Name = "nomenGroupLookUpEdit";
             this.nomenGroupLookUpEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenGroupLookUpEdit.Properties.Appearance.Options.UseFont = true;
@@ -233,11 +233,11 @@
             this.nomenGroupLookUpEdit.Properties.View = this.gridLookUpEdit1View;
             this.nomenGroupLookUpEdit.Size = new System.Drawing.Size(397, 24);
             this.nomenGroupLookUpEdit.TabIndex = 6;
-            conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule9.ErrorText = "This value is not valid";
-            conditionValidationRule9.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            conditionValidationRule9.Value1 = "";
-            this.mtsNomenclatureValidationProvider.SetValidationRule(this.nomenGroupLookUpEdit, conditionValidationRule9);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            conditionValidationRule2.Value1 = "";
+            this.mtsNomenclatureValidationProvider.SetValidationRule(this.nomenGroupLookUpEdit, conditionValidationRule2);
             this.nomenGroupLookUpEdit.EditValueChanged += new System.EventHandler(this.nomenGroupLookUpEdit_EditValueChanged);
             // 
             // gridLookUpEdit1View
@@ -259,25 +259,25 @@
             // 
             // measureLookUpEdit
             // 
-            this.measureLookUpEdit.Location = new System.Drawing.Point(168, 134);
-            this.measureLookUpEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.measureLookUpEdit.Location = new System.Drawing.Point(207, 134);
+            this.measureLookUpEdit.Margin = new System.Windows.Forms.Padding(4);
             this.measureLookUpEdit.Name = "measureLookUpEdit";
             this.measureLookUpEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.measureLookUpEdit.Properties.Appearance.Options.UseFont = true;
             this.measureLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("measureLookUpEdit.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("measureLookUpEdit.Properties.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("measureLookUpEdit.Properties.Buttons2"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("measureLookUpEdit.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject7, "", null, null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("measureLookUpEdit.Properties.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject8, "", null, null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("measureLookUpEdit.Properties.Buttons2"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, "", null, null, true)});
             this.measureLookUpEdit.Properties.View = this.gridView2;
             this.measureLookUpEdit.Properties.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.measureLookUpEdit_Properties_ButtonClick);
             this.measureLookUpEdit.Size = new System.Drawing.Size(397, 24);
             this.measureLookUpEdit.TabIndex = 5;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            conditionValidationRule1.Value1 = "0";
-            this.mtsNomenclatureValidationProvider.SetValidationRule(this.measureLookUpEdit, conditionValidationRule1);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            conditionValidationRule3.Value1 = "0";
+            this.mtsNomenclatureValidationProvider.SetValidationRule(this.measureLookUpEdit, conditionValidationRule3);
             this.measureLookUpEdit.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.measureLookUpEdit_ButtonClick);
             this.measureLookUpEdit.EditValueChanged += new System.EventHandler(this.measureLookUpEdit_EditValueChanged);
             // 
@@ -303,24 +303,24 @@
             // gostLookUpEdit
             // 
             this.gostLookUpEdit.EditValue = "";
-            this.gostLookUpEdit.Location = new System.Drawing.Point(168, 166);
-            this.gostLookUpEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gostLookUpEdit.Location = new System.Drawing.Point(207, 166);
+            this.gostLookUpEdit.Margin = new System.Windows.Forms.Padding(4);
             this.gostLookUpEdit.Name = "gostLookUpEdit";
             this.gostLookUpEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gostLookUpEdit.Properties.Appearance.Options.UseFont = true;
             this.gostLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("gostLookUpEdit.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("gostLookUpEdit.Properties.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, "", null, null, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("gostLookUpEdit.Properties.Buttons2"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject6, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("gostLookUpEdit.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("gostLookUpEdit.Properties.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("gostLookUpEdit.Properties.Buttons2"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
             this.gostLookUpEdit.Properties.View = this.gridView3;
             this.gostLookUpEdit.Size = new System.Drawing.Size(397, 24);
             this.gostLookUpEdit.TabIndex = 7;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule2.ErrorText = "Не заповнене поле";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            conditionValidationRule2.Value1 = "";
-            this.mtsNomenclatureValidationProvider.SetValidationRule(this.gostLookUpEdit, conditionValidationRule2);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule4.ErrorText = "Не заповнене поле";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            conditionValidationRule4.Value1 = "";
+            this.mtsNomenclatureValidationProvider.SetValidationRule(this.gostLookUpEdit, conditionValidationRule4);
             this.gostLookUpEdit.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.gostLookUpEdit_ButtonClick);
             this.gostLookUpEdit.EditValueChanged += new System.EventHandler(this.gostLookUpEdit_EditValueChanged);
             // 
@@ -345,19 +345,19 @@
             // 
             // nameNomenEdit
             // 
-            this.nameNomenEdit.Location = new System.Drawing.Point(168, 11);
-            this.nameNomenEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nameNomenEdit.Location = new System.Drawing.Point(205, 11);
+            this.nameNomenEdit.Margin = new System.Windows.Forms.Padding(4);
             this.nameNomenEdit.Name = "nameNomenEdit";
             this.nameNomenEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nameNomenEdit.Properties.Appearance.Options.UseFont = true;
             this.nameNomenEdit.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.nameNomenEdit.Size = new System.Drawing.Size(399, 51);
             this.nameNomenEdit.TabIndex = 0;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            conditionValidationRule3.Value1 = "0";
-            this.mtsNomenclatureValidationProvider.SetValidationRule(this.nameNomenEdit, conditionValidationRule3);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule5.ErrorText = "This value is not valid";
+            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            conditionValidationRule5.Value1 = "0";
+            this.mtsNomenclatureValidationProvider.SetValidationRule(this.nameNomenEdit, conditionValidationRule5);
             this.nameNomenEdit.EditValueChanged += new System.EventHandler(this.nameNomenEdit_EditValueChanged);
             // 
             // mtsNomenclatureValidationProvider
@@ -367,32 +367,32 @@
             // 
             // noteEdit
             // 
-            this.noteEdit.Location = new System.Drawing.Point(168, 265);
-            this.noteEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.noteEdit.Location = new System.Drawing.Point(205, 262);
+            this.noteEdit.Margin = new System.Windows.Forms.Padding(4);
             this.noteEdit.Name = "noteEdit";
             this.noteEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.noteEdit.Properties.Appearance.Options.UseFont = true;
             this.noteEdit.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.noteEdit.Size = new System.Drawing.Size(397, 68);
             this.noteEdit.TabIndex = 3;
-            conditionValidationRule4.ErrorText = "This value is not valid";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            conditionValidationRule4.Value1 = "<Null>";
-            this.mtsNomenclatureValidationProvider.SetValidationRule(this.noteEdit, conditionValidationRule4);
+            conditionValidationRule6.ErrorText = "This value is not valid";
+            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            conditionValidationRule6.Value1 = "<Null>";
+            this.mtsNomenclatureValidationProvider.SetValidationRule(this.noteEdit, conditionValidationRule6);
             this.noteEdit.EditValueChanged += new System.EventHandler(this.noteEdit_EditValueChanged);
             // 
             // guagesEdit
             // 
-            this.guagesEdit.Location = new System.Drawing.Point(168, 102);
-            this.guagesEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guagesEdit.Location = new System.Drawing.Point(207, 102);
+            this.guagesEdit.Margin = new System.Windows.Forms.Padding(4);
             this.guagesEdit.Name = "guagesEdit";
             this.guagesEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.guagesEdit.Properties.Appearance.Options.UseFont = true;
             this.guagesEdit.Size = new System.Drawing.Size(397, 24);
             this.guagesEdit.TabIndex = 51;
-            conditionValidationRule5.ErrorText = "This value is not valid";
-            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.None;
-            this.mtsNomenclatureValidationProvider.SetValidationRule(this.guagesEdit, conditionValidationRule5);
+            conditionValidationRule7.ErrorText = "This value is not valid";
+            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.None;
+            this.mtsNomenclatureValidationProvider.SetValidationRule(this.guagesEdit, conditionValidationRule7);
             this.guagesEdit.EditValueChanged += new System.EventHandler(this.guagesEdit_EditValueChanged);
             // 
             // validateLbl
@@ -400,8 +400,8 @@
             this.validateLbl.Appearance.BackColor = System.Drawing.SystemColors.Info;
             this.validateLbl.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.validateLbl.Appearance.ForeColor = System.Drawing.Color.OrangeRed;
-            this.validateLbl.Location = new System.Drawing.Point(11, 361);
-            this.validateLbl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.validateLbl.Location = new System.Drawing.Point(11, 349);
+            this.validateLbl.Margin = new System.Windows.Forms.Padding(4);
             this.validateLbl.Name = "validateLbl";
             this.validateLbl.Size = new System.Drawing.Size(250, 13);
             this.validateLbl.TabIndex = 50;
@@ -412,7 +412,7 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(583, 411);
+            this.ClientSize = new System.Drawing.Size(614, 381);
             this.Controls.Add(this.guagesEdit);
             this.Controls.Add(this.validateLbl);
             this.Controls.Add(this.cancelBtn);
@@ -435,7 +435,7 @@
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MtsNomenclatureEditOldFm";
