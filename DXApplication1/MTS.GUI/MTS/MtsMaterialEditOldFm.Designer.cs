@@ -53,7 +53,7 @@
             this.quantityEdit.Name = "quantityEdit";
             this.quantityEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.quantityEdit.Properties.Appearance.Options.UseFont = true;
-            this.quantityEdit.Properties.Mask.EditMask = "f";
+            this.quantityEdit.Properties.Mask.EditMask = "f3";
             this.quantityEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.quantityEdit.Size = new System.Drawing.Size(352, 24);
             this.quantityEdit.TabIndex = 15;

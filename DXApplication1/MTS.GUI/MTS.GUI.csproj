@@ -20,7 +20,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>\\SERVER-TFS\Publish\MTS\</PublishUrl>
+    <PublishUrl>\\SBD1\Publish\MTS\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -30,13 +30,13 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\SERVER-TFS\Publish\MTS\</InstallUrl>
-    <UpdateUrl>\\SERVER-TFS\Publish\MTS\</UpdateUrl>
+    <InstallUrl>\\SBD1\Publish\MTS\</InstallUrl>
+    <UpdateUrl>\\SBD1\Publish\MTS\</UpdateUrl>
     <ProductName>MTS</ProductName>
     <PublisherName>IT</PublisherName>
     <SuiteName>Матеріальні специфікації</SuiteName>
-    <MinimumRequiredVersion>1.0.0.26</MinimumRequiredVersion>
-    <ApplicationRevision>27</ApplicationRevision>
+    <MinimumRequiredVersion>1.0.0.29</MinimumRequiredVersion>
+    <ApplicationRevision>30</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -75,7 +75,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>C2DFD161B859A0D5A4009C68711ABC350BE1D1A2</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>F883DFD8358A7DC40CA34DD6AA17559B4943E7AC</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>MTS.GUI_1_TemporaryKey.pfx</ManifestKeyFile>
@@ -676,6 +676,7 @@
     </None>
     <None Include="ERP_NEW.GUI_3_TemporaryKey.pfx" />
     <None Include="ERP_NEW.GUI_TemporaryKey.pfx" />
+    <None Include="MTS.GUI_1_TemporaryKey.pfx" />
     <None Include="MTS.GUI_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
