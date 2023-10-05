@@ -56,7 +56,7 @@
     <WarningLevel>3</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>full</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -75,10 +75,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>F883DFD8358A7DC40CA34DD6AA17559B4943E7AC</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>D5A22602AE39D58B2D27AB25AB2D484C466932C8</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>MTS.GUI_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>MTS.GUI_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -321,13 +321,13 @@
       <HintPath>..\..\packages\WindowsAPICodePack.1.1.0\lib\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MTS.BLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="MTS.BLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\MTS.BLL\bin\Release\MTS.BLL.dll</HintPath>
+      <HintPath>..\..\MTS.BLL\bin\Debug\MTS.BLL.dll</HintPath>
     </Reference>
     <Reference Include="MTS.DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\MTS.BLL\bin\Release\MTS.DAL.dll</HintPath>
+      <HintPath>..\..\MTS.DAL\bin\Debug\MTS.DAL.dll</HintPath>
     </Reference>
     <Reference Include="Nager.Date, Version=1.22.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Nager.Date.1.22.3\lib\net45\Nager.Date.dll</HintPath>
@@ -677,6 +677,7 @@
     <None Include="ERP_NEW.GUI_3_TemporaryKey.pfx" />
     <None Include="ERP_NEW.GUI_TemporaryKey.pfx" />
     <None Include="MTS.GUI_1_TemporaryKey.pfx" />
+    <None Include="MTS.GUI_2_TemporaryKey.pfx" />
     <None Include="MTS.GUI_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
