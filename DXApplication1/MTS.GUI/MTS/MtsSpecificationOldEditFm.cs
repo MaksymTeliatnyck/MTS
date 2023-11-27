@@ -263,5 +263,10 @@ namespace MTS.GUI.MTS
             if (e.KeyCode == Keys.Enter && ControlValidation())
                 saveDBtn.PerformClick();
         }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

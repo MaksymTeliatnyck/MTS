@@ -211,5 +211,10 @@ namespace MTS.GUI.MTS
             this.saveBtn.Enabled = isValidate;
             this.validateLabel.Visible = !isValidate;
         }
+
+        private void validateLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

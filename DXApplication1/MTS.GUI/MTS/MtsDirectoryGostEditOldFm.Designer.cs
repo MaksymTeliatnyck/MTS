@@ -42,9 +42,11 @@
             // 
             // gostEdit
             // 
-            this.gostEdit.Location = new System.Drawing.Point(12, 32);
+            this.gostEdit.Location = new System.Drawing.Point(65, 12);
             this.gostEdit.Name = "gostEdit";
-            this.gostEdit.Size = new System.Drawing.Size(274, 20);
+            this.gostEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gostEdit.Properties.Appearance.Options.UseFont = true;
+            this.gostEdit.Size = new System.Drawing.Size(274, 24);
             this.gostEdit.TabIndex = 0;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "Не вказано гост";
@@ -54,32 +56,32 @@
             // 
             // okButton
             // 
-            this.okButton.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.okButton.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.okButton.Appearance.Options.UseFont = true;
-            this.okButton.Location = new System.Drawing.Point(12, 79);
+            this.okButton.Location = new System.Drawing.Point(159, 42);
             this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(75, 23);
+            this.okButton.Size = new System.Drawing.Size(90, 23);
             this.okButton.TabIndex = 2;
             this.okButton.Text = "Додати";
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // cencelButton
             // 
-            this.cencelButton.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cencelButton.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cencelButton.Appearance.Options.UseFont = true;
-            this.cencelButton.Location = new System.Drawing.Point(211, 81);
+            this.cencelButton.Location = new System.Drawing.Point(255, 42);
             this.cencelButton.Name = "cencelButton";
-            this.cencelButton.Size = new System.Drawing.Size(75, 23);
+            this.cencelButton.Size = new System.Drawing.Size(84, 23);
             this.cencelButton.TabIndex = 3;
             this.cencelButton.Text = "Відміна";
             this.cencelButton.Click += new System.EventHandler(this.cencelButton_Click);
             // 
             // gostControl
             // 
-            this.gostControl.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gostControl.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gostControl.Location = new System.Drawing.Point(12, 12);
             this.gostControl.Name = "gostControl";
-            this.gostControl.Size = new System.Drawing.Size(26, 16);
+            this.gostControl.Size = new System.Drawing.Size(31, 18);
             this.gostControl.TabIndex = 4;
             this.gostControl.Text = "Гост";
             // 
@@ -91,10 +93,11 @@
             // 
             // gostLabel
             // 
+            this.gostLabel.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gostLabel.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.gostLabel.Location = new System.Drawing.Point(12, 58);
+            this.gostLabel.Location = new System.Drawing.Point(12, 45);
             this.gostLabel.Name = "gostLabel";
-            this.gostLabel.Size = new System.Drawing.Size(77, 13);
+            this.gostLabel.Size = new System.Drawing.Size(103, 18);
             this.gostLabel.TabIndex = 5;
             this.gostLabel.Text = "Не внесені дані";
             this.gostLabel.Visible = false;
@@ -103,12 +106,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(298, 109);
+            this.ClientSize = new System.Drawing.Size(351, 75);
             this.Controls.Add(this.gostLabel);
             this.Controls.Add(this.gostControl);
             this.Controls.Add(this.cencelButton);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.gostEdit);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MtsDirectoryGostEditOldFm";

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.nomenclatureGroupsGrid = new DevExpress.XtraGrid.GridControl();
@@ -78,7 +78,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1395, 648);
+            this.panelControl1.Size = new System.Drawing.Size(1415, 648);
             this.panelControl1.TabIndex = 0;
             // 
             // splitContainer1
@@ -94,54 +94,55 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.nomenclatureGrid);
-            this.splitContainer1.Size = new System.Drawing.Size(1391, 644);
-            this.splitContainer1.SplitterDistance = 515;
+            this.splitContainer1.Size = new System.Drawing.Size(1411, 644);
+            this.splitContainer1.SplitterDistance = 522;
             this.splitContainer1.TabIndex = 0;
             // 
             // nomenclatureGroupsGrid
             // 
             this.nomenclatureGroupsGrid.ContextMenuStrip = this.groupContextMenu;
             this.nomenclatureGroupsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.nomenclatureGroupsGrid.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.nomenclatureGroupsGrid.Location = new System.Drawing.Point(0, 0);
             this.nomenclatureGroupsGrid.MainView = this.nomenclatureGroupsGridView;
             this.nomenclatureGroupsGrid.Name = "nomenclatureGroupsGrid";
             this.nomenclatureGroupsGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoForGroupNameEdit});
-            this.nomenclatureGroupsGrid.Size = new System.Drawing.Size(515, 644);
+            this.nomenclatureGroupsGrid.Size = new System.Drawing.Size(522, 644);
             this.nomenclatureGroupsGrid.TabIndex = 0;
             this.nomenclatureGroupsGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.nomenclatureGroupsGridView});
             // 
             // groupContextMenu
             // 
+            this.groupContextMenu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addGroupItem,
             this.editGroupItem,
             this.deleteGroupItem});
             this.groupContextMenu.Name = "groupContextMenu";
-            this.groupContextMenu.Size = new System.Drawing.Size(169, 70);
+            this.groupContextMenu.Size = new System.Drawing.Size(207, 76);
             // 
             // addGroupItem
             // 
             this.addGroupItem.Name = "addGroupItem";
-            this.addGroupItem.Size = new System.Drawing.Size(168, 22);
+            this.addGroupItem.Size = new System.Drawing.Size(206, 24);
             this.addGroupItem.Text = "Додати групу";
             this.addGroupItem.Click += new System.EventHandler(this.addGroupItem_Click);
             // 
             // editGroupItem
             // 
             this.editGroupItem.Name = "editGroupItem";
-            this.editGroupItem.Size = new System.Drawing.Size(168, 22);
+            this.editGroupItem.Size = new System.Drawing.Size(206, 24);
             this.editGroupItem.Text = "Редагувати групу";
             this.editGroupItem.Click += new System.EventHandler(this.editGroupItem_Click);
             // 
             // deleteGroupItem
             // 
             this.deleteGroupItem.Name = "deleteGroupItem";
-            this.deleteGroupItem.Size = new System.Drawing.Size(168, 22);
+            this.deleteGroupItem.Size = new System.Drawing.Size(206, 24);
             this.deleteGroupItem.Text = "Видалити групу";
             this.deleteGroupItem.Click += new System.EventHandler(this.deleteGroupItem_Click);
             // 
@@ -153,16 +154,18 @@
             this.nomenGroupRatOfWasteCol});
             this.nomenclatureGroupsGridView.GridControl = this.nomenclatureGroupsGrid;
             this.nomenclatureGroupsGridView.Name = "nomenclatureGroupsGridView";
+            this.nomenclatureGroupsGridView.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.nomenclatureGroupsGridView.OptionsView.RowAutoHeight = true;
             this.nomenclatureGroupsGridView.OptionsView.ShowAutoFilterRow = true;
             this.nomenclatureGroupsGridView.OptionsView.ShowGroupPanel = false;
+            this.nomenclatureGroupsGridView.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.nomenclatureGroupsGridView_ColumnWidthChanged);
             this.nomenclatureGroupsGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.nomenclatureGroupsGridView_FocusedRowChanged);
             // 
             // nomenGroupNumberCol
             // 
-            this.nomenGroupNumberCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nomenGroupNumberCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenGroupNumberCol.AppearanceCell.Options.UseFont = true;
-            this.nomenGroupNumberCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nomenGroupNumberCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenGroupNumberCol.AppearanceHeader.Options.UseFont = true;
             this.nomenGroupNumberCol.AppearanceHeader.Options.UseTextOptions = true;
             this.nomenGroupNumberCol.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -174,15 +177,16 @@
             this.nomenGroupNumberCol.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
             this.nomenGroupNumberCol.OptionsColumn.AllowMove = false;
             this.nomenGroupNumberCol.OptionsColumn.AllowSize = false;
+            this.nomenGroupNumberCol.OptionsColumn.FixedWidth = true;
             this.nomenGroupNumberCol.Visible = true;
             this.nomenGroupNumberCol.VisibleIndex = 0;
             this.nomenGroupNumberCol.Width = 38;
             // 
             // nomenGroupNameCol
             // 
-            this.nomenGroupNameCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nomenGroupNameCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenGroupNameCol.AppearanceCell.Options.UseFont = true;
-            this.nomenGroupNameCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nomenGroupNameCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenGroupNameCol.AppearanceHeader.Options.UseFont = true;
             this.nomenGroupNameCol.AppearanceHeader.Options.UseTextOptions = true;
             this.nomenGroupNameCol.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -194,11 +198,10 @@
             this.nomenGroupNameCol.OptionsColumn.AllowFocus = false;
             this.nomenGroupNameCol.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
             this.nomenGroupNameCol.OptionsColumn.AllowMove = false;
-            this.nomenGroupNameCol.OptionsColumn.AllowSize = false;
             this.nomenGroupNameCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.nomenGroupNameCol.Visible = true;
             this.nomenGroupNameCol.VisibleIndex = 1;
-            this.nomenGroupNameCol.Width = 336;
+            this.nomenGroupNameCol.Width = 369;
             // 
             // repositoryItemMemoForGroupNameEdit
             // 
@@ -208,23 +211,26 @@
             // 
             // nomenGroupRatOfWasteCol
             // 
-            this.nomenGroupRatOfWasteCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nomenGroupRatOfWasteCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenGroupRatOfWasteCol.AppearanceCell.Options.UseFont = true;
-            this.nomenGroupRatOfWasteCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nomenGroupRatOfWasteCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenGroupRatOfWasteCol.AppearanceHeader.Options.UseFont = true;
             this.nomenGroupRatOfWasteCol.AppearanceHeader.Options.UseTextOptions = true;
             this.nomenGroupRatOfWasteCol.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.nomenGroupRatOfWasteCol.Caption = "Коєф.відходів";
+            this.nomenGroupRatOfWasteCol.Caption = "Коєф. відх.";
             this.nomenGroupRatOfWasteCol.FieldName = "RATIO_OF_WASTE";
+            this.nomenGroupRatOfWasteCol.MaxWidth = 100;
+            this.nomenGroupRatOfWasteCol.MinWidth = 100;
             this.nomenGroupRatOfWasteCol.Name = "nomenGroupRatOfWasteCol";
             this.nomenGroupRatOfWasteCol.OptionsColumn.AllowEdit = false;
             this.nomenGroupRatOfWasteCol.OptionsColumn.AllowFocus = false;
             this.nomenGroupRatOfWasteCol.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
             this.nomenGroupRatOfWasteCol.OptionsColumn.AllowMove = false;
             this.nomenGroupRatOfWasteCol.OptionsColumn.AllowSize = false;
+            this.nomenGroupRatOfWasteCol.OptionsColumn.FixedWidth = true;
             this.nomenGroupRatOfWasteCol.Visible = true;
             this.nomenGroupRatOfWasteCol.VisibleIndex = 2;
-            this.nomenGroupRatOfWasteCol.Width = 103;
+            this.nomenGroupRatOfWasteCol.Width = 90;
             // 
             // nomenclatureGrid
             // 
@@ -235,38 +241,39 @@
             this.nomenclatureGrid.Name = "nomenclatureGrid";
             this.nomenclatureGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoNameEdit});
-            this.nomenclatureGrid.Size = new System.Drawing.Size(872, 644);
+            this.nomenclatureGrid.Size = new System.Drawing.Size(885, 644);
             this.nomenclatureGrid.TabIndex = 0;
             this.nomenclatureGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.nomenclatureGridView});
             // 
             // nomenclatureMenuStrip
             // 
+            this.nomenclatureMenuStrip.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenclatureMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addNomenclatureItem,
             this.editNomenclatureItem,
             this.deleteNomenclatureItem});
             this.nomenclatureMenuStrip.Name = "nomenclatureMenuStrip";
-            this.nomenclatureMenuStrip.Size = new System.Drawing.Size(217, 70);
+            this.nomenclatureMenuStrip.Size = new System.Drawing.Size(269, 76);
             // 
             // addNomenclatureItem
             // 
             this.addNomenclatureItem.Name = "addNomenclatureItem";
-            this.addNomenclatureItem.Size = new System.Drawing.Size(216, 22);
+            this.addNomenclatureItem.Size = new System.Drawing.Size(268, 24);
             this.addNomenclatureItem.Text = "Додати номенклатуру";
             this.addNomenclatureItem.Click += new System.EventHandler(this.addNomenclatureItem_Click);
             // 
             // editNomenclatureItem
             // 
             this.editNomenclatureItem.Name = "editNomenclatureItem";
-            this.editNomenclatureItem.Size = new System.Drawing.Size(216, 22);
+            this.editNomenclatureItem.Size = new System.Drawing.Size(268, 24);
             this.editNomenclatureItem.Text = "Редагувати номенклатуру";
             this.editNomenclatureItem.Click += new System.EventHandler(this.editNomenclatureItem_Click);
             // 
             // deleteNomenclatureItem
             // 
             this.deleteNomenclatureItem.Name = "deleteNomenclatureItem";
-            this.deleteNomenclatureItem.Size = new System.Drawing.Size(216, 22);
+            this.deleteNomenclatureItem.Size = new System.Drawing.Size(268, 24);
             this.deleteNomenclatureItem.Text = "Видалити номенклатуру";
             this.deleteNomenclatureItem.Click += new System.EventHandler(this.deleteNomenclatureItem_Click);
             // 
@@ -282,16 +289,18 @@
             this.nomenMeasureCol});
             this.nomenclatureGridView.GridControl = this.nomenclatureGrid;
             this.nomenclatureGridView.Name = "nomenclatureGridView";
+            this.nomenclatureGridView.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.nomenclatureGridView.OptionsView.RowAutoHeight = true;
             this.nomenclatureGridView.OptionsView.ShowAutoFilterRow = true;
             this.nomenclatureGridView.OptionsView.ShowGroupPanel = false;
+            this.nomenclatureGridView.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.nomenclatureGridView_ColumnWidthChanged);
             this.nomenclatureGridView.DoubleClick += new System.EventHandler(this.nomenclatureGridView_DoubleClick);
             // 
             // nomenNameCol
             // 
-            this.nomenNameCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nomenNameCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenNameCol.AppearanceCell.Options.UseFont = true;
-            this.nomenNameCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nomenNameCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenNameCol.AppearanceHeader.Options.UseFont = true;
             this.nomenNameCol.AppearanceHeader.Options.UseTextOptions = true;
             this.nomenNameCol.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -303,7 +312,6 @@
             this.nomenNameCol.OptionsColumn.AllowFocus = false;
             this.nomenNameCol.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
             this.nomenNameCol.OptionsColumn.AllowMove = false;
-            this.nomenNameCol.OptionsColumn.AllowSize = false;
             this.nomenNameCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.nomenNameCol.Visible = true;
             this.nomenNameCol.VisibleIndex = 0;
@@ -317,9 +325,9 @@
             // 
             // nomenGuageCol
             // 
-            this.nomenGuageCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nomenGuageCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenGuageCol.AppearanceCell.Options.UseFont = true;
-            this.nomenGuageCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nomenGuageCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenGuageCol.AppearanceHeader.Options.UseFont = true;
             this.nomenGuageCol.AppearanceHeader.Options.UseTextOptions = true;
             this.nomenGuageCol.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -330,7 +338,6 @@
             this.nomenGuageCol.OptionsColumn.AllowFocus = false;
             this.nomenGuageCol.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
             this.nomenGuageCol.OptionsColumn.AllowMove = false;
-            this.nomenGuageCol.OptionsColumn.AllowSize = false;
             this.nomenGuageCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.nomenGuageCol.Visible = true;
             this.nomenGuageCol.VisibleIndex = 1;
@@ -338,9 +345,9 @@
             // 
             // nomenGostCol
             // 
-            this.nomenGostCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nomenGostCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenGostCol.AppearanceCell.Options.UseFont = true;
-            this.nomenGostCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nomenGostCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenGostCol.AppearanceHeader.Options.UseFont = true;
             this.nomenGostCol.AppearanceHeader.Options.UseTextOptions = true;
             this.nomenGostCol.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -351,7 +358,6 @@
             this.nomenGostCol.OptionsColumn.AllowFocus = false;
             this.nomenGostCol.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
             this.nomenGostCol.OptionsColumn.AllowMove = false;
-            this.nomenGostCol.OptionsColumn.AllowSize = false;
             this.nomenGostCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.nomenGostCol.Visible = true;
             this.nomenGostCol.VisibleIndex = 2;
@@ -359,9 +365,9 @@
             // 
             // nomenNoteCol
             // 
-            this.nomenNoteCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nomenNoteCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenNoteCol.AppearanceCell.Options.UseFont = true;
-            this.nomenNoteCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nomenNoteCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenNoteCol.AppearanceHeader.Options.UseFont = true;
             this.nomenNoteCol.AppearanceHeader.Options.UseTextOptions = true;
             this.nomenNoteCol.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -372,16 +378,15 @@
             this.nomenNoteCol.OptionsColumn.AllowFocus = false;
             this.nomenNoteCol.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
             this.nomenNoteCol.OptionsColumn.AllowMove = false;
-            this.nomenNoteCol.OptionsColumn.AllowSize = false;
             this.nomenNoteCol.Visible = true;
             this.nomenNoteCol.VisibleIndex = 3;
             this.nomenNoteCol.Width = 128;
             // 
             // nomenWeightCol
             // 
-            this.nomenWeightCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nomenWeightCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenWeightCol.AppearanceCell.Options.UseFont = true;
-            this.nomenWeightCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nomenWeightCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenWeightCol.AppearanceHeader.Options.UseFont = true;
             this.nomenWeightCol.AppearanceHeader.Options.UseTextOptions = true;
             this.nomenWeightCol.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -392,15 +397,14 @@
             this.nomenWeightCol.OptionsColumn.AllowFocus = false;
             this.nomenWeightCol.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
             this.nomenWeightCol.OptionsColumn.AllowMove = false;
-            this.nomenWeightCol.OptionsColumn.AllowSize = false;
             this.nomenWeightCol.Visible = true;
             this.nomenWeightCol.VisibleIndex = 4;
             // 
             // nomenPriceCol
             // 
-            this.nomenPriceCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nomenPriceCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenPriceCol.AppearanceCell.Options.UseFont = true;
-            this.nomenPriceCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nomenPriceCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenPriceCol.AppearanceHeader.Options.UseFont = true;
             this.nomenPriceCol.AppearanceHeader.Options.UseTextOptions = true;
             this.nomenPriceCol.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -411,16 +415,15 @@
             this.nomenPriceCol.OptionsColumn.AllowFocus = false;
             this.nomenPriceCol.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
             this.nomenPriceCol.OptionsColumn.AllowMove = false;
-            this.nomenPriceCol.OptionsColumn.AllowSize = false;
             this.nomenPriceCol.Visible = true;
             this.nomenPriceCol.VisibleIndex = 5;
             this.nomenPriceCol.Width = 45;
             // 
             // nomenMeasureCol
             // 
-            this.nomenMeasureCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nomenMeasureCol.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenMeasureCol.AppearanceCell.Options.UseFont = true;
-            this.nomenMeasureCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nomenMeasureCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenMeasureCol.AppearanceHeader.Options.UseFont = true;
             this.nomenMeasureCol.AppearanceHeader.Options.UseTextOptions = true;
             this.nomenMeasureCol.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -431,7 +434,6 @@
             this.nomenMeasureCol.OptionsColumn.AllowFocus = false;
             this.nomenMeasureCol.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
             this.nomenMeasureCol.OptionsColumn.AllowMove = false;
-            this.nomenMeasureCol.OptionsColumn.AllowSize = false;
             this.nomenMeasureCol.Visible = true;
             this.nomenMeasureCol.VisibleIndex = 6;
             this.nomenMeasureCol.Width = 89;
@@ -440,7 +442,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1395, 648);
+            this.ClientSize = new System.Drawing.Size(1415, 648);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

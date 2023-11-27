@@ -45,10 +45,12 @@
             // gostGrid
             // 
             this.gostGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gostGrid.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gostGrid.Location = new System.Drawing.Point(0, 0);
             this.gostGrid.MainView = this.gostGridView;
+            this.gostGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gostGrid.Name = "gostGrid";
-            this.gostGrid.Size = new System.Drawing.Size(716, 447);
+            this.gostGrid.Size = new System.Drawing.Size(1071, 615);
             this.gostGrid.TabIndex = 0;
             this.gostGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gostGridView});
@@ -62,13 +64,12 @@
             this.NAME});
             this.gostGridView.GridControl = this.gostGrid;
             this.gostGridView.Name = "gostGridView";
-            this.gostGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gostGridView.OptionsView.ShowAutoFilterRow = true;
             this.gostGridView.OptionsView.ShowGroupPanel = false;
             // 
             // ID
             // 
-            this.ID.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ID.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ID.AppearanceCell.Options.UseFont = true;
             this.ID.AppearanceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ID.AppearanceHeader.Options.UseFont = true;
@@ -90,7 +91,7 @@
             // 
             // NAME
             // 
-            this.NAME.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NAME.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NAME.AppearanceCell.Options.UseFont = true;
             this.NAME.AppearanceCell.Options.UseTextOptions = true;
             this.NAME.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -143,18 +144,22 @@
             // 
             // MtsDirectoryGostOldFm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Appearance.Options.UseFont = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(716, 447);
+            this.ClientSize = new System.Drawing.Size(1071, 615);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.gostGrid);
+            this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MtsDirectoryGostOldFm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Довідник гостів";
+            this.Load += new System.EventHandler(this.MtsDirectoryGostOldFm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gostGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gostGridView)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);

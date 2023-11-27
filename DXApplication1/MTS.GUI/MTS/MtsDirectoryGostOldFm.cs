@@ -76,5 +76,10 @@ namespace MTS.GUI.MTS
                 gostGridView.EndDataUpdate();
             }
         }
+
+        private void MtsDirectoryGostOldFm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

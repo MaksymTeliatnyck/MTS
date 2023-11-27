@@ -62,18 +62,17 @@
             this.DRAWING});
             this.detailGridView.GridControl = this.detailGrid;
             this.detailGridView.Name = "detailGridView";
-            this.detailGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.detailGridView.OptionsFind.AlwaysVisible = true;
             this.detailGridView.OptionsView.ShowAutoFilterRow = true;
             this.detailGridView.OptionsView.ShowGroupPanel = false;
             // 
             // NAME
             // 
-            this.NAME.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NAME.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NAME.AppearanceCell.Options.UseFont = true;
             this.NAME.AppearanceCell.Options.UseTextOptions = true;
             this.NAME.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.NAME.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NAME.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NAME.AppearanceHeader.Options.UseFont = true;
             this.NAME.AppearanceHeader.Options.UseTextOptions = true;
             this.NAME.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -87,11 +86,11 @@
             // 
             // DRAWING
             // 
-            this.DRAWING.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DRAWING.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DRAWING.AppearanceCell.Options.UseFont = true;
             this.DRAWING.AppearanceCell.Options.UseTextOptions = true;
             this.DRAWING.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.DRAWING.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DRAWING.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DRAWING.AppearanceHeader.Options.UseFont = true;
             this.DRAWING.AppearanceHeader.Options.UseTextOptions = true;
             this.DRAWING.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;

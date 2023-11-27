@@ -203,5 +203,40 @@ namespace MTS.GUI.MTS
         {
             return mtsMaterialValidationProvider.Validate();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MtsMaterialEditOldFm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nameBuyDetailEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void validateLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guageEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
