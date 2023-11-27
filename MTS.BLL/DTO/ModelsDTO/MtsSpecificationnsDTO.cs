@@ -18,7 +18,7 @@ namespace MTS.BLL.DTO.ModelsDTO
         public decimal? Quantity { get; set; }
         public decimal? QuantityOfBlanks { get; set; }
         public short? MaterialStatus { get; set; }
-        public string Description{ get; set; }
+        public string Description { get; set; }
 
         public int? DesignerId { get; set; }
         public string Drawing { get; set; }

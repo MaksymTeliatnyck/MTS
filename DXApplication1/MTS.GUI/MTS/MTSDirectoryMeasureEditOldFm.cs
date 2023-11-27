@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using MTS.BLL.DTO.ModelsDTO;
+﻿using MTS.BLL.DTO.ModelsDTO;
 using MTS.BLL.Infrastructure;
 using MTS.BLL.Interfaces;
 using Ninject;
+using System;
+using System.Windows.Forms;
 
 namespace MTS.GUI.MTS
 {
@@ -88,17 +80,17 @@ namespace MTS.GUI.MTS
 
         private void measureEdit_EditValueChanged(object sender, EventArgs e)
         {
-            
+
             measureValidationProvider.Validate((Control)sender);
         }
 
         private void measureEdit_KeyPress(object sender, KeyPressEventArgs e)
         {
-         //   measureEdit.Properties.m
+            //   measureEdit.Properties.m
         }
 
         #endregion
 
-       
+
     }
 }

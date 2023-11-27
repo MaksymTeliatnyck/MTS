@@ -174,7 +174,6 @@
             this.gridColumn4});
             this.specificationGridView.GridControl = this.specificationGrid;
             this.specificationGridView.Name = "specificationGridView";
-            this.specificationGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.specificationGridView.OptionsView.ShowGroupPanel = false;
             this.specificationGridView.CustomRowCellEdit += new DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventHandler(this.specificationGridView_CustomRowCellEdit);
             this.specificationGridView.ShownEditor += new System.EventHandler(this.specificationGridView_ShownEditor);

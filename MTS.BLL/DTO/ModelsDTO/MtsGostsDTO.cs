@@ -1,5 +1,4 @@
 ﻿using MTS.BLL.Infrastructure;
-using System;
 
 namespace MTS.BLL.DTO.ModelsDTO
 {

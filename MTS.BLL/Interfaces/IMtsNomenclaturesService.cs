@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-using MTS.BLL.DTO.ModelsDTO;
-using MTS.BLL.DTO.SelectedDTO;
-using System;
+﻿using MTS.BLL.DTO.ModelsDTO;
+using System.Collections.Generic;
 
 namespace MTS.BLL.Interfaces
 {
-   public interface IMtsNomenclaturesService
+    public interface IMtsNomenclaturesService
     {
         IEnumerable<MtsNomenclaturessDTO> GetNomenclarures();
 

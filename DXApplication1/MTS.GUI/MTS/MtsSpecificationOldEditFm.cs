@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using MTS.BLL.DTO.ModelsDTO;
 using MTS.BLL.Infrastructure;
 using MTS.BLL.Interfaces;
-using MTS.BLL.Services;
-using MTS.BLL.DTO;
-using MTS.BLL.DTO.ModelsDTO;
 using Ninject;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace MTS.GUI.MTS
 {
@@ -45,10 +37,10 @@ namespace MTS.GUI.MTS
             quantityEdit.DataBindings.Add("EditValue", specificationBS, "QUANTITY", true, DataSourceUpdateMode.OnPropertyChanged);
             weightEdit.DataBindings.Add("EditValue", specificationBS, "WEIGHT", true, DataSourceUpdateMode.OnPropertyChanged);
             dateEdit.DataBindings.Add("EditValue", specificationBS, "CREATION_DATE", true, DataSourceUpdateMode.OnPropertyChanged);
-      
+
         }
         #region Method's
-         private ObjectBase Item
+        private ObjectBase Item
         {
             get { return specificationBS.Current as ObjectBase; }
             set
@@ -59,14 +51,14 @@ namespace MTS.GUI.MTS
         }
 
         private bool SaveItem()
-         {
-             this.Item.EndEdit();
-             mtsService = Program.kernel.Get<IMtsSpecificationsService>();
+        {
+            this.Item.EndEdit();
+            mtsService = Program.kernel.Get<IMtsSpecificationsService>();
 
-             if (quantityEdit.Text.Length <= 5)
-             {
-                 if (weightEdit.Text.Length <= 7)
-                 {
+            if (quantityEdit.Text.Length <= 5)
+            {
+                if (weightEdit.Text.Length <= 7)
+                {
                     if (operation == Utils.Operation.Add)
                     {
                         ((MTSSpecificationsDTO)Item).ID = 0;
@@ -90,7 +82,7 @@ namespace MTS.GUI.MTS
                     {
                         mtsService.MTSSpecificationUpdate((MTSSpecificationsDTO)Item);
                     }
-                    else if(operation == Utils.Operation.Custom)
+                    else if (operation == Utils.Operation.Custom)
                     {
                         int mtsSpecificztionId = ((MTSSpecificationsDTO)Item).ID;
 
@@ -159,13 +151,13 @@ namespace MTS.GUI.MTS
                         }
                     }
 
-             return true;           
-             }
-            else
-            {
-                MessageBox.Show("Перевище максимальна довжина поля 'Вага!'", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Перевище максимальна довжина поля 'Вага!'", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
             }
             else
             {
@@ -180,10 +172,11 @@ namespace MTS.GUI.MTS
         #endregion
 
         #region Event's
-        
-        
+
+
         private void saveBtn_Click(object sender, EventArgs e)
-        {if (operation == Utils.Operation.Update)
+        {
+            if (operation == Utils.Operation.Update)
             {
                 if (MessageBox.Show("Зберегти зміни?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {

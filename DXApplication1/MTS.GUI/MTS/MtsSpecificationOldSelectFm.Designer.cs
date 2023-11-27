@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MtsSpecificationOldSelectFm));
             this.specificGrid = new DevExpress.XtraGrid.GridControl();
             this.specificGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -50,9 +50,9 @@
             // 
             // specificGrid
             // 
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.specificGrid.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.specificGrid.Location = new System.Drawing.Point(12, 12);
             this.specificGrid.MainView = this.specificGridView;
             this.specificGrid.Name = "specificGrid";
@@ -76,7 +76,6 @@
             this.gridColumn8});
             this.specificGridView.GridControl = this.specificGrid;
             this.specificGridView.Name = "specificGridView";
-            this.specificGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.specificGridView.OptionsView.ShowAutoFilterRow = true;
             this.specificGridView.OptionsView.ShowGroupPanel = false;
             // 

@@ -1,19 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using MTS.BLL.DTO.ModelsDTO;
 using MTS.BLL.Infrastructure;
 using MTS.BLL.Interfaces;
-using MTS.BLL.Services;
-using MTS.BLL.DTO;
-using MTS.BLL.DTO.ModelsDTO;
 using Ninject;
+using System;
+using System.Windows.Forms;
 
 namespace MTS.GUI.MTS
 {
@@ -40,7 +30,7 @@ namespace MTS.GUI.MTS
         public MtsDetailsEditOldFm(Utils.Operation operation, MTSDetailsDTO modelDetail)
         {
             InitializeComponent();
-            this.operation=operation;
+            this.operation = operation;
             detailsBS.DataSource = modelDetail;
             //this.specificDTO = modelSpecific;
             //this.detailDTO = modelDetail;
@@ -63,12 +53,12 @@ namespace MTS.GUI.MTS
             heightEdit.DataBindings.Add("EditValue", detailsBS, "HEIGHT", true, DataSourceUpdateMode.OnPropertyChanged);
             widthEdit.DataBindings.Add("EditValue", detailsBS, "WIDTH", true, DataSourceUpdateMode.OnPropertyChanged);
             quantityOfBlankEdit.DataBindings.Add("EditValue", detailsBS, "QUANTITY_OF_BLANKS", true, DataSourceUpdateMode.OnPropertyChanged);
-           
 
 
 
 
-            if(operation==Utils.Operation.Add)
+
+            if (operation == Utils.Operation.Add)
             {
                 //numberDrawingEdit.EditValue = model.DRAWING;
                 //nameEdit.EditValue = model.NAME;
@@ -143,38 +133,38 @@ namespace MTS.GUI.MTS
                 mtsSpecificationsService.MTSDetailUpdate((MTSDetailsDTO)Item);
                 return true;
             }
-            
 
 
-                //MTSCreateDetalsDTO createDetailsItem = new MTSCreateDetalsDTO()
-                //{
-                //    NOMENCLATURE_ID = specificDTO.ID,//((MTSCreateDetalsDTO)Item).NOMENCLATURE_ID,
-                //    PROCESSING_ID = ((MTSCreateDetalsDTO)Item).PROCESSING_ID,
-                //    NAME = ((MTSCreateDetalsDTO)Item).NAME,
-                //    DRAWING = ((MTSCreateDetalsDTO)Item).DRAWING,
-                //    WIDTH = ((MTSCreateDetalsDTO)Item).WIDTH,
-                //    HEIGHT = ((MTSCreateDetalsDTO)Item).HEIGHT,
 
-                //    QUANTITY = ((MTSCreateDetalsDTO)Item).QUANTITY,
-                //    NOMENCLATURESNAME = specificDTO.NAME,//((MTSCreateDetalsDTO)Item).NOMENCLATURESNAME,
-                //    GUAEGENAME = ((MTSCreateDetalsDTO)Item).GUAEGENAME,
-                //    CREATEDETALSNAME = ((MTSCreateDetalsDTO)Item).CREATEDETALSNAME,
-                //    QUANTITY_OF_BLANKS = ((MTSCreateDetalsDTO)Item).QUANTITY_OF_BLANKS,
-                //    DETALSPROCESSING = ((MTSCreateDetalsDTO)Item).DETALSPROCESSING,
-                //    PROCCESINGNAME = ((MTSCreateDetalsDTO)Item).PROCCESINGNAME
-                //};
-                //mtsService.MTSCreateDetailsCreate(createDetailsItem);
-               // ((MTSCreateDetalsDTO)Item).ID=mtsService.MTSCreateDetailsCreate(((MTSCreateDetalsDTO)Item));
+            //MTSCreateDetalsDTO createDetailsItem = new MTSCreateDetalsDTO()
+            //{
+            //    NOMENCLATURE_ID = specificDTO.ID,//((MTSCreateDetalsDTO)Item).NOMENCLATURE_ID,
+            //    PROCESSING_ID = ((MTSCreateDetalsDTO)Item).PROCESSING_ID,
+            //    NAME = ((MTSCreateDetalsDTO)Item).NAME,
+            //    DRAWING = ((MTSCreateDetalsDTO)Item).DRAWING,
+            //    WIDTH = ((MTSCreateDetalsDTO)Item).WIDTH,
+            //    HEIGHT = ((MTSCreateDetalsDTO)Item).HEIGHT,
 
-                //MTSDetailsDTO detailItem = new MTSDetailsDTO()
-                //{
-                //    SPECIFICATIONS_ID = specificDTO.ID,
-                //    CREATED_DETAILS_ID = createDetailsItem.ID,
-                //    QUANTITY_OF_BLANKS = createDetailsItem.QUANTITY_OF_BLANKS,
-                //    QUANTITY = createDetailsItem.QUANTITY
-                //};
-                //mtsService.MTSDetailCreate(detailItem);
-            
+            //    QUANTITY = ((MTSCreateDetalsDTO)Item).QUANTITY,
+            //    NOMENCLATURESNAME = specificDTO.NAME,//((MTSCreateDetalsDTO)Item).NOMENCLATURESNAME,
+            //    GUAEGENAME = ((MTSCreateDetalsDTO)Item).GUAEGENAME,
+            //    CREATEDETALSNAME = ((MTSCreateDetalsDTO)Item).CREATEDETALSNAME,
+            //    QUANTITY_OF_BLANKS = ((MTSCreateDetalsDTO)Item).QUANTITY_OF_BLANKS,
+            //    DETALSPROCESSING = ((MTSCreateDetalsDTO)Item).DETALSPROCESSING,
+            //    PROCCESINGNAME = ((MTSCreateDetalsDTO)Item).PROCCESINGNAME
+            //};
+            //mtsService.MTSCreateDetailsCreate(createDetailsItem);
+            // ((MTSCreateDetalsDTO)Item).ID=mtsService.MTSCreateDetailsCreate(((MTSCreateDetalsDTO)Item));
+
+            //MTSDetailsDTO detailItem = new MTSDetailsDTO()
+            //{
+            //    SPECIFICATIONS_ID = specificDTO.ID,
+            //    CREATED_DETAILS_ID = createDetailsItem.ID,
+            //    QUANTITY_OF_BLANKS = createDetailsItem.QUANTITY_OF_BLANKS,
+            //    QUANTITY = createDetailsItem.QUANTITY
+            //};
+            //mtsService.MTSDetailCreate(detailItem);
+
         }
 
 
@@ -213,7 +203,7 @@ namespace MTS.GUI.MTS
 
         private void AddDirectoryDetail(MTSNomenclaturesDTO model)
         {
-            using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model,false))
+            using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model, false))
             //   DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model);
             {
                 if (directoryBuyDetailEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -225,7 +215,7 @@ namespace MTS.GUI.MTS
 
                     nomenclatureNameEdit.EditValue = this.nomenclaturesDTO.NAME;
                     guageEdit.EditValue = this.nomenclaturesDTO.GUAGE;
-                      
+
 
                 }
 
@@ -239,7 +229,7 @@ namespace MTS.GUI.MTS
 
         private void numberDrawingEdit_KeyPress(object sender, KeyPressEventArgs e)
         {
-           // Utils.OnlyNumbers(e);
+            // Utils.OnlyNumbers(e);
             if (e.KeyChar == (char)Keys.Enter)
             {
                 if (CheckDetail(numberDrawingEdit.Text))
@@ -284,7 +274,7 @@ namespace MTS.GUI.MTS
             else
             {
                 return false;
-            }  
+            }
         }
 
         private void detalsProccesingLookUpEdit_EditValueChanged(object sender, EventArgs e)
@@ -331,28 +321,24 @@ namespace MTS.GUI.MTS
             switch ((int)detalsProccesingLookUpEdit.EditValue)
             {
                 case 1:
-                    
+
                     if ((decimal)heightEdit.EditValue > 0)
                         return true;
                     else
                         return false;
-                    break;
 
                 case 2:
-                    
+
                     if ((decimal)widthEdit.EditValue > 0 && (decimal)heightEdit.EditValue > 0)
                         return true;
                     else
                         return false;
-
-                    break;
 
                 case 3:
                     if ((decimal)heightEdit.EditValue > 0)
                         return true;
                     else
                         return false;
-                    break;
 
                 default:
                     break;

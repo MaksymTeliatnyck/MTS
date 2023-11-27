@@ -1,19 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using MTS.BLL.DTO.ModelsDTO;
 using MTS.BLL.Infrastructure;
 using MTS.BLL.Interfaces;
-using MTS.BLL.Services;
-using MTS.BLL.DTO;
-using MTS.BLL.DTO.ModelsDTO;
 using Ninject;
+using System;
+using System.Windows.Forms;
 
 namespace MTS.GUI.MTS
 {
@@ -37,7 +27,7 @@ namespace MTS.GUI.MTS
         public MtsBuyDetailEditOldFm(Utils.Operation operation, MTSPurchasedProductsDTO mtsPurchasedProductsDTO)
         {
             InitializeComponent();
-            
+
             this.operation = operation;
             mtsPurchasedProductsBS.DataSource = Item = mtsPurchasedProductsDTO;
 
@@ -65,7 +55,7 @@ namespace MTS.GUI.MTS
                 {
                     mtsService.MTSPurchasedProductsUpdate((MTSPurchasedProductsDTO)Item);
                     return true;
-                }      
+                }
             }
             catch (Exception ex)
             {
@@ -135,7 +125,7 @@ namespace MTS.GUI.MTS
 
         private void ShowDirectoryBuyDetails(MTSNomenclaturesDTO model)
         {
-            using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model,false))
+            using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model, false))
             //  DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model);
             {
                 if (directoryBuyDetailEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -147,12 +137,12 @@ namespace MTS.GUI.MTS
                     nameBuyDetailEdit.Text = getBuyDetail.NAME;
 
                 }
-            } 
+            }
         }
 
         private void directoryBuyDetailsBtn_Click(object sender, EventArgs e)
         {
-           
+
             ShowDirectoryBuyDetails(new MTSNomenclaturesDTO());
         }
 

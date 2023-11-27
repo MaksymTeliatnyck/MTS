@@ -1,9 +1,5 @@
 ﻿using MTS.BLL.DTO.ModelsDTO;
-using MTS.BLL.DTO.ReportsDTO;
-using MTS.BLL.DTO.SelectedDTO;
-using System;
 using System.Collections.Generic;
-using MTS.BLL.DTO;
 
 namespace MTS.BLL.Interfaces
 {
@@ -26,7 +22,7 @@ namespace MTS.BLL.Interfaces
 
 
         //bool GetCPReportByAccounts(DateTime startDate, DateTime endDate);
-        
+
         //bool GetCWBReport(DateTime startDate, DateTime endDate, int accountId, string accountNum);
         //bool GetCWBShortReport(DateTime startDate, DateTime endDate, int accountId, string accountNum);
 
@@ -58,9 +54,9 @@ namespace MTS.BLL.Interfaces
         //void PrintBusinessTripDecreeCancel(List<BusinessTripsJournalDTO> source);
         //void PrintBusinessTripDecreeProlong(List<BusinessTripsJournalDTO> source);
 
-      
-             
-        
+
+
+
         //void PrintCustomerOrderInfo(CustomerOrdersDTO curRecord);
 
         //void PrintAccountClothesCard(AccountClothesInfoDTO model, List<AccountClothesMaterialsDTO> source);
@@ -156,7 +152,7 @@ namespace MTS.BLL.Interfaces
         //void GetMSTrialBalanceByAccounts(DateTime startDate, DateTime endDate, string PFlag1, string Flag3, string Flag4, string PFlag3, string PFlag4, bool report531=false);
         //void GetCashBookTrialBalanceByAccounts(DateTime startDate, DateTime endDate);
 
-     //   bool PrintMSTrialBalanceByAccounts(IEnumerable<MSTrialBalanceByAccountsDTO> model, DateTime startDate, DateTime endDate);
+        //   bool PrintMSTrialBalanceByAccounts(IEnumerable<MSTrialBalanceByAccountsDTO> model, DateTime startDate, DateTime endDate);
         //IEnumerable<MSTrialBalanceByAccountsDTO> GetCreditDebit63ForChess(DateTime startDate, DateTime endDate, string PFlag1, string Flag3, string Flag4, string PFlag3, string PFlag4);
         //bool PrintChessAccount(List<AccountsDTO> accountModel, DateTime beginData, DateTime endDate, List<FixedAssetsReportRegisterCh1DTO> faGroupShort103,
         //List<InvoicesDTO> invoiceSortList, List<CalcWithBuyersInfoDTO> calcWithBayersInfoList36_1);

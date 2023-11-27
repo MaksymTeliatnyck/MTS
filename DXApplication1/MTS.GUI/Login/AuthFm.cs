@@ -1,25 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using MTS.BLL.DTO.ModelsDTO;
-using MTS.BLL.Interfaces;
-using Ninject;
-using MTS.BLL.Services;
-using DevExpress.XtraSplashScreen;
-using System.Threading;
-using MTS.GUI.MTS;
+﻿using DevExpress.LookAndFeel;
 using DevExpress.XtraBars;
 using DevExpress.XtraBars.Helpers;
-using DevExpress.LookAndFeel;
-using DevExpress.Skins;
+using DevExpress.XtraSplashScreen;
+using MTS.BLL.DTO.ModelsDTO;
+using MTS.BLL.Interfaces;
+using MTS.BLL.Services;
+using MTS.GUI.MTS;
 using MTS.GUI.Properties;
+using Ninject;
+using System;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace MTS.GUI.Login
 {
@@ -27,14 +18,14 @@ namespace MTS.GUI.Login
     {
         private IUserService userService;
         private MTSAuthorizationUsersDTO userInfo;
-        private IEnumerable<UserTasksDTO> userAccess;
+        //private IEnumerable<UserTasksDTO> userAccess;
         public AuthFm()
         {
 
             InitializeComponent();
             setUserCheck.Checked = Properties.Settings.Default.MtsCheckUser;
             loginEdit.Text = Properties.Settings.Default.MtsLoginUser;
-            if(setUserCheck.Checked)
+            if (setUserCheck.Checked)
                 pwdEdit.Text = Properties.Settings.Default.MtsPassUser;
 
             //SkinHelper.InitSkinGallery(galleryControl1);
@@ -46,7 +37,7 @@ namespace MTS.GUI.Login
         private void saveBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            if(setUserCheck.Checked)
+            if (setUserCheck.Checked)
             {
                 Properties.Settings.Default.MtsLoginUser = loginEdit.Text;
                 Properties.Settings.Default.MtsPassUser = pwdEdit.Text;
@@ -59,10 +50,10 @@ namespace MTS.GUI.Login
                 return;
             }
 
-                userInfo = UserService.AuthorizatedUser;
+            userInfo = UserService.AuthorizatedUser;
 
 
-            
+
 
             using (MtsSpecificationOldFm mtsSpecificationOldFm = new MtsSpecificationOldFm(userInfo))
             {
@@ -83,7 +74,7 @@ namespace MTS.GUI.Login
                 MessageBox.Show("Виникла проблема при підключенні до БД \n" + ex.Message, "Підключення до БД", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
-            
+
 
             SplashScreenManager.ShowForm(typeof(StartScreenFm));
             SplashScreenManager.Default.SendCommand(StartScreenFm.SplashScreenCommand.SetLabel, "Авторизація користувача...");
@@ -91,7 +82,7 @@ namespace MTS.GUI.Login
 
             if (userService.TryAuthorize(loginEdit.Text, pwdEdit.Text))
             {
-                
+
                 SplashScreenManager.Default.SendCommand(StartScreenFm.SplashScreenCommand.SetLabel, "Налаштування прав доступу...");
                 Thread.Sleep(200);
                 SplashScreenManager.CloseForm();

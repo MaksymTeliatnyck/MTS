@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using MTS.BLL.DTO.ModelsDTO;
+using MTS.BLL.Infrastructure;
 using MTS.BLL.Interfaces;
 using Ninject;
-using MTS.BLL.DTO.ModelsDTO;
-using MTS.BLL.Infrastructure;
+using System;
+using System.Windows.Forms;
 
 namespace MTS.GUI.MTS
 {
@@ -20,7 +12,7 @@ namespace MTS.GUI.MTS
         private IMtsSpecificationsService mtsService;
         private BindingSource gostBS = new BindingSource();
 
-        
+
         public MtsDirectoryGostOldFm()
         {
             InitializeComponent();
@@ -50,12 +42,12 @@ namespace MTS.GUI.MTS
             EditGost(Utils.Operation.Add, new MTSGostDTO());
         }
 
-        private void EditGost(Utils.Operation operation,MTSGostDTO model)
+        private void EditGost(Utils.Operation operation, MTSGostDTO model)
         {
             using (MtsDirectoryGostEditOldFm mtsDirectoryGostEditOldFm = new MtsDirectoryGostEditOldFm(operation, model))
             {
-              if (mtsDirectoryGostEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-              {
+                if (mtsDirectoryGostEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
                     MTSGostDTO return_Id = mtsDirectoryGostEditOldFm.Return();
                     //((MTSGostDTO)gostBS.Current).ID = return_Id.ID;
 
@@ -78,7 +70,7 @@ namespace MTS.GUI.MTS
 
                 mtsService.MTSDeleteGost(Id);
 
-                  gostGridView.PostEditor();
+                gostGridView.PostEditor();
                 gostGridView.BeginDataUpdate();
                 LoadGost();
                 gostGridView.EndDataUpdate();

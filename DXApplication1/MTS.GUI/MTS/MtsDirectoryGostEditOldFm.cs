@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using MTS.BLL.DTO.ModelsDTO;
+﻿using MTS.BLL.DTO.ModelsDTO;
 using MTS.BLL.Infrastructure;
 using MTS.BLL.Interfaces;
 using Ninject;
+using System;
+using System.Windows.Forms;
 
 
 
@@ -36,7 +28,7 @@ namespace MTS.GUI.MTS
             InitializeComponent();
             this.operation = operation;
             gostBS.DataSource = Item = model;
-           
+
             gostEdit.DataBindings.Add("EditValue", gostBS, "NAME", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
@@ -68,11 +60,11 @@ namespace MTS.GUI.MTS
             this.Close();
         }
 
-       
+
         private void gostValidationProvider_ValidationFailed(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventArgs e)
         {
             this.okButton.Enabled = false;
-             this.gostLabel.Visible = true;
+            this.gostLabel.Visible = true;
         }
 
         private void gostValidationProvider_ValidationSucceeded(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationSucceededEventArgs e)

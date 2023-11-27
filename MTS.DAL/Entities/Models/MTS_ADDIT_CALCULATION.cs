@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace MTS.DAL.Entities.Models
 {
@@ -11,7 +6,7 @@ namespace MTS.DAL.Entities.Models
     {
         [Key]
         public int ID { get; set; }
-      //  public int UnitId { get; set; }
+        //  public int UnitId { get; set; }
         public int MEASURE_ID { get; set; }
     }
 }

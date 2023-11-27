@@ -1,7 +1,4 @@
 ﻿using MTS.BLL.DTO.ModelsDTO;
-using MTS.BLL.DTO.SelectedDTO;
-using System;
-using System.Collections.Generic;
 
 namespace MTS.BLL.Interfaces
 {
