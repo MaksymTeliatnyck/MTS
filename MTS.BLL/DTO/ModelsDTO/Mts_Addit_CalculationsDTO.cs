@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MTS.BLL.DTO.ModelsDTO
+﻿namespace MTS.BLL.DTO.ModelsDTO
 {
     public class Mts_Addit_CalculationsDTO
     {

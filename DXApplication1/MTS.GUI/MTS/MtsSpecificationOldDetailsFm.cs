@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using MTS.BLL.Interfaces;
+﻿using DevExpress.XtraGrid.Views.Grid;
 using MTS.BLL.DTO.ModelsDTO;
-using Ninject;
 using MTS.BLL.Infrastructure;
-using DevExpress.XtraGrid.Views.Grid;
+using MTS.BLL.Interfaces;
+using Ninject;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace MTS.GUI.MTS
 {
@@ -116,7 +111,7 @@ namespace MTS.GUI.MTS
 
         private void deleteSpecDetailBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+
 
             specificationGridView.PostEditor();
             specificationGridView.BeginDataUpdate();
@@ -131,7 +126,7 @@ namespace MTS.GUI.MTS
         private bool FindDublicate(MTSSpecificationsDTO model)
         {
             mtsService = Program.kernel.Get<IMtsSpecificationsService>();
-            return mtsService.GetAllSpecificationOld().Any(s => s.NAME== model.NAME  && s.ID != model.ID);
+            return mtsService.GetAllSpecificationOld().Any(s => s.NAME == model.NAME && s.ID != model.ID);
         }
 
         private bool SaveSpecificationsDetails()
@@ -170,11 +165,11 @@ namespace MTS.GUI.MTS
 
                 foreach (var item in specificationList)
                 {
-                   var detailsSpecific = mtsService.GetAllDetailsSpecificShort(((MTSSpecificationsDTO)item).ID);
+                    var detailsSpecific = mtsService.GetAllDetailsSpecificShort(((MTSSpecificationsDTO)item).ID);
 
                     if (detailsSpecific != null)
                     {
-                        List<MTSDetailsDTO> mtsDetailsList = new List<MTSDetailsDTO>(); 
+                        List<MTSDetailsDTO> mtsDetailsList = new List<MTSDetailsDTO>();
 
                         foreach (var itemDetailSpecific in detailsSpecific)
                         {
@@ -353,7 +348,6 @@ namespace MTS.GUI.MTS
 
         private void specificationGridView_CustomRowCellEdit(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
         {
-            string unit_displ = "D";
 
             //if(e.Column.FieldName == "QUANTITY")
             //    e. 
@@ -389,17 +383,18 @@ namespace MTS.GUI.MTS
                     { MessageBox.Show("" + ex.Message, "Збереження заявки", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 }
             }
-            else{
-                    try
+            else
+            {
+                try
+                {
+                    if (SaveSpecificationsDetails())
                     {
-                        if (SaveSpecificationsDetails())
-                        {
-                            DialogResult = DialogResult.OK;
-                            this.Close();
-                        }
+                        DialogResult = DialogResult.OK;
+                        this.Close();
                     }
-                    catch (Exception ex)
-                    { MessageBox.Show("" + ex.Message, "Збереження заявки", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                }
+                catch (Exception ex)
+                { MessageBox.Show("" + ex.Message, "Збереження заявки", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             }
         }
 

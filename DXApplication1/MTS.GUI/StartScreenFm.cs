@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using DevExpress.XtraSplashScreen;
+﻿using DevExpress.XtraSplashScreen;
 using MTS.BLL.Interfaces;
-using MTS.BLL.Services;
 using Ninject;
-using System.Threading;
+using System;
 
 namespace MTS.GUI
 {
@@ -22,13 +14,13 @@ namespace MTS.GUI
         {
             InitializeComponent();
         }
-       
+
         #region Overrides
 
         public override void ProcessCommand(Enum cmd, object arg)
         {
             base.ProcessCommand(cmd, arg);
-            
+
             SplashScreenCommand command = (SplashScreenCommand)cmd;
 
             if (command == SplashScreenCommand.SetLabel)

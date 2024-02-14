@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MTS.BLL.Infrastructure;
+﻿using MTS.BLL.Infrastructure;
 
 namespace MTS.BLL.DTO.ModelsDTO
 {
-    public class MTS_Authorization_UsersDTO:ObjectBase
+    public class MTS_Authorization_UsersDTO : ObjectBase
     {
         public int ID { get; set; }
         public string NAME { get; set; }

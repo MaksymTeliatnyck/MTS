@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MTS.BLL.NameCaseLib.NCL;
+﻿using MTS.BLL.NameCaseLib.NCL;
+using System;
 using System.Reflection;
 
 namespace MTS.BLL.NameCaseLib.Core

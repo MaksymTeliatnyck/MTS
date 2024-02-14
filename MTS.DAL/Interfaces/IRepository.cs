@@ -17,12 +17,6 @@ namespace MTS.DAL.Interfaces
         /// 
         /// </summary>
         IEnumerable<T> SQLExecuteProc(string executeProcString, params FbParameter[] paramArr);
- 
-        //bool GetExecuteSqlCommand(string str);
-        //void SQLExecuteScript(string executeProcString, params FbParameter[] paramArr);
 
-        //object Create(Entities.Models.CashBookContractor cashBookContractor);
-
-        //void Update(Entities.Models.CashBookContractor cashBookContractor);
     }
 }

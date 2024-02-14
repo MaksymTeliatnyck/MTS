@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
-using MTS.BLL.DTO.SelectedDTO;
+﻿using AutoMapper;
 using MTS.BLL.DTO.ModelsDTO;
 using MTS.BLL.Interfaces;
 using MTS.DAL.Entities.Models;
-using MTS.DAL.Entities.QueryModels;
 using MTS.DAL.Interfaces;
-using FirebirdSql.Data.FirebirdClient;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
+using System.Linq;
 
 namespace MTS.BLL.Services
 {
@@ -29,7 +20,7 @@ namespace MTS.BLL.Services
         //private IRepository<Departments> departments;
         private IRepository<MTS_AUTHORIZATION_USERS> mtsAuthorizationUsers;
         private IMapper mapper;
-        
+
         public static MTSAuthorizationUsersDTO AuthorizatedUser { get; internal set; }
         //public static IEnumerable<UserTasksDTO> AuthorizatedUserAccess { get; internal set; }
 
@@ -79,6 +70,7 @@ namespace MTS.BLL.Services
 
         public MTSAuthorizationUsersDTO GetUser(string login, string pwd)
         {
+            var userr = mtsAuthorizationUsers.GetAll().ToList();
             var user = mtsAuthorizationUsers.GetAll().SingleOrDefault(c => c.LOGIN == login && c.PWD == pwd);
             return mapper.Map<MTS_AUTHORIZATION_USERS, MTSAuthorizationUsersDTO>(user);
         }
@@ -86,7 +78,7 @@ namespace MTS.BLL.Services
         //private UserDetailsDTO GetUserDetails(decimal employeeNumber)
         //{
         //    FbParameter[] Parameters =
-        //    {
+        //    { 
         //        new FbParameter("Number", employeeNumber),
         //    };
         //    string procName = @"select * from ""GetUserDetails""(@Number)";

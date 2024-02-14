@@ -1,25 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
-using MTS.BLL.DTO.SelectedDTO;
+﻿using AutoMapper;
 using MTS.BLL.DTO.ModelsDTO;
 using MTS.BLL.Interfaces;
 using MTS.DAL.Entities.Models;
-using MTS.DAL.Entities.QueryModels;
 using MTS.DAL.Interfaces;
-using FirebirdSql.Data.FirebirdClient;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MTS.BLL.Services
 {
     public class MtsNomenclaturesService : IMtsNomenclaturesService
     {
         private IUnitOfWork Database { get; set; }
- 
+
         private IRepository<MTS_ADDIT_CALCULATION> mtsAdditCalculations;
         private IRepository<MTS_SPECIFICATIONS> mtsSpecifications;
         private IRepository<MTS_NOMENCLATURES> mtsNomenclatures;
@@ -38,7 +31,7 @@ namespace MTS.BLL.Services
             mtsAdditCalculations = Database.GetRepository<MTS_ADDIT_CALCULATION>();
             mtsGosts = Database.GetRepository<MTS_GOST>();
             mtsSpecifications = Database.GetRepository<MTS_SPECIFICATIONS>();
-         
+
             var config = new MapperConfiguration(cfg =>
              {
                  cfg.CreateMap<MTS_NOMENCLATURES, MTSNomenclaturesDTO>();
@@ -80,8 +73,8 @@ namespace MTS.BLL.Services
                               GostName = c.NAME,
                               GroupName = g.NAME,
                               RatioOfWaste = g.RATIO_OF_WASTE,
-                           //   UnitLocalName = u.UnitLocalName,
-                           //   AdditUnitLocalName = ua.UnitLocalName
+                              //   UnitLocalName = u.UnitLocalName,
+                              //   AdditUnitLocalName = ua.UnitLocalName
                           });
 
             return result.ToList();
@@ -96,7 +89,7 @@ namespace MTS.BLL.Services
         {
             int? rezult = mapper.Map<IEnumerable<MTS_NOMENCLATURE_GROUPS>, List<MTSNomenclatureGroupsDTO>>(mtsNomenclatureGroups.GetAll().OrderByDescending(ord => ord.SORTPOSITION)).FirstOrDefault().SORTPOSITION;
 
-            return rezult != null ? (int)rezult : 0; 
+            return rezult != null ? (int)rezult : 0;
         }
 
 
@@ -108,11 +101,11 @@ namespace MTS.BLL.Services
                           orderby g.NAME
                           select new MTSNomenclatureGroupsDTO
                           {
-                               ID = g.ID,
-                                NAME = g.NAME,
-                               ADDIT_CALCULATION_ACTIVE = g.ADDIT_CALCULATION_ACTIVE,
-                               RATIO_OF_WASTE = g.RATIO_OF_WASTE,
-                               ADDIT_CALCULATION_ID = g.ADDIT_CALCULATION_ID
+                              ID = g.ID,
+                              NAME = g.NAME,
+                              ADDIT_CALCULATION_ACTIVE = g.ADDIT_CALCULATION_ACTIVE,
+                              RATIO_OF_WASTE = g.RATIO_OF_WASTE,
+                              ADDIT_CALCULATION_ID = g.ADDIT_CALCULATION_ID
                           });
 
             return result.ToList();
@@ -148,7 +141,7 @@ namespace MTS.BLL.Services
                 mtsNomenclatures.Delete(mtsNomenclatures.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -177,7 +170,7 @@ namespace MTS.BLL.Services
                 mtsNomenclatureGroups.Delete(mtsNomenclatureGroups.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -186,7 +179,7 @@ namespace MTS.BLL.Services
         #endregion
 
         #region MtsGosts CRUD method's
-        
+
         public long GostCreate(MTSGostDTO mtsGost)
         {
             var createrecord = mtsGosts.Create(mapper.Map<MTS_GOST>(mtsGost));
@@ -207,7 +200,7 @@ namespace MTS.BLL.Services
                 mtsGosts.Delete(mtsGosts.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -237,7 +230,7 @@ namespace MTS.BLL.Services
                 mtsNomenclatureGroups.Delete(mtsNomenclatureGroups.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -267,7 +260,7 @@ namespace MTS.BLL.Services
                 mtsNomenclatures.Delete(mtsNomenclatures.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

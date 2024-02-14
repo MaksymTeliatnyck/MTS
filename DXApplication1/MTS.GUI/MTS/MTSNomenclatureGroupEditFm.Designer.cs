@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.additCalcEdit = new DevExpress.XtraEditors.LookUpEdit();
             this.activeCheck = new DevExpress.XtraEditors.CheckEdit();
@@ -60,33 +60,33 @@
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.Controls.Add(this.additCalcEdit);
             this.groupControl1.Controls.Add(this.activeCheck);
-            this.groupControl1.Location = new System.Drawing.Point(12, 111);
+            this.groupControl1.Location = new System.Drawing.Point(12, 92);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(489, 86);
+            this.groupControl1.Size = new System.Drawing.Size(456, 86);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Дод. розрахунок";
             // 
             // additCalcEdit
             // 
-            this.additCalcEdit.Location = new System.Drawing.Point(153, 35);
+            this.additCalcEdit.Location = new System.Drawing.Point(120, 36);
             this.additCalcEdit.Name = "additCalcEdit";
-            this.additCalcEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.additCalcEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.additCalcEdit.Properties.Appearance.Options.UseFont = true;
             this.additCalcEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.additCalcEdit.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "Одиниці вимірювань")});
-            this.additCalcEdit.Size = new System.Drawing.Size(324, 24);
+            this.additCalcEdit.Size = new System.Drawing.Size(324, 22);
             this.additCalcEdit.TabIndex = 1;
             // 
             // activeCheck
             // 
             this.activeCheck.Location = new System.Drawing.Point(21, 36);
             this.activeCheck.Name = "activeCheck";
-            this.activeCheck.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.activeCheck.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.activeCheck.Properties.Appearance.Options.UseFont = true;
             this.activeCheck.Properties.Caption = "Активно";
-            this.activeCheck.Size = new System.Drawing.Size(75, 22);
+            this.activeCheck.Size = new System.Drawing.Size(75, 20);
             this.activeCheck.TabIndex = 0;
             this.activeCheck.CheckedChanged += new System.EventHandler(this.activeCheck_CheckedChanged);
             this.activeCheck.PropertiesChanged += new System.EventHandler(this.activeCheck_PropertiesChanged);
@@ -94,35 +94,35 @@
             // 
             // ratOfWasteEdit
             // 
-            this.ratOfWasteEdit.Location = new System.Drawing.Point(165, 64);
+            this.ratOfWasteEdit.Location = new System.Drawing.Point(132, 64);
             this.ratOfWasteEdit.Name = "ratOfWasteEdit";
-            this.ratOfWasteEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ratOfWasteEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ratOfWasteEdit.Properties.Appearance.Options.UseFont = true;
             this.ratOfWasteEdit.Properties.Mask.EditMask = "n3";
             this.ratOfWasteEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.ratOfWasteEdit.Size = new System.Drawing.Size(336, 24);
+            this.ratOfWasteEdit.Size = new System.Drawing.Size(336, 22);
             this.ratOfWasteEdit.TabIndex = 2;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Не вказано коефіцієнт відходів";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider.SetValidationRule(this.ratOfWasteEdit, conditionValidationRule3);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Не вказано коефіцієнт відходів";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.ratOfWasteEdit, conditionValidationRule1);
             this.ratOfWasteEdit.EditValueChanged += new System.EventHandler(this.ratOfWasteEdit_EditValueChanged);
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelControl1.Location = new System.Drawing.Point(12, 12);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(100, 18);
+            this.labelControl1.Size = new System.Drawing.Size(85, 16);
             this.labelControl1.TabIndex = 3;
             this.labelControl1.Text = "Найменування";
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelControl2.Location = new System.Drawing.Point(12, 67);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(130, 18);
+            this.labelControl2.Size = new System.Drawing.Size(114, 16);
             this.labelControl2.TabIndex = 4;
             this.labelControl2.Text = "Коефіцієнт відходів";
             // 
@@ -138,39 +138,39 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cancelBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cancelBtn.Appearance.Options.UseFont = true;
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelBtn.Location = new System.Drawing.Point(404, 216);
+            this.cancelBtn.Location = new System.Drawing.Point(390, 188);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(97, 23);
+            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 49;
             this.cancelBtn.Text = "Відміна";
             // 
             // saveBtn
             // 
-            this.saveBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.saveBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.saveBtn.Appearance.Options.UseFont = true;
-            this.saveBtn.Location = new System.Drawing.Point(295, 216);
+            this.saveBtn.Location = new System.Drawing.Point(309, 188);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(103, 23);
+            this.saveBtn.Size = new System.Drawing.Size(75, 23);
             this.saveBtn.TabIndex = 48;
             this.saveBtn.Text = "Зберегти";
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // nomenclatureGroupNameEdit
             // 
-            this.nomenclatureGroupNameEdit.Location = new System.Drawing.Point(165, 9);
+            this.nomenclatureGroupNameEdit.Location = new System.Drawing.Point(132, 9);
             this.nomenclatureGroupNameEdit.Name = "nomenclatureGroupNameEdit";
-            this.nomenclatureGroupNameEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nomenclatureGroupNameEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenclatureGroupNameEdit.Properties.Appearance.Options.UseFont = true;
             this.nomenclatureGroupNameEdit.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.nomenclatureGroupNameEdit.Size = new System.Drawing.Size(336, 49);
             this.nomenclatureGroupNameEdit.TabIndex = 1;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Не вказано назву групу";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider.SetValidationRule(this.nomenclatureGroupNameEdit, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Не вказано назву групу";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.nomenclatureGroupNameEdit, conditionValidationRule2);
             this.nomenclatureGroupNameEdit.EditValueChanged += new System.EventHandler(this.nomenclatureGroupNameEdit_EditValueChanged);
             // 
             // dxValidationProvider
@@ -182,18 +182,17 @@
             // 
             this.validateLabel.Appearance.BackColor = System.Drawing.SystemColors.Info;
             this.validateLabel.Appearance.ForeColor = System.Drawing.Color.OrangeRed;
-            this.validateLabel.Location = new System.Drawing.Point(12, 216);
+            this.validateLabel.Location = new System.Drawing.Point(12, 194);
             this.validateLabel.Name = "validateLabel";
             this.validateLabel.Size = new System.Drawing.Size(249, 13);
             this.validateLabel.TabIndex = 51;
             this.validateLabel.Text = "*Для збереження, заповніть всі обов\'язкові поля";
-            this.validateLabel.Click += new System.EventHandler(this.validateLabel_Click);
             // 
             // MTSNomenclatureGroupEditFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 255);
+            this.ClientSize = new System.Drawing.Size(479, 223);
             this.Controls.Add(this.validateLabel);
             this.Controls.Add(this.validateLbl);
             this.Controls.Add(this.cancelBtn);

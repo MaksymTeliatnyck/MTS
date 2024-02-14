@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MTS.BLL.Infrastructure;
+﻿using MTS.BLL.Infrastructure;
+using System;
 
 namespace MTS.BLL.DTO.ModelsDTO
 {

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MTS.BLL.Infrastructure;
+﻿using MTS.BLL.Infrastructure;
+using System;
 
 namespace MTS.BLL.DTO.ModelsDTO
 {
@@ -48,11 +44,11 @@ namespace MTS.BLL.DTO.ModelsDTO
         public string DRAWING { get; set; }
         public decimal? WIDTH { get; set; }
         public decimal? HEIGHT { get; set; }
-        public string CREATEDETALSNAME { get; set; }     
+        public string CREATEDETALSNAME { get; set; }
         public string DETALSPROCESSING { get; set; }
-        
-        
-        
+
+
+
 
 
 

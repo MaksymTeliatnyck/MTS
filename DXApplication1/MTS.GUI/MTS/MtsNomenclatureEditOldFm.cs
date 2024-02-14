@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MTS.BLL.DTO.ModelsDTO;
-using DevExpress.XtraEditors;
+﻿using MTS.BLL.DTO.ModelsDTO;
 using MTS.BLL.Infrastructure;
 using MTS.BLL.Interfaces;
 using Ninject;
+using System;
+using System.Windows.Forms;
 
 namespace MTS.GUI.MTS
 {
@@ -23,7 +15,7 @@ namespace MTS.GUI.MTS
         private BindingSource mtsNomenclaturesBS = new BindingSource();
         private BindingSource nomenclaturesGropuBS = new BindingSource();
         MTSNomenclaturesDTO mtsNomenclaturesDTO = new MTSNomenclaturesDTO();
-        
+
         private ObjectBase Item
         {
             get { return mtsNomenclaturesBS.Current as ObjectBase; }
@@ -87,7 +79,7 @@ namespace MTS.GUI.MTS
                 if (operation == Utils.Operation.Add)
                 {
                     ((MTSNomenclaturesDTO)Item).GUAGE_ID = 1;
-                    ((MTSNomenclaturesDTO)Item).ID= mtsNomenclaturesService.NomenclatureCreate((MTSNomenclaturesDTO)Item);
+                    ((MTSNomenclaturesDTO)Item).ID = mtsNomenclaturesService.NomenclatureCreate((MTSNomenclaturesDTO)Item);
                     return true;
                 }
                 else
@@ -141,8 +133,8 @@ namespace MTS.GUI.MTS
             this.saveBtn.Enabled = false;
             this.validateLbl.Visible = true;
         }
-      
-        
+
+
         private void mtsNomenclatureValidationProvider_ValidationSucceeded(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationSucceededEventArgs e)
         {
             bool isValidate = (mtsNomenclatureValidationProvider.GetInvalidControls().Count == 0);
@@ -167,7 +159,7 @@ namespace MTS.GUI.MTS
 
         private void guagesLookUpEdit_EditValueChanged(object sender, EventArgs e)
         {
-          //  mtsNomenclatureValidationProvider.Validate((Control)sender);
+            //  mtsNomenclatureValidationProvider.Validate((Control)sender);
         }
 
         private void gostLookUpEdit_EditValueChanged(object sender, EventArgs e)
@@ -200,7 +192,7 @@ namespace MTS.GUI.MTS
 
         private void measureLookUpEdit_Properties_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            
+
         }
 
         private void measureLookUpEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -258,19 +250,19 @@ namespace MTS.GUI.MTS
 
                         break;
                     }
-                //case 4://Очистити
-                //    {
-                //        purposeEdit.EditValue = null;
-                //        purposeEdit.Properties.NullText = "Немає данних";
-                //        break;
-                //    }
+                    //case 4://Очистити
+                    //    {
+                    //        purposeEdit.EditValue = null;
+                    //        purposeEdit.Properties.NullText = "Немає данних";
+                    //        break;
+                    //    }
             }
         }
 
         private void gostLookUpEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            
-                mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
+
+            mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
             //businessTripsService = Program.kernel.Get<IBusinessTripsService>();
             switch (e.Button.Index)
             {

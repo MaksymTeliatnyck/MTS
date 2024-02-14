@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
-using AutoMapper.Internal;
-using MTS.BLL.DTO.SelectedDTO;
+﻿using AutoMapper;
 using MTS.BLL.DTO.ModelsDTO;
+using MTS.BLL.DTO.SelectedDTO;
 using MTS.BLL.Interfaces;
 using MTS.DAL.Entities.Models;
 using MTS.DAL.Entities.QueryModels;
 using MTS.DAL.Interfaces;
-using FirebirdSql.Data.FirebirdClient;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
-using MTS.BLL.Infrastructure;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MTS.BLL.Services
 {
@@ -38,7 +31,7 @@ namespace MTS.BLL.Services
         private IRepository<MTS_NOMENCLATURE_GROUPS> mtsNomenclatureGroups;
         private IRepository<MTS_DETAILS> mtsDetals;
         private IRepository<MTS_ADDIT_CALCULATION> mtsAdditCalculation;
-       // private IRepository<MTSDetails> mtsDetals;
+        // private IRepository<MTSDetails> mtsDetals;
 
         private IMapper mapper;
 
@@ -104,7 +97,7 @@ namespace MTS.BLL.Services
         }
 
         #region Get method's
-        
+
         //public IEnumerable<MTSSpecificationsDTO> GetAllSpecificationOld()
         //{
         //    return mapper.Map<IEnumerable<MTSSpecifications>, IList<MTSSpecificationsDTO>>(mtsSpecificationsOld.GetAll());
@@ -137,7 +130,7 @@ namespace MTS.BLL.Services
                               COMPILATION_QUANTITIES = mts.COMPILATION_QUANTITIES,
                               SET_COLOR = mts.SET_COLOR
                           }).ToList();
-                
+
             return result;
         }
 
@@ -149,7 +142,7 @@ namespace MTS.BLL.Services
                           from autUser in autUs.DefaultIfEmpty()
 
                           select new MTSSpecificationsDTO()
-                          { 
+                          {
                               ID = mts.ID,
                               NAME = mts.NAME,
                               AUTHORIZATION_USERS_ID = mts.AUTHORIZATION_USERS_ID,
@@ -158,7 +151,7 @@ namespace MTS.BLL.Services
                               DRAWING = mts.DRAWING,
                               AUTHORIZATION_USERS_NAME = autUser.NAME,
                               QUANTITY = mts.QUANTITY,
-                              
+
                           }).ToList();
 
             return result;
@@ -352,7 +345,7 @@ namespace MTS.BLL.Services
             return mapper.Map<IEnumerable<MTS_MATERIALS>, List<MTSMaterialsDTO>>(mtsMaterials.GetAll().Where(srch => srch.SPECIFICATIONS_ID == specificId));
         }
 
-        public IEnumerable<MTSDetailsDTO>  GetAllDetailsSpecific(int spesificId)
+        public IEnumerable<MTSDetailsDTO> GetAllDetailsSpecific(int spesificId)
         {
             var result = (
 
@@ -466,17 +459,17 @@ namespace MTS.BLL.Services
                        select new MTSPurchasedProductsDTO()
                        {
                            ID = mtsPurc.ID,//mtsPurc.ID,
-                            CHANGES = mtsPurc.CHANGES,
-                           
+                           CHANGES = mtsPurc.CHANGES,
+
                            GUAEGENAME = mtsNom.GUAGE,
                            GOSTNAME = gost.NAME,
 
                            NOMENCLATURESNAME = mtsNom.NAME,
                            NOMENCLATURESNOTE = mtsNom.NOTE,
-                            NOMENCLATURESPRICE = mtsNom.PRICE,
+                           NOMENCLATURESPRICE = mtsNom.PRICE,
 
-                            NOM_GROUP_ID = mtsNomGroup.ID,
-                             NOM_GROUP_SORTPOSITION = mtsNomGroup.SORTPOSITION,
+                           NOM_GROUP_ID = mtsNomGroup.ID,
+                           NOM_GROUP_SORTPOSITION = mtsNomGroup.SORTPOSITION,
 
                            MEASURENAME = mtsMeas.NAME,
                            WEIGHT = mtsNom.WEIGHT,
@@ -486,16 +479,16 @@ namespace MTS.BLL.Services
                            SPECIFICATIONS_ID = mtsPurc.SPECIFICATIONS_ID
                        }).ToList();
 
-                return rez;
+            return rez;
         }
 
 
-           public IEnumerable<MTSMaterialsDTO> GetMaterialsSpecific(int spesificId)
+        public IEnumerable<MTSMaterialsDTO> GetMaterialsSpecific(int spesificId)
         {
             var rez = (//from mtsSpec in mtsSpecificationsOld.GetAll()
-                
-                       from mtsMat in mtsMaterials.GetAll() 
-                       
+
+                       from mtsMat in mtsMaterials.GetAll()
+
                        join mtsNom in mtsNomenclatures.GetAll() on mtsMat.NOMENCLATURES_ID equals mtsNom.ID into mtsNomen
                        from mtsNom in mtsNomen.DefaultIfEmpty()
 
@@ -508,38 +501,38 @@ namespace MTS.BLL.Services
                        join mtsNomGroup in mtsNomenclatureGroups.GetAll() on mtsNom.NOMENCLATUREGROUPS_ID equals mtsNomGroup.ID into mtsNomGroupen
                        from mtsNomGroup in mtsNomGroupen.DefaultIfEmpty()
 
-                       where mtsMat.SPECIFICATIONS_ID == spesificId 
+                       where mtsMat.SPECIFICATIONS_ID == spesificId
 
                        select new MTSMaterialsDTO()
                        {
                            ID = mtsMat.ID,//mtsMat.ID,
-                            CHANGES = mtsMat.CHANGES,
+                           CHANGES = mtsMat.CHANGES,
                            NOMENCLATURES_ID = mtsNom.ID,
                            NOMENCLATURESNAME = mtsNom.NAME,//1
                            GUAGENAME = mtsNom.GUAGE,//2
                            GOSTNAME = gost.NAME,//3
                            NOMENCLATURESNOTE = mtsNom.NOTE,//4
                            MEASURENAME = mtsMeas.NAME,//5
-                            
-                            WEIGHT = mtsNom.WEIGHT,//6
+
+                           WEIGHT = mtsNom.WEIGHT,//6
                            QUANTITY = mtsMat.QUANTITY,//7
                            SPECIFICATIONS_ID = mtsMat.SPECIFICATIONS_ID,
-                            NOM_GROUP_ID = mtsNomGroup.ID,
+                           NOM_GROUP_ID = mtsNomGroup.ID,
                            NOM_GROUP_SORTPOSITION = mtsNomGroup.SORTPOSITION,
                            NOMENCLATURESPRICE = mtsNom.PRICE
 
                        }).ToList();
 
-                return rez;
- 
+            return rez;
+
         }
 
         public IEnumerable<MTSNomenclatureGroupsDTO> GetAllNomenclatureGroupsOld()
         {
             return mapper.Map<IEnumerable<MTS_NOMENCLATURE_GROUPS>, IList<MTSNomenclatureGroupsDTO>>(mtsNomenclatureGroups.GetAll());
-           
+
         }
-        public IEnumerable<MTSGostDTO>GetAllGostOld()
+        public IEnumerable<MTSGostDTO> GetAllGostOld()
         {
             return mapper.Map<IEnumerable<MTS_GOST>, IList<MTSGostDTO>>(mtsGost.GetAll());
         }
@@ -567,20 +560,20 @@ namespace MTS.BLL.Services
                        join mtsMeas in mtsMeasure.GetAll() on mtsNomen.MEASURE_ID equals mtsMeas.ID into mtsMeasur
                        from mtsMeas in mtsMeasur.DefaultIfEmpty()
 
-                       //join mtsGuage in mtsGuages.GetAll() on mtsNomen.GUAGE equals mtsGuage.NAME into mtsGuag
-                       //from mtsGuage in mtsGuag.DefaultIfEmpty()
+                           //join mtsGuage in mtsGuages.GetAll() on mtsNomen.GUAGE equals mtsGuage.NAME into mtsGuag
+                           //from mtsGuage in mtsGuag.DefaultIfEmpty()
 
                        where mtsNomen.NOMENCLATUREGROUPS_ID == nomenGroupId
                        select new MTSNomenclaturesDTO()
                        {
                            ID = mtsNomen.ID,
-                            COD_PROD_ID = mtsNomen.COD_PROD_ID,
+                           COD_PROD_ID = mtsNomen.COD_PROD_ID,
                            NAME = mtsNomen.NAME,
-                          //  GUAGE_ID= mtsNomen.ID,
-                            MEASURE_ID=mtsNomen.MEASURE_ID,
-                            NOMENCLATUREGROUPS_ID=mtsNomen.NOMENCLATUREGROUPS_ID, 
+                           //  GUAGE_ID= mtsNomen.ID,
+                           MEASURE_ID = mtsNomen.MEASURE_ID,
+                           NOMENCLATUREGROUPS_ID = mtsNomen.NOMENCLATUREGROUPS_ID,
                            GOST = gost.NAME,
-                            GOST_ID = gost.ID,
+                           GOST_ID = gost.ID,
                            MEASURE = mtsMeas.NAME,
                            PRICE = mtsNomen.PRICE,
                            WEIGHT = mtsNomen.WEIGHT,
@@ -648,8 +641,8 @@ namespace MTS.BLL.Services
 
                           select new MTSCreateDetalsDTO()
                           {
-                               ID = mtsCreateDet.ID,
-                                PROCCESINGNAME = mtsDetalsProc.NAME, 
+                              ID = mtsCreateDet.ID,
+                              PROCCESINGNAME = mtsDetalsProc.NAME,
 
                               NOMENCLATURE_ID = mtsCreateDet.NOMENCLATURE_ID,
                               NOMENCLATURESWEIGHT = mtsNom.WEIGHT,
@@ -727,8 +720,8 @@ namespace MTS.BLL.Services
                           select new MTSAdditCalculationsDTO
                           {
                               ID = g.ID,
-                               MEASURE_ID = ua.ID,
-                                Name = ua.NAME
+                              MEASURE_ID = ua.ID,
+                              Name = ua.NAME
                           });
 
             return result.ToList();
@@ -760,7 +753,7 @@ namespace MTS.BLL.Services
                 mtsSpecificationsOld.Delete(mtsSpecificationsOld.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -786,7 +779,7 @@ namespace MTS.BLL.Services
                 mtsCreateDetals.Delete(mtsCreateDetals.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -812,7 +805,7 @@ namespace MTS.BLL.Services
                 mtsCreateDetals.Delete(mtsCreateDetals.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -846,19 +839,19 @@ namespace MTS.BLL.Services
                 mtsPurchasedProducts.Delete(mtsPurchasedProducts.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
         }
-        
+
         #endregion
 
         #region MTSMaterial CRUD method's
 
         public int MTSMaterialCreate(MTSMaterialsDTO mtsMaterialsDTO)
         {
-            var createMaterial= mtsMaterials.Create(mapper.Map<MTS_MATERIALS>(mtsMaterialsDTO));
+            var createMaterial = mtsMaterials.Create(mapper.Map<MTS_MATERIALS>(mtsMaterialsDTO));
             return (int)createMaterial.ID;
         }
 
@@ -880,7 +873,7 @@ namespace MTS.BLL.Services
                 mtsMaterials.Delete(mtsMaterials.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -916,7 +909,7 @@ namespace MTS.BLL.Services
                 mtsDetails.Delete(mtsDetails.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -945,7 +938,7 @@ namespace MTS.BLL.Services
                 mtsCreateDetals.Delete(mtsCreateDetals.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -972,7 +965,7 @@ namespace MTS.BLL.Services
                 mtsGost.Delete(mtsGost.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -998,7 +991,7 @@ namespace MTS.BLL.Services
                 mtsMeasure.Delete(mtsMeasure.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

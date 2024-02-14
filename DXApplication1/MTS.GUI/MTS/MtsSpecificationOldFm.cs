@@ -1,40 +1,21 @@
-﻿using System;
+﻿using DevExpress.XtraBars;
+using DevExpress.XtraGrid.Views.Grid;
+using MTS.BLL.DTO.ModelsDTO;
+using MTS.BLL.Infrastructure;
+using MTS.BLL.Interfaces;
+using Ninject;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using MTS.BLL.Interfaces;
-using MTS.BLL.Services;
-using MTS.BLL.DTO;
-using MTS.BLL.DTO.ModelsDTO;
-using MTS.BLL.DTO.SelectedDTO;
-using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.Utils;
-using DevExpress.XtraGrid;
-using DevExpress.XtraBars;
-using Ninject;
-using System.IO;
-using System.Diagnostics;
-using MTS.BLL.Infrastructure;
-using DevExpress.XtraGrid.Views.Grid.ViewInfo;
-using MTS.BLL;
-using DevExpress.Data.Filtering;
-using System.Reflection;
-using System.Collections;
-using MTS.BLL.DTO.ReportsDTO;
-using System.Globalization;
-using System.Threading;
 
 namespace MTS.GUI.MTS
 {
     public partial class MtsSpecificationOldFm : DevExpress.XtraEditors.XtraForm
     {
-        private UserTasksDTO userTaskDTO;
+        //private UserTasksDTO userTaskDTO;
 
         private IMtsSpecificationsService mtsService;
         private IReportService reportService;
@@ -42,7 +23,7 @@ namespace MTS.GUI.MTS
         private BindingSource detalsSpecificBS = new BindingSource();
         private BindingSource byusDetalsSpecificBS = new BindingSource();
         private BindingSource materialsSpecificBS = new BindingSource();
-        private UserTasksDTO userTasksDTO;
+        //private UserTasksDTO userTasksDTO;
         private MTSAuthorizationUsersDTO mtsAthorizationUsersDTO;
         private int previousFocusedRowDetails = -1;
         private int previousFocusedRowBuyDetails = -1;
@@ -56,16 +37,16 @@ namespace MTS.GUI.MTS
 
             startDateItem.EditValue = new DateTime(DateTime.Now.Year - 3, 6, 5);
             endDateItem.EditValue = DateTime.Now;
-            
 
-            
+
+
             //CultureInfo ciUSA = new CultureInfo("ru-RU");
             UserAccess((int)mtsAthorizationUsersDTO.USER_GROUPS_ID);
             SetGridSetting();
             //specificGridView.BeginUpdate();
             //focusedRow = LoadData();
             LoadData();
-            
+
             //settings.Styles.FocusedRow.BackColor = System.Drawing.Color.Red;
 
             //int rowHandle = specificGridView.LocateByValue("ID", focusedRow);
@@ -74,7 +55,7 @@ namespace MTS.GUI.MTS
 
         }
 
-        
+
 
         private void UserAccess(int userGroupId)
         {
@@ -106,11 +87,9 @@ namespace MTS.GUI.MTS
                     editMaterialDetailBarBtn.Enabled = false;
                     deleteMaterialDetailBarBtn.Enabled = false;
                     break;
-                //other
-                    break;
                 case 4: //admin, full access
                     break;
-                
+
 
                 default:
                     break;
@@ -165,7 +144,7 @@ namespace MTS.GUI.MTS
             mtsService = Program.kernel.Get<IMtsSpecificationsService>();
             byusDetalsSpecificBS.Clear();
             byusDetalsSpecificBS.DataSource = mtsService.GetBuysDetalSpecific(detailId).OrderByDescending(ord => ord.ID).ToList();
-            
+
             if (byusDetalsSpecificBS.Count != 0)
                 buysDetalsSpecificGrid.DataSource = byusDetalsSpecificBS;
             else
@@ -238,7 +217,7 @@ namespace MTS.GUI.MTS
                         item.CHANGES = 0;
                         mtsService.MTSMaterialUpdate(item);
                     }
-                }    
+                }
 
                 splashScreenManager.CloseWaitForm();
                 FocusedRowChanged();
@@ -288,7 +267,7 @@ namespace MTS.GUI.MTS
                 enableLabelMenuBtn.Enabled = true;
             }
         }
-            
+
 
         private ObjectBase ItemSpecification
         {
@@ -370,7 +349,7 @@ namespace MTS.GUI.MTS
             switch (operation)
             {
                 case Utils.Operation.Add:
-                    using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(new MTSNomenclaturesDTO(),false))
+                    using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(new MTSNomenclaturesDTO(), false))
                     {
                         if (directoryBuyDetailEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                         {
@@ -428,7 +407,7 @@ namespace MTS.GUI.MTS
             switch (operation)
             {
                 case Utils.Operation.Add:
-                    using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(new MTSNomenclaturesDTO(),false))
+                    using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(new MTSNomenclaturesDTO(), false))
                     {
                         if (directoryBuyDetailEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                         {
@@ -659,7 +638,7 @@ namespace MTS.GUI.MTS
             if (detalsSpecificBS.Count > 0)
                 EditDetailSpecific(Utils.Operation.Update, ((MTSDetailsDTO)detalsSpecificBS.Current));
             else
-             MessageBox.Show("Помилка видалення деталі! Створіть спочатку деталі!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Помилка видалення деталі! Створіть спочатку деталі!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void deleteDetailBtn_ItemClick(object sender, ItemClickEventArgs e)
@@ -798,8 +777,8 @@ namespace MTS.GUI.MTS
         private void deleteMaterialDetailBarBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (materialsSpecificBS.Count > 0)
-            //    DeleteBuyDetail(((MTSMaterialsDTO)materialsSpecificBS.Current).ID); Было раньше
-                 DeleteBuyMaterial(((MTSMaterialsDTO)materialsSpecificBS.Current).ID);
+                //    DeleteBuyDetail(((MTSMaterialsDTO)materialsSpecificBS.Current).ID); Было раньше
+                DeleteBuyMaterial(((MTSMaterialsDTO)materialsSpecificBS.Current).ID);
         }
 
         private void додатиЗаписToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -837,7 +816,7 @@ namespace MTS.GUI.MTS
 
         private void showSpecificInFileBtb_ItemClick(object sender, ItemClickEventArgs e)
         {
-            
+
         }
 
 
@@ -1020,7 +999,7 @@ namespace MTS.GUI.MTS
 
         private void detalsSpecificGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            
+
             if (((MTSDetailsDTO)detalsSpecificBS.Current) != null)
             {
                 detalsSpecificGridView.PostEditor();
@@ -1047,28 +1026,28 @@ namespace MTS.GUI.MTS
 
         private void buysDetalsSpecificGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-                if (((MTSPurchasedProductsDTO)byusDetalsSpecificBS.Current) != null)
-                {
-                    buysDetalsSpecificGridView.PostEditor();
-                    buysDetalsSpecificGridView.BeginDataUpdate();
+            if (((MTSPurchasedProductsDTO)byusDetalsSpecificBS.Current) != null)
+            {
+                buysDetalsSpecificGridView.PostEditor();
+                buysDetalsSpecificGridView.BeginDataUpdate();
 
-                    if (previousFocusedRowBuyDetails == -1)
-                    {
-                            ((MTSPurchasedProductsDTO)byusDetalsSpecificBS.Current).lastFocusedRov = true;
-                            previousFocusedRowBuyDetails = buysDetalsSpecificGridView.FocusedRowHandle;                
-                    }
-                    else if (buysDetalsSpecificGridView.FocusedRowHandle >= -1 && previousFocusedRowBuyDetails > -1)
-                    {           
-                        MTSPurchasedProductsDTO item = (MTSPurchasedProductsDTO)buysDetalsSpecificGridView.GetRow(previousFocusedRowBuyDetails);
-                        if (item != null)
-                        {
-                            item.lastFocusedRov = false;
-                            previousFocusedRowBuyDetails = buysDetalsSpecificGridView.FocusedRowHandle;
-                            ((MTSPurchasedProductsDTO)byusDetalsSpecificBS.Current).lastFocusedRov = true;
-                        }
-                    }
-                    buysDetalsSpecificGridView.EndDataUpdate();
+                if (previousFocusedRowBuyDetails == -1)
+                {
+                    ((MTSPurchasedProductsDTO)byusDetalsSpecificBS.Current).lastFocusedRov = true;
+                    previousFocusedRowBuyDetails = buysDetalsSpecificGridView.FocusedRowHandle;
                 }
+                else if (buysDetalsSpecificGridView.FocusedRowHandle >= -1 && previousFocusedRowBuyDetails > -1)
+                {
+                    MTSPurchasedProductsDTO item = (MTSPurchasedProductsDTO)buysDetalsSpecificGridView.GetRow(previousFocusedRowBuyDetails);
+                    if (item != null)
+                    {
+                        item.lastFocusedRov = false;
+                        previousFocusedRowBuyDetails = buysDetalsSpecificGridView.FocusedRowHandle;
+                        ((MTSPurchasedProductsDTO)byusDetalsSpecificBS.Current).lastFocusedRov = true;
+                    }
+                }
+                buysDetalsSpecificGridView.EndDataUpdate();
+            }
         }
 
         private void materialsSpecificGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -1100,7 +1079,7 @@ namespace MTS.GUI.MTS
 
 
 
-        
+
 
         #endregion
 
@@ -1148,7 +1127,7 @@ namespace MTS.GUI.MTS
 
         private void nomenclatureShowBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(new MTSNomenclaturesDTO() , true)) 
+            using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(new MTSNomenclaturesDTO(), true))
             //   DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model);
             {
                 if (directoryBuyDetailEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -1342,7 +1321,7 @@ namespace MTS.GUI.MTS
         private void detalsSpecificGrid_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Right)
-                detailMenu.Show(this, new System.Drawing.Point(Cursor.Position.X-170, Cursor.Position.Y-25));
+                detailMenu.Show(this, new System.Drawing.Point(Cursor.Position.X - 170, Cursor.Position.Y - 25));
         }
 
         private void buysDetalsSpecificGrid_MouseClick(object sender, MouseEventArgs e)

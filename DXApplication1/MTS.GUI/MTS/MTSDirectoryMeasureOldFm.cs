@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using MTS.BLL.DTO.ModelsDTO;
+using MTS.BLL.Infrastructure;
 using MTS.BLL.Interfaces;
 using Ninject;
-using MTS.BLL.Infrastructure;
-using MTS.BLL.DTO.ModelsDTO;
+using System;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 
 
 namespace MTS.GUI.MTS
@@ -24,7 +18,7 @@ namespace MTS.GUI.MTS
         public MTSDirectoryMeasureOldFm()
         {
             InitializeComponent();
-        
+
             LoadData();
         }
         private void LoadData()
@@ -39,7 +33,7 @@ namespace MTS.GUI.MTS
             EditMeasure(Utils.Operation.Add, new MTSMeasureDTO());
         }
 
-       
+
 
         private void EditToolStripMenu_Click(object sender, EventArgs e)
         {
@@ -63,7 +57,7 @@ namespace MTS.GUI.MTS
                     measureGridView.EndDataUpdate();
 
                     int rowHandle = measureGridView.LocateByValue("ID", return_Id.ID);
-                   measureGridView.FocusedRowHandle = rowHandle;
+                    measureGridView.FocusedRowHandle = rowHandle;
                 }
             }
         }

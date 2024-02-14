@@ -63,46 +63,6 @@ namespace MTS.GUI.Accounting {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _32_bullet_blue {
-            get {
-                object obj = ResourceManager.GetObject("32_bullet-blue", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _32_bullet_green {
-            get {
-                object obj = ResourceManager.GetObject("_32_bullet-green", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _32_bullet_red {
-            get {
-                object obj = ResourceManager.GetObject("_32_bullet-red", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _32_bullet_yellow {
-            get {
-                object obj = ResourceManager.GetObject("_32_bullet-yellow", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _lock {
             get {
                 object obj = ResourceManager.GetObject("_lock", resourceCulture);
@@ -163,26 +123,6 @@ namespace MTS.GUI.Accounting {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cross__1_ {
-            get {
-                object obj = ResourceManager.GetObject("cross (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap delete_archive {
-            get {
-                object obj = ResourceManager.GetObject("delete-archive", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap documents {
             get {
                 object obj = ResourceManager.GetObject("documents", resourceCulture);
@@ -196,26 +136,6 @@ namespace MTS.GUI.Accounting {
         internal static System.Drawing.Bitmap editpagehf_32x32 {
             get {
                 object obj = ResourceManager.GetObject("editpagehf_32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap favicon__2_ {
-            get {
-                object obj = ResourceManager.GetObject("favicon (2)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap favicon__3_ {
-            get {
-                object obj = ResourceManager.GetObject("favicon (3)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

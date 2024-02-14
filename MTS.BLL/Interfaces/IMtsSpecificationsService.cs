@@ -1,10 +1,6 @@
 ﻿using MTS.BLL.DTO.ModelsDTO;
-using MTS.BLL.DTO.SelectedDTO;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MTS.BLL.Interfaces
 {
@@ -241,7 +237,7 @@ namespace MTS.BLL.Interfaces
 
 
 
-       
+
 
         int MTSSpecificationCreate(MTSSpecificationsDTO mtsSpecificationDTO);
 
@@ -269,9 +265,9 @@ namespace MTS.BLL.Interfaces
 
         bool MTSDetailDelete(int id);
 
-       
 
-       
+
+
 
         int MTSPurchasedProductsCreate(MTSPurchasedProductsDTO mtsPurchasedProductsDTO);
 
@@ -325,7 +321,7 @@ namespace MTS.BLL.Interfaces
 
         bool MTSDeleteGost(int id);
 
-       
+
         int MTSCreateMeasure(MTSMeasureDTO mtsMeasureDTO);
 
         void MTSUpdateMeasure(MTSMeasureDTO mtsMeasureDTO);

@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using MTS.BLL.DTO;
-using MTS.BLL.DTO.ModelsDTO;
-using Ninject;
+﻿using MTS.BLL.DTO.ModelsDTO;
 using MTS.BLL.Infrastructure;
 using MTS.BLL.Interfaces;
-using MTS.BLL.Services;
+using Ninject;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace MTS.GUI.MTS
 {
@@ -45,10 +37,9 @@ namespace MTS.GUI.MTS
             }
         }
 
-        public DirectoryBuyDetailEditOldFm(MTSNomenclaturesDTO model, bool directory )
+        public DirectoryBuyDetailEditOldFm(MTSNomenclaturesDTO model, bool directory)
         {
             InitializeComponent();
-            SetGridSetting();
             // this.operation = operation;
             directoryParam = directory;
             nomenclatureBS.DataSource = ItemNomenclature = model;
@@ -77,7 +68,7 @@ namespace MTS.GUI.MTS
             nomenclatureGroupsGrid.DataSource = nomenclatureGroupsBS;
             if (nomenclatureGroupsBS.Count == 0)
                 nomenclatureGrid.DataSource = null;
-            else 
+            else
             {
                 nomenclatureGrid.DataSource = nomenclatureBS;
 
@@ -107,16 +98,25 @@ namespace MTS.GUI.MTS
             nomenGostCol.Width = Properties.Settings.Default.nomenGostCol;
             nomenGuageCol.Width = Properties.Settings.Default.nomenGuageCol;
             nomenMeasureCol.Width = Properties.Settings.Default.nomenMeasureCol;
-            nomenNameCol.Width = Properties.Settings.Default.nomenNameCol;
-            nomenWeightCol.Width = Properties.Settings.Default.nomenWeightCol;
-            nomenPriceCol.Width = Properties.Settings.Default.nomenPriceCol;
-            nomenNoteCol.Width = Properties.Settings.Default.nomenNoteCol;
-            
-
-            nomenGroupNameCol.Width = Properties.Settings.Default.nomenGroupNameCol;
-            nomenGroupNumberCol.Width = Properties.Settings.Default.nomenGroupNumberCol;
-            nomenGroupRatOfWasteCol.Width = Properties.Settings.Default.nomenGroupRatOfWasteCol;
-            
+            //gridcolumn1.width = properties.settings.default.gridcol1;
+            //gridcolumn2.width = properties.settings.default.gridcol2;
+            //gridcolumn3.width = properties.settings.default.gridcol3;
+            //gridcolumn4.width = properties.settings.default.gridcol4;
+            //gridcolumn5.width = properties.settings.default.gridcol5;
+            //gridcolumn6.width = properties.settings.default.gridcol6;
+            //gridcolumn7.width = properties.settings.default.gridcol7;
+            //gridcolumn8.width = properties.settings.default.gridcol8;
+            //gridcolumn9.width = properties.settings.default.gridcol9;
+            //gridcolumn10.width = properties.settings.default.gridcol10;
+            //gridcolumn11.width = properties.settings.default.gridcol11;
+            //gridcolumn12.width = properties.settings.default.gridcol12;
+            //gridcolumn13.width = properties.settings.default.gridcol13;
+            //gridcolumn14.width = properties.settings.default.gridcol14;
+            //gridcolumn15.width = properties.settings.default.gridcol15;
+            //gridcolumn16.width = properties.settings.default.gridcol16;
+            //gridcolumn17.width = properties.settings.default.gridcol17;
+            //gridcolumn18.width = properties.settings.default.gridcol18;
+            //gridcolumn19.width = properties.settings.default.gridcol19;
         }
 
 
@@ -128,24 +128,24 @@ namespace MTS.GUI.MTS
 
         //private void AddBuyMaterial(Utils.Operation operation, MTSNomenclaturesOldDTO buyDetails)
         //{
-            
+
         //   // using (MtsBuyDetailEditOldFm mtsBuyDetailEditOldFm = new MtsBuyDetailEditOldFm(operation, buyDetails))
         //    MtsBuyDetailEditOldFm mtsBuyDetailEditOldFm = new MtsBuyDetailEditOldFm(operation, buyDetails);
-           
+
         //        if (mtsBuyDetailEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
         //        {
         //            MTSNomenclaturesOldDTO getBuyMaterial = mtsBuyDetailEditOldFm.Return();
-                    
+
         //        }
-           
-            
+
+
         //}
         private void nomenclatureGroupsGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             if (nomenclatureGroupsBS.Count > 0)
                 LoadNomenclature(((MTSNomenclatureGroupsDTO)nomenclatureGroupsBS.Current).ID);
         }
-        
+
         private void nomenclatureGridView_DoubleClick(object sender, EventArgs e)
         {
             //MTSNomenclaturesOldDTO item = (MTSNomenclaturesOldDTO)nomenclatureBS.Current;
@@ -171,14 +171,14 @@ namespace MTS.GUI.MTS
                 DialogResult = DialogResult.OK;
                 this.Close();
             }
-            
-         //   AddBuyMaterial(Utils.Operation.Update, model);//(MTSNomenclaturesOldDTO)nomenclatureBS.Current);
+
+            //   AddBuyMaterial(Utils.Operation.Update, model);//(MTSNomenclaturesOldDTO)nomenclatureBS.Current);
 
         }
 
         private void DirectoryBuyDetailEditOldFm_FormClosing(object sender, FormClosingEventArgs e)
         {
-          
+
         }
 
         private void addGroupItem_Click(object sender, EventArgs e)
@@ -214,7 +214,7 @@ namespace MTS.GUI.MTS
         private void deleteGroupItem_Click(object sender, EventArgs e)
         {
             mtsNomenclaturesService = Program.kernel.Get<IMtsNomenclaturesService>();
-            if(mtsNomenclaturesService.CheckNomenclaturesGroup(((MTSNomenclatureGroupsDTO)nomenclatureGroupsBS.Current).ID))
+            if (mtsNomenclaturesService.CheckNomenclaturesGroup(((MTSNomenclatureGroupsDTO)nomenclatureGroupsBS.Current).ID))
             {
                 MessageBox.Show("Група містить номенклатури. Перемістіть номенклатури до іншої групи.", "Видалення", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -283,7 +283,7 @@ namespace MTS.GUI.MTS
 
         }
 
-     
+
         private void deleteNomenclatureItem_Click(object sender, EventArgs e)
         {
             if (nomenclatureBS.Count != 0)
@@ -301,28 +301,6 @@ namespace MTS.GUI.MTS
 
                 }
             }
-        }
-
-        private void nomenclatureGroupsGridView_ColumnWidthChanged(object sender, DevExpress.XtraGrid.Views.Base.ColumnEventArgs e)
-        {
-            Properties.Settings.Default.nomenGroupNameCol = nomenGroupNameCol.Width;
-            Properties.Settings.Default.nomenGroupNumberCol = nomenGroupNumberCol.Width;
-            Properties.Settings.Default.nomenGroupRatOfWasteCol = nomenGroupRatOfWasteCol.Width;
-
-            Properties.Settings.Default.Save();
-        }
-
-        private void nomenclatureGridView_ColumnWidthChanged(object sender, DevExpress.XtraGrid.Views.Base.ColumnEventArgs e)
-        {
-            Properties.Settings.Default.nomenGuageCol = nomenGuageCol.Width;
-            Properties.Settings.Default.nomenMeasureCol = nomenMeasureCol.Width;
-            Properties.Settings.Default.nomenNameCol = nomenNameCol.Width;
-            Properties.Settings.Default.nomenNoteCol = nomenNoteCol.Width;
-            Properties.Settings.Default.nomenPriceCol = nomenPriceCol.Width;
-            Properties.Settings.Default.nomenWeightCol = nomenWeightCol.Width;
-            Properties.Settings.Default.nomenGostCol = nomenGostCol.Width;
-
-            Properties.Settings.Default.Save();
         }
     }
 }

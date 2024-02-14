@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using MTS.BLL.DTO.ModelsDTO;
 using MTS.BLL.Infrastructure;
-using MTS.BLL.DTO.ModelsDTO;
 using MTS.BLL.Interfaces;
 using Ninject;
+using System;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace MTS.GUI.MTS
 {
@@ -134,7 +127,6 @@ namespace MTS.GUI.MTS
                         ((MTSNomenclatureGroupsDTO)Item).ID = mtsNomenclaturesService.NomenclatureGroupCreate((MTSNomenclatureGroupsDTO)Item);
 
                         return true;
-                        break;
                     }
 
 
@@ -145,22 +137,21 @@ namespace MTS.GUI.MTS
 
                         mtsNomenclaturesService.NomenclarureGroupUpdate((MTSNomenclatureGroupsDTO)Item);
                         return true;
-                        break;
                     }
 
 
 
 
 
-                    //create CalcWithBuyersSpec
+                //create CalcWithBuyersSpec
 
 
-                    //create CalcWithBuyersPaymentVat
+                //create CalcWithBuyersPaymentVat
 
 
-                    //int cwbVatId = calcWithBuyersService.CalcWithBuyersPaymentVatCreate(cwbVatModel);
+                //int cwbVatId = calcWithBuyersService.CalcWithBuyersPaymentVatCreate(cwbVatModel);
 
-                    //return true;
+                //return true;
 
                 default:
                     return false;
