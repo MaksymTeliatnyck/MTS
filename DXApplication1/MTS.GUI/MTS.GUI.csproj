@@ -35,8 +35,8 @@
     <ProductName>MTS</ProductName>
     <PublisherName>IT</PublisherName>
     <SuiteName>Матеріальні специфікації</SuiteName>
-    <MinimumRequiredVersion>1.0.0.29</MinimumRequiredVersion>
-    <ApplicationRevision>30</ApplicationRevision>
+    <MinimumRequiredVersion>1.0.0.32</MinimumRequiredVersion>
+    <ApplicationRevision>33</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -75,10 +75,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>D5A22602AE39D58B2D27AB25AB2D484C466932C8</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>8F5AB5AB315F3BEB5B8CA212E71E037AA9340318</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>MTS.GUI_2_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>MTS.GUI_3_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -556,6 +556,12 @@
     <Compile Include="MTS\MtsSpecificationOldSelectFm.Designer.cs">
       <DependentUpon>MtsSpecificationOldSelectFm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MTS\MtsSpecificationProcessQuantityFm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MTS\MtsSpecificationProcessQuantityFm.Designer.cs">
+      <DependentUpon>MtsSpecificationProcessQuantityFm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MTS\MtsSpecificationQuantityOldEditFm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -646,6 +652,9 @@
     <EmbeddedResource Include="MTS\MtsSpecificationOldSelectFm.resx">
       <DependentUpon>MtsSpecificationOldSelectFm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MTS\MtsSpecificationProcessQuantityFm.resx">
+      <DependentUpon>MtsSpecificationProcessQuantityFm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MTS\MtsSpecificationQuantityOldEditFm.resx">
       <DependentUpon>MtsSpecificationQuantityOldEditFm.cs</DependentUpon>
     </EmbeddedResource>
@@ -678,6 +687,7 @@
     <None Include="ERP_NEW.GUI_TemporaryKey.pfx" />
     <None Include="MTS.GUI_1_TemporaryKey.pfx" />
     <None Include="MTS.GUI_2_TemporaryKey.pfx" />
+    <None Include="MTS.GUI_3_TemporaryKey.pfx" />
     <None Include="MTS.GUI_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />

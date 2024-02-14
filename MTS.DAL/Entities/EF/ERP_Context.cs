@@ -354,9 +354,10 @@ namespace MTS.DAL.EF
 
             csb = new FbConnectionStringBuilder()
             {
-                DataSource = "localhost",
                 //DataSource = "localhost",
-               //  Port = Convert.ToInt32(portDB[0]),
+                DataSource = "10.0.0.50",
+                //DataSource = "localhost",
+                //  Port = Convert.ToInt32(portDB[0]),
                 Database = "MTS_DB",
                 UserID = "sysdba",
                 Password = "masterkey",

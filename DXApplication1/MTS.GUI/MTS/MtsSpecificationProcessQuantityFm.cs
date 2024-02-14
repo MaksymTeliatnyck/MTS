@@ -11,29 +11,11 @@ using DevExpress.XtraEditors;
 
 namespace MTS.GUI.MTS
 {
-    public partial class MtsSpecificationQuantityOldEditFm : DevExpress.XtraEditors.XtraForm
+    public partial class MtsSpecificationProcessQuantityFm : DevExpress.XtraEditors.XtraForm
     {
-        public MtsSpecificationQuantityOldEditFm()
+        public MtsSpecificationProcessQuantityFm()
         {
             InitializeComponent();
-            ControlValidation();
-        }
-
-        private void cancelBtn_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
-
-        //private void saveBtn_Click(object sender, EventArgs e)
-        //{
-        //    DialogResult = DialogResult.OK;
-        //    this.Close();
-        //}
-
-        public int Return()
-        {
-            return Convert.ToInt32(quantityEdit.EditValue);
         }
 
         private void dxValidationProvider_ValidationFailed(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventArgs e)
@@ -55,19 +37,19 @@ namespace MTS.GUI.MTS
             this.Close();
         }
 
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+        public int Return()
+        {
+            return Convert.ToInt32(quantityEdit.EditValue);
+        }
+
         private void quantityEdit_EditValueChanged(object sender, EventArgs e)
         {
             dxValidationProvider.Validate((Control)sender);
         }
-        private bool ControlValidation()
-        {
-            return dxValidationProvider.Validate();
-        }
-
-        //private void cancelBtn3_Click(object sender, EventArgs e)
-        //{
-        //    DialogResult = DialogResult.Cancel;
-        //    this.Close();
-        //}
     }
 }
