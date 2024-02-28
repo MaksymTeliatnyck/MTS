@@ -69,7 +69,7 @@ namespace MTS.GUI.MTS
                     addAllSpeficBtn.Enabled = false;
                     addSpecificBtn.Enabled = false;
                     copySpecBtn.Enabled = false;
-                    editSpecificBtn.Enabled = false;
+                    editSpecificBtn.Enabled = true;
                     deleteSpecificBtn.Enabled = false;
                     enableColorSpecificBtn.Enabled = false;
                     mainMenu.Items[0].Enabled = false;

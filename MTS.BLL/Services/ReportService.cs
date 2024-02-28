@@ -382,10 +382,10 @@ namespace MTS.BLL.Services
             //mtsSpecification.COMPILATION_NAMES = mtsSpecification.COMPILATION_NAMES.Replace(";", ";\n");
             //cells["B" + 2].Value = "Изделие: "+ mtsSpecification.NAME + "\n" + mtsSpecification.COMPILATION_NAMES;
 
-            cells["A2"].Value = "Изделие:" + mtsSpecification.NAME;
+            cells["A2"].Value = "Изделие:" + mtsSpecification.NAME + "   Количество изделий: " + mtsSpecification.QUANTITY + " шт.";
 
             if (mtsSpecification.COMPILATION_NAMES == null)
-                cells["A2"].Value = "Изделие:" + mtsSpecification.NAME;
+                cells["A2"].Value = "Изделие:" + mtsSpecification.NAME + "   Количество изделий: " + mtsSpecification.QUANTITY +" шт.";
             else
             {
                 int namesLength = 0;
@@ -676,7 +676,8 @@ namespace MTS.BLL.Services
                 Workbook.SaveAs(Utils.printFolderUri + fileName + ".xls", FileFormat.Excel8);
                 Process process = new Process();
                 process.StartInfo.Arguments = "\"" + Utils.printFolderUri + fileName + ".xls" + "\"";
-                process.StartInfo.FileName = "Excel.exe";
+                process.StartInfo.FileName = "SOFFICE.exe";
+                //process.StartInfo.FileName = "Excel.exe";
                 process.Start();
 
             }

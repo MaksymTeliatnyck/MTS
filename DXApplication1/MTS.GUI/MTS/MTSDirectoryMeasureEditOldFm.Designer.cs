@@ -90,7 +90,7 @@
             this.validateLbl.Size = new System.Drawing.Size(200, 14);
             this.validateLbl.TabIndex = 49;
             this.validateLbl.Text = "*Для збереження, заповніть  поле";
-            this.validateLbl.Click += new System.EventHandler(this.validateLbl_Click);
+            //this.validateLbl.Click += new System.EventHandler(this.validateLbl_Click);
             // 
             // cancelBtn
             // 
