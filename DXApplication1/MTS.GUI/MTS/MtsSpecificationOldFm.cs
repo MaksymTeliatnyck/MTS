@@ -1347,6 +1347,7 @@ namespace MTS.GUI.MTS
                     //LoadData();
                     MTSSpecificationsDTO currentSpecific = (MTSSpecificationsDTO)specificBS.Current;
                     currentSpecific.QUANTITY = currentSpecific.QUANTITY * quantitySummaryItems;
+                    currentSpecific.WEIGHT = currentSpecific.WEIGHT * quantitySummaryItems;
 
                     reportService.SpecificationProcess(currentSpecific, (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, (List<MTSPurchasedProductsDTO>)byusDetalsSpecificBS.DataSource, (List<MTSMaterialsDTO>)materialsSpecificBS.DataSource, false);
                     LoadData();
