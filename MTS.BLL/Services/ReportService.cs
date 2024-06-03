@@ -53,9 +53,9 @@ namespace MTS.BLL.Services
             {
                 id = g.Key,
                 summQuantity = g.Sum(c =>
-                  c.PROCESSING_ID == 2 ? (c.QUANTITY * c.HEIGHT * c.WIDTH * c.NOMENCLATURESWEIGHT * 0.000001m) / c.QUANTITY_OF_BLANKS :
-                  c.PROCESSING_ID == 3 ? (c.QUANTITY * c.HEIGHT * c.HEIGHT * c.NOMENCLATURESWEIGHT * 0.000001m * 0.25m * 3.1415m) / c.QUANTITY_OF_BLANKS :
-                  c.PROCESSING_ID == 1 ? (c.QUANTITY * c.HEIGHT * (c.NOMENCLATURESWEIGHT == 0 ? 1 : c.NOMENCLATURESWEIGHT) * 0.001m) / c.QUANTITY_OF_BLANKS : 0),
+                  c.PROCESSING_ID == 2 ? (c.QUANTITY * mtsSpecification.QUANTITY * c.HEIGHT * c.WIDTH * c.NOMENCLATURESWEIGHT * 0.000001m) / c.QUANTITY_OF_BLANKS :
+                  c.PROCESSING_ID == 3 ? (c.QUANTITY * mtsSpecification.QUANTITY * c.HEIGHT * c.HEIGHT * c.NOMENCLATURESWEIGHT * 0.000001m * 0.25m * 3.1415m) / c.QUANTITY_OF_BLANKS :
+                  c.PROCESSING_ID == 1 ? (c.QUANTITY * mtsSpecification.QUANTITY * c.HEIGHT * (c.NOMENCLATURESWEIGHT == 0 ? 1 : c.NOMENCLATURESWEIGHT) * 0.001m) / c.QUANTITY_OF_BLANKS : 0),
                 summQ2 = g.Sum(c => c.QUANTITY),
                 color = g.Sum(c => c.CHANGES),
             }).ToList();
@@ -382,10 +382,10 @@ namespace MTS.BLL.Services
             //mtsSpecification.COMPILATION_NAMES = mtsSpecification.COMPILATION_NAMES.Replace(";", ";\n");
             //cells["B" + 2].Value = "Изделие: "+ mtsSpecification.NAME + "\n" + mtsSpecification.COMPILATION_NAMES;
 
-            cells["A2"].Value = "Изделие:" + mtsSpecification.NAME;
+            cells["A2"].Value = "Изделие:" + mtsSpecification.NAME + "   Количество изделий: " + mtsSpecification.QUANTITY + " шт.";
 
             if (mtsSpecification.COMPILATION_NAMES == null)
-                cells["A2"].Value = "Изделие:" + mtsSpecification.NAME;
+                cells["A2"].Value = "Изделие:" + mtsSpecification.NAME + "   Количество изделий: " + mtsSpecification.QUANTITY +" шт.";
             else
             {
                 int namesLength = 0;
@@ -676,6 +676,7 @@ namespace MTS.BLL.Services
                 Workbook.SaveAs(Utils.printFolderUri + fileName + ".xls", FileFormat.Excel8);
                 Process process = new Process();
                 process.StartInfo.Arguments = "\"" + Utils.printFolderUri + fileName + ".xls" + "\"";
+                //process.StartInfo.FileName = "SOFFICE.exe";
                 process.StartInfo.FileName = "Excel.exe";
                 process.Start();
 

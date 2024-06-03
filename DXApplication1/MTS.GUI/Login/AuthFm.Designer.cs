@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.loginEdit = new DevExpress.XtraEditors.TextEdit();
             this.pwdEdit = new DevExpress.XtraEditors.TextEdit();
             this.setUserCheck = new DevExpress.XtraEditors.CheckEdit();
@@ -36,7 +35,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.saveBtn = new DevExpress.XtraEditors.SimpleButton();
             this.cancelBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.SkinsLink = new DevExpress.XtraBars.BarLinkContainerItem();
@@ -144,7 +143,7 @@
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barSubItem1, DevExpress.XtraBars.BarItemPaintStyle.Standard)});
             this.bar2.OptionsBar.DrawBorder = false;
             this.bar2.OptionsBar.DrawDragBorder = false;
             this.bar2.OptionsBar.MultiLine = true;

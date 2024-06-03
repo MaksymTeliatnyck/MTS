@@ -69,7 +69,7 @@ namespace MTS.GUI.MTS
                     addAllSpeficBtn.Enabled = false;
                     addSpecificBtn.Enabled = false;
                     copySpecBtn.Enabled = false;
-                    editSpecificBtn.Enabled = false;
+                    editSpecificBtn.Enabled = true;
                     deleteSpecificBtn.Enabled = false;
                     enableColorSpecificBtn.Enabled = false;
                     mainMenu.Items[0].Enabled = false;
@@ -1338,20 +1338,53 @@ namespace MTS.GUI.MTS
 
         private void sortByMaterialBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //SpecificationProcess(MTSSpecificationsDTO mtsSpecification, List<MTSDetailsDTO> mtsDetailsList, List<MTSPurchasedProductsDTO> mtsBuyDetailsList, List<MTSMaterialsDTO> mtsMaterialsList);
-            reportService = Program.kernel.Get<IReportService>();
-            LoadData();
+            using (MtsSpecificationProcessQuantityFm mtsSpecificationProcessQuantityFm = new MtsSpecificationProcessQuantityFm())
+            {
+                if (mtsSpecificationProcessQuantityFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    int quantitySummaryItems = mtsSpecificationProcessQuantityFm.Return();
+                    reportService = Program.kernel.Get<IReportService>();
+                    //LoadData();
+                    MTSSpecificationsDTO currentSpecific = (MTSSpecificationsDTO)specificBS.Current;
+                    currentSpecific.QUANTITY = currentSpecific.QUANTITY * quantitySummaryItems;
+                    currentSpecific.WEIGHT = currentSpecific.WEIGHT * quantitySummaryItems;
 
-            reportService.SpecificationProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, (List<MTSPurchasedProductsDTO>)byusDetalsSpecificBS.DataSource, (List<MTSMaterialsDTO>)materialsSpecificBS.DataSource, false);
+                    reportService.SpecificationProcess(currentSpecific, (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, (List<MTSPurchasedProductsDTO>)byusDetalsSpecificBS.DataSource, (List<MTSMaterialsDTO>)materialsSpecificBS.DataSource, false);
+                    LoadData();
+                    //reportService.MapTechProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, true, quantitySummaryItems);
+                }
+            }
+
+
+            ////SpecificationProcess(MTSSpecificationsDTO mtsSpecification, List<MTSDetailsDTO> mtsDetailsList, List<MTSPurchasedProductsDTO> mtsBuyDetailsList, List<MTSMaterialsDTO> mtsMaterialsList);
+            //reportService = Program.kernel.Get<IReportService>();
+            //LoadData();
+
+            //reportService.SpecificationProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, (List<MTSPurchasedProductsDTO>)byusDetalsSpecificBS.DataSource, (List<MTSMaterialsDTO>)materialsSpecificBS.DataSource, false);
         }
 
         private void sortBySortamnetBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //SpecificationProcess(MTSSpecificationsDTO mtsSpecification, List<MTSDetailsDTO> mtsDetailsList, List<MTSPurchasedProductsDTO> mtsBuyDetailsList, List<MTSMaterialsDTO> mtsMaterialsList);
-            reportService = Program.kernel.Get<IReportService>();
-            LoadData();
+            using (MtsSpecificationProcessQuantityFm mtsSpecificationProcessQuantityFm = new MtsSpecificationProcessQuantityFm())
+            {
+                if (mtsSpecificationProcessQuantityFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    int quantitySummaryItems = mtsSpecificationProcessQuantityFm.Return();
+                    reportService = Program.kernel.Get<IReportService>();
+                    //LoadData();
+                    MTSSpecificationsDTO currentSpecific = (MTSSpecificationsDTO)specificBS.Current;
+                    currentSpecific.QUANTITY = currentSpecific.QUANTITY * quantitySummaryItems;
 
-            reportService.SpecificationProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, (List<MTSPurchasedProductsDTO>)byusDetalsSpecificBS.DataSource, (List<MTSMaterialsDTO>)materialsSpecificBS.DataSource, true);
+                    reportService.SpecificationProcess(currentSpecific, (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, (List<MTSPurchasedProductsDTO>)byusDetalsSpecificBS.DataSource, (List<MTSMaterialsDTO>)materialsSpecificBS.DataSource, true);
+                    LoadData();
+                    //reportService.MapTechProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, true, quantitySummaryItems);
+                }
+            }
+            //SpecificationProcess(MTSSpecificationsDTO mtsSpecification, List<MTSDetailsDTO> mtsDetailsList, List<MTSPurchasedProductsDTO> mtsBuyDetailsList, List<MTSMaterialsDTO> mtsMaterialsList);
+            //reportService = Program.kernel.Get<IReportService>();
+            //LoadData();
+
+            //reportService.SpecificationProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, (List<MTSPurchasedProductsDTO>)byusDetalsSpecificBS.DataSource, (List<MTSMaterialsDTO>)materialsSpecificBS.DataSource, true);
         }
 
         private void detalsSpecificGrid_EditorKeyPress(object sender, KeyPressEventArgs e)

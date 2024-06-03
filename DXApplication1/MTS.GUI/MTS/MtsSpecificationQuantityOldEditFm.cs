@@ -8,6 +8,7 @@ namespace MTS.GUI.MTS
         public MtsSpecificationQuantityOldEditFm()
         {
             InitializeComponent();
+            ControlValidation();
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
@@ -44,6 +45,15 @@ namespace MTS.GUI.MTS
         {
             DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void quantityEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            dxValidationProvider.Validate((Control)sender);
+        }
+        private bool ControlValidation()
+        {
+            return dxValidationProvider.Validate();
         }
 
         //private void cancelBtn3_Click(object sender, EventArgs e)
