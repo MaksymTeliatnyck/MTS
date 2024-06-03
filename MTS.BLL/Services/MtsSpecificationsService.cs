@@ -711,6 +711,52 @@ namespace MTS.BLL.Services
             return result;
         }
 
+        public MTSCreateDetalsDTO GetCreateDetalsById(int createDetails)
+        {
+            var result = (
+
+                          from mtsCreateDet in mtsCreateDetals.GetAll()
+
+                          join mtsNom in mtsNomenclatures.GetAll() on mtsCreateDet.NOMENCLATURE_ID equals mtsNom.ID into mtsNomen
+                          from mtsNom in mtsNomen.DefaultIfEmpty()
+
+                          join mtsG in mtsGost.GetAll() on mtsNom.GOST_ID equals mtsG.ID into mtsGos
+                          from mtsG in mtsGos.DefaultIfEmpty()
+
+                          join mtsDetalsProc in mtsDetailsProcessing.GetAll() on mtsCreateDet.PROCESSING_ID equals mtsDetalsProc.ID into mtsDetalsProcces
+                          from mtsDetalsProc in mtsDetalsProcces.DefaultIfEmpty()
+
+                          join mtsGua in mtsGuages.GetAll() on mtsNom.GUAGE_ID equals mtsGua.ID into mtsGuag
+                          from mtsGua in mtsGuag.DefaultIfEmpty()
+
+                          where mtsCreateDet.ID == createDetails
+
+                          select new MTSCreateDetalsDTO()
+                          {
+                              ID = mtsCreateDet.ID,
+                              PROCCESINGNAME = mtsDetalsProc.NAME,
+
+                              NOMENCLATURE_ID = mtsCreateDet.NOMENCLATURE_ID,
+                              NOMENCLATURESWEIGHT = mtsNom.WEIGHT,
+                              NOMENCLATURESNAME = mtsNom.NAME,
+                              NOMENCLATURESNOTE = mtsNom.NOTE,
+
+                              PROCESSING_ID = mtsCreateDet.PROCESSING_ID,
+                              DETALSPROCESSING = mtsDetalsProc.NAME,
+
+                              GUAEGENAME = mtsGua.NAME,
+
+                              GOSTID = mtsNom.GOST_ID,
+                              GOSTNAME = mtsG.NAME,
+
+                              NAME = mtsCreateDet.NAME,
+                              DRAWING = mtsCreateDet.DRAWING,
+                              WIDTH = mtsCreateDet.WIDTH,//9++
+                              HEIGHT = mtsCreateDet.HEIGHT
+                          }).FirstOrDefault();
+            return result;
+        }
+
 
         public IEnumerable<MTSAdditCalculationsDTO> GetAdditCalculationUnits()
         {
@@ -729,8 +775,6 @@ namespace MTS.BLL.Services
 
 
         #endregion
-
-
 
         #region MTSSpecification CRUD method's
 

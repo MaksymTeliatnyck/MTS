@@ -16,6 +16,7 @@ namespace MTS.GUI.MTS
         private MTSSpecificationsDTO specificDTO = new MTSSpecificationsDTO();
         private MTSDetailsDTO detailDTO = new MTSDetailsDTO();
         private MTSNomenclaturesDTO nomenclaturesDTO = new MTSNomenclaturesDTO();
+        private bool copyChecker = false;
 
         private ObjectBase Item
         {
@@ -55,7 +56,7 @@ namespace MTS.GUI.MTS
             quantityOfBlankEdit.DataBindings.Add("EditValue", detailsBS, "QUANTITY_OF_BLANKS", true, DataSourceUpdateMode.OnPropertyChanged);
 
 
-
+            copyChecker =  modelDetail.DRAWING.Contains("копія");
 
 
             if (operation == Utils.Operation.Add)
@@ -346,6 +347,14 @@ namespace MTS.GUI.MTS
             return false;
         }
 
+        private bool CheckDrawingCopy()
+        {
+            if (((MTSDetailsDTO)Item).DRAWING.Contains("копія"))
+                return true;
+            else
+                return false;
+        }
+
         private void saveBtn1_Click(object sender, EventArgs e)
         {
             if (!CheckProcessDetails())
@@ -354,9 +363,18 @@ namespace MTS.GUI.MTS
                 return;
             }
 
-
             if (operation == Utils.Operation.Update)
             {
+                if (copyChecker)
+                {
+                    if (!CheckDrawingCopy())
+                    {
+                        MessageBox.Show("Якщо при створені деталі вона була позначена як (Копія), то змінена назва теж повинна містити слово (Копія)", "Помилка редагування", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+
+
                 if (MessageBox.Show("Зберегти зміни?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     try

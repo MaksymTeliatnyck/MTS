@@ -101,7 +101,7 @@
             this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(643, 425);
             this.panelControl1.TabIndex = 0;
@@ -113,7 +113,7 @@
             this.validateLbl.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.validateLbl.Appearance.ForeColor = System.Drawing.Color.OrangeRed;
             this.validateLbl.Location = new System.Drawing.Point(11, 382);
-            this.validateLbl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.validateLbl.Margin = new System.Windows.Forms.Padding(4);
             this.validateLbl.Name = "validateLbl";
             this.validateLbl.Size = new System.Drawing.Size(249, 13);
             this.validateLbl.TabIndex = 49;
@@ -124,7 +124,7 @@
             this.cancelBtn1.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cancelBtn1.Appearance.Options.UseFont = true;
             this.cancelBtn1.Location = new System.Drawing.Point(513, 370);
-            this.cancelBtn1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cancelBtn1.Margin = new System.Windows.Forms.Padding(4);
             this.cancelBtn1.Name = "cancelBtn1";
             this.cancelBtn1.Size = new System.Drawing.Size(112, 37);
             this.cancelBtn1.TabIndex = 23;
@@ -136,7 +136,7 @@
             this.saveBtn1.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.saveBtn1.Appearance.Options.UseFont = true;
             this.saveBtn1.Location = new System.Drawing.Point(384, 370);
-            this.saveBtn1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveBtn1.Margin = new System.Windows.Forms.Padding(4);
             this.saveBtn1.Name = "saveBtn1";
             this.saveBtn1.Size = new System.Drawing.Size(121, 37);
             this.saveBtn1.TabIndex = 16;
@@ -147,7 +147,7 @@
             // 
             this.detalsProccesingLookUpEdit.EnterMoveNextControl = true;
             this.detalsProccesingLookUpEdit.Location = new System.Drawing.Point(228, 240);
-            this.detalsProccesingLookUpEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.detalsProccesingLookUpEdit.Margin = new System.Windows.Forms.Padding(4);
             this.detalsProccesingLookUpEdit.Name = "detalsProccesingLookUpEdit";
             this.detalsProccesingLookUpEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.detalsProccesingLookUpEdit.Properties.Appearance.Options.UseFont = true;
@@ -164,7 +164,7 @@
             this.directoryBuyDetailBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.directoryBuyDetailBtn.Appearance.Options.UseFont = true;
             this.directoryBuyDetailBtn.Location = new System.Drawing.Point(591, 159);
-            this.directoryBuyDetailBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.directoryBuyDetailBtn.Margin = new System.Windows.Forms.Padding(4);
             this.directoryBuyDetailBtn.Name = "directoryBuyDetailBtn";
             this.directoryBuyDetailBtn.Size = new System.Drawing.Size(35, 32);
             this.directoryBuyDetailBtn.TabIndex = 11;
@@ -186,7 +186,7 @@
             // 
             this.widthEdit.EnterMoveNextControl = true;
             this.widthEdit.Location = new System.Drawing.Point(451, 281);
-            this.widthEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.widthEdit.Margin = new System.Windows.Forms.Padding(4);
             this.widthEdit.Name = "widthEdit";
             this.widthEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.widthEdit.Properties.Appearance.Options.UseFont = true;
@@ -197,7 +197,7 @@
             // quantityOfBlankEdit
             // 
             this.quantityOfBlankEdit.Location = new System.Drawing.Point(451, 323);
-            this.quantityOfBlankEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.quantityOfBlankEdit.Margin = new System.Windows.Forms.Padding(4);
             this.quantityOfBlankEdit.Name = "quantityOfBlankEdit";
             this.quantityOfBlankEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.quantityOfBlankEdit.Properties.Appearance.Options.UseFont = true;
@@ -218,7 +218,7 @@
             // 
             this.heightEdit.EnterMoveNextControl = true;
             this.heightEdit.Location = new System.Drawing.Point(228, 281);
-            this.heightEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.heightEdit.Margin = new System.Windows.Forms.Padding(4);
             this.heightEdit.Name = "heightEdit";
             this.heightEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.heightEdit.Properties.Appearance.Options.UseFont = true;
@@ -239,7 +239,7 @@
             // 
             this.guageEdit.EnterMoveNextControl = true;
             this.guageEdit.Location = new System.Drawing.Point(228, 199);
-            this.guageEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guageEdit.Margin = new System.Windows.Forms.Padding(4);
             this.guageEdit.Name = "guageEdit";
             this.guageEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.guageEdit.Properties.Appearance.Options.UseFont = true;
@@ -249,7 +249,7 @@
             // nomenclatureNameEdit
             // 
             this.nomenclatureNameEdit.Location = new System.Drawing.Point(228, 158);
-            this.nomenclatureNameEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nomenclatureNameEdit.Margin = new System.Windows.Forms.Padding(4);
             this.nomenclatureNameEdit.Name = "nomenclatureNameEdit";
             this.nomenclatureNameEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nomenclatureNameEdit.Properties.Appearance.Options.UseFont = true;
@@ -266,7 +266,7 @@
             // 
             this.quantityEdit.EnterMoveNextControl = true;
             this.quantityEdit.Location = new System.Drawing.Point(228, 118);
-            this.quantityEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.quantityEdit.Margin = new System.Windows.Forms.Padding(4);
             this.quantityEdit.Name = "quantityEdit";
             this.quantityEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.quantityEdit.Properties.Appearance.Options.UseFont = true;
@@ -289,7 +289,7 @@
             // 
             this.nameEdit.EnterMoveNextControl = true;
             this.nameEdit.Location = new System.Drawing.Point(228, 76);
-            this.nameEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nameEdit.Margin = new System.Windows.Forms.Padding(4);
             this.nameEdit.Name = "nameEdit";
             this.nameEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nameEdit.Properties.Appearance.Options.UseFont = true;
@@ -305,7 +305,7 @@
             // 
             this.numberDrawingEdit.EnterMoveNextControl = true;
             this.numberDrawingEdit.Location = new System.Drawing.Point(228, 35);
-            this.numberDrawingEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numberDrawingEdit.Margin = new System.Windows.Forms.Padding(4);
             this.numberDrawingEdit.Name = "numberDrawingEdit";
             this.numberDrawingEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.numberDrawingEdit.Properties.Appearance.Options.UseFont = true;
@@ -422,7 +422,7 @@
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MtsDetailsEditOldFm";

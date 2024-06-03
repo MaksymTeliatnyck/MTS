@@ -1395,5 +1395,27 @@ namespace MTS.GUI.MTS
                 e.Handled = false;
             }
         }
+
+        private void copySpecWithDrawBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (specificBS.Count > 0)
+            {
+                MTSSpecificationsDTO model = new MTSSpecificationsDTO()
+                {
+                    ID = ((MTSSpecificationsDTO)ItemSpecification).ID,
+                    AUTHORIZATION_USERS_ID = ((MTSSpecificationsDTO)ItemSpecification).AUTHORIZATION_USERS_ID,
+                    NAME = ((MTSSpecificationsDTO)ItemSpecification).NAME,
+                    QUANTITY = ((MTSSpecificationsDTO)ItemSpecification).QUANTITY,
+                    WEIGHT = ((MTSSpecificationsDTO)ItemSpecification).WEIGHT,
+                    CREATION_DATE = ((MTSSpecificationsDTO)ItemSpecification).CREATION_DATE,
+                    DRAWING = ((MTSSpecificationsDTO)ItemSpecification).DRAWING,
+                    AUTHORIZATION_USERS_NAME = ((MTSSpecificationsDTO)ItemSpecification).AUTHORIZATION_USERS_NAME
+
+
+                };
+                AddSpecification(Utils.Operation.Template, (MTSSpecificationsDTO)model, mtsAthorizationUsersDTO);
+            }
+            else MessageBox.Show("Помилка редагування специфікації! Створіть спочатку специфікацію!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
     }
 }
