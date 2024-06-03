@@ -158,7 +158,7 @@
             this.nomenclatureGroupsGridView.OptionsView.RowAutoHeight = true;
             this.nomenclatureGroupsGridView.OptionsView.ShowAutoFilterRow = true;
             this.nomenclatureGroupsGridView.OptionsView.ShowGroupPanel = false;
-            this.nomenclatureGroupsGridView.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.nomenclatureGroupsGridView_ColumnWidthChanged);
+            //this.nomenclatureGroupsGridView.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.nomenclatureGroupsGridView_ColumnWidthChanged);
             this.nomenclatureGroupsGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.nomenclatureGroupsGridView_FocusedRowChanged);
             // 
             // nomenGroupNumberCol
@@ -293,7 +293,7 @@
             this.nomenclatureGridView.OptionsView.RowAutoHeight = true;
             this.nomenclatureGridView.OptionsView.ShowAutoFilterRow = true;
             this.nomenclatureGridView.OptionsView.ShowGroupPanel = false;
-            this.nomenclatureGridView.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.nomenclatureGridView_ColumnWidthChanged);
+            //this.nomenclatureGridView.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.nomenclatureGridView_ColumnWidthChanged);
             this.nomenclatureGridView.DoubleClick += new System.EventHandler(this.nomenclatureGridView_DoubleClick);
             // 
             // nomenNameCol
