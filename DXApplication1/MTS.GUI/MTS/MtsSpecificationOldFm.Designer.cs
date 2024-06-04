@@ -71,6 +71,7 @@
             this.showSpecificMenuBtb = new DevExpress.XtraBars.BarSubItem();
             this.sortByMaterialBtn = new DevExpress.XtraBars.BarButtonItem();
             this.sortBySortamnetBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.copySpecWithDrawBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -299,10 +300,11 @@
             this.copySpecBtn,
             this.showSpecificMenuBtb,
             this.sortByMaterialBtn,
-            this.sortBySortamnetBtn});
+            this.sortBySortamnetBtn,
+            this.copySpecWithDrawBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbonControl1.MaxItemId = 4;
+            this.ribbonControl1.MaxItemId = 5;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -771,6 +773,16 @@
             this.sortBySortamnetBtn.Name = "sortBySortamnetBtn";
             this.sortBySortamnetBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.sortBySortamnetBtn_ItemClick);
             // 
+            // copySpecWithDrawBtn
+            // 
+            this.copySpecWithDrawBtn.Caption = "Створити копію специфікації та креслень";
+            this.copySpecWithDrawBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("copySpecWithDrawBtn.Glyph")));
+            this.copySpecWithDrawBtn.Id = 4;
+            this.copySpecWithDrawBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("copySpecWithDrawBtn.LargeGlyph")));
+            this.copySpecWithDrawBtn.Name = "copySpecWithDrawBtn";
+            this.copySpecWithDrawBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.copySpecWithDrawBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.copySpecWithDrawBtn_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -793,6 +805,7 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.addSpecificBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.addAllSpeficBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.copySpecBtn);
+            this.ribbonPageGroup2.ItemLinks.Add(this.copySpecWithDrawBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.editSpecificBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.deleteSpecificBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.basesBtn);
@@ -2571,5 +2584,6 @@
         private DevExpress.XtraBars.BarButtonItem sortByMaterialBtn;
         private DevExpress.XtraBars.BarButtonItem sortBySortamnetBtn;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraBars.BarButtonItem copySpecWithDrawBtn;
     }
 }

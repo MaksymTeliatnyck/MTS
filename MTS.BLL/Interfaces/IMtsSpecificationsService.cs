@@ -233,6 +233,7 @@ namespace MTS.BLL.Interfaces
 
 
         MTSCreateDetalsDTO GetCreateDetalsByDrawingNumber(string drawignNumber);
+        MTSCreateDetalsDTO GetCreateDetalsById(int createDetails);
 
 
 
