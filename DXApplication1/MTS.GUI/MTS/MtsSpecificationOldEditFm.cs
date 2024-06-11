@@ -156,6 +156,13 @@ namespace MTS.GUI.MTS
                     }
                     else if (operation == Utils.Operation.Template)
                     {
+
+                        if(copyNumberEdit.Text == "")
+                        {
+                            MessageBox.Show("Не вказано номер копії!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return false;
+                        }
+
                         int mtsSpecificztionId = ((MTSSpecificationsDTO)Item).ID;
 
                         ((MTSSpecificationsDTO)Item).ID = 0;
@@ -165,7 +172,7 @@ namespace MTS.GUI.MTS
                         ((MTSSpecificationsDTO)Item).USERS_ID = null;
                         ((MTSSpecificationsDTO)Item).CREATION_DATE = DateTime.Now;
                         //((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_ID = mtsAthorizationUsersDTO.ID;
-                        ((MTSSpecificationsDTO)Item).DRAWING = drawingEdit.Text;
+                        ((MTSSpecificationsDTO)Item).DRAWING = drawingEdit.Text + "(копія №"+ copyNumberEdit.Text + ")";
                         ((MTSSpecificationsDTO)Item).QUANTITY = (int)quantityEdit.EditValue;
                         ((MTSSpecificationsDTO)Item).COMPILATION_NAMES = "";
                         ((MTSSpecificationsDTO)Item).COMPILATION_DRAWINGS = "";
@@ -187,7 +194,7 @@ namespace MTS.GUI.MTS
                                 MTSCreateDetalsDTO copyOfDetails =  mtsService.GetCreateDetalsById((int)mtsDetailsList.Last().CREATED_DETAILS_ID);
                                 // var detailsSpecific = mtsService.Get(mtsSpecificztionId);
                                 copyOfDetails.ID = 0;
-                                copyOfDetails.DRAWING += " (копія 1)";
+                                copyOfDetails.DRAWING += "(копія №" + copyNumberEdit.Text + ")";
                                 mtsDetailsList.Last().CREATED_DETAILS_ID = mtsService.MTSCreateDetailsCreate(copyOfDetails);
 
                                 mtsDetailsList.Last().SPECIFICATIONS_ID = ((MTSSpecificationsDTO)Item).ID;

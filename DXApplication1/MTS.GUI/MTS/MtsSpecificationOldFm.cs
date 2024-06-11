@@ -86,6 +86,7 @@ namespace MTS.GUI.MTS
                     addMaterialDetailBarBtn.Enabled = false;
                     editMaterialDetailBarBtn.Enabled = false;
                     deleteMaterialDetailBarBtn.Enabled = false;
+                    copySpecWithDrawBtn.Enabled = false;
                     break;
                 case 4: //admin, full access
                     break;
@@ -1175,6 +1176,13 @@ namespace MTS.GUI.MTS
         {
             if (specificBS.Count > 0)
             {
+                if (((MTSSpecificationsDTO)ItemSpecification).DRAWING.Contains("копія"))
+                {
+                    MessageBox.Show("Специфікація є копією! Неможливо створити копію копії!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
                 MTSSpecificationsDTO model = new MTSSpecificationsDTO()
                 {
                     ID = ((MTSSpecificationsDTO)ItemSpecification).ID,
@@ -1400,6 +1408,12 @@ namespace MTS.GUI.MTS
         {
             if (specificBS.Count > 0)
             {
+                if (((MTSSpecificationsDTO)ItemSpecification).DRAWING.Contains("копія"))
+                {
+                    MessageBox.Show("Специфікація є копією! Неможливо створити копію копії!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 MTSSpecificationsDTO model = new MTSSpecificationsDTO()
                 {
                     ID = ((MTSSpecificationsDTO)ItemSpecification).ID,
