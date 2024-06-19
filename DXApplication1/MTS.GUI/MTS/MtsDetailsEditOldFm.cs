@@ -54,9 +54,8 @@ namespace MTS.GUI.MTS
             heightEdit.DataBindings.Add("EditValue", detailsBS, "HEIGHT", true, DataSourceUpdateMode.OnPropertyChanged);
             widthEdit.DataBindings.Add("EditValue", detailsBS, "WIDTH", true, DataSourceUpdateMode.OnPropertyChanged);
             quantityOfBlankEdit.DataBindings.Add("EditValue", detailsBS, "QUANTITY_OF_BLANKS", true, DataSourceUpdateMode.OnPropertyChanged);
-
-
-            copyChecker =  modelDetail.DRAWING.Contains("копія");
+   
+            
 
 
             if (operation == Utils.Operation.Add)
@@ -76,7 +75,12 @@ namespace MTS.GUI.MTS
                 //detalsProccesingLookUpEdit.EditValue = 2;
                 //((MTSDetailsDTO)detailsBS.Current).PROCESSING_ID = 2;
                 ((MTSDetailsDTO)Item).PROCESSING_ID = 2;
+                copyChecker = false;
                 //(int)detalsProccesingLookUpEdit.EditValue
+            }
+            else
+            {
+                copyChecker = modelDetail.DRAWING.Contains("копія");
             }
 
             ControlValidation();

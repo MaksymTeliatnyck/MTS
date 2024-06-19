@@ -63,6 +63,19 @@ namespace MTS.GUI.MTS
             {
                 if (weightEdit.Text.Length <= 7)
                 {
+                    if(nameSpecificationEdit.Text.Contains("\""))
+                    {
+                        MessageBox.Show("Поле \"виріб\" містить лапки, використовуйте одинарні лапки!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
+
+                    if (drawingEdit.Text.Contains("\""))
+                    {
+                        MessageBox.Show("Поле \"креслення\" містить   лапки, використовуйте одинарні лапки!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
+
+
                     if (operation == Utils.Operation.Add)
                     {
                         ((MTSSpecificationsDTO)Item).ID = 0;
