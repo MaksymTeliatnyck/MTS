@@ -381,17 +381,21 @@ namespace MTS.GUI.MTS
 
                     break;
                 case Utils.Operation.Update:
-                    using (MtsBuyDetailEditOldFm mtsBuyDetailEditOldFm = new MtsBuyDetailEditOldFm(operation, model))
-                    //   DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model);
+                    if (model != null)
                     {
-                        if (mtsBuyDetailEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        model.CHANGES = ((MTSSpecificationsDTO)specificBS.Current).SET_COLOR == 1 ? 1 : 0;
+                        using (MtsBuyDetailEditOldFm mtsBuyDetailEditOldFm = new MtsBuyDetailEditOldFm(operation, model))
+                        //   DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model);
                         {
-                            MTSPurchasedProductsDTO returnMtsPurchasedProduct = mtsBuyDetailEditOldFm.Return();
-                            buysDetalsSpecificGridView.BeginDataUpdate();
-                            LoadData();
-                            buysDetalsSpecificGridView.EndDataUpdate();
-                            int rowHandle = buysDetalsSpecificGridView.LocateByValue("ID", returnMtsPurchasedProduct.ID);
-                            buysDetalsSpecificGridView.FocusedRowHandle = rowHandle;
+                            if (mtsBuyDetailEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                            {
+                                MTSPurchasedProductsDTO returnMtsPurchasedProduct = mtsBuyDetailEditOldFm.Return();
+                                buysDetalsSpecificGridView.BeginDataUpdate();
+                                LoadData();
+                                buysDetalsSpecificGridView.EndDataUpdate();
+                                int rowHandle = buysDetalsSpecificGridView.LocateByValue("ID", returnMtsPurchasedProduct.ID);
+                                buysDetalsSpecificGridView.FocusedRowHandle = rowHandle;
+                            }
                         }
                     }
                     break;
@@ -439,17 +443,21 @@ namespace MTS.GUI.MTS
 
                     break;
                 case Utils.Operation.Update:
-                    using (MtsMaterialEditOldFm mtsMaterialEditOldFm = new MtsMaterialEditOldFm(operation, model))
-                    //   DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model);
+                    if (model != null)
                     {
-                        if (mtsMaterialEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        model.CHANGES = ((MTSSpecificationsDTO)specificBS.Current).SET_COLOR == 1 ? 1 : 0;
+                        using (MtsMaterialEditOldFm mtsMaterialEditOldFm = new MtsMaterialEditOldFm(operation, model))
+                        //   DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model);
                         {
-                            MTSMaterialsDTO returnMtsMaterials = mtsMaterialEditOldFm.Return();
-                            materialsSpecificGridView.BeginDataUpdate();
-                            LoadData();
-                            materialsSpecificGridView.EndDataUpdate();
-                            int rowHandle = materialsSpecificGridView.LocateByValue("ID", returnMtsMaterials.ID);
-                            materialsSpecificGridView.FocusedRowHandle = rowHandle;
+                            if (mtsMaterialEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                            {
+                                MTSMaterialsDTO returnMtsMaterials = mtsMaterialEditOldFm.Return();
+                                materialsSpecificGridView.BeginDataUpdate();
+                                LoadData();
+                                materialsSpecificGridView.EndDataUpdate();
+                                int rowHandle = materialsSpecificGridView.LocateByValue("ID", returnMtsMaterials.ID);
+                                materialsSpecificGridView.FocusedRowHandle = rowHandle;
+                            }
                         }
                     }
                     break;
@@ -457,8 +465,6 @@ namespace MTS.GUI.MTS
                 default:
                     break;
             }
-
-
         }
 
         private void EditDetailSpecific(Utils.Operation operation, MTSDetailsDTO model)

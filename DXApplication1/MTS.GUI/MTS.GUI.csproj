@@ -75,10 +75,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>8F5AB5AB315F3BEB5B8CA212E71E037AA9340318</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>DFD01A83D658631C57BFDF068473482CE5E45CB2</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>MTS.GUI_3_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>MTS.GUI_4_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -143,22 +143,6 @@
     <Reference Include="Calendar.NET, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Calendar.NET.dll</HintPath>
-    </Reference>
-    <Reference Include="Core.Calendar, Version=1.0.5657.24798, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Core.Calendar.0.1.192\lib\net45\Core.Calendar.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Core.Platform, Version=1.0.5586.30548, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Core.Common.0.1.4\lib\net45\Core.Platform.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Core.Portable, Version=1.0.5586.30548, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Core.Common.0.1.4\lib\net45\Core.Portable.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DDay.iCal, Version=1.0.2.575, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\DDay.iCal.1.0.2.575\lib\DDay.iCal.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v16.1">
       <Private>True</Private>
@@ -698,6 +682,7 @@
     <None Include="MTS.GUI_1_TemporaryKey.pfx" />
     <None Include="MTS.GUI_2_TemporaryKey.pfx" />
     <None Include="MTS.GUI_3_TemporaryKey.pfx" />
+    <None Include="MTS.GUI_4_TemporaryKey.pfx" />
     <None Include="MTS.GUI_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest">

@@ -4,6 +4,7 @@ using MTS.BLL.Interfaces;
 using MTS.DAL.Entities.Models;
 using MTS.DAL.Interfaces;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace MTS.BLL.Services
 {
@@ -70,8 +71,19 @@ namespace MTS.BLL.Services
 
         public MTSAuthorizationUsersDTO GetUser(string login, string pwd)
         {
-            var userr = mtsAuthorizationUsers.GetAll().ToList();
+
+            try
+            {
+                var userr = mtsAuthorizationUsers.GetAll().ToList();
+                
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Виникла проблема при підключенні до БД \n" + ex.Message, "Підключення до БД", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
             var user = mtsAuthorizationUsers.GetAll().SingleOrDefault(c => c.LOGIN == login && c.PWD == pwd);
+
             return mapper.Map<MTS_AUTHORIZATION_USERS, MTSAuthorizationUsersDTO>(user);
         }
 

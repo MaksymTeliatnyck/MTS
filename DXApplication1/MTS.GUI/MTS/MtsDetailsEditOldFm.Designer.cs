@@ -316,6 +316,7 @@
             conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
             this.dxValidationProvider.SetValidationRule(this.numberDrawingEdit, conditionValidationRule6);
             this.numberDrawingEdit.EditValueChanged += new System.EventHandler(this.numberDrawingEdit_EditValueChanged);
+            this.numberDrawingEdit.TextChanged += new System.EventHandler(this.numberDrawingEdit_TextChanged);
             this.numberDrawingEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberDrawingEdit_KeyPress);
             // 
             // label8

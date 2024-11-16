@@ -235,6 +235,11 @@ namespace MTS.GUI.MTS
         private void numberDrawingEdit_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Utils.OnlyNumbers(e);
+            if (e.KeyChar == ',')
+            {
+                e.KeyChar = '.'; // Замена запятой на точку
+            }
+
             if (e.KeyChar == (char)Keys.Enter)
             {
                 if (CheckDetail(numberDrawingEdit.Text))
@@ -450,6 +455,8 @@ namespace MTS.GUI.MTS
 
         private void numberDrawingEdit_EditValueChanged(object sender, EventArgs e)
         {
+
+
             dxValidationProvider.Validate((Control)sender);
         }
 
@@ -485,6 +492,17 @@ namespace MTS.GUI.MTS
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void numberDrawingEdit_TextChanged(object sender, EventArgs e)
+        {
+            int cursorPosition = numberDrawingEdit.SelectionStart;
+
+            // Заменяем запятую на точку
+            numberDrawingEdit.Text = numberDrawingEdit.Text.Replace(',', '.');
+
+            // Восстанавливаем позицию курсора
+            numberDrawingEdit.SelectionStart = cursorPosition;
         }
     }
 }
