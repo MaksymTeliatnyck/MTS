@@ -136,13 +136,14 @@ namespace MTS.BLL.Services
                                        Gost = i.GOSTNAME,
                                        Measure = i.MEASURENAME,
                                        Note = i.NOMENCLATURESNOTE,
-                                       SortPosition = (int)i.NOM_GROUP_SORTPOSITION
+                                       SortPosition = (int)i.NOM_GROUP_SORTPOSITION,
+                                       Color = (int)i.CHANGES
                                    });
 
 
 
             var pProductsSum2 = (from i in pProductsSum1
-                                 group i by new { i.Nomenclature_id, i.Name, i.Guage, i.Gost, i.Measure, i.SortPosition, i.Note } into g
+                                 group i by new { i.Nomenclature_id, i.Name, i.Guage, i.Gost, i.Measure, i.SortPosition, i.Note, i.Color } into g
                                  orderby g.Key.SortPosition, g.Key.Name
                                  select new SpecificationPrintModelDTO
                                  {
@@ -154,7 +155,8 @@ namespace MTS.BLL.Services
                                      Gost = g.Key.Gost,
                                      Measure = g.Key.Measure,
                                      SortPosition = g.Key.SortPosition,
-                                     Note = g.Key.Note
+                                     Note = g.Key.Note,
+                                     Color = (int)g.Key.Color
                                  }).ToList();
 
             var pProductsSum = (from i in pProductsSum2
@@ -169,7 +171,8 @@ namespace MTS.BLL.Services
                                     Measure = i.Measure,
                                     SortPosition = i.SortPosition,
                                     Price = i.Price,
-                                    Note = i.Note
+                                    Note = i.Note,
+                                     Color = i.Color
                                 }).ToList();
 
 
@@ -196,7 +199,8 @@ namespace MTS.BLL.Services
                                        Gost = i.GOSTNAME,
                                        Measure = i.MEASURENAME,
                                        Note = i.NOMENCLATURESNOTE,
-                                       SortPosition = (int)i.NOM_GROUP_SORTPOSITION
+                                       SortPosition = (int)i.NOM_GROUP_SORTPOSITION,
+                                       Color = (int)i.CHANGES
                                    });
 
             #endregion materials step 1
@@ -204,7 +208,7 @@ namespace MTS.BLL.Services
             #region materials step 2
 
             var materialsSum2 = (from i in materialsSum1
-                                 group i by new { i.Nomenclature_id, i.Name, i.Guage, i.Gost, i.Measure, i.SortPosition, i.Note } into g
+                                 group i by new { i.Nomenclature_id, i.Name, i.Guage, i.Gost, i.Measure, i.SortPosition, i.Note, i.Color } into g
                                  orderby g.Key.SortPosition, g.Key.Name
                                  select new SpecificationPrintModelDTO
                                  {
@@ -216,7 +220,8 @@ namespace MTS.BLL.Services
                                      Gost = g.Key.Gost,
                                      Measure = g.Key.Measure,
                                      SortPosition = g.Key.SortPosition,
-                                     Note = g.Key.Note
+                                     Note = g.Key.Note,
+                                     Color = g.Key.Color
                                  }).ToList();
 
 
@@ -236,7 +241,8 @@ namespace MTS.BLL.Services
                                     Measure = i.Measure,
                                     SortPosition = i.SortPosition,
                                     Price = i.Price,
-                                    Note = i.Note
+                                    Note = i.Note,
+                                    Color = i.Color
                                 }).ToList();
 
             #endregion materials step 3
