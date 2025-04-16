@@ -28,6 +28,7 @@ namespace MTS.GUI.MTS
             {
                 model.CREATION_DATE = DateTime.Now;
                 model.QUANTITY = 1;
+                model.SET_COLOR = 0;
             }
             if (operation == Utils.Operation.Template)
             {

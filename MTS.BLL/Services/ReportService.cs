@@ -85,7 +85,7 @@ namespace MTS.BLL.Services
                }).ToList();
 
 
-            var groupMaterial = sp1.GroupBy(gr => gr.Nomenclature_id).Select(sl => sl.FirstOrDefault()).ToList();
+             var groupMaterial = sp1.GroupBy(gr => gr.Nomenclature_id).Select(sl => sl.FirstOrDefault()).ToList();
 
             var sp = new List<SpecificationPrintModelDTO>();
 
@@ -124,21 +124,31 @@ namespace MTS.BLL.Services
 
             var pProductsSum1 = new List<SpecificationPrintModelDTO>();
 
-            pProductsSum1.AddRange(from i in mtsBuyDetailsList
-                                   select new SpecificationPrintModelDTO
-                                   {
-                                       Id = i.ID,
-                                       Nomenclature_id = (int)i.NOMENCLATURES_ID,
-                                       Quantity = (decimal)(i.QUANTITY * mtsSpecification.QUANTITY),
-                                       Price = (decimal)i.NOMENCLATURESPRICE * mtsSpecification.QUANTITY,
-                                       Name = i.NOMENCLATURESNAME,
-                                       Guage = i.GUAEGENAME,
-                                       Gost = i.GOSTNAME,
-                                       Measure = i.MEASURENAME,
-                                       Note = i.NOMENCLATURESNOTE,
-                                       SortPosition = (int)i.NOM_GROUP_SORTPOSITION,
-                                       Color = (int)i.CHANGES
-                                   });
+            try
+            {
+                pProductsSum1.AddRange(from i in mtsBuyDetailsList
+                                       select new SpecificationPrintModelDTO
+                                       {
+                                           Id = i.ID,
+                                           Nomenclature_id = (int)i.NOMENCLATURES_ID,
+                                           Quantity = (decimal)(i.QUANTITY * mtsSpecification.QUANTITY),
+                                           Price = (decimal)i.NOMENCLATURESPRICE * mtsSpecification.QUANTITY,
+                                           Name = i.NOMENCLATURESNAME,
+                                           Guage = i.GUAEGENAME,
+                                           Gost = i.GOSTNAME,
+                                           Measure = i.MEASURENAME,
+                                           Note = i.NOMENCLATURESNOTE,
+                                           SortPosition = (int)i.NOM_GROUP_SORTPOSITION,
+                                           Color = (int)i.CHANGES
+                                       });
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("");
+            }
+
+            
 
 
 
@@ -378,7 +388,16 @@ namespace MTS.BLL.Services
             var Worksheet = Workbook.Worksheets[0];
             var Сells = Worksheet.Cells;
 
-            Worksheet.PageSetup.LeftHeader = "\n Изделие: " + mtsSpecification.NAME;
+
+            //string test = Utils.SplitString(mtsSpecification.NAME, 30);
+            //Worksheet.PageSetup.TopMargin = 20;
+            //Worksheet.PageSetup.HeaderMargin = 20;
+            //Worksheet.PageSetup.BottomMargin = 30;
+            Worksheet.PageSetup.HeaderMargin = 2.0;
+            
+            
+            Worksheet.PageSetup.LeftHeader = "\n Изделие: " + Utils.SplitString(mtsSpecification.NAME, 50);
+            
             Worksheet.PageSetup.RightHeader = "\n Чертеж: " + mtsSpecification.DRAWING;
 
             IWorkbookSet workbookSet = Factory.GetWorkbookSet();

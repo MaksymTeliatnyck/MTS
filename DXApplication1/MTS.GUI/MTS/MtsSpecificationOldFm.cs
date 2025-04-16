@@ -293,7 +293,7 @@ namespace MTS.GUI.MTS
 
         private void AddSpecification(Utils.Operation operation, MTSSpecificationsDTO model, MTSAuthorizationUsersDTO mtsAthorizationUsersDTO)
         {
-            model.SET_COLOR = 0;
+            //model.SET_COLOR = 0;
             using (MtsSpecificationOldEditFm mtsSpecificationOldEditFm = new MtsSpecificationOldEditFm(operation, model, mtsAthorizationUsersDTO))
             {
                 if (mtsSpecificationOldEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
