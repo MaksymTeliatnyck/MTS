@@ -197,9 +197,37 @@ namespace MTS.BLL.Infrastructure
             return Regex.Replace(input, "[0-9]+", match => match.Value.PadLeft(10, '0'));
         }
 
+        public static string SplitString(string input, int numberSymbolInStr)
+        {
+            string[] words = input.Split(' ');
+            string fullLine = "";
+            string currentLine = "";
 
+            if (input.Length > numberSymbolInStr)
+            {
 
+                foreach (string word in words)
+                {
+                    if ((currentLine + word).Length + 1 <= numberSymbolInStr)
+                    {
+                        if (currentLine.Length > 0)
+                            currentLine += " ";
+                        currentLine += word;
+                    }
+                    else
+                    {
+                        fullLine += currentLine + "\n" + word;
+                        currentLine = " ";
+                    }
+                }
 
-
+                fullLine += currentLine;
+                return fullLine;
+            }
+            else
+            {
+                return input;
+            }
+        }
     }
 }
