@@ -160,6 +160,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\EF\ERP_Context.cs" />
+    <Compile Include="Entities\Models\CustomerOrders.cs" />
     <Compile Include="Entities\Models\Log.cs" />
     <Compile Include="Entities\Models\MtsAssemblies.cs" />
     <Compile Include="Entities\Models\MtsAssemblyDetails.cs" />
