@@ -31,6 +31,7 @@ namespace MTS.BLL.Services
         private IRepository<MTS_NOMENCLATURE_GROUPS> mtsNomenclatureGroups;
         private IRepository<MTS_DETAILS> mtsDetals;
         private IRepository<MTS_ADDIT_CALCULATION> mtsAdditCalculation;
+        private IRepository<CustomerOrders> customerOrders;
         // private IRepository<MTSDetails> mtsDetals;
 
         private IMapper mapper;
@@ -38,6 +39,7 @@ namespace MTS.BLL.Services
         public MtsSpecificationsService(IUnitOfWork uow)
         {
             Database = uow;
+            customerOrders = Database.GetRepository<CustomerOrders>();
             mtsSpecificationsOld = Database.GetRepository<MTS_SPECIFICATIONS>();
             mtsAuthorizationUsers = Database.GetRepository<MTS_AUTHORIZATION_USERS>();
             mtsDetails = Database.GetRepository<MTS_DETAILS>();
@@ -61,6 +63,9 @@ namespace MTS.BLL.Services
                 //cfg.CreateMap<MtsSpecificationnsDTO, MTS_SPECIFICATIONS>();
                 cfg.CreateMap<MtsDetailsInfo, MtsDetailsInfoDTO>();
                 cfg.CreateMap<MtsAssembliesCustomerInfo, MtsAssembliesCustomerInfoDTO>();
+
+                cfg.CreateMap<CustomerOrders, CustomerOrdersDTO>();
+                cfg.CreateMap<CustomerOrdersDTO, CustomerOrders>();
 
                 cfg.CreateMap<MTS_SPECIFICATIONS, MTSSpecificationsDTO>();
                 cfg.CreateMap<MTSSpecificationsDTO, MTS_SPECIFICATIONS>();
@@ -91,6 +96,7 @@ namespace MTS.BLL.Services
                 cfg.CreateMap<MTS_DETAILS, MTSDetailsDTO>();
                 cfg.CreateMap<MTSAdditCalculationsDTO, MTS_ADDIT_CALCULATION>();
                 cfg.CreateMap<MTS_ADDIT_CALCULATION, MTSAdditCalculationsDTO>();
+
             });
 
             mapper = config.CreateMapper();
@@ -106,6 +112,12 @@ namespace MTS.BLL.Services
         //{
         //    return mapper.Map<IEnumerable<MTSSpecifications>, IList<MTSSpecificationsDTO>>(mtsSpecificationsOld.GetAll());
         //}
+
+
+        public IEnumerable<CustomerOrdersDTO> GetCustomerOrders()
+        {
+            return mapper.Map<IEnumerable<CustomerOrders>, IList<CustomerOrdersDTO>>(customerOrders.GetAll());
+        }
 
         public IEnumerable<MTSSpecificationsDTO> GetAllSpecificationOldByPeriod(DateTime startDate, DateTime endDate)
         {

@@ -57,7 +57,7 @@ namespace MTS.DAL.EF
                 DataSource = "10.0.0.50",
                 //DataSource = "localhost",
                //  Port = Convert.ToInt32(portDB[0]),
-                Database = "MTS_DB_TEST",
+                Database = "TVM_DB",
                 UserID = "sysdba",
                 Password = "masterkey",
                 Charset = "UTF8",

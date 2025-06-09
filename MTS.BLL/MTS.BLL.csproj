@@ -152,6 +152,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\ModelsDTO\CustomerOrdersDTO.cs" />
     <Compile Include="DTO\ModelsDTO\MTSUsersDTO.cs" />
     <Compile Include="DTO\ModelsDTO\MTSUserGroupsDTO.cs" />
     <Compile Include="DTO\ModelsDTO\MTSUserRightsDTO.cs" />
