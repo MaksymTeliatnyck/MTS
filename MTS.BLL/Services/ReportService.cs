@@ -49,18 +49,22 @@ namespace MTS.BLL.Services
 
             #region Detail's
 
-            var summDetailsQuantity = mtsDetailsList.GroupBy(c => c.NOMENCLATURE_ID).Select(g => new
-            {
-                id = g.Key,
-                summQuantity = g.Sum(c =>
-                  c.PROCESSING_ID == 2 ? (c.QUANTITY * mtsSpecification.QUANTITY * c.HEIGHT * c.WIDTH * c.NOMENCLATURESWEIGHT * 0.000001m) / c.QUANTITY_OF_BLANKS :
-                  c.PROCESSING_ID == 3 ? (c.QUANTITY * mtsSpecification.QUANTITY * c.HEIGHT * c.HEIGHT * c.NOMENCLATURESWEIGHT * 0.000001m * 0.25m * 3.1415m) / c.QUANTITY_OF_BLANKS :
-                  c.PROCESSING_ID == 1 ? (c.QUANTITY * mtsSpecification.QUANTITY * c.HEIGHT * (c.NOMENCLATURESWEIGHT == 0 ? 1 : c.NOMENCLATURESWEIGHT) * 0.001m) / c.QUANTITY_OF_BLANKS : 0),
-                summQ2 = g.Sum(c => c.QUANTITY),
-                color = g.Sum(c => c.CHANGES),
-            }).ToList();
+            var sp1 = new List<SpecificationPrintModelDTO>();
 
-            var sp1 = summDetailsQuantity
+            try
+            {
+                var summDetailsQuantity = mtsDetailsList.GroupBy(c => c.NOMENCLATURE_ID).Select(g => new
+                {
+                    id = g.Key,
+                    summQuantity = g.Sum(c =>
+                      c.PROCESSING_ID == 2 ? (c.QUANTITY * mtsSpecification.QUANTITY * c.HEIGHT * c.WIDTH * c.NOMENCLATURESWEIGHT * 0.000001m) / c.QUANTITY_OF_BLANKS :
+                      c.PROCESSING_ID == 3 ? (c.QUANTITY * mtsSpecification.QUANTITY * c.HEIGHT * c.HEIGHT * c.NOMENCLATURESWEIGHT * 0.000001m * 0.25m * 3.1415m) / c.QUANTITY_OF_BLANKS :
+                      c.PROCESSING_ID == 1 ? (c.QUANTITY * mtsSpecification.QUANTITY * c.HEIGHT * (c.NOMENCLATURESWEIGHT == 0 ? 1 : c.NOMENCLATURESWEIGHT) * 0.001m) / c.QUANTITY_OF_BLANKS : 0),
+                    summQ2 = g.Sum(c => c.QUANTITY),
+                    color = g.Sum(c => c.CHANGES),
+                }).ToList();
+
+                sp1 = summDetailsQuantity
                .Join(mtsDetailsList, i => i.id, y => y.NOMENCLATURE_ID, (i, y) => new { i, y })
                .OrderBy(@t1 => @t1.y.NOM_GROUP_SORTPOSITION)
                .Select(t2 => new SpecificationPrintModelDTO
@@ -84,8 +88,18 @@ namespace MTS.BLL.Services
                    Color = (int)t2.i.color
                }).ToList();
 
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Сталася помилка при обробці деталей!\n" + ex.Message, "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
-             var groupMaterial = sp1.GroupBy(gr => gr.Nomenclature_id).Select(sl => sl.FirstOrDefault()).ToList();
+            var groupMaterial = sp1.GroupBy(gr => gr.Nomenclature_id).Select(sl => sl.FirstOrDefault()).ToList();
+
+
+
+
 
             var sp = new List<SpecificationPrintModelDTO>();
 
@@ -123,6 +137,7 @@ namespace MTS.BLL.Services
             #region PurchasedProducts
 
             var pProductsSum1 = new List<SpecificationPrintModelDTO>();
+            var pProductsSum = new List<SpecificationPrintModelDTO>();
 
             try
             {
@@ -144,32 +159,30 @@ namespace MTS.BLL.Services
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show("");
+                MessageBox.Show("Сталася помилка при обробці покупних матеріалів на першому етапі!\n" + ex.Message, "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
+
+            try
+            {
+                var pProductsSum2 = (from i in pProductsSum1
+                                     group i by new { i.Nomenclature_id, i.Name, i.Guage, i.Gost, i.Measure, i.SortPosition, i.Note, i.Color } into g
+                                     orderby g.Key.SortPosition, g.Key.Name
+                                     select new SpecificationPrintModelDTO
+                                     {
+                                         Nomenclature_id = g.Key.Nomenclature_id,
+                                         Quantity = g.Sum(c => c.Quantity),
+                                         Price = g.Sum(c => c.Price),
+                                         Name = g.Key.Name,
+                                         Guage = g.Key.Guage,
+                                         Gost = g.Key.Gost,
+                                         Measure = g.Key.Measure,
+                                         SortPosition = g.Key.SortPosition,
+                                         Note = g.Key.Note,
+                                         Color = (int)g.Key.Color
+                                     }).ToList();
             
-
-
-
-            var pProductsSum2 = (from i in pProductsSum1
-                                 group i by new { i.Nomenclature_id, i.Name, i.Guage, i.Gost, i.Measure, i.SortPosition, i.Note, i.Color } into g
-                                 orderby g.Key.SortPosition, g.Key.Name
-                                 select new SpecificationPrintModelDTO
-                                 {
-                                     Nomenclature_id = g.Key.Nomenclature_id,
-                                     Quantity = g.Sum(c => c.Quantity),
-                                     Price = g.Sum(c => c.Price),
-                                     Name = g.Key.Name,
-                                     Guage = g.Key.Guage,
-                                     Gost = g.Key.Gost,
-                                     Measure = g.Key.Measure,
-                                     SortPosition = g.Key.SortPosition,
-                                     Note = g.Key.Note,
-                                     Color = (int)g.Key.Color
-                                 }).ToList();
-
-            var pProductsSum = (from i in pProductsSum2
+            pProductsSum = (from i in pProductsSum2
                                 orderby i.SortPosition, i.Name
                                 select new SpecificationPrintModelDTO
                                 {
@@ -184,6 +197,11 @@ namespace MTS.BLL.Services
                                     Note = i.Note,
                                      Color = i.Color
                                 }).ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Сталася помилка при обробці покупних матеріалів на другому етапі!\n" + ex.Message, "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
 
             //join gost in mtsGost.GetAll() on mtsNom.GOST_ID equals gost.ID into gosts
@@ -197,21 +215,29 @@ namespace MTS.BLL.Services
 
             #region materials step 1
 
-            materialsSum1.AddRange(from i in mtsMaterialsList
-                                   select new SpecificationPrintModelDTO
-                                   {
-                                       Id = i.ID,
-                                       Nomenclature_id = (int)i.NOMENCLATURES_ID,
-                                       Quantity = (decimal)(i.QUANTITY * mtsSpecification.QUANTITY),
-                                       Price = (decimal)i.NOMENCLATURESPRICE * mtsSpecification.QUANTITY,
-                                       Name = i.NOMENCLATURESNAME,
-                                       Guage = i.GUAGENAME,
-                                       Gost = i.GOSTNAME,
-                                       Measure = i.MEASURENAME,
-                                       Note = i.NOMENCLATURESNOTE,
-                                       SortPosition = (int)i.NOM_GROUP_SORTPOSITION,
-                                       Color = (int)i.CHANGES
-                                   });
+            try
+            {
+                materialsSum1.AddRange(from i in mtsMaterialsList
+                                       select new SpecificationPrintModelDTO
+                                       {
+                                           Id = i.ID,
+                                           Nomenclature_id = (int)i.NOMENCLATURES_ID,
+                                           Quantity = (decimal)(i.QUANTITY * mtsSpecification.QUANTITY),
+                                           Price = (decimal)i.NOMENCLATURESPRICE * mtsSpecification.QUANTITY,
+                                           Name = i.NOMENCLATURESNAME,
+                                           Guage = i.GUAGENAME,
+                                           Gost = i.GOSTNAME,
+                                           Measure = i.MEASURENAME,
+                                           Note = i.NOMENCLATURESNOTE,
+                                           SortPosition = (int)i.NOM_GROUP_SORTPOSITION,
+                                           Color = (int)i.CHANGES
+                                       });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Сталася помилка при обробці матеріалів  на першому етапі!\n" + ex.Message, "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+    
 
             #endregion materials step 1
 
