@@ -361,8 +361,8 @@ namespace MTS.GUI.MTS
 
         private void MtsSpecificationOldEditFm_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && ControlValidation())
-                saveDBtn.PerformClick();
+            //if (e.KeyCode == Keys.Enter && ControlValidation())
+            //    saveDBtn.PerformClick();
         }
 
         private void groupControl1_Paint(object sender, PaintEventArgs e)
