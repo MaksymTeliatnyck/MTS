@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.revisionGroup = new System.Windows.Forms.GroupBox();
@@ -54,6 +54,7 @@
             this.dateEdit = new DevExpress.XtraEditors.DateEdit();
             this.nameSpecificationEdit = new DevExpress.XtraEditors.MemoEdit();
             this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.assemblyCheck = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -67,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameSpecificationEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assemblyCheck.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -82,6 +84,7 @@
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
+            this.groupControl1.Controls.Add(this.assemblyCheck);
             this.groupControl1.Controls.Add(this.revisionGroup);
             this.groupControl1.Controls.Add(this.validateLbl);
             this.groupControl1.Controls.Add(this.cancelDBtn);
@@ -123,10 +126,10 @@
             this.copyNumberEdit.Properties.Appearance.Options.UseFont = true;
             this.copyNumberEdit.Size = new System.Drawing.Size(119, 22);
             this.copyNumberEdit.TabIndex = 51;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Не вказано креслення";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider.SetValidationRule(this.copyNumberEdit, conditionValidationRule1);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "Не вказано креслення";
+            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.copyNumberEdit, conditionValidationRule5);
             this.copyNumberEdit.EditValueChanged += new System.EventHandler(this.copyNumberEdit_EditValueChanged);
             this.copyNumberEdit.TextChanged += new System.EventHandler(this.copyNumberEdit_TextChanged);
             // 
@@ -199,12 +202,12 @@
             this.drawingEdit.Name = "drawingEdit";
             this.drawingEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawingEdit.Properties.Appearance.Options.UseFont = true;
-            this.drawingEdit.Size = new System.Drawing.Size(496, 22);
+            this.drawingEdit.Size = new System.Drawing.Size(413, 22);
             this.drawingEdit.TabIndex = 1;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Не вказано креслення";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider.SetValidationRule(this.drawingEdit, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Не вказано креслення";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.drawingEdit, conditionValidationRule1);
             this.drawingEdit.EditValueChanged += new System.EventHandler(this.drawingEdit_EditValueChanged);
             // 
             // label3
@@ -226,10 +229,10 @@
             this.quantityEdit.Properties.Appearance.Options.UseFont = true;
             this.quantityEdit.Size = new System.Drawing.Size(117, 22);
             this.quantityEdit.TabIndex = 2;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Не вказано кількість";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider.SetValidationRule(this.quantityEdit, conditionValidationRule3);
+            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule7.ErrorText = "Не вказано кількість";
+            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.quantityEdit, conditionValidationRule7);
             this.quantityEdit.EditValueChanged += new System.EventHandler(this.quantityEdit_EditValueChanged);
             // 
             // label2
@@ -251,10 +254,10 @@
             this.weightEdit.Properties.Appearance.Options.UseFont = true;
             this.weightEdit.Size = new System.Drawing.Size(173, 22);
             this.weightEdit.TabIndex = 3;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Не вказано вагу";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider.SetValidationRule(this.weightEdit, conditionValidationRule4);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Не вказано вагу";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.weightEdit, conditionValidationRule2);
             this.weightEdit.EditValueChanged += new System.EventHandler(this.weightEdit_EditValueChanged);
             // 
             // label1
@@ -281,10 +284,10 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit.Size = new System.Drawing.Size(194, 22);
             this.dateEdit.TabIndex = 4;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "Дату не вказано";
-            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider.SetValidationRule(this.dateEdit, conditionValidationRule5);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Дату не вказано";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.dateEdit, conditionValidationRule3);
             this.dateEdit.EditValueChanged += new System.EventHandler(this.dateEdit_EditValueChanged);
             // 
             // nameSpecificationEdit
@@ -297,16 +300,27 @@
             this.nameSpecificationEdit.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.nameSpecificationEdit.Size = new System.Drawing.Size(494, 40);
             this.nameSpecificationEdit.TabIndex = 0;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "Не вказано найменування виробу";
-            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider.SetValidationRule(this.nameSpecificationEdit, conditionValidationRule6);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "Не вказано найменування виробу";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.nameSpecificationEdit, conditionValidationRule4);
             this.nameSpecificationEdit.EditValueChanged += new System.EventHandler(this.nameSpecificationEdit_EditValueChanged);
             // 
             // dxValidationProvider
             // 
             this.dxValidationProvider.ValidationFailed += new DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventHandler(this.dxValidationProvider_ValidationFailed);
             this.dxValidationProvider.ValidationSucceeded += new DevExpress.XtraEditors.DXErrorProvider.ValidationSucceededEventHandler(this.dxValidationProvider_ValidationSucceeded);
+            // 
+            // assemblyCheck
+            // 
+            this.assemblyCheck.Location = new System.Drawing.Point(431, 129);
+            this.assemblyCheck.Name = "assemblyCheck";
+            this.assemblyCheck.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.assemblyCheck.Properties.Appearance.Options.UseFont = true;
+            this.assemblyCheck.Properties.Caption = "Зведена";
+            this.assemblyCheck.Size = new System.Drawing.Size(75, 20);
+            this.assemblyCheck.TabIndex = 54;
+            this.assemblyCheck.CheckedChanged += new System.EventHandler(this.assemblyCheck_CheckedChanged);
             // 
             // MtsSpecificationOldEditFm
             // 
@@ -341,6 +355,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameSpecificationEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assemblyCheck.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -366,5 +381,6 @@
         private System.Windows.Forms.GroupBox revisionGroup;
         private DevExpress.XtraEditors.TextEdit copyNumberEdit;
         private System.Windows.Forms.Label label6;
+        private DevExpress.XtraEditors.CheckEdit assemblyCheck;
     }
 }

@@ -20,6 +20,8 @@ namespace MTS.DAL.Entities.Models
         public int? CODIZD { get; set; }
         public string COMPILATION_QUANTITIES { get; set; }
         public int QUANTITY { get; set; }
+
+        public int? ASSEMBLY { get; set; }
         public int? SET_COLOR { get; set; }
     }
 }

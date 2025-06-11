@@ -42,6 +42,7 @@ namespace MTS.GUI.MTS
             quantityEdit.DataBindings.Add("EditValue", specificationBS, "QUANTITY", true, DataSourceUpdateMode.OnPropertyChanged);
             weightEdit.DataBindings.Add("EditValue", specificationBS, "WEIGHT", true, DataSourceUpdateMode.OnPropertyChanged);
             dateEdit.DataBindings.Add("EditValue", specificationBS, "CREATION_DATE", true, DataSourceUpdateMode.OnPropertyChanged);
+            assemblyCheck.DataBindings.Add("Checked", specificationBS, "ASSEMBLY", true, DataSourceUpdateMode.OnPropertyChanged);
 
         }
         #region Method's
@@ -378,6 +379,19 @@ namespace MTS.GUI.MTS
         private void copyNumberEdit_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void assemblyCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            if (assemblyCheck.Checked)
+            {
+                //additCalcEdit.Enabled = true;
+            }
+            else
+            {
+                assemblyCheck.Enabled = false;
+                ((MTSSpecificationsDTO)Item).ASSEMBLY = 0;
+            }
         }
     }
 }
