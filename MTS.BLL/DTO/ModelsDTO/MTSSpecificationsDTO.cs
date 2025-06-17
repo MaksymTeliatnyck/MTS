@@ -20,6 +20,7 @@ namespace MTS.BLL.DTO.ModelsDTO
         public string COMPILATION_QUANTITIES { get; set; }
         public int QUANTITY { get; set; }
         public int? SET_COLOR { get; set; }
+        public int? ASSEMBLY { get; set; }
         public string AUTHORIZATION_USERS_NAME { get; set; }
         //public int test { get; set; }
         public bool Selected { get; set; }

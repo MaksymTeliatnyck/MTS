@@ -72,9 +72,11 @@
             this.sortByMaterialBtn = new DevExpress.XtraBars.BarButtonItem();
             this.sortBySortamnetBtn = new DevExpress.XtraBars.BarButtonItem();
             this.copySpecWithDrawBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.settingsBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemTimeEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
@@ -301,10 +303,11 @@
             this.showSpecificMenuBtb,
             this.sortByMaterialBtn,
             this.sortBySortamnetBtn,
-            this.copySpecWithDrawBtn});
+            this.copySpecWithDrawBtn,
+            this.settingsBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbonControl1.MaxItemId = 5;
+            this.ribbonControl1.MaxItemId = 8;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -791,12 +794,28 @@
             this.copySpecWithDrawBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.copySpecWithDrawBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.copySpecWithDrawBtn_ItemClick);
             // 
+            // settingsBtn
+            // 
+            this.settingsBtn.Caption = "Версія програми:";
+            this.settingsBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("settingsBtn.Glyph")));
+            this.settingsBtn.Id = 5;
+            this.settingsBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.settingsBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.settingsBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.settingsBtn.ItemAppearance.Normal.Options.UseFont = true;
+            this.settingsBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.settingsBtn.ItemAppearance.Pressed.Options.UseFont = true;
+            this.settingsBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("settingsBtn.LargeGlyph")));
+            this.settingsBtn.Name = "settingsBtn";
+            this.settingsBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             ribbonPageUser,
             this.ribbonPageGroup1,
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup3});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "ribbonPage1";
             // 
@@ -825,6 +844,12 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.enableColorSpecificBtn);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Специфікація";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.settingsBtn);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "Налаштування";
             // 
             // repositoryItemTimeEdit1
             // 
@@ -2593,5 +2618,7 @@
         private DevExpress.XtraBars.BarButtonItem sortBySortamnetBtn;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraBars.BarButtonItem copySpecWithDrawBtn;
+        private DevExpress.XtraBars.BarButtonItem settingsBtn;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
     }
 }

@@ -35,8 +35,8 @@
     <ProductName>MTS</ProductName>
     <PublisherName>IT</PublisherName>
     <SuiteName>Матеріальні специфікації</SuiteName>
-    <MinimumRequiredVersion>1.0.0.45</MinimumRequiredVersion>
-    <ApplicationRevision>46</ApplicationRevision>
+    <MinimumRequiredVersion>1.0.0.48</MinimumRequiredVersion>
+    <ApplicationRevision>49</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -679,10 +679,6 @@
     </None>
     <None Include="ERP_NEW.GUI_3_TemporaryKey.pfx" />
     <None Include="ERP_NEW.GUI_TemporaryKey.pfx" />
-    <None Include="MTS.GUI_1_TemporaryKey.pfx" />
-    <None Include="MTS.GUI_2_TemporaryKey.pfx" />
-    <None Include="MTS.GUI_3_TemporaryKey.pfx" />
-    <None Include="MTS.GUI_4_TemporaryKey.pfx" />
     <None Include="MTS.GUI_5_TemporaryKey.pfx" />
     <None Include="MTS.GUI_TemporaryKey.pfx" />
     <None Include="packages.config" />

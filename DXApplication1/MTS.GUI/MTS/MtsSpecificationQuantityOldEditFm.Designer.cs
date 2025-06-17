@@ -134,7 +134,7 @@
             this.Name = "MtsSpecificationQuantityOldEditFm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Зведена карта тех процесу";
+            this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.quantityEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).EndInit();
             this.ResumeLayout(false);

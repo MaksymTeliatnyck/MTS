@@ -7,8 +7,11 @@ using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Deployment.Application;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace MTS.GUI.MTS
@@ -37,6 +40,18 @@ namespace MTS.GUI.MTS
 
             startDateItem.EditValue = new DateTime(DateTime.Now.Year - 3, 6, 5);
             endDateItem.EditValue = DateTime.Now;
+
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            FileVersionInfo fileVersionInfo = FileVersionInfo.GetVersionInfo(assembly.Location);
+            string version = fileVersionInfo.ProductVersion;
+
+            //var productVersion = FileVersionInfo.GetVersionInfo(Assembly.Location).ProductVersion.ToString();
+
+            Version myVersion = new Version();
+
+            if (ApplicationDeployment.IsNetworkDeployed)
+                myVersion = ApplicationDeployment.CurrentDeployment.CurrentVersion;
+            settingsBtn.Caption += myVersion.ToString();
 
 
 
@@ -132,18 +147,28 @@ namespace MTS.GUI.MTS
         private void LoadSpecific(int detailId)
         {
             mtsService = Program.kernel.Get<IMtsSpecificationsService>();
+            //detalsSpecificGridView.ClearColumnsFilter();
+            detalsSpecificGridView.ClearSorting();
             detalsSpecificBS.Clear();
             detalsSpecificBS.DataSource = mtsService.GetAllDetailsSpecific(detailId).OrderByDescending(ord => ord.ID).ToList();
             if (detalsSpecificBS.Count != 0)
                 detalsSpecificGrid.DataSource = detalsSpecificBS;
             else
                 detalsSpecificGrid.DataSource = null;
+
+            
+
+
+                //columns[columnIndex].filterValue = null
+                //columns[columnIndex].selectedFilterOperation = null
         }
 
         private void LoadBuysDetalSpecific(int detailId)
         {
             mtsService = Program.kernel.Get<IMtsSpecificationsService>();
             byusDetalsSpecificBS.Clear();
+            //buysDetalsSpecificGridView.ClearColumnsFilter();
+            buysDetalsSpecificGridView.ClearSorting();
             byusDetalsSpecificBS.DataSource = mtsService.GetBuysDetalSpecific(detailId).OrderByDescending(ord => ord.ID).ToList();
 
             if (byusDetalsSpecificBS.Count != 0)
@@ -156,6 +181,8 @@ namespace MTS.GUI.MTS
 
             mtsService = Program.kernel.Get<IMtsSpecificationsService>();
             materialsSpecificBS.Clear();
+            //materialsSpecificGridView.ClearColumnsFilter();
+            materialsSpecificGridView.ClearSorting();
             materialsSpecificBS.DataSource = mtsService.GetMaterialsSpecific(detailId).OrderByDescending(ord => ord.ID).ToList();
             if (materialsSpecificBS.Count != 0)
                 materialsSpecificGrid.DataSource = materialsSpecificBS;
@@ -231,7 +258,7 @@ namespace MTS.GUI.MTS
         private void specificGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             // var model = (MTSSpecificationsDTO)specificGridView.GetRow(e.FocusedRowHandle) ?? null;
-
+            
             FocusedRowChanged();
         }
 

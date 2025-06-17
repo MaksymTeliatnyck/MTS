@@ -61,6 +61,7 @@ namespace MTS.GUI.MTS
             ((MTSSpecificationsDTO)Item).QUANTITY = 1;
             ((MTSSpecificationsDTO)Item).CREATION_DATE = DateTime.Now;
             ((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_ID = mtsAuthorizationUsersDTO.ID;
+            ((MTSSpecificationsDTO)Item).ASSEMBLY = 1;
 
         }
 
