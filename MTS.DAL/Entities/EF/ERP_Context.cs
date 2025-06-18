@@ -23,12 +23,9 @@ namespace MTS.DAL.EF
         public DbSet<MtsAssembliesCustomerInfo> MtsAssembliesCustomerInfo { get; set; }
         public DbSet<MtsSpecificationTreeInfo> MtsSpeciicationTreeInfo { get; set; }
         public DbSet<MtsDetailsInfo> MtsDetailsInfo { get; set; }
-        //public DbSet<MaterialsForAccountClothes> MaterialsForAccountClothes { get; set; }
-        //public DbSet<MSPaymentsWithoutVat> MSPaymentsWithoutVat { get; set; }
-        //public DbSet<MSTrialBalanceByAccounts> MSTrialBalanceByAccounts { get;set; }
-
         public DbSet<MTS_SPECIFICATIONS> MTSSpecificationsOld { get; set; }
         public DbSet<MTS_CREATED_DETAILS> MTSCreateDetals { get; set; }
+        public DbSet<MTS_CUSTOMERORDERS> MTSCustomerOrders { get; set; }
         public DbSet<MTS_GOST> MTSGost { get; set; }
         public DbSet<MTS_NOMENCLATURES> MTSNomenclaturesOld { get; set; }
         public DbSet<MTS_GUAGES> MTS_GUAGES { get; set; }
@@ -38,10 +35,9 @@ namespace MTS.DAL.EF
         public DbSet<MTS_MEASURE> MTS_MEASURE { get; set; }
         public DbSet<MTS_PURCHASED_PRODUCTS> MTS_PURCHASED_PRODUCTS { get; set; }
         public DbSet<MTS_NOMENCLATURE_GROUPS> MTS_NOMENCLATURE_GROUPS { get; set; }
-        //public DbSet<MTS_NOMENCLATURE_GROUPS> MTSNomenclatureGroups { get; set; }
         public DbSet<MTS_ADDIT_CALCULATION> MTS_ADDIT_CALCULATION { get; set; }
-        
-
+        public DbSet<CustomerOrders> CustomerOrders { get; set; }
+        public DbSet<Contractors> Contractors { get; set; }
         #endregion
 
         static ERP_Context()

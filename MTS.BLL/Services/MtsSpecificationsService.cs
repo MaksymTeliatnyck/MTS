@@ -21,6 +21,7 @@ namespace MTS.BLL.Services
         private IRepository<MTS_DETAILS> mtsDetails;
         private IRepository<MTS_GOST> mtsGost;
         private IRepository<MTS_CREATED_DETAILS> mtsCreateDetals;
+        private IRepository<MTS_CUSTOMERORDERS> mtsCustomerOrders;
         private IRepository<MTS_DEATAILS_PROCESSING> mtsDetailsProcessing;
         private IRepository<MTS_GUAGES> mtsGuages;
         private IRepository<MTS_NOMENCLATURES> mtsNomenclatures;
@@ -32,6 +33,7 @@ namespace MTS.BLL.Services
         private IRepository<MTS_DETAILS> mtsDetals;
         private IRepository<MTS_ADDIT_CALCULATION> mtsAdditCalculation;
         private IRepository<CustomerOrders> customerOrders;
+        private IRepository<Contractors> contractors;
         // private IRepository<MTSDetails> mtsDetals;
 
         private IMapper mapper;
@@ -40,6 +42,8 @@ namespace MTS.BLL.Services
         {
             Database = uow;
             customerOrders = Database.GetRepository<CustomerOrders>();
+            contractors = Database.GetRepository<Contractors>();
+            mtsCustomerOrders = Database.GetRepository<MTS_CUSTOMERORDERS>();
             mtsSpecificationsOld = Database.GetRepository<MTS_SPECIFICATIONS>();
             mtsAuthorizationUsers = Database.GetRepository<MTS_AUTHORIZATION_USERS>();
             mtsDetails = Database.GetRepository<MTS_DETAILS>();
@@ -66,6 +70,8 @@ namespace MTS.BLL.Services
 
                 cfg.CreateMap<CustomerOrders, CustomerOrdersDTO>();
                 cfg.CreateMap<CustomerOrdersDTO, CustomerOrders>();
+                cfg.CreateMap<Contractors, ContractorsDTO>();
+                cfg.CreateMap<ContractorsDTO, Contractors>();
 
                 cfg.CreateMap<MTS_SPECIFICATIONS, MTSSpecificationsDTO>();
                 cfg.CreateMap<MTSSpecificationsDTO, MTS_SPECIFICATIONS>();
@@ -104,19 +110,96 @@ namespace MTS.BLL.Services
 
         #region Get method's
 
-        //public IEnumerable<MTSSpecificationsDTO> GetAllSpecificationOld()
-        //{
-        //    return mapper.Map<IEnumerable<MTSSpecifications>, IList<MTSSpecificationsDTO>>(mtsSpecificationsOld.GetAll());
-        //}
-        //public IEnumerable<MTSSpecificationsDTO> GetAllBuyDetailsSpecific()
-        //{
-        //    return mapper.Map<IEnumerable<MTSSpecifications>, IList<MTSSpecificationsDTO>>(mtsSpecificationsOld.GetAll());
-        //}
+        public IEnumerable<CustomerOrdersDTO> GetCustomerOrdersFull()
+        {
+            var result = (from co in customerOrders.GetAll()
+                          join c in contractors.GetAll() on co.ContractorId equals c.Id into coc
+                          from c in coc.DefaultIfEmpty()
 
+                          where !(co.OrderNumber.Trim() == null || co.OrderNumber.Trim() == String.Empty)
+                          orderby co.OrderDate, co.OrderNumber
+
+                          select new CustomerOrdersDTO
+                          {
+                              Id = co.Id,
+                              OrderNumber = co.OrderNumber,
+                              OrderDate = co.OrderDate,
+                              OrderPrice = co.OrderPrice,
+                              CurrencyPrice = co.CurrencyPrice,
+                              ContractorId = co.ContractorId,
+                              ContractorName = c.Name,
+                              DateCreate = co.DateCreate,
+                              DateUpdate = co.DateUpdate,
+                              UserId = co.UserId     
+                          });
+
+            return result.ToList();
+        }
+
+        public IEnumerable<MTSCustomerOrdersDTO> GetMTSCustomerOrdersFull()
+        {
+            var result = (from mco in mtsCustomerOrders.GetAll()
+                          join co in customerOrders.GetAll() on mco.CustomerOrderId equals co.Id into coc
+                          from co in coc.DefaultIfEmpty()
+                          join mso in mtsSpecificationsOld.GetAll() on mco.SpecificationId equals mso.ID into msoo
+                          from mso in msoo.DefaultIfEmpty()
+                          join con in contractors.GetAll() on co.ContractorId equals con.Id into conn
+                          from con in conn.DefaultIfEmpty()
+
+                         //where !(co.OrderNumber.Trim() == null || co.OrderNumber.Trim() == String.Empty)
+                          //orderby co.OrderDate, co.OrderNumber
+
+                          select new MTSCustomerOrdersDTO
+                          {
+                              Id = mco.Id,
+                              OrderNumber = co.OrderNumber,
+                              CustomerOrderId = co.Id,
+                              SpecificationId = mso.ID,
+                              DataCreateCustomerOrder = co.DateCreate,
+                              ContractorName = con.Name,
+                              DateCreate = mco.DateCreate,
+                              DateUpdate = mco.DateUpdate
+                          });
+
+            return result.ToList();
+        }
+
+        public IEnumerable<MTSCustomerOrdersDTO> GetMTSCustomerOrdersFullBySpecificationId(int specificId)
+        {
+            var result = (from mco in mtsCustomerOrders.GetAll()
+                          join co in customerOrders.GetAll() on mco.CustomerOrderId equals co.Id into coc
+                          from co in coc.DefaultIfEmpty()
+                          join mso in mtsSpecificationsOld.GetAll() on mco.SpecificationId equals mso.ID into msoo
+                          from mso in msoo.DefaultIfEmpty()
+                          join con in contractors.GetAll() on co.ContractorId equals con.Id into conn
+                          from con in conn.DefaultIfEmpty()
+
+                          where mco.SpecificationId == specificId
+                          //orderby co.OrderDate, co.OrderNumber
+
+                          select new MTSCustomerOrdersDTO
+                          {
+                              Id = mco.Id,
+                              OrderNumber = co.OrderNumber,
+                              CustomerOrderId = co.Id,
+                              SpecificationId = mso.ID,
+                              DataCreateCustomerOrder = co.DateCreate,
+                              ContractorName = con.Name,
+                              DateCreate = mco.DateCreate,
+                              DateUpdate = mco.DateUpdate
+                          });
+
+            return result.ToList();
+        }
 
         public IEnumerable<CustomerOrdersDTO> GetCustomerOrders()
         {
             return mapper.Map<IEnumerable<CustomerOrders>, IList<CustomerOrdersDTO>>(customerOrders.GetAll());
+        }
+
+        public IEnumerable<ContractorsDTO> GetContractors()
+        {
+            return mapper.Map<IEnumerable<Contractors>, IList<ContractorsDTO>>(contractors.GetAll());
         }
 
         public IEnumerable<MTSSpecificationsDTO> GetAllSpecificationOldByPeriod(DateTime startDate, DateTime endDate)
@@ -140,7 +223,8 @@ namespace MTS.BLL.Services
                               COMPILATION_DRAWINGS = mts.COMPILATION_DRAWINGS,
                               COMPILATION_NAMES = mts.COMPILATION_NAMES,
                               COMPILATION_QUANTITIES = mts.COMPILATION_QUANTITIES,
-                              SET_COLOR = mts.SET_COLOR
+                              SET_COLOR = mts.SET_COLOR,
+                              ASSEMBLY = mts.ASSEMBLY
                           }).ToList();
 
             return result;
@@ -1045,6 +1129,33 @@ namespace MTS.BLL.Services
             try
             {
                 mtsMeasure.Delete(mtsMeasure.GetAll().FirstOrDefault(c => c.ID == id));
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region MTSCOSTUMERORDER CRUD method's
+
+        public int MTSCreateCustumerOrders(MTSCustomerOrdersDTO mtsCustomerOrdersDTO)
+        {
+            var createMTSCUstomerOrder = mtsCustomerOrders.Create(mapper.Map<MTS_CUSTOMERORDERS>(mtsCustomerOrdersDTO));
+            return (int)createMTSCUstomerOrder.Id;
+        }
+        public void MTSUpdateCustumerOrders(MTSCustomerOrdersDTO mtsCustomerOrdersDTO)
+        {
+            var updateMTSCustomerOrders = mtsCustomerOrders.GetAll().SingleOrDefault(c => c.Id == mtsCustomerOrdersDTO.Id);
+            mtsCustomerOrders.Update((mapper.Map<MTSCustomerOrdersDTO, MTS_CUSTOMERORDERS>(mtsCustomerOrdersDTO, updateMTSCustomerOrders)));
+        }
+        public bool MTSDeleteCustumerOrders(int id)
+        {
+            try
+            {
+                mtsCustomerOrders.Delete(mtsCustomerOrders.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
             catch (Exception)

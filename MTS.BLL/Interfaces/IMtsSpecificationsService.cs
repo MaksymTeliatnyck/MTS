@@ -6,7 +6,12 @@ namespace MTS.BLL.Interfaces
 {
     public interface IMtsSpecificationsService
     {
+        
         IEnumerable<CustomerOrdersDTO> GetCustomerOrders();
+        IEnumerable<ContractorsDTO> GetContractors();
+        IEnumerable<CustomerOrdersDTO> GetCustomerOrdersFull();
+        IEnumerable<MTSCustomerOrdersDTO> GetMTSCustomerOrdersFull();
+        IEnumerable<MTSCustomerOrdersDTO> GetMTSCustomerOrdersFullBySpecificationId(int specificId);
 
         IEnumerable<MTSSpecificationsDTO> GetAllSpecificationOldByPeriod(DateTime startDate, DateTime endDate);
 
@@ -70,93 +75,57 @@ namespace MTS.BLL.Interfaces
 
 
         int MTSSpecificationCreate(MTSSpecificationsDTO mtsSpecificationDTO);
-
-
         void MTSSpecificationUpdate(MTSSpecificationsDTO mtsSpecificationDTO);
-
-
         bool MTSSpecificationDelete(int id);
 
         //-------
         int MTSCreateDetailsCreate(MTSCreateDetalsDTO mtsCreateDetalsDTO);
-
-
         void MTSCreateDetailsUpdate(MTSCreateDetalsDTO mtsCreateDetalsDTO);
-
-
         bool MTSCreateDetailsDelete(int id);
 
-
         int MTSDetailCreate(MTSDetailsDTO mtsDetalsDTO);
-
-
         void MTSDetailUpdate(MTSDetailsDTO mtsDetalsDTO);
-
-
         bool MTSDetailDelete(int id);
 
 
-
-
-
         int MTSPurchasedProductsCreate(MTSPurchasedProductsDTO mtsPurchasedProductsDTO);
-
-
         void MTSPurchasedProductsCreateRange(List<MTSPurchasedProductsDTO> source);
-
-
         void MTSPurchasedProductsUpdate(MTSPurchasedProductsDTO mtsPurchasedProductsDTO);
-
         bool MTSPurchasedProductsDelete(int id);
 
 
 
 
         int MTSMaterialCreate(MTSMaterialsDTO mtsMaterialsDTO);
-
-
         void MTSMaterialCreateRange(List<MTSMaterialsDTO> source);
-
-
         void MTSMaterialUpdate(MTSMaterialsDTO mtsMaterialsDTO);
-
-
         bool MTSMaterialDelete(int id);
 
 
 
 
         int MTSDetailsCreate(MTSDetailsDTO mtsDetailsDTO);
-
-
         void MTSDetailsCreateRange(List<MTSDetailsDTO> source);
-
-
         void MTSDetailsUpdate(MTSDetailsDTO mtsDetailsDTO);
-
         bool MTSDetailsDelete(int id);
 
 
         int MTSCreateDetalsCreate(MTSCreateDetalsDTO mtsCreateDetalsDTO);
-
-
         void MTSCreateDetalsUpdate(MTSCreateDetalsDTO mtsCreateDetalsDTO);
-
-
         bool MTSCreateDetalDelete(int id);
 
         int MTSCreateGost(MTSGostDTO mtsGostDTO);
-
         void MTSUpdateGost(MTSGostDTO mtsGostDTO);
-
         bool MTSDeleteGost(int id);
 
 
         int MTSCreateMeasure(MTSMeasureDTO mtsMeasureDTO);
-
         void MTSUpdateMeasure(MTSMeasureDTO mtsMeasureDTO);
-
         bool MTSDeleteMeasure(int id);
+
+        int MTSCreateCustumerOrders(MTSCustomerOrdersDTO mtsCustomerOrdersDTO);
+        void MTSUpdateCustumerOrders(MTSCustomerOrdersDTO mtsCustomerOrdersDTO);
+        bool MTSDeleteCustumerOrders(int id);
 
 
         void Dispose();

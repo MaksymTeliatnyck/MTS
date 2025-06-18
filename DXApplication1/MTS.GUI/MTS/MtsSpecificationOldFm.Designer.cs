@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageUser;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MtsSpecificationOldFm));
-            DevExpress.Utils.Animation.PushTransition pushTransition1 = new DevExpress.Utils.Animation.PushTransition();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.Utils.Animation.PushTransition pushTransition2 = new DevExpress.Utils.Animation.PushTransition();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
             this.userNameBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.endDateItem = new DevExpress.XtraBars.BarEditItem();
@@ -193,6 +193,7 @@
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.styleController1 = new DevExpress.XtraEditors.StyleController(this.components);
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::MTS.GUI.WaitForm1), true, true);
+            this.editMtsCustomerOrderBtn = new DevExpress.XtraBars.BarButtonItem();
             ribbonPageUser = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
@@ -304,10 +305,11 @@
             this.sortByMaterialBtn,
             this.sortBySortamnetBtn,
             this.copySpecWithDrawBtn,
-            this.settingsBtn});
+            this.settingsBtn,
+            this.editMtsCustomerOrderBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbonControl1.MaxItemId = 8;
+            this.ribbonControl1.MaxItemId = 9;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -678,7 +680,7 @@
             // workspaceManager1
             // 
             this.workspaceManager1.TargetControl = this;
-            this.workspaceManager1.TransitionType = pushTransition1;
+            this.workspaceManager1.TransitionType = pushTransition2;
             // 
             // basesBtn
             // 
@@ -831,6 +833,7 @@
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.addSpecificBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.addAllSpeficBtn);
+            this.ribbonPageGroup2.ItemLinks.Add(this.editMtsCustomerOrderBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.copySpecBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.copySpecWithDrawBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.editSpecificBtn);
@@ -1926,11 +1929,11 @@
             this.specificGrid.ContextMenuStrip = this.mainMenu;
             this.specificGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.specificGrid.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            gridLevelNode1.RelationName = "Level1";
-            gridLevelNode2.RelationName = "Level2";
+            gridLevelNode3.RelationName = "Level1";
+            gridLevelNode4.RelationName = "Level2";
             this.specificGrid.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1,
-            gridLevelNode2});
+            gridLevelNode3,
+            gridLevelNode4});
             this.specificGrid.Location = new System.Drawing.Point(0, 95);
             this.specificGrid.MainView = this.specificGridView;
             this.specificGrid.Margin = new System.Windows.Forms.Padding(4);
@@ -2378,6 +2381,22 @@
             // 
             this.splashScreenManager.ClosingDelay = 500;
             // 
+            // editMtsCustomerOrderBtn
+            // 
+            this.editMtsCustomerOrderBtn.Caption = "Змінити заказ";
+            this.editMtsCustomerOrderBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("editMtsCustomerOrderBtn.Glyph")));
+            this.editMtsCustomerOrderBtn.Id = 8;
+            this.editMtsCustomerOrderBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editMtsCustomerOrderBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.editMtsCustomerOrderBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editMtsCustomerOrderBtn.ItemAppearance.Normal.Options.UseFont = true;
+            this.editMtsCustomerOrderBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editMtsCustomerOrderBtn.ItemAppearance.Pressed.Options.UseFont = true;
+            this.editMtsCustomerOrderBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("editMtsCustomerOrderBtn.LargeGlyph")));
+            this.editMtsCustomerOrderBtn.Name = "editMtsCustomerOrderBtn";
+            this.editMtsCustomerOrderBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.editMtsCustomerOrderBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.editMtsCustomerOrderBtn_ItemClick);
+            // 
             // MtsSpecificationOldFm
             // 
             this.Appearance.Options.UseFont = true;
@@ -2620,5 +2639,6 @@
         private DevExpress.XtraBars.BarButtonItem copySpecWithDrawBtn;
         private DevExpress.XtraBars.BarButtonItem settingsBtn;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.BarButtonItem editMtsCustomerOrderBtn;
     }
 }

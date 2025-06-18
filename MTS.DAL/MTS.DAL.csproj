@@ -160,12 +160,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\EF\ERP_Context.cs" />
+    <Compile Include="Entities\Models\Contractors.cs" />
     <Compile Include="Entities\Models\CustomerOrders.cs" />
     <Compile Include="Entities\Models\Log.cs" />
     <Compile Include="Entities\Models\MtsAssemblies.cs" />
     <Compile Include="Entities\Models\MtsAssemblyDetails.cs" />
     <Compile Include="Entities\Models\MTS_AUTHORIZATION_USERS.cs" />
     <Compile Include="Entities\Models\MTS_CREATED_DETAILS.cs" />
+    <Compile Include="Entities\Models\MTS_CUSTOMERORDERS.cs" />
     <Compile Include="Entities\Models\MTS_GOST.cs" />
     <Compile Include="Entities\Models\MTS_GUAGES.cs" />
     <Compile Include="Entities\Models\MTS_MATERIALS.cs" />

@@ -521,6 +521,12 @@
     <Compile Include="MTS\MTSNomenclatureGroupEditFm.Designer.cs">
       <DependentUpon>MTSNomenclatureGroupEditFm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MTS\MtsSpecificationDetailFm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MTS\MtsSpecificationDetailFm.Designer.cs">
+      <DependentUpon>MtsSpecificationDetailFm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MTS\MtsSpecificationOldDetailsFm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -633,6 +639,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MTS\MTSNomenclatureGroupEditFm.resx">
       <DependentUpon>MTSNomenclatureGroupEditFm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MTS\MtsSpecificationDetailFm.resx">
+      <DependentUpon>MtsSpecificationDetailFm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MTS\MtsSpecificationOldDetailsFm.resx">
       <DependentUpon>MtsSpecificationOldDetailsFm.cs</DependentUpon>

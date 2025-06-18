@@ -18,15 +18,13 @@ namespace MTS.GUI.MTS
 {
     public partial class MtsSpecificationOldFm : DevExpress.XtraEditors.XtraForm
     {
-        //private UserTasksDTO userTaskDTO;
-
         private IMtsSpecificationsService mtsService;
         private IReportService reportService;
         private BindingSource specificBS = new BindingSource();
         private BindingSource detalsSpecificBS = new BindingSource();
         private BindingSource byusDetalsSpecificBS = new BindingSource();
         private BindingSource materialsSpecificBS = new BindingSource();
-        //private UserTasksDTO userTasksDTO;
+
         private MTSAuthorizationUsersDTO mtsAthorizationUsersDTO;
         private int previousFocusedRowDetails = -1;
         private int previousFocusedRowBuyDetails = -1;
@@ -317,6 +315,23 @@ namespace MTS.GUI.MTS
             }
         }
 
+        private void EditMtsCustomerOrders(MTSSpecificationsDTO model)
+        {
+            //model.SET_COLOR = 0;
+            using (MtsSpecificationDetailFm mtsSpecificationOldDetailsFm = new MtsSpecificationDetailFm(model))
+            {
+                if (mtsSpecificationOldDetailsFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    //MTSSpecificationsDTO return_Id = mtsSpecificationOldDetailsFm.Return();
+                    //specificGridView.BeginDataUpdate();
+                    //LoadData();
+                    //specificGridView.EndDataUpdate();
+                    //int rowHandle = detalsSpecificGridView.LocateByValue("ID", return_Id.ID);
+                    //specificGridView.FocusedRowHandle = rowHandle;
+                }
+            }
+        }
+
 
         private void AddSpecification(Utils.Operation operation, MTSSpecificationsDTO model, MTSAuthorizationUsersDTO mtsAthorizationUsersDTO)
         {
@@ -563,7 +578,8 @@ namespace MTS.GUI.MTS
                     DEVICE_ID = ((MTSSpecificationsDTO)ItemSpecification).DEVICE_ID,
                     Selected = ((MTSSpecificationsDTO)ItemSpecification).Selected,
                     SET_COLOR = ((MTSSpecificationsDTO)ItemSpecification).SET_COLOR,
-                    USERS_ID = ((MTSSpecificationsDTO)ItemSpecification).USERS_ID
+                    USERS_ID = ((MTSSpecificationsDTO)ItemSpecification).USERS_ID,
+                    ASSEMBLY = ((MTSSpecificationsDTO)ItemSpecification).ASSEMBLY
                 };
                 AddSpecification(Utils.Operation.Update, (MTSSpecificationsDTO)model, mtsAthorizationUsersDTO);
             }
@@ -696,6 +712,7 @@ namespace MTS.GUI.MTS
 
         private void deleteDetailBarBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
+
             if (detalsSpecificBS.Count > 0)
                 DeleteDetail(((MTSDetailsDTO)detalsSpecificBS.Current).ID);
             else
@@ -715,7 +732,7 @@ namespace MTS.GUI.MTS
         private void видалитиЗаписToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (detalsSpecificBS.Count > 0)
-                DeleteDetail(((MTSCreateDetalsDTO)detalsSpecificBS.Current).ID);
+                DeleteDetail(((MTSDetailsDTO)detalsSpecificBS.Current).ID);
             else
                 MessageBox.Show("Помилка видалення деталі! Створіть спочатку деталі!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
@@ -1461,6 +1478,15 @@ namespace MTS.GUI.MTS
 
                 };
                 AddSpecification(Utils.Operation.Template, (MTSSpecificationsDTO)model, mtsAthorizationUsersDTO);
+            }
+            else MessageBox.Show("Помилка редагування специфікації! Створіть спочатку специфікацію!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void editMtsCustomerOrderBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (specificBS.Count > 0)
+            {
+                EditMtsCustomerOrders((MTSSpecificationsDTO)specificBS.Current);
             }
             else MessageBox.Show("Помилка редагування специфікації! Створіть спочатку специфікацію!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }

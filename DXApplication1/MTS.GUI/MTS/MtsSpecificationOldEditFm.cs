@@ -385,7 +385,7 @@ namespace MTS.GUI.MTS
         {
             if (assemblyCheck.Checked)
             {
-                //additCalcEdit.Enabled = true;
+                ((MTSSpecificationsDTO)Item).ASSEMBLY = 1;
             }
             else
             {
