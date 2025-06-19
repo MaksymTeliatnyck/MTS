@@ -25,6 +25,8 @@ namespace MTS.BLL.DTO.ModelsDTO
         //public int test { get; set; }
         public bool Selected { get; set; }
 
+        public string CustomerOrders { get; set; }
+
 
     }
 }

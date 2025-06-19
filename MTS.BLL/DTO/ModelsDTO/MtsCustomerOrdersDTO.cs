@@ -17,5 +17,6 @@ namespace MTS.BLL.DTO.ModelsDTO
         public string OrderNumber { get; set; }
         public string ContractorName { get; set; }
         public DateTime? DataCreateCustomerOrder { get; set; }
+        public bool Check { get; set; }
     }
 }

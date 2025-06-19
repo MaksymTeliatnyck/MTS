@@ -23,10 +23,14 @@ namespace MTS.GUI.MTS
         private IMtsSpecificationsService mtsService;
 
         List<MTSCustomerOrdersDTO> mtsCustomerOrdersList = new List<MTSCustomerOrdersDTO>();
+        MTSSpecificationsDTO model = new MTSSpecificationsDTO();
 
         public MtsSpecificationDetailFm(MTSSpecificationsDTO model)
         {
             InitializeComponent();
+            this.model = model;
+            this.Text = "Редагування заказу у матеріальній специфікації: " + model.NAME;
+            specificationNameEdit.Text = model.NAME;
 
             mtsService = Program.kernel.Get<IMtsSpecificationsService>();
             customerOrdersBS.DataSource = mtsService.GetCustomerOrders().ToList();
@@ -58,14 +62,49 @@ namespace MTS.GUI.MTS
         {
             if(orderNumberEdit.EditValue!=null)
             {
-                //mtsService = Program.kernel.Get<IMtsSpecificationsService>();
-                //mtsService.C((CashBookPageDTO)Item);
-            }
-            else
-            {
+                if(mtsCustomerOrdersList.Any(srch => srch.CustomerOrderId == (int)orderNumberEdit.EditValue))
+                {
+                    MessageBox.Show("До цієї матеріальної специфікації вже додано цей заказ", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    mtsService = Program.kernel.Get<IMtsSpecificationsService>();
+                    mtsService.MTSCreateCustumerOrders(new MTSCustomerOrdersDTO()
+                    {
+                        CustomerOrderId = (int)orderNumberEdit.EditValue,
+                        SpecificationId = model.ID,
+                        DateCreate = DateTime.Now,
+                        DateUpdate = DateTime.Now
+                    });
 
+                    LoadData(model.ID);
+                    orderNumberEdit.EditValue = null;
+                }    
             }
         }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            if (mtsCustomerOrdersList.Count > 0)
+            {
+                List<MTSCustomerOrdersDTO> deleteList = new List<MTSCustomerOrdersDTO>();
+                deleteList = mtsCustomerOrdersList.Where(chk => chk.Check == true).ToList();
+                if(deleteList.Count > 0)
+                {
+                    if(MessageBox.Show("Ви точно бажаєте видалити закази?", "Видалення заказу", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    {
+                        mtsService = Program.kernel.Get<IMtsSpecificationsService>();
+                        foreach (var item in deleteList)
+                        {
+                            mtsService.MTSDeleteCustumerOrders(item.Id);
+                        }
+
+                        LoadData(model.ID);
+                    }
+                }
+            }
+        }
+
 
         private void repositoryItemButtonEdit1_Click(object sender, EventArgs e)
         {
@@ -78,6 +117,12 @@ namespace MTS.GUI.MTS
             {
 
             }
+        }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

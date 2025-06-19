@@ -2232,9 +2232,13 @@
             this.gridColumn36.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn36.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn36.Caption = "Заказ";
+            this.gridColumn36.FieldName = "CustomerOrders";
             this.gridColumn36.Name = "gridColumn36";
             this.gridColumn36.OptionsColumn.AllowEdit = false;
             this.gridColumn36.OptionsColumn.AllowFocus = false;
+            this.gridColumn36.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.gridColumn36.Visible = true;
+            this.gridColumn36.VisibleIndex = 7;
             // 
             // barBuyDetail
             // 

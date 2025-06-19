@@ -72,6 +72,8 @@ namespace MTS.BLL.Services
                 cfg.CreateMap<CustomerOrdersDTO, CustomerOrders>();
                 cfg.CreateMap<Contractors, ContractorsDTO>();
                 cfg.CreateMap<ContractorsDTO, Contractors>();
+                cfg.CreateMap<MTS_CUSTOMERORDERS, MTSCustomerOrdersDTO>();
+                cfg.CreateMap<MTSCustomerOrdersDTO, MTS_CUSTOMERORDERS>();
 
                 cfg.CreateMap<MTS_SPECIFICATIONS, MTSSpecificationsDTO>();
                 cfg.CreateMap<MTSSpecificationsDTO, MTS_SPECIFICATIONS>();
@@ -208,6 +210,10 @@ namespace MTS.BLL.Services
             var result = (from mts in mtsSpecificationsOld.GetAll()
                           join autUser in mtsAuthorizationUsers.GetAll() on mts.AUTHORIZATION_USERS_ID equals autUser.ID into autUs
                           from autUser in autUs.DefaultIfEmpty()
+                          join mtsCust in mtsCustomerOrders.GetAll() on mts.ID equals mtsCust.SpecificationId into mtsCustt
+                          from mtsCust in mtsCustt.DefaultIfEmpty()
+                          join сust in customerOrders.GetAll() on mtsCust.CustomerOrderId equals сust.Id into сustt
+                          from сust in сustt.DefaultIfEmpty()
 
                           where (mts.CREATION_DATE >= startDate && mts.CREATION_DATE <= endDate)
                           select new MTSSpecificationsDTO()
@@ -224,10 +230,58 @@ namespace MTS.BLL.Services
                               COMPILATION_NAMES = mts.COMPILATION_NAMES,
                               COMPILATION_QUANTITIES = mts.COMPILATION_QUANTITIES,
                               SET_COLOR = mts.SET_COLOR,
-                              ASSEMBLY = mts.ASSEMBLY
+                              ASSEMBLY = mts.ASSEMBLY,
+                              CustomerOrders = сust.OrderNumber
                           }).ToList();
 
-            return result;
+            // Групировка и конкатенация поля: Зака
+            var groupByRezult = result.AsEnumerable()
+                .GroupBy(l => new
+                {
+                    l.ID,
+                    l.NAME,
+                    l.AUTHORIZATION_USERS_ID,
+                    l.WEIGHT,
+                    l.CREATION_DATE,
+                    l.DRAWING,
+                    l.AUTHORIZATION_USERS_NAME,
+                    l.QUANTITY,
+                    l.COMPILATION_DRAWINGS,
+                    l.COMPILATION_NAMES,
+                    l.COMPILATION_QUANTITIES,
+                    l.SET_COLOR,
+                    l.ASSEMBLY
+                }).Select(g => new MTSSpecificationsDTO
+                {
+                    ID = g.Key.ID,
+                    NAME = g.Key.NAME,
+                    AUTHORIZATION_USERS_ID = g.Key.AUTHORIZATION_USERS_ID,
+                    WEIGHT = g.Key.WEIGHT,
+                    CREATION_DATE = g.Key.CREATION_DATE,
+                    DRAWING = g.Key.DRAWING,
+                    AUTHORIZATION_USERS_NAME = g.Key.AUTHORIZATION_USERS_NAME,
+                    QUANTITY = g.Key.QUANTITY,
+                    COMPILATION_DRAWINGS = g.Key.COMPILATION_DRAWINGS,
+                    COMPILATION_NAMES = g.Key.COMPILATION_NAMES,
+                    COMPILATION_QUANTITIES = g.Key.COMPILATION_QUANTITIES,
+                    SET_COLOR = g.Key.SET_COLOR,
+                    ASSEMBLY = g.Key.ASSEMBLY,
+                    CustomerOrders = string.Join(",", g.Select(md => md.CustomerOrders).ToList()) != "" ? string.Join(",", g.Select(md => md.CustomerOrders).ToList()) : "До специфікації не додано заказ"
+                });
+
+            List<MTSSpecificationsDTO> returnSortList = new List<MTSSpecificationsDTO>();
+
+            //Убираем дубликаты
+            foreach (var item in groupByRezult.ToList())
+            {
+                string[] splitDrawingString = item.CustomerOrders.Split(',');
+
+                item.CustomerOrders = string.Join(",", (splitDrawingString.Distinct()).ToArray());
+                returnSortList.Add(item);
+            }
+
+            //return returnSortList.OrderByDescending(srt => srt.OrderDate).ToList();
+            return returnSortList;
         }
 
         public IEnumerable<MTSSpecificationsDTO> GetAllSpecificationOld()

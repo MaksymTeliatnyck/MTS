@@ -29,17 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MtsSpecificationDetailFm));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.customerOrderGrid = new DevExpress.XtraGrid.GridControl();
             this.customerOrderGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.orderNumberCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.contractorNameCol = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.deleteBtnCol = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.checkCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.orderNumberEdit = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -49,21 +45,25 @@
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.saveBtn = new DevExpress.XtraEditors.SimpleButton();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::MTS.GUI.WaitForm1), true, true);
+            this.deleteBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.specificationNameEdit = new DevExpress.XtraEditors.MemoEdit();
             ((System.ComponentModel.ISupportInitialize)(this.customerOrderGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerOrderGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderNumberEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.specificationNameEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // customerOrderGrid
             // 
-            this.customerOrderGrid.Location = new System.Drawing.Point(14, 76);
+            this.customerOrderGrid.Location = new System.Drawing.Point(14, 103);
             this.customerOrderGrid.MainView = this.customerOrderGridView;
             this.customerOrderGrid.Name = "customerOrderGrid";
             this.customerOrderGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemButtonEdit1});
-            this.customerOrderGrid.Size = new System.Drawing.Size(578, 288);
+            this.repositoryItemCheckEdit1});
+            this.customerOrderGrid.Size = new System.Drawing.Size(578, 261);
             this.customerOrderGrid.TabIndex = 0;
             this.customerOrderGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.customerOrderGridView});
@@ -73,7 +73,7 @@
             this.customerOrderGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.orderNumberCol,
             this.contractorNameCol,
-            this.deleteBtnCol});
+            this.checkCol});
             this.customerOrderGridView.GridControl = this.customerOrderGrid;
             this.customerOrderGridView.Name = "customerOrderGridView";
             this.customerOrderGridView.OptionsView.ShowGroupPanel = false;
@@ -100,70 +100,34 @@
             this.contractorNameCol.VisibleIndex = 1;
             this.contractorNameCol.Width = 332;
             // 
-            // deleteBtnCol
+            // checkCol
             // 
-            this.deleteBtnCol.AppearanceCell.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtnCol.AppearanceCell.Image")));
-            this.deleteBtnCol.AppearanceCell.Options.UseImage = true;
-            this.deleteBtnCol.Caption = " ";
-            this.deleteBtnCol.ColumnEdit = this.repositoryItemButtonEdit1;
-            this.deleteBtnCol.FieldName = "deleteBtnCol";
-            this.deleteBtnCol.Name = "deleteBtnCol";
-            this.deleteBtnCol.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
-            this.deleteBtnCol.UnboundType = DevExpress.Data.UnboundColumnType.Object;
-            this.deleteBtnCol.Visible = true;
-            this.deleteBtnCol.VisibleIndex = 2;
-            this.deleteBtnCol.Width = 42;
+            this.checkCol.AppearanceHeader.Image = ((System.Drawing.Image)(resources.GetObject("checkCol.AppearanceHeader.Image")));
+            this.checkCol.AppearanceHeader.Options.UseImage = true;
+            this.checkCol.AppearanceHeader.Options.UseTextOptions = true;
+            this.checkCol.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.checkCol.Caption = " ";
+            this.checkCol.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.checkCol.FieldName = "Check";
+            this.checkCol.Image = ((System.Drawing.Image)(resources.GetObject("checkCol.Image")));
+            this.checkCol.ImageAlignment = System.Drawing.StringAlignment.Center;
+            this.checkCol.Name = "checkCol";
+            this.checkCol.Visible = true;
+            this.checkCol.VisibleIndex = 2;
             // 
-            // repositoryItemButtonEdit1
+            // repositoryItemCheckEdit1
             // 
-            this.repositoryItemButtonEdit1.AutoHeight = false;
-            serializableAppearanceObject6.BackColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject6.BackColor2 = System.Drawing.Color.Transparent;
-            serializableAppearanceObject6.BorderColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject6.Image = ((System.Drawing.Image)(resources.GetObject("serializableAppearanceObject6.Image")));
-            serializableAppearanceObject6.Options.UseBackColor = true;
-            serializableAppearanceObject6.Options.UseBorderColor = true;
-            serializableAppearanceObject6.Options.UseImage = true;
-            serializableAppearanceObject7.BackColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject7.BackColor2 = System.Drawing.Color.Transparent;
-            serializableAppearanceObject7.BorderColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject7.ForeColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject7.Image = ((System.Drawing.Image)(resources.GetObject("serializableAppearanceObject7.Image")));
-            serializableAppearanceObject7.Options.UseBackColor = true;
-            serializableAppearanceObject7.Options.UseBorderColor = true;
-            serializableAppearanceObject7.Options.UseForeColor = true;
-            serializableAppearanceObject7.Options.UseImage = true;
-            serializableAppearanceObject8.BackColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject8.BackColor2 = System.Drawing.Color.Transparent;
-            serializableAppearanceObject8.BorderColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject8.ForeColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject8.Options.UseBackColor = true;
-            serializableAppearanceObject8.Options.UseBorderColor = true;
-            serializableAppearanceObject8.Options.UseForeColor = true;
-            serializableAppearanceObject9.BackColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject9.BackColor2 = System.Drawing.Color.Transparent;
-            serializableAppearanceObject9.BorderColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject9.ForeColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject9.Image = ((System.Drawing.Image)(resources.GetObject("serializableAppearanceObject9.Image")));
-            serializableAppearanceObject9.Options.UseBackColor = true;
-            serializableAppearanceObject9.Options.UseBorderColor = true;
-            serializableAppearanceObject9.Options.UseForeColor = true;
-            serializableAppearanceObject9.Options.UseImage = true;
-            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("repositoryItemButtonEdit1.Buttons"))), "", new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, serializableAppearanceObject9, "", null, null, true)});
-            this.repositoryItemButtonEdit1.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
-            this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositoryItemButtonEdit1.Click += new System.EventHandler(this.repositoryItemButtonEdit1_Click);
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
             // 
             // orderNumberEdit
             // 
-            this.orderNumberEdit.Location = new System.Drawing.Point(12, 28);
+            this.orderNumberEdit.Location = new System.Drawing.Point(12, 75);
             this.orderNumberEdit.Name = "orderNumberEdit";
             this.orderNumberEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.orderNumberEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("orderNumberEdit.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject10, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("orderNumberEdit.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.orderNumberEdit.Properties.ImmediatePopup = true;
             this.orderNumberEdit.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
             this.orderNumberEdit.Properties.PopupFormSize = new System.Drawing.Size(1000, 0);
@@ -229,7 +193,7 @@
             // addCustomerOrderBtn
             // 
             this.addCustomerOrderBtn.Image = ((System.Drawing.Image)(resources.GetObject("addCustomerOrderBtn.Image")));
-            this.addCustomerOrderBtn.Location = new System.Drawing.Point(434, 27);
+            this.addCustomerOrderBtn.Location = new System.Drawing.Point(434, 74);
             this.addCustomerOrderBtn.Name = "addCustomerOrderBtn";
             this.addCustomerOrderBtn.Size = new System.Drawing.Size(75, 23);
             this.addCustomerOrderBtn.TabIndex = 170;
@@ -239,7 +203,7 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(12, 9);
+            this.labelControl8.Location = new System.Drawing.Point(12, 56);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(29, 13);
             this.labelControl8.TabIndex = 171;
@@ -248,37 +212,73 @@
             // saveBtn
             // 
             this.saveBtn.Image = ((System.Drawing.Image)(resources.GetObject("saveBtn.Image")));
-            this.saveBtn.Location = new System.Drawing.Point(515, 27);
+            this.saveBtn.Location = new System.Drawing.Point(517, 370);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(75, 23);
             this.saveBtn.TabIndex = 172;
             this.saveBtn.Text = "Зберегти";
             this.saveBtn.ToolTip = "Зберегти";
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // splashScreenManager
             // 
             this.splashScreenManager.ClosingDelay = 500;
             // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
+            this.deleteBtn.Location = new System.Drawing.Point(515, 74);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(75, 23);
+            this.deleteBtn.TabIndex = 173;
+            this.deleteBtn.Text = "Видалити";
+            this.deleteBtn.ToolTip = "Видалити обраний заказ";
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(12, 3);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(132, 13);
+            this.labelControl1.TabIndex = 174;
+            this.labelControl1.Text = "Матеріальна специфікація";
+            // 
+            // specificationNameEdit
+            // 
+            this.specificationNameEdit.Location = new System.Drawing.Point(14, 22);
+            this.specificationNameEdit.Name = "specificationNameEdit";
+            this.specificationNameEdit.Properties.AllowFocused = false;
+            this.specificationNameEdit.Properties.ReadOnly = true;
+            this.specificationNameEdit.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.specificationNameEdit.Size = new System.Drawing.Size(578, 28);
+            this.specificationNameEdit.TabIndex = 175;
+            // 
             // MtsSpecificationDetailFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 376);
+            this.ClientSize = new System.Drawing.Size(604, 400);
+            this.Controls.Add(this.specificationNameEdit);
+            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.addCustomerOrderBtn);
             this.Controls.Add(this.orderNumberEdit);
             this.Controls.Add(this.customerOrderGrid);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MtsSpecificationDetailFm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Редагування заказу";
             ((System.ComponentModel.ISupportInitialize)(this.customerOrderGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerOrderGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderNumberEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.specificationNameEdit.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,7 +299,10 @@
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
         private DevExpress.XtraGrid.Columns.GridColumn orderNumberCol;
         private DevExpress.XtraGrid.Columns.GridColumn contractorNameCol;
-        private DevExpress.XtraGrid.Columns.GridColumn deleteBtnCol;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
+        private DevExpress.XtraEditors.SimpleButton deleteBtn;
+        private DevExpress.XtraGrid.Columns.GridColumn checkCol;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.MemoEdit specificationNameEdit;
     }
 }

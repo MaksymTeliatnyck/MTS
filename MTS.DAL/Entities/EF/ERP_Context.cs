@@ -50,8 +50,8 @@ namespace MTS.DAL.EF
 
             csb = new FbConnectionStringBuilder()
             {
-                DataSource = "10.0.0.50",
-                //DataSource = "localhost",
+                //DataSource = "10.0.0.50",
+                DataSource = "localhost",
                //  Port = Convert.ToInt32(portDB[0]),
                 Database = "TVM_DB",
                 UserID = "sysdba",
