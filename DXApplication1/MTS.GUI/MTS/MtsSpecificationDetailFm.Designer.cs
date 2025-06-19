@@ -28,12 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MtsSpecificationDetailFm));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
             this.customerOrderGrid = new DevExpress.XtraGrid.GridControl();
             this.customerOrderGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.orderNumberCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.contractorNameCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.deleteBtnCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.orderNumberEdit = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -43,9 +49,9 @@
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.saveBtn = new DevExpress.XtraEditors.SimpleButton();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::MTS.GUI.WaitForm1), true, true);
-            this.deleteBtnCol = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.customerOrderGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerOrderGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderNumberEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +61,8 @@
             this.customerOrderGrid.Location = new System.Drawing.Point(14, 76);
             this.customerOrderGrid.MainView = this.customerOrderGridView;
             this.customerOrderGrid.Name = "customerOrderGrid";
+            this.customerOrderGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemButtonEdit1});
             this.customerOrderGrid.Size = new System.Drawing.Size(578, 288);
             this.customerOrderGrid.TabIndex = 0;
             this.customerOrderGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -75,6 +83,8 @@
             this.orderNumberCol.Caption = "Номер заказа";
             this.orderNumberCol.FieldName = "OrderNumber";
             this.orderNumberCol.Name = "orderNumberCol";
+            this.orderNumberCol.OptionsColumn.AllowEdit = false;
+            this.orderNumberCol.OptionsColumn.AllowFocus = false;
             this.orderNumberCol.Visible = true;
             this.orderNumberCol.VisibleIndex = 0;
             this.orderNumberCol.Width = 186;
@@ -84,9 +94,67 @@
             this.contractorNameCol.Caption = "Контрагент";
             this.contractorNameCol.FieldName = "ContractorName";
             this.contractorNameCol.Name = "contractorNameCol";
+            this.contractorNameCol.OptionsColumn.AllowEdit = false;
+            this.contractorNameCol.OptionsColumn.AllowFocus = false;
             this.contractorNameCol.Visible = true;
             this.contractorNameCol.VisibleIndex = 1;
             this.contractorNameCol.Width = 332;
+            // 
+            // deleteBtnCol
+            // 
+            this.deleteBtnCol.AppearanceCell.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtnCol.AppearanceCell.Image")));
+            this.deleteBtnCol.AppearanceCell.Options.UseImage = true;
+            this.deleteBtnCol.Caption = " ";
+            this.deleteBtnCol.ColumnEdit = this.repositoryItemButtonEdit1;
+            this.deleteBtnCol.FieldName = "deleteBtnCol";
+            this.deleteBtnCol.Name = "deleteBtnCol";
+            this.deleteBtnCol.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
+            this.deleteBtnCol.UnboundType = DevExpress.Data.UnboundColumnType.Object;
+            this.deleteBtnCol.Visible = true;
+            this.deleteBtnCol.VisibleIndex = 2;
+            this.deleteBtnCol.Width = 42;
+            // 
+            // repositoryItemButtonEdit1
+            // 
+            this.repositoryItemButtonEdit1.AutoHeight = false;
+            serializableAppearanceObject6.BackColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject6.BackColor2 = System.Drawing.Color.Transparent;
+            serializableAppearanceObject6.BorderColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject6.Image = ((System.Drawing.Image)(resources.GetObject("serializableAppearanceObject6.Image")));
+            serializableAppearanceObject6.Options.UseBackColor = true;
+            serializableAppearanceObject6.Options.UseBorderColor = true;
+            serializableAppearanceObject6.Options.UseImage = true;
+            serializableAppearanceObject7.BackColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject7.BackColor2 = System.Drawing.Color.Transparent;
+            serializableAppearanceObject7.BorderColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject7.ForeColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject7.Image = ((System.Drawing.Image)(resources.GetObject("serializableAppearanceObject7.Image")));
+            serializableAppearanceObject7.Options.UseBackColor = true;
+            serializableAppearanceObject7.Options.UseBorderColor = true;
+            serializableAppearanceObject7.Options.UseForeColor = true;
+            serializableAppearanceObject7.Options.UseImage = true;
+            serializableAppearanceObject8.BackColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject8.BackColor2 = System.Drawing.Color.Transparent;
+            serializableAppearanceObject8.BorderColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject8.ForeColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject8.Options.UseBackColor = true;
+            serializableAppearanceObject8.Options.UseBorderColor = true;
+            serializableAppearanceObject8.Options.UseForeColor = true;
+            serializableAppearanceObject9.BackColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject9.BackColor2 = System.Drawing.Color.Transparent;
+            serializableAppearanceObject9.BorderColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject9.ForeColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject9.Image = ((System.Drawing.Image)(resources.GetObject("serializableAppearanceObject9.Image")));
+            serializableAppearanceObject9.Options.UseBackColor = true;
+            serializableAppearanceObject9.Options.UseBorderColor = true;
+            serializableAppearanceObject9.Options.UseForeColor = true;
+            serializableAppearanceObject9.Options.UseImage = true;
+            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("repositoryItemButtonEdit1.Buttons"))), "", new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, serializableAppearanceObject9, "", null, null, true)});
+            this.repositoryItemButtonEdit1.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
+            this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEdit1.Click += new System.EventHandler(this.repositoryItemButtonEdit1_Click);
             // 
             // orderNumberEdit
             // 
@@ -95,7 +163,7 @@
             this.orderNumberEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.orderNumberEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("orderNumberEdit.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("orderNumberEdit.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject10, "", null, null, true)});
             this.orderNumberEdit.Properties.ImmediatePopup = true;
             this.orderNumberEdit.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
             this.orderNumberEdit.Properties.PopupFormSize = new System.Drawing.Size(1000, 0);
@@ -191,16 +259,6 @@
             // 
             this.splashScreenManager.ClosingDelay = 500;
             // 
-            // deleteBtnCol
-            // 
-            this.deleteBtnCol.AppearanceCell.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtnCol.AppearanceCell.Image")));
-            this.deleteBtnCol.AppearanceCell.Options.UseImage = true;
-            this.deleteBtnCol.Name = "deleteBtnCol";
-            this.deleteBtnCol.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
-            this.deleteBtnCol.Visible = true;
-            this.deleteBtnCol.VisibleIndex = 2;
-            this.deleteBtnCol.Width = 42;
-            // 
             // MtsSpecificationDetailFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,6 +276,7 @@
             this.Text = "Редагування заказу";
             ((System.ComponentModel.ISupportInitialize)(this.customerOrderGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerOrderGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderNumberEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
@@ -241,5 +300,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn orderNumberCol;
         private DevExpress.XtraGrid.Columns.GridColumn contractorNameCol;
         private DevExpress.XtraGrid.Columns.GridColumn deleteBtnCol;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
     }
 }

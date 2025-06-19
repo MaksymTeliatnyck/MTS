@@ -55,10 +55,17 @@ namespace MTS.GUI.MTS
 
             //CultureInfo ciUSA = new CultureInfo("ru-RU");
             UserAccess((int)mtsAthorizationUsersDTO.USER_GROUPS_ID);
+            SetAppSetting();
             SetGridSetting();
+            LoadData();
+
+            if (showCustomerOrdersCheck.Checked)
+                specificGridView.Columns[7].Visible = true;
+            else
+                specificGridView.Columns[7].Visible = false;
             //specificGridView.BeginUpdate();
             //focusedRow = LoadData();
-            LoadData();
+
 
             //settings.Styles.FocusedRow.BackColor = System.Drawing.Color.Red;
 
@@ -1295,7 +1302,10 @@ namespace MTS.GUI.MTS
 
         }
 
-
+        private void SetAppSetting()
+        {
+            showCustomerOrdersCheck.Checked = Properties.Settings.Default.MtsCustomerOrderShow;
+        }
         private void SetGridSetting()
         {
             gridColumn1.Width = Properties.Settings.Default.GridCol1;
@@ -1489,6 +1499,19 @@ namespace MTS.GUI.MTS
                 EditMtsCustomerOrders((MTSSpecificationsDTO)specificBS.Current);
             }
             else MessageBox.Show("Помилка редагування специфікації! Створіть спочатку специфікацію!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void showCustomerOrdersCheck_CheckedChanged(object sender, ItemClickEventArgs e)
+        {
+            Properties.Settings.Default.MtsCustomerOrderShow = showCustomerOrdersCheck.Checked;
+            Properties.Settings.Default.Save();
+
+            if (showCustomerOrdersCheck.Checked)
+                specificGridView.Columns[7].Visible = true;
+            else
+                specificGridView.Columns[7].Visible = false;
+
+
         }
     }
 }

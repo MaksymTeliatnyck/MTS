@@ -66,5 +66,18 @@ namespace MTS.GUI.MTS
 
             }
         }
+
+        private void repositoryItemButtonEdit1_Click(object sender, EventArgs e)
+        {
+            if (orderNumberEdit.EditValue != null)
+            {
+                //mtsService = Program.kernel.Get<IMtsSpecificationsService>();
+                //mtsService.C((CashBookPageDTO)Item);
+            }
+            else
+            {
+
+            }
+        }
     }
 }

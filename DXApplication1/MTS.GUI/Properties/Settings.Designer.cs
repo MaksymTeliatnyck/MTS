@@ -701,5 +701,17 @@ namespace MTS.GUI.Properties {
                 this["nomenGroupRatOfWasteCol"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MtsCustomerOrderShow {
+            get {
+                return ((bool)(this["MtsCustomerOrderShow"]));
+            }
+            set {
+                this["MtsCustomerOrderShow"] = value;
+            }
+        }
     }
 }
