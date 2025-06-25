@@ -35,8 +35,8 @@
     <ProductName>MTS</ProductName>
     <PublisherName>IT</PublisherName>
     <SuiteName>Матеріальні специфікації</SuiteName>
-    <MinimumRequiredVersion>1.0.0.48</MinimumRequiredVersion>
-    <ApplicationRevision>49</ApplicationRevision>
+    <MinimumRequiredVersion>1.0.0.50</MinimumRequiredVersion>
+    <ApplicationRevision>51</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -75,10 +75,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>DFD01A83D658631C57BFDF068473482CE5E45CB2</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>373149031573527656B0E61EF44F3F617E868CE2</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>MTS.GUI_4_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>MTS.GUI_5_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -312,11 +312,11 @@
     </Reference>
     <Reference Include="MTS.BLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\MTS.BLL\bin\Debug\MTS.BLL.dll</HintPath>
+      <HintPath>..\..\MTS.BLL\bin\Release\MTS.BLL.dll</HintPath>
     </Reference>
     <Reference Include="MTS.DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\MTS.DAL\bin\Debug\MTS.DAL.dll</HintPath>
+      <HintPath>..\..\MTS.DAL\bin\Release\MTS.DAL.dll</HintPath>
     </Reference>
     <Reference Include="Nager.Date, Version=1.22.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Nager.Date.1.22.3\lib\net45\Nager.Date.dll</HintPath>

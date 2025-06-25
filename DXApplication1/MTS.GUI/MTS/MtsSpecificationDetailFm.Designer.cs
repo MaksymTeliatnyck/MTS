@@ -38,6 +38,7 @@
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.orderNumberEdit = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -80,29 +81,37 @@
             // 
             // orderNumberCol
             // 
+            this.orderNumberCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.orderNumberCol.AppearanceHeader.Options.UseFont = true;
             this.orderNumberCol.Caption = "Номер заказа";
             this.orderNumberCol.FieldName = "OrderNumber";
             this.orderNumberCol.Name = "orderNumberCol";
             this.orderNumberCol.OptionsColumn.AllowEdit = false;
             this.orderNumberCol.OptionsColumn.AllowFocus = false;
+            this.orderNumberCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.orderNumberCol.Visible = true;
             this.orderNumberCol.VisibleIndex = 0;
             this.orderNumberCol.Width = 186;
             // 
             // contractorNameCol
             // 
+            this.contractorNameCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.contractorNameCol.AppearanceHeader.Options.UseFont = true;
             this.contractorNameCol.Caption = "Контрагент";
             this.contractorNameCol.FieldName = "ContractorName";
             this.contractorNameCol.Name = "contractorNameCol";
             this.contractorNameCol.OptionsColumn.AllowEdit = false;
             this.contractorNameCol.OptionsColumn.AllowFocus = false;
+            this.contractorNameCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.contractorNameCol.Visible = true;
             this.contractorNameCol.VisibleIndex = 1;
             this.contractorNameCol.Width = 332;
             // 
             // checkCol
             // 
+            this.checkCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkCol.AppearanceHeader.Image = ((System.Drawing.Image)(resources.GetObject("checkCol.AppearanceHeader.Image")));
+            this.checkCol.AppearanceHeader.Options.UseFont = true;
             this.checkCol.AppearanceHeader.Options.UseImage = true;
             this.checkCol.AppearanceHeader.Options.UseTextOptions = true;
             this.checkCol.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -132,12 +141,13 @@
             this.orderNumberEdit.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
             this.orderNumberEdit.Properties.PopupFormSize = new System.Drawing.Size(1000, 0);
             this.orderNumberEdit.Properties.View = this.gridView2;
-            this.orderNumberEdit.Size = new System.Drawing.Size(416, 22);
+            this.orderNumberEdit.Size = new System.Drawing.Size(389, 22);
             this.orderNumberEdit.TabIndex = 169;
             // 
             // gridView2
             // 
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn4,
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3});
@@ -148,6 +158,17 @@
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowAutoFilterRow = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn4.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn4.Caption = "Креслення";
+            this.gridColumn4.FieldName = "Drawing";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
             // 
             // gridColumn1
             // 
@@ -161,7 +182,7 @@
             this.gridColumn1.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 84;
+            this.gridColumn1.Width = 40;
             // 
             // gridColumn2
             // 
@@ -174,7 +195,7 @@
             this.gridColumn2.OptionsColumn.AllowFocus = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 87;
+            this.gridColumn2.Width = 59;
             // 
             // gridColumn3
             // 
@@ -188,14 +209,16 @@
             this.gridColumn3.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 169;
+            this.gridColumn3.Width = 285;
             // 
             // addCustomerOrderBtn
             // 
+            this.addCustomerOrderBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addCustomerOrderBtn.Appearance.Options.UseFont = true;
             this.addCustomerOrderBtn.Image = ((System.Drawing.Image)(resources.GetObject("addCustomerOrderBtn.Image")));
-            this.addCustomerOrderBtn.Location = new System.Drawing.Point(434, 74);
+            this.addCustomerOrderBtn.Location = new System.Drawing.Point(407, 74);
             this.addCustomerOrderBtn.Name = "addCustomerOrderBtn";
-            this.addCustomerOrderBtn.Size = new System.Drawing.Size(75, 23);
+            this.addCustomerOrderBtn.Size = new System.Drawing.Size(90, 23);
             this.addCustomerOrderBtn.TabIndex = 170;
             this.addCustomerOrderBtn.Text = "Додати";
             this.addCustomerOrderBtn.ToolTip = "Додати обраний заказ";
@@ -226,10 +249,12 @@
             // 
             // deleteBtn
             // 
+            this.deleteBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteBtn.Appearance.Options.UseFont = true;
             this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
-            this.deleteBtn.Location = new System.Drawing.Point(515, 74);
+            this.deleteBtn.Location = new System.Drawing.Point(503, 74);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(75, 23);
+            this.deleteBtn.Size = new System.Drawing.Size(89, 23);
             this.deleteBtn.TabIndex = 173;
             this.deleteBtn.Text = "Видалити";
             this.deleteBtn.ToolTip = "Видалити обраний заказ";
@@ -304,5 +329,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.MemoEdit specificationNameEdit;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
     }
 }

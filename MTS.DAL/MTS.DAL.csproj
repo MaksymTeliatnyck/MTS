@@ -161,7 +161,9 @@
   <ItemGroup>
     <Compile Include="Entities\EF\ERP_Context.cs" />
     <Compile Include="Entities\Models\Contractors.cs" />
+    <Compile Include="Entities\Models\CustomerOrderAssemblies.cs" />
     <Compile Include="Entities\Models\CustomerOrders.cs" />
+    <Compile Include="Entities\Models\CustomerOrderSpecifications.cs" />
     <Compile Include="Entities\Models\Log.cs" />
     <Compile Include="Entities\Models\MtsAssemblies.cs" />
     <Compile Include="Entities\Models\MtsAssemblyDetails.cs" />

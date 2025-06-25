@@ -38,6 +38,10 @@ namespace MTS.DAL.EF
         public DbSet<MTS_ADDIT_CALCULATION> MTS_ADDIT_CALCULATION { get; set; }
         public DbSet<CustomerOrders> CustomerOrders { get; set; }
         public DbSet<Contractors> Contractors { get; set; }
+        public DbSet<CustomerOrderSpecifications> CustomerOrderSpecifications { get; set; }
+        public DbSet<CustomerOrderAssemblies> CustomerOrderAssemblies { get; set; }
+        public DbSet<MtsAssemblies> MtsAssemblies { get; set; }
+        
         #endregion
 
         static ERP_Context()
@@ -50,8 +54,8 @@ namespace MTS.DAL.EF
 
             csb = new FbConnectionStringBuilder()
             {
-                //DataSource = "10.0.0.50",
-                DataSource = "localhost",
+               DataSource = "10.0.0.50",
+                //DataSource = "localhost",
                //  Port = Convert.ToInt32(portDB[0]),
                 Database = "TVM_DB",
                 UserID = "sysdba",

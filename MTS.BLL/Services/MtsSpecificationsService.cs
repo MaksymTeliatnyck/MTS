@@ -34,6 +34,10 @@ namespace MTS.BLL.Services
         private IRepository<MTS_ADDIT_CALCULATION> mtsAdditCalculation;
         private IRepository<CustomerOrders> customerOrders;
         private IRepository<Contractors> contractors;
+        private IRepository<CustomerOrderSpecifications> customerOrderSpecifications;
+        private IRepository<CustomerOrderAssemblies> customerOrderAssemblies;
+        private IRepository<MtsAssemblies> mtsAssemblies;
+        
         // private IRepository<MTSDetails> mtsDetals;
 
         private IMapper mapper;
@@ -59,6 +63,9 @@ namespace MTS.BLL.Services
             mtsNomenclatureGroups = Database.GetRepository<MTS_NOMENCLATURE_GROUPS>();
             mtsDetals = Database.GetRepository<MTS_DETAILS>();
             mtsAdditCalculation = Database.GetRepository<MTS_ADDIT_CALCULATION>();
+            customerOrderSpecifications = Database.GetRepository<CustomerOrderSpecifications>();
+            customerOrderAssemblies = Database.GetRepository<CustomerOrderAssemblies>();
+            mtsAssemblies = Database.GetRepository<MtsAssemblies>();
 
             var config = new MapperConfiguration(cfg =>
             {
@@ -136,6 +143,84 @@ namespace MTS.BLL.Services
                           });
 
             return result.ToList();
+        }
+
+        public IEnumerable<CustomerOrdersDTO> GetCustomerOrdersWithDrawing()
+        {
+
+            //Выборка данных из базы
+            var result = (from co in customerOrders.GetAll()
+                          join c in contractors.GetAll() on co.ContractorId equals c.Id into coc
+                          from c in coc.DefaultIfEmpty()
+                          join cos in customerOrderSpecifications.GetAll() on co.Id equals cos.CustomerOrderId into coss
+                          from cos in coss.DefaultIfEmpty()
+                          join coa in customerOrderAssemblies.GetAll() on cos.Id equals coa.CustomerOrderSpecId into coaa
+                          from coa in coaa.DefaultIfEmpty()
+                          join mts in mtsAssemblies.GetAll() on coa.AssemblyId equals mts.Id into mtss
+                          from mts in mtss.DefaultIfEmpty()
+
+
+                          select new CustomerOrdersDTO
+                          {
+                              Id = co.Id,
+                              OrderNumber = co.OrderNumber,
+                              ContractorId = co.ContractorId,
+                              OrderDate = co.OrderDate,
+                              Details = co.Details,
+                              OrderPrice = co.OrderPrice,
+                              Drawing = mts.Drawing,
+                              AssemblyId = mts.Id,
+                              AssemblyName = mts.Name,
+                              DateCreate = co.DateCreate,
+                              DateUpdate = co.DateUpdate,
+                              UserId = co.UserId,
+                              ContractorName = c.Name,
+                          });
+
+            // Групировка и конкатенация поля: Чертеж и Разработчик
+            var groupByRezult = result.AsEnumerable()
+                .GroupBy(l => new
+                {
+                    l.Id,
+                    l.OrderNumber,
+                    l.ContractorId,
+                    l.OrderDate,
+                    l.Details,
+                    l.OrderPrice,
+                    l.DateCreate,
+                    l.DateUpdate,
+                    l.UserId,
+                    l.ContractorName,
+                }).Select(g => new CustomerOrdersDTO
+                {
+                    Id = g.Key.Id,
+                    OrderNumber = g.Key.OrderNumber,
+                    ContractorId = g.Key.ContractorId,
+                    OrderDate = g.Key.OrderDate,
+                    Details = g.Key.Details,
+                    OrderPrice = g.Key.OrderPrice,
+                    DateCreate = g.Key.DateCreate,
+                    DateUpdate = g.Key.DateUpdate,
+                    UserId = g.Key.UserId,
+                    ContractorName = g.Key.ContractorName,
+                    DesignerName = string.Join(", ", g.Select(md => md.DesignerName).ToList()) != "" ? string.Join(", ", g.Select(md => md.DesignerName).ToList()) : "",
+                    Drawing = string.Join(",", g.Select(md => md.Drawing).ToList()) != "" ? string.Join(",", g.Select(md => md.Drawing).ToList()) : ""
+                });
+
+            List<CustomerOrdersDTO> returnSortList = new List<CustomerOrdersDTO>();
+
+            //Убираем дубликаты
+            foreach (var item in groupByRezult.ToList())
+            {
+                string[] splitDrawingString = item.Drawing.Split(',');
+                string[] splitDesignerNameString = item.DesignerName.Split(',');
+
+                item.Drawing = string.Join(",", (splitDrawingString.Distinct()).ToArray());
+                item.DesignerName = string.Join(",", (splitDesignerNameString.Distinct()).ToArray());
+                returnSortList.Add(item);
+            }
+
+            return returnSortList.OrderByDescending(srt => srt.OrderDate).ToList();
         }
 
         public IEnumerable<MTSCustomerOrdersDTO> GetMTSCustomerOrdersFull()
@@ -266,7 +351,7 @@ namespace MTS.BLL.Services
                     COMPILATION_QUANTITIES = g.Key.COMPILATION_QUANTITIES,
                     SET_COLOR = g.Key.SET_COLOR,
                     ASSEMBLY = g.Key.ASSEMBLY,
-                    CustomerOrders = string.Join(",", g.Select(md => md.CustomerOrders).ToList()) != "" ? string.Join(",", g.Select(md => md.CustomerOrders).ToList()) : "До специфікації не додано заказ"
+                    CustomerOrders = string.Join(",", g.Select(md => md.CustomerOrders).ToList()) != "" ? string.Join(",", g.Select(md => md.CustomerOrders).ToList()) : ""
                 });
 
             List<MTSSpecificationsDTO> returnSortList = new List<MTSSpecificationsDTO>();

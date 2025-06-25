@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace ERP_NEW.DAL.Entities.Models
+namespace MTS.DAL.Entities.Models
 {
     public class MtsAssemblyDetails
     {

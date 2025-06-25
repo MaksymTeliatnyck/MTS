@@ -36,7 +36,7 @@ namespace MTS.GUI.MTS
             customerOrdersBS.DataSource = mtsService.GetCustomerOrders().ToList();
             customerOrdersBS.DataSource = mtsService.GetContractors().ToList();
 
-            customerOrdersBS.DataSource = mtsService.GetCustomerOrdersFull().OrderByDescending(sort => sort.OrderDate).ToList();
+            customerOrdersBS.DataSource = mtsService.GetCustomerOrdersWithDrawing().OrderByDescending(sort => sort.OrderDate).ToList();
             orderNumberEdit.Properties.DataSource = customerOrdersBS;
             orderNumberEdit.Properties.ValueMember = "Id";
             orderNumberEdit.Properties.DisplayMember = "OrderNumber";

@@ -819,15 +819,15 @@
             this.editMtsCustomerOrderBtn.Caption = "Змінити заказ";
             this.editMtsCustomerOrderBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("editMtsCustomerOrderBtn.Glyph")));
             this.editMtsCustomerOrderBtn.Id = 8;
-            this.editMtsCustomerOrderBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editMtsCustomerOrderBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.editMtsCustomerOrderBtn.ItemAppearance.Hovered.Options.UseFont = true;
-            this.editMtsCustomerOrderBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editMtsCustomerOrderBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.editMtsCustomerOrderBtn.ItemAppearance.Normal.Options.UseFont = true;
-            this.editMtsCustomerOrderBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editMtsCustomerOrderBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.editMtsCustomerOrderBtn.ItemAppearance.Pressed.Options.UseFont = true;
             this.editMtsCustomerOrderBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("editMtsCustomerOrderBtn.LargeGlyph")));
             this.editMtsCustomerOrderBtn.Name = "editMtsCustomerOrderBtn";
-            this.editMtsCustomerOrderBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.editMtsCustomerOrderBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
             this.editMtsCustomerOrderBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.editMtsCustomerOrderBtn_ItemClick);
             // 
             // showCustomerOrdersCheck
@@ -835,11 +835,11 @@
             this.showCustomerOrdersCheck.Caption = "Відобразити закази";
             this.showCustomerOrdersCheck.CheckBoxVisibility = DevExpress.XtraBars.CheckBoxVisibility.BeforeText;
             this.showCustomerOrdersCheck.Id = 10;
-            this.showCustomerOrdersCheck.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.showCustomerOrdersCheck.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.showCustomerOrdersCheck.ItemAppearance.Hovered.Options.UseFont = true;
-            this.showCustomerOrdersCheck.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.showCustomerOrdersCheck.ItemAppearance.Normal.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.showCustomerOrdersCheck.ItemAppearance.Normal.Options.UseFont = true;
-            this.showCustomerOrdersCheck.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.showCustomerOrdersCheck.ItemAppearance.Pressed.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.showCustomerOrdersCheck.ItemAppearance.Pressed.Options.UseFont = true;
             this.showCustomerOrdersCheck.Name = "showCustomerOrdersCheck";
             this.showCustomerOrdersCheck.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -867,12 +867,12 @@
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.addSpecificBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.addAllSpeficBtn);
-            this.ribbonPageGroup2.ItemLinks.Add(this.editMtsCustomerOrderBtn);
-            this.ribbonPageGroup2.ItemLinks.Add(this.showCustomerOrdersCheck);
             this.ribbonPageGroup2.ItemLinks.Add(this.copySpecBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.copySpecWithDrawBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.editSpecificBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.deleteSpecificBtn);
+            this.ribbonPageGroup2.ItemLinks.Add(this.editMtsCustomerOrderBtn);
+            this.ribbonPageGroup2.ItemLinks.Add(this.showCustomerOrdersCheck);
             this.ribbonPageGroup2.ItemLinks.Add(this.basesBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.showSpecificMenuBtb);
             this.ribbonPageGroup2.ItemLinks.Add(this.mapTechProcessBtn);

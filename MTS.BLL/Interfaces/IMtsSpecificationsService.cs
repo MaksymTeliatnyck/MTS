@@ -8,6 +8,9 @@ namespace MTS.BLL.Interfaces
     {
         
         IEnumerable<CustomerOrdersDTO> GetCustomerOrders();
+        IEnumerable<CustomerOrdersDTO> GetCustomerOrdersWithDrawing();
+
+
         IEnumerable<ContractorsDTO> GetContractors();
         IEnumerable<CustomerOrdersDTO> GetCustomerOrdersFull();
         IEnumerable<MTSCustomerOrdersDTO> GetMTSCustomerOrdersFull();
