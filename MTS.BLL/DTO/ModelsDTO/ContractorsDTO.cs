@@ -32,9 +32,13 @@ namespace MTS.BLL.DTO.ModelsDTO
         public string OwnName { get; set; }
         public string TypeName { get; set; }
 
+
         public static explicit operator ContractorsDTO(BindingSource v)
         {
             throw new NotImplementedException();
         }
+
+
+
     }
 }
