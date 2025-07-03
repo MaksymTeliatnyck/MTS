@@ -269,6 +269,7 @@ namespace MTS.BLL.Services
                               Id = mco.Id,
                               OrderNumber = co.OrderNumber,
                               CustomerOrderId = co.Id,
+                              
                               SpecificationId = mso.ID,
                               DataCreateCustomerOrder = co.DateCreate,
                               ContractorName = con.Name,

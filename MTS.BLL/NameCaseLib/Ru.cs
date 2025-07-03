@@ -12,6 +12,9 @@ namespace MTS.BLL.NameCaseLib
         /// </summary>
         protected new static String languageBuild = "11072716";
 
+
+
+
         /// <summary>
         /// Количество падежей в языке
         /// </summary>
