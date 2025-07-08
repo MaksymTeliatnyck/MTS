@@ -45,6 +45,9 @@ namespace MTS.GUI.MTS
         {
             mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
 
+
+
+
             if (operation == Utils.Operation.Add)
                 ((MTSGostDTO)Item).ID = mtsSpecificationsService.MTSCreateGost((MTSGostDTO)Item);
             else
