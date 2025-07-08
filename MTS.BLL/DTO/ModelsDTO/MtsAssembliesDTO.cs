@@ -4,7 +4,8 @@ using System;
 namespace MTS.BLL.DTO.ModelsDTO
 {
     public class MtsAssembliesDTO : ObjectBase
-    {
+    { 
+
         public long Id { get; set; }
         public string Drawing { get; set; }
         public string Name { get; set; }
