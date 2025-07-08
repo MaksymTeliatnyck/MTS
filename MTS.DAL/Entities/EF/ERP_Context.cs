@@ -48,6 +48,10 @@ namespace MTS.DAL.EF
         {
             FbConnectionStringBuilder csb;
 
+
+
+
+
             //string[] ipDB = File.ReadAllLines("ipDB.txt");
             //string[] portDB = File.ReadAllLines("portDB.txt");
             //string[] aliasDB = File.ReadAllLines("aliasDB.txt");
