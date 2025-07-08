@@ -129,7 +129,7 @@ namespace MTS.GUI.Accounting
             creditEdit.Properties.DisplayMember = "Num";
             creditEdit.Properties.NullText = null;
 
-            customerOrdersBS.DataSource = customerOrdersService.GetCustomerOrdersFull().OrderByDescending(sort => sort.OrderDate).ToList();
+            //customerOrdersBS.DataSource = customerOrdersService.GetCustomerOrdersFull().OrderByDescending(sort => sort.OrderDate).ToList();
             orderNumberEdit.Properties.DataSource = customerOrdersBS;
             orderNumberEdit.Properties.ValueMember = "Id";
             orderNumberEdit.Properties.DisplayMember = "OrderNumber";
@@ -140,7 +140,7 @@ namespace MTS.GUI.Accounting
             employeesEdit.Properties.DisplayMember = "Fio";
             employeesEdit.Properties.NullText = null;
 
-            customerOrdersHistoryBS.DataSource = customerOrdersService.GetCustomerOrdersFull().OrderByDescending(sort => sort.OrderDate).ToList();
+            //customerOrdersHistoryBS.DataSource = customerOrdersService.GetCustomerOrdersFull().OrderByDescending(sort => sort.OrderDate).ToList();
             orderNumberHistoryEdit.Properties.DataSource = customerOrdersHistoryBS;
             orderNumberHistoryEdit.Properties.ValueMember = "Id";
             orderNumberHistoryEdit.Properties.DisplayMember = "OrderNumber";

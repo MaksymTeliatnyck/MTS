@@ -1,7 +1,4 @@
 ﻿using MTS.BLL.DTO.ModelsDTO;
-using MTS.BLL.DTO.SelectedDTO;
-using System;
-using System.Collections.Generic;
 
 namespace MTS.BLL.Interfaces
 {
@@ -9,7 +6,7 @@ namespace MTS.BLL.Interfaces
     {
         bool TryAuthorize(string login, string pwd);
 
-        MTS_AUTHORIZATION_USERS_DTO GetUser(string login, string pwd);
+        MTSAuthorizationUsersDTO GetUser(string login, string pwd);
         //IEnumerable<UserRolesDTO> GetUserRoles();
         //IEnumerable<UserTasksDTO> GetUserTasks(int userRoleId);
         //IEnumerable<TasksDTO> GetTasks(int roleId);

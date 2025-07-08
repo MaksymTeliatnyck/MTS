@@ -73,7 +73,7 @@
             // 
             // defaultLookAndFeel1
             // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2010 Black";
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Metropolis";
             // 
             // WaitForm1
             // 

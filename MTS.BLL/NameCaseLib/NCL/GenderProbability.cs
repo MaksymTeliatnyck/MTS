@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MTS.BLL.NameCaseLib.NCL
+﻿namespace MTS.BLL.NameCaseLib.NCL
 {
     /// <summary>
     /// Класс который содержит тип данных для определения пола человека

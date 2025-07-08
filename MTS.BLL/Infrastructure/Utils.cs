@@ -5,13 +5,16 @@ using System.Windows.Forms;
 using System.Globalization;
 using System.IO;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace MTS.BLL.Infrastructure
 {
     public class Utils
     {
-        public static string HomePath = Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]); 
-   
+        public static string HomePath = Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]);
+        public static string HomePathTemp = @"c:\";
+        public static string printFolderUri = @"D:\Печать\";
+
         public enum Operation
         {
             Add,
@@ -189,9 +192,42 @@ namespace MTS.BLL.Infrastructure
             Expenditure
         };
 
+        public static string SortStringNumbers(string input)
+        {
+            return Regex.Replace(input, "[0-9]+", match => match.Value.PadLeft(10, '0'));
+        }
 
+        public static string SplitString(string input, int numberSymbolInStr)
+        {
+            string[] words = input.Split(' ');
+            string fullLine = "";
+            string currentLine = "";
 
+            if (input.Length > numberSymbolInStr)
+            {
 
+                foreach (string word in words)
+                {
+                    if ((currentLine + word).Length + 1 <= numberSymbolInStr)
+                    {
+                        if (currentLine.Length > 0)
+                            currentLine += " ";
+                        currentLine += word;
+                    }
+                    else
+                    {
+                        fullLine += currentLine + "\n" + word;
+                        currentLine = " ";
+                    }
+                }
 
+                fullLine += currentLine;
+                return fullLine;
+            }
+            else
+            {
+                return input;
+            }
+        }
     }
 }

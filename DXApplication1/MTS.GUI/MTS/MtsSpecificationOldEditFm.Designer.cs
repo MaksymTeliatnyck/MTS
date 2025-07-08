@@ -28,11 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.cancelBtn = new System.Windows.Forms.Button();
-            this.saveBtn = new System.Windows.Forms.Button();
-            this.nameSpecificationEdit = new DevExpress.XtraEditors.TextEdit();
+            this.revisionGroup = new System.Windows.Forms.GroupBox();
+            this.copyNumberEdit = new DevExpress.XtraEditors.TextEdit();
+            this.label6 = new System.Windows.Forms.Label();
+            this.validateLbl = new DevExpress.XtraEditors.LabelControl();
+            this.cancelDBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.saveDBtn = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.drawingEdit = new DevExpress.XtraEditors.TextEdit();
@@ -42,16 +52,23 @@
             this.weightEdit = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.dateEdit = new DevExpress.XtraEditors.DateEdit();
+            this.nameSpecificationEdit = new DevExpress.XtraEditors.MemoEdit();
+            this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.assemblyCheck = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nameSpecificationEdit.Properties)).BeginInit();
+            this.revisionGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.copyNumberEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drawingEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quantityEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.weightEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nameSpecificationEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assemblyCheck.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -60,14 +77,18 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(520, 219);
+            this.panelControl1.Size = new System.Drawing.Size(520, 254);
             this.panelControl1.TabIndex = 0;
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.cancelBtn);
-            this.groupControl1.Controls.Add(this.saveBtn);
-            this.groupControl1.Controls.Add(this.nameSpecificationEdit);
+            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupControl1.AppearanceCaption.Options.UseFont = true;
+            this.groupControl1.Controls.Add(this.assemblyCheck);
+            this.groupControl1.Controls.Add(this.revisionGroup);
+            this.groupControl1.Controls.Add(this.validateLbl);
+            this.groupControl1.Controls.Add(this.cancelDBtn);
+            this.groupControl1.Controls.Add(this.saveDBtn);
             this.groupControl1.Controls.Add(this.label5);
             this.groupControl1.Controls.Add(this.label4);
             this.groupControl1.Controls.Add(this.drawingEdit);
@@ -77,161 +98,264 @@
             this.groupControl1.Controls.Add(this.weightEdit);
             this.groupControl1.Controls.Add(this.label1);
             this.groupControl1.Controls.Add(this.dateEdit);
+            this.groupControl1.Controls.Add(this.nameSpecificationEdit);
             this.groupControl1.Location = new System.Drawing.Point(0, 5);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(516, 209);
+            this.groupControl1.Size = new System.Drawing.Size(516, 244);
             this.groupControl1.TabIndex = 10;
             this.groupControl1.Text = "Специфікація";
             // 
-            // cancelBtn
+            // revisionGroup
             // 
-            this.cancelBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cancelBtn.Location = new System.Drawing.Point(395, 181);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(107, 23);
-            this.cancelBtn.TabIndex = 11;
-            this.cancelBtn.Text = "Відмінити";
-            this.cancelBtn.UseVisualStyleBackColor = true;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            this.revisionGroup.BackColor = System.Drawing.Color.Transparent;
+            this.revisionGroup.Controls.Add(this.copyNumberEdit);
+            this.revisionGroup.Controls.Add(this.label6);
+            this.revisionGroup.Location = new System.Drawing.Point(289, 18);
+            this.revisionGroup.Name = "revisionGroup";
+            this.revisionGroup.Size = new System.Drawing.Size(218, 44);
+            this.revisionGroup.TabIndex = 53;
+            this.revisionGroup.TabStop = false;
+            this.revisionGroup.Visible = false;
             // 
-            // saveBtn
+            // copyNumberEdit
             // 
-            this.saveBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.saveBtn.Location = new System.Drawing.Point(297, 181);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(91, 23);
-            this.saveBtn.TabIndex = 10;
-            this.saveBtn.Text = "Зберегти";
-            this.saveBtn.UseVisualStyleBackColor = true;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            this.copyNumberEdit.EnterMoveNextControl = true;
+            this.copyNumberEdit.Location = new System.Drawing.Point(93, 13);
+            this.copyNumberEdit.Name = "copyNumberEdit";
+            this.copyNumberEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.copyNumberEdit.Properties.Appearance.Options.UseFont = true;
+            this.copyNumberEdit.Size = new System.Drawing.Size(119, 22);
+            this.copyNumberEdit.TabIndex = 51;
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "Не вказано креслення";
+            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.copyNumberEdit, conditionValidationRule5);
+            this.copyNumberEdit.EditValueChanged += new System.EventHandler(this.copyNumberEdit_EditValueChanged);
+            this.copyNumberEdit.TextChanged += new System.EventHandler(this.copyNumberEdit_TextChanged);
             // 
-            // nameSpecificationEdit
+            // label6
             // 
-            this.nameSpecificationEdit.Location = new System.Drawing.Point(14, 46);
-            this.nameSpecificationEdit.Name = "nameSpecificationEdit";
-            this.nameSpecificationEdit.Properties.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nameSpecificationEdit.Properties.Appearance.Options.UseFont = true;
-            this.nameSpecificationEdit.Size = new System.Drawing.Size(489, 22);
-            this.nameSpecificationEdit.TabIndex = 0;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(6, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 16);
+            this.label6.TabIndex = 52;
+            this.label6.Text = "Номер копії";
+            // 
+            // validateLbl
+            // 
+            this.validateLbl.Appearance.BackColor = System.Drawing.SystemColors.Info;
+            this.validateLbl.Appearance.ForeColor = System.Drawing.Color.OrangeRed;
+            this.validateLbl.Location = new System.Drawing.Point(15, 217);
+            this.validateLbl.Name = "validateLbl";
+            this.validateLbl.Size = new System.Drawing.Size(249, 13);
+            this.validateLbl.TabIndex = 50;
+            this.validateLbl.Text = "*Для збереження, заповніть всі обов\'язкові поля";
+            // 
+            // cancelDBtn
+            // 
+            this.cancelDBtn.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cancelDBtn.Appearance.Options.UseFont = true;
+            this.cancelDBtn.Location = new System.Drawing.Point(415, 211);
+            this.cancelDBtn.Name = "cancelDBtn";
+            this.cancelDBtn.Size = new System.Drawing.Size(93, 23);
+            this.cancelDBtn.TabIndex = 13;
+            this.cancelDBtn.Text = "Відмінити";
+            this.cancelDBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
+            // saveDBtn
+            // 
+            this.saveDBtn.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.saveDBtn.Appearance.Options.UseFont = true;
+            this.saveDBtn.Location = new System.Drawing.Point(314, 211);
+            this.saveDBtn.Name = "saveDBtn";
+            this.saveDBtn.Size = new System.Drawing.Size(87, 23);
+            this.saveDBtn.TabIndex = 12;
+            this.saveDBtn.Text = "Зберегти";
+            this.saveDBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(316, 113);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(314, 155);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 16);
+            this.label5.Size = new System.Drawing.Size(40, 16);
             this.label5.TabIndex = 9;
             this.label5.Text = "Дата";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(136, 113);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(134, 155);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 16);
+            this.label4.Size = new System.Drawing.Size(39, 16);
             this.label4.TabIndex = 8;
             this.label4.Text = "Вага";
             // 
             // drawingEdit
             // 
-            this.drawingEdit.Location = new System.Drawing.Point(14, 88);
+            this.drawingEdit.EnterMoveNextControl = true;
+            this.drawingEdit.Location = new System.Drawing.Point(12, 127);
             this.drawingEdit.Name = "drawingEdit";
-            this.drawingEdit.Properties.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawingEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawingEdit.Properties.Appearance.Options.UseFont = true;
-            this.drawingEdit.Size = new System.Drawing.Size(489, 22);
+            this.drawingEdit.Size = new System.Drawing.Size(413, 22);
             this.drawingEdit.TabIndex = 1;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Не вказано креслення";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.drawingEdit, conditionValidationRule1);
+            this.drawingEdit.EditValueChanged += new System.EventHandler(this.drawingEdit_EditValueChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(14, 113);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(12, 155);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 16);
+            this.label3.Size = new System.Drawing.Size(65, 16);
             this.label3.TabIndex = 7;
             this.label3.Text = "Кількість";
             // 
             // quantityEdit
             // 
-            this.quantityEdit.Location = new System.Drawing.Point(14, 132);
+            this.quantityEdit.EnterMoveNextControl = true;
+            this.quantityEdit.Location = new System.Drawing.Point(12, 171);
             this.quantityEdit.Name = "quantityEdit";
-            this.quantityEdit.Properties.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.quantityEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.quantityEdit.Properties.Appearance.Options.UseFont = true;
             this.quantityEdit.Size = new System.Drawing.Size(117, 22);
             this.quantityEdit.TabIndex = 2;
+            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule7.ErrorText = "Не вказано кількість";
+            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.quantityEdit, conditionValidationRule7);
+            this.quantityEdit.EditValueChanged += new System.EventHandler(this.quantityEdit_EditValueChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(14, 69);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(12, 108);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 16);
+            this.label2.Size = new System.Drawing.Size(78, 16);
             this.label2.TabIndex = 6;
             this.label2.Text = "Креслення";
             // 
             // weightEdit
             // 
-            this.weightEdit.Location = new System.Drawing.Point(136, 132);
+            this.weightEdit.EnterMoveNextControl = true;
+            this.weightEdit.Location = new System.Drawing.Point(134, 171);
             this.weightEdit.Name = "weightEdit";
-            this.weightEdit.Properties.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.weightEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.weightEdit.Properties.Appearance.Options.UseFont = true;
             this.weightEdit.Size = new System.Drawing.Size(173, 22);
             this.weightEdit.TabIndex = 3;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Не вказано вагу";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.weightEdit, conditionValidationRule2);
+            this.weightEdit.EditValueChanged += new System.EventHandler(this.weightEdit_EditValueChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(14, 27);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(12, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 16);
+            this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 5;
             this.label1.Text = "Виріб";
             // 
             // dateEdit
             // 
             this.dateEdit.EditValue = null;
-            this.dateEdit.Location = new System.Drawing.Point(316, 132);
+            this.dateEdit.EnterMoveNextControl = true;
+            this.dateEdit.Location = new System.Drawing.Point(314, 171);
             this.dateEdit.Name = "dateEdit";
-            this.dateEdit.Properties.Appearance.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateEdit.Properties.Appearance.Options.UseFont = true;
             this.dateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit.Size = new System.Drawing.Size(185, 22);
+            this.dateEdit.Size = new System.Drawing.Size(194, 22);
             this.dateEdit.TabIndex = 4;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Дату не вказано";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.dateEdit, conditionValidationRule3);
+            this.dateEdit.EditValueChanged += new System.EventHandler(this.dateEdit_EditValueChanged);
+            // 
+            // nameSpecificationEdit
+            // 
+            this.nameSpecificationEdit.EnterMoveNextControl = true;
+            this.nameSpecificationEdit.Location = new System.Drawing.Point(12, 65);
+            this.nameSpecificationEdit.Name = "nameSpecificationEdit";
+            this.nameSpecificationEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameSpecificationEdit.Properties.Appearance.Options.UseFont = true;
+            this.nameSpecificationEdit.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.nameSpecificationEdit.Size = new System.Drawing.Size(494, 40);
+            this.nameSpecificationEdit.TabIndex = 0;
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "Не вказано найменування виробу";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.nameSpecificationEdit, conditionValidationRule4);
+            this.nameSpecificationEdit.EditValueChanged += new System.EventHandler(this.nameSpecificationEdit_EditValueChanged);
+            // 
+            // dxValidationProvider
+            // 
+            this.dxValidationProvider.ValidationFailed += new DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventHandler(this.dxValidationProvider_ValidationFailed);
+            this.dxValidationProvider.ValidationSucceeded += new DevExpress.XtraEditors.DXErrorProvider.ValidationSucceededEventHandler(this.dxValidationProvider_ValidationSucceeded);
+            // 
+            // assemblyCheck
+            // 
+            this.assemblyCheck.Location = new System.Drawing.Point(431, 129);
+            this.assemblyCheck.Name = "assemblyCheck";
+            this.assemblyCheck.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.assemblyCheck.Properties.Appearance.Options.UseFont = true;
+            this.assemblyCheck.Properties.Caption = "Зведена";
+            this.assemblyCheck.Size = new System.Drawing.Size(75, 20);
+            this.assemblyCheck.TabIndex = 54;
+            this.assemblyCheck.CheckedChanged += new System.EventHandler(this.assemblyCheck_CheckedChanged);
             // 
             // MtsSpecificationOldEditFm
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 219);
+            this.ClientSize = new System.Drawing.Size(520, 254);
             this.Controls.Add(this.panelControl1);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MtsSpecificationOldEditFm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Редагування специфікації";
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MtsSpecificationOldEditFm_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nameSpecificationEdit.Properties)).EndInit();
+            this.revisionGroup.ResumeLayout(false);
+            this.revisionGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.copyNumberEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drawingEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quantityEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.weightEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nameSpecificationEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assemblyCheck.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -248,9 +372,15 @@
         private DevExpress.XtraEditors.TextEdit weightEdit;
         private DevExpress.XtraEditors.TextEdit quantityEdit;
         private DevExpress.XtraEditors.TextEdit drawingEdit;
-        private DevExpress.XtraEditors.TextEdit nameSpecificationEdit;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.Button saveBtn;
+        private DevExpress.XtraEditors.MemoEdit nameSpecificationEdit;
+        private DevExpress.XtraEditors.SimpleButton cancelDBtn;
+        private DevExpress.XtraEditors.SimpleButton saveDBtn;
+        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider;
+        private DevExpress.XtraEditors.LabelControl validateLbl;
+        private System.Windows.Forms.GroupBox revisionGroup;
+        private DevExpress.XtraEditors.TextEdit copyNumberEdit;
+        private System.Windows.Forms.Label label6;
+        private DevExpress.XtraEditors.CheckEdit assemblyCheck;
     }
 }

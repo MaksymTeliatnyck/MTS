@@ -32,6 +32,8 @@
             DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageUser;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MtsSpecificationOldFm));
             DevExpress.Utils.Animation.PushTransition pushTransition1 = new DevExpress.Utils.Animation.PushTransition();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.userNameBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.endDateItem = new DevExpress.XtraBars.BarEditItem();
@@ -43,7 +45,6 @@
             this.addAllSpeficBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editSpecificBtn = new DevExpress.XtraBars.BarButtonItem();
             this.deleteSpecificBtn = new DevExpress.XtraBars.BarButtonItem();
-            this.showSpecificInFileBtb = new DevExpress.XtraBars.BarButtonItem();
             this.mapTechProcessBtn = new DevExpress.XtraBars.BarButtonItem();
             this.mapTechProcessByDateBtn = new DevExpress.XtraBars.BarButtonItem();
             this.mapAllTechProcessBtn = new DevExpress.XtraBars.BarButtonItem();
@@ -66,25 +67,27 @@
             this.detailsShowBtn = new DevExpress.XtraBars.BarButtonItem();
             this.gostShowBtn = new DevExpress.XtraBars.BarButtonItem();
             this.unitsShowBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.copySpecBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.showSpecificMenuBtb = new DevExpress.XtraBars.BarSubItem();
+            this.sortByMaterialBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.sortBySortamnetBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.copySpecWithDrawBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.settingsBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.editMtsCustomerOrderBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.showCustomerOrdersCheck = new DevExpress.XtraBars.BarCheckItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemTimeEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
-            this.standaloneBarDockControl2 = new DevExpress.XtraBars.StandaloneBarDockControl();
-            this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
+            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.detalsSpecificGrid = new DevExpress.XtraGrid.GridControl();
-            this.detailMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.додатиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.редагуватиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.видалитиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detalsSpecificGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoForDetailsEdit = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -103,24 +106,25 @@
             this.addDetailBarBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editDetailBarBtn = new DevExpress.XtraBars.BarButtonItem();
             this.deleteDetailBarBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.standaloneBarDockControl2 = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.standaloneBarDockControl3 = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.standaloneBarDockControl4 = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.addBuyDetailBarBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editBuyDetailBarBtn = new DevExpress.XtraBars.BarButtonItem();
             this.deleteBuyDetailBarBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.buysDetalsSpecificGrid = new DevExpress.XtraGrid.GridControl();
-            this.buyDetailMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.додатиЗаписToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.редагуватиЗаписToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.видалитиЗаписToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.buysDetalsSpecificGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -128,19 +132,29 @@
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.materialsSpecificGrid = new DevExpress.XtraGrid.GridControl();
-            this.materialMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.додатиЗаписToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.редагуватиЗаписToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.видалитиЗаписToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.materialsSpecificGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.buyDetailMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.додатиЗаписToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.редагуватиЗаписToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.видалитиЗаписToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.materialMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.додатиЗаписToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.редагуватиЗаписToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.видалитиЗаписToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.detailMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.додатиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.редагуватиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.видалитиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.specificGrid = new DevExpress.XtraGrid.GridControl();
             this.mainMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.добавитьСпецификациюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -157,11 +171,13 @@
             this.specificGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.specNameRepository = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn36 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barBuyDetail = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
@@ -178,6 +194,8 @@
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
+            this.styleController1 = new DevExpress.XtraEditors.StyleController(this.components);
+            this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::MTS.GUI.WaitForm1), true, true);
             ribbonPageUser = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
@@ -190,26 +208,38 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
+            this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.detalsSpecificGrid)).BeginInit();
-            this.detailMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.detalsSpecificGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoForDetailsEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buysDetalsSpecificGrid)).BeginInit();
-            this.buyDetailMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buysDetalsSpecificGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             this.xtraTabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
+            this.panelControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.materialsSpecificGrid)).BeginInit();
-            this.materialMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.materialsSpecificGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
+            this.buyDetailMenu.SuspendLayout();
+            this.materialMenu.SuspendLayout();
+            this.detailMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.specificGrid)).BeginInit();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.specificGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.specNameRepository)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barBuyDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barMaterialDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.styleController1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonPageUser
@@ -217,15 +247,21 @@
             ribbonPageUser.AllowMinimize = false;
             ribbonPageUser.ItemLinks.Add(this.userNameBtn);
             ribbonPageUser.Name = "ribbonPageUser";
-            ribbonPageUser.Text = "Пользователь";
+            ribbonPageUser.Text = "Користувач";
             // 
             // userNameBtn
             // 
             this.userNameBtn.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
             this.userNameBtn.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.userNameBtn.Caption = "Имя ";
+            this.userNameBtn.Caption = "Ім\'я ";
             this.userNameBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("userNameBtn.Glyph")));
             this.userNameBtn.Id = 1;
+            this.userNameBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.userNameBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.userNameBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.userNameBtn.ItemAppearance.Normal.Options.UseFont = true;
+            this.userNameBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.userNameBtn.ItemAppearance.Pressed.Options.UseFont = true;
             this.userNameBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("userNameBtn.LargeGlyph")));
             this.userNameBtn.LargeWidth = 100;
             this.userNameBtn.Name = "userNameBtn";
@@ -244,7 +280,6 @@
             this.addAllSpeficBtn,
             this.editSpecificBtn,
             this.deleteSpecificBtn,
-            this.showSpecificInFileBtb,
             this.mapTechProcessBtn,
             this.mapTechProcessByDateBtn,
             this.mapAllTechProcessBtn,
@@ -266,10 +301,18 @@
             this.detailsShowBtn,
             this.gostShowBtn,
             this.unitsShowBtn,
-            this.userNameBtn});
+            this.userNameBtn,
+            this.copySpecBtn,
+            this.showSpecificMenuBtb,
+            this.sortByMaterialBtn,
+            this.sortBySortamnetBtn,
+            this.copySpecWithDrawBtn,
+            this.settingsBtn,
+            this.editMtsCustomerOrderBtn,
+            this.showCustomerOrdersCheck});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbonControl1.MaxItemId = 2;
+            this.ribbonControl1.MaxItemId = 11;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -331,14 +374,14 @@
             // 
             // showBtn
             // 
-            this.showBtn.Caption = "Показати";
+            this.showBtn.Caption = "Оновити";
             this.showBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("showBtn.Glyph")));
             this.showBtn.Id = 4;
             this.showBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.showBtn.ItemAppearance.Hovered.Options.UseFont = true;
             this.showBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.showBtn.ItemAppearance.Normal.Options.UseFont = true;
-            this.showBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.showBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.showBtn.ItemAppearance.Pressed.Options.UseFont = true;
             this.showBtn.Name = "showBtn";
             this.showBtn.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
@@ -347,7 +390,7 @@
             // 
             // addSpecificBtn
             // 
-            this.addSpecificBtn.Caption = "Додати";
+            this.addSpecificBtn.Caption = "Створити";
             this.addSpecificBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addSpecificBtn.Glyph")));
             this.addSpecificBtn.Id = 5;
             this.addSpecificBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -363,7 +406,7 @@
             // 
             // addAllSpeficBtn
             // 
-            this.addAllSpeficBtn.Caption = "Додати зведену";
+            this.addAllSpeficBtn.Caption = "Створити зведену";
             this.addAllSpeficBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addAllSpeficBtn.Glyph")));
             this.addAllSpeficBtn.Id = 6;
             this.addAllSpeficBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -409,25 +452,9 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.deleteSpecificBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteSpecificBtn_ItemClick);
             // 
-            // showSpecificInFileBtb
-            // 
-            this.showSpecificInFileBtb.Caption = "Відобразити у файлі";
-            this.showSpecificInFileBtb.Glyph = ((System.Drawing.Image)(resources.GetObject("showSpecificInFileBtb.Glyph")));
-            this.showSpecificInFileBtb.Id = 9;
-            this.showSpecificInFileBtb.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.showSpecificInFileBtb.ItemAppearance.Hovered.Options.UseFont = true;
-            this.showSpecificInFileBtb.ItemAppearance.Normal.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.showSpecificInFileBtb.ItemAppearance.Normal.Options.UseFont = true;
-            this.showSpecificInFileBtb.ItemAppearance.Pressed.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.showSpecificInFileBtb.ItemAppearance.Pressed.Options.UseFont = true;
-            this.showSpecificInFileBtb.Name = "showSpecificInFileBtb";
-            this.showSpecificInFileBtb.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.showSpecificInFileBtb.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.showSpecificInFileBtb_ItemClick);
-            // 
             // mapTechProcessBtn
             // 
-            this.mapTechProcessBtn.Caption = "Картка тех. процесу";
+            this.mapTechProcessBtn.Caption = "Карта тех. процесу";
             this.mapTechProcessBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("mapTechProcessBtn.Glyph")));
             this.mapTechProcessBtn.Id = 10;
             this.mapTechProcessBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -443,7 +470,7 @@
             // 
             // mapTechProcessByDateBtn
             // 
-            this.mapTechProcessByDateBtn.Caption = "Карта тех. процесу по даті";
+            this.mapTechProcessByDateBtn.Caption = "Карта тех. процесу по кресленню";
             this.mapTechProcessByDateBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("mapTechProcessByDateBtn.Glyph")));
             this.mapTechProcessByDateBtn.Id = 11;
             this.mapTechProcessByDateBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -531,7 +558,6 @@
             this.addDetailBtn.Name = "addDetailBtn";
             this.addDetailBtn.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.addDetailBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addDetailBtn_ItemClick);
             // 
             // editDetailBtn
             // 
@@ -547,7 +573,6 @@
             this.editDetailBtn.Name = "editDetailBtn";
             this.editDetailBtn.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.editDetailBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.editDetailBtn_ItemClick);
             // 
             // deleteDetailBtn
             // 
@@ -563,7 +588,6 @@
             this.deleteDetailBtn.Name = "deleteDetailBtn";
             this.deleteDetailBtn.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.deleteDetailBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteDetailBtn_ItemClick);
             // 
             // addBuyDetailBtn
             // 
@@ -579,7 +603,6 @@
             this.addBuyDetailBtn.Name = "addBuyDetailBtn";
             this.addBuyDetailBtn.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.addBuyDetailBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addBuyDetailBtn_ItemClick);
             // 
             // editBuyDetailBtn
             // 
@@ -595,7 +618,6 @@
             this.editBuyDetailBtn.Name = "editBuyDetailBtn";
             this.editBuyDetailBtn.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.editBuyDetailBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.editBuyDetailBtn_ItemClick);
             // 
             // deleteBuyDetailBtn
             // 
@@ -605,7 +627,6 @@
             this.deleteBuyDetailBtn.Name = "deleteBuyDetailBtn";
             this.deleteBuyDetailBtn.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.deleteBuyDetailBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteBuyDetailBtn_ItemClick);
             // 
             // addMaterialBtn
             // 
@@ -621,7 +642,6 @@
             this.addMaterialBtn.Name = "addMaterialBtn";
             this.addMaterialBtn.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.addMaterialBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addMaterialBtn_ItemClick);
             // 
             // editMaterialBtn
             // 
@@ -637,7 +657,6 @@
             this.editMaterialBtn.Name = "editMaterialBtn";
             this.editMaterialBtn.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.editMaterialBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.editMaterialBtn_ItemClick);
             // 
             // deleteMaterialBtn
             // 
@@ -653,7 +672,6 @@
             this.deleteMaterialBtn.Name = "deleteMaterialBtn";
             this.deleteMaterialBtn.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.deleteMaterialBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteMaterialBtn_ItemClick);
             // 
             // barWorkspaceMenuItem1
             // 
@@ -669,9 +687,15 @@
             // 
             // basesBtn
             // 
-            this.basesBtn.Caption = "Справочники";
+            this.basesBtn.Caption = "Довідники";
             this.basesBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("basesBtn.Glyph")));
             this.basesBtn.Id = 26;
+            this.basesBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.basesBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.basesBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.basesBtn.ItemAppearance.Normal.Options.UseFont = true;
+            this.basesBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.basesBtn.ItemAppearance.Pressed.Options.UseFont = true;
             this.basesBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("basesBtn.LargeGlyph")));
             this.basesBtn.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.nomenclatureShowBtn),
@@ -683,27 +707,143 @@
             // 
             // nomenclatureShowBtn
             // 
-            this.nomenclatureShowBtn.Caption = "Справочник номенклатур";
+            this.nomenclatureShowBtn.Caption = "Довідник номенклатур";
+            this.nomenclatureShowBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("nomenclatureShowBtn.Glyph")));
             this.nomenclatureShowBtn.Id = 27;
+            this.nomenclatureShowBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("nomenclatureShowBtn.LargeGlyph")));
             this.nomenclatureShowBtn.Name = "nomenclatureShowBtn";
+            this.nomenclatureShowBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.nomenclatureShowBtn_ItemClick);
             // 
             // detailsShowBtn
             // 
-            this.detailsShowBtn.Caption = "Справочник деталей";
+            this.detailsShowBtn.Caption = "Довідник деталей";
+            this.detailsShowBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("detailsShowBtn.Glyph")));
             this.detailsShowBtn.Id = 28;
+            this.detailsShowBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("detailsShowBtn.LargeGlyph")));
             this.detailsShowBtn.Name = "detailsShowBtn";
+            this.detailsShowBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.detailsShowBtn_ItemClick);
             // 
             // gostShowBtn
             // 
-            this.gostShowBtn.Caption = "Справочник гостов";
+            this.gostShowBtn.Caption = "Довідник гостів";
+            this.gostShowBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("gostShowBtn.Glyph")));
             this.gostShowBtn.Id = 29;
+            this.gostShowBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("gostShowBtn.LargeGlyph")));
             this.gostShowBtn.Name = "gostShowBtn";
+            this.gostShowBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.gostShowBtn_ItemClick);
             // 
             // unitsShowBtn
             // 
-            this.unitsShowBtn.Caption = "Справочник единиц измерения";
+            this.unitsShowBtn.Caption = "Довідник одиниць вимірювання";
+            this.unitsShowBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("unitsShowBtn.Glyph")));
             this.unitsShowBtn.Id = 30;
+            this.unitsShowBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("unitsShowBtn.LargeGlyph")));
             this.unitsShowBtn.Name = "unitsShowBtn";
+            this.unitsShowBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.unitsShowBtn_ItemClick);
+            // 
+            // copySpecBtn
+            // 
+            this.copySpecBtn.Caption = "Створити копію";
+            this.copySpecBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("copySpecBtn.Glyph")));
+            this.copySpecBtn.Id = 2;
+            this.copySpecBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.copySpecBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.copySpecBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.copySpecBtn.ItemAppearance.Normal.Options.UseFont = true;
+            this.copySpecBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.copySpecBtn.ItemAppearance.Pressed.Options.UseFont = true;
+            this.copySpecBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("copySpecBtn.LargeGlyph")));
+            this.copySpecBtn.Name = "copySpecBtn";
+            this.copySpecBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.copySpecBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.copySpecBtn_ItemClick);
+            // 
+            // showSpecificMenuBtb
+            // 
+            this.showSpecificMenuBtb.Caption = "Відобразити матеріальну специфікацію";
+            this.showSpecificMenuBtb.Glyph = ((System.Drawing.Image)(resources.GetObject("showSpecificMenuBtb.Glyph")));
+            this.showSpecificMenuBtb.Id = 1;
+            this.showSpecificMenuBtb.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.showSpecificMenuBtb.ItemAppearance.Hovered.Options.UseFont = true;
+            this.showSpecificMenuBtb.ItemAppearance.Normal.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.showSpecificMenuBtb.ItemAppearance.Normal.Options.UseFont = true;
+            this.showSpecificMenuBtb.ItemAppearance.Pressed.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.showSpecificMenuBtb.ItemAppearance.Pressed.Options.UseFont = true;
+            this.showSpecificMenuBtb.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("showSpecificMenuBtb.LargeGlyph")));
+            this.showSpecificMenuBtb.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.sortByMaterialBtn),
+            new DevExpress.XtraBars.LinkPersistInfo(this.sortBySortamnetBtn)});
+            this.showSpecificMenuBtb.Name = "showSpecificMenuBtb";
+            this.showSpecificMenuBtb.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // sortByMaterialBtn
+            // 
+            this.sortByMaterialBtn.Caption = "Сортувати за матеріалом";
+            this.sortByMaterialBtn.Id = 2;
+            this.sortByMaterialBtn.Name = "sortByMaterialBtn";
+            this.sortByMaterialBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.sortByMaterialBtn_ItemClick);
+            // 
+            // sortBySortamnetBtn
+            // 
+            this.sortBySortamnetBtn.Caption = "Сортувати за сортаментом";
+            this.sortBySortamnetBtn.Id = 3;
+            this.sortBySortamnetBtn.Name = "sortBySortamnetBtn";
+            this.sortBySortamnetBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.sortBySortamnetBtn_ItemClick);
+            // 
+            // copySpecWithDrawBtn
+            // 
+            this.copySpecWithDrawBtn.Caption = "Створити копію специфікації та креслень";
+            this.copySpecWithDrawBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("copySpecWithDrawBtn.Glyph")));
+            this.copySpecWithDrawBtn.Id = 4;
+            this.copySpecWithDrawBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("copySpecWithDrawBtn.LargeGlyph")));
+            this.copySpecWithDrawBtn.Name = "copySpecWithDrawBtn";
+            this.copySpecWithDrawBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.copySpecWithDrawBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.copySpecWithDrawBtn_ItemClick);
+            // 
+            // settingsBtn
+            // 
+            this.settingsBtn.Caption = "Версія програми:";
+            this.settingsBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("settingsBtn.Glyph")));
+            this.settingsBtn.Id = 5;
+            this.settingsBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.settingsBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.settingsBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.settingsBtn.ItemAppearance.Normal.Options.UseFont = true;
+            this.settingsBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.settingsBtn.ItemAppearance.Pressed.Options.UseFont = true;
+            this.settingsBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("settingsBtn.LargeGlyph")));
+            this.settingsBtn.Name = "settingsBtn";
+            this.settingsBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // editMtsCustomerOrderBtn
+            // 
+            this.editMtsCustomerOrderBtn.Caption = "Змінити заказ";
+            this.editMtsCustomerOrderBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("editMtsCustomerOrderBtn.Glyph")));
+            this.editMtsCustomerOrderBtn.Id = 8;
+            this.editMtsCustomerOrderBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editMtsCustomerOrderBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.editMtsCustomerOrderBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editMtsCustomerOrderBtn.ItemAppearance.Normal.Options.UseFont = true;
+            this.editMtsCustomerOrderBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editMtsCustomerOrderBtn.ItemAppearance.Pressed.Options.UseFont = true;
+            this.editMtsCustomerOrderBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("editMtsCustomerOrderBtn.LargeGlyph")));
+            this.editMtsCustomerOrderBtn.Name = "editMtsCustomerOrderBtn";
+            this.editMtsCustomerOrderBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
+            this.editMtsCustomerOrderBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.editMtsCustomerOrderBtn_ItemClick);
+            // 
+            // showCustomerOrdersCheck
+            // 
+            this.showCustomerOrdersCheck.Caption = "Відобразити закази";
+            this.showCustomerOrdersCheck.CheckBoxVisibility = DevExpress.XtraBars.CheckBoxVisibility.BeforeText;
+            this.showCustomerOrdersCheck.Id = 10;
+            this.showCustomerOrdersCheck.ItemAppearance.Hovered.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.showCustomerOrdersCheck.ItemAppearance.Hovered.Options.UseFont = true;
+            this.showCustomerOrdersCheck.ItemAppearance.Normal.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.showCustomerOrdersCheck.ItemAppearance.Normal.Options.UseFont = true;
+            this.showCustomerOrdersCheck.ItemAppearance.Pressed.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.showCustomerOrdersCheck.ItemAppearance.Pressed.Options.UseFont = true;
+            this.showCustomerOrdersCheck.Name = "showCustomerOrdersCheck";
+            this.showCustomerOrdersCheck.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.showCustomerOrdersCheck.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.showCustomerOrdersCheck_CheckedChanged);
             // 
             // ribbonPage1
             // 
@@ -711,9 +851,7 @@
             ribbonPageUser,
             this.ribbonPageGroup1,
             this.ribbonPageGroup2,
-            this.ribbonPageGroup3,
-            this.ribbonPageGroup4,
-            this.ribbonPageGroup5});
+            this.ribbonPageGroup3});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "ribbonPage1";
             // 
@@ -729,41 +867,27 @@
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.addSpecificBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.addAllSpeficBtn);
+            this.ribbonPageGroup2.ItemLinks.Add(this.copySpecBtn);
+            this.ribbonPageGroup2.ItemLinks.Add(this.copySpecWithDrawBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.editSpecificBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.deleteSpecificBtn);
-            this.ribbonPageGroup2.ItemLinks.Add(this.showSpecificInFileBtb);
+            this.ribbonPageGroup2.ItemLinks.Add(this.editMtsCustomerOrderBtn);
+            this.ribbonPageGroup2.ItemLinks.Add(this.showCustomerOrdersCheck);
+            this.ribbonPageGroup2.ItemLinks.Add(this.basesBtn);
+            this.ribbonPageGroup2.ItemLinks.Add(this.showSpecificMenuBtb);
             this.ribbonPageGroup2.ItemLinks.Add(this.mapTechProcessBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.mapTechProcessByDateBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.mapAllTechProcessBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.mapRouteTechProcessBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.enableColorSpecificBtn);
-            this.ribbonPageGroup2.ItemLinks.Add(this.basesBtn);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Специфікація";
             // 
             // ribbonPageGroup3
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.addDetailBtn);
-            this.ribbonPageGroup3.ItemLinks.Add(this.editDetailBtn);
-            this.ribbonPageGroup3.ItemLinks.Add(this.deleteDetailBtn);
+            this.ribbonPageGroup3.ItemLinks.Add(this.settingsBtn);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "Деталі";
-            // 
-            // ribbonPageGroup4
-            // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.addBuyDetailBtn);
-            this.ribbonPageGroup4.ItemLinks.Add(this.editBuyDetailBtn);
-            this.ribbonPageGroup4.ItemLinks.Add(this.deleteBuyDetailBtn);
-            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "Покупні";
-            // 
-            // ribbonPageGroup5
-            // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.addMaterialBtn);
-            this.ribbonPageGroup5.ItemLinks.Add(this.editMaterialBtn);
-            this.ribbonPageGroup5.ItemLinks.Add(this.deleteMaterialBtn);
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "Матеріали";
+            this.ribbonPageGroup3.Text = "Налаштування";
             // 
             // repositoryItemTimeEdit1
             // 
@@ -797,42 +921,33 @@
             this.xtraTabPage1,
             this.xtraTabPage2,
             this.xtraTabPage3});
+            this.xtraTabControl1.Click += new System.EventHandler(this.xtraTabControl1_Click);
             // 
             // xtraTabPage1
             // 
+            this.xtraTabPage1.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.xtraTabPage1.Appearance.Header.Options.UseFont = true;
+            this.xtraTabPage1.Controls.Add(this.panelControl4);
             this.xtraTabPage1.Controls.Add(this.standaloneBarDockControl2);
             this.xtraTabPage1.Controls.Add(this.standaloneBarDockControl1);
-            this.xtraTabPage1.Controls.Add(this.detalsSpecificGrid);
-            this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(4);
+            this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(0);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1782, 363);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1782, 362);
             this.xtraTabPage1.Text = "Деталі";
             // 
-            // standaloneBarDockControl2
+            // panelControl4
             // 
-            this.standaloneBarDockControl2.CausesValidation = false;
-            this.standaloneBarDockControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.standaloneBarDockControl2.Location = new System.Drawing.Point(0, 0);
-            this.standaloneBarDockControl2.Margin = new System.Windows.Forms.Padding(4);
-            this.standaloneBarDockControl2.Name = "standaloneBarDockControl2";
-            this.standaloneBarDockControl2.Size = new System.Drawing.Size(1782, 33);
-            this.standaloneBarDockControl2.Text = "standaloneBarDockControl2";
-            // 
-            // standaloneBarDockControl1
-            // 
-            this.standaloneBarDockControl1.AutoSize = true;
-            this.standaloneBarDockControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.standaloneBarDockControl1.CausesValidation = false;
-            this.standaloneBarDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.standaloneBarDockControl1.Location = new System.Drawing.Point(0, 0);
-            this.standaloneBarDockControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
-            this.standaloneBarDockControl1.Size = new System.Drawing.Size(1782, 0);
-            this.standaloneBarDockControl1.Text = "standaloneBarDockControl1";
+            this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl4.Controls.Add(this.detalsSpecificGrid);
+            this.panelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl4.Location = new System.Drawing.Point(0, 29);
+            this.panelControl4.Margin = new System.Windows.Forms.Padding(0);
+            this.panelControl4.Name = "panelControl4";
+            this.panelControl4.Size = new System.Drawing.Size(1782, 333);
+            this.panelControl4.TabIndex = 2;
             // 
             // detalsSpecificGrid
             // 
-            this.detalsSpecificGrid.ContextMenuStrip = this.detailMenu;
             this.detalsSpecificGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.detalsSpecificGrid.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.detalsSpecificGrid.Location = new System.Drawing.Point(0, 0);
@@ -840,40 +955,15 @@
             this.detalsSpecificGrid.Margin = new System.Windows.Forms.Padding(4);
             this.detalsSpecificGrid.MenuManager = this.barDetail;
             this.detalsSpecificGrid.Name = "detalsSpecificGrid";
-            this.detalsSpecificGrid.Size = new System.Drawing.Size(1782, 363);
+            this.detalsSpecificGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemMemoForDetailsEdit,
+            this.repositoryItemTextEdit1});
+            this.detalsSpecificGrid.Size = new System.Drawing.Size(1782, 333);
             this.detalsSpecificGrid.TabIndex = 0;
             this.detalsSpecificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.detalsSpecificGridView});
-            // 
-            // detailMenu
-            // 
-            this.detailMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.додатиЗаписToolStripMenuItem,
-            this.редагуватиЗаписToolStripMenuItem,
-            this.видалитиЗаписToolStripMenuItem});
-            this.detailMenu.Name = "mainMenu";
-            this.detailMenu.Size = new System.Drawing.Size(169, 70);
-            // 
-            // додатиЗаписToolStripMenuItem
-            // 
-            this.додатиЗаписToolStripMenuItem.Name = "додатиЗаписToolStripMenuItem";
-            this.додатиЗаписToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.додатиЗаписToolStripMenuItem.Text = "Додати запис";
-            this.додатиЗаписToolStripMenuItem.Click += new System.EventHandler(this.додатиЗаписToolStripMenuItem_Click);
-            // 
-            // редагуватиЗаписToolStripMenuItem
-            // 
-            this.редагуватиЗаписToolStripMenuItem.Name = "редагуватиЗаписToolStripMenuItem";
-            this.редагуватиЗаписToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.редагуватиЗаписToolStripMenuItem.Text = "Редагувати запис";
-            this.редагуватиЗаписToolStripMenuItem.Click += new System.EventHandler(this.редагуватиЗаписToolStripMenuItem_Click);
-            // 
-            // видалитиЗаписToolStripMenuItem
-            // 
-            this.видалитиЗаписToolStripMenuItem.Name = "видалитиЗаписToolStripMenuItem";
-            this.видалитиЗаписToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.видалитиЗаписToolStripMenuItem.Text = "Видалити запис";
-            this.видалитиЗаписToolStripMenuItem.Click += new System.EventHandler(this.видалитиЗаписToolStripMenuItem_Click);
+            this.detalsSpecificGrid.EditorKeyPress += new System.Windows.Forms.KeyPressEventHandler(this.detalsSpecificGrid_EditorKeyPress);
+            this.detalsSpecificGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.detalsSpecificGrid_MouseClick);
             // 
             // detalsSpecificGridView
             // 
@@ -894,17 +984,27 @@
             this.gridColumn35});
             this.detalsSpecificGridView.GridControl = this.detalsSpecificGrid;
             this.detalsSpecificGridView.Name = "detalsSpecificGridView";
-            this.detalsSpecificGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.detalsSpecificGridView.OptionsPrint.PrintDetails = true;
+            this.detalsSpecificGridView.OptionsPrint.PrintSelectedRowsOnly = true;
+            this.detalsSpecificGridView.OptionsView.RowAutoHeight = true;
             this.detalsSpecificGridView.OptionsView.ShowAutoFilterRow = true;
+            this.detalsSpecificGridView.OptionsView.ShowGroupPanel = false;
             this.detalsSpecificGridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.detalsSpecificGridView_RowStyle);
+            this.detalsSpecificGridView.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.detalsSpecificGridView_ColumnWidthChanged);
+            this.detalsSpecificGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.detalsSpecificGridView_FocusedRowChanged);
             // 
             // gridColumn8
             // 
-            this.gridColumn8.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn8.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn8.AppearanceCell.Options.UseFont = true;
+            this.gridColumn8.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn8.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn8.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn8.AppearanceHeader.Options.UseFont = true;
             this.gridColumn8.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn8.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn8.Caption = "Найменування";
+            this.gridColumn8.ColumnEdit = this.repositoryItemMemoForDetailsEdit;
             this.gridColumn8.FieldName = "NAME";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.AllowEdit = false;
@@ -912,10 +1012,19 @@
             this.gridColumn8.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 0;
+            this.gridColumn8.Width = 336;
+            // 
+            // repositoryItemMemoForDetailsEdit
+            // 
+            this.repositoryItemMemoForDetailsEdit.Appearance.Options.UseTextOptions = true;
+            this.repositoryItemMemoForDetailsEdit.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.repositoryItemMemoForDetailsEdit.Name = "repositoryItemMemoForDetailsEdit";
             // 
             // gridColumn9
             // 
-            this.gridColumn9.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn9.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn9.AppearanceCell.Options.UseFont = true;
+            this.gridColumn9.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn9.AppearanceHeader.Options.UseFont = true;
             this.gridColumn9.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn9.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -927,14 +1036,17 @@
             this.gridColumn9.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 1;
+            this.gridColumn9.Width = 123;
             // 
             // gridColumn10
             // 
-            this.gridColumn10.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn10.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn10.AppearanceCell.Options.UseFont = true;
+            this.gridColumn10.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn10.AppearanceHeader.Options.UseFont = true;
             this.gridColumn10.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn10.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn10.Caption = "Помітка";
+            this.gridColumn10.Caption = "Замітка";
             this.gridColumn10.FieldName = "NOMENCLATURESNOTE";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.OptionsColumn.AllowEdit = false;
@@ -942,10 +1054,13 @@
             this.gridColumn10.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 2;
+            this.gridColumn10.Width = 137;
             // 
             // gridColumn11
             // 
-            this.gridColumn11.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn11.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn11.AppearanceCell.Options.UseFont = true;
+            this.gridColumn11.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn11.AppearanceHeader.Options.UseFont = true;
             this.gridColumn11.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn11.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -957,14 +1072,17 @@
             this.gridColumn11.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 3;
+            this.gridColumn11.Width = 192;
             // 
             // gridColumn12
             // 
-            this.gridColumn12.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn12.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn12.AppearanceCell.Options.UseFont = true;
+            this.gridColumn12.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn12.AppearanceHeader.Options.UseFont = true;
             this.gridColumn12.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn12.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn12.Caption = "Кіл-ть";
+            this.gridColumn12.Caption = "Кіль-сть";
             this.gridColumn12.FieldName = "QUANTITY";
             this.gridColumn12.ImageAlignment = System.Drawing.StringAlignment.Far;
             this.gridColumn12.Name = "gridColumn12";
@@ -975,7 +1093,9 @@
             // 
             // gridColumn13
             // 
-            this.gridColumn13.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn13.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn13.AppearanceCell.Options.UseFont = true;
+            this.gridColumn13.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn13.AppearanceHeader.Options.UseFont = true;
             this.gridColumn13.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn13.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -987,14 +1107,17 @@
             this.gridColumn13.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.gridColumn13.Visible = true;
             this.gridColumn13.VisibleIndex = 5;
+            this.gridColumn13.Width = 154;
             // 
             // gridColumn14
             // 
-            this.gridColumn14.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn14.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn14.AppearanceCell.Options.UseFont = true;
+            this.gridColumn14.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn14.AppearanceHeader.Options.UseFont = true;
             this.gridColumn14.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn14.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn14.Caption = "Складові деталі";
+            this.gridColumn14.Caption = "Складова деталі";
             this.gridColumn14.FieldName = "NOMENCLATURESNAME";
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.OptionsColumn.AllowEdit = false;
@@ -1002,10 +1125,13 @@
             this.gridColumn14.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 6;
+            this.gridColumn14.Width = 291;
             // 
             // gridColumn15
             // 
-            this.gridColumn15.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn15.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn15.AppearanceCell.Options.UseFont = true;
+            this.gridColumn15.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn15.AppearanceHeader.Options.UseFont = true;
             this.gridColumn15.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn15.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1017,14 +1143,17 @@
             this.gridColumn15.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 7;
+            this.gridColumn15.Width = 137;
             // 
             // gridColumn16
             // 
-            this.gridColumn16.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn16.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn16.AppearanceCell.Options.UseFont = true;
+            this.gridColumn16.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn16.AppearanceHeader.Options.UseFont = true;
             this.gridColumn16.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn16.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn16.Caption = "Довжина";
+            this.gridColumn16.Caption = "Длина";
             this.gridColumn16.FieldName = "HEIGHT";
             this.gridColumn16.Name = "gridColumn16";
             this.gridColumn16.OptionsColumn.AllowEdit = false;
@@ -1034,7 +1163,9 @@
             // 
             // gridColumn17
             // 
-            this.gridColumn17.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn17.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn17.AppearanceCell.Options.UseFont = true;
+            this.gridColumn17.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn17.AppearanceHeader.Options.UseFont = true;
             this.gridColumn17.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn17.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1045,10 +1176,13 @@
             this.gridColumn17.OptionsColumn.AllowFocus = false;
             this.gridColumn17.Visible = true;
             this.gridColumn17.VisibleIndex = 9;
+            this.gridColumn17.Width = 64;
             // 
             // gridColumn18
             // 
-            this.gridColumn18.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn18.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn18.AppearanceCell.Options.UseFont = true;
+            this.gridColumn18.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn18.AppearanceHeader.Options.UseFont = true;
             this.gridColumn18.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn18.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1059,20 +1193,24 @@
             this.gridColumn18.OptionsColumn.AllowFocus = false;
             this.gridColumn18.Visible = true;
             this.gridColumn18.VisibleIndex = 10;
+            this.gridColumn18.Width = 60;
             // 
             // gridColumn19
             // 
-            this.gridColumn19.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn19.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn19.AppearanceCell.Options.UseFont = true;
+            this.gridColumn19.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn19.AppearanceHeader.Options.UseFont = true;
             this.gridColumn19.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn19.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn19.Caption = "Кіл-ть заготовок";
+            this.gridColumn19.Caption = "Кіл. із загот.";
             this.gridColumn19.FieldName = "QUANTITY_OF_BLANKS";
             this.gridColumn19.Name = "gridColumn19";
             this.gridColumn19.OptionsColumn.AllowEdit = false;
             this.gridColumn19.OptionsColumn.AllowFocus = false;
             this.gridColumn19.Visible = true;
             this.gridColumn19.VisibleIndex = 11;
+            this.gridColumn19.Width = 120;
             // 
             // gridColumn34
             // 
@@ -1081,8 +1219,7 @@
             this.gridColumn34.Name = "gridColumn34";
             this.gridColumn34.OptionsColumn.AllowEdit = false;
             this.gridColumn34.OptionsColumn.AllowFocus = false;
-            this.gridColumn34.Visible = true;
-            this.gridColumn34.VisibleIndex = 12;
+            this.gridColumn34.Width = 110;
             // 
             // gridColumn35
             // 
@@ -1091,8 +1228,7 @@
             this.gridColumn35.Name = "gridColumn35";
             this.gridColumn35.OptionsColumn.AllowEdit = false;
             this.gridColumn35.OptionsColumn.AllowFocus = false;
-            this.gridColumn35.Visible = true;
-            this.gridColumn35.VisibleIndex = 13;
+            this.gridColumn35.Width = 112;
             // 
             // barDetail
             // 
@@ -1139,6 +1275,12 @@
             this.addDetailBarBtn.Caption = "Додати";
             this.addDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addDetailBarBtn.Glyph")));
             this.addDetailBarBtn.Id = 0;
+            this.addDetailBarBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addDetailBarBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.addDetailBarBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addDetailBarBtn.ItemAppearance.Normal.Options.UseFont = true;
+            this.addDetailBarBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addDetailBarBtn.ItemAppearance.Pressed.Options.UseFont = true;
             this.addDetailBarBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("addDetailBarBtn.LargeGlyph")));
             this.addDetailBarBtn.Name = "addDetailBarBtn";
             this.addDetailBarBtn.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
@@ -1149,6 +1291,12 @@
             this.editDetailBarBtn.Caption = "Редагувати";
             this.editDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("editDetailBarBtn.Glyph")));
             this.editDetailBarBtn.Id = 1;
+            this.editDetailBarBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editDetailBarBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.editDetailBarBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editDetailBarBtn.ItemAppearance.Normal.Options.UseFont = true;
+            this.editDetailBarBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editDetailBarBtn.ItemAppearance.Pressed.Options.UseFont = true;
             this.editDetailBarBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("editDetailBarBtn.LargeGlyph")));
             this.editDetailBarBtn.Name = "editDetailBarBtn";
             this.editDetailBarBtn.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
@@ -1159,10 +1307,26 @@
             this.deleteDetailBarBtn.Caption = "Видалити";
             this.deleteDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("deleteDetailBarBtn.Glyph")));
             this.deleteDetailBarBtn.Id = 2;
+            this.deleteDetailBarBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteDetailBarBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.deleteDetailBarBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteDetailBarBtn.ItemAppearance.Normal.Options.UseFont = true;
+            this.deleteDetailBarBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteDetailBarBtn.ItemAppearance.Pressed.Options.UseFont = true;
             this.deleteDetailBarBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("deleteDetailBarBtn.LargeGlyph")));
             this.deleteDetailBarBtn.Name = "deleteDetailBarBtn";
             this.deleteDetailBarBtn.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.deleteDetailBarBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteDetailBarBtn_ItemClick);
+            // 
+            // standaloneBarDockControl2
+            // 
+            this.standaloneBarDockControl2.CausesValidation = false;
+            this.standaloneBarDockControl2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.standaloneBarDockControl2.Location = new System.Drawing.Point(0, 0);
+            this.standaloneBarDockControl2.Margin = new System.Windows.Forms.Padding(4);
+            this.standaloneBarDockControl2.Name = "standaloneBarDockControl2";
+            this.standaloneBarDockControl2.Size = new System.Drawing.Size(1782, 29);
+            this.standaloneBarDockControl2.Text = "standaloneBarDockControl2";
             // 
             // barDockControlTop
             // 
@@ -1196,6 +1360,18 @@
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 934);
             // 
+            // standaloneBarDockControl1
+            // 
+            this.standaloneBarDockControl1.AutoSize = true;
+            this.standaloneBarDockControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.standaloneBarDockControl1.CausesValidation = false;
+            this.standaloneBarDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.standaloneBarDockControl1.Location = new System.Drawing.Point(0, 0);
+            this.standaloneBarDockControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
+            this.standaloneBarDockControl1.Size = new System.Drawing.Size(1782, 0);
+            this.standaloneBarDockControl1.Text = "standaloneBarDockControl1";
+            // 
             // standaloneBarDockControl3
             // 
             this.standaloneBarDockControl3.CausesValidation = false;
@@ -1213,7 +1389,7 @@
             this.standaloneBarDockControl4.Location = new System.Drawing.Point(0, 0);
             this.standaloneBarDockControl4.Margin = new System.Windows.Forms.Padding(4);
             this.standaloneBarDockControl4.Name = "standaloneBarDockControl4";
-            this.standaloneBarDockControl4.Size = new System.Drawing.Size(1782, 33);
+            this.standaloneBarDockControl4.Size = new System.Drawing.Size(1782, 34);
             this.standaloneBarDockControl4.Text = "standaloneBarDockControl4";
             // 
             // addBuyDetailBarBtn
@@ -1221,6 +1397,14 @@
             this.addBuyDetailBarBtn.Caption = "Додати";
             this.addBuyDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addBuyDetailBarBtn.Glyph")));
             this.addBuyDetailBarBtn.Id = 3;
+            this.addBuyDetailBarBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addBuyDetailBarBtn.ItemAppearance.Disabled.Options.UseFont = true;
+            this.addBuyDetailBarBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addBuyDetailBarBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.addBuyDetailBarBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addBuyDetailBarBtn.ItemAppearance.Normal.Options.UseFont = true;
+            this.addBuyDetailBarBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addBuyDetailBarBtn.ItemAppearance.Pressed.Options.UseFont = true;
             this.addBuyDetailBarBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("addBuyDetailBarBtn.LargeGlyph")));
             this.addBuyDetailBarBtn.Name = "addBuyDetailBarBtn";
             this.addBuyDetailBarBtn.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
@@ -1231,6 +1415,14 @@
             this.editBuyDetailBarBtn.Caption = "Редагувати";
             this.editBuyDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("editBuyDetailBarBtn.Glyph")));
             this.editBuyDetailBarBtn.Id = 4;
+            this.editBuyDetailBarBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editBuyDetailBarBtn.ItemAppearance.Disabled.Options.UseFont = true;
+            this.editBuyDetailBarBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editBuyDetailBarBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.editBuyDetailBarBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editBuyDetailBarBtn.ItemAppearance.Normal.Options.UseFont = true;
+            this.editBuyDetailBarBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editBuyDetailBarBtn.ItemAppearance.Pressed.Options.UseFont = true;
             this.editBuyDetailBarBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("editBuyDetailBarBtn.LargeGlyph")));
             this.editBuyDetailBarBtn.Name = "editBuyDetailBarBtn";
             this.editBuyDetailBarBtn.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
@@ -1241,44 +1433,440 @@
             this.deleteBuyDetailBarBtn.Caption = "Видалити";
             this.deleteBuyDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("deleteBuyDetailBarBtn.Glyph")));
             this.deleteBuyDetailBarBtn.Id = 5;
+            this.deleteBuyDetailBarBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteBuyDetailBarBtn.ItemAppearance.Disabled.Options.UseFont = true;
+            this.deleteBuyDetailBarBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteBuyDetailBarBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.deleteBuyDetailBarBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteBuyDetailBarBtn.ItemAppearance.Normal.Options.UseFont = true;
+            this.deleteBuyDetailBarBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteBuyDetailBarBtn.ItemAppearance.Pressed.Options.UseFont = true;
             this.deleteBuyDetailBarBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("deleteBuyDetailBarBtn.LargeGlyph")));
             this.deleteBuyDetailBarBtn.Name = "deleteBuyDetailBarBtn";
             this.deleteBuyDetailBarBtn.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.deleteBuyDetailBarBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteBuyDetailBarBtn_ItemClick);
             // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            // 
             // xtraTabPage2
             // 
+            this.xtraTabPage2.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.xtraTabPage2.Appearance.Header.Options.UseFont = true;
             this.xtraTabPage2.Controls.Add(this.panelControl2);
             this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1782, 363);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1782, 362);
             this.xtraTabPage2.Text = "Покупні";
             // 
             // panelControl2
             // 
+            this.panelControl2.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.panelControl2.Appearance.Options.UseBackColor = true;
+            this.panelControl2.Controls.Add(this.panelControl3);
             this.panelControl2.Controls.Add(this.standaloneBarDockControl3);
-            this.panelControl2.Controls.Add(this.buysDetalsSpecificGrid);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1782, 363);
+            this.panelControl2.Size = new System.Drawing.Size(1782, 362);
             this.panelControl2.TabIndex = 1;
+            // 
+            // panelControl3
+            // 
+            this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl3.Controls.Add(this.buysDetalsSpecificGrid);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl3.Location = new System.Drawing.Point(2, 35);
+            this.panelControl3.Margin = new System.Windows.Forms.Padding(0);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(1778, 325);
+            this.panelControl3.TabIndex = 1;
             // 
             // buysDetalsSpecificGrid
             // 
-            this.buysDetalsSpecificGrid.ContextMenuStrip = this.buyDetailMenu;
             this.buysDetalsSpecificGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buysDetalsSpecificGrid.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.buysDetalsSpecificGrid.Location = new System.Drawing.Point(2, 2);
+            this.buysDetalsSpecificGrid.Location = new System.Drawing.Point(0, 0);
             this.buysDetalsSpecificGrid.MainView = this.buysDetalsSpecificGridView;
-            this.buysDetalsSpecificGrid.Margin = new System.Windows.Forms.Padding(4);
+            this.buysDetalsSpecificGrid.Margin = new System.Windows.Forms.Padding(0);
             this.buysDetalsSpecificGrid.MenuManager = this.ribbonControl1;
             this.buysDetalsSpecificGrid.Name = "buysDetalsSpecificGrid";
-            this.buysDetalsSpecificGrid.Size = new System.Drawing.Size(1778, 359);
+            this.buysDetalsSpecificGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemMemoEdit1});
+            this.buysDetalsSpecificGrid.Size = new System.Drawing.Size(1778, 325);
             this.buysDetalsSpecificGrid.TabIndex = 0;
             this.buysDetalsSpecificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.buysDetalsSpecificGridView});
+            this.buysDetalsSpecificGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buysDetalsSpecificGrid_MouseClick);
+            // 
+            // buysDetalsSpecificGridView
+            // 
+            this.buysDetalsSpecificGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn20,
+            this.gridColumn21,
+            this.gridColumn22,
+            this.gridColumn23,
+            this.gridColumn24,
+            this.gridColumn25,
+            this.gridColumn26});
+            this.buysDetalsSpecificGridView.GridControl = this.buysDetalsSpecificGrid;
+            this.buysDetalsSpecificGridView.Name = "buysDetalsSpecificGridView";
+            this.buysDetalsSpecificGridView.OptionsView.RowAutoHeight = true;
+            this.buysDetalsSpecificGridView.OptionsView.ShowAutoFilterRow = true;
+            this.buysDetalsSpecificGridView.OptionsView.ShowGroupPanel = false;
+            this.buysDetalsSpecificGridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.buysDetalsSpecificGridView_RowStyle);
+            this.buysDetalsSpecificGridView.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.buysDetalsSpecificGridView_ColumnWidthChanged);
+            this.buysDetalsSpecificGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.buysDetalsSpecificGridView_FocusedRowChanged);
+            // 
+            // gridColumn20
+            // 
+            this.gridColumn20.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn20.AppearanceCell.Options.UseFont = true;
+            this.gridColumn20.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn20.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn20.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn20.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn20.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn20.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn20.Caption = "Найменування";
+            this.gridColumn20.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.gridColumn20.FieldName = "NOMENCLATURESNAME";
+            this.gridColumn20.Name = "gridColumn20";
+            this.gridColumn20.OptionsColumn.AllowEdit = false;
+            this.gridColumn20.OptionsColumn.AllowFocus = false;
+            this.gridColumn20.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.gridColumn20.Visible = true;
+            this.gridColumn20.VisibleIndex = 0;
+            this.gridColumn20.Width = 606;
+            // 
+            // repositoryItemMemoEdit1
+            // 
+            this.repositoryItemMemoEdit1.Appearance.Options.UseTextOptions = true;
+            this.repositoryItemMemoEdit1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
+            // 
+            // gridColumn21
+            // 
+            this.gridColumn21.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn21.AppearanceCell.Options.UseFont = true;
+            this.gridColumn21.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn21.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn21.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn21.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn21.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn21.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn21.Caption = "Сортамент";
+            this.gridColumn21.FieldName = "GUAEGENAME";
+            this.gridColumn21.Name = "gridColumn21";
+            this.gridColumn21.OptionsColumn.AllowEdit = false;
+            this.gridColumn21.OptionsColumn.AllowFocus = false;
+            this.gridColumn21.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.gridColumn21.Visible = true;
+            this.gridColumn21.VisibleIndex = 1;
+            this.gridColumn21.Width = 397;
+            // 
+            // gridColumn22
+            // 
+            this.gridColumn22.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn22.AppearanceCell.Options.UseFont = true;
+            this.gridColumn22.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn22.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn22.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn22.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn22.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn22.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn22.Caption = "ГОСТ,ТУ";
+            this.gridColumn22.FieldName = "GOSTNAME";
+            this.gridColumn22.Name = "gridColumn22";
+            this.gridColumn22.OptionsColumn.AllowEdit = false;
+            this.gridColumn22.OptionsColumn.AllowFocus = false;
+            this.gridColumn22.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.gridColumn22.Visible = true;
+            this.gridColumn22.VisibleIndex = 2;
+            this.gridColumn22.Width = 246;
+            // 
+            // gridColumn23
+            // 
+            this.gridColumn23.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn23.AppearanceCell.Options.UseFont = true;
+            this.gridColumn23.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn23.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn23.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn23.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn23.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn23.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn23.Caption = "Примітка";
+            this.gridColumn23.FieldName = "NOMENCLATURESNOTE";
+            this.gridColumn23.Name = "gridColumn23";
+            this.gridColumn23.OptionsColumn.AllowEdit = false;
+            this.gridColumn23.OptionsColumn.AllowFocus = false;
+            this.gridColumn23.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.gridColumn23.Visible = true;
+            this.gridColumn23.VisibleIndex = 3;
+            this.gridColumn23.Width = 242;
+            // 
+            // gridColumn24
+            // 
+            this.gridColumn24.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn24.AppearanceCell.Options.UseFont = true;
+            this.gridColumn24.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn24.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn24.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn24.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn24.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn24.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn24.Caption = "Одн. вимір.";
+            this.gridColumn24.FieldName = "MEASURENAME";
+            this.gridColumn24.Name = "gridColumn24";
+            this.gridColumn24.OptionsColumn.AllowEdit = false;
+            this.gridColumn24.OptionsColumn.AllowFocus = false;
+            this.gridColumn24.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.gridColumn24.Visible = true;
+            this.gridColumn24.VisibleIndex = 4;
+            this.gridColumn24.Width = 145;
+            // 
+            // gridColumn25
+            // 
+            this.gridColumn25.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn25.AppearanceCell.Options.UseFont = true;
+            this.gridColumn25.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn25.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn25.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn25.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn25.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn25.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn25.Caption = "Вага";
+            this.gridColumn25.FieldName = "WEIGHT";
+            this.gridColumn25.Name = "gridColumn25";
+            this.gridColumn25.OptionsColumn.AllowEdit = false;
+            this.gridColumn25.OptionsColumn.AllowFocus = false;
+            this.gridColumn25.Visible = true;
+            this.gridColumn25.VisibleIndex = 5;
+            this.gridColumn25.Width = 58;
+            // 
+            // gridColumn26
+            // 
+            this.gridColumn26.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn26.AppearanceCell.Options.UseFont = true;
+            this.gridColumn26.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn26.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn26.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn26.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn26.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn26.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn26.Caption = "Кіл-ть";
+            this.gridColumn26.FieldName = "QUANTITY";
+            this.gridColumn26.Name = "gridColumn26";
+            this.gridColumn26.OptionsColumn.AllowEdit = false;
+            this.gridColumn26.OptionsColumn.AllowFocus = false;
+            this.gridColumn26.Visible = true;
+            this.gridColumn26.VisibleIndex = 6;
+            this.gridColumn26.Width = 66;
+            // 
+            // xtraTabPage3
+            // 
+            this.xtraTabPage3.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.xtraTabPage3.Appearance.Header.Options.UseFont = true;
+            this.xtraTabPage3.Controls.Add(this.panelControl5);
+            this.xtraTabPage3.Controls.Add(this.standaloneBarDockControl4);
+            this.xtraTabPage3.Margin = new System.Windows.Forms.Padding(0);
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Size = new System.Drawing.Size(1782, 362);
+            this.xtraTabPage3.Text = "Матеріали";
+            // 
+            // panelControl5
+            // 
+            this.panelControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl5.Controls.Add(this.materialsSpecificGrid);
+            this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl5.Location = new System.Drawing.Point(0, 34);
+            this.panelControl5.Margin = new System.Windows.Forms.Padding(0);
+            this.panelControl5.Name = "panelControl5";
+            this.panelControl5.Size = new System.Drawing.Size(1782, 328);
+            this.panelControl5.TabIndex = 1;
+            // 
+            // materialsSpecificGrid
+            // 
+            this.materialsSpecificGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialsSpecificGrid.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.materialsSpecificGrid.Location = new System.Drawing.Point(0, 0);
+            this.materialsSpecificGrid.MainView = this.materialsSpecificGridView;
+            this.materialsSpecificGrid.Margin = new System.Windows.Forms.Padding(4);
+            this.materialsSpecificGrid.MenuManager = this.ribbonControl1;
+            this.materialsSpecificGrid.Name = "materialsSpecificGrid";
+            this.materialsSpecificGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemMemoEdit2});
+            this.materialsSpecificGrid.Size = new System.Drawing.Size(1782, 328);
+            this.materialsSpecificGrid.TabIndex = 0;
+            this.materialsSpecificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.materialsSpecificGridView});
+            this.materialsSpecificGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialsSpecificGrid_MouseClick);
+            // 
+            // materialsSpecificGridView
+            // 
+            this.materialsSpecificGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn27,
+            this.gridColumn28,
+            this.gridColumn29,
+            this.gridColumn30,
+            this.gridColumn31,
+            this.gridColumn32,
+            this.gridColumn33});
+            this.materialsSpecificGridView.GridControl = this.materialsSpecificGrid;
+            this.materialsSpecificGridView.Name = "materialsSpecificGridView";
+            this.materialsSpecificGridView.OptionsView.RowAutoHeight = true;
+            this.materialsSpecificGridView.OptionsView.ShowAutoFilterRow = true;
+            this.materialsSpecificGridView.OptionsView.ShowGroupPanel = false;
+            this.materialsSpecificGridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.materialsSpecificGridView_RowStyle);
+            this.materialsSpecificGridView.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.materialsSpecificGridView_ColumnWidthChanged);
+            this.materialsSpecificGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.materialsSpecificGridView_FocusedRowChanged);
+            // 
+            // gridColumn27
+            // 
+            this.gridColumn27.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn27.AppearanceCell.Options.UseFont = true;
+            this.gridColumn27.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn27.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn27.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn27.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn27.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn27.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn27.Caption = "Найменування";
+            this.gridColumn27.ColumnEdit = this.repositoryItemMemoEdit2;
+            this.gridColumn27.FieldName = "NOMENCLATURESNAME";
+            this.gridColumn27.Name = "gridColumn27";
+            this.gridColumn27.OptionsColumn.AllowEdit = false;
+            this.gridColumn27.OptionsColumn.AllowFocus = false;
+            this.gridColumn27.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.gridColumn27.Visible = true;
+            this.gridColumn27.VisibleIndex = 0;
+            this.gridColumn27.Width = 477;
+            // 
+            // repositoryItemMemoEdit2
+            // 
+            this.repositoryItemMemoEdit2.Appearance.Options.UseTextOptions = true;
+            this.repositoryItemMemoEdit2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.repositoryItemMemoEdit2.Name = "repositoryItemMemoEdit2";
+            // 
+            // gridColumn28
+            // 
+            this.gridColumn28.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn28.AppearanceCell.Options.UseFont = true;
+            this.gridColumn28.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn28.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn28.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn28.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn28.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn28.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn28.Caption = "Сортамент";
+            this.gridColumn28.FieldName = "GUAGENAME";
+            this.gridColumn28.Name = "gridColumn28";
+            this.gridColumn28.OptionsColumn.AllowEdit = false;
+            this.gridColumn28.OptionsColumn.AllowFocus = false;
+            this.gridColumn28.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.gridColumn28.Visible = true;
+            this.gridColumn28.VisibleIndex = 1;
+            this.gridColumn28.Width = 213;
+            // 
+            // gridColumn29
+            // 
+            this.gridColumn29.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn29.AppearanceCell.Options.UseFont = true;
+            this.gridColumn29.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn29.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn29.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn29.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn29.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn29.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn29.Caption = "ГОСТ,ТУ";
+            this.gridColumn29.FieldName = "GOSTNAME";
+            this.gridColumn29.Name = "gridColumn29";
+            this.gridColumn29.OptionsColumn.AllowEdit = false;
+            this.gridColumn29.OptionsColumn.AllowFocus = false;
+            this.gridColumn29.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.gridColumn29.Visible = true;
+            this.gridColumn29.VisibleIndex = 2;
+            this.gridColumn29.Width = 215;
+            // 
+            // gridColumn30
+            // 
+            this.gridColumn30.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn30.AppearanceCell.Options.UseFont = true;
+            this.gridColumn30.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn30.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn30.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn30.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn30.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn30.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn30.Caption = "Примітка";
+            this.gridColumn30.FieldName = "NOMENCLATURESNOTE";
+            this.gridColumn30.Name = "gridColumn30";
+            this.gridColumn30.OptionsColumn.AllowEdit = false;
+            this.gridColumn30.OptionsColumn.AllowFocus = false;
+            this.gridColumn30.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.gridColumn30.Visible = true;
+            this.gridColumn30.VisibleIndex = 3;
+            this.gridColumn30.Width = 494;
+            // 
+            // gridColumn31
+            // 
+            this.gridColumn31.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn31.AppearanceCell.Options.UseFont = true;
+            this.gridColumn31.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn31.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn31.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn31.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn31.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn31.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn31.Caption = "Одн. вимір.";
+            this.gridColumn31.FieldName = "MEASURENAME";
+            this.gridColumn31.Name = "gridColumn31";
+            this.gridColumn31.OptionsColumn.AllowEdit = false;
+            this.gridColumn31.OptionsColumn.AllowFocus = false;
+            this.gridColumn31.Visible = true;
+            this.gridColumn31.VisibleIndex = 4;
+            this.gridColumn31.Width = 153;
+            // 
+            // gridColumn32
+            // 
+            this.gridColumn32.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn32.AppearanceCell.Options.UseFont = true;
+            this.gridColumn32.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn32.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn32.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn32.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn32.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn32.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn32.Caption = "Вага";
+            this.gridColumn32.FieldName = "WEIGHT";
+            this.gridColumn32.Name = "gridColumn32";
+            this.gridColumn32.OptionsColumn.AllowEdit = false;
+            this.gridColumn32.OptionsColumn.AllowFocus = false;
+            this.gridColumn32.Visible = true;
+            this.gridColumn32.VisibleIndex = 5;
+            this.gridColumn32.Width = 116;
+            // 
+            // gridColumn33
+            // 
+            this.gridColumn33.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn33.AppearanceCell.Options.UseFont = true;
+            this.gridColumn33.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn33.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn33.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn33.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn33.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn33.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn33.Caption = "Кіл-ть";
+            this.gridColumn33.FieldName = "QUANTITY";
+            this.gridColumn33.Name = "gridColumn33";
+            this.gridColumn33.OptionsColumn.AllowEdit = false;
+            this.gridColumn33.OptionsColumn.AllowFocus = false;
+            this.gridColumn33.Visible = true;
+            this.gridColumn33.VisibleIndex = 6;
+            this.gridColumn33.Width = 96;
             // 
             // buyDetailMenu
             // 
@@ -1310,164 +1898,6 @@
             this.видалитиЗаписToolStripMenuItem1.Text = "Видалити запис";
             this.видалитиЗаписToolStripMenuItem1.Click += new System.EventHandler(this.видалитиЗаписToolStripMenuItem1_Click);
             // 
-            // buysDetalsSpecificGridView
-            // 
-            this.buysDetalsSpecificGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn20,
-            this.gridColumn21,
-            this.gridColumn22,
-            this.gridColumn23,
-            this.gridColumn24,
-            this.gridColumn25,
-            this.gridColumn26});
-            this.buysDetalsSpecificGridView.GridControl = this.buysDetalsSpecificGrid;
-            this.buysDetalsSpecificGridView.Name = "buysDetalsSpecificGridView";
-            this.buysDetalsSpecificGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
-            this.buysDetalsSpecificGridView.OptionsView.ShowAutoFilterRow = true;
-            this.buysDetalsSpecificGridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.buysDetalsSpecificGridView_RowStyle);
-            // 
-            // gridColumn20
-            // 
-            this.gridColumn20.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn20.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn20.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn20.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn20.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn20.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn20.Caption = "Найменування";
-            this.gridColumn20.FieldName = "NOMENCLATURESNAME";
-            this.gridColumn20.Name = "gridColumn20";
-            this.gridColumn20.OptionsColumn.AllowEdit = false;
-            this.gridColumn20.OptionsColumn.AllowFocus = false;
-            this.gridColumn20.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.gridColumn20.Visible = true;
-            this.gridColumn20.VisibleIndex = 0;
-            // 
-            // gridColumn21
-            // 
-            this.gridColumn21.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn21.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn21.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn21.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn21.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn21.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn21.Caption = "Сортамент";
-            this.gridColumn21.FieldName = "GUAEGENAME";
-            this.gridColumn21.Name = "gridColumn21";
-            this.gridColumn21.OptionsColumn.AllowEdit = false;
-            this.gridColumn21.OptionsColumn.AllowFocus = false;
-            this.gridColumn21.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.gridColumn21.Visible = true;
-            this.gridColumn21.VisibleIndex = 1;
-            // 
-            // gridColumn22
-            // 
-            this.gridColumn22.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn22.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn22.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn22.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn22.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn22.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn22.Caption = "ГОСТ,ТУ";
-            this.gridColumn22.FieldName = "GOSTNAME";
-            this.gridColumn22.Name = "gridColumn22";
-            this.gridColumn22.OptionsColumn.AllowEdit = false;
-            this.gridColumn22.OptionsColumn.AllowFocus = false;
-            this.gridColumn22.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.gridColumn22.Visible = true;
-            this.gridColumn22.VisibleIndex = 2;
-            // 
-            // gridColumn23
-            // 
-            this.gridColumn23.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn23.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn23.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn23.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn23.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn23.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn23.Caption = "Примітка";
-            this.gridColumn23.FieldName = "NOMENCLATURESNOTE";
-            this.gridColumn23.Name = "gridColumn23";
-            this.gridColumn23.OptionsColumn.AllowEdit = false;
-            this.gridColumn23.OptionsColumn.AllowFocus = false;
-            this.gridColumn23.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.gridColumn23.Visible = true;
-            this.gridColumn23.VisibleIndex = 3;
-            // 
-            // gridColumn24
-            // 
-            this.gridColumn24.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn24.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn24.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn24.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn24.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn24.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn24.Caption = "Одн. вимір.";
-            this.gridColumn24.FieldName = "MEASURENAME";
-            this.gridColumn24.Name = "gridColumn24";
-            this.gridColumn24.OptionsColumn.AllowEdit = false;
-            this.gridColumn24.OptionsColumn.AllowFocus = false;
-            this.gridColumn24.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.gridColumn24.Visible = true;
-            this.gridColumn24.VisibleIndex = 4;
-            // 
-            // gridColumn25
-            // 
-            this.gridColumn25.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn25.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn25.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn25.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn25.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn25.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn25.Caption = "Вага";
-            this.gridColumn25.FieldName = "WEIGHT";
-            this.gridColumn25.Name = "gridColumn25";
-            this.gridColumn25.OptionsColumn.AllowEdit = false;
-            this.gridColumn25.OptionsColumn.AllowFocus = false;
-            this.gridColumn25.Visible = true;
-            this.gridColumn25.VisibleIndex = 5;
-            // 
-            // gridColumn26
-            // 
-            this.gridColumn26.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn26.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn26.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn26.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn26.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn26.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn26.Caption = "Кіл-ть";
-            this.gridColumn26.FieldName = "QUANTITY";
-            this.gridColumn26.Name = "gridColumn26";
-            this.gridColumn26.OptionsColumn.AllowEdit = false;
-            this.gridColumn26.OptionsColumn.AllowFocus = false;
-            this.gridColumn26.Visible = true;
-            this.gridColumn26.VisibleIndex = 6;
-            // 
-            // xtraTabPage3
-            // 
-            this.xtraTabPage3.Controls.Add(this.standaloneBarDockControl4);
-            this.xtraTabPage3.Controls.Add(this.materialsSpecificGrid);
-            this.xtraTabPage3.Margin = new System.Windows.Forms.Padding(4);
-            this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1782, 363);
-            this.xtraTabPage3.Text = "Матеріали";
-            // 
-            // materialsSpecificGrid
-            // 
-            this.materialsSpecificGrid.ContextMenuStrip = this.materialMenu;
-            this.materialsSpecificGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialsSpecificGrid.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.materialsSpecificGrid.Location = new System.Drawing.Point(0, 0);
-            this.materialsSpecificGrid.MainView = this.materialsSpecificGridView;
-            this.materialsSpecificGrid.Margin = new System.Windows.Forms.Padding(4);
-            this.materialsSpecificGrid.MenuManager = this.ribbonControl1;
-            this.materialsSpecificGrid.Name = "materialsSpecificGrid";
-            this.materialsSpecificGrid.Size = new System.Drawing.Size(1782, 363);
-            this.materialsSpecificGrid.TabIndex = 0;
-            this.materialsSpecificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.materialsSpecificGridView});
-            this.materialsSpecificGrid.Click += new System.EventHandler(this.materialsSpecificGrid_Click);
-            // 
             // materialMenu
             // 
             this.materialMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1498,147 +1928,53 @@
             this.видалитиЗаписToolStripMenuItem2.Text = "Видалити запис";
             this.видалитиЗаписToolStripMenuItem2.Click += new System.EventHandler(this.видалитиЗаписToolStripMenuItem2_Click);
             // 
-            // materialsSpecificGridView
+            // detailMenu
             // 
-            this.materialsSpecificGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn27,
-            this.gridColumn28,
-            this.gridColumn29,
-            this.gridColumn30,
-            this.gridColumn31,
-            this.gridColumn32,
-            this.gridColumn33});
-            this.materialsSpecificGridView.GridControl = this.materialsSpecificGrid;
-            this.materialsSpecificGridView.Name = "materialsSpecificGridView";
-            this.materialsSpecificGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
-            this.materialsSpecificGridView.OptionsView.ShowAutoFilterRow = true;
-            this.materialsSpecificGridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.materialsSpecificGridView_RowStyle);
+            this.detailMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.додатиЗаписToolStripMenuItem,
+            this.редагуватиЗаписToolStripMenuItem,
+            this.видалитиЗаписToolStripMenuItem});
+            this.detailMenu.Margin = new System.Windows.Forms.Padding(200, 0, 0, 0);
+            this.detailMenu.Name = "mainMenu";
+            this.detailMenu.Size = new System.Drawing.Size(169, 70);
             // 
-            // gridColumn27
+            // додатиЗаписToolStripMenuItem
             // 
-            this.gridColumn27.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn27.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn27.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn27.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn27.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn27.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn27.Caption = "Найменування";
-            this.gridColumn27.FieldName = "NOMENCLATURESNAME";
-            this.gridColumn27.Name = "gridColumn27";
-            this.gridColumn27.OptionsColumn.AllowEdit = false;
-            this.gridColumn27.OptionsColumn.AllowFocus = false;
-            this.gridColumn27.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.gridColumn27.Visible = true;
-            this.gridColumn27.VisibleIndex = 0;
+            this.додатиЗаписToolStripMenuItem.Name = "додатиЗаписToolStripMenuItem";
+            this.додатиЗаписToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.додатиЗаписToolStripMenuItem.Text = "Додати запис";
+            this.додатиЗаписToolStripMenuItem.Click += new System.EventHandler(this.додатиЗаписToolStripMenuItem_Click);
             // 
-            // gridColumn28
+            // редагуватиЗаписToolStripMenuItem
             // 
-            this.gridColumn28.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn28.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn28.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn28.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn28.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn28.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn28.Caption = "Сортамент";
-            this.gridColumn28.FieldName = "GUAGENAME";
-            this.gridColumn28.Name = "gridColumn28";
-            this.gridColumn28.OptionsColumn.AllowEdit = false;
-            this.gridColumn28.OptionsColumn.AllowFocus = false;
-            this.gridColumn28.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.gridColumn28.Visible = true;
-            this.gridColumn28.VisibleIndex = 1;
+            this.редагуватиЗаписToolStripMenuItem.Name = "редагуватиЗаписToolStripMenuItem";
+            this.редагуватиЗаписToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.редагуватиЗаписToolStripMenuItem.Text = "Редагувати запис";
+            this.редагуватиЗаписToolStripMenuItem.Click += new System.EventHandler(this.редагуватиЗаписToolStripMenuItem_Click);
             // 
-            // gridColumn29
+            // видалитиЗаписToolStripMenuItem
             // 
-            this.gridColumn29.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn29.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn29.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn29.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn29.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn29.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn29.Caption = "ГОСТ,ТУ";
-            this.gridColumn29.FieldName = "GOSTNAME";
-            this.gridColumn29.Name = "gridColumn29";
-            this.gridColumn29.OptionsColumn.AllowEdit = false;
-            this.gridColumn29.OptionsColumn.AllowFocus = false;
-            this.gridColumn29.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.gridColumn29.Visible = true;
-            this.gridColumn29.VisibleIndex = 2;
-            // 
-            // gridColumn30
-            // 
-            this.gridColumn30.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn30.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn30.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn30.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn30.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn30.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn30.Caption = "Примітка";
-            this.gridColumn30.FieldName = "NOMENCLATURESNOTE";
-            this.gridColumn30.Name = "gridColumn30";
-            this.gridColumn30.OptionsColumn.AllowEdit = false;
-            this.gridColumn30.OptionsColumn.AllowFocus = false;
-            this.gridColumn30.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.gridColumn30.Visible = true;
-            this.gridColumn30.VisibleIndex = 3;
-            // 
-            // gridColumn31
-            // 
-            this.gridColumn31.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn31.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn31.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn31.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn31.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn31.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn31.Caption = "Одн. вимір.";
-            this.gridColumn31.FieldName = "MEASURENAME";
-            this.gridColumn31.Name = "gridColumn31";
-            this.gridColumn31.OptionsColumn.AllowEdit = false;
-            this.gridColumn31.OptionsColumn.AllowFocus = false;
-            this.gridColumn31.Visible = true;
-            this.gridColumn31.VisibleIndex = 4;
-            // 
-            // gridColumn32
-            // 
-            this.gridColumn32.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn32.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn32.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn32.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn32.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn32.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn32.Caption = "Вага";
-            this.gridColumn32.FieldName = "WEIGHT";
-            this.gridColumn32.Name = "gridColumn32";
-            this.gridColumn32.OptionsColumn.AllowEdit = false;
-            this.gridColumn32.OptionsColumn.AllowFocus = false;
-            this.gridColumn32.Visible = true;
-            this.gridColumn32.VisibleIndex = 5;
-            // 
-            // gridColumn33
-            // 
-            this.gridColumn33.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn33.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn33.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn33.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn33.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn33.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn33.Caption = "Кіл-ть";
-            this.gridColumn33.FieldName = "QUANTITY";
-            this.gridColumn33.Name = "gridColumn33";
-            this.gridColumn33.OptionsColumn.AllowEdit = false;
-            this.gridColumn33.OptionsColumn.AllowFocus = false;
-            this.gridColumn33.Visible = true;
-            this.gridColumn33.VisibleIndex = 6;
+            this.видалитиЗаписToolStripMenuItem.Name = "видалитиЗаписToolStripMenuItem";
+            this.видалитиЗаписToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.видалитиЗаписToolStripMenuItem.Text = "Видалити запис";
+            this.видалитиЗаписToolStripMenuItem.Click += new System.EventHandler(this.видалитиЗаписToolStripMenuItem_Click);
             // 
             // specificGrid
             // 
             this.specificGrid.ContextMenuStrip = this.mainMenu;
             this.specificGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.specificGrid.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
+            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level2";
+            this.specificGrid.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1,
+            gridLevelNode2});
             this.specificGrid.Location = new System.Drawing.Point(0, 95);
             this.specificGrid.MainView = this.specificGridView;
             this.specificGrid.Margin = new System.Windows.Forms.Padding(4);
             this.specificGrid.Name = "specificGrid";
+            this.specificGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.specNameRepository});
             this.specificGrid.Size = new System.Drawing.Size(1792, 444);
             this.specificGrid.TabIndex = 2;
             this.specificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1659,78 +1995,82 @@
             this.disableLabelMenuBtn,
             this.enableLabelMenuBtn});
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(326, 246);
+            this.mainMenu.Size = new System.Drawing.Size(293, 246);
             // 
             // добавитьСпецификациюToolStripMenuItem
             // 
             this.добавитьСпецификациюToolStripMenuItem.Name = "добавитьСпецификациюToolStripMenuItem";
-            this.добавитьСпецификациюToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
+            this.добавитьСпецификациюToolStripMenuItem.Size = new System.Drawing.Size(292, 22);
             this.добавитьСпецификациюToolStripMenuItem.Text = "Додати специфікацію";
             this.добавитьСпецификациюToolStripMenuItem.Click += new System.EventHandler(this.добавитьСпецификациюToolStripMenuItem_Click);
             // 
             // добавитьСводнуюСпецификациюToolStripMenuItem
             // 
             this.добавитьСводнуюСпецификациюToolStripMenuItem.Name = "добавитьСводнуюСпецификациюToolStripMenuItem";
-            this.добавитьСводнуюСпецификациюToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
+            this.добавитьСводнуюСпецификациюToolStripMenuItem.Size = new System.Drawing.Size(292, 22);
             this.добавитьСводнуюСпецификациюToolStripMenuItem.Text = "Додати зведену специфікацію";
             this.добавитьСводнуюСпецификациюToolStripMenuItem.Click += new System.EventHandler(this.добавитьСводнуюСпецификациюToolStripMenuItem_Click);
             // 
             // редагуватиСпецифікаціюToolStripMenuItem
             // 
             this.редагуватиСпецифікаціюToolStripMenuItem.Name = "редагуватиСпецифікаціюToolStripMenuItem";
-            this.редагуватиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
+            this.редагуватиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(292, 22);
             this.редагуватиСпецифікаціюToolStripMenuItem.Text = "Редагувати специфікацію";
             this.редагуватиСпецифікаціюToolStripMenuItem.Click += new System.EventHandler(this.редагуватиСпецифікаціюToolStripMenuItem_Click);
             // 
             // видалитиСпецифікаціюToolStripMenuItem
             // 
             this.видалитиСпецифікаціюToolStripMenuItem.Name = "видалитиСпецифікаціюToolStripMenuItem";
-            this.видалитиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
+            this.видалитиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(292, 22);
             this.видалитиСпецифікаціюToolStripMenuItem.Text = "Видалити специфікацію";
             this.видалитиСпецифікаціюToolStripMenuItem.Click += new System.EventHandler(this.видалитиСпецифікаціюToolStripMenuItem_Click);
             // 
             // відобразитиСпецифікаціюToolStripMenuItem
             // 
             this.відобразитиСпецифікаціюToolStripMenuItem.Name = "відобразитиСпецифікаціюToolStripMenuItem";
-            this.відобразитиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
-            this.відобразитиСпецифікаціюToolStripMenuItem.Text = "Відобразити специфікацію";
+            this.відобразитиСпецифікаціюToolStripMenuItem.Size = new System.Drawing.Size(292, 22);
+            this.відобразитиСпецифікаціюToolStripMenuItem.Text = "Відобразити матеріальну специфікацію";
             this.відобразитиСпецифікаціюToolStripMenuItem.Click += new System.EventHandler(this.відобразитиСпецифікаціюToolStripMenuItem_Click);
             // 
             // відобразитиКартуТехПроцесуToolStripMenuItem
             // 
             this.відобразитиКартуТехПроцесуToolStripMenuItem.Name = "відобразитиКартуТехПроцесуToolStripMenuItem";
-            this.відобразитиКартуТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
-            this.відобразитиКартуТехПроцесуToolStripMenuItem.Text = "Відобразити карту тех. процесу";
+            this.відобразитиКартуТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(292, 22);
+            this.відобразитиКартуТехПроцесуToolStripMenuItem.Text = "Карта тех. процесу";
+            this.відобразитиКартуТехПроцесуToolStripMenuItem.Click += new System.EventHandler(this.відобразитиКартуТехПроцесуToolStripMenuItem_Click);
             // 
             // відобразитиКартуТехПроцесупоДатіToolStripMenuItem
             // 
             this.відобразитиКартуТехПроцесупоДатіToolStripMenuItem.Name = "відобразитиКартуТехПроцесупоДатіToolStripMenuItem";
-            this.відобразитиКартуТехПроцесупоДатіToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
-            this.відобразитиКартуТехПроцесупоДатіToolStripMenuItem.Text = "Відобразити карту тех. процесу (по даті)";
+            this.відобразитиКартуТехПроцесупоДатіToolStripMenuItem.Size = new System.Drawing.Size(292, 22);
+            this.відобразитиКартуТехПроцесупоДатіToolStripMenuItem.Text = "Карта тех. процесу (по даті)";
+            this.відобразитиКартуТехПроцесупоДатіToolStripMenuItem.Click += new System.EventHandler(this.відобразитиКартуТехПроцесупоДатіToolStripMenuItem_Click);
             // 
             // відобразитиЗведенуКартуТехПроцесуToolStripMenuItem
             // 
             this.відобразитиЗведенуКартуТехПроцесуToolStripMenuItem.Name = "відобразитиЗведенуКартуТехПроцесуToolStripMenuItem";
-            this.відобразитиЗведенуКартуТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
-            this.відобразитиЗведенуКартуТехПроцесуToolStripMenuItem.Text = "Відобразити зведену карту тех. процесу";
+            this.відобразитиЗведенуКартуТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(292, 22);
+            this.відобразитиЗведенуКартуТехПроцесуToolStripMenuItem.Text = "Зведена карта тех. процесу";
+            this.відобразитиЗведенуКартуТехПроцесуToolStripMenuItem.Click += new System.EventHandler(this.відобразитиЗведенуКартуТехПроцесуToolStripMenuItem_Click);
             // 
             // відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem
             // 
             this.відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem.Name = "відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem";
-            this.відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(325, 22);
-            this.відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem.Text = "Відобразити карту маршрутного тех. процесу";
+            this.відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem.Size = new System.Drawing.Size(292, 22);
+            this.відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem.Text = "Карта маршрута тех. процесу";
+            this.відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem.Click += new System.EventHandler(this.відобразитиКартуМаршрутногоТехПроцесуToolStripMenuItem_Click);
             // 
             // disableLabelMenuBtn
             // 
             this.disableLabelMenuBtn.Name = "disableLabelMenuBtn";
-            this.disableLabelMenuBtn.Size = new System.Drawing.Size(325, 22);
+            this.disableLabelMenuBtn.Size = new System.Drawing.Size(292, 22);
             this.disableLabelMenuBtn.Text = "Прибрати виділення";
             this.disableLabelMenuBtn.Click += new System.EventHandler(this.disableLabelMenuBtn_Click);
             // 
             // enableLabelMenuBtn
             // 
             this.enableLabelMenuBtn.Name = "enableLabelMenuBtn";
-            this.enableLabelMenuBtn.Size = new System.Drawing.Size(325, 22);
+            this.enableLabelMenuBtn.Size = new System.Drawing.Size(292, 22);
             this.enableLabelMenuBtn.Text = "Виділити запис";
             this.enableLabelMenuBtn.Click += new System.EventHandler(this.enableLabelMenuBtn_Click);
             // 
@@ -1743,17 +2083,22 @@
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn6,
-            this.gridColumn7});
+            this.gridColumn7,
+            this.gridColumn36});
             this.specificGridView.GridControl = this.specificGrid;
             this.specificGridView.Name = "specificGridView";
-            this.specificGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.specificGridView.OptionsBehavior.AllowPixelScrolling = DevExpress.Utils.DefaultBoolean.False;
+            this.specificGridView.OptionsView.RowAutoHeight = true;
             this.specificGridView.OptionsView.ShowAutoFilterRow = true;
             this.specificGridView.OptionsView.ShowGroupPanel = false;
             this.specificGridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.specificGridView_RowStyle);
+            this.specificGridView.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.specificGridView_ColumnWidthChanged);
             this.specificGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.specificGridView_FocusedRowChanged);
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn1.AppearanceCell.Options.UseFont = true;
             this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
@@ -1769,11 +2114,14 @@
             // 
             // gridColumn2
             // 
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn2.AppearanceCell.Options.UseFont = true;
             this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn2.Caption = "Наименование";
+            this.gridColumn2.Caption = "Найменування";
+            this.gridColumn2.ColumnEdit = this.specNameRepository;
             this.gridColumn2.FieldName = "NAME";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
@@ -1783,13 +2131,21 @@
             this.gridColumn2.VisibleIndex = 1;
             this.gridColumn2.Width = 442;
             // 
+            // specNameRepository
+            // 
+            this.specNameRepository.Appearance.Options.UseTextOptions = true;
+            this.specNameRepository.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.specNameRepository.Name = "specNameRepository";
+            // 
             // gridColumn3
             // 
+            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn3.AppearanceCell.Options.UseFont = true;
             this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn3.Caption = "Количество";
+            this.gridColumn3.Caption = "Кількість";
             this.gridColumn3.FieldName = "QUANTITY";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
@@ -1800,11 +2156,13 @@
             // 
             // gridColumn4
             // 
+            this.gridColumn4.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn4.AppearanceCell.Options.UseFont = true;
             this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn4.AppearanceHeader.Options.UseFont = true;
             this.gridColumn4.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn4.Caption = "Чертеж";
+            this.gridColumn4.Caption = "Креслення";
             this.gridColumn4.FieldName = "DRAWING";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
@@ -1816,11 +2174,13 @@
             // 
             // gridColumn5
             // 
+            this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn5.AppearanceCell.Options.UseFont = true;
             this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn5.AppearanceHeader.Options.UseFont = true;
             this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn5.Caption = "Чистый вес";
+            this.gridColumn5.Caption = "Чиста вага";
             this.gridColumn5.FieldName = "WEIGHT";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
@@ -1831,11 +2191,13 @@
             // 
             // gridColumn6
             // 
+            this.gridColumn6.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn6.AppearanceCell.Options.UseFont = true;
             this.gridColumn6.AppearanceHeader.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn6.AppearanceHeader.Options.UseFont = true;
             this.gridColumn6.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn6.Caption = "Дата создания";
+            this.gridColumn6.Caption = "Дата створення";
             this.gridColumn6.FieldName = "CREATION_DATE";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
@@ -1846,11 +2208,13 @@
             // 
             // gridColumn7
             // 
+            this.gridColumn7.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn7.AppearanceCell.Options.UseFont = true;
             this.gridColumn7.AppearanceHeader.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridColumn7.AppearanceHeader.Options.UseFont = true;
             this.gridColumn7.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn7.Caption = "Составитель";
+            this.gridColumn7.Caption = "Виконавець";
             this.gridColumn7.FieldName = "AUTHORIZATION_USERS_NAME";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
@@ -1858,6 +2222,23 @@
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 6;
             this.gridColumn7.Width = 110;
+            // 
+            // gridColumn36
+            // 
+            this.gridColumn36.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn36.AppearanceCell.Options.UseFont = true;
+            this.gridColumn36.AppearanceHeader.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridColumn36.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn36.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn36.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn36.Caption = "Заказ";
+            this.gridColumn36.FieldName = "CustomerOrders";
+            this.gridColumn36.Name = "gridColumn36";
+            this.gridColumn36.OptionsColumn.AllowEdit = false;
+            this.gridColumn36.OptionsColumn.AllowFocus = false;
+            this.gridColumn36.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.gridColumn36.Visible = true;
+            this.gridColumn36.VisibleIndex = 7;
             // 
             // barBuyDetail
             // 
@@ -1954,6 +2335,14 @@
             this.addMaterialDetailBarBtn.Caption = "Додати";
             this.addMaterialDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addMaterialDetailBarBtn.Glyph")));
             this.addMaterialDetailBarBtn.Id = 0;
+            this.addMaterialDetailBarBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addMaterialDetailBarBtn.ItemAppearance.Disabled.Options.UseFont = true;
+            this.addMaterialDetailBarBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addMaterialDetailBarBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.addMaterialDetailBarBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addMaterialDetailBarBtn.ItemAppearance.Normal.Options.UseFont = true;
+            this.addMaterialDetailBarBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addMaterialDetailBarBtn.ItemAppearance.Pressed.Options.UseFont = true;
             this.addMaterialDetailBarBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("addMaterialDetailBarBtn.LargeGlyph")));
             this.addMaterialDetailBarBtn.Name = "addMaterialDetailBarBtn";
             this.addMaterialDetailBarBtn.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
@@ -1964,6 +2353,14 @@
             this.editMaterialDetailBarBtn.Caption = "Редагувати";
             this.editMaterialDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("editMaterialDetailBarBtn.Glyph")));
             this.editMaterialDetailBarBtn.Id = 1;
+            this.editMaterialDetailBarBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editMaterialDetailBarBtn.ItemAppearance.Disabled.Options.UseFont = true;
+            this.editMaterialDetailBarBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editMaterialDetailBarBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.editMaterialDetailBarBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editMaterialDetailBarBtn.ItemAppearance.Normal.Options.UseFont = true;
+            this.editMaterialDetailBarBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editMaterialDetailBarBtn.ItemAppearance.Pressed.Options.UseFont = true;
             this.editMaterialDetailBarBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("editMaterialDetailBarBtn.LargeGlyph")));
             this.editMaterialDetailBarBtn.Name = "editMaterialDetailBarBtn";
             this.editMaterialDetailBarBtn.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
@@ -1974,6 +2371,14 @@
             this.deleteMaterialDetailBarBtn.Caption = "Видалити";
             this.deleteMaterialDetailBarBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("deleteMaterialDetailBarBtn.Glyph")));
             this.deleteMaterialDetailBarBtn.Id = 2;
+            this.deleteMaterialDetailBarBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteMaterialDetailBarBtn.ItemAppearance.Disabled.Options.UseFont = true;
+            this.deleteMaterialDetailBarBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteMaterialDetailBarBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.deleteMaterialDetailBarBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteMaterialDetailBarBtn.ItemAppearance.Normal.Options.UseFont = true;
+            this.deleteMaterialDetailBarBtn.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteMaterialDetailBarBtn.ItemAppearance.Pressed.Options.UseFont = true;
             this.deleteMaterialDetailBarBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("deleteMaterialDetailBarBtn.LargeGlyph")));
             this.deleteMaterialDetailBarBtn.Name = "deleteMaterialDetailBarBtn";
             this.deleteMaterialDetailBarBtn.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
@@ -2020,6 +2425,15 @@
             this.imageCollection.InsertGalleryImage("status_32x32.png", "office2013/tasks/status_32x32.png", DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/tasks/status_32x32.png"), 1);
             this.imageCollection.Images.SetKeyName(1, "status_32x32.png");
             // 
+            // styleController1
+            // 
+            this.styleController1.LookAndFeel.SkinName = "Seven Classic";
+            this.styleController1.LookAndFeel.UseDefaultLookAndFeel = false;
+            // 
+            // splashScreenManager
+            // 
+            this.splashScreenManager.ClosingDelay = 500;
+            // 
             // MtsSpecificationOldFm
             // 
             this.Appearance.Options.UseFont = true;
@@ -2043,11 +2457,13 @@
             this.Controls.Add(this.barDockControl5);
             this.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.KeyPreview = true;
+            this.LookAndFeel.SkinName = "Office 2010 Black";
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MtsSpecificationOldFm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Метериальные спецификации";
+            this.Text = " ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MtsSpecificationOldFm_FormClosed);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MtsSpecificationOldFm_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
@@ -2062,26 +2478,38 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
+            this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.detalsSpecificGrid)).EndInit();
-            this.detailMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.detalsSpecificGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoForDetailsEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.buysDetalsSpecificGrid)).EndInit();
-            this.buyDetailMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.buysDetalsSpecificGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             this.xtraTabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
+            this.panelControl5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.materialsSpecificGrid)).EndInit();
-            this.materialMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.materialsSpecificGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).EndInit();
+            this.buyDetailMenu.ResumeLayout(false);
+            this.materialMenu.ResumeLayout(false);
+            this.detailMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.specificGrid)).EndInit();
             this.mainMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.specificGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.specNameRepository)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barBuyDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barMaterialDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.styleController1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2104,7 +2532,6 @@
         private DevExpress.XtraBars.BarButtonItem addAllSpeficBtn;
         private DevExpress.XtraBars.BarButtonItem editSpecificBtn;
         private DevExpress.XtraBars.BarButtonItem deleteSpecificBtn;
-        private DevExpress.XtraBars.BarButtonItem showSpecificInFileBtb;
         private DevExpress.XtraBars.BarButtonItem mapTechProcessBtn;
         private DevExpress.XtraBars.BarButtonItem mapTechProcessByDateBtn;
         private DevExpress.XtraBars.BarButtonItem mapAllTechProcessBtn;
@@ -2166,9 +2593,6 @@
         private DevExpress.XtraBars.BarButtonItem addMaterialBtn;
         private DevExpress.XtraBars.BarButtonItem editMaterialBtn;
         private DevExpress.XtraBars.BarButtonItem deleteMaterialBtn;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn35;
         private DevExpress.XtraBars.StandaloneBarDockControl standaloneBarDockControl1;
         private DevExpress.XtraBars.BarManager barDetail;
@@ -2235,5 +2659,25 @@
         private DevExpress.XtraBars.BarButtonItem gostShowBtn;
         private DevExpress.XtraBars.BarButtonItem unitsShowBtn;
         private DevExpress.XtraBars.BarButtonItem userNameBtn;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit specNameRepository;
+        private DevExpress.XtraBars.BarButtonItem copySpecBtn;
+        private DevExpress.XtraEditors.StyleController styleController1;
+        private DevExpress.XtraEditors.PanelControl panelControl4;
+        private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.PanelControl panelControl5;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoForDetailsEdit;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit2;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
+        private DevExpress.XtraBars.BarSubItem showSpecificMenuBtb;
+        private DevExpress.XtraBars.BarButtonItem sortByMaterialBtn;
+        private DevExpress.XtraBars.BarButtonItem sortBySortamnetBtn;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraBars.BarButtonItem copySpecWithDrawBtn;
+        private DevExpress.XtraBars.BarButtonItem settingsBtn;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.BarButtonItem editMtsCustomerOrderBtn;
+        private DevExpress.XtraBars.BarCheckItem showCustomerOrdersCheck;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn36;
     }
 }

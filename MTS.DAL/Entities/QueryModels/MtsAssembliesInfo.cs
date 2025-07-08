@@ -24,7 +24,7 @@ namespace MTS.DAL.Entities.QueryModels
         public int? ContractorId { get; set; }
         public string ContractorName { get; set; }
         public string UserName { get; set; }
-        
+
         public int? CityId { get; set; }
         public string CityName_UA { get; set; }
         public string CountryName_UA { get; set; }

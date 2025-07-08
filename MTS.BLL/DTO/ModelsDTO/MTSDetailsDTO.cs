@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MTS.BLL.Infrastructure;
+﻿using MTS.BLL.Infrastructure;
+using System;
 
 namespace MTS.BLL.DTO.ModelsDTO
 {
@@ -27,9 +23,11 @@ namespace MTS.BLL.DTO.ModelsDTO
         public int NOM_GROUP_ID { get; set; }
         public string NOM_GROUP_NAME { get; set; }
         public int? NOM_GROUP_PARENT_ID { get; set; }
-        public decimal NOM_GROUP_RATIO_OF_WASTE { get; set; }
+        public decimal? NOM_GROUP_RATIO_OF_WASTE { get; set; }
         public int? NOM_GROUP_ADDIT_CALCULATION_ID { get; set; }
-        public int NOM_GROUP_ADDIT_CALCULATION_ACTIVE { get; set; }
+        public bool? NOM_GROUP_ADDIT_CALCULATION_ACTIVE { get; set; }
+        public string NOM_GROUP_ADDIT_CALCULATION_MEASURE { get; set; }
+
         public int? NOM_GROUP_CODPROD { get; set; }
         public int NOM_GROUP_SORTPOSITION { get; set; }
 
@@ -48,11 +46,14 @@ namespace MTS.BLL.DTO.ModelsDTO
         public string DRAWING { get; set; }
         public decimal? WIDTH { get; set; }
         public decimal? HEIGHT { get; set; }
-        public string CREATEDETALSNAME { get; set; }     
+        public string CREATEDETALSNAME { get; set; }
         public string DETALSPROCESSING { get; set; }
-        
-        
-        
+
+
+        public bool lastFocusedRov { get; set; }
+
+
+
 
 
 

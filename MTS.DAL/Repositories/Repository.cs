@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FirebirdSql.Data.FirebirdClient;
 using MTS.DAL.EF;
 using MTS.DAL.Interfaces;
-using FirebirdSql.Data.FirebirdClient;
-using System.Data.Entity.Core;
-using System.Data.Entity.Core.Objects;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 
 namespace MTS.DAL.Repositories
 {

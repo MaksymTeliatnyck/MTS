@@ -1,19 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using MTS.BLL.DTO.ModelsDTO;
 using MTS.BLL.Infrastructure;
 using MTS.BLL.Interfaces;
-using MTS.BLL.Services;
-using MTS.BLL.DTO;
-using MTS.BLL.DTO.ModelsDTO;
 using Ninject;
+using System;
+using System.Windows.Forms;
 
 namespace MTS.GUI.MTS
 {
@@ -23,8 +13,10 @@ namespace MTS.GUI.MTS
         private IMtsSpecificationsService mtsSpecificationsService;
         private BindingSource detailsBS = new BindingSource();
         private BindingSource createDetailsBS = new BindingSource();
-        private MTSSpecificationssDTO specificDTO = new MTSSpecificationssDTO();
+        private MTSSpecificationsDTO specificDTO = new MTSSpecificationsDTO();
         private MTSDetailsDTO detailDTO = new MTSDetailsDTO();
+        private MTSNomenclaturesDTO nomenclaturesDTO = new MTSNomenclaturesDTO();
+        private bool copyChecker = false;
 
         private ObjectBase Item
         {
@@ -39,7 +31,7 @@ namespace MTS.GUI.MTS
         public MtsDetailsEditOldFm(Utils.Operation operation, MTSDetailsDTO modelDetail)
         {
             InitializeComponent();
-            this.operation=operation;
+            this.operation = operation;
             detailsBS.DataSource = modelDetail;
             //this.specificDTO = modelSpecific;
             //this.detailDTO = modelDetail;
@@ -62,12 +54,11 @@ namespace MTS.GUI.MTS
             heightEdit.DataBindings.Add("EditValue", detailsBS, "HEIGHT", true, DataSourceUpdateMode.OnPropertyChanged);
             widthEdit.DataBindings.Add("EditValue", detailsBS, "WIDTH", true, DataSourceUpdateMode.OnPropertyChanged);
             quantityOfBlankEdit.DataBindings.Add("EditValue", detailsBS, "QUANTITY_OF_BLANKS", true, DataSourceUpdateMode.OnPropertyChanged);
-           
+   
+            
 
 
-
-
-            if(operation==Utils.Operation.Update)
+            if (operation == Utils.Operation.Add)
             {
                 //numberDrawingEdit.EditValue = model.DRAWING;
                 //nameEdit.EditValue = model.NAME;
@@ -78,8 +69,24 @@ namespace MTS.GUI.MTS
                 //widthEdit.EditValue = model.WIDTH;
                 //quantityOfBlankEdit.EditValue = model.QUANTITY_OF_BLANKS;
                 //detalsProccesingLookUpEdit.EditValue = model.DETALSPROCESSING;
+                ((MTSDetailsDTO)detailsBS.Current).QUANTITY_OF_BLANKS = 1;
+                ((MTSDetailsDTO)detailsBS.Current).WIDTH = 0;
+                ((MTSDetailsDTO)detailsBS.Current).HEIGHT = 0;
+                //detalsProccesingLookUpEdit.EditValue = 2;
+                //((MTSDetailsDTO)detailsBS.Current).PROCESSING_ID = 2;
+                ((MTSDetailsDTO)Item).PROCESSING_ID = 2;
+                copyChecker = false;
+                //(int)detalsProccesingLookUpEdit.EditValue
             }
+            else
+            {
+                copyChecker = modelDetail.DRAWING.Contains("копія");
+            }
+
+            ControlValidation();
         }
+
+
         public MTSDetailsDTO Return()
         {
             return ((MTSDetailsDTO)Item);
@@ -104,8 +111,8 @@ namespace MTS.GUI.MTS
                 else
                 {
                     MTSCreateDetalsDTO createCreateDetails = new MTSCreateDetalsDTO();
-                    createCreateDetails.NOMENCLATURE_ID = (int)((MTSDetailsDTO)Item).NOMENCLATURE_ID;
-                    createCreateDetails.PROCESSING_ID = (int)((MTSDetailsDTO)Item).PROCESSING_ID;
+                    createCreateDetails.NOMENCLATURE_ID = this.nomenclaturesDTO.ID;
+                    createCreateDetails.PROCESSING_ID = ((MTSDetailsDTO)Item).PROCESSING_ID;
                     createCreateDetails.NAME = ((MTSDetailsDTO)Item).NAME;
 
                     createCreateDetails.DRAWING = ((MTSDetailsDTO)Item).DRAWING;
@@ -131,38 +138,38 @@ namespace MTS.GUI.MTS
                 mtsSpecificationsService.MTSDetailUpdate((MTSDetailsDTO)Item);
                 return true;
             }
-            
 
 
-                //MTSCreateDetalsDTO createDetailsItem = new MTSCreateDetalsDTO()
-                //{
-                //    NOMENCLATURE_ID = specificDTO.ID,//((MTSCreateDetalsDTO)Item).NOMENCLATURE_ID,
-                //    PROCESSING_ID = ((MTSCreateDetalsDTO)Item).PROCESSING_ID,
-                //    NAME = ((MTSCreateDetalsDTO)Item).NAME,
-                //    DRAWING = ((MTSCreateDetalsDTO)Item).DRAWING,
-                //    WIDTH = ((MTSCreateDetalsDTO)Item).WIDTH,
-                //    HEIGHT = ((MTSCreateDetalsDTO)Item).HEIGHT,
 
-                //    QUANTITY = ((MTSCreateDetalsDTO)Item).QUANTITY,
-                //    NOMENCLATURESNAME = specificDTO.NAME,//((MTSCreateDetalsDTO)Item).NOMENCLATURESNAME,
-                //    GUAEGENAME = ((MTSCreateDetalsDTO)Item).GUAEGENAME,
-                //    CREATEDETALSNAME = ((MTSCreateDetalsDTO)Item).CREATEDETALSNAME,
-                //    QUANTITY_OF_BLANKS = ((MTSCreateDetalsDTO)Item).QUANTITY_OF_BLANKS,
-                //    DETALSPROCESSING = ((MTSCreateDetalsDTO)Item).DETALSPROCESSING,
-                //    PROCCESINGNAME = ((MTSCreateDetalsDTO)Item).PROCCESINGNAME
-                //};
-                //mtsService.MTSCreateDetailsCreate(createDetailsItem);
-               // ((MTSCreateDetalsDTO)Item).ID=mtsService.MTSCreateDetailsCreate(((MTSCreateDetalsDTO)Item));
+            //MTSCreateDetalsDTO createDetailsItem = new MTSCreateDetalsDTO()
+            //{
+            //    NOMENCLATURE_ID = specificDTO.ID,//((MTSCreateDetalsDTO)Item).NOMENCLATURE_ID,
+            //    PROCESSING_ID = ((MTSCreateDetalsDTO)Item).PROCESSING_ID,
+            //    NAME = ((MTSCreateDetalsDTO)Item).NAME,
+            //    DRAWING = ((MTSCreateDetalsDTO)Item).DRAWING,
+            //    WIDTH = ((MTSCreateDetalsDTO)Item).WIDTH,
+            //    HEIGHT = ((MTSCreateDetalsDTO)Item).HEIGHT,
 
-                //MTSDetailsDTO detailItem = new MTSDetailsDTO()
-                //{
-                //    SPECIFICATIONS_ID = specificDTO.ID,
-                //    CREATED_DETAILS_ID = createDetailsItem.ID,
-                //    QUANTITY_OF_BLANKS = createDetailsItem.QUANTITY_OF_BLANKS,
-                //    QUANTITY = createDetailsItem.QUANTITY
-                //};
-                //mtsService.MTSDetailCreate(detailItem);
-            
+            //    QUANTITY = ((MTSCreateDetalsDTO)Item).QUANTITY,
+            //    NOMENCLATURESNAME = specificDTO.NAME,//((MTSCreateDetalsDTO)Item).NOMENCLATURESNAME,
+            //    GUAEGENAME = ((MTSCreateDetalsDTO)Item).GUAEGENAME,
+            //    CREATEDETALSNAME = ((MTSCreateDetalsDTO)Item).CREATEDETALSNAME,
+            //    QUANTITY_OF_BLANKS = ((MTSCreateDetalsDTO)Item).QUANTITY_OF_BLANKS,
+            //    DETALSPROCESSING = ((MTSCreateDetalsDTO)Item).DETALSPROCESSING,
+            //    PROCCESINGNAME = ((MTSCreateDetalsDTO)Item).PROCCESINGNAME
+            //};
+            //mtsService.MTSCreateDetailsCreate(createDetailsItem);
+            // ((MTSCreateDetalsDTO)Item).ID=mtsService.MTSCreateDetailsCreate(((MTSCreateDetalsDTO)Item));
+
+            //MTSDetailsDTO detailItem = new MTSDetailsDTO()
+            //{
+            //    SPECIFICATIONS_ID = specificDTO.ID,
+            //    CREATED_DETAILS_ID = createDetailsItem.ID,
+            //    QUANTITY_OF_BLANKS = createDetailsItem.QUANTITY_OF_BLANKS,
+            //    QUANTITY = createDetailsItem.QUANTITY
+            //};
+            //mtsService.MTSDetailCreate(detailItem);
+
         }
 
 
@@ -180,7 +187,7 @@ namespace MTS.GUI.MTS
                     }
                     else
                     {
-                        // MessageBox.Show("Не вірний номер.Такий номер вже існує.", "Підтвердження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Не вірний номер.Такий номер вже існує.", "Підтвердження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         //numberAccountingEdit.Focus();
                     }
                 }
@@ -199,19 +206,21 @@ namespace MTS.GUI.MTS
         }
 
 
-        private void AddDirectoryDetail(MTSNomenclaturesOldDTO model)
+        private void AddDirectoryDetail(MTSNomenclaturesDTO model)
         {
-            using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model))
+            using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model, false))
             //   DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model);
             {
                 if (directoryBuyDetailEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    MTSNomenclaturesOldDTO r = directoryBuyDetailEditOldFm.Returnl();
+                    this.nomenclaturesDTO = directoryBuyDetailEditOldFm.Returnl();
 
                     //MTSNomenclatureGroupsOldDTO return_Id = directoryBuyDetailEditOldFm.Return();
-                    nomenclatureNameEdit.EditValue = r.NAME;
-                    guageEdit.EditValue = r.GUAGE;
-                      
+                    ((MTSDetailsDTO)Item).NOMENCLATURE_ID = this.nomenclaturesDTO.ID;
+
+                    nomenclatureNameEdit.EditValue = this.nomenclaturesDTO.NAME;
+                    guageEdit.EditValue = this.nomenclaturesDTO.GUAGE;
+
 
                 }
 
@@ -220,19 +229,27 @@ namespace MTS.GUI.MTS
 
         private void directoryBuyDetailBtn_Click(object sender, EventArgs e)
         {
-            AddDirectoryDetail(new MTSNomenclaturesOldDTO());
+            AddDirectoryDetail(new MTSNomenclaturesDTO());
         }
 
         private void numberDrawingEdit_KeyPress(object sender, KeyPressEventArgs e)
         {
-           // Utils.OnlyNumbers(e);
+            // Utils.OnlyNumbers(e);
+            if (e.KeyChar == ',')
+            {
+                e.KeyChar = '.'; // Замена запятой на точку
+            }
+
             if (e.KeyChar == (char)Keys.Enter)
             {
-                CheckDetail(numberDrawingEdit.Text);
+                if (CheckDetail(numberDrawingEdit.Text))
+                    quantityEdit.Focus();
+                else
+                    nameEdit.Focus();
             }
         }
 
-        private void CheckDetail(string drawingNumber)
+        private bool CheckDetail(string drawingNumber)
         {
             mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
 
@@ -251,35 +268,23 @@ namespace MTS.GUI.MTS
 
                     ((MTSDetailsDTO)Item).CREATED_DETAILS_ID = detailByDrawingName.ID;
                     ((MTSDetailsDTO)Item).NOMENCLATURE_ID = detailByDrawingName.NOMENCLATURE_ID;
+                    DialogResult = DialogResult.None;
+                    return true;
 
                 }
                 else
                 {
                     ((MTSDetailsDTO)Item).CREATED_DETAILS_ID = null;
+
+                    DialogResult = DialogResult.None;
+                    return false;
                 }
 
             }
             else
             {
-
-
+                return false;
             }
-            //loger.Info("Номенклатура: " + Nomenclature);
-
-            
-
-            //if (nomenclatureSearch.Count != 0)
-            //{
-            //    LoadReceipts(((ExpedinturesAccountantDTO)Item).EXP_DATE, nomenclatureSearch[0]);
-            //}
-            //else
-            //{
-            //    ClearNomenclature();
-            //    nomenclatureEdit.Focus();
-            //    MessageBox.Show("Номенклатура відсутня в базі даних!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
-
-            DialogResult = DialogResult.None;
         }
 
         private void detalsProccesingLookUpEdit_EditValueChanged(object sender, EventArgs e)
@@ -290,20 +295,214 @@ namespace MTS.GUI.MTS
                     processLabel.Text = "Розмір";
                     xlabel.Visible = false;
                     widthEdit.Visible = false;
+                    ((MTSDetailsDTO)detailsBS.Current).WIDTH = 0;
                     break;
+
                 case 2:
                     processLabel.Text = "Розмір";
                     xlabel.Visible = true;
                     widthEdit.Visible = true;
                     break;
+
                 case 3:
                     processLabel.Text = "Діаметр";
                     xlabel.Visible = false;
                     widthEdit.Visible = false;
+                    ((MTSDetailsDTO)detailsBS.Current).WIDTH = 0;
                     break;
+
                 default:
                     break;
             }
+        }
+
+        private void panelControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void nameEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            dxValidationProvider.Validate((Control)sender);
+        }
+
+        private bool CheckProcessDetails()
+        {
+            switch ((int)detalsProccesingLookUpEdit.EditValue)
+            {
+                case 1:
+
+                    if ((decimal)heightEdit.EditValue > 0)
+                        return true;
+                    else
+                        return false;
+
+                case 2:
+
+                    if ((decimal)widthEdit.EditValue > 0 && (decimal)heightEdit.EditValue > 0)
+                        return true;
+                    else
+                        return false;
+
+                case 3:
+                    if ((decimal)heightEdit.EditValue > 0)
+                        return true;
+                    else
+                        return false;
+
+                default:
+                    break;
+            }
+            return false;
+        }
+
+        private bool CheckDrawingCopy()
+        {
+            if (((MTSDetailsDTO)Item).DRAWING.Contains("копія"))
+                return true;
+            else
+                return false;
+        }
+
+        private void saveBtn1_Click(object sender, EventArgs e)
+        {
+            if (!CheckProcessDetails())
+            {
+                MessageBox.Show("Не вказано розмір деталі", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (operation == Utils.Operation.Update)
+            {
+                if (copyChecker)
+                {
+                    if (!CheckDrawingCopy())
+                    {
+                        MessageBox.Show("Якщо при створені деталі вона була позначена як (Копія), то змінена назва теж повинна містити слово (Копія)", "Помилка редагування", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+
+
+                if (MessageBox.Show("Зберегти зміни?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        if (Save())
+                        {
+                            DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Не вірний номер.Такий номер вже існує.", "Підтвердження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            //numberAccountingEdit.Focus();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Помилка при збереженні " + ex.Message, "Збереження матеріалу", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                try
+                {
+                    if (Save())
+                    {
+                        DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Не вірний номер.Такий номер вже існує.", "Підтвердження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        //numberAccountingEdit.Focus();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Помилка при збереженні " + ex.Message, "Збереження матеріалу", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void cancelBtn1_Click(object sender, EventArgs e)
+        {
+            this.Item.EndEdit();
+            DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void MtsDetailsEditOldFm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && CheckProcessDetails() && ControlValidation())
+                saveBtn1.PerformClick();
+        }
+
+        private void dxValidationProvider_ValidationFailed(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventArgs e)
+        {
+            this.saveBtn1.Enabled = false;
+            this.validateLbl.Visible = true;
+        }
+
+        private void dxValidationProvider_ValidationSucceeded(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationSucceededEventArgs e)
+        {
+            bool isValidate = (dxValidationProvider.GetInvalidControls().Count == 0);
+            this.saveBtn1.Enabled = isValidate;
+            this.validateLbl.Visible = !isValidate;
+        }
+
+        private void numberDrawingEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
+
+            dxValidationProvider.Validate((Control)sender);
+        }
+
+        private void quantityEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            dxValidationProvider.Validate((Control)sender);
+        }
+
+        private void nomenclatureNameEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            dxValidationProvider.Validate((Control)sender);
+        }
+
+        private void quantityOfBlankEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            dxValidationProvider.Validate((Control)sender);
+        }
+
+        private void heightEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            dxValidationProvider.Validate((Control)sender);
+        }
+
+        private void widthEdit_EditValueChanged(object sender, EventArgs e)
+        {
+        }
+
+        private bool ControlValidation()
+        {
+            return dxValidationProvider.Validate();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numberDrawingEdit_TextChanged(object sender, EventArgs e)
+        {
+            int cursorPosition = numberDrawingEdit.SelectionStart;
+
+            // Заменяем запятую на точку
+            numberDrawingEdit.Text = numberDrawingEdit.Text.Replace(',', '.');
+
+            // Восстанавливаем позицию курсора
+            numberDrawingEdit.SelectionStart = cursorPosition;
         }
     }
 }

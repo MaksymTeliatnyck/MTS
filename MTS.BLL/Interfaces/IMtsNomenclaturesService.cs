@@ -1,31 +1,78 @@
-﻿using System.Collections.Generic;
-using MTS.BLL.DTO.ModelsDTO;
-using MTS.BLL.DTO.SelectedDTO;
-using System;
+﻿using MTS.BLL.DTO.ModelsDTO;
+using System.Collections.Generic;
 
 namespace MTS.BLL.Interfaces
 {
-   public interface IMtsNomenclaturesService
+    public interface IMtsNomenclaturesService
     {
-       IEnumerable<MtsNomenclaturesDTO> GetNomenclarures();
-       IEnumerable<MtsGostsDTO> GetGosts();
-       IEnumerable<UnitsDTO> GetUnits();
-       IEnumerable<MtsNomenclatureGroupsDTO> GetNomenclatureGroups();
-       IEnumerable<MtsAdditCalculationsDTO> GetAdditCalculationUnits();
-       IEnumerable<MtsNomenclaturesDTO> GetMaterialsBySpecificationId(long specId, short materialStatus); //1 - PurchasedProducts, 2 - Materials
+        IEnumerable<MtsNomenclaturessDTO> GetNomenclarures();
 
-       long NomenclarureCreate(MtsNomenclaturesDTO mtsNomenclature);
-       void NomenclarureUpdate(MtsNomenclaturesDTO mtsNomenclature);
-       bool NomenclarureDelete(long id);
-       
-       long GostCreate(MtsGostsDTO mtsGost);
-       void GostUpdate(MtsGostsDTO mtsGost);
-       bool GostDelete(long id);
-       
-       int NomenclarureGroupCreate(MtsNomenclatureGroupsDTO mtsNomenclatureGroup);
-       void NomenclarureGroupUpdate(MtsNomenclatureGroupsDTO mtsNomenclatureGroup);
-       bool NomenclarureGroupDelete(int id);
 
-       void Dispose();
+        IEnumerable<MTSGostDTO> GetGosts();
+
+        int GetLastSortPositionNomenclatureGroup();
+
+
+
+
+        IEnumerable<MTSNomenclatureGroupsDTO> GetNomenclatureGroups();
+        bool CheckNomenclaturesGroup(int nomenclaturesGroupId);
+
+
+
+
+
+
+        #region Nomenclatures CRUD method's
+
+        long NomenclarureCreate(MTSNomenclaturesDTO mtsNomenclature);
+
+
+        void NomenclarureUpdate(MTSNomenclaturesDTO mtsNomenclature);
+
+
+        bool NomenclarureDelete(long id);
+
+        #endregion
+
+        #region MtsNomenclatureGroups CRUD method's
+
+        int NomenclarureGroupCreate(MTSNomenclatureGroupsDTO mtsNomenclatureGroup);
+
+
+        void NomenclarureGroupUpdate(MTSNomenclatureGroupsDTO mtsNomenclatureGroup);
+
+
+        bool NomenclarureGroupDelete(int id);
+
+
+        #endregion
+
+        #region MtsGosts CRUD method's
+
+        long GostCreate(MTSGostDTO mtsGost);
+
+
+        void GostUpdate(MTSGostDTO mtsGost);
+
+
+        bool GostDelete(long id);
+        #endregion
+
+        #region MtsNomenclatureGroup CRUD method's
+        int NomenclatureGroupCreate(MTSNomenclatureGroupsDTO mtsNomGroup);
+        void NomenclatureGroupUpdate(MTSNomenclatureGroupsDTO mtsNomGroup);
+        bool NomenclatureGroupDelete(long id);
+        #endregion
+
+        #region MtsNomenclature CRUD method's
+        int NomenclatureCreate(MTSNomenclaturesDTO mtsNom);
+
+        void NomenclatureUpdate(MTSNomenclaturesDTO mtsNom);
+
+        bool NomenclaturesDelete(long id);
+        #endregion  
+
+        void Dispose();
     }
 }

@@ -29,7 +29,7 @@ namespace MTS.GUI.Accounting
 
             customerOrdersService = Program.kernel.Get<ICustomerOrdersService>();
                         
-            customerOrdersEdit.Properties.DataSource = customerOrdersService.GetCustomerOrdersFull();
+            //customerOrdersEdit.Properties.DataSource = customerOrdersService.GetCustomerOrdersFull();
             customerOrdersEdit.Properties.ValueMember = "Id";
             customerOrdersEdit.Properties.DisplayMember = "OrderNumber";
             customerOrdersEdit.Properties.NullText = "Немає данних";

@@ -1,19 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using MTS.BLL.DTO.ModelsDTO;
 using MTS.BLL.Infrastructure;
 using MTS.BLL.Interfaces;
-using MTS.BLL.Services;
-using MTS.BLL.DTO;
-using MTS.BLL.DTO.ModelsDTO;
 using Ninject;
+using System;
+using System.Windows.Forms;
 
 namespace MTS.GUI.MTS
 {
@@ -37,7 +27,7 @@ namespace MTS.GUI.MTS
         public MtsBuyDetailEditOldFm(Utils.Operation operation, MTSPurchasedProductsDTO mtsPurchasedProductsDTO)
         {
             InitializeComponent();
-            
+
             this.operation = operation;
             mtsPurchasedProductsBS.DataSource = Item = mtsPurchasedProductsDTO;
 
@@ -45,11 +35,8 @@ namespace MTS.GUI.MTS
             guageEdit.DataBindings.Add("EditValue", mtsPurchasedProductsBS, "GUAEGENAME", true, DataSourceUpdateMode.OnPropertyChanged);
             quantityEdit.DataBindings.Add("EditValue", mtsPurchasedProductsBS, "QUANTITY", true, DataSourceUpdateMode.OnPropertyChanged);
 
-            //if (operation == Utils.Operation.Update)
-            //{
-            //    nameBuyDetailEdit.EditValue = nomen.NAME;
-            //    guageEdit.EditValue = nomen.GUAGE;
-            //}
+            //if (operation == Utils.Operation.Add)
+            //    quantityEdit.Focus();
         }
 
         private bool Save()
@@ -68,7 +55,7 @@ namespace MTS.GUI.MTS
                 {
                     mtsService.MTSPurchasedProductsUpdate((MTSPurchasedProductsDTO)Item);
                     return true;
-                }      
+                }
             }
             catch (Exception ex)
             {
@@ -84,7 +71,30 @@ namespace MTS.GUI.MTS
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Зберегти зміни?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (operation == Utils.Operation.Update)
+            {
+                if (MessageBox.Show("Зберегти зміни?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        if (Save())
+                        {
+                            DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                        else
+                        {
+                            // MessageBox.Show("Не вірний номер податкової.Такий номер вже існує.", "Підтвердження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            //numberAccountingEdit.Focus();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("error" + ex.Message, "Збереження матеріалу", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
             {
                 try
                 {
@@ -108,32 +118,32 @@ namespace MTS.GUI.MTS
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-            this.Item.EndEdit();
-            DialogResult = DialogResult.Cancel;
-            this.Close();
+            //this.Item.EndEdit();
+            //DialogResult = DialogResult.Cancel;
+            //this.Close();
         }
 
-        private void ShowDirectoryBuyDetails(MTSNomenclaturesOldDTO model)
+        private void ShowDirectoryBuyDetails(MTSNomenclaturesDTO model)
         {
-            using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model))
+            using (DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model, false))
             //  DirectoryBuyDetailEditOldFm directoryBuyDetailEditOldFm = new DirectoryBuyDetailEditOldFm(model);
             {
                 if (directoryBuyDetailEditOldFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    MTSNomenclaturesOldDTO getBuyDetail = directoryBuyDetailEditOldFm.Returnl();
+                    MTSNomenclaturesDTO getBuyDetail = directoryBuyDetailEditOldFm.Returnl();
 
                     ((MTSPurchasedProductsDTO)Item).NOMENCLATURES_ID = getBuyDetail.ID;
                     guageEdit.Text = getBuyDetail.GUAGE;
                     nameBuyDetailEdit.Text = getBuyDetail.NAME;
 
                 }
-            } 
+            }
         }
 
         private void directoryBuyDetailsBtn_Click(object sender, EventArgs e)
         {
-           
-            ShowDirectoryBuyDetails(new MTSNomenclaturesOldDTO());
+
+            ShowDirectoryBuyDetails(new MTSNomenclaturesDTO());
         }
 
         private void quantityEdit_EditValueChanged(object sender, EventArgs e)
@@ -152,6 +162,39 @@ namespace MTS.GUI.MTS
             bool isValidate = (mtsBuyDetailValidationProvider.GetInvalidControls().Count == 0);
             this.saveBtn.Enabled = isValidate;
             this.validateLbl.Visible = !isValidate;
+        }
+
+        private void saveBtn_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancelBtn_Click_1(object sender, EventArgs e)
+        {
+            this.Item.EndEdit();
+            DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void directoryBuyDetailsBtn1_Click(object sender, EventArgs e)
+        {
+            ShowDirectoryBuyDetails(new MTSNomenclaturesDTO());
+        }
+
+        private bool ControlValidation()
+        {
+            return mtsBuyDetailValidationProvider.Validate();
+        }
+
+        private void MtsBuyDetailEditOldFm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && ControlValidation())
+                saveBtn.PerformClick();
+        }
+
+        private void guageEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

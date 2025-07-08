@@ -1,27 +1,25 @@
 ﻿using MTS.BLL.Infrastructure;
-using System;
 
 namespace MTS.BLL.DTO.ModelsDTO
 {
-    public class MtsNomenclaturesDTO : ObjectBase
+    public class MTSNomenclaturesDTO : ObjectBase
     {
-        public long Id { get; set; }
-        public long MtsGostId { get; set; }
-        public int UnitId { get; set; }
-        public int MtsNomenclatureGroupId { get; set; }
-        public string Name { get; set; }
-        public string Gauge { get; set; }
-        public decimal? Weight { get; set; }
-        public decimal? Price { get; set; }
-        public string Note { get; set; }
+        public int ID { get; set; }
+        public string NAME { get; set; }
+        public string GUAGE { get; set; }
+        public decimal? WEIGHT { get; set; }
+        public decimal? PRICE { get; set; }
+        public int? MEASURE_ID { get; set; }
+        public string NOTE { get; set; }
+        public int? NOMENCLATUREGROUPS_ID { get; set; }
+        public int? COD_PROD_ID { get; set; }
+        public int? KODZAK { get; set; }
+        public int? GUAGE_ID { get; set; }
+        public int? GOST_ID { get; set; }
 
-        public decimal? Quantity { get; set; }
-        public string UnitLocalName { get; set; }
-        public string GroupName { get; set; }
-        public string GostName { get; set; }
-        public decimal? RatioOfWaste { get; set; }
-        public int? AdditCalculationActive { get; set; }
-        public string AdditUnitLocalName { get; set; }
-        public bool CheckForSelected { get; set; }
+        public string GOST { get; set; }
+        public string MEASURE { get; set; }
+
+
     }
 }

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MTS.DAL.EF;
+﻿using MTS.DAL.EF;
 using MTS.DAL.Interfaces;
+using System;
+using System.Collections.Generic;
 using System.Data.Entity.Core;
 
 namespace MTS.DAL.Repositories

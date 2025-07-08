@@ -1,19 +1,9 @@
-﻿using System;
+﻿using MTS.BLL.Infrastructure;
+using System;
+using System.Collections.Generic;
 using System.Linq;
-using MTS.BLL.Infrastructure;
 using System.Text;
 using System.Threading.Tasks;
-using AutoMapper;
-using AutoMapper.Internal;
-using MTS.BLL.DTO.SelectedDTO;
-using MTS.BLL.DTO.ModelsDTO;
-using MTS.BLL.Interfaces;
-using MTS.DAL.Entities.Models;
-using MTS.DAL.Entities.QueryModels;
-using MTS.DAL.Interfaces;
-using FirebirdSql.Data.FirebirdClient;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
 
 namespace MTS.BLL.DTO.ModelsDTO
 {

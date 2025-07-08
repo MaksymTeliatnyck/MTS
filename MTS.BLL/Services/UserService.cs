@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
-using MTS.BLL.DTO.SelectedDTO;
+﻿using AutoMapper;
 using MTS.BLL.DTO.ModelsDTO;
 using MTS.BLL.Interfaces;
 using MTS.DAL.Entities.Models;
-using MTS.DAL.Entities.QueryModels;
 using MTS.DAL.Interfaces;
-using FirebirdSql.Data.FirebirdClient;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace MTS.BLL.Services
 {
@@ -29,8 +21,8 @@ namespace MTS.BLL.Services
         //private IRepository<Departments> departments;
         private IRepository<MTS_AUTHORIZATION_USERS> mtsAuthorizationUsers;
         private IMapper mapper;
-        
-        public static MTS_AUTHORIZATION_USERS_DTO AuthorizatedUser { get; internal set; }
+
+        public static MTSAuthorizationUsersDTO AuthorizatedUser { get; internal set; }
         //public static IEnumerable<UserTasksDTO> AuthorizatedUserAccess { get; internal set; }
 
         public UserService(IUnitOfWork uow)
@@ -48,8 +40,8 @@ namespace MTS.BLL.Services
 
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<MTS_AUTHORIZATION_USERS, MTS_AUTHORIZATION_USERS_DTO>();
-                cfg.CreateMap<MTS_AUTHORIZATION_USERS_DTO, MTS_AUTHORIZATION_USERS>();
+                cfg.CreateMap<MTS_AUTHORIZATION_USERS, MTSAuthorizationUsersDTO>();
+                cfg.CreateMap<MTSAuthorizationUsersDTO, MTS_AUTHORIZATION_USERS>();
                 //cfg.CreateMap<UserRoles, UserRolesDTO>();
                 //cfg.CreateMap<UserRolesDTO, UserRoles>();
                 //cfg.CreateMap<UserDetails, UserDetailsDTO>();
@@ -67,7 +59,7 @@ namespace MTS.BLL.Services
 
         public bool TryAuthorize(string login, string pwd)
         {
-            MTS_AUTHORIZATION_USERS_DTO user = GetUser(login, pwd);
+            MTSAuthorizationUsersDTO user = GetUser(login, pwd);
 
             if (user != null)
             {
@@ -77,16 +69,28 @@ namespace MTS.BLL.Services
             return false;
         }
 
-        public MTS_AUTHORIZATION_USERS_DTO GetUser(string login, string pwd)
+        public MTSAuthorizationUsersDTO GetUser(string login, string pwd)
         {
+
+            try
+            {
+                var userr = mtsAuthorizationUsers.GetAll().ToList();
+                
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Виникла проблема при підключенні до БД \n" + ex.Message, "Підключення до БД", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
             var user = mtsAuthorizationUsers.GetAll().SingleOrDefault(c => c.LOGIN == login && c.PWD == pwd);
-            return mapper.Map<MTS_AUTHORIZATION_USERS, MTS_AUTHORIZATION_USERS_DTO>(user);
+
+            return mapper.Map<MTS_AUTHORIZATION_USERS, MTSAuthorizationUsersDTO>(user);
         }
 
         //private UserDetailsDTO GetUserDetails(decimal employeeNumber)
         //{
         //    FbParameter[] Parameters =
-        //    {
+        //    { 
         //        new FbParameter("Number", employeeNumber),
         //    };
         //    string procName = @"select * from ""GetUserDetails""(@Number)";

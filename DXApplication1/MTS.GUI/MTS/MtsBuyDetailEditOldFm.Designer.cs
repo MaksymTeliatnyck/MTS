@@ -31,17 +31,17 @@
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.directoryBuyDetailsBtn = new System.Windows.Forms.Button();
+            this.directoryBuyDetailsBtn1 = new DevExpress.XtraEditors.SimpleButton();
+            this.cancelBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.saveBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.validateLbl = new DevExpress.XtraEditors.LabelControl();
             this.quantityEdit = new DevExpress.XtraEditors.TextEdit();
             this.guageEdit = new DevExpress.XtraEditors.TextEdit();
             this.nameBuyDetailEdit = new DevExpress.XtraEditors.TextEdit();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cancelBtn = new System.Windows.Forms.Button();
-            this.saveBtn = new System.Windows.Forms.Button();
             this.mtsBuyDetailValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.validateLbl = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.quantityEdit.Properties)).BeginInit();
@@ -52,117 +52,52 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.directoryBuyDetailsBtn1);
+            this.panelControl1.Controls.Add(this.cancelBtn);
+            this.panelControl1.Controls.Add(this.saveBtn);
             this.panelControl1.Controls.Add(this.validateLbl);
-            this.panelControl1.Controls.Add(this.directoryBuyDetailsBtn);
             this.panelControl1.Controls.Add(this.quantityEdit);
             this.panelControl1.Controls.Add(this.guageEdit);
             this.panelControl1.Controls.Add(this.nameBuyDetailEdit);
             this.panelControl1.Controls.Add(this.label3);
             this.panelControl1.Controls.Add(this.label2);
             this.panelControl1.Controls.Add(this.label1);
-            this.panelControl1.Controls.Add(this.cancelBtn);
-            this.panelControl1.Controls.Add(this.saveBtn);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(476, 161);
             this.panelControl1.TabIndex = 0;
             // 
-            // directoryBuyDetailsBtn
+            // directoryBuyDetailsBtn1
             // 
-            this.directoryBuyDetailsBtn.Location = new System.Drawing.Point(428, 21);
-            this.directoryBuyDetailsBtn.Name = "directoryBuyDetailsBtn";
-            this.directoryBuyDetailsBtn.Size = new System.Drawing.Size(31, 27);
-            this.directoryBuyDetailsBtn.TabIndex = 8;
-            this.directoryBuyDetailsBtn.Text = "...";
-            this.directoryBuyDetailsBtn.UseVisualStyleBackColor = true;
-            this.directoryBuyDetailsBtn.Click += new System.EventHandler(this.directoryBuyDetailsBtn_Click);
-            // 
-            // quantityEdit
-            // 
-            this.quantityEdit.Location = new System.Drawing.Point(107, 96);
-            this.quantityEdit.Name = "quantityEdit";
-            this.quantityEdit.Properties.Mask.EditMask = "f";
-            this.quantityEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.quantityEdit.Size = new System.Drawing.Size(352, 20);
-            this.quantityEdit.TabIndex = 7;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule1.ErrorText = "Не задано кількість";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            conditionValidationRule1.Value1 = 0;
-            this.mtsBuyDetailValidationProvider.SetValidationRule(this.quantityEdit, conditionValidationRule1);
-            this.quantityEdit.EditValueChanged += new System.EventHandler(this.quantityEdit_EditValueChanged);
-            // 
-            // guageEdit
-            // 
-            this.guageEdit.Location = new System.Drawing.Point(107, 61);
-            this.guageEdit.Name = "guageEdit";
-            this.guageEdit.Properties.ReadOnly = true;
-            this.guageEdit.Size = new System.Drawing.Size(352, 20);
-            this.guageEdit.TabIndex = 6;
-            // 
-            // nameBuyDetailEdit
-            // 
-            this.nameBuyDetailEdit.Location = new System.Drawing.Point(107, 25);
-            this.nameBuyDetailEdit.Name = "nameBuyDetailEdit";
-            this.nameBuyDetailEdit.Properties.ReadOnly = true;
-            this.nameBuyDetailEdit.Size = new System.Drawing.Size(315, 20);
-            this.nameBuyDetailEdit.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.label3.Location = new System.Drawing.Point(12, 98);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 14);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Кількість";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.label2.Location = new System.Drawing.Point(12, 63);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 14);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Сортамент";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.label1.Location = new System.Drawing.Point(12, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 14);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Найменування";
+            this.directoryBuyDetailsBtn1.Location = new System.Drawing.Point(431, 25);
+            this.directoryBuyDetailsBtn1.Name = "directoryBuyDetailsBtn1";
+            this.directoryBuyDetailsBtn1.Size = new System.Drawing.Size(33, 23);
+            this.directoryBuyDetailsBtn1.TabIndex = 51;
+            this.directoryBuyDetailsBtn1.Text = "...";
+            this.directoryBuyDetailsBtn1.Click += new System.EventHandler(this.directoryBuyDetailsBtn1_Click);
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(384, 122);
+            this.cancelBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cancelBtn.Appearance.Options.UseFont = true;
+            this.cancelBtn.Location = new System.Drawing.Point(378, 127);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
-            this.cancelBtn.TabIndex = 1;
+            this.cancelBtn.Size = new System.Drawing.Size(86, 23);
+            this.cancelBtn.TabIndex = 50;
             this.cancelBtn.Text = "Відмінити";
-            this.cancelBtn.UseVisualStyleBackColor = true;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click_1);
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(303, 122);
+            this.saveBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.saveBtn.Appearance.Options.UseFont = true;
+            this.saveBtn.Location = new System.Drawing.Point(280, 127);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 23);
-            this.saveBtn.TabIndex = 0;
+            this.saveBtn.Size = new System.Drawing.Size(92, 23);
+            this.saveBtn.TabIndex = 49;
             this.saveBtn.Text = "Зберегти";
-            this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
-            // 
-            // mtsBuyDetailValidationProvider
-            // 
-            this.mtsBuyDetailValidationProvider.ValidationFailed += new DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventHandler(this.mtsBuyDetailValidationProvider_ValidationFailed);
-            this.mtsBuyDetailValidationProvider.ValidationSucceeded += new DevExpress.XtraEditors.DXErrorProvider.ValidationSucceededEventHandler(this.mtsBuyDetailValidationProvider_ValidationSucceeded);
             // 
             // validateLbl
             // 
@@ -174,6 +109,79 @@
             this.validateLbl.TabIndex = 48;
             this.validateLbl.Text = "*Для збереження, заповніть всі обов\'язкові поля";
             // 
+            // quantityEdit
+            // 
+            this.quantityEdit.Location = new System.Drawing.Point(119, 96);
+            this.quantityEdit.Name = "quantityEdit";
+            this.quantityEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.quantityEdit.Properties.Appearance.Options.UseFont = true;
+            this.quantityEdit.Properties.Mask.EditMask = "f";
+            this.quantityEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.quantityEdit.Size = new System.Drawing.Size(345, 24);
+            this.quantityEdit.TabIndex = 5;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule1.ErrorText = "Не задано кількість";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            conditionValidationRule1.Value1 = 0;
+            this.mtsBuyDetailValidationProvider.SetValidationRule(this.quantityEdit, conditionValidationRule1);
+            this.quantityEdit.EditValueChanged += new System.EventHandler(this.quantityEdit_EditValueChanged);
+            // 
+            // guageEdit
+            // 
+            this.guageEdit.Location = new System.Drawing.Point(119, 61);
+            this.guageEdit.Name = "guageEdit";
+            this.guageEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.guageEdit.Properties.Appearance.Options.UseFont = true;
+            this.guageEdit.Properties.ReadOnly = true;
+            this.guageEdit.Size = new System.Drawing.Size(345, 24);
+            this.guageEdit.TabIndex = 8;
+            this.guageEdit.EditValueChanged += new System.EventHandler(this.guageEdit_EditValueChanged);
+            // 
+            // nameBuyDetailEdit
+            // 
+            this.nameBuyDetailEdit.Location = new System.Drawing.Point(119, 25);
+            this.nameBuyDetailEdit.Name = "nameBuyDetailEdit";
+            this.nameBuyDetailEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameBuyDetailEdit.Properties.Appearance.Options.UseFont = true;
+            this.nameBuyDetailEdit.Properties.ReadOnly = true;
+            this.nameBuyDetailEdit.Size = new System.Drawing.Size(303, 24);
+            this.nameBuyDetailEdit.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(5, 95);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 18);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Кількість";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(5, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 18);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Сортамент";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(5, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 18);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Найменування";
+            // 
+            // mtsBuyDetailValidationProvider
+            // 
+            this.mtsBuyDetailValidationProvider.ValidationFailed += new DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventHandler(this.mtsBuyDetailValidationProvider_ValidationFailed);
+            this.mtsBuyDetailValidationProvider.ValidationSucceeded += new DevExpress.XtraEditors.DXErrorProvider.ValidationSucceededEventHandler(this.mtsBuyDetailValidationProvider_ValidationSucceeded);
+            // 
             // MtsBuyDetailEditOldFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,12 +189,14 @@
             this.ClientSize = new System.Drawing.Size(476, 161);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MtsBuyDetailEditOldFm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Редагування покупних деталей";
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MtsBuyDetailEditOldFm_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -207,10 +217,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.Button saveBtn;
-        private System.Windows.Forms.Button directoryBuyDetailsBtn;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider mtsBuyDetailValidationProvider;
         private DevExpress.XtraEditors.LabelControl validateLbl;
+        private DevExpress.XtraEditors.SimpleButton saveBtn;
+        private DevExpress.XtraEditors.SimpleButton cancelBtn;
+        private DevExpress.XtraEditors.SimpleButton directoryBuyDetailsBtn1;
     }
 }

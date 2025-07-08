@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MTS.BLL.NameCaseLib.Core;
 using MTS.BLL.NameCaseLib.NCL;
-using MTS.BLL.NameCaseLib.Core;
+using System;
+using System.Collections.Generic;
 
 namespace MTS.BLL.NameCaseLib
 {
@@ -14,6 +11,9 @@ namespace MTS.BLL.NameCaseLib
         /// Версия языкового файла
         /// </summary>
         protected new static String languageBuild = "11072716";
+
+
+
 
         /// <summary>
         /// Количество падежей в языке

@@ -1,22 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
+﻿using DevExpress.Skins;
 using DevExpress.UserSkins;
-using DevExpress.Skins;
-using System.Threading;
-using Ninject;
-using MTS.BLL.Infrastructure;
 using DevExpress.XtraEditors.Controls;
-using System.Globalization;
+using MTS.BLL.Infrastructure;
 using MTS.GUI.Login;
+using Ninject;
+using System;
+using System.Globalization;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace MTS.GUI
 {
     static class Program
     {
         public static IKernel kernel = new StandardKernel(new ServiceModule());
-        
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -31,14 +29,14 @@ namespace MTS.GUI
             Localizer.Active = Localizer.CreateDefaultLocalizer();
 
             bool flag = true;//false;
-            Mutex mutex = new Mutex(false, "ERP", out flag);
-            
+            Mutex mutex = new Mutex(false, "MTS", out flag);
+
             if (!flag)
             {
                 MessageBox.Show("Программа уже запущена!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            
+
             BonusSkins.Register();
 
             SkinManager.EnableFormSkins();
@@ -48,11 +46,10 @@ namespace MTS.GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Виникла помилка. " + ex.Message, "Інфо", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //throw;
+                MessageBox.Show("Возникла ошибка. " + ex.Message, "Інфо", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-            
+
+
             mutex.Close();
         }
     }

@@ -1,9 +1,5 @@
 ﻿using MTS.BLL.Infrastructure;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MTS.BLL.DTO.ModelsDTO
 {
@@ -31,6 +27,7 @@ namespace MTS.BLL.DTO.ModelsDTO
 
         public string MEASURENAME { get; set; }
         public decimal? WEIGHT { get; set; }
+        public bool lastFocusedRov { get; set; }
 
     }
 }
