@@ -48,14 +48,18 @@ namespace MTS.DAL.EF
         {
             FbConnectionStringBuilder csb;
 
+
+
+
+
             //string[] ipDB = File.ReadAllLines("ipDB.txt");
             //string[] portDB = File.ReadAllLines("portDB.txt");
             //string[] aliasDB = File.ReadAllLines("aliasDB.txt");
 
             csb = new FbConnectionStringBuilder()
             {
-               DataSource = "10.0.0.50",
-                //DataSource = "localhost",
+               //DataSource = "10.0.0.50",
+                DataSource = "localhost",
                //  Port = Convert.ToInt32(portDB[0]),
                 Database = "TVM_DB",
                 UserID = "sysdba",
