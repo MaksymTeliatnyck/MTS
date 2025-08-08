@@ -131,6 +131,8 @@ namespace MTS.GUI.MTS
             specificBS.DataSource = mtsService.GetAllSpecificationOldByPeriod((DateTime)startDateItem.EditValue, (DateTime)endDateItem.EditValue).OrderByDescending(ord => ord.ID).ToList();
             //specificBS.DataSource = mtsService.GetAllSpecificationOldByPeriod((DateTime)startDateItem.EditValue, (DateTime)endDateItem.EditValue).ToList();
             specificGrid.DataSource = specificBS;
+            
+            
 
 
             if (specificBS.Count > 0)
@@ -360,8 +362,9 @@ namespace MTS.GUI.MTS
         private void AddSpecificationDetails(MTSSpecificationsDTO model, Utils.Operation operation, MTSAuthorizationUsersDTO mtsAuthorizationUsersDTO)
         {
             model.SET_COLOR = 0;
-            using (MtsSpecificationOldDetailsFm mtsSpecificationOldDetailsFm = new MtsSpecificationOldDetailsFm(model, operation, mtsAuthorizationUsersDTO))
-            {
+
+            MtsSpecificationOldDetailsFm mtsSpecificationOldDetailsFm = new MtsSpecificationOldDetailsFm(model, operation, mtsAuthorizationUsersDTO);
+            
                 if (mtsSpecificationOldDetailsFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     MTSSpecificationsDTO return_Id = mtsSpecificationOldDetailsFm.Return();
@@ -371,7 +374,20 @@ namespace MTS.GUI.MTS
                     int rowHandle = detalsSpecificGridView.LocateByValue("ID", return_Id.ID);
                     detalsSpecificGridView.FocusedRowHandle = rowHandle;
                 }
-            }
+            
+
+            //using (MtsSpecificationOldDetailsFm mtsSpecificationOldDetailsFm = new MtsSpecificationOldDetailsFm(model, operation, mtsAuthorizationUsersDTO))
+            //{
+            //    if (mtsSpecificationOldDetailsFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            //    {
+            //        MTSSpecificationsDTO return_Id = mtsSpecificationOldDetailsFm.Return();
+            //        specificGridView.BeginDataUpdate();
+            //        LoadData();
+            //        specificGridView.EndDataUpdate();
+            //        int rowHandle = detalsSpecificGridView.LocateByValue("ID", return_Id.ID);
+            //        detalsSpecificGridView.FocusedRowHandle = rowHandle;
+            //    }
+            //}
         }
 
         private void DeleteSpecification()
@@ -1511,6 +1527,16 @@ namespace MTS.GUI.MTS
             else
                 specificGridView.Columns[7].Visible = false;
 
+
+        }
+
+        private void mainMenu_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void detailMenu_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
 
         }
     }

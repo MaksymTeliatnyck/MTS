@@ -28,10 +28,13 @@ namespace MTS.GUI
 
             Localizer.Active = Localizer.CreateDefaultLocalizer();
 
-            bool flag = true;//false;
-            Mutex mutex = new Mutex(false, "MTS", out flag);
+            bool firstflag = true;//false;
+            Mutex mutex = new Mutex(false, "MTS", out firstflag);
 
-            if (!flag)
+            bool secondflag = true;//false;
+            Mutex mutex1 = new Mutex(false, "MTS", out secondflag);
+
+            if (!firstflag && secondflag)
             {
                 MessageBox.Show("Программа уже запущена!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

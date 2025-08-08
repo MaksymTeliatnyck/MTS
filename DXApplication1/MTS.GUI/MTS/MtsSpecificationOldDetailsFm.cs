@@ -134,11 +134,11 @@ namespace MTS.GUI.MTS
         {
             this.Item.EndEdit();
 
-            if (FindDublicate((MTSSpecificationsDTO)this.Item))
-            {
-                MessageBox.Show("Специфікація з такою назвою вже існує!", "Збереження", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return false;
-            }
+            //if (FindDublicate((MTSSpecificationsDTO)this.Item))
+            //{
+            //    MessageBox.Show("Специфікація з такою назвою вже існує!", "Збереження", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    return false;
+            //}
 
             if (specificationListBS.Count == 0)
             {
@@ -178,6 +178,7 @@ namespace MTS.GUI.MTS
                             mtsDetailsList.Last().SPECIFICATIONS_ID = ((MTSSpecificationsDTO)Item).ID;
                             mtsDetailsList.Last().QUANTITY = mtsDetailsList.Last().QUANTITY * item.QUANTITY;
                             mtsDetailsList.Last().TIME_OF_ADD = DateTime.Now;
+                            mtsDetailsList.Last().CHANGES = 0;
                         }
                         mtsService.MTSDetailsCreateRange(mtsDetailsList);
                     }
@@ -194,6 +195,7 @@ namespace MTS.GUI.MTS
                             mtsPurchasedList.Last().SPECIFICATIONS_ID = ((MTSSpecificationsDTO)Item).ID;
                             mtsPurchasedList.Last().QUANTITY = mtsPurchasedList.Last().QUANTITY * item.QUANTITY;
                             mtsPurchasedList.Last().TIME_OF_ADD = DateTime.Now;
+                            mtsPurchasedList.Last().CHANGES = 0;
                         }
                         mtsService.MTSPurchasedProductsCreateRange(mtsPurchasedList);
                     }
@@ -210,6 +212,7 @@ namespace MTS.GUI.MTS
                             mtsMaterialsList.Last().SPECIFICATIONS_ID = ((MTSSpecificationsDTO)Item).ID;
                             mtsMaterialsList.Last().QUANTITY = mtsMaterialsList.Last().QUANTITY * item.QUANTITY;
                             mtsMaterialsList.Last().TIME_OF_ADD = DateTime.Now;
+                            mtsMaterialsList.Last().CHANGES = 0;
                         }
                         mtsService.MTSMaterialCreateRange(mtsMaterialsList);
                     }
