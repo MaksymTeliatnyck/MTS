@@ -527,8 +527,17 @@ namespace MTS.BLL.Services
 
             }
 
+            if (mtsSpecification.CustomerOrders != "")
+            {
+                if (mtsSpecification.CustomerOrders.Count() > 12)
+                    cells["A4"].Value = "Заказы:" + mtsSpecification.CustomerOrders;
+                else
+                    cells["A4"].Value = "Заказ:" + mtsSpecification.CustomerOrders;
+
+            }
+
             decimal allQuantity = 0;
-            int startWith = 6;
+            int startWith = 7;
             int numbering = 1;
 
             string firstName = dataSource.First().Name;
@@ -552,10 +561,10 @@ namespace MTS.BLL.Services
                     firstName = firstName == null ? "" : firstName;
                 }
 
-                if (startWith > 5 && dat.Name.Trim().ToLower() != firstName.Trim().ToLower())
+                if (startWith > 6 && dat.Name.Trim().ToLower() != firstName.Trim().ToLower())
                     cells["B" + (startWith) + ":I" + startWith].Borders[BordersIndex.EdgeTop].LineStyle = LineStyle.Continous;
 
-                if (startWith > 6 && dat.Name.Trim().ToLower() == firstName.Trim().ToLower())
+                if (startWith > 7 && dat.Name.Trim().ToLower() == firstName.Trim().ToLower())
                 {
                     cells["A" + startWith].Value = numbering;
                     cells["B" + startWith].Value = string.Empty;
