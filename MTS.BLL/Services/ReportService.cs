@@ -527,7 +527,7 @@ namespace MTS.BLL.Services
 
             }
 
-            if (mtsSpecification.CustomerOrders != "")
+            if (mtsSpecification.CustomerOrders != "" && mtsSpecification.CustomerOrders !=null)
             {
                 if (mtsSpecification.CustomerOrders.Count() > 12)
                     cells["A4"].Value = "Заказы:" + mtsSpecification.CustomerOrders;
@@ -595,8 +595,8 @@ namespace MTS.BLL.Services
                 cells["C" + startWith].Value = dat.Guage;
                 cells["C" + startWith].HorizontalAlignment = HAlign.Center;
 
-                cells["D" + startWith].Value = dat.Gost == "нет" ? dat.Note : dat.Gost;
-
+                //cells["D" + startWith].Value = dat.Gost == "нет" ? dat.Note : dat.Gost;
+                cells["D" + startWith].Value = dat.Gost;
                 cells["D" + startWith].HorizontalAlignment = HAlign.Center;
 
                 cells["E" + startWith].Value = dat.Measure;
