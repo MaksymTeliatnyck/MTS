@@ -89,7 +89,8 @@ namespace MTS.GUI.MTS
                     //    Selected = false,
                     //    UserId = userTasksDTO.UserId
                     //});
-
+                    for (int i = 0; i < returnList.Count; ++i)
+                        returnList[i].QUANTITY = 0;
 
                     specificationList.AddRange(returnList);
 
@@ -462,7 +463,8 @@ namespace MTS.GUI.MTS
 
                 foreach (var item in specificationList)
                 {
-                    var detailsSpecific = mtsService.GetAllDetailsSpecificShort(((MTSSpecificationsDTO)item).ID);
+                    //var detailsSpecific = mtsService.GetAllDetailsSpecificShort(((MTSSpecificationsDTO)item).ID);
+                    var detailsSpecific = mtsService.GetAllDetailsSpecific(((MTSSpecificationsDTO)item).ID).OrderByDescending(ord => ord.ID).ToList();
 
                     if (detailsSpecific != null)
                     {
@@ -479,7 +481,7 @@ namespace MTS.GUI.MTS
                         //mtsService.MTSDetailsCreateRange(mtsDetailsList);
                     }
 
-                    var detailsSpecificBuy = mtsService.GetBuysDetalSpecificShort(((MTSSpecificationsDTO)item).ID);
+                    var detailsSpecificBuy = mtsService.GetBuysDetalSpecific(((MTSSpecificationsDTO)item).ID);
 
                     if (detailsSpecificBuy != null)
                     {
@@ -496,7 +498,7 @@ namespace MTS.GUI.MTS
                         //mtsService.MTSPurchasedProductsCreateRange(mtsPurchasedList);
                     }
 
-                    var detailsSpecificMaterials = mtsService.GetMaterialsSpecificShort(((MTSSpecificationsDTO)item).ID);
+                    var detailsSpecificMaterials = mtsService.GetMaterialsSpecific(((MTSSpecificationsDTO)item).ID);
 
                     if (detailsSpecificMaterials != null)
                     {
