@@ -57,6 +57,7 @@
             this.editSpecDetailBtn = new DevExpress.XtraBars.BarButtonItem();
             this.saveBtnn = new DevExpress.XtraEditors.SimpleButton();
             this.cancelBtnn = new DevExpress.XtraEditors.SimpleButton();
+            this.storehouseBtn = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.nameSpecificationEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drawingEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.weightEdit.Properties)).BeginInit();
@@ -377,11 +378,23 @@
             this.cancelBtnn.Text = "Відміна";
             this.cancelBtnn.Click += new System.EventHandler(this.cancelBtnn_Click);
             // 
+            // storehouseBtn
+            // 
+            this.storehouseBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.storehouseBtn.Appearance.Options.UseFont = true;
+            this.storehouseBtn.Location = new System.Drawing.Point(437, 401);
+            this.storehouseBtn.Name = "storehouseBtn";
+            this.storehouseBtn.Size = new System.Drawing.Size(251, 23);
+            this.storehouseBtn.TabIndex = 36;
+            this.storehouseBtn.Text = "Створити (без збереження)";
+            this.storehouseBtn.Click += new System.EventHandler(this.storehouseBtn_Click);
+            // 
             // MtsSpecificationOldDetailsFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 436);
+            this.Controls.Add(this.storehouseBtn);
             this.Controls.Add(this.cancelBtnn);
             this.Controls.Add(this.saveBtnn);
             this.Controls.Add(this.standaloneBarDockControl1);
@@ -450,5 +463,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraEditors.SimpleButton saveBtnn;
         private DevExpress.XtraEditors.SimpleButton cancelBtnn;
+        private DevExpress.XtraEditors.SimpleButton storehouseBtn;
     }
 }

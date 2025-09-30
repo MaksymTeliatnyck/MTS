@@ -14,6 +14,7 @@ namespace MTS.GUI.MTS
     public partial class MtsSpecificationOldDetailsFm : DevExpress.XtraEditors.XtraForm
     {
         private IMtsSpecificationsService mtsService;
+        private IReportService reportService;
 
         private BindingSource specificationBS = new BindingSource();
         private BindingSource specificationListBS = new BindingSource();
@@ -88,7 +89,8 @@ namespace MTS.GUI.MTS
                     //    Selected = false,
                     //    UserId = userTasksDTO.UserId
                     //});
-
+                    for (int i = 0; i < returnList.Count; ++i)
+                        returnList[i].QUANTITY = 0;
 
                     specificationList.AddRange(returnList);
 
@@ -418,5 +420,126 @@ namespace MTS.GUI.MTS
         {
 
         }
+
+        private void storehouseBtn_Click(object sender, EventArgs e)
+        {
+            reportService = Program.kernel.Get<IReportService>();
+
+            this.Item.EndEdit();
+
+            //if (FindDublicate((MTSSpecificationsDTO)this.Item))
+            //{
+            //    MessageBox.Show("Специфікація з такою назвою вже існує!", "Збереження", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    return false;
+            //}
+
+            if (specificationListBS.Count == 0)
+            {
+                MessageBox.Show("Необхідно вибрати специфікації для створення зведеної специфікації!", "Збереження", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (specificationList.Any(bdsm => bdsm.QUANTITY == 0))
+            {
+                MessageBox.Show("Не коректно вказана кількість в одній з специфікацій", "Збереження", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            try
+            {
+
+                ((MTSSpecificationsDTO)Item).COMPILATION_NAMES = string.Join(";", specificationList.Select(slt => slt.NAME));
+                ((MTSSpecificationsDTO)Item).COMPILATION_NAMES += ";";
+                ((MTSSpecificationsDTO)Item).COMPILATION_DRAWINGS = string.Join(";", specificationList.Select(slt => slt.DRAWING));
+                ((MTSSpecificationsDTO)Item).COMPILATION_DRAWINGS += ";";
+                ((MTSSpecificationsDTO)Item).COMPILATION_QUANTITIES = string.Join(";", specificationList.Select(slt => slt.QUANTITY));
+                ((MTSSpecificationsDTO)Item).COMPILATION_QUANTITIES += ";";
+
+                //((MTSSpecificationsDTO)Item).ID = mtsService.MTSSpecificationCreate((MTSSpecificationsDTO)Item);
+
+                List<MTSDetailsDTO> mtsDetailsList = new List<MTSDetailsDTO>();
+                List<MTSPurchasedProductsDTO> mtsPurchasedList = new List<MTSPurchasedProductsDTO>();
+                List<MTSMaterialsDTO> mtsMaterialsList = new List<MTSMaterialsDTO>();
+
+                foreach (var item in specificationList)
+                {
+                    //var detailsSpecific = mtsService.GetAllDetailsSpecificShort(((MTSSpecificationsDTO)item).ID);
+                    var detailsSpecific = mtsService.GetAllDetailsSpecific(((MTSSpecificationsDTO)item).ID).OrderByDescending(ord => ord.ID).ToList();
+
+                    if (detailsSpecific != null)
+                    {
+
+
+                        foreach (var itemDetailSpecific in detailsSpecific)
+                        {
+                            mtsDetailsList.Add(itemDetailSpecific);
+                            mtsDetailsList.Last().SPECIFICATIONS_ID = ((MTSSpecificationsDTO)Item).ID;
+                            mtsDetailsList.Last().QUANTITY = mtsDetailsList.Last().QUANTITY * item.QUANTITY;
+                            mtsDetailsList.Last().TIME_OF_ADD = DateTime.Now;
+                            mtsDetailsList.Last().CHANGES = 0;
+                        }
+                        //mtsService.MTSDetailsCreateRange(mtsDetailsList);
+                    }
+
+                    var detailsSpecificBuy = mtsService.GetBuysDetalSpecific(((MTSSpecificationsDTO)item).ID);
+
+                    if (detailsSpecificBuy != null)
+                    {
+
+
+                        foreach (var itemDetailSpecificBuy in detailsSpecificBuy)
+                        {
+                            mtsPurchasedList.Add(itemDetailSpecificBuy);
+                            mtsPurchasedList.Last().SPECIFICATIONS_ID = ((MTSSpecificationsDTO)Item).ID;
+                            mtsPurchasedList.Last().QUANTITY = mtsPurchasedList.Last().QUANTITY * item.QUANTITY;
+                            mtsPurchasedList.Last().TIME_OF_ADD = DateTime.Now;
+                            mtsPurchasedList.Last().CHANGES = 0;
+                        }
+                        //mtsService.MTSPurchasedProductsCreateRange(mtsPurchasedList);
+                    }
+
+                    var detailsSpecificMaterials = mtsService.GetMaterialsSpecific(((MTSSpecificationsDTO)item).ID);
+
+                    if (detailsSpecificMaterials != null)
+                    {
+
+
+                        foreach (var itemDetailsSpecificMaterials in detailsSpecificMaterials)
+                        {
+                            mtsMaterialsList.Add(itemDetailsSpecificMaterials);
+                            mtsMaterialsList.Last().SPECIFICATIONS_ID = ((MTSSpecificationsDTO)Item).ID;
+                            mtsMaterialsList.Last().QUANTITY = mtsMaterialsList.Last().QUANTITY * item.QUANTITY;
+                            mtsMaterialsList.Last().TIME_OF_ADD = DateTime.Now;
+                            mtsMaterialsList.Last().CHANGES = 0;
+                        }
+                        //mtsService.MTSMaterialCreateRange(mtsMaterialsList);
+                    }
+                }
+
+
+                using (MtsSpecificationProcessQuantityFm mtsSpecificationProcessQuantityFm = new MtsSpecificationProcessQuantityFm())
+                {
+                    if (mtsSpecificationProcessQuantityFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        int quantitySummaryItems = mtsSpecificationProcessQuantityFm.Return();
+                        reportService = Program.kernel.Get<IReportService>();
+                        //LoadData();
+                        MTSSpecificationsDTO currentSpecific = ((MTSSpecificationsDTO)Item);
+                        currentSpecific.QUANTITY = currentSpecific.QUANTITY * quantitySummaryItems;
+
+                        reportService.SpecificationProcess(currentSpecific, mtsDetailsList, mtsPurchasedList, mtsMaterialsList, true);
+
+                        //reportService.MapTechProcess(((MTSSpecificationsDTO)specificBS.Current), (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, true, quantitySummaryItems);
+                    }
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Виникла помилка при створенні зведеної!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }   
+       }
+    
     }
 }
