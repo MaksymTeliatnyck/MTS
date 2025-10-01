@@ -988,6 +988,8 @@
             this.detalsSpecificGridView.OptionsView.RowAutoHeight = true;
             this.detalsSpecificGridView.OptionsView.ShowAutoFilterRow = true;
             this.detalsSpecificGridView.OptionsView.ShowGroupPanel = false;
+            this.detalsSpecificGridView.ScrollStyle = DevExpress.XtraGrid.Views.Grid.ScrollStyleFlags.LiveVertScroll;
+            this.detalsSpecificGridView.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.detalsSpecificGridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.detalsSpecificGridView_RowStyle);
             this.detalsSpecificGridView.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.detalsSpecificGridView_ColumnWidthChanged);
             this.detalsSpecificGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.detalsSpecificGridView_FocusedRowChanged);
@@ -1967,9 +1969,9 @@
             gridLevelNode1.RelationName = "Level1";
             gridLevelNode2.RelationName = "Level2";
             this.specificGrid.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1,
-            gridLevelNode2});
-            this.specificGrid.Location = new System.Drawing.Point(0, 96);
+            gridLevelNode3,
+            gridLevelNode4});
+            this.specificGrid.Location = new System.Drawing.Point(0, 95);
             this.specificGrid.MainView = this.specificGridView;
             this.specificGrid.Margin = new System.Windows.Forms.Padding(4);
             this.specificGrid.Name = "specificGrid";
