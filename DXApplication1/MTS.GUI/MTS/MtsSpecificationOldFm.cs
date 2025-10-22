@@ -1031,8 +1031,8 @@ namespace MTS.GUI.MTS
                         e.Appearance.BackColor = Color.PaleTurquoise;
                     if (item.lastFocusedRov)
                         e.Appearance.BackColor = Color.FromArgb(226, 234, 253);
-                    if (item.MARK == 1)
-                        e.Appearance.BackColor = Color.FromArgb(226, 234, 153);
+                    //if (item.MARK == 1)
+                    //    e.Appearance.BackColor = Color.FromArgb(226, 234, 153);
                 }
             }
 
@@ -1404,12 +1404,6 @@ namespace MTS.GUI.MTS
             Properties.Settings.Default.Save();
         }
 
-        private void detalsSpecificGrid_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == System.Windows.Forms.MouseButtons.Right)
-                detailMenu.Show(this, new System.Drawing.Point(Cursor.Position.X - 170, Cursor.Position.Y - 25));
-        }
-
         private void buysDetalsSpecificGrid_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Right)
@@ -1556,6 +1550,21 @@ namespace MTS.GUI.MTS
         private void materialsSpecificGrid_Click(object sender, EventArgs e)
         {
             materialsSpecificGridView.Focus();
+        }
+
+        private void detalsSpecificGridView_MouseWheel(object sender, MouseEventArgs e)
+        {
+            (sender as DevExpress.XtraGrid.Views.Grid.GridView).CloseEditor();
+        }
+
+        private void buysDetalsSpecificGridView_MouseWheel(object sender, MouseEventArgs e)
+        {
+            (sender as DevExpress.XtraGrid.Views.Grid.GridView).CloseEditor();
+        }
+
+        private void materialsSpecificGridView_MouseWheel(object sender, MouseEventArgs e)
+        {
+            (sender as DevExpress.XtraGrid.Views.Grid.GridView).CloseEditor();
         }
     }
 }

@@ -963,7 +963,7 @@
             this.detalsSpecificGridView});
             this.detalsSpecificGrid.EditorKeyPress += new System.Windows.Forms.KeyPressEventHandler(this.detalsSpecificGrid_EditorKeyPress);
             this.detalsSpecificGrid.Click += new System.EventHandler(this.detalsSpecificGrid_Click);
-            this.detalsSpecificGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.detalsSpecificGrid_MouseClick);
+            this.detalsSpecificGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.materialsSpecificGrid_MouseClick);
             // 
             // detalsSpecificGridView
             // 
@@ -995,6 +995,7 @@
             this.detalsSpecificGridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.detalsSpecificGridView_RowStyle);
             this.detalsSpecificGridView.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.detalsSpecificGridView_ColumnWidthChanged);
             this.detalsSpecificGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.detalsSpecificGridView_FocusedRowChanged);
+            this.detalsSpecificGridView.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.detalsSpecificGridView_MouseWheel);
             // 
             // gridColumn8
             // 
@@ -1523,6 +1524,7 @@
             this.buysDetalsSpecificGridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.buysDetalsSpecificGridView_RowStyle);
             this.buysDetalsSpecificGridView.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.buysDetalsSpecificGridView_ColumnWidthChanged);
             this.buysDetalsSpecificGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.buysDetalsSpecificGridView_FocusedRowChanged);
+            this.buysDetalsSpecificGridView.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.buysDetalsSpecificGridView_MouseWheel);
             // 
             // gridColumn20
             // 
@@ -1727,6 +1729,7 @@
             this.materialsSpecificGridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.materialsSpecificGridView_RowStyle);
             this.materialsSpecificGridView.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.materialsSpecificGridView_ColumnWidthChanged);
             this.materialsSpecificGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.materialsSpecificGridView_FocusedRowChanged);
+            this.materialsSpecificGridView.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.materialsSpecificGridView_MouseWheel);
             // 
             // gridColumn27
             // 
