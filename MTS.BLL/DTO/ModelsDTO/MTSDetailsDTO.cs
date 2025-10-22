@@ -12,6 +12,8 @@ namespace MTS.BLL.DTO.ModelsDTO
         public int? CODZAK { get; set; }
         public decimal? QUANTITY { get; set; }
         public int? CHANGES { get; set; }
+
+        public int? MARK { get; set; }
         public DateTime? TIME_OF_ADD { get; set; }
 
         public int? NOMENCLATURE_ID { get; set; }

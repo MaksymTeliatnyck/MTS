@@ -733,6 +733,7 @@ namespace MTS.BLL.Services
             try
             {
                 string fileName = String.Format("Спецификация на изделие  " + mtsSpecification.NAME);
+                fileName = fileName.Replace('/', '_');
                 Workbook.SaveAs(Utils.printFolderUri + fileName + ".xls", FileFormat.Excel8);
                 Process process = new Process();
                 process.StartInfo.Arguments = "\"" + Utils.printFolderUri + fileName + ".xls" + "\"";

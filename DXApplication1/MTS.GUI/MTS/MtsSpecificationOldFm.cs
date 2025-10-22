@@ -1031,6 +1031,8 @@ namespace MTS.GUI.MTS
                         e.Appearance.BackColor = Color.PaleTurquoise;
                     if (item.lastFocusedRov)
                         e.Appearance.BackColor = Color.FromArgb(226, 234, 253);
+                    if (item.MARK == 1)
+                        e.Appearance.BackColor = Color.FromArgb(226, 234, 153);
                 }
             }
 
@@ -1430,7 +1432,8 @@ namespace MTS.GUI.MTS
                     reportService = Program.kernel.Get<IReportService>();
                     //LoadData();
                     MTSSpecificationsDTO currentSpecific = (MTSSpecificationsDTO)specificBS.Current;
-                    currentSpecific.QUANTITY = currentSpecific.QUANTITY * quantitySummaryItems;
+                    //currentSpecific.QUANTITY = currentSpecific.QUANTITY * quantitySummaryItems;
+                    currentSpecific.QUANTITY = 1 * quantitySummaryItems;
                     currentSpecific.WEIGHT = currentSpecific.WEIGHT * quantitySummaryItems;
 
                     reportService.SpecificationProcess(currentSpecific, (List<MTSDetailsDTO>)detalsSpecificBS.DataSource, (List<MTSPurchasedProductsDTO>)byusDetalsSpecificBS.DataSource, (List<MTSMaterialsDTO>)materialsSpecificBS.DataSource, false);
@@ -1538,6 +1541,21 @@ namespace MTS.GUI.MTS
         private void detailMenu_Opening(object sender, System.ComponentModel.CancelEventArgs e)
         {
 
+        }
+
+        private void маркуватиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void detalsSpecificGrid_Click(object sender, EventArgs e)
+        {
+            detalsSpecificGridView.Focus();
+        }
+
+        private void materialsSpecificGrid_Click(object sender, EventArgs e)
+        {
+            materialsSpecificGridView.Focus();
         }
     }
 }
