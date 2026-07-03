@@ -15,7 +15,7 @@ namespace MTS.BLL.DTO.ModelsDTO
         public int? NOMENCLATURES_ID { get; set; }
         public string NOMENCLATURESNAME { get; set; }
         public string NOMENCLATURESNOTE { get; set; }
-        public decimal NOMENCLATURESPRICE { get; set; }
+        public decimal? NOMENCLATURESPRICE { get; set; }
 
         public int NOM_GROUP_ID { get; set; }
         public int NOM_GROUP_SORTPOSITION { get; set; }

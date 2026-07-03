@@ -8,8 +8,8 @@ namespace MTS.DAL.Entities.Models
         public int ID { get; set; }
         public string NAME { get; set; }
         public string GUAGE { get; set; }
-        public decimal WEIGHT { get; set; }
-        public decimal PRICE { get; set; }
+        public decimal? WEIGHT { get; set; }
+        public decimal? PRICE { get; set; }
         public int MEASURE_ID { get; set; }
         public string NOTE { get; set; }
         public int NOMENCLATUREGROUPS_ID { get; set; }

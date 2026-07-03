@@ -35,8 +35,8 @@
     <ProductName>MTS</ProductName>
     <PublisherName>IT</PublisherName>
     <SuiteName>Матеріальні специфікації</SuiteName>
-    <MinimumRequiredVersion>1.0.0.54</MinimumRequiredVersion>
-    <ApplicationRevision>55</ApplicationRevision>
+    <MinimumRequiredVersion>1.0.0.55</MinimumRequiredVersion>
+    <ApplicationRevision>56</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -75,10 +75,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>A86FAA85D0BD41751783152A5FF6E73034B46542</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>6269B481EAC229C1D84F48D86C94E48D8DA54CB6</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>MTS.GUI_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>MTS.GUI_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -689,6 +689,7 @@
     <None Include="ERP_NEW.GUI_3_TemporaryKey.pfx" />
     <None Include="ERP_NEW.GUI_TemporaryKey.pfx" />
     <None Include="MTS.GUI_1_TemporaryKey.pfx" />
+    <None Include="MTS.GUI_2_TemporaryKey.pfx" />
     <None Include="MTS.GUI_4_TemporaryKey.pfx" />
     <None Include="MTS.GUI_5_TemporaryKey.pfx" />
     <None Include="MTS.GUI_TemporaryKey.pfx" />

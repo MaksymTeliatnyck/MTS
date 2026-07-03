@@ -52,6 +52,9 @@ namespace MTS.GUI.MTS
             specificationListBS.DataSource = specificationList;
             specificationGrid.DataSource = specificationListBS;
 
+            UserAccess((int)mtsAuthorizationUsersDTO.USER_GROUPS_ID);
+
+
             nameSpecificationEdit.DataBindings.Add("EditValue", specificationBS, "NAME", true, DataSourceUpdateMode.OnPropertyChanged);
             drawingEdit.DataBindings.Add("EditValue", specificationBS, "DRAWING", true, DataSourceUpdateMode.OnPropertyChanged);
             //quantityEdit.DataBindings.Add("EditValue", specificationBS, "QUANTITY", true, DataSourceUpdateMode.OnPropertyChanged);
@@ -64,6 +67,26 @@ namespace MTS.GUI.MTS
             ((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_ID = mtsAuthorizationUsersDTO.ID;
             ((MTSSpecificationsDTO)Item).ASSEMBLY = 1;
 
+        }
+        private void UserAccess(int userGroupId)
+        {
+            switch (userGroupId)
+            {
+                case 1://technologs, CRUD operation, full access
+                    break;
+                case 2:
+                case 3:
+                case 5://other, only view
+                    saveBtnn.Enabled = false;
+                    break;
+                case 4: //admin, full access
+                    break;
+
+
+
+                default:
+                    break;
+            }
         }
 
         private void addSpecDetailBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -58,18 +58,18 @@
             this.cancelBtn = new DevExpress.XtraEditors.SimpleButton();
             this.nomenGroupLookUpEdit = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.NameGroup = new DevExpress.XtraGrid.Columns.GridColumn();
             this.measureLookUpEdit = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.NameColmn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gostLookUpEdit = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.NAME1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.nameNomenEdit = new DevExpress.XtraEditors.MemoEdit();
             this.mtsNomenclatureValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.noteEdit = new DevExpress.XtraEditors.MemoEdit();
             this.guagesEdit = new DevExpress.XtraEditors.TextEdit();
             this.validateLbl = new DevExpress.XtraEditors.LabelControl();
-            this.NameGroup = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NameColmn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NAME1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.weightEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nomenGroupLookUpEdit.Properties)).BeginInit();
@@ -230,6 +230,7 @@
             this.nomenGroupLookUpEdit.Properties.Appearance.Options.UseFont = true;
             this.nomenGroupLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nomenGroupLookUpEdit.Properties.ReadOnly = true;
             this.nomenGroupLookUpEdit.Properties.View = this.gridLookUpEdit1View;
             this.nomenGroupLookUpEdit.Size = new System.Drawing.Size(397, 24);
             this.nomenGroupLookUpEdit.TabIndex = 6;
@@ -248,6 +249,14 @@
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // NameGroup
+            // 
+            this.NameGroup.Caption = "Группа";
+            this.NameGroup.FieldName = "NAME";
+            this.NameGroup.Name = "NameGroup";
+            this.NameGroup.Visible = true;
+            this.NameGroup.VisibleIndex = 0;
             // 
             // measureLookUpEdit
             // 
@@ -283,6 +292,15 @@
             this.gridView2.OptionsView.ShowAutoFilterRow = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
+            // NameColmn
+            // 
+            this.NameColmn.Caption = "Одиниці вимірювання";
+            this.NameColmn.FieldName = "NAME";
+            this.NameColmn.Name = "NameColmn";
+            this.NameColmn.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.NameColmn.Visible = true;
+            this.NameColmn.VisibleIndex = 0;
+            // 
             // gostLookUpEdit
             // 
             this.gostLookUpEdit.EditValue = "";
@@ -316,6 +334,15 @@
             this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView3.OptionsView.ShowAutoFilterRow = true;
             this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // NAME1
+            // 
+            this.NAME1.Caption = "Гост";
+            this.NAME1.FieldName = "NAME";
+            this.NAME1.Name = "NAME1";
+            this.NAME1.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.NAME1.Visible = true;
+            this.NAME1.VisibleIndex = 0;
             // 
             // nameNomenEdit
             // 
@@ -380,32 +407,6 @@
             this.validateLbl.Size = new System.Drawing.Size(250, 13);
             this.validateLbl.TabIndex = 50;
             this.validateLbl.Text = "*Для збереження, заповніть всі обов\'язкові поля";
-            // 
-            // NameGroup
-            // 
-            this.NameGroup.Caption = "Группа";
-            this.NameGroup.FieldName = "NAME";
-            this.NameGroup.Name = "NameGroup";
-            this.NameGroup.Visible = true;
-            this.NameGroup.VisibleIndex = 0;
-            // 
-            // NameColmn
-            // 
-            this.NameColmn.Caption = "Одиниці вимірювання";
-            this.NameColmn.FieldName = "NAME";
-            this.NameColmn.Name = "NameColmn";
-            this.NameColmn.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.NameColmn.Visible = true;
-            this.NameColmn.VisibleIndex = 0;
-            // 
-            // NAME1
-            // 
-            this.NAME1.Caption = "Гост";
-            this.NAME1.FieldName = "NAME";
-            this.NAME1.Name = "NAME1";
-            this.NAME1.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.NAME1.Visible = true;
-            this.NAME1.VisibleIndex = 0;
             // 
             // MtsNomenclatureEditOldFm
             // 

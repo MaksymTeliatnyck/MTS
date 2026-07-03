@@ -321,7 +321,7 @@
             this.repositoryItemDateEdit2});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
-            this.ribbonControl1.Size = new System.Drawing.Size(1792, 95);
+            this.ribbonControl1.Size = new System.Drawing.Size(1792, 96);
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
@@ -931,7 +931,7 @@
             this.xtraTabPage1.Controls.Add(this.standaloneBarDockControl1);
             this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(0);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1782, 362);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1786, 365);
             this.xtraTabPage1.Text = "Деталі";
             // 
             // panelControl4
@@ -942,7 +942,7 @@
             this.panelControl4.Location = new System.Drawing.Point(0, 29);
             this.panelControl4.Margin = new System.Windows.Forms.Padding(0);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(1782, 333);
+            this.panelControl4.Size = new System.Drawing.Size(1786, 336);
             this.panelControl4.TabIndex = 2;
             // 
             // detalsSpecificGrid
@@ -957,7 +957,7 @@
             this.detalsSpecificGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoForDetailsEdit,
             this.repositoryItemTextEdit1});
-            this.detalsSpecificGrid.Size = new System.Drawing.Size(1782, 333);
+            this.detalsSpecificGrid.Size = new System.Drawing.Size(1786, 336);
             this.detalsSpecificGrid.TabIndex = 0;
             this.detalsSpecificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.detalsSpecificGridView});
@@ -1329,7 +1329,7 @@
             this.standaloneBarDockControl2.Location = new System.Drawing.Point(0, 0);
             this.standaloneBarDockControl2.Margin = new System.Windows.Forms.Padding(4);
             this.standaloneBarDockControl2.Name = "standaloneBarDockControl2";
-            this.standaloneBarDockControl2.Size = new System.Drawing.Size(1782, 29);
+            this.standaloneBarDockControl2.Size = new System.Drawing.Size(1786, 29);
             this.standaloneBarDockControl2.Text = "standaloneBarDockControl2";
             // 
             // barDockControlTop
@@ -1373,7 +1373,7 @@
             this.standaloneBarDockControl1.Location = new System.Drawing.Point(0, 0);
             this.standaloneBarDockControl1.Margin = new System.Windows.Forms.Padding(4);
             this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
-            this.standaloneBarDockControl1.Size = new System.Drawing.Size(1782, 0);
+            this.standaloneBarDockControl1.Size = new System.Drawing.Size(1786, 0);
             this.standaloneBarDockControl1.Text = "standaloneBarDockControl1";
             // 
             // standaloneBarDockControl3
@@ -1383,7 +1383,7 @@
             this.standaloneBarDockControl3.Location = new System.Drawing.Point(2, 2);
             this.standaloneBarDockControl3.Margin = new System.Windows.Forms.Padding(4);
             this.standaloneBarDockControl3.Name = "standaloneBarDockControl3";
-            this.standaloneBarDockControl3.Size = new System.Drawing.Size(1778, 33);
+            this.standaloneBarDockControl3.Size = new System.Drawing.Size(1782, 33);
             this.standaloneBarDockControl3.Text = "standaloneBarDockControl3";
             // 
             // standaloneBarDockControl4
@@ -1393,7 +1393,7 @@
             this.standaloneBarDockControl4.Location = new System.Drawing.Point(0, 0);
             this.standaloneBarDockControl4.Margin = new System.Windows.Forms.Padding(4);
             this.standaloneBarDockControl4.Name = "standaloneBarDockControl4";
-            this.standaloneBarDockControl4.Size = new System.Drawing.Size(1782, 34);
+            this.standaloneBarDockControl4.Size = new System.Drawing.Size(1786, 34);
             this.standaloneBarDockControl4.Text = "standaloneBarDockControl4";
             // 
             // addBuyDetailBarBtn
@@ -1462,7 +1462,7 @@
             this.xtraTabPage2.Controls.Add(this.panelControl2);
             this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1782, 362);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1786, 365);
             this.xtraTabPage2.Text = "Покупні";
             // 
             // panelControl2
@@ -1475,7 +1475,7 @@
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1782, 362);
+            this.panelControl2.Size = new System.Drawing.Size(1786, 365);
             this.panelControl2.TabIndex = 1;
             // 
             // panelControl3
@@ -1486,7 +1486,7 @@
             this.panelControl3.Location = new System.Drawing.Point(2, 35);
             this.panelControl3.Margin = new System.Windows.Forms.Padding(0);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1778, 325);
+            this.panelControl3.Size = new System.Drawing.Size(1782, 328);
             this.panelControl3.TabIndex = 1;
             // 
             // buysDetalsSpecificGrid
@@ -1500,7 +1500,7 @@
             this.buysDetalsSpecificGrid.Name = "buysDetalsSpecificGrid";
             this.buysDetalsSpecificGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit1});
-            this.buysDetalsSpecificGrid.Size = new System.Drawing.Size(1778, 325);
+            this.buysDetalsSpecificGrid.Size = new System.Drawing.Size(1782, 328);
             this.buysDetalsSpecificGrid.TabIndex = 0;
             this.buysDetalsSpecificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.buysDetalsSpecificGridView});
@@ -1679,7 +1679,7 @@
             this.xtraTabPage3.Controls.Add(this.standaloneBarDockControl4);
             this.xtraTabPage3.Margin = new System.Windows.Forms.Padding(0);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1782, 362);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1786, 365);
             this.xtraTabPage3.Text = "Матеріали";
             // 
             // panelControl5
@@ -1690,7 +1690,7 @@
             this.panelControl5.Location = new System.Drawing.Point(0, 34);
             this.panelControl5.Margin = new System.Windows.Forms.Padding(0);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(1782, 328);
+            this.panelControl5.Size = new System.Drawing.Size(1786, 331);
             this.panelControl5.TabIndex = 1;
             // 
             // materialsSpecificGrid
@@ -1704,7 +1704,7 @@
             this.materialsSpecificGrid.Name = "materialsSpecificGrid";
             this.materialsSpecificGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit2});
-            this.materialsSpecificGrid.Size = new System.Drawing.Size(1782, 328);
+            this.materialsSpecificGrid.Size = new System.Drawing.Size(1786, 331);
             this.materialsSpecificGrid.TabIndex = 0;
             this.materialsSpecificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.materialsSpecificGridView});
@@ -1980,13 +1980,13 @@
             this.specificGrid.ContextMenuStrip = this.mainMenu;
             this.specificGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.specificGrid.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.specificGrid.Location = new System.Drawing.Point(0, 95);
+            this.specificGrid.Location = new System.Drawing.Point(0, 96);
             this.specificGrid.MainView = this.specificGridView;
             this.specificGrid.Margin = new System.Windows.Forms.Padding(4);
             this.specificGrid.Name = "specificGrid";
             this.specificGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.specNameRepository});
-            this.specificGrid.Size = new System.Drawing.Size(1792, 444);
+            this.specificGrid.Size = new System.Drawing.Size(1792, 443);
             this.specificGrid.TabIndex = 2;
             this.specificGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.specificGridView});

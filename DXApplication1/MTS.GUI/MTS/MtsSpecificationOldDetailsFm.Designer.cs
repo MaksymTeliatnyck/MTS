@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MtsSpecificationOldDetailsFm));
             this.cancelBtn = new System.Windows.Forms.Button();
             this.nameSpecificationEdit = new DevExpress.XtraEditors.TextEdit();
@@ -46,7 +47,7 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.addSpecDetailBtn = new DevExpress.XtraBars.BarButtonItem();
             this.deleteSpecDetailBtn = new DevExpress.XtraBars.BarButtonItem();

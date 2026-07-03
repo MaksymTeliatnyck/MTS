@@ -86,9 +86,9 @@ namespace MTS.GUI.MTS
                 case 2:
                 case 3:
                 case 5://other, only view
-                    addAllSpeficBtn.Enabled = false;
+                    addAllSpeficBtn.Enabled = true;
                     addSpecificBtn.Enabled = false;
-                    copySpecBtn.Enabled = false;
+                    copySpecBtn.Enabled = true;
                     editSpecificBtn.Enabled = true;
                     deleteSpecificBtn.Enabled = false;
                     enableColorSpecificBtn.Enabled = false;
@@ -110,6 +110,7 @@ namespace MTS.GUI.MTS
                     break;
                 case 4: //admin, full access
                     break;
+
 
 
                 default:
@@ -176,7 +177,16 @@ namespace MTS.GUI.MTS
             byusDetalsSpecificBS.Clear();
             //buysDetalsSpecificGridView.ClearColumnsFilter();
             buysDetalsSpecificGridView.ClearSorting();
-            byusDetalsSpecificBS.DataSource = mtsService.GetBuysDetalSpecific(detailId).OrderByDescending(ord => ord.ID).ToList();
+            try
+            {
+                byusDetalsSpecificBS.DataSource = mtsService.GetBuysDetalSpecific(detailId).OrderByDescending(ord => ord.ID).ToList();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            
 
             if (byusDetalsSpecificBS.Count != 0)
                 buysDetalsSpecificGrid.DataSource = byusDetalsSpecificBS;
