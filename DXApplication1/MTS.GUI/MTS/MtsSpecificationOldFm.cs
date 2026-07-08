@@ -759,7 +759,13 @@ namespace MTS.GUI.MTS
 
         private void редагуватиЗаписToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EditDetailSpecific(Utils.Operation.Update, ((MTSDetailsDTO)detalsSpecificBS.Current));
+            if (detalsSpecificBS.Count > 0)
+                EditDetailSpecific(Utils.Operation.Update, ((MTSDetailsDTO)detalsSpecificBS.Current));
+            else
+                MessageBox.Show("Помилка видалення деталі! Створіть спочатку деталі!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+            //EditDetailSpecific(Utils.Operation.Update, ((MTSDetailsDTO)detalsSpecificBS.Current));
         }
 
         private void видалитиЗаписToolStripMenuItem_Click(object sender, EventArgs e)
@@ -875,7 +881,7 @@ namespace MTS.GUI.MTS
             if (materialsSpecificBS.Count > 0)
                 EditMaterial(Utils.Operation.Update, ((MTSMaterialsDTO)materialsSpecificBS.Current));
             else
-                MessageBox.Show("Помилка видалення матеріалу! Створіть спочатку матеріал!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Помилка редагування матеріалу! Створіть спочатку матеріал!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void видалитиЗаписToolStripMenuItem2_Click(object sender, EventArgs e)

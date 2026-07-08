@@ -538,6 +538,9 @@
   <metadata name="mainMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>556, 17</value>
   </metadata>
+  <metadata name="detailMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>666, 17</value>
+  </metadata>
   <metadata name="barDetail.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>188, 17</value>
   </metadata>
@@ -933,6 +936,12 @@
         fwN6LjfpTHzV2AAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="buyDetailMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>779, 17</value>
+  </metadata>
+  <metadata name="materialMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>914, 17</value>
+  </metadata>
   <data name="basesBtn.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAB10RVh0VGl0
@@ -1484,15 +1493,6 @@
         1GSfIRII3QnD/1yKbZs9ln0cY9m/AV4pPb350Y1yAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="buyDetailMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>779, 17</value>
-  </metadata>
-  <metadata name="materialMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>914, 17</value>
-  </metadata>
-  <metadata name="detailMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>666, 17</value>
-  </metadata>
   <metadata name="barBuyDetail.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>289, 17</value>
   </metadata>
@@ -1711,6 +1711,6 @@
 </value>
   </data>
   <metadata name="styleController1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>1345, 17</value>
   </metadata>
 </root>

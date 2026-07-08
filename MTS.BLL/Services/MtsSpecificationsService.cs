@@ -704,8 +704,8 @@ namespace MTS.BLL.Services
                            NOMENCLATURESNOTE = mtsNom.NOTE,
                            NOMENCLATURESPRICE = mtsNom.PRICE,
 
-                           NOM_GROUP_ID = mtsNomGroup.ID,
-                           NOM_GROUP_SORTPOSITION = mtsNomGroup.SORTPOSITION,
+                           NOM_GROUP_ID = mtsNomGroup.ID,  ///-----/////
+                           NOM_GROUP_SORTPOSITION = mtsNomGroup.SORTPOSITION,    ///----////
 
                            MEASURENAME = mtsMeas.NAME,
                            WEIGHT = mtsNom.WEIGHT,
